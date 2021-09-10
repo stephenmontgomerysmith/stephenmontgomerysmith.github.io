@@ -1,0 +1,10 @@
+#/bin/sh
+
+perl -pe 's/\%\\guillemotfalse/\\guillemotfalse/;s/\\guillemottrue/\%\\guillemottrue/' < cheap2.tex > cheap2-alt.tex
+latex cheap2-alt
+latex cheap2-alt
+latex cheap2-alt
+rm cheap2-alt.log cheap2-alt.aux
+
+makelatex cheap2
+makelatex2html cheap2

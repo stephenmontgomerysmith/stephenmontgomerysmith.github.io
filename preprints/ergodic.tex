@@ -1,0 +1,1834 @@
+% 12 March 1996
+\documentstyle[12pt]{article}
+\setlength\textwidth{6in}
+\setlength\oddsidemargin{0.25in}
+\topmargin -20mm
+\footskip 12mm
+%\textwidth 38pc
+\textheight 56pc
+\def\Bbb#1{{\mathchoice{\mbox{\bf #1}}{\mbox{\bf #1}}%
+{\mbox{$\scriptstyle \bf #1$}}{\mbox{$\scriptscriptstyle \bf #1$}}}}
+\def\N{\Bbb N}
+\def\R{\Bbb R}
+\def\C{\Bbb C}
+\def\D{\Bbb D}
+\def\Z{\Bbb Z}
+\def\T{\Bbb T}
+\def\Q{\Bbb Q}
+\def\E{\Bbb E}
+\def\O{\Omega}
+\def\sgn{{\rm sgn}}
+\def\supp{{\rm supp}}
+\def\cH{{\cal H}}
+\def\e{\epsilon}
+\def\cA{{\cal A}}
+\def\cE{{\cal E}}
+\def\cL{{\cal L}}
+\def\cI{{\cal I}}
+\def\cB{{\cal B}}
+\def\cM{{\cal M}}
+\def\cT{{\cal T}}
+\def\Linfg{L^\infty (G)}
+\def\Hinfg{H^\infty (G)}
+\def\spec{{\rm spec}}
+
+\begin{document}
+\title{A transference theorem for 
+ergodic $H^1$}
+\author{Nakhl\'e Asmar
+ and Stephen Montgomery--Smith
+\\
+Department of Mathematics\\
+University of
+Missouri--Columbia\\
+Columbia, Missouri 65211  U.\ S.\ A.
+}
+\date{}
+\maketitle
+			     %
+			     %
+			     %
+			     %
+			     %
+			     %
+			     %
+			     %
+%\begin{abstract}
+%\baselineskip=10 pt
+%\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this paper, we extend
+the basic transference theorem for
+convolution operators on $L^p$ spaces of
+Coifman and Weiss \cite{cw1}
+to $H^1$ spaces.  For clarity's sake, we start 
+by recalling the Coifman-Weiss
+transference theorem for a single convolution
+operator.  
+
+Suppose that $k\in L^1(G)$,
+where $G$ is a locally compact 
+abelian group,
+and let $N_p(k)$
+denote the norm of the convolution
+operator $f\mapsto k*f$,
+where $f\in L^p(G,\lambda)$, and
+where
+$\lambda$ is a fixed Haar measure on $G$.  
+Suppose that $R=\{R_u\}_{u\in G}$
+is a strongly continuous, uniformly bounded representation
+of $G$ acting on a general 
+Lebesgue space $L^p(\cM,\mu)=X_p$
+where $1\leq p<\infty$.
+Let $c_p$ be a positive constant such that
+$\|R_u\|\leq c_p$ for all $u\in G$.
+We use the Bochner integral to define the
+transferred convolution operator for all $f\in X_p$
+by
+$$T_k(f)=k*_Rf=\int_G R_{-u}(f) k(u) du,$$
+where here $du=d\lambda (u)$.
+It is straightforward to obtain the inequality
+$\|T_k(f)\|_{L^p(\mu)}\leq 
+c_p\|k\|_{L^1(G)} \|f\|_{L^p(\mu)}$.
+Using the transference methods,
+one can show that the operator norm
+of $T_k$ does not exceed $c_p^2 N_p(k)$.  
+In most cases of interest,
+when $1<p<\infty$,  $N_p(k)$ is much smaller
+than $\|k\|_{L^1(G)}$, and thus 
+there is a clear 
+advantage to the transference methods.
+By contrast, the case $p=1$ is of little interest since 
+we always have $N_1(k)=\|k\|_{L^1(G)}$. 
+%
+However, important operators in harmonic analysis
+are defined on subspaces of $L^1(G)$ and have norms
+smaller than $\|k\|_{L^1(G)}$, e.g.,
+singular integral operators
+on $H^1(\R)$. 
+%
+One natural question is to ask for the transference
+of such operators to appropriate subspaces of $L^1(\mu)$.
+When $G=\R$ and
+the representation $R$ is given by measure-preserving
+transformations, the subspace of $L^1(\mu)$ that is suitable for the
+transference of operators on $H^1(\R)$ was introduced 
+ by Coifman and Weiss \cite{cw2}, and called ergodic $H^1$.
+The note \cite{cw2} contains basic properties of
+ergodic $H^1$, derived using 
+sophisticated techniques from
+\cite{fs}.
+Other interesting properties of ergodic $H^1$
+are obtained by de la Torre \cite{dlt}, and \cite{abg2}.
+
+Our goal in this paper is to prove a transference
+theorem for ergodic $H^1$.
+The proofs require new 
+techniques, since
+the basic averaging process that is behind the 
+methods of \cite{cw1} does not work when dealing with 
+functions in $H^1$.
+The reader
+can check that the same
+proofs apply when $\R$ is replaced
+by $\T$, the circle group.  
+%In fact, the theory can be extended to the 
+%case when $G$ is a locally compact abelian 
+%group with an ordered dual group.
+%In this more general setting, one can define $H^1(G)$
+%as the closed subspace of $L^1(G)$ consisting of
+%functions with Fourier transforms vanishing
+%on the negative characters.  (See \cite{ams1}
+%for a recent account of analysis on
+%groups with ordered duals.) 
+
+Recently several authors contributed to 
+ transference from $H^1$.
+See Liu and Lu \cite{ll}, and Carro and Soria \cite{cs}.
+These papers have points of contact with our results
+in the special case of
+transference from $H^1(\R)$ to $H^1(\T)$.
+We note that the Hardy spaces considered in \cite{cs}
+are different from 
+our transferred spaces, 
+and our main results,
+Theorems \ref{single} and \ref{main-theorem} below,
+cannot be derived from any of the cited papers.
+
+The plan of the paper is as follows. 
+In Section 2, we define and study analytic functions in
+$L^1(\mu)$.
+In Section 3, we prove a 
+transference theorem for
+ maximal operators.
+In Section 4, we derive some 
+applications along the lines of
+\cite{cw2} and \cite{abg2}.
+%%%%%%%%%%
+%%%%%%%%%%
+%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\section{Preliminary results}
+\newtheorem{defspec}{Definition}[section]
+%\newtheorem{scholspec}[defspec]{Scholium}
+\newtheorem{useful}[defspec]{Remark}
+\newtheorem{proposition1-sec2}[defspec]{Proposition}
+\newtheorem{proposition2-sec2}[defspec]{Proposition}
+\newtheorem{corollary-prop}[defspec]{Corollary}
+\newtheorem{prop-spectrum}[defspec]{Proposition}
+\newtheorem{lemma1}[defspec]{Lemma}
+\newtheorem{lemma2}[defspec]{Lemma}
+\newtheorem{lemma3}[defspec]{Lemma}
+\newtheorem{lemma4}[defspec]{Lemma}
+\newtheorem{lemma5}[defspec]{Lemma}
+%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
+Throughout this section, 
+ $(\O,\cM,\mu)$ denotes a measure space,
+where $\mu$ is an arbitrary measure,  
+$R:\ u\mapsto R_u$ is a uniformly
+bounded, strongly continuous representation of 
+$\R$ in $L^1(\mu)$ 
+such that
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\|R_u\|\leq c.
+\label{uniform-norm}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We now review a few useful
+facts from spectral analysis.
+Let $g \in L^\infty(\R)$, and let 
+$[g]$ denote the smallest weak-* closed
+translation invariant subspace of $L^\infty(\R)$
+that contains $g$.  The {\em spectrum}
+of $g$, denoted
+$\spec (g)$,
+ is the set of characters
+of $\R$ that belong to $[g]$.
+Define 
+$$H^\infty(\R)=\{f\in L^\infty(\R):\ \spec(f)\subset [0,\infty)\}.$$
+An equivalent definition of the spectrum 
+is obtained as follows.  Let 
+$$\cI(g)=\{f\in L^1(\R):\ f*g=0 \},$$
+and
+$$Z\left(\cI(g) \right)=
+\bigcap_{f\in \cI (g)}\{s:\ \widehat{f}(s)=0\}.$$
+According to \cite[(40.21)(i)]{hr2}, we also have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+$\spec (g)=
+Z\left(\cI(g)\right).$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+To define the spectrum of a function $f\in L^1(\mu)$, 
+let
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\cI_R(f)=\{h\in L^1(\R): h*_Rf=0\ \mu -{\rm a.e.}\}.
+\label{ideal}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+It is easy to check that $\cI_R(f)$ is a closed ideal in 
+$L^1(\R)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{defspec}
+For $f\in L^1(\mu)$, define the spectrum of $f$ by
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\spec_R(f)\equiv Z\left(\cI_R (f)\right)\equiv
+\bigcap_{h\in \cI_R(f) }
+\{s\in\R: \widehat{h}(s)=0\}.
+\label{spectrum}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+We say that $f\in L^1(\mu)$ is analytic,
+and write $f\in H^1(\mu)$,
+ if $\spec_R(f)\subset [0,\infty)$.  Hence
+$$H^1(\mu)=\{f\in L^1(\mu):\ \spec_R(f)\subset [0,\infty)\}.$$
+The norm in $H^1(\mu)$ is the $L^1(\mu)$-norm.
+\label{defspec}
+\end{defspec}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+When $\R$ acts on $L^1(\R,d x)$ by translation, 
+it is easy to check that the space of
+analytic functions in $L^1(\R)$ consists of those functions
+with Fourier transforms supported in $[0,\infty)$.
+We set
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$H^1(\R)=
+\{f\in L^1(\R):\ \supp \widehat{f}\subset [0,\infty)\}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let $E$ be a closed subset of $\R$,
+ let
+$$\Im(E)=\{ f\in L^1(\R):\ \widehat{f}(E)\subset\{0\}\},$$
+ and let ${\cal J}(E)$
+denote the closure in $L^1(\R)$ of the set
+$$\{f\in L^1(\R):\ \widehat{f}\ 
+{\rm vanishes\ on \ an\ open\ set\ containing }\ E\}.$$
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Both $\Im(E)$ and ${\cal J}(E)$ are closed ideals in $L^1(\R)$,
+and we clearly have ${\cal J}(E)\subset \Im(E)$.
+The set $E$ is called a {\em set of spectral synthesis}
+if ${\cal J}(E)= \Im(E)$\ (see \cite[Theorem (40.10)]{hr2}).  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The following is a simple consequence of \cite[Theorems (40.8), and (40.10)(iii)]{hr2}, and the 
+fact that $[\alpha,\infty)$ and
+$(-\infty ,\alpha]$ are sets of spectral synthesis.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{useful}
+Let $\alpha $ be a fixed real number and let $E$
+denote the set $[\alpha,\infty)$ or
+$(-\infty ,\alpha]$.
+Suppose that $g\in L^\infty(\R)$.
+  Then $\spec (g)\subset E$,
+if and only if
+$$\int_\R f\overline{g} dx=0$$
+for all $f\in \Im (E)$.
+\label{useful}
+\end{useful}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Taking $E=[0,\infty)$ in Remark \ref{useful},
+we see that a function $g\in L^\infty(\R)$ belongs to
+$H^\infty(\R)$ if and only if
+\begin{equation}
+\int_\R f g d x = 0
+\label{hinfty}
+\end{equation}
+for all $f\in H^1(\R)$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For $f\in L^1(\mu)$ and $A\in \cM$, consider the 
+function defined on
+ $\R$ by $t\mapsto \int_A R_tf d \mu$.
+It follows easily from the strong
+continuity and the uniform
+boundedness of $R$ that this function is in $L^\infty(\R)$.
+We now present a useful characterization of
+$\spec_R$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proposition1-sec2}
+Let $f\in L^1(\mu)$, and let $\alpha$
+be any real number.  The following are equivalent:\\
+(i)  \ $\spec_R(f)\subset [\alpha,\infty)$;\\
+(ii)\ for every $A\in\cM$, the spectrum of 
+the $L^\infty(\R)$-function $t\mapsto \int_A R_tfd\mu$
+is contained in $[\alpha,\infty)$.
+\label{proposition1-sec2}
+\end{proposition1-sec2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}  Let $g\in L^1(\R)$
+be any function in $\cI_R(f)$, so that
+$g*_R f=0$.  Then, for all $t\in\R$,
+since $g*_R (R_t f)=R_t(g*_Rf)=0$, it follows that,
+ for any $A\in\cM$, %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+$$
+\int_Ag*_R (R_t f) d\mu
+			=
+\int_\R g(u)\int_A R_{t-u}f d\mu du=0.
+$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+From this we see that 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+$$g*\left(t\mapsto \int_A R_tfd\mu\right)=0,$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+which implies that $\cI_R(f)\subset \cI\left(
+t\mapsto \int_A R_tfd\mu\right)$.  Hence,
+$Z\left(\cI_R(f)\right)\supset Z\left(\cI( t\mapsto \int_A R_tfd\mu)\right)$;
+equivalently, 
+$\spec_R (f)\supset \spec \left(t\mapsto \int_A R_tfd\mu\right)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+This proves that (i) implies (ii).  For the other direction,
+let $E=[\alpha,\infty)$.
+It is enough to show that
+ $\cI_R(f)\supseteq \Im (E)$, since this will
+imply that $\spec_R(f)\subset Z(\Im (E))=E$\ (see
+\cite[(39.8)(c)]{hr2}).
+For this purpose,
+let $A$ be an arbitrary nonvoid subset in $\cM$, and let  
+$g\in \Im(E)$ so that $g^\sim$ is also in $\Im(E)$.
+%%%%%%%%%%%%%%%%%%%%%
+Applying Remark \ref{useful}, it follows that 
+$$\int_\R \overline{g(-t)}\overline{
+\int_A R_tfd\mu } dt=0,$$
+because the spectrum of the function 
+$t\mapsto \int_A R_t f d\mu$ is contained
+in $ E=[\alpha ,\infty)$,
+and $g^\sim \in \Im(E)$.
+Taking complex conjugates and using
+Fubini's Theorem, we obtain after changing $t$ to $-t$ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$\int_A
+\int_\R g(t) R_{-t}f dtd\mu=0.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+Since this holds for all $A\in\cM$, we conclude that
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+$
+\int_\R g(t) R_{-t}f dt=0$
+$\mu$-a.\ e.
+which is what we want to prove.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+The following is a useful characterization of $H^1(\mu)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proposition2-sec2}
+Let $f\in L^1(\mu)$.  
+The following are equivalent:\\
+(i)  $f\in H^1(\mu)$;\\
+(ii)  for every $A\in\cM$, the function 
+$t\mapsto \int_A R_tfd\mu$
+is in $H^\infty(\R)$;\\
+(iii) for every $ A\in\cM$ and every $g\in H^1(\R)$,
+ we have
+$$\int_\R g(t)\int_A R_t f d\mu dt =0;$$
+(iv)  for every $h\in \Im ([0,\infty))$, we have
+$h*_Rf=0$\ $\mu$-a.e.
+\label{proposition2-sec2}
+\end{proposition2-sec2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}
+The equivalence (i)$\Leftrightarrow$(ii) follows from 
+Proposition \ref{proposition1-sec2} and definitions.
+The equivalence (ii)$\Leftrightarrow$(iii)
+follows from (\ref{hinfty}).  
+To prove (iii) $\Rightarrow$(iv), let $h\in \Im([0,\infty))$.
+Since the function $t\mapsto h(-t)$ is in $H^1(\R)$, it
+follows from (iii) that
+$$\int_\R h(-t) \int_A R_t f d\mu dt=0,$$
+for all $A\in \cM$; equivalently,
+$$\int_\R h(t) \int_A R_{-t}f d\mu dt=
+\int_A\int_\R h(t) R_{-t} f dtd\mu=0,$$
+for all $A\in \cM$, which implies (iv).
+The proof of (iv)$\Rightarrow$(iii) is simple and will be
+omitted.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+The following
+simple proposition is very useful.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{prop-spectrum}
+Suppose that $f, f_n\in L^1(\mu)$, and $k\in L^1(\R)$.
+Then\\
+(i)\  $\spec_R ( k*_R f)\subset {\rm supp}\widehat{k}\cap \spec_R(f).$\\
+(ii) Suppose that 
+ $\spec_R(f_n)\subset [\alpha,\infty)$ and $f_n\rightarrow f$ in $L^1(\mu)$, then
+$\spec_R(f)\subset [\alpha,\infty)$.
+\label{prop-spectrum}
+\end{prop-spectrum}
+%%%%%%%%%%
+%%%%%%%%%%
+The proof of (i) is simple and will be 
+omitted.  For the proof of (ii), use Proposition 
+\ref{proposition1-sec2}(ii) and 
+Dominated Convergence.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For use in the sequel, we introduce
+the space $H^1(\R,L^1(\mu))$
+which consists of Bochner integrable functions 
+$g$ on $\R$
+with values in $L^1(\mu)$ such that
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+\begin{equation}
+\int_\R g(x) e^{-ixt} dx=0,\ {\rm for\ all}\ t<0.
+\label{vector-valued-H1}
+\end{equation}
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+From definitions, a function $g\in H^1(\R, L^1(\mu))$
+is jointly measurable on $\R\times\O$ and 
+belongs to $L^1(\R\times \O,dx\ d\omega)$.
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+\begin{lemma1}
+A 
+function $g$ 
+is in $H^1(\R,L^1(\mu))$ if and only if
+for $\mu$-almost all 
+$\omega\in \O$ the mapping $x\mapsto g(x,\omega)$
+is in $H^1(\R)$.
+\label{lemma1}
+\end{lemma1}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}  One direction is clear:  if
+for almost all $\omega\in \O$ the mapping $x\mapsto g(x,\omega)$
+is in $H^1(\R)$, then 
+(\ref{vector-valued-H1}) holds and so $g\in H^1(\R,L^1(\mu))$.
+Now suppose that $g\in H^1(\R,L^1(\mu))$.  Because of
+(\ref{vector-valued-H1}), for each $t<0$, there is a subset
+$B_t\subset \O$ such that $\mu(\O\setminus B_t)=0$, and,
+for all $\omega\in B_t$, we have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\int_\R g(x,\omega)e^{-ixt}dx=0.
+\label{lemma1eq1}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+Let $(t_n)=\Q\cap (-\infty,0)$
+denote the set of negative rational numbers, and let 
+$B=\bigcap_nB_{t_n}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+Then $\mu(\O\setminus B)=0$, and (\ref{lemma1eq1})
+holds for all
+$\omega\in B$ and $(t_n)$.  
+Now, given an arbitrary 
+real number $t< 0$, choose a subsequence
+$(t_{n_j})$ from $(t_n)$ such that
+$t_{n_j}\rightarrow t$.
+Then, for $\omega\in B$, we have
+$g(x,\omega)e^{-ixt_{n_j}}\rightarrow  g(x,\omega)e^{-ixt}$
+for all $x\in \R$.
+Hence, by Dominated Convergence, we have,
+for all $\omega\in B$, 
+$$0=\int_\R g(x,\omega)e^{-ixt_{n_j}}dx\rightarrow 
+\int_\R g(x,\omega)e^{-ixt}dx,$$
+implying (\ref{vector-valued-H1}).
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Using the representation $R$, for each $\alpha\in\R$,
+we define a new representation $e^{i\alpha(\cdot)}R$
+by:\ \ $u\in \R\mapsto e^{i\alpha u }R_u$.  
+The following simple properties will be very useful.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\begin{lemma2}
+Suppose that $f\in H^1(\mu)$ and $k\in L^1(\R)$, and
+let $\alpha\geq 0$.  Then\\
+(i)\  $\spec_{e^{i\alpha(\cdot)}R} (f)\subset [\alpha,\infty)$;\\
+(ii)\ $\lim_{\alpha\rightarrow 0}
+    \left\| k*_{e^{i\alpha(\cdot)}R}f-k*_Rf\right\|_{L^1(\mu)}=0$,
+    where here $\alpha\rightarrow 0$ through a countable sequence.
+\label{lemma2}
+\end{lemma2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}  To prove (i), it is enough to show that for any
+$s_0<\alpha$, we can find a function
+$h\in L^1(\R)$ such that  
+$h*_{e^{i\alpha(\cdot)}R}f=0$
+and
+$\widehat{h}(s_0)\neq 0$.
+Since
+$(s_0 - \alpha )\not\in\spec_R(f)\subset [0,\infty)$,
+we can find a function $g\in L^1(\R)$
+such that $g*_Rf=0$ and $\widehat{g}(s_0-\alpha)=1$.
+We clearly have
+$$(e^{i\alpha(\cdot )}g)*_{e^{i\alpha(\cdot)}R}f=
+g*_Rf=0,$$
+and since 
+$\widehat{(e^{i\alpha(\cdot )}g)}(s_0)=\widehat{g}(s_0-\alpha)=1$,
+the proof of (i) is complete.
+For (ii), we have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray*}
+\left\| k*_{e^{i\alpha(\cdot)}R}f-k*_Rf\right\|_{L^1(\mu)}
+			&=&
+\int_\O \left|
+\int_\R
+\left(
+e^{-i\alpha u} -1\right) R_{-u}f k(u)du
+\right| d|\mu|\\
+			&\leq&
+\int_\R\int_\O\left|R_{-u}f\right|d|\mu|
+\left|e^{-i\alpha u} -1\right||k(u)|du\\
+			&\leq&
+c\|f\|_{L^1(\mu)}
+\int_\R
+\left|e^{-i\alpha u} -1\right||k(u)|du.
+\end{eqnarray*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Now (ii) follows from the fact that
+$\lim_{\alpha\rightarrow 0} 1-e^{-i\alpha u}=0$ for
+all $u$, and 
+Dominated Convergence.
+
+%The following two results are
+%well-known.  We state them here for ease of reference. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%\begin{lemma3}
+%Let $(e_n)$ be an approximate identity for $L^1(\R)$
+%with $e_n\geq 0$ and $\int_\R e_ndx=1$.  Then,
+%for all $f\in L^1(\mu)$ we have
+%$\lim_{n\rightarrow\infty}\|e_n*_R f-f\|_{L^1(\mu)}=0$.
+%%
+%\label{lemma3}
+%\end{lemma3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%The proof that we omit 
+%is a simple consequence of the strong continuity
+%of $R$ and the fact that for any open 
+%nonvoid neighborhood $U$ of $0\in\R$,
+%we have
+%$\lim_{n\rightarrow\infty}\int_{\R\setminus U}e_n dx=0.$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%\begin{lemma4}
+%Let $f\in L^1(\mu)$, $k\in L^1(\R)$.  Then the mapping
+%$t\mapsto R_t(k*_R f)$ is continuous from $\R$ into $L^1(\mu)$.
+%\label{lemma4}
+%\end{lemma4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%{\bf Proof.}  Note that 
+%$R_t(k*_R f)=k*_R (R_t f)=k*_R(R_tf)=k_t*_Rf$ 
+%where $k_t(x)=k(x+t)$.
+%Now the lemma is a simple consequence of the fact that translation 
+%is uniformly continuous in $L^1(\R)$.
+
+%Combining the last two lemmas, we
+%find that the linear subspace of $L^1(\mu)$ consisting
+%of functions $f$ such that $t\mapsto R_tf$ is continuous
+%%is dense in $L^1(\mu)$.  In fact, because
+%$\spec_R e_n *_R f\subset \spec_R f$, we get the 
+%following useful result. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%\begin{lemma5}
+%The linear subspace of $H^1(\mu)$ consisting of functions $f$
+%such that $t\mapsto R_t f$ is continuous from $H^1(\mu)$ into 
+%itself is dense in $H^1(\mu)$.
+%\label{lemma5}
+%\end{lemma5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+\section{Transference of maximal inequalities}
+\newtheorem{single}{Theorem}[section]
+\newtheorem{main-theorem}[single]{Theorem}
+\newtheorem{vector-version}[single]{Lemma}
+\newtheorem{lemma-sec3}[single]{Lemma}
+\newtheorem{transference-max-multiplier}[single]{Theorem}
+\newtheorem{normalized-version}[single]{Theorem}
+%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
+Throughout this section, 
+$(\O,\cM,\mu)$ is a measure space where
+$\mu$ is an arbitrary measure.  
+Given $k\in L^1(\R)$, we let
+$N(k)$ denote the norm of the
+convolution operator 
+$f\mapsto k*f$ from $H^1(\R)$ into $H^1(\R)$.
+All other notation is as in the previous section.
+Our transference theorem for a single convolution
+operator follows.  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{single}
+Let $R$ be a strongly continuous uniformly bounded
+representation of $\R$ acting on $L^1(\mu)$ such that
+$\|R_u\|\leq c$ for all $u\in \R$, 
+where $c$ is a positive constant.
+Let $k\in L^1(\R)$.
+For all $f\in H^1(\mu)$ we have
+$$\|k*_Rf\|_{L^1(\mu)}\leq c^2 N(k)\|f\|_{L^1(\mu)}.$$ 
+\label{single}
+\end{single}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Under appropriate additional conditions on $R$, this result can 
+be extended to maximal operators corresponding to
+ sequences of convolution operators.
+For later applications we will state and prove
+ the more general version
+for maximal operators.  
+A few more definitions are needed.
+(For background and references, see \cite{abg1}.)
+
+
+A linear mapping
+$T$ of $L^1(\mu)$ is called {\em separation-preserving}
+(respectively, {\em positivity-preserving})
+if whenever $f\in L^1(\mu)$, $g\in L^1(\mu)$, and
+$fg=0\ \mu-a.\ e.$, on $\O$, 
+(respectively, $f\geq 0,\ \mu- a.\ e.$),
+then $(Tf)(Tg)=0\ \mu\ a.\ e.$
+on $\O$ (respectively, $Tf\geq 0,\ \mu-a.\ e.$). 
+If $T$ is separation-preserving, then there is a 
+positivity-preserving operator $|T|$ such that for all
+$f\in L^1(\mu)$, we have $|Tf|=|T|(|f|),\ \mu-a.\ e.$.
+
+Let $\{k_n\}\subset L^1(\R)$ and denote by 
+$N(\{k_n\})$ the smallest constant
+such that
+$$ \|\sup_{n\geq 1} |k_n*f|\|_{L^1(\R)}\leq N(\{k_n\})
+\|f\|_{L^1(\R)},$$
+for $f\in H^1(\R)$.  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{main-theorem}
+Suppose that $R$ is a strongly continuous, uniformly 
+bounded representation of $\R$ in $L^1(\mu)$ by 
+separation-preserving operators.  Then for all $f\in H^1(\mu)$, we have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\|\sup_{n\geq 1} |k_n*_Rf|\|_{L^1(\mu)}\leq
+c^2 N(\{k_n\}) \|f\|_{L^1(\mu)}.
+\label{main-inequality}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{main-theorem}
+\end{main-theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The proof of this theorem will be done in
+several steps.  The reader can check that 
+separation-preserving is only needed for the 
+transference of maximal inequalities, and so
+the proof that we present applies also to Theorem
+\ref{single}.
+ 
+We start with a simple transference result to a 
+space of vector-valued functions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{vector-version}
+Suppose that $g$ is a 
+function in $H^1(\R,L^1(\mu))$.  Then,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\int_\R \left\| \max_{1\leq j\leq N}
+\left|
+\int_\R
+g(x-t) k_j(t) dt
+\right|
+\right\|_{L^1(\mu)}dx\leq
+N(\{k_j\}) \|g\|_{L^1(\R,L^1(\mu))}.
+\label{main-vector-inequality}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{vector-version}
+\end{vector-version}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}  Using Fubini's Theorem and the fact that $x\mapsto g(x,\omega)$
+is in $H^1(\R)$ for $\mu$-almost all $\omega$, we get
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray*}
+\int_\O \int_\R \max_{1\leq j\leq N}
+\left| \int_\R g(x-t,\omega) k_j(t)d t\right| d x d\mu
+		&\leq&
+N(\{k_j\}) \int_\O\int_\R \left| g(x,\omega)\right| d x d \mu\\
+		&=& 
+N(\{k_j\}) \|g\|_{L^1(\R,L^1(\mu))},
+\end{eqnarray*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+which is what we want.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lemma-sec3}
+Let $\epsilon >0$, and suppose that $g\in L^1(\R)$ has the following
+properties:\\
+(i)\  $g\geq 0$,\\
+(ii)\ $\widehat{g}(0)=\int_\R g d x=1$,\\
+(iii)  \ $\widehat{g}$ has compact support contained in 
+$\left(\frac{-\epsilon}{2},\frac{\epsilon}{2}\right)$.\\
+Then for any function $f\in H^1(\mu)$ with
+$\spec_R (f)\subset [\epsilon,\infty)$, we have that the
+function $u\mapsto g(u) R_u f$ is in $H^1(\R, L^1(\mu))$.
+\label{lemma-sec3}
+\end{lemma-sec3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}  We need to check that for any $s<0$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$
+\int_\R e^{-isu} g(u) R_u f d u=0\ \mu - a.\ e.
+$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This will follow if we can show that for any
+$A\in \cM$ we have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$
+\int_A\int_\R e^{-isu} g(u) R_u f d ud\mu=
+\int_\R  e^{-isu} g(u) \int_A R_u f d\mu du
+=0.
+$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Equivalently, by taking complex conjugates, 
+it suffices to show that
+\begin{equation}
+\int_\R e^{isu} g(u)
+\overline{ \int_A R_u f d\mu} d u=0.
+\label{to-check}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+By Proposition \ref{proposition1-sec2}, 
+the spectrum of the
+the function $u\mapsto \int_A R_u f d\mu$
+is contained in $[\epsilon, \infty)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Since the support of the Fourier transform
+of the function $u\mapsto e^{isu} g(u)$
+is contained in $(-\frac{\epsilon}{4}+s,\frac{\epsilon}{4}+s)$,
+and $s\leq 0$, we have that 
+$e^{isu} g(u)\in \Im([\epsilon,\infty))$,
+and (\ref{to-check}) follows from 
+Remark \ref{useful}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The proof of 
+(\ref{main-inequality}) will be facilitated
+ by the following 
+two reductions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\bf First reduction}  In proving (\ref{main-inequality}),
+it is enough to assume that the sequence $\{k_n\}$ is finite.
+This is a simple consequence of Monotone Convergence.  
+
+Henceforth, we assume
+that $n$ ranges from $1$ to $N$, where $N$ is a fixed positive
+integer and, instead of (\ref{main-inequality}), 
+prove the inequality
+\begin{equation}
+\|\max_{ 1\leq n\leq N} |k_n*_Rf|\|_{L^1(\mu)}\leq
+c^2 N(\{k_n\}) \|f\|_{L^1(\mu)},
+\label{main-inequality'}
+\end{equation}
+for all $f\in H^1(\mu)$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\bf Second reduction}  In proving (\ref{main-inequality'}), 
+it is enough
+to consider functions $f\in H^1(\mu)$ with
+$\spec_R (f)\subset [\epsilon,\infty)$, where $\epsilon >0$.
+
+To justify this reduction, 
+suppose that (\ref{main-inequality'})
+holds whenever a representation $R$ 
+is separation-preserving,
+strongly continuous, uniformly bounded with constant $c$,
+and $f$ has its spectrum contained in $[\epsilon,\infty)$ where
+$\epsilon >0$.
+Let $\alpha>0$, and consider the representation
+$e^{i\alpha (\cdot )} R$.  It is clear that 
+this representation enjoys all the stated properties of $R$
+(strong continuity,  uniform boundedness with the 
+same constant $c$, and separation-preserving).  
+Moreover, if $f\in H^1(\mu)$,
+then
+$\spec_{e^{i\alpha (\cdot )} R} f\subset [\alpha,\infty)$,
+by Lemma \ref{lemma2}(i).
+Hence, by our assumption,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\|\max_{1\leq n\leq N} 
+|k_n*_{e^{i\alpha (\cdot )} R} f|\|_{L^1(\mu)}
+\leq c^2 N(\{k_n\}) \|f\|_{L^1(\mu)}.
+\label{assumption-second}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Letting $\alpha\downarrow 0$, and using Lemma \ref{lemma2},
+we have that,
+for each $n\in \{1,2,\ldots, N\}$,
+ $k_n*_{e^{i\alpha (\cdot )} R} f\rightarrow k_n*_R f$
+in $L^1(\mu)$.  From this and (\ref{assumption-second}),
+the inequality (\ref{main-inequality'})
+follows easily, establishing the second reduction.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\bf Proof of Theorem \ref{main-theorem}}
+Suppose that $f\in L^1(\mu)$ with
+$\spec_R (f)\subset [\epsilon, \infty)$ where $\epsilon $
+is a fixed positive number. 
+Let $g$ be as in Lemma \ref{lemma-sec3} and let
+$F(t)=g(t)R_tf$.  By Lemma \ref{lemma-sec3},
+$F\in H^1(\R, L^1(\mu))$, and so, by 
+Lemma \ref{vector-version}, we have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\int_\R \left\|
+\max_{1\leq n\leq N}
+\left| \int_\R
+F(x-t)k_n(t) dt \right| 
+\right\|_{L^1(\mu)}dx
+\leq N(\{k_n\}) \|F\|_{L^1(\R,L^1(\mu))}.
+\label{*}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We now proceed to show that (\ref{main-inequality'})
+is a consequence of (\ref{*}).  We have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray}
+\|F\|_{L^1(\R,L^1(\mu))}
+&=&
+\int_\R \int_\O |g(t)R_tf|d|\mu | dt \nonumber\\
+&=&
+\int_\R g(t) \int_\O|R_tf|d | \mu | dt \leq c \|f\|_{L^1(\mu)}.
+\label{**}
+\end{eqnarray}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Using the fact that $R$ is a uniformly bounded and strongly
+continuous representation by separation-preserving
+operators, we obtain
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray*}
+\max_{1\leq n\leq N}
+\left|
+\int_\R F(x-t)k_n(t) dt
+\right|
+			&=&
+\max_{1\leq n\leq N}
+\left|
+\int_\R
+(R_{x-t} f) g(x-t) k_n(t) dt
+\right|			\\
+			&=&
+\max_{1\leq n\leq N}
+|R_x|\left(\left|
+\int_\R
+(R_{-t} f) g(x-t) k_n(t) dt
+\right|\right).
+\end{eqnarray*}
+%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Since $|R_{\pm x}|$ is positivity-preserving
+and since $|R_x|^{-1}=|R_{-x}|$, we obtain
+after applying $|R_{-x}|$ to both sides of
+the last equality
+%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$
+|R_{-x}|
+\left(
+\max_{1\leq n\leq N}
+\left|
+\int_\R F(x-t)k_n(t) dt
+\right|
+\right)			
+\geq
+\max_{1\leq n\leq N}
+\left|
+\int_\R
+(R_{-t} f) g(x-t) k_n(t) dt
+\right|.
+$$
+Hence, using the last inequality
+and the uniform boundedness of $R$,
+we obtain
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+c\left\|
+\max_{1\leq n\leq N}
+\left|
+\int_\R F(x-t)k_n(t) dt
+\right|
+\right\|_{L^1(\mu)}
+	\geq
+\left\|
+\max_{1\leq n\leq N}
+\left|
+\int_\R
+(R_{-t} f) g(x-t) k_n(t) dt
+\right|
+\right\|_{L^1(\mu)}.
+\label{*22-2}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Integrating both sides of (\ref{*22-2})
+over $\R$ in the $x$ variable,
+and using (\ref{*}) and (\ref{**}), 
+we obtain
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+N(\{k_n\}) c^2 \|f\|_{L^1(\mu)}\geq
+ \int_\R \int_\O
+\max_{1\leq n\leq N}
+\left|
+\int_\R
+(R_{-t} f) g(x-t) k_n(t) dt
+\right|
+d|\mu|dx .
+\label{**22-2}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Obvious manipulations with 
+(\ref{**22-2}),
+ Fubini's Theorem and 
+the fact that $g\geq 0$ and $\widehat{g}(0)=\int_\R g =1$,
+ yield
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray*}
+N(\{k_n\}) c^2 \|f\|_{L^1(\mu)}
+			&\geq&
+ \int_\O \int_\R
+\max_{1\leq n\leq N}
+\left|
+\int_\R
+(R_{-t} f) g(x-t) k_n(t) dt
+\right|
+dx d|\mu| \\
+			&\geq&
+ \int_\O 
+\max_{1\leq n\leq N}
+\left| \int_\R g(x-t)dx
+\int_\R
+(R_{-t} f) k_n(t) dt
+\right|
+d|\mu | \\
+			&=&
+ \int_\O 
+\max_{1\leq n\leq N}
+\left| 
+\int_\R
+(R_{-t} f) k_n(t) dt
+\right|
+d|\mu| \\
+			&=&
+\|\max_{1\leq n\leq N} |k_n*_Rf|\|_{L^1(\mu)},
+\end{eqnarray*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+which proves
+(\ref{main-inequality'}).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{$H^1(\mu)$ and the ergodic Hilbert transform}
+\newtheorem{th1}{Theorem}[section]
+\newtheorem{sec4prop1}[th1]{Proposition}
+\newtheorem{sec4prop2}[th1]{Proposition}
+\newtheorem{sec4prop3}[th1]{Proposition}
+\newtheorem{sec4prop4}[th1]{Proposition}
+\newtheorem{remark1}[th1]{Remark}
+\newtheorem{lemma-th1}[th1]{Lemma}
+\newtheorem{th2}[th1]{Theorem}
+\newtheorem{corollary-th2}[th1]{Corollary}
+
+In this section we will investigate a connection
+between $H^1(\mu)$,
+ the space ergodic $H^1$ of \cite{cw2},
+and spaces of functions introduced in
+\cite{abg2} (Theorem \ref{th1} below).
+Throughout, $u\rightarrow R_u$ will denote a
+strongly continuous
+representation of $\R$ by measure-preserving transformations
+on an finite measure space $(\O, \cM,\mu)$.
+In particular, $R$ is 
+separation-preserving and uniformly bounded with
+$c=1$.  (The results of this section apply as well
+ in the more general
+setting of distributionally controlled 
+representations that were introduced in \cite{abg2}.  
+For clarity's sake, we will only discuss 
+representations given by measure-preserving transformations.)
+Since the measure $\mu$ is finite, 
+we have the following useful direct sum decomposition
+of $L^1(\mu)$:
+$$L^1(\mu)=Y \bigoplus Z,$$
+where 
+$$Y=\{f\in L^1(\mu):\ R_uf=f,\ {\rm for\ all}\ u\in\R\},$$
+and $Z$ is the $L^1(\mu)$-closure of the linear subspace of
+$L^1(\mu)$ spanned by the ranges of the 
+operators $f\mapsto g*_R f$, for all $g\in L^1(\R)$
+such that $\R\setminus \{0\}$ contains the
+support of $\widehat{g}$.  (See \cite[Proposition (3.19)]{abg2}.)
+
+Let $h(t)=\frac{1}{\pi t}$ for $t\neq 0$ denote the 
+Hilbert kernel.  For each $n$,  let $h_n$ denote the $n$th truncate
+$h_n(t)=\frac{1}{\pi t}$ if $\frac{1}{n}<|t|<n$, and
+$h_n(t)=0$ otherwise.  For $f\in L^1(\R)$,
+denote its Hilbert transform by $\widetilde{f}$.
+It is a classical fact that if $f\in H^1(\R)$,
+then $h_n* f\rightarrow \widetilde{f}$ in $L^1(\R)$,
+and in this case, we have $\widetilde{f}=-i f$.
+(Recall that $H^1(\R)$ consists of all functions
+in $L^1(\R)$ with Fourier transform vanishing on $(-\infty,0]$.)
+Since the space $H^1(\R)$ is a Banach space with the
+$L^1(\R)$ norm, it follows from the 
+Uniform Boundedness Principle that there is 
+a positive constant $C$ such that for all
+$n$ and all $f\in H^1(\R)$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\|h_n*f \|_1\leq C\|f\|_1.
+\label{uniform-bdness}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For $f\in L^1(\mu)$, we define the ergodic Hilbert 
+transform of $f$ by
+$$\cH f=\lim_n h_n*_R f\ \mu\ a.e..$$
+It is a well-known consequence of the
+transference methods that the limit exists 
+$\mu$-a.e. and that the
+operator $f\mapsto \cH f$ is of weak type
+$(1,1)$ with weak type norm smaller than the weak
+type $(1,1)$ norm of the Hilbert transform.
+Also, the maximal operator
+$f\mapsto \sup_n\left| h_n*_R f\right|$
+is of weak type
+$(1,1)$ with weak type norm smaller than the
+weak type $(1,1)$ norm of the maximal Hilbert transform
+on $L^1(\R)$.  (See \cite{cal,cw1}, or \cite{abg2}
+for the case of distributionally controlled representations.)
+
+Following Coifman and Weiss \cite{cw2},
+we define the space ergodic $H^1$
+as the class of all functions of the
+form $f+ i \cH f\in L^1(\mu)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We also recall form
+\cite{abg2}, Section 3, the space
+$$\cA (R)=\{f\in L^1(\mu):\ \cH f\in L^1(\mu)\}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A connection between $H^1(\mu)$ and ergodic $H^1$
+is described by the following theorem.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{th1}
+Suppose that $f\in L^1(\mu)$.  Then,\\
+(i)  $f\in H^1(\mu)\Rightarrow f\in \cA(R)$ 
+and $\|\cH f\|_1\leq C\|f\|_1$ where $C$ is as in 
+(\ref{uniform-bdness});\\
+(ii)  $f\in \cA(R)\Rightarrow f+i\cH f\in H^1(\mu)$.\\ 
+\label{th1}
+\end{th1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We present
+the proof in a sequence
+of steps.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{sec4prop1}
+If $f\in H^1(\mu)$,
+then
+$$\sup_n\|h_n*_Rf\|_{L^1(\mu)}\leq C\|f\|_{L^1(\mu)},$$
+where $C$ is as in (\ref{uniform-bdness}).
+\label{sec4prop1}
+\end{sec4prop1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}  As a consequence of 
+Proposition \ref{prop-spectrum}(ii),
+we have that $H^1(\mu)$ is a Banach space
+with the $L^1(\mu)$-norm.  The desired result is now a 
+ simple consequence
+of the Uniform Boundedness Principle,
+Theorem \ref{single}, and (\ref{uniform-bdness}).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof of Theorem \ref{th1}(i).}  
+Let $f\in H^1(\mu)$.  
+We have $h_n*_Rf\rightarrow \cH f$
+$\mu$-a.e.  Applying Proposition \ref{sec4prop1}
+and Fatou's Lemma, we get the desired conclusions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+
+Toward the proof of 
+Theorem \ref{th1}(ii), we present the following result.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{sec4prop3}
+Suppose that $f\in H^1(\mu)$,
+and write $f=f_1+f_2$, where 
+$f_1\in Y$ and $f_2\in Z$, then $f_2\in H^1(\mu)$.
+\label{sec4prop3}
+\end{sec4prop3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}  According to 
+Proposition \ref{proposition2-sec2}(iv),
+it is enough to show that for 
+every $h\in \Im ([0,\infty))$ we have
+$h*_Rf_2=0$.  Note that for $h\in \Im ([0,\infty))$,
+we have $\int_\R h dx =\widehat{h}(0)= 0$.
+Now, $h*_Rf_2=h*_R f-h*_R f_1=h*_R f- f_1\int_\R h dx =h*_R f$.
+Since $f\in H^1(\mu)$, 
+we have by Proposition \ref{proposition2-sec2}(iv)
+$h*_Rf=0$ and so $h*_Rf_2=0$.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Before we return to the proof of Theorem \ref{th1} we 
+recall certain properties from \cite{abg2}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{remark1}
+ (i) 
+ Suppose that
+$f\in \cA(R)$, then $h_n*_Rf\rightarrow \cH f $
+in $L^1(\mu)$ (see \cite[Theorem (3.24)]{abg2}).\\
+(ii)  Following \cite[Definition (3.29)]{abg2},
+let 
+$$H^1(R)=\{f\in L^1(\mu):\ f=i\cH f\}.$$
+Then, according to \cite[Theorem (3.34)]{abg2},
+we have
+$$H^1(R)=\{f+i\cH f:\ f\in Z,\ {\rm and}\ 
+\cH f\in L^1(\mu)\}.$$
+(iii)  Using (i), we see that
+if $f\in H^1(R)$, then $f\in \cA (R)$
+and hence, $\mu$-a.\ e.\ , we have
+$$f=i \cH f = i \lim_n h_n*_R f.$$
+\label{remark1}
+\end{remark1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof of Theorem \ref{th1}(ii).}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+We first show that $H^1(R)\subset H^1(\mu)$.
+Let $f\in H^1(R)$.  By Proposition \ref{proposition2-sec2},
+it is enough to show that for every
+$h\in \Im ([0,\infty))$ we have $h*_Rf=0$.
+For $h\in \Im([0,\infty))$,
+we easily see that $\widetilde{h}\in L^1(\R)$ and
+$\widetilde{h}=i h$.  Hence, 
+$h_n*h\rightarrow \widetilde{h}=ih$ in $L^1(\R)$.
+Now, using Remark \ref{remark1}(iii) and convergence in $L^1(\mu)$, 
+we can write
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray*}
+h*_R f	&=&	h*_R(i\cH f)\\
+	&=& 	i h*_R (\lim_n h_n*_R f)\\
+	&=&	i \lim_n(h*h_n)*_R f=-h*_Rf,
+\end{eqnarray*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+implying that $h*_Rf=0\ \mu$-a.e., and 
+so $H^1(R)\subset H^1(\mu)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Now suppose that $f\in \cA(R)$ and write $f=f_1+f_2$ with
+$f_1\in Y, f_2\in Z$.  We have
+$f+i\cH f=f_1 + f_2+i \cH f_2$.
+We have $f_2+ i\cH f_2\in H(R)\subset H^1(\mu)$.
+Also, we trivially have
+$f_1\in H^1(\mu)$.  Hence it follows that
+$f+i\cH f\in H^1(\mu)$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Ergodic $H^1$}  We end the paper by mentioning how Theorem 
+\ref{main-theorem} 
+can be used to simplify some of the proofs in the 
+maximal characterization of ergodic $H^1$ in \cite{cw2}.
+As is done in \cite{cw2}, we introduce a
+ maximal convolution operator $M$ that
+characterizes $H^1(\R)$ and such that the kernels of 
+the convolution operators have compact support.  
+This operator can be defined by the dilates 
+of a single smooth function with compact support
+(see \cite[Section 1]{cw2}).  For real-valued functions
+$f\in L^1(\R)$, we have
+\begin{equation}
+c_1 \|Mf\|_1\leq \|f\|_1 +\|\widetilde{f}\|_1\leq c_2\|Mf\|_1,
+\label{characterization}
+\end{equation}
+where $c_1$ and $c_2$ are absolute constants.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $M^\sharp$ denote the transferred 
+maximal operator defined on $L^1(\mu)$.
+Coifman and Weiss \cite{cw2} proved that there are
+positive constants $c_1$ and $c_2$ such that
+for all real-valued $f\in L^1(\mu)$, we have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+c_1 \|M^\sharp f\|_1\leq \|f\|_1 +\|\cH f\|_1\leq 
+c_2\|M^\sharp f\|_1.
+\label{tranferred}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The second inequality in (\ref{tranferred}) follows 
+directly using the transference methods, as shown in
+\cite{cw2}, following Lemma 2.7.  
+The proof of the first inequality in (\ref{tranferred})
+as presented in \cite{cw2} is much more involved.
+We will show here that this inequality is a 
+simple consequence of Theorem \ref{main-theorem}
+and the first inequality in (\ref{characterization}).  
+Indeed, suppose that
+$f$ is a real-valued function in 
+$L^1(\mu)$ and $\cH f$ is also in $L^1(\mu)$.  Then,
+by Theorem \ref{th1}, $f + i \cH f\in H^1(\mu)$.
+Note that for $f\in H^1(\R)$, 
+the first inequality in (\ref{characterization})
+states that 
+\begin{equation}
+c_1\|Mf\|_1\leq 2 \|f\|_1.
+\label{*4-12}
+\end{equation}
+Applying
+Theorem \ref{main-theorem} with
+$f+i\cH f\in H^1(\mu)$, and using
+(\ref{*4-12}) and Theorem \ref{th1}(i), we get
+$$
+\|M^\sharp f\|_1
+		\leq
+\|M^\sharp( f+i\cH f)\|_1	
+		\leq
+ 2c_1^{-1}\|f + i \cH f\|_1	
+		\leq
+ 2c_1^{-1}( 1+C) \|f\|_1.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%which is what we want.
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\bf Acknowledgements}  The work of the authors was supported
+by separate grants from the National Science Foundation (U.S.A.).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{Dillo 83}
+
+\bibitem{abg1}  N.\ Asmar, E.\ Berkson, and T.\ A.\ Gillespie,
+{\em Transference of strong type maximal 
+inequalities by separation-preserving representation}, 
+Amer.\ J. Math.\  {\bf 113} (1991),  47--74.
+
+\bibitem{abg2}  N.\ Asmar, E.\ Berkson, and T.\ A.\ Gillespie,
+{\em Distributional control and generalized analyticity},
+Integral Equations and Operator Theory {\bf 14} (1991), 311--341.
+
+%\bibitem{ams1}  N.\ Asmar and S.\ Montgomery-Smith,
+%{\em Hahn's Embedding Theorem for orders
+%and harmonic analysis on groups with ordered duals},
+%to appear in Colloq. Math.
+
+%\bibitem{bgm1}  E.\ Berkson, T.\ A.\ Gillespie, and P.\ S.\ Muhly,
+%{\em $L^p$-multiplier transference induced by
+%representations in Hilbert space}, Studia Math. {\bf 94}
+%(1989), 51-61. 
+
+%\bibitem{bp}  C.\ Bessaga and A.\ Pe\l czy\'nski, 
+%{\em On bases and unconditional convergence of series in Banach spaces}, 
+%Studia Math. {\bf 17} (1958), 151--164.
+
+%\bibitem{bukh}  A.\ V.\ Bukhvalov, 
+%{\em On the analytic Radon-Nikod\'ym property}, 
+%in ``Function Spaces'', Proceedings of the 
+%Second International Conference, Pozna\'n, 
+%Teubner-Texte zur Mathematik, Band {\bf 120}, Leipzig 1991, 211-228. 
+
+%\bibitem{bd}  A.\ V.\ Bukhvalov and A.\ A.\ Danilevich,
+%{\em Boundary properties of analytic and harmonic functions 
+%with values in Banach space}, Mat.\ Zametki {\bf 31} 
+%(1982), 203--214.  English Translation:  Mat. 
+%Notes {\bf 31} (1982) , 104--110.
+
+\bibitem{cal}  A.\ Calder\'{o}n, 
+{\em Ergodic theory and translation-invariant operators}, 
+Proc.\ Nat.\ Acad.\ Sci.\ , {\bf 157}\ (1971), 137--153.
+
+%\bibitem{cc}  A.\ Calder\'{o}n and O.\ N.\ Capri,
+%{\em On the convergence in $L^1$ of singular integrals},
+%Studia Math. {\bf 78} (1984), 321--327.
+
+\bibitem{cs}  M.\ J.\ Carro and J.\ Soria,
+{\em Transference theory on Hardy and Sobolev spaces},
+preprint.
+
+\bibitem{cw1}  R.\ R.\ Coifman and G.\ Weiss,
+``Transference methods in analysis'', Regional 
+Conference Series in Math. {\bf 31}, Amer.\ Math.\ Soc., 
+Providence, R.\ I.\, 1977.
+
+\bibitem{cw2}  R.\ R.\ Coifman and G.\ Weiss,
+{\em Maximal functions on $H^p$ spaces defined by 
+ergodic transformations}, 
+Proc.\ Nat.\ Acad.\ Sci.\ , (U.\ S.\ A.) {\bf 70}\ (1973), 1761--1763.
+
+%\bibitem{cw3}  R.\ R.\ Coifman and G.\ Weiss,
+%{\em Operators associated with representations of amenable groups,
+%singular integrals induced by ergodic flows, the rotation method 
+%and multipliers}, Studia Math. {\bf 47} (1973), 285--303.
+
+%\bibitem{dow}  H.\ R.\ Dowson, ``Spectral Theory of
+%Linear Operators'',  London Math. Soc. Monographs 12,
+%Academic Press, New York 1978. 
+
+%\bibitem{deleeuwglicksberg}  K.\ De Leeuw and I.\ Glicksberg, 
+%{\em Quasi-invariance and measures on compact groups},
+%Acta Math., {\bf 109} (1963), 179--205.
+
+%\bibitem{eg}    R.\ E.\ Edwards, and G.\ I.\ Gaudry,
+%``Littlewood-Paley and Multiplier Theory'', 
+%Ergebnisse der Mathematik
+%und ihrer Grenzgebiete, Springer-Verlag, No. 90,  
+%Berlin, 1977.
+
+\bibitem{fs}    C.\ Fefferman, and E.\ Stein
+{\em $H^p$-spaces in several variables},  Acta Math, 
+{\bf 129}, (1972), 137--193.
+
+%\bibitem{forelli}  F.\ Forelli,
+%{\em Analytic and quasi-invariant measures}, 
+%Acta Math., {\bf 118} (1967), 33--59.
+
+
+%\bibitem{hl1}  H.\ Helson and D.\ Lowdenslager,
+%{\em Prediction theory and Fourier series in several variables}, 
+%Acta Math.\ {\bf 99}\ (1958), 165--202.
+
+%\bibitem{hl2}  H.\ Helson and D.\ Lowdenslager,
+%{\em Prediction theory and Fourier series in several variables II}, 
+%Acta Math.\ {\bf 106}\ (1961), 175--212.
+
+%\bibitem{hr1} E.\ Hewitt and K.\ A.\ Ross,
+%``Abstract Harmonic Analysis I,''  $2^{nd}$ Edition, Grundlehren der
+%Math.\ Wissenschaften, Band 115, Springer--Verlag, Berlin 1979.
+
+\bibitem{hr2} E.\ Hewitt and K.\ A.\ Ross,
+``Abstract Harmonic Analysis II,'' Grundlehren der
+Math.\ Wissenschaften in Einzeldarstellungen, Band
+152, Springer--Verlag, New York, 1970.
+
+%\bibitem{kt} C.\ Kenig and P.\ Tomas,
+%{\em Maximal operators defined by Fourier multipliers},
+%Studia Math. {\bf 68} (1980), 79--83.
+
+\bibitem{ll} Z.\ Liu and S.\ Lu,
+{\em Transference and restriction of maximal 
+multiplier operators on
+Hardy spaces}, Studia Math. {\bf 105} (1993), 121--134.
+
+%\bibitem{rud} W. \ Rudin, ``Fourier Analysis on Groups,'' 
+%Wiley Interscience Publication, 1962.
+
+
+%\bibitem{stein} E. \ Stein, ``Harmonic Analysis:
+%Real-Variable Methods, Orthogonality, and Oscillatory Integrals,'' 
+%Princeton Univ. Press, Princeton, N.\ J., 1993.
+
+%\bibitem{sw} E. \ Stein and G.\ Weiss, ``Introduction 
+%to Fourier Analysis on Euclidean Spaces,'' Princeton Math. 
+%Series, No. 32, Princeton Univ. Press, Princeton, N.\ J., 1971.
+
+\bibitem{dlt} A.\ de la Torre,
+{\em Ergodic $H^1$}, 
+Bol. Soc. Mat. Mexicana, {\bf 22} (1977), 10--22.
+
+%\bibitem{yosida} K. Yosida,
+%``Functional Analysis,'' 6th Edition,
+%Grundlehren der
+%Math.\ Wissenschaften in Einzeldarstellungen, Band
+%123, Springer--Verlag, New York, 1980.
+
+
+%\bibitem{yud}  V.\ A. \ Yudin, {\em On Fourier sums in}\ $L^p$,
+%Proc. Steklov Inst. Math. {\bf 180} (1989) 279--280. 
+
+%\bibitem{zyg}  A.\ Zygmund,
+%`` Trigonometric series'', 2nd Edition, 2 vols.\ , 
+%Cambridge University Press, 1959.
+\end{thebibliography}
+\end{document}
+
+%%%%%%%%%%%%
+%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

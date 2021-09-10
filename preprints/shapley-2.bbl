@@ -1,0 +1,121 @@
+\begin{thebibliography}{18}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Aliprantis and Border(2006)]{AlBo06}
+Charalambos~D. Aliprantis and Kim~C. Border.
+\newblock \emph{Infinite dimensional analysis}.
+\newblock Springer, Berlin, third edition edition, 2006.
+\newblock A hitchhiker's guide.
+
+\bibitem[Bowers and Kalton(2014)]{Bowers14}
+Adam Bowers and Nigel~J. Kalton.
+\newblock \emph{An introductory course in functional analysis}.
+\newblock Universitext. Springer, New York, 2014.
+\newblock With a foreword by Gilles Godefroy.
+
+\bibitem[Castro et~al.(2009)Castro, G\'omez, and Tejada]{Castro09}
+Javier Castro, Daniel G\'omez, and Juan Tejada.
+\newblock Polynomial calculation of the {S}hapley value based on sampling.
+\newblock \emph{Comput. Oper. Res.}, 36\penalty0 (5):\penalty0 1726--1730,
+  2009.
+
+\bibitem[Clark(2019)]{ClarkDis}
+Jacob~N. Clark.
+\newblock \emph{Shapley-like values without symmetry}.
+\newblock PhD thesis, University of Missouri-Columbia, May 2019.
+
+\bibitem[Derks(1987)]{Derks87}
+Jean Derks.
+\newblock Decomposition of games with non-empty core into veto-controlled
+  simple games.
+\newblock \emph{Operations-Research-Spektrum}, 9\penalty0 (2):\penalty0 81--85,
+  Jun 1987.
+
+\bibitem[Derks(2005)]{Derks05}
+Jean Derks.
+\newblock A new proof for weber's characterization of the random order values.
+\newblock \emph{Mathematical Social Sciences}, 49\penalty0 (3):\penalty0
+  327--334, May 2005.
+
+\bibitem[Fatima et~al.(2008)Fatima, Wooldridge, and Jennings]{Fatima08}
+Shaheen~S. Fatima, Michael Wooldridge, and Nicholas~R. Jennings.
+\newblock A linear approximation method for the {S}hapley value.
+\newblock \emph{Artificial Intelligence}, 172\penalty0 (14):\penalty0
+  1673--1699, 2008.
+
+\bibitem[G{\'{o}}mez et~al.(2003)G{\'{o}}mez, Gonz{\'{a}}lez{-}Arang{\"{u}}ena,
+  Manuel, Owen, del Pozo, and Tejada]{GGMOPT03}
+Daniel G{\'{o}}mez, Enrique Gonz{\'{a}}lez{-}Arang{\"{u}}ena, Conrado Manuel,
+  Guillermo Owen, M{\'{o}}nica del Pozo, and Juan Tejada.
+\newblock Centrality and power in social networks: a game theoretic approach.
+\newblock \emph{Mathematical Social Sciences}, 46\penalty0 (1):\penalty0
+  27--54, 2003.
+
+\bibitem[Maschler et~al.(2013)Maschler, Solan, and Zamir]{Maschler13}
+Michael Maschler, Eilon Solan, and Shmuel Zamir.
+\newblock \emph{Game theory}.
+\newblock Cambridge University Press, Cambridge, 2013.
+\newblock Translated from Hebrew by Ziv Hellman and edited by Mike Borns.
+
+\bibitem[Mertens(2002)]{Mertens02}
+Jean-Fran{\c{c}}ois Mertens.
+\newblock Some other economic applications of the value.
+\newblock In Robert Aumann and Sergiu Hart, editors, \emph{Handbook of Game
+  Theory with Economic Applications Volume 3}, pages 2185--2201. Elsevier,
+  2002.
+
+\bibitem[Monderer and Samet(2002)]{MonSam02}
+Dov Monderer and Dov Samet.
+\newblock Variations on the shapley value.
+\newblock In Robert Aumann and Sergiu Hart, editors, \emph{Handbook of Game
+  Theory with Economic Applications Volume 3}, pages 2055--2076. Elsevier,
+  2002.
+
+\bibitem[Myerson(1977)]{Myerson77}
+Roger~B. Myerson.
+\newblock Graphs and cooperation in games.
+\newblock \emph{Mathematics of Operations Research}, 2\penalty0 (3):\penalty0
+  225--229, Aug 1977.
+
+\bibitem[Narayanam and Narahari(2011)]{NaNa11}
+Ramasuri Narayanam and Yadati Narahari.
+\newblock A shapley value-based approach to discover influential nodes in
+  social networks.
+\newblock \emph{{IEEE} Trans. Automation Science and Engineering}, 8\penalty0
+  (1):\penalty0 130--147, 2011.
+
+\bibitem[Owen(1971/72)]{Owen72}
+Guillermo Owen.
+\newblock Multilinear extensions of games.
+\newblock \emph{Management Sci.}, 18:\penalty0 64--79, 1971/72.
+
+\bibitem[Papapetrou et~al.(2011)Papapetrou, Gionis, and Mannila]{PaGi11}
+Panagiotis Papapetrou, Aristides Gionis, and Heikki Mannila.
+\newblock A shapley value approach for influence attribution.
+\newblock \emph{Lecture Notes in Computer Science}, pages 549--564, 2011.
+
+\bibitem[Shapley(1953)]{Shapley53}
+Lloyd~S. Shapley.
+\newblock A value for {\(n\)}-person games.
+\newblock In Harold~W. Kuhn and Albert~W. Tucker, editors, \emph{Contributions
+  to the theory of games, vol. 2}, Annals of Mathematics Studies, no. 28, pages
+  307--317. Princeton University Press, Princeton, N. J., 1953.
+
+\bibitem[Shapley and Shubik(1954)]{ShaShu54}
+Lloyd~S. Shapley and Martin Shubik.
+\newblock A method for evaluating the distribution of power in a committee
+  system.
+\newblock \emph{American Political Science Review}, 48\penalty0 (03):\penalty0
+  787--792, Sep 1954.
+
+\bibitem[Weber(1988)]{Weber78}
+Robert~J. Weber.
+\newblock Probabilistic values for games.
+\newblock In Alvin~E. Roth, editor, \emph{The Shapley Value: Essays in Honor of
+  Lloyd S. Shapley}, pages 101--119. Cambridge University Press, 1988.
+
+\end{thebibliography}

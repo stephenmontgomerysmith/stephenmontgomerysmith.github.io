@@ -1,0 +1,2230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Analyticity</TITLE>
+<META NAME="description" CONTENT="Analyticity">
+<META NAME="keywords" CONTENT="helson-lowdenslager5">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="helson-lowdenslager5.css">
+
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="helson-lowdenslager5.html">
+<LINK REL="next" HREF="node4.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html39"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html37"
+  HREF="helson-lowdenslager5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html31"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html40"
+  HREF="node4.html">Homomorphism theorems</A>
+<B> Up:</B> <A NAME="tex2html38"
+  HREF="helson-lowdenslager5.html">Decomposition of analytic measures</A>
+<B> Previous:</B> <A NAME="tex2html32"
+  HREF="node2.html">Orders on locally compact</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00030000000000000000">
+Analyticity</A>
+</H1>
+
+<P>
+We continue with the notation of the previous section.
+Using the order structure on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> we define
+some classes of analytic functions on <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$">:
+<BR>
+<DIV ALIGN="CENTER"><A NAME="h1g"></A><A NAME="h10g"></A><!-- MATH
+ \begin{eqnarray}
+H^1(G)&=&\left\{
+f\in L^1(G):  \widehat{f}=0\ {\rm on}\ (-P)\setminus\{0\}
+\right\};
+\\
+H^1_0(G)&=&\left\{
+f\in L^1(G):  \widehat{f}=0\ {\rm on}\ -P
+\right\};
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+(14)</TD>
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="58" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.png"
+ ALT="$\displaystyle H^1(G)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="307" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.png"
+ ALT="$\displaystyle \left\{
+f\in L^1(G): \widehat{f}=0\ {\rm on}\ (-P)\setminus\{0\}
+\right\};$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+(15)</TD>
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="58" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="$\displaystyle H^1_0(G)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="254" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img155.png"
+ ALT="$\displaystyle \left\{
+f\in L^1(G): \widehat{f}=0\ {\rm on}\ -P
+\right\};$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+and
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="hinfg"></A><!-- MATH
+ \begin{equation}
+H^\infty(G)=\left\{
+f\in L^\infty(G):  \int_G f(x)g(x)dx=0 \ {\rm for\ all}\ g\in H^1_0(G)
+\right\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(16)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="533" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="$\displaystyle H^\infty(G)=\left\{ f\in L^\infty(G): \int_G f(x)g(x)dx=0 \ {\rm for\ all}\ g\in H^1_0(G) \right\}.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We clearly have
+<!-- MATH
+ \begin{displaymath}
+H^1(G)=\left\{
+f\in L^1(G):  \widehat{f}=0\ {\rm on}\ \overline{(-P)\setminus\{0\}}
+\right\}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="386" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$\displaystyle H^1(G)=\left\{
+f\in L^1(G): \widehat{f}=0\ {\rm on}\ \overline{(-P)\setminus\{0\}}
+\right\}.$">
+</DIV><P></P>
+We can now give the definition of analytic measures in 
+<!-- MATH
+ ${\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$ {\cal M}_T(\Sigma)$">.
+
+<P>
+<P>
+<DIV><B>Definition  3.1</B> &nbsp; 
+<I>Let <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> be a sup path attaining representation
+of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> by isomorphisms of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$">.  
+A measure <!-- MATH
+ $\mu\in {\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$"> is 
+called weakly analytic if the mapping <!-- MATH
+ $t\mapsto T_t\mu(A)$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$ t\mapsto T_t\mu(A)$"> 
+is in <!-- MATH
+ $H^\infty(G)$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$ H^\infty(G)$"> for every <!-- MATH
+ $A\in\Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">.</I></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Definition  3.2</B> &nbsp; 
+<I>Recall the <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$">-spectrum of a 
+weakly measurable <!-- MATH
+ $\mu\in {\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$">, 
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="spect"></A><!-- MATH
+ \begin{equation}
+{\rm spec}_T (\mu)= \bigcap_{f\in {\cal I}(\mu)}
+\left\{
+\chi\in\Gamma:\ \ \widehat{f}(\chi)=0
+\right\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(17)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="329" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.png"
+ ALT="$\displaystyle {\rm spec}_T (\mu)= \bigcap_{f\in {\cal I}(\mu)} \left\{ \chi\in\Gamma:\ \ \widehat{f}(\chi)=0 \right\}.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+A measure <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mu$"> in <!-- MATH
+ ${\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$ {\cal M}_T(\Sigma)$"> is called <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$">-analytic if
+<!-- MATH
+ ${\rm spec}_T (\mu)\subset \overline{P}$
+ -->
+<IMG
+ WIDTH="116" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$ {\rm spec}_T (\mu)\subset \overline{P}$">.
+</I>
+<P>
+<I><A NAME="weakly-analytic"></A></I></DIV><P></P>
+
+<P>
+That the two definitions of analyticity are
+equivalent will be shown later in this section.
+
+<P>
+Since <!-- MATH
+ ${\cal I}(\mu)$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$ {\cal I}(\mu)$"> is translation-invariant,
+it follows readily that 
+for all <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ t\in G$">,
+<!-- MATH
+ \begin{displaymath}
+{\cal I}(T_t\mu)={\cal I}(\mu),
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="127" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.png"
+ ALT="$\displaystyle {\cal I}(T_t\mu)={\cal I}(\mu),$">
+</DIV><P></P>
+and hence
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="feb.4.95"></A><!-- MATH
+ \begin{equation}
+{\rm spec}_T (T_t(\mu))={\rm spec}_T (\mu).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(18)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="209" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.png"
+ ALT="$\displaystyle {\rm spec}_T (T_t(\mu))={\rm spec}_T (\mu).$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+We now recall several 
+basic results from 
+spectral theory of bounded functions that will be needed in the sequel.  Our reference is [<A
+ HREF="node7.html#hr2">21</A>, Section 40].  
+If 
+<IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \phi$"> is in <!-- MATH
+ $L^\infty (G)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$ L^\infty(G)$">, write <!-- MATH
+ $\left[ \phi\right]$
+ -->
+<IMG
+ WIDTH="26" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$ \left[ \phi\right]$"> 
+for the smallest weak-* closed translation-invariant subspace of <!-- MATH
+ $L^\infty (G)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$ L^\infty(G)$"> 
+containing <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \phi$">, and let <!-- MATH
+ ${\cal I}([\phi])={\cal I}(\phi)$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$ {\cal I}([\phi])={\cal I}(\phi)$"> 
+denote the closed translation-invariant ideal in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$">:
+<BR><!-- MATH
+ \begin{displaymath}
+{\cal I}(\phi)=\{f\in L^1(G): f*\phi=0\}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="266" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.png"
+ ALT="$\displaystyle {\cal I}(\phi)=\{f\in L^1(G): f*\phi=0\}.$">
+</DIV><P></P>
+It is clear that 
+<!-- MATH
+ ${\cal I}(\phi)=\{f\in L^1(G): f*g=0, \forall g\in \left[\phi\right]\}$
+ -->
+<IMG
+ WIDTH="333" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img166.png"
+ ALT="$ {\cal I}(\phi)=\{f\in L^1(G): f*g=0, \forall g\in \left[\phi\right]\}$">. 
+The spectrum of <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \phi$">, denoted by 
+<!-- MATH
+ $\sigma \left[\phi\right]$
+ -->
+<IMG
+ WIDTH="41" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img167.png"
+ ALT="$ \sigma \left[\phi\right]$">, 
+is the set of all continuous characters of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> 
+that belong to <!-- MATH
+ $\left[\phi\right]$
+ -->
+<IMG
+ WIDTH="26" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$ \left[ \phi\right]$">.  
+This closed subset of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is also given by 
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="spec"></A><!-- MATH
+ \begin{equation}
+\sigma \left[\phi\right]=Z({\cal I}(\phi)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(19)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="137" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img168.png"
+ ALT="$\displaystyle \sigma \left[\phi\right]=Z({\cal I}(\phi)).$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(See [<A
+ HREF="node7.html#hr2">21</A>, Theorem (40.5)].)  
+
+<P>
+Recall that a closed subset <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$ E$"> of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is 
+a set of spectral synthesis for <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$">, or an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-set, if and only if
+<!-- MATH
+ ${\cal I}([E])$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.png"
+ ALT="$ {\cal I}([E])$"> is the only ideal in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$"> whose zero set
+is <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$ E$">.  
+
+<P>
+There are various equivalent definitions of <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-sets.
+Here is one that we will use at several occasions.
+<BR><EM>A set 
+<!-- MATH
+ $E\subset \Gamma$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.png"
+ ALT="$ E\subset \Gamma$"> is an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-set if and only if
+every essentially bounded function <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$ g$"> in <!-- MATH
+ $L^\infty(G)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$ L^\infty(G)$">
+with <!-- MATH
+ $\sigma[g]\subset E$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.png"
+ ALT="$ \sigma[g]\subset E$"> is the weak-* limit 
+of linear combinations of characters from <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$ E$">.</EM>
+<BR>(See [<A
+ HREF="node7.html#hr2">21</A>, (40.23) (a)].)  This has 
+the following immediate consequence.
+
+<P>
+<P>
+<DIV><B>Proposition  3.3</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.png"
+ ALT="$ B$"> is an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-set, <!-- MATH
+ $g\in L^\infty(G)$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img175.png"
+ ALT="$ g\in L^\infty(G)$">,
+ and 
+<!-- MATH
+ ${\rm spec}(g)\subset B$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.png"
+ ALT="$ {\rm spec}(g)\subset B$">.  
+(i)  If <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> is in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$"> and 
+<!-- MATH
+ $\widehat{f}=0$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img177.png"
+ ALT="$ \widehat{f}=0$"> on <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.png"
+ ALT="$ B$">, then
+<IMG
+ WIDTH="103" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img178.png"
+ ALT="$ f*g(x)=0$"> for all <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img179.png"
+ ALT="$ x$"> in <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$">.  In particular, 
+</I><!-- MATH
+ \begin{displaymath}
+\int_G f(x) g(-x)\, d\, x =0.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="182" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img180.png"
+ ALT="$\displaystyle \int_G f(x) g(-x)\, d\, x =0.$">
+</DIV><P></P><I>
+(ii)  If <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mu$"> is a measure in <IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ M(G)$">
+with <!-- MATH
+ $\widehat{\mu}=0$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.png"
+ ALT="$ \widehat{\mu}=0$"> on <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.png"
+ ALT="$ B$">, then
+<!-- MATH
+ $\mu*g(x)=0$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img182.png"
+ ALT="$ \mu*g(x)=0$"> for almost all <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img179.png"
+ ALT="$ x$"> in <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$">.
+<A NAME="annihilate"></A></I></DIV><P></P>
+
+<P>
+<B>Proof.</B>&nbsp;&nbsp;&nbsp;&nbsp;Part (i) is a simple consequence of
+[<A
+ HREF="node7.html#hr2">21</A>, Theorems (40.8) and (40.10)].
+We give a proof for the sake of completeness.
+Write <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$ g$"> as the weak-* limit of 
+trigonometric polynomials,
+<!-- MATH
+ $\sum_{\chi\in E} a_\chi \chi(x)$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.png"
+ ALT="$ \sum_{\chi\in E} a_\chi \chi(x)$">,
+ with characters in <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$ E$">.  Then
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\int_G f(x)g(y-x)\, d\,x &=& \lim \int_G
+\sum_{\chi\in E} a_\chi \chi(y)f(x)\chi(-x)\, d\,x\\
+&=&\lim  
+\sum_{\chi\in E} a_\chi \chi(y) \widehat{f}(\chi)=0
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="161" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.png"
+ ALT="$\displaystyle \int_G f(x)g(y-x)\, d\,x$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="260" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img185.png"
+ ALT="$\displaystyle \lim \int_G
+\sum_{\chi\in E} a_\chi \chi(y)f(x)\chi(-x)\, d\,x$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="192" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img186.png"
+ ALT="$\displaystyle \lim
+\sum_{\chi\in E} a_\chi \chi(y) \widehat{f}(\chi)=0$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+ 
+since <!-- MATH
+ $\widehat{f}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.png"
+ ALT="$ \widehat{f}$"> vanishes on <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$ E$">.
+
+<P>
+To prove (ii), assume that <IMG
+ WIDTH="44" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img188.png"
+ ALT="$ \mu*g$"> is not 0 a.e..  
+Then, there is <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$"> such that
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img189.png"
+ ALT="$ f*(\mu*g)$"> is not 0 a.e..  But this contradicts (i),
+since <!-- MATH
+ $f*(\mu*g)=(f*\mu)*g$
+ -->
+<IMG
+ WIDTH="195" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.png"
+ ALT="$ f*(\mu*g)=(f*\mu)*g$">, <IMG
+ WIDTH="45" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$ f*\mu$"> is in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$">,
+and <!-- MATH
+ $\widehat{f*\mu}=0$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img192.png"
+ ALT="$ \widehat{f*\mu}=0$"> on <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.png"
+ ALT="$ B$">.
+
+<P>
+The following is a converse of sorts of Proposition
+<A HREF="#annihilate">3.3</A> and follows easily from definitions.
+
+<P>
+<P>
+<DIV><B>Proposition  3.4</B> &nbsp; 
+<I>Let <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.png"
+ ALT="$ B$"> be a nonvoid closed subset of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">.
+Suppose that  
+<IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> is in <!-- MATH
+ $L^\infty(G)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$ L^\infty(G)$"> and
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="6.1"></A><!-- MATH
+ \begin{equation}
+\int_G f(x)g(x)dx=0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(20)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="156" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img193.png"
+ ALT="$\displaystyle \int_G f(x)g(x)dx=0$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+for all <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$ g$"> in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$"> such that <!-- MATH
+ $\widehat{g}= 0$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.png"
+ ALT="$ \widehat{g}= 0$"> on <IMG
+ WIDTH="35" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="$ -B$">.
+Then <!-- MATH
+ $\sigma[f]\subset B$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img196.png"
+ ALT="$ \sigma[f]\subset B$">.
+<A NAME="prop5.2"></A></I></DIV><P></P>
+
+<B>Proof.</B>&nbsp;&nbsp;&nbsp;&nbsp;Let <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$ \chi_0$"> be any
+element in <!-- MATH
+ $\Gamma\setminus B$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.png"
+ ALT="$ \Gamma\setminus B$">.  We will show that
+<IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$ \chi_0$"> is not in the spectrum of <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> by constructing a 
+function <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img199.png"
+ ALT="$ h$"> in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$"> with <!-- MATH
+ $\widehat{h}(\chi_0)\neq 0$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img200.png"
+ ALT="$ \widehat{h}(\chi_0)\neq 0$"> 
+and <IMG
+ WIDTH="79" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.png"
+ ALT="$ h*f= 0$">.  Let <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img148.png"
+ ALT="$ U$"> be an open neighborhood of  
+<IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$ \chi_0$"> not intersecting <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.png"
+ ALT="$ B$">, and let <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img199.png"
+ ALT="$ h$"> be in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$"> such that
+<!-- MATH
+ $\widehat{h}$
+ -->
+<IMG
+ WIDTH="15" HEIGHT="22" ALIGN="BOTTOM" BORDER="0"
+ SRC="img202.png"
+ ALT="$ \widehat{h}$"> is equal to 1 at <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$ \chi_0$"> and to 0 outside <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img148.png"
+ ALT="$ U$">.
+Direct computations show that the Fourier transform
+of the function <!-- MATH
+ $g:\ \ t\mapsto h(x-t)$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img203.png"
+ ALT="$ g:\ \ t\mapsto h(x-t)$">, when evaluated at
+<!-- MATH
+ $\chi\in\Gamma$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.png"
+ ALT="$ \chi\in\Gamma$">, gives <!-- MATH
+ $\overline{\chi(x)}\widehat{h}(-\chi)$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img205.png"
+ ALT="$ \overline{\chi(x)}\widehat{h}(-\chi)$">,
+and hence it vanishes on <IMG
+ WIDTH="35" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="$ -B$">.  
+It follows from (<A HREF="#6.1">20</A>) that <IMG
+ WIDTH="79" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.png"
+ ALT="$ h*f= 0$">, 
+which completes the proof.
+<BR>
+<P>
+A certain class of <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-sets, known as the 
+Calder&#243;n sets, or <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-sets,
+is particularly useful to us.
+These are defined as follows.
+A subset <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$ E$"> of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is 
+called a <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-set if every <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> in 
+<IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$"> with Fourier transform
+vanishing on <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$ E$"> can be approximated
+in the <IMG
+ WIDTH="25" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img206.png"
+ ALT="$ L^1$">-norm by functions of the
+form <IMG
+ WIDTH="45" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img207.png"
+ ALT="$ h*f$"> where <!-- MATH
+ $h\in L^1(G)$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.png"
+ ALT="$ h\in L^1(G)$"> and <!-- MATH
+ $\widehat{h}$
+ -->
+<IMG
+ WIDTH="15" HEIGHT="22" ALIGN="BOTTOM" BORDER="0"
+ SRC="img202.png"
+ ALT="$ \widehat{h}$"> vanishes on
+an open set containing <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$ E$">.  
+<BR><IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-sets enjoy the following properties
+(see [<A
+ HREF="node7.html#hr2">21</A>, (39.39)] or [<A
+ HREF="node7.html#rudin">22</A>, Section 7.5]).  
+
+<UL>
+<LI>Every <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-set is an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-set.
+</LI>
+<LI>Every closed subgroup of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is a <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-set.
+</LI>
+<LI>The empty set is a <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-set.    
+</LI>
+<LI>If the boundary of a set <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ A$"> is a <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-set,
+then <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ A$"> is a <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-set.  
+</LI>
+<LI>Finite unions of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-sets are <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-sets.
+</LI>
+</UL>
+
+<P>
+Since closed subgroups are <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-sets, we conclude that
+<!-- MATH
+ $\overline{P} \cap \overline{(-P)}$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.png"
+ ALT="$ \overline{P} \cap \overline{(-P)}$">,
+and <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ C_\alpha$">, for all <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img210.png"
+ ALT="$ \alpha$">,
+are <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-sets.  
+&gt;From the definition of <!-- MATH
+ $S_{\alpha_0}$
+ -->
+<IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.png"
+ ALT="$ S_{\alpha_0}$">, (<A HREF="node2.html#alpha0slice">13</A>),
+and the fact that <!-- MATH
+ $C_{\alpha_0}$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.png"
+ ALT="$ C_{\alpha_0}$"> is open and closed, it 
+follows that the boundary of <!-- MATH
+ $S_{\alpha_0}$
+ -->
+<IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.png"
+ ALT="$ S_{\alpha_0}$"> is the 
+closed subgroup <!-- MATH
+ $\psi_{\alpha_0}^{-1}(0)\cap C_{\alpha_0}$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img212.png"
+ ALT="$ \psi_{\alpha_0}^{-1}(0)\cap C_{\alpha_0}$">.
+Hence <!-- MATH
+ $S_{\alpha_0}$
+ -->
+<IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.png"
+ ALT="$ S_{\alpha_0}$"> is a <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-set.
+For <!-- MATH
+ $\alpha\neq \alpha_0$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.png"
+ ALT="$ \alpha\neq\alpha_0$">, the set
+<IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.png"
+ ALT="$ S_\alpha$"> is open and closed,
+and so it has 
+empty boundary, and thus it is a <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-set.  Likewise
+<!-- MATH
+ $C_\alpha\setminus D_\alpha$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.png"
+ ALT="$ C_\alpha\setminus D_\alpha$"> is a <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-set for all
+<!-- MATH
+ $\alpha\neq \alpha_0$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.png"
+ ALT="$ \alpha\neq\alpha_0$">.  
+&gt;From this we conclude that
+arbitrary unions of <IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.png"
+ ALT="$ S_\alpha$"> and <!-- MATH
+ $C_\alpha\setminus D_\alpha$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.png"
+ ALT="$ C_\alpha\setminus D_\alpha$">
+are <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-sets, because an arbitrary union of
+such sets, not including the index <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.png"
+ ALT="$ \alpha_0$">, is open and closed,
+and so it is a <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-set.  
+<BR>
+We summarize our findings as follows.
+<P>
+<DIV><B>Proposition  3.5</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.png"
+ ALT="$ P$"> is a measurable order on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">.  
+We have:
+<BR>(i)  <!-- MATH
+ $\overline{P}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img145.png"
+ ALT="$ \overline{P}$"> and <!-- MATH
+ $\overline{(-P)}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img214.png"
+ ALT="$ \overline{(-P)}$"> are <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-sets;
+<BR>(ii) <IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.png"
+ ALT="$ S_\alpha$"> is a <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-set for all <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img210.png"
+ ALT="$ \alpha$">;
+<BR>(iii)  arbitrary unions of <IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.png"
+ ALT="$ S_\alpha$"> and <!-- MATH
+ $C_\alpha\setminus D_\alpha$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.png"
+ ALT="$ C_\alpha\setminus D_\alpha$">
+are <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">-sets.
+<A NAME="prop5.1"></A></I></DIV><P></P>
+
+<P>
+As an immediate application, we
+have the following characterizations.
+<P>
+<DIV><B>Corollary  3.6</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> is in <!-- MATH
+ $L^\infty(G)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$ L^\infty(G)$">,
+then 
+<BR>(i)  <!-- MATH
+ $\sigma[f] \subset S_\alpha$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img215.png"
+ ALT="$ \sigma[f] \subset S_\alpha$"> if and only if 
+<!-- MATH
+ $\int_G f(x) g(x) d x =0$
+ -->
+<IMG
+ WIDTH="154" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img216.png"
+ ALT="$ \int_G f(x) g(x) d x =0$"> for all 
+<!-- MATH
+ $g\in L^1(G)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.png"
+ ALT="$ g\in L^1(G)$"> such that <!-- MATH
+ $\widehat{g}=0$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.png"
+ ALT="$ \widehat{g}= 0$"> on <IMG
+ WIDTH="40" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.png"
+ ALT="$ -S_\alpha$">;
+<BR>(ii)  <!-- MATH
+ $\sigma[f] \subset \Gamma\setminus C_\alpha$
+ -->
+<IMG
+ WIDTH="116" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.png"
+ ALT="$ \sigma[f] \subset \Gamma\setminus C_\alpha$"> if and only if
+<!-- MATH
+ $\mu_\alpha *f=0$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$ \mu_\alpha *f=0$">;
+<BR>(iii) <!-- MATH
+ $\sigma[f] \subset \overline{P}$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.png"
+ ALT="$ \sigma[f] \subset \overline{P}$"> if and only if
+<!-- MATH
+ $f\in H^\infty(G)$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.png"
+ ALT="$ f\in H^\infty(G)$">.
+<A NAME="cor5.3"></A></I></DIV><P></P>
+
+<P>
+<B>Proof.</B>  Assertions (i) and (iii) are clear from
+Propositions <A HREF="#prop5.1">3.5</A> and <A HREF="#prop5.2">3.4</A>.  
+To prove 
+(ii), use Fubini's Theorem to first establish
+that for any <!-- MATH
+ $g\in L^1(G)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.png"
+ ALT="$ g\in L^1(G)$">, and any <!-- MATH
+ $\mu\in M(G)$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.png"
+ ALT="$ \mu\in M(G)$">, we have
+<!-- MATH
+ \begin{displaymath}
+\int_G (\mu*f)(t) g(t)dt=\int_G f(t)(\mu*g)(t)dt.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="330" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img224.png"
+ ALT="$\displaystyle \int_G (\mu*f)(t) g(t)dt=\int_G f(t)(\mu*g)(t)dt.$">
+</DIV><P></P>
+Now suppose that 
+<!-- MATH
+ $\sigma[f] \subset \Gamma\setminus C_\alpha$
+ -->
+<IMG
+ WIDTH="116" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.png"
+ ALT="$ \sigma[f] \subset \Gamma\setminus C_\alpha$">, and let <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$ g$"> be any function in
+<IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$">.  From Propositions <A HREF="#prop5.1">3.5</A> and 
+<A HREF="#prop5.2">3.4</A>, we have that
+<!-- MATH
+ $\int_G f g dt = 0$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img225.png"
+ ALT="$ \int_G f g dt = 0$"> for all <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$ g$"> with Fourier transform vanishing on
+<!-- MATH
+ $\Gamma\setminus C_\alpha$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img226.png"
+ ALT="$ \Gamma\setminus C_\alpha$">, equivalently, for all <!-- MATH
+ $g=\mu_\alpha*g$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img227.png"
+ ALT="$ g=\mu_\alpha*g$">.
+Hence, <!-- MATH
+ $\int_G f (\mu_\alpha*g) dt = \int_G (\mu_\alpha*f) g dt=0$
+ -->
+<IMG
+ WIDTH="290" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.png"
+ ALT="$ \int_G f (\mu_\alpha*g) dt = \int_G (\mu_\alpha*f) g dt=0$"> for all <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$ g$">
+ in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$">, from which it follows that <!-- MATH
+ $\mu_\alpha * f=0$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$ \mu_\alpha *f=0$">.  
+ The converse is proved similarly, and we omit the details.
+
+<P>
+Aiming for a characterization of weakly analytic measures in terms of their spectra, we present one more result.
+<P>
+<DIV><B>Proposition  3.7</B> &nbsp; 
+<I>Let <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mu$"> be weakly measurable in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$">.
+<BR>(i)  Suppose that <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.png"
+ ALT="$ B$"> is a nonvoid closed
+subset of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> and <!-- MATH
+ ${\rm spec}_T\mu\subset B$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.png"
+ ALT="$ {\rm spec}_T\mu\subset B$">.   
+Then <!-- MATH
+ $\sigma[t\mapsto T_t\mu(A)]\subset B$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.png"
+ ALT="$ \sigma[t\mapsto T_t\mu(A)]\subset B$"> for all 
+<!-- MATH
+ $A\in\Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">.
+<BR>(ii)  Conversely, suppose that <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.png"
+ ALT="$ B$"> is an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-set in <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">
+and that <!-- MATH
+ $\sigma[t\mapsto T_t\mu(A)] \subset B$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.png"
+ ALT="$ \sigma[t\mapsto T_t\mu(A)]\subset B$"> for all
+<!-- MATH
+ $A\in\Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">, then <!-- MATH
+ ${\rm spec}_T\mu \subset B$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.png"
+ ALT="$ {\rm spec}_T\mu\subset B$">.
+<A NAME="prop5.5"></A></I></DIV><P></P>
+
+<B>Proof.</B>  We clearly have 
+<!-- MATH
+ ${\cal I}(\mu)\subset {\cal I}([t\mapsto T_t\mu(A)])$
+ -->
+<IMG
+ WIDTH="197" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img231.png"
+ ALT="$ {\cal I}(\mu)\subset {\cal I}([t\mapsto T_t\mu(A)])$">. 
+Hence, <!-- MATH
+ ${\rm spec}_T \mu=Z({\cal I}(\mu))\supset
+Z({\cal I}([t\mapsto T_t\mu(A)]))=\sigma[t\mapsto T_t\mu(A)],$
+ -->
+<IMG
+ WIDTH="482" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img232.png"
+ ALT="$ {\rm spec}_T \mu=Z({\cal I}(\mu))\supset
+Z({\cal I}([t\mapsto T_t\mu(A)]))=\sigma[t\mapsto T_t\mu(A)],$">
+and (i) follows.  
+<BR>
+Now suppose that <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.png"
+ ALT="$ B$"> is an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-set and let <!-- MATH
+ $g\in L^1(G)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.png"
+ ALT="$ g\in L^1(G)$"> 
+be such that <!-- MATH
+ $\widehat{g}= 0$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.png"
+ ALT="$ \widehat{g}= 0$"> on <IMG
+ WIDTH="35" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="$ -B$">.  Then, for all
+<!-- MATH
+ $A\in\Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">,
+we have from Proposition <A HREF="#prop5.2">3.4</A>:
+<!-- MATH
+ \begin{displaymath}
+\int_G g (t) T_t\mu (A)d t = 0.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="173" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.png"
+ ALT="$\displaystyle \int_G g (t) T_t\mu (A)d t = 0.$">
+</DIV><P></P>
+Equivalently, we
+have that
+<!-- MATH
+ \begin{displaymath}
+\int_G g(-t) T_{-t}\mu(A) dt =0.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="199" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$\displaystyle \int_G g(-t) T_{-t}\mu(A) dt =0.$">
+</DIV><P></P>
+Since the Fourier transform of the function
+<!-- MATH
+ $t\mapsto g(-t)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.png"
+ ALT="$ t\mapsto g(-t)$"> vanishes on <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.png"
+ ALT="$ B$">,
+we see that
+<!-- MATH
+ ${\cal I}(\mu) \supset \{f:\ \ \widehat{f}=0\ {\rm on}\ B\}$
+ -->
+<IMG
+ WIDTH="219" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img236.png"
+ ALT="$ {\cal I}(\mu) \supset \{f:\ \ \widehat{f}=0\ {\rm on}\ B\}$">.
+Thus <!-- MATH
+ $Z({\cal I}(\mu))\subset
+Z(\{f:\ \ \widehat{f}=0\ {\rm on} \ B\})=B$
+ -->
+<IMG
+ WIDTH="317" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img237.png"
+ ALT="$ Z({\cal I}(\mu))\subset
+Z(\{f:\ \ \widehat{f}=0\ {\rm on} \ B\})=B$">,
+which completes the proof.
+
+<P>
+Straightforward applications of Propositions
+<A HREF="#prop5.1">3.5</A> 
+and <A HREF="#prop5.5">3.7</A> yield the 
+desired characterization of weakly analytic measures.
+<P>
+<DIV><B>Corollary  3.8</B> &nbsp; 
+<I>Suppose that <!-- MATH
+ $\mu\in {\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$">.  Then,
+<BR>(i)  <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mu$"> is weakly <IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img238.png"
+ ALT="$ T-$">analytic if and only if
+<!-- MATH
+ ${\rm spec}_T\mu\subset \overline{P}$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img239.png"
+ ALT="$ {\rm spec}_T\mu\subset \overline{P}$"> if and only if
+<!-- MATH
+ $\sigma [t\mapsto T_t\mu (A)]\subset \overline{P}$
+ -->
+<IMG
+ WIDTH="159" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img240.png"
+ ALT="$ \sigma [t\mapsto T_t\mu (A)]\subset \overline{P}$">, for every
+<!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">;  
+<BR>(ii) <!-- MATH
+ ${\rm spec}_T\mu\subset S_\alpha$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img241.png"
+ ALT="$ {\rm spec}_T\mu\subset S_\alpha $"> if and only if 
+<!-- MATH
+ $\sigma[t\mapsto T_t\mu(A)]\subset S_\alpha$
+ -->
+<IMG
+ WIDTH="166" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img242.png"
+ ALT="$ \sigma[t\mapsto T_t\mu(A)]\subset S_\alpha$">
+for every <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">.  
+<BR>(iii) <!-- MATH
+ ${\rm spec}_T\mu\subset C_\alpha$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.png"
+ ALT="$ {\rm spec}_T\mu\subset C_\alpha $"> if and only if 
+<!-- MATH
+ $\sigma[t\mapsto T_t\mu(A)]\subset C_\alpha$
+ -->
+<IMG
+ WIDTH="168" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img244.png"
+ ALT="$ \sigma[t\mapsto T_t\mu(A)]\subset C_\alpha$">
+for every <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">.
+
+<BR>(iv)  <!-- MATH
+ ${\rm spec}_T\mu\subset \Gamma\setminus C_\alpha$
+ -->
+<IMG
+ WIDTH="139" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$ {\rm spec}_T\mu\subset \Gamma\setminus C_\alpha $">
+ if and only if 
+<!-- MATH
+ $\sigma[t\mapsto T_t\mu(A)]\subset \Gamma\setminus  C_\alpha$
+ -->
+<IMG
+ WIDTH="197" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.png"
+ ALT="$ \sigma[t\mapsto T_t\mu(A)]\subset \Gamma\setminus C_\alpha$">
+for every <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">. 
+<A NAME="cor5.7"></A></I></DIV><P></P>
+The remaining results of this section are 
+simple properties of measures in <!-- MATH
+ ${\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$ {\cal M}_T(\Sigma)$"> that will be needed later.  
+Although the statements are 
+direct analogues of classical facts about measures on groups, these
+generalization require in some places the sup path
+attaining property of <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$">.
+
+<P>
+<P>
+<DIV><B>Proposition  3.9</B> &nbsp; 
+<I>Suppose that <!-- MATH
+ $\mu\in {\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$"> and <!-- MATH
+ $\nu\in M(G)$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$ \nu \in M(G)$">.
+Then <!-- MATH
+ ${\rm spec}_T \nu*_T\mu$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.png"
+ ALT="$ {\rm spec}_T \nu*_T\mu$"> is contained in the support
+of <!-- MATH
+ $\widehat{\nu}$
+ -->
+<IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img248.png"
+ ALT="$ \widehat{\nu}$">, and 
+<!-- MATH
+ ${\rm spec}_T \nu*_T\mu\subset {\rm spec}_T \mu$
+ -->
+<IMG
+ WIDTH="183" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img249.png"
+ ALT="$ {\rm spec}_T \nu*_T\mu\subset {\rm spec}_T \mu$">.
+<A NAME="proposition5.8"></A></I></DIV><P></P>
+
+<B>Proof.</B>  
+Given <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$ \chi_0$"> not in the support of <!-- MATH
+ $\widehat{\nu}$
+ -->
+<IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img248.png"
+ ALT="$ \widehat{\nu}$">, to
+conclude that it is also not in the spectrum of 
+<IMG
+ WIDTH="55" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$ \nu*_T\mu$"> it is enough to find a function <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$">
+in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$"> with <!-- MATH
+ $\widehat{f}(\chi_0)=1$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$ \widehat{f}(\chi_0)=1$"> and
+<!-- MATH
+ $f*_T(\nu*_T\mu)=0$
+ -->
+<IMG
+ WIDTH="144" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.png"
+ ALT="$ f*_T(\nu*_T\mu)=0$">.  Simply choose <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> with Fourier transform
+vanishing on the support of <!-- MATH
+ $\widehat{\nu}$
+ -->
+<IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img248.png"
+ ALT="$ \widehat{\nu}$"> and taking value 1
+at <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$ \chi_0$">.  By Fourier inversion, we have
+<IMG
+ WIDTH="79" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.png"
+ ALT="$ f*\nu=0$">, and since
+<!-- MATH
+ $f*_T(\nu*_T\mu)=(f*\nu)*_T\mu$
+ -->
+<IMG
+ WIDTH="229" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$ f*_T(\nu*_T\mu)=(f*\nu)*_T\mu$">, the 
+first part of the proposition follows.
+For the second part,
+we have <!-- MATH
+ ${\cal I}(\mu)\subset {\cal I}(\nu*_T\mu)$
+ -->
+<IMG
+ WIDTH="144" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img254.png"
+ ALT="$ {\cal I}(\mu)\subset {\cal I}(\nu*_T\mu)$">,
+which implies the desired inclusion.
+<BR>
+<P>
+We next prove a property of <!-- MATH
+ $L^\infty(G)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$ L^\infty(G)$"> functions
+similar to the characterization of <IMG
+ WIDTH="25" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img206.png"
+ ALT="$ L^1$"> functions which are
+constant on cosets of a subgroup [<A
+ HREF="node7.html#hr2">21</A>, Theorem (28.55)].
+<P>
+<DIV><A NAME="proposition5.9"><B>Proposition  3.10</B></A> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> is in <!-- MATH
+ $L^\infty(G)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$ L^\infty(G)$"> and that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img255.png"
+ ALT="$ \Lambda$"> is
+an open subgroup of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">.  Let <IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="$ \lambda_0$"> denote
+the normalized Haar measure on the compact group
+<!-- MATH
+ $A(G,\Lambda)$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="$ A(G,\Lambda)$">, the annihilator in <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> of
+<IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img255.png"
+ ALT="$ \Lambda$"> (see [<A
+ HREF="node7.html#hr1">20</A>, (23.23)].  Then, <!-- MATH
+ $\sigma[f]\subset \Lambda$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img258.png"
+ ALT="$ \sigma[f]\subset \Lambda$">
+if and only if <!-- MATH
+ $f=f*\lambda_0$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.png"
+ ALT="$ f=f*\lambda_0$"> a. e.   This is also
+the case if and only if <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> is constant on
+cosets of <!-- MATH
+ $A(G,\Lambda)$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="$ A(G,\Lambda)$">.</I></DIV><P></P>
+
+<B>Proof.</B>  Suppose that the spectrum of <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> is contained 
+in <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img255.png"
+ ALT="$ \Lambda$">.  Since <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img255.png"
+ ALT="$ \Lambda$">
+is an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-set, it follows that <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$">
+is the weak-* limit of trigonometric polynomials with
+spectra contained in <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img255.png"
+ ALT="$ \Lambda$">.  Let <!-- MATH
+ $\{f_\alpha\}$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img260.png"
+ ALT="$ \{f_\alpha\}$"> be a net
+of such trigonometric polynomials converging 
+to <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> weak-*.  Note that, for any <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img210.png"
+ ALT="$ \alpha$">, 
+we have <!-- MATH
+ $\lambda_0*f_\alpha=f_\alpha$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.png"
+ ALT="$ \lambda_0*f_\alpha=f_\alpha$">.  For <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$ g$"> in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$">, we have 
+<!-- MATH
+ \begin{displaymath}
+\lim_\alpha \int_G f_\alpha \overline{g}dx= \int_G f\overline{g}dx.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="204" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.png"
+ ALT="$\displaystyle \lim_\alpha \int_G f_\alpha \overline{g}dx= \int_G f\overline{g}dx.$">
+</DIV><P></P>
+In particular, we have
+<!-- MATH
+ \begin{displaymath}
+\lim_\alpha \int_G f_\alpha
+(\lambda_0*\overline{g})dx= \int_G f
+(\lambda_0*\overline{g})dx,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="306" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img263.png"
+ ALT="$\displaystyle \lim_\alpha \int_G f_\alpha
+(\lambda_0*\overline{g})dx= \int_G f
+(\lambda_0*\overline{g})dx,$">
+</DIV><P></P>
+and so
+<!-- MATH
+ \begin{displaymath}
+\lim_\alpha \int_G (f_\alpha *\lambda_0)
+\overline{g}dx= \int_G (f*\lambda_0)
+\overline{g}dx.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="300" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img264.png"
+ ALT="$\displaystyle \lim_\alpha \int_G (f_\alpha *\lambda_0)
+\overline{g}dx= \int_G (f*\lambda_0)
+\overline{g}dx.$">
+</DIV><P></P>
+Since this holds for any <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$ g$"> in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$">, we conclude that
+<!-- MATH
+ $\lambda_0 *f_\alpha$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img265.png"
+ ALT="$ \lambda_0 *f_\alpha$"> converges weak-* to <!-- MATH
+ $\lambda_0*f$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img266.png"
+ ALT="$ \lambda_0*f$">.
+But <!-- MATH
+ $\lambda_0*f_\alpha=f_\alpha$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.png"
+ ALT="$ \lambda_0*f_\alpha=f_\alpha$">, and <IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.png"
+ ALT="$ f_\alpha$">
+converges weak-* to <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$">, hence 
+<!-- MATH
+ $f*\lambda_0=f$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ f*\lambda_0=f$">.  The remaining assertions of the 
+lemma are easy to prove.  We omit the details.
+
+<P>
+In what follows, we use the symbol <!-- MATH
+ $\mu_\alpha$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ \mu_\alpha$"> to denote the
+normalized Haar measure on the compact subgroup
+<!-- MATH
+ $A(G,C_\alpha)$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.png"
+ ALT="$ A(G,C_\alpha)$">, the annihilator in <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> of <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ C_\alpha$">.  
+This measure is also characterized by its Fourier
+transform:
+<!-- MATH
+ \begin{displaymath}
+\widehat{\mu_\alpha}=1_{C_\alpha}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.png"
+ ALT="$\displaystyle \widehat{\mu_\alpha}=1_{C_\alpha}$">
+</DIV><P></P>
+(see [<A
+ HREF="node7.html#hr1">20</A>, (23.19)]).
+
+<P>
+<P>
+<DIV><B>Corollary  3.11</B> &nbsp; 
+<I>Suppose that <!-- MATH
+ $\mu\in{\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$">.  Then,
+<BR>(i) <!-- MATH
+ ${\rm spec}_T \mu\subset C_\alpha$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.png"
+ ALT="$ {\rm spec}_T\mu\subset C_\alpha $"> if and only if
+<!-- MATH
+ $\mu=\mu_\alpha *_T \mu$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.png"
+ ALT="$ \mu=\mu_\alpha *_T \mu$">;
+<BR>(ii)      <!-- MATH
+ ${\rm spec}_T \mu\subset \Gamma\setminus C_\alpha$
+ -->
+<IMG
+ WIDTH="139" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$ {\rm spec}_T\mu\subset \Gamma\setminus C_\alpha $"> 
+if and only if
+<!-- MATH
+ $\mu_\alpha *_T \mu=0$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$ \mu_\alpha *_T \mu=0$">.
+<A NAME="corollary5.10"></A></I></DIV><P></P>
+
+<B>Proof.</B>  (i)  If <!-- MATH
+ $\mu=\mu_\alpha*_T\mu$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.png"
+ ALT="$ \mu=\mu_\alpha *_T \mu$">,
+then, by Proposition <A HREF="#proposition5.9">3.10</A>, 
+<!-- MATH
+ $\sigma[t\mapsto \mu_\alpha*_T T_t\mu(A)]\subset C_\alpha$
+ -->
+<IMG
+ WIDTH="217" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="$ \sigma[t\mapsto \mu_\alpha*_T T_t\mu(A)]\subset C_\alpha$">.
+Hence by Corollary <A HREF="#cor5.7">3.8</A>, <!-- MATH
+ ${\rm spec}_T \mu\subset C_\alpha$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.png"
+ ALT="$ {\rm spec}_T\mu\subset C_\alpha $">.  
+For the other direction, suppose that 
+<!-- MATH
+ ${\rm spec}_T \mu\subset C_\alpha$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.png"
+ ALT="$ {\rm spec}_T\mu\subset C_\alpha $">.  Then by Corollary <A HREF="#cor5.7">3.8</A>
+we have that the spectrum of the function
+<!-- MATH
+ $t\mapsto T_t\mu (A)$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$ t\mapsto T_t\mu(A)$"> is contained in <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ C_\alpha$">
+for every <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">.  By Proposition <A HREF="#proposition5.9">3.10</A>, 
+we have that
+<!-- MATH
+ \begin{displaymath}
+T_t\mu(A)=\int_{G_\alpha}T_{t-y}\mu (A) d\mu_\alpha=
+T_t(\mu_\alpha*\mu)(A)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="359" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.png"
+ ALT="$\displaystyle T_t\mu(A)=\int_{G_\alpha}T_{t-y}\mu (A) d\mu_\alpha=
+T_t(\mu_\alpha*\mu)(A)$">
+</DIV><P></P>
+for almost all <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ t\in G$">.  Since this holds for all <!-- MATH
+ $A\in\Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">,
+the desired conclusion
+follows from Proposition <A HREF="node1.html#prop_hypa">1.4</A>.
+<BR>
+Part (ii) follows from Corollary <A HREF="#cor5.3">3.6</A> (ii), Proposition
+<A HREF="#prop5.5">3.7</A>(ii), and the fact that <!-- MATH
+ $\Gamma\setminus C_\alpha$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img226.png"
+ ALT="$ \Gamma\setminus C_\alpha$">
+is an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-set.
+<P>
+<DIV><B>Corollary  3.12</B> &nbsp; 
+<I>Suppose that <!-- MATH
+ $\mu\in {\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$"> and 
+<!-- MATH
+ ${\rm spec}_T\mu \subset C_\alpha$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.png"
+ ALT="$ {\rm spec}_T\mu\subset C_\alpha $">,
+and let <!-- MATH
+ $y\in G_\alpha=A(G,C_\alpha)$
+ -->
+<IMG
+ WIDTH="162" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img276.png"
+ ALT="$ y\in G_\alpha=A(G,C_\alpha)$">.  Then
+<!-- MATH
+ $T_y\mu=\mu$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$ T_y\mu=\mu$">.
+<A NAME="cor5.11"></A></I></DIV><P></P>
+
+<B>Proof.</B>  For any <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">, we have from Corollary 
+<A HREF="#corollary5.10">3.11</A>
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+T_y\mu (A)
+		&=&
+T_y(\mu_\alpha *\mu)(A)=\mu_\alpha*T_y\mu(A)\\
+		&=&
+\int_{G_\alpha} T_{y-x} \mu (A) d\mu_\alpha (y)\\
+		&=&
+\int_{G_\alpha}T_{-x}\mu(A) d\mu_\alpha (y)
+=\mu_\alpha *\mu(A)=\mu(A).
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="63" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.png"
+ ALT="$\displaystyle T_y\mu (A)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="239" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.png"
+ ALT="$\displaystyle T_y(\mu_\alpha *\mu)(A)=\mu_\alpha*T_y\mu(A)$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="170" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.png"
+ ALT="$\displaystyle \int_{G_\alpha} T_{y-x} \mu (A) d\mu_\alpha (y)$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="337" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.png"
+ ALT="$\displaystyle \int_{G_\alpha}T_{-x}\mu(A) d\mu_\alpha (y)
+=\mu_\alpha *\mu(A)=\mu(A).$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html39"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html37"
+  HREF="helson-lowdenslager5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html31"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html40"
+  HREF="node4.html">Homomorphism theorems</A>
+<B> Up:</B> <A NAME="tex2html38"
+  HREF="helson-lowdenslager5.html">Decomposition of analytic measures</A>
+<B> Previous:</B> <A NAME="tex2html32"
+  HREF="node2.html">Orders on locally compact</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

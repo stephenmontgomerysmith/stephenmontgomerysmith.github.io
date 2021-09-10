@@ -1,0 +1,4 @@
+tex $1
+dvips $1
+pdftex $1
+rm -f *.log *.aux

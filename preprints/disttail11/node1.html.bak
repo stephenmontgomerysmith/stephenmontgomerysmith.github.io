@@ -1,0 +1,579 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introduction</TITLE>
+<META NAME="description" CONTENT="Introduction">
+<META NAME="keywords" CONTENT="disttail11">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="disttail11.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="disttail11.html">
+<LINK REL="up" HREF="disttail11.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html22"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html20"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html14"
+  HREF="disttail11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html23"
+  HREF="node2.html">Notation and definitions</A>
+<B> Up:</B> <A NAME="tex2html21"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html15"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00010000000000000000"></A>
+<A NAME="intro"></A>
+<BR>
+Introduction
+</H1>
+
+<P>
+This paper is about the following type of problem: 
+given independent (not necessarily identically distributed) random
+variables 
+<IMG
+ WIDTH="28" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ X_1$">, <!-- MATH
+ $X_2,\dots,$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$ X_2,\dots,$"> <IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ X_N$">, find the `size' of <!-- MATH
+ ${\mathopen|S\mathclose|}$
+ -->
+<IMG
+ WIDTH="28" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ {\mathopen\vert S\mathclose\vert}$">, 
+where 
+<!-- MATH
+ \begin{displaymath}
+S =\sum_{n=1}^N X_n .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="103" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$\displaystyle S =\sum_{n=1}^N X_n .$">
+</DIV><P></P> 
+
+<P>
+We will examine several ways to measure this size.  The first will be through
+tail distributions, that is, <!-- MATH
+ $\Pr({\mathopen|S\mathclose|} > t)$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ \Pr({\mathopen\vert S\mathclose\vert} &gt; t)$">.
+Finding an exact
+solution to this problem would be a dream of probabilists,  so we
+have to 
+temper our desires in some manner. In fact, this problem goes back to
+the 
+foundations of probability in the following form: if the sequence
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> 
+consists of random variables that are mean zero, identically
+distributed and have finite variance, find the asymptotic value of 
+<!-- MATH
+ $\Pr({\mathopen|S\mathclose|} > \sqrt N t)$
+ -->
+<IMG
+ WIDTH="127" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ \Pr({\mathopen\vert S\mathclose\vert} &gt; \sqrt N t)$"> as <!-- MATH
+ $N \to \infty$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$ N \to \infty$">. This is answered, of
+course, 
+by the Central Limit Theorem, which tells us that the answer is the
+Gaussian 
+distribution. There has been a tremendous amount of work on
+generalizing 
+this. We refer the reader to almost any advanced work on probability. 
+
+<P>
+Our approach is different. Instead of seeking asymptotic solutions,
+we will look for approximate solutions. That is, we seek a function
+<IMG
+ WIDTH="37" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ f(t)$">, 
+computed  from <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">, such that there is a positive constant <IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$ c$"> with 
+<!-- MATH
+ \begin{displaymath}
+c^{-1} f(c t) \le \Pr(|S|>t) \le c \, f(c^{-1} t) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="287" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$\displaystyle c^{-1} f(c t) \le \Pr(\vert S\vert&gt;t) \le c \, f(c^{-1} t) .$">
+</DIV><P></P> 
+
+<P>
+The second 
+measurement of the size of <!-- MATH
+ ${\mathopen|S\mathclose|}$
+ -->
+<IMG
+ WIDTH="28" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ {\mathopen\vert S\mathclose\vert}$"> will be through
+the <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ p$">th moments, <!-- MATH
+ ${\mathopen\|S\mathclose\|}_p = ({\mathbb{E}}{\left|S\right|}^p)^{1/p}$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$ {\mathopen\Vert S\mathclose\Vert}_p = ({\mathbb{E}}{\left\vert S\right\vert}^p)^{1/p}$">.  
+Again, we shall be searching for approximate solutions, that is, finding
+a quantity <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ A$"> such that there is a positive constant <IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$ c$"> so that
+<!-- MATH
+ \begin{displaymath}
+c^{-1} A \le {\mathopen\|S\mathclose\|}_p \le c \, A .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="165" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$\displaystyle c^{-1} A \le {\mathopen\Vert S\mathclose\Vert}_p \le c \, A .$">
+</DIV><P></P>
+While this may seem like quite a
+different problem, in fact, as we will show, there is a precise connection
+between the two, in that obtaining an approximate formula for <!-- MATH
+ ${\mathopen\|S\mathclose\|}_p$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ {\mathopen\Vert S\mathclose\Vert}_p$">
+with constants that are uniform as <!-- MATH
+ $p\to \infty$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ p\to \infty$"> is equivalent to obtaining
+an approximate formula for the tail distribution.
+
+<P>
+The third way that we shall look at is to find the size of <!-- MATH
+ ${\mathopen|S\mathclose|}$
+ -->
+<IMG
+ WIDTH="28" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ {\mathopen\vert S\mathclose\vert}$"> in
+a rearrangement invariant space.  This line of research was began by
+Carothers and Dilworth (1988) who obtained results for Lorentz spaces,
+and was completed by Johnson and Schechtman (1989).  Our results will
+give a comparison of the size of <!-- MATH
+ ${\mathopen|S\mathclose|}$
+ -->
+<IMG
+ WIDTH="28" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ {\mathopen\vert S\mathclose\vert}$"> in the rearrangement invariant
+space with <!-- MATH
+ ${\mathopen\|S\mathclose\|}_p$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ {\mathopen\Vert S\mathclose\Vert}_p$">, obtaining a greater control on the sizes of the
+constants involved than the previous works.
+
+<P>
+Many of the results of this paper will be true for all sums of
+independent random variables, even those that are vector valued, with
+the following proviso.  Instead of considering 
+the sum <!-- MATH
+ $S = \sum_n X_n$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$ S = \sum_n X_n$">, we will
+consider the maximal function <!-- MATH
+ $U = \sup_n {\left|\sum_{k=1}^n X_k\right|}$
+ -->
+<IMG
+ WIDTH="168" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ U = \sup_n {\left\vert\sum_{k=1}^n X_k\right\vert}$">.  
+We will define a property for sequences called the <EM>L&#233;vy property</EM>,
+which will imply that <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$ U$"> is comparable to <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ S$">.  Sequences
+with this L&#233;vy property will include positive random
+variables, symmetric random variables, and identically distributed
+random variables. The result of this paper that gives the tail
+distribution for <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ S$"> is only valid for real valued sequences of
+random variables that satisfy the L&#233;vy property.  However the results
+connecting the <IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ L_p$"> and the rearrangement invariant norms to the
+tail distributions of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$ U$"> are valid for
+all sequences of vector valued independent random variables.
+(Since this paper was submitted, Mark Rudelson pointed out to us
+that some of the inequalities can be extended from <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$ U$"> to <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ S$"> by a
+simple symmetrization argument.  We give details at the end of each
+relevant section.)
+
+<P>
+Let us first give the historical context for these results, considering
+first the problem of approximate formulae for the tail distribution.
+Perhaps the earliest works are the
+Paley-Zygmund inequality (see for example Kahane (1968, Theorem 3, Chapter 2)), 
+and Kolmogorov's reverse maximal inequality (see for example Shiryaev (1980,
+Chapter 4, 
+section 2.)) Both give (under an extra assumption) a lower bound on the
+probability that a sum of independent, mean zero random variables
+exceeds a 
+fraction of its standard deviation and both may be regarded as a sort
+of 
+converse to the Chebyshev's inequality.
+Next, in 1929, Kolmogorov, proved a
+two-sided exponential inequality for sums of independent, mean-zero, 
+uniformly bounded, random variables (see for example Stout
+(1974, 
+Theorem 5.2.2) or Ledoux and Talagrand (1991, Lemma 8.1)).
+All of these results require some restriction on the nature
+of the sequence <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">, and on the size of the level <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ t$">.
+
+<P>
+Hahn and Klass (1997)
+obtained very good bounds on one sided tail probabilities for sums
+of independent, identically distributed, real valued 
+random variables.  Their
+result had no restrictions on the nature of the random variable, or
+on the size of the level <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ t$">.
+In effect, their
+result worked by removing the very large parts of the random variables,
+and then using an exponential estimate on the rest.  
+We will take a similar approach in this paper.
+
+<P>
+Let us next look at the <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ p$">th moments.  Khintchine (1923) gave
+an inequality for Rademacher (Bernoulli) sums.  
+This very important 
+formula has found extensive applications in analysis and probability.
+Khintchine's result was extended
+to any sequence of positive or mean zero random variables by 
+the celebrated result of Rosenthal (1970).
+The order of the best constants as <!-- MATH
+ $p \to \infty$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ p\to \infty$"> was 
+obtained by Johnson, Schechtman and Zinn (1983),
+and Pinelis (1994) refined this still further.  Now even more precise
+results are known, and we refer the reader to 
+Figiel, Hitczenko, Johnson, Schechtman and Zinn (1997)
+(see also Ibragimov and Sharakhmetov (1997)).  However, the
+problem with all these results is that the constants were not uniformly
+bounded as <!-- MATH
+ $p \to \infty$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ p\to \infty$">.
+
+<P>
+Khintchine's inequality was generalized independently by 
+Montgomery and Odlyzko (1988) and Montgomery-Smith (1990).  They
+were able to give approximate bounds on the tail probability for 
+Rademacher sums, with no restriction on the level <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ t$">.
+Hitczenko (1993) obtained an approximate formula for the
+<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ L_p$"> norm of Rademacher sums, where the constants were uniformly bounded
+as <!-- MATH
+ $p \to \infty$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ p\to \infty$">.  (A more 
+precise version of this last result was obtained in Hitczenko-Kwapien
+(1994) and it was used to give a simple proof of the lower bound
+in Kolmogorov's exponential inequality.) 
+
+<P>
+Continuing in the direction of Montgomery and Odlyzko, Montgomery-Smith and
+Hitczenko,
+Gluskin and Kwapien (1995) extended tail and moment estimates
+from Rademacher sums to weighted sums of random variables with
+logarithmically concave tails (that is, <!-- MATH
+ $P({\left|X\right|}\ge t)=\exp(-\phi(t))$
+ -->
+<IMG
+ WIDTH="209" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ P({\left\vert X\right\vert}\ge t)=\exp(-\phi(t))$">,
+where 
+<!-- MATH
+ $\phi:[0,\infty)\to[0,\infty)$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ \phi:[0,\infty)\to[0,\infty)$"> is convex).  
+After that, Hitczenko, Montgomery-Smith, 
+and Oleszkiewicz (1997) treated the case of logarithmically
+convex tails 
+(that is, the <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ \phi$"> above is concave rather than convex). 
+It should be 
+emphasized that in the last paper, the result of
+Hahn and Klass (1997) played a critical role.
+
+<P>
+The breakthrough came with the paper of Lata<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="\l">a (1997), who solved
+the problem of finding upper and lower bounds for general
+sums of positive or symmetric random variables, with uniform constants
+as <!-- MATH
+ $p \to \infty$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ p\to \infty$">.
+His method made beautiful use of special properties of the function 
+<!-- MATH
+ $t \mapsto t^p$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ t \mapsto t^p$">. 
+In a short note, Hitczenko and 
+Montgomery-Smith (1999) showed how to use Lata<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="\l">a's result to derive 
+upper and lower bounds on 
+tail probabilities.  Lata<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="\l">a's result is the primary
+motivation for this paper.
+
+<P>
+The main tool we will use is the Hoffmann-J&#248;rgensen Inequality. In
+fact, we will use a stronger form of this inequality, due to
+Klass and Nowicki (1998).
+The principle in many of our proofs is the following idea.  Given 
+a sequence of random variables <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">, we choose an appropriate level 
+<IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ s&gt;0$">.  Each random variable <IMG
+ WIDTH="29" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$ X_n$"> is split into the 
+sum <!-- MATH
+ $X^{(\le s)}_n + X^{(>s)}_n$
+ -->
+<IMG
+ WIDTH="118" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$ X^{(\le s)}_n + X^{(&gt;s)}_n$">, where <!-- MATH
+ $X^{(\le s)}_n = X_n
+I_{{\left|X_n\right|}\le
+s}$
+ -->
+<IMG
+ WIDTH="152" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$ X^{(\le s)}_n = X_n
+I_{{\left\vert X_n\right\vert}\le
+s}$">, and <!-- MATH
+ $X^{(>s)}_n = X_n I_{{\left|X_n\right|} > s}$
+ -->
+<IMG
+ WIDTH="152" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$ X^{(&gt;s)}_n = X_n I_{{\left\vert X_n\right\vert} &gt; s}$">.  It turns out that the
+quantity <!-- MATH
+ $(X_n^{(>s)})$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$ (X_n^{(&gt;s)})$"> can either be disregarded, or it can be  
+considered as a sequence of disjoint random variables. 
+(By ``disjoint'' we mean that the random variables are disjointly
+supported as functions on the underlying probability space.) As for the
+quantity 
+<!-- MATH
+ $\sum_n X_n^{(\le s)}$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$ \sum_n X_n^{(\le s)}$">, it will turn out that the level <IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img37.png"
+ ALT="$ s$"> allows one
+to apply the Hoffmann-J&#248;rgensen/Klass-Nowicki Inequality so that it may 
+be compared with
+quantities that we understand rather better.
+
+<P>
+Let us give an outline of this paper.  In Section&nbsp;<A HREF="node2.html#Defins">2</A>, we will give
+definitions. This will include the notion of decreasing rearrangement,
+that is, the inverse to the distribution function.  Many results of
+this paper will be written in terms of the decreasing rearrangement.
+Section&nbsp;<A HREF="node3.html#Klass-nowicki">3</A> is devoted to the Klass-Nowicki Inequality.  
+Since our result is
+slightly stronger than that currently in the literature, we will
+include a full proof. 
+In Section&nbsp;<A HREF="node4.html#Levy">4</A>, we will introduce and discuss the
+L&#233;vy property.  This will include a ``reduced comparison principle''
+for sequences with this property. 
+Section&nbsp;<A HREF="node5.html#Tail">5</A> contains the formula for the tail distribution of sums of
+real
+valued random variables. 
+Then in Section&nbsp;<A HREF="node6.html#Lp">6</A>, we demonstrate the connection between <IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ L_p$">-norms 
+of such sums and their tail distributions.
+In Section&nbsp;<A HREF="node7.html#Ri">7</A> we will discuss sums of independent random variables in
+rearrangement invariant spaces.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html22"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html20"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html14"
+  HREF="disttail11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html23"
+  HREF="node2.html">Notation and definitions</A>
+<B> Up:</B> <A NAME="tex2html21"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html15"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

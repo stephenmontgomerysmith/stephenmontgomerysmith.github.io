@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Bilinear Transformation of Infinite-Dimensional State-Space Systems and Balanced Realizations of Nonrational Transfer Functions.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Raimund Ober and Stephen Montgomery-Smith&#44; Bilinear Transformation of Infinite-Dimensional State-Space Systems and Balanced Realizations of Nonrational Transfer Functions.</B>
+<I>SIAM J. Control Optim. <B>28(2)</B> (1990), 438-465.</I>
+The bilinear transform maps the open right half plane to the open unit disk and is therefore a suitable tool for carrying over results for continuous-time systems to discrete-time systems and vice versa. Corresponding state-space formulae are widely used and well understood for the case of finite-dimensional systems. In this paper infinite-dimensional generalizations of these formulae are studied for a general class of infinite-dimensional state-space systems. In particular, it is shown that reachability and observability are carried over and that the reachability and observability gramians are preserved under this transformation. Young showed that a wide class of nonrational discrete-time transfer functions admit a balanced state-space representation. It is shown that this result carries over to the continuous-time situation via the bilinear transformation.
+(<A HREF="http://epubs.siam.org/action/showAbstract?page=438&volume=28&issue=2&journalCode=sjcodc">actual article</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

@@ -1,0 +1,8 @@
+
+redefining command \qed 
+
+previous meaning of \qed will be lost
+
+redefining command \div 
+
+? brace missing for \mathbb

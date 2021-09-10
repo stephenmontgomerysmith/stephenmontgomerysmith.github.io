@@ -1,0 +1,685 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Tail distributions</TITLE>
+<META NAME="description" CONTENT="Tail distributions">
+<META NAME="keywords" CONTENT="disttail11">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="disttail11.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="disttail11.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html62"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html60"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html54"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html63"
+  HREF="node6.html">norms</A>
+<B> Up:</B> <A NAME="tex2html61"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html55"
+  HREF="node4.html">The L&#233;vy Property</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00050000000000000000"></A>
+<A NAME="Tail"></A>
+<BR>
+Tail distributions
+</H1>
+
+<P>
+In this section, we will state and prove 
+the formula for the tail distribution of the sum of independent,
+real valued, random variables that satisfy the L&#233;vy Property.
+
+<P>
+If one restricts the formula to the case of sums of
+independent, identically distributed random variables, one obtains a
+formula very similar to
+the main result of Hahn and Klass (1997).  
+The main differences are that their inequality involves one sided
+inequalities, and also that their inequality is more
+precise.
+
+<P>
+This formula also has a strong resemblance to the result of Lata<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="\l">a.
+As we shall show in Section&nbsp;<A HREF="node6.html#Lp">6</A>, computing the <IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ L_p$"> norm of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$ U$"> is
+effectively equivalent to computing <!-- MATH
+ $U^*(e^{-p})$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img255.png"
+ ALT="$ U^*(e^{-p})$">.  Then if one
+notices that <IMG
+ WIDTH="70" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="$ (1+x)^p$"> is very close to <IMG
+ WIDTH="29" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img257.png"
+ ALT="$ e^{xp}$"> for small positive <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img258.png"
+ ALT="$ x$">, one
+can see that this result and the result of Lata<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="\l">a are very closely related.
+Presumably one could derive Lata<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="\l">a's result by combining Theorem&nbsp;<A HREF="#tail">5.1</A> 
+with
+Theorem&nbsp;<A HREF="node6.html#lp">6.1</A>.  However the technical difficulties are quite tricky, and 
+since
+Lata<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="\l">a's proof is elegant, we will not carry out this program here.
+
+<P>
+<P>
+<DIV><A NAME="tail"><B>Theorem  5.1</B></A> &nbsp; 
+<I>Let <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> be a sequence of real valued
+independent 
+random variables satisfying the strong L&#233;vy property. Define the
+functions <IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.png"
+ ALT="$ F_1(t)$"> and <IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img260.png"
+ ALT="$ F_2(t)$"> to be 0 if <IMG
+ WIDTH="46" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.png"
+ ALT="$ t &gt; 1$">, and if <!-- MATH
+ $0 \le
+t \le 1$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$ 0 \le t \le
+1$">, 
+</I>
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+F_1(t) &=&
+    \inf\left\{ \lambda>0 :\prod_n
+    {\mathbb{E}}(t^{X_n^{(\le \ell(t))}/\lambda}) \le t^{-1} \text{ and }
+    \prod_n
+    {\mathbb{E}}(t^{-X_n^{(\le \ell(t))}/\lambda}) \le t^{-1} \right\} , \\
+  F_2(t) &=&
+    \inf\left\{ \lambda>0 :\prod_n {\mathbb{E}}(t^{X_n^{(\le
+    M^*(t))}/\lambda}) \le t^{-1} \text{ and }
+    \prod_n {\mathbb{E}}(t^{-X_n^{(\le
+    M^*(t))}/\lambda}) \le t^{-1} \right\} .
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.png"
+ ALT="$\displaystyle F_1(t)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="542" HEIGHT="76" ALIGN="MIDDLE" BORDER="0"
+ SRC="img263.png"
+ ALT="$\displaystyle \inf\left\{ \lambda&gt;0 :\prod_n
+{\mathbb{E}}(t^{X_n^{(\le \ell(t))...
+... }
+\prod_n
+{\mathbb{E}}(t^{-X_n^{(\le \ell(t))}/\lambda}) \le t^{-1} \right\} ,$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img264.png"
+ ALT="$\displaystyle F_2(t)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="567" HEIGHT="75" ALIGN="MIDDLE" BORDER="0"
+ SRC="img265.png"
+ ALT="$\displaystyle \inf\left\{ \lambda&gt;0 :\prod_n {\mathbb{E}}(t^{X_n^{(\le
+M^*(t))}...
+...d }
+\prod_n {\mathbb{E}}(t^{-X_n^{(\le
+M^*(t))}/\lambda}) \le t^{-1} \right\} .$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+<I> 
+Then 
+</I><!-- MATH
+ \begin{displaymath}
+S^*(t)
+\mathrel{\mathop{\approx}\limits_{t}} F_1(t) \mathrel{\mathop{\approx}\limits_{t}} F_2(t) ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="184" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img266.png"
+ ALT="$\displaystyle S^*(t)
+\mathrel{\mathop{\approx}\limits_{t}} F_1(t) \mathrel{\mathop{\approx}\limits_{t}} F_2(t) ,$">
+</DIV><P></P><I> where the constants
+of approximation depend only upon the strong L&#233;vy constants of
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">.</I></DIV><P></P>
+
+<P>
+Let us start with gaining some understanding of
+<EM>Orlicz spaces</EM>. There is a huge literature on Orlicz spaces,
+see for example Lindenstrauss and Tzafriri (1977). 
+Suppose that <!-- MATH
+ $\Phi:[0,\infty) \to
+[0,\infty]$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.png"
+ ALT="$ \Phi:[0,\infty) \to
+[0,\infty]$"> is an increasing function (usually convex with <!-- MATH
+ $\Phi(0) =
+0$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$ \Phi(0) =
+0$">). Then the <EM>Orlicz norm</EM> of a random variable <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img42.png"
+ ALT="$ X$"> is defined 
+according to 
+the formula 
+<!-- MATH
+ \begin{displaymath}
+{\mathopen\|X\mathclose\|}_\Phi = \inf\{ \lambda>0 : {\mathbb{E}}\Phi({\mathopen|X\mathclose|}/\lambda) \le 1
+\}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="308" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$\displaystyle {\mathopen\Vert X\mathclose\Vert}_\Phi = \inf\{ \lambda&gt;0 : {\mathbb{E}}\Phi({\mathopen\vert X\mathclose\vert}/\lambda) \le 1
+\}.$">
+</DIV><P></P>
+We will be concerned with the special functions
+<!-- MATH
+ \begin{displaymath}
+\Phi_t(x) =
+{\frac{t^{-x} - 1 }{ t^{-1} - 1}} .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="142" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.png"
+ ALT="$\displaystyle \Phi_t(x) =
+{\frac{t^{-x} - 1 }{ t^{-1} - 1}} .$">
+</DIV><P></P>
+The following is a special case of 
+results that appear in Montgomery-Smith (1992).
+
+<P>
+<P>
+<DIV><A NAME="orlicz"><B>Lemma  5.2</B></A> &nbsp; 
+<I>For any random variable <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img42.png"
+ ALT="$ X$">, and for <IMG
+ WIDTH="65" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.png"
+ ALT="$ t \le 1/4$">,
+we have that 
+</I><!-- MATH
+ \begin{displaymath}
+{\mathopen\|X\mathclose\|}_{\Phi_t} \approx \sup_{0\le x \le 1} {\frac{\log(t) }{
+\log(xt)}}
+X^*(x) ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="242" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.png"
+ ALT="$\displaystyle {\mathopen\Vert X\mathclose\Vert}_{\Phi_t} \approx \sup_{0\le x \le 1} {\frac{\log(t) }{
+\log(xt)}}
+X^*(x) ,$">
+</DIV><P></P><I> with constants of approximation bounded by <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img202.png"
+ ALT="$ 2$">.</I></DIV><P></P>
+
+<P>
+
+<P>
+<BR>
+<B>Proof:</B>  Suppose first that <!-- MATH
+ ${\mathopen\|X\mathclose\|}_{\Phi_t} \le 1$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$ {\mathopen\Vert X\mathclose\Vert}_{\Phi_t} \le 1$">. Then 
+<!-- MATH
+ ${\mathbb{E}}\Phi_t(X) \le 1$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="$ {\mathbb{E}}\Phi_t(X) \le 1$">, which implies that
+<!-- MATH
+ \begin{displaymath}
+x t^{-X^*(x)}
+   \le
+   \int_0^1 t^{-X^*(y)} \, dy
+   \le
+   {\mathbb{E}}(t^{-{\mathopen|X\mathclose|}})
+   \le t^{-1} ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="349" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.png"
+ ALT="$\displaystyle x t^{-X^*(x)}
+\le
+\int_0^1 t^{-X^*(y)} \, dy
+\le
+{\mathbb{E}}(t^{-{\mathopen\vert X\mathclose\vert}})
+\le t^{-1} ,$">
+</DIV><P></P>
+that is, 
+<!-- MATH
+ $X^*(x) \le \log(xt)/\log(t)$
+ -->
+<IMG
+ WIDTH="194" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img276.png"
+ ALT="$ X^*(x) \le \log(xt)/\log(t)$">.
+
+<P>
+Conversely, suppose that <!-- MATH
+ $X^*(x) \le \log(xt)/\log(t)$
+ -->
+<IMG
+ WIDTH="194" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img276.png"
+ ALT="$ X^*(x) \le \log(xt)/\log(t)$"> for <!-- MATH
+ $0\le x \le
+1$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$ 0\le x \le
+1$">. Then <!-- MATH
+ \begin{displaymath}
+E\Phi_t(X/2)\le \int_0^1 \Phi_t\left(\frac{\log(xt)}{
+2\log(t)}\right) \, dx = {\frac{2t^{-1/2}-1
+}{ t^{-1}-1}} \le 1 .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="431" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.png"
+ ALT="$\displaystyle E\Phi_t(X/2)\le \int_0^1 \Phi_t\left(\frac{\log(xt)}{
+2\log(t)}\right) \, dx = {\frac{2t^{-1/2}-1
+}{ t^{-1}-1}} \le 1 .$">
+</DIV><P></P> 
+
+<P>
+
+<P>
+<BR>
+<B>Proof of Theorem&nbsp;<A HREF="#tail">5.1</A>:</B>   Let us start with the proof that <!-- MATH
+ $S^*(t
+) \mathrel{\mathop{\approx}\limits_{t}} F_1(t)$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.png"
+ ALT="$ S^*(t
+) \mathrel{\mathop{\approx}\limits_{t}} F_1(t)$">. Since the random  variables <!-- MATH
+ $X_n^{(\le \ell(t))}$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.png"
+ ALT="$ X_n^{(\le \ell(t))}$"> 
+are independent, we have that <!-- MATH
+ \begin{displaymath}
+F_1(t) =\inf\left\{ \lambda>0 :
+{\mathbb{E}}(t^{S^{(\le \ell(t))}/\lambda}) \le t^{-1} \text{ and } 
+{\mathbb{E}}(t^{-S^{(\le \ell(t))}/\lambda}) \le t^{-1} \right\} .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="538" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.png"
+ ALT="$\displaystyle F_1(t) =\inf\left\{ \lambda&gt;0 :
+{\mathbb{E}}(t^{S^{(\le \ell(t))...
+...text{ and }
+{\mathbb{E}}(t^{-S^{(\le \ell(t))}/\lambda}) \le t^{-1} \right\} .$">
+</DIV><P></P>
+Now we notice that for any random variable <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.png"
+ ALT="$ Y$">, and <!-- MATH
+ $0\le t \le 1$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$ 0 \le t \le
+1$">, we
+have that<!-- MATH
+ \begin{displaymath}
+{\textstyle {\frac{1}{ 2}}} {\mathbb{E}}(t^{-{\mathopen|Y\mathclose|}}) \le
+\max\{{\mathbb{E}}(t^Y),{\mathbb{E}}(t^{-Y})\} \le
+{\mathbb{E}}(t^{-{\mathopen|Y\mathclose|}}) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="363" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.png"
+ ALT="$\displaystyle {\textstyle {\frac{1}{ 2}}} {\mathbb{E}}(t^{-{\mathopen\vert Y\ma...
+...mathbb{E}}(t^{-Y})\} \le
+{\mathbb{E}}(t^{-{\mathopen\vert Y\mathclose\vert}}) .$">
+</DIV><P></P>
+Hence <!-- MATH
+ \begin{displaymath}
+F_1(t) \le\inf\left\{ \lambda>0 :
+{\mathbb{E}}(t^{-{\mathopen|S^{(\le \ell(t))}/\lambda\mathclose|}}) \le t^{-1} \right\} = 
+{\mathopen\|S^{(\le \ell(t))}\mathclose\|}_{\Phi_t} ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="469" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$\displaystyle F_1(t) \le\inf\left\{ \lambda&gt;0 :
+{\mathbb{E}}(t^{-{\mathopen\ve...
+...t^{-1} \right\} =
+{\mathopen\Vert S^{(\le \ell(t))}\mathclose\Vert}_{\Phi_t} ,$">
+</DIV><P></P>
+and 
+<!-- MATH
+ \begin{displaymath}
+F_1(t)\ge\inf\left\{ \lambda>0 :{\mathbb{E}}(t^{-{\mathopen|S^{(\le
+\ell(t))}/\lambda\mathclose|}})
+\le 2t^{-1} \right\} = {\mathopen\|S^{(\le \ell(t))}\mathclose\|}_{\Psi_t} ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="479" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$\displaystyle F_1(t)\ge\inf\left\{ \lambda&gt;0 :{\mathbb{E}}(t^{-{\mathopen\vert ...
+...2t^{-1} \right\} = {\mathopen\Vert S^{(\le \ell(t))}\mathclose\Vert}_{\Psi_t} ,$">
+</DIV><P></P>
+where 
+<!-- MATH
+ $\Psi_t(x) = {\displaystyle{\frac{t^{-x} - 1}{ 2t^{-1} - 1}}}$
+ -->
+<IMG
+ WIDTH="146" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.png"
+ ALT="$ \Psi_t(x) = {\displaystyle{\frac{t^{-x} - 1}{ 2t^{-1} - 1}}}$">. However,
+we quickly see that for <IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="$ x \ge 0$"> that if <IMG
+ WIDTH="65" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$ t\le 1/2$"> 
+then <!-- MATH
+ $\Psi_t(x) \ge {\frac{1}{ 3}} \Phi_t(x) \ge \Phi_t(x/3)$
+ -->
+<IMG
+ WIDTH="219" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.png"
+ ALT="$ \Psi_t(x) \ge {\frac{1}{ 3}} \Phi_t(x) \ge \Phi_t(x/3)$">, since <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img289.png"
+ ALT="$ \Phi_t$"> is a
+convex function. Hence <!-- MATH
+ \begin{displaymath}
+F_1(t)
+\approx {\mathopen\|S^{(\le \ell(t))}\mathclose\|}_{\Phi_t}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="161" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img290.png"
+ ALT="$\displaystyle F_1(t)
+\approx {\mathopen\Vert S^{(\le \ell(t))}\mathclose\Vert}_{\Phi_t} $">
+</DIV><P></P>
+with constants of 
+approximation bounded by <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img204.png"
+ ALT="$ 3$">.
+
+<P>
+Next, we apply Lemma&nbsp;<A HREF="#orlicz">5.2</A>, and we see that
+<!-- MATH
+ \begin{displaymath}
+F_1(t)
+   \approx 
+   \sup_{0\le x \le 1}{\frac{\log(t) }{ \log(xt)}} (S^{(\le \ell(t))})^*(x) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="284" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img291.png"
+ ALT="$\displaystyle F_1(t)
+\approx
+\sup_{0\le x \le 1}{\frac{\log(t) }{ \log(xt)}} (S^{(\le \ell(t))})^*(x) .$">
+</DIV><P></P>
+Taking <IMG
+ WIDTH="47" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img292.png"
+ ALT="$ x = t$">, we see that the right hand side is bounded below
+by <!-- MATH
+ ${\frac{1}{ 2}} (S^{(\le\ell(t))})^*(t)$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.png"
+ ALT="$ {\frac{1}{ 2}} (S^{(\le\ell(t))})^*(t)$">. 
+Also, if <!-- MATH
+ $t \le x \le 1$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img294.png"
+ ALT="$ t \le x \le 1$">,
+then <!-- MATH
+ \begin{displaymath}
+{\frac{\log(t) }{ \log(xt)}} (S^{(\le \ell(t))})^*(x)
+\le (S^{(\le \ell(t))})^*(t) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="297" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.png"
+ ALT="$\displaystyle {\frac{\log(t) }{ \log(xt)}} (S^{(\le \ell(t))})^*(x)
+\le (S^{(\le \ell(t))})^*(t) .$">
+</DIV><P></P>
+Further, by Corollary&nbsp;<A HREF="node3.html#klass-nowicki-decr">3.2</A> combined with
+Proposition&nbsp;<A HREF="node4.html#max">4.1</A>, there exist
+constants <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$"> and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$">, depending only on the L&#233;vy constants of
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">, such that if <!-- MATH
+ $0 \le x \le t \le c_1^{-1}$
+ -->
+<IMG
+ WIDTH="134" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img296.png"
+ ALT="$ 0 \le x \le t \le c_1^{-1}$">, then 
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+{\frac{\log(t) }{ \log(xt)}} (S^{(\le \ell(t))})^*(x)
+  &\le& c_2 {\frac{\log(x) }{ \log(xt)}} \bigl((S^{(\le \ell(t))})^*(t)+
+        (M^{(\ell(t))})^*(x/2)\bigr) \\
+  &\le& c_2 \bigl((S^{(\le \ell(t))})^*(t) + \ell(t)\bigr) .
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="167" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.png"
+ ALT="$\displaystyle {\frac{\log(t) }{ \log(xt)}} (S^{(\le \ell(t))})^*(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="338" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.png"
+ ALT="$\displaystyle c_2 {\frac{\log(x) }{ \log(xt)}} \bigl((S^{(\le \ell(t))})^*(t)+
+(M^{(\ell(t))})^*(x/2)\bigr)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="194" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$\displaystyle c_2 \bigl((S^{(\le \ell(t))})^*(t) + \ell(t)\bigr) .$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+ 
+Now, applying Proposition&nbsp;<A HREF="node2.html#ell-max">2.1</A>, Proposition&nbsp;<A HREF="node4.html#max">4.1</A>, 
+and Lemma&nbsp;<A HREF="node4.html#levy">4.2</A> 
+part&nbsp;<A HREF="node4.html#levy-ellequiv">(v)</A>, we finally 
+obtain the desired result.
+
+<P>
+To show that <!-- MATH
+ $S^*(t) \mathrel{\mathop{\approx}\limits_{t}} F_2(t)$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img300.png"
+ ALT="$ S^*(t) \mathrel{\mathop{\approx}\limits_{t}} F_2(t)$"> is an almost identical
+proof. 
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html62"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html60"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html54"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html63"
+  HREF="node6.html">norms</A>
+<B> Up:</B> <A NAME="tex2html61"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html55"
+  HREF="node4.html">The L&#233;vy Property</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

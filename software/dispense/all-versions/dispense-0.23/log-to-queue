@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+while(<>) {
+  if (!$in_queue && /Data from/) {
+    <>;
+    <>;
+  }
+  elsif (/^Queue is:$/) {
+    $in_queue = 1;
+    $queue_data = "";
+  } elsif (/^End of queue$/) {
+    $in_queue = 0;
+  } elsif ($in_queue) {
+    $queue_data .= $_;
+  }
+}
+
+if (!$in_queue) {
+  print $queue_data;
+}

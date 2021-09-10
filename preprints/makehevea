@@ -1,0 +1,15 @@
+ssh cauchy "cd junk; cat > $1.tex; latex $1>/dev/null; latex $1>/dev/null; latex $1>/dev/null; hevea $1>/dev/null; cat $1.html; rm -f $1.html*>/dev/null" < $1.tex > xxx.html
+
+
+
+#cp $1.tex jjjj$$.tex
+#perl -i -pe 's/\\documentclass(\[\d+pt\])?\{article\}/\\documentclass\[11pt\]\{article\}/' jjjj$$.tex
+#perl -i -pe 's/\\documentstyle(\[\d+pt\])?\{article\}/\\documentclass\[11pt\]\{article\}/' jjjj$$.tex
+#latex jjjj$$
+#latex jjjj$$
+#latex jjjj$$
+#latex2html jjjj$$
+#(cd jjjj$$ ; perl -i -pe "s/\<STRONG\>latex2html\<\/STRONG\> \<tt\>jjjj$$\<\/tt\>/\<STRONG\>latex2html\<\/STRONG\> \<tt\>$1\<\/tt\>/" node*.html )
+#rm -rf $1
+#mv jjjj$$ $1
+#rm jjjj$$.*

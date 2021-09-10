@@ -1,0 +1,10 @@
+#/bin/sh
+
+perl -pe 's/\%\\guillemotfalse/\\guillemotfalse/;s/\\guillemottrue/\%\\guillemottrue/' < cheap2.tex > cheap2-alt.tex
+
+latex cheap2-alt
+latex cheap2-alt
+latex cheap2-alt
+rm *.log *.aux
+makelatex- cheap2
+#ssh cauchy "cd work_place_for_math ; scp stephen@math:www/preprints/cheap2.tex . ; scp stephen@math:www/preprints/cheap2-alt.tex . ; latex cheap2 ; latex cheap2 ; latex cheap2 ; dvips cheap2 -o ; latex cheap2-alt ; latex cheap2-alt ; latex cheap2-alt ; pdflatex cheap2 ; pdflatex cheap2 ; pdflatex cheap2 ; scp cheap2.dvi cheap2.ps cheap2.pdf cheap2-alt.dvi stephen@math:www/preprints/."

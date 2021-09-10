@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Boyd Indices of Orlicz-Lorentz Spaces.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith&#44; Boyd Indices of Orlicz-Lorentz Spaces.</B>
+<I>Function Spaces, The Second Conference, Ed: K. Jarosz, 321-334, Marcel Dekker, New York, 1995.</I>
+Orlicz-Lorentz spaces provide a common generalization of Orlicz spaces and Lorentz spaces. In this paper, we investigate their Boyd indices. Bounds on the Boyd indices in terms of the Matuszewska-Orlicz indices of the defining functions are given. Also, we give an example to show that the Boyd indices and Zippin indices of an Orlicz-Lorentz space need not be equal, answering a question of Maligranda.  Finally, we show how the Boyd indices are related to whether an Orlicz-Lorentz space is $p$-convex or $q$-concave.
+(<A HREF="boyd_orl_lor.tex">tex</A>,
+<A HREF="boyd_orl_lor.dvi">dvi</A>,
+<A HREF="boyd_orl_lor.ps">ps</A>,
+<A HREF="boyd_orl_lor.pdf">pdf</A>.
+The LaTeX file also requires the file <A HREF="homegrownmarcdek.sty">homegrownmarcdek.sty</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

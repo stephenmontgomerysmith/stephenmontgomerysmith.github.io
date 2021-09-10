@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Fast solutions for the fiber orientation of concentrated suspensions of short-fiber composites using the exact closure method.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith, David A. Jack and Douglas E. Smith&#44; Fast solutions for the fiber orientation of concentrated suspensions of short-fiber composites using the exact closure method.</B>
+<I>Proceedings of the ASME 2010 International Mechanical Engineering Congress & Exposition IMECE 2010 November 12-18, Vancouver, British Columbia, Canada.</I>
+The kinetics of the fiber orientation during processing of short-fiber composites governs both the processing characteristics and the cured part performance. The flow kinetics of the polymer melt dictates the fiber orientation kinetics, and in turn the underlying fiber orientation dictates the bulk flow characteristics. It is beyond computational comprehension to model the equation of motion of the full fiber orientation probability distribution function. Instead, typical industrial simulations rely on the computationally efficient equation of motion of the second-order orientation tensor (also known as the second-order moment of the orientation distribution function) to model the characteristics of the fiber orientation within a polymer suspension. Unfortunately, typical implementation forms of any order orientation tensor equation of motion requires the next higher, even ordered, orientation tensor, thus necessitating a closure of the higher order expression. The recently developed Fast Exact Closure avoids the classical closure problem by solving a set of related second-order tensor equations of motion, and yields the exact solution for pure Jeffery's motion as the diffusion goes to zero. Typical closures are obtained through a fitting process, and are often obtained by fitting for orientation states obtained from solutions of the full orientation distribution function, thus tying the closure to the flows from which it was fit. With the recent understandings of the limitations of the Folgar and Tucker (1984) model of fiber interactions during processing, it has become clear the importance of developing a closure that is independent of any choice of fitting data. The Fast Exact Closure presents an alternative in that it is constructed independent of any fitting process. Results demonstrate that when diffusion exists, the solution is not only physical, but solutions for flows experiencing Folgar-Tucker diffusion are shown to exhibit an equal to or greater accuracy than solutions relying on closures developed via a curve fitting approach.
+(<A HREF="IMECE2010_39479_Montgomery_Smith_etal_Final_Submitted.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

@@ -1,0 +1,473 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Appendix: Derivation of the ``26.78%''</TITLE>
+<META NAME="description" CONTENT="Appendix: Derivation of the ``26.78%''">
+<META NAME="keywords" CONTENT="unforgeable">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="unforgeable.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="unforgeable.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html59"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html57"
+  HREF="unforgeable.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html51"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html60"
+  HREF="node6.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html58"
+  HREF="unforgeable.html">Unforgeable Marker Sequences</A>
+<B> Previous:</B> <A NAME="tex2html52"
+  HREF="node4.html">A Convenient Test for</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00005000000000000000">
+Appendix: Derivation of the ``26.78%''</A>
+</H2>
+
+<P>
+We observed in the table above that <IMG
+ WIDTH="40" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ \rho(n)$"> converges to a limit,
+which we will denote <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$ \rho$">.  In fact, <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$ \rho$"> can
+be calculated to a very high precision using the following, 
+rapidly converging, infinite series:
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\rho
+  &=& 
+  \frac27 - \frac{2\cdot8}{7\cdot127} + 
+  \frac{2\cdot8\cdot128}{7\cdot127\cdot32767} 
+  - \frac{2\cdot8\cdot128\cdot32768}{7\cdot127\cdot32767\cdot(2^{31}-1)}
+  \cdots \\
+  &=&
+  \sum_{n=1}^\infty (-1)^{n-1}
+  \left(\frac2{2^{2^{n+1}-1}-1}\right)
+  \left(\prod_{m=2}^n \frac{2^{2^m-1}}{2^{2^m-1}-1}\right) \\
+  &\approx&
+  0.26778684021788911237667140358430255255505989799348
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$\displaystyle \rho$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="487" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$\displaystyle \frac27 - \frac{2\cdot8}{7\cdot127} +
+\frac{2\cdot8\cdot128}{7\cd...
+...}
+- \frac{2\cdot8\cdot128\cdot32768}{7\cdot127\cdot32767\cdot(2^{31}-1)}
+\cdots$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="370" HEIGHT="76" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\displaystyle \sum_{n=1}^\infty (-1)^{n-1}
+\left(\frac2{2^{2^{n+1}-1}-1}\right)
+\left(\prod_{m=2}^n \frac{2^{2^m-1}}{2^{2^m-1}-1}\right)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$\displaystyle \approx$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="487" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$\displaystyle 0.26778684021788911237667140358430255255505989799348$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+We will prove this formula.
+First, an easy argument shows that the sequence <IMG
+ WIDTH="40" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ \rho(n)$"> is a 
+decreasing sequence, bounded below by zero.  
+Hence the limit <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$ \rho$"> exists.  Now define 
+a generating function
+<!-- MATH
+ \begin{displaymath}
+h(x) = \sum_{n=1}^\infty F(n) x^n .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="162" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.png"
+ ALT="$\displaystyle h(x) = \sum_{n=1}^\infty F(n) x^n .$">
+</DIV><P></P>
+It is clear that <IMG
+ WIDTH="41" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img44.png"
+ ALT="$ h(x)$"> has radius of convergence at least <IMG
+ WIDTH="33" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.png"
+ ALT="$ 1/2$">.
+
+<P>
+Next, we show that
+<!-- MATH
+ \begin{displaymath}
+\rho = \lim_{x\nearrow1/2} (1-2x) h(x) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="189" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="$\displaystyle \rho = \lim_{x\nearrow1/2} (1-2x) h(x) .$">
+</DIV><P></P>
+To see this, multiply out to obtain
+<!-- MATH
+ \begin{displaymath}
+(1-2x) h(x) = F(1) x + \sum_{n=2}^\infty (F(n) - 2 F(n-1)) x^n ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="418" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="$\displaystyle (1-2x) h(x) = F(1) x + \sum_{n=2}^\infty (F(n) - 2 F(n-1)) x^n ,$">
+</DIV><P></P>
+and thus
+<!-- MATH
+ \begin{displaymath}
+\lim_{x\nearrow1/2} (1-2x) h(x) = \rho(1)
+   + \sum_{n=2}^\infty (\rho(n) - \rho(n-1)) ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="405" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$\displaystyle \lim_{x\nearrow1/2} (1-2x) h(x) = \rho(1)
++ \sum_{n=2}^\infty (\rho(n) - \rho(n-1)) ,$">
+</DIV><P></P>
+which may be seen to be a telescoping series that converges to <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$ \rho$">.
+
+<P>
+Applying the recurrence relation for the sequence <IMG
+ WIDTH="45" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ F(n)$">,
+we see that
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+h(x)
+  &=&
+  2x +
+  \sum_{n=2}^\infty 2F(n-1) x^n - 
+  \sum_{\substack{n=2\\\text{$n$\  even}}}^\infty F(n/2) x^n \\
+  &=&
+  2x +
+  \sum_{n=1}^\infty 2 F(n) x^{n+1} - \sum_{n=1}^\infty F(n) x^{2n} \\
+  &=&
+  2x + 2x h(x) - h(x^2) ,
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="41" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.png"
+ ALT="$\displaystyle h(x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="325" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$\displaystyle 2x +
+\sum_{n=2}^\infty 2F(n-1) x^n -
+\sum_{\substack{n=2\\ \text{$n$\ even}}}^\infty F(n/2) x^n$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="286" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$\displaystyle 2x +
+\sum_{n=1}^\infty 2 F(n) x^{n+1} - \sum_{n=1}^\infty F(n) x^{2n}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="176" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.png"
+ ALT="$\displaystyle 2x + 2x h(x) - h(x^2) ,$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+that is
+<!-- MATH
+ \begin{displaymath}
+(1-2x) h(x) = 2x - h(x^2) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="225" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$\displaystyle (1-2x) h(x) = 2x - h(x^2) .$">
+</DIV><P></P>
+We see immediately that
+<!-- MATH
+ \begin{displaymath}
+\rho = \lim_{x\nearrow1/2} (1-2x) h(x) = 1 - h(\textstyle \frac14) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="283" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$\displaystyle \rho = \lim_{x\nearrow1/2} (1-2x) h(x) = 1 - h(\textstyle \frac14) .$">
+</DIV><P></P>
+Applying this relation again, we get that
+<!-- MATH
+ \begin{displaymath}
+\textstyle h(\frac14) = 1 - 2 h(\frac1{16}) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="156" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$\displaystyle \textstyle h(\frac14) = 1 - 2 h(\frac1{16}) .$">
+</DIV><P></P>
+Again, we see that
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\textstyle
+   h(\frac1{16})
+   &=& 
+   \textstyle
+   \frac87(\frac18-h(\frac1{256})) \\
+   &=&
+   \textstyle
+   \frac87(\frac18-\frac{128}{127}(\frac1{128}-h(\frac1{65536}))) \\
+   &=&
+   \textstyle
+   \frac87(\frac18-\frac{128}{127}(\frac1{128}-
+   \frac{32768}{32767}(\frac1{3276}-h(2^{-32}))))
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="47" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$\displaystyle \textstyle
+h(\frac1{16})$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="113" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$\displaystyle \textstyle
+\frac87(\frac18-h(\frac1{256}))$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="213" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$\displaystyle \textstyle
+\frac87(\frac18-\frac{128}{127}(\frac1{128}-h(\frac1{65536})))$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="316" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\displaystyle \textstyle
+\frac87(\frac18-\frac{128}{127}(\frac1{128}-
+\frac{32768}{32767}(\frac1{3276}-h(2^{-32}))))$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+Continuing in this way, and multiplying out, we see that
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\rho &=&
+  \sum_{n=1}^N (-1)^{n-1}
+  \left(\frac2{2^{2^{n+1}-1}-1}\right)
+  \left(\prod_{m=2}^n \frac{2^{2^m-1}}{2^{2^m-1}-1}\right) \\
+  &+& (-1)^N 2 h(2^{-2^{N+2}})
+  \left(\prod_{m=2}^{N+1} \frac{2^{2^m-1}}{2^{2^m-1}-1}\right)  .
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$\displaystyle \rho$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="370" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$\displaystyle \sum_{n=1}^N (-1)^{n-1}
+\left(\frac2{2^{2^{n+1}-1}-1}\right)
+\left(\prod_{m=2}^n \frac{2^{2^m-1}}{2^{2^m-1}-1}\right)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$\displaystyle +$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="300" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$\displaystyle (-1)^N 2 h(2^{-2^{N+2}})
+\left(\prod_{m=2}^{N+1} \frac{2^{2^m-1}}{2^{2^m-1}-1}\right) .$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+Letting <!-- MATH
+ $N\to\infty$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.png"
+ ALT="$ N\to\infty$">, and noting that <!-- MATH
+ $h(2^{-2^{N+2}}) \to h(0)=0$
+ -->
+<IMG
+ WIDTH="182" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ h(2^{-2^{N+2}}) \to h(0)=0$">, 
+it is readily seen that the last term in the above expression
+converges to zero, and hence we obtain the formula for <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$ \rho$"> that we 
+stated above.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html59"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html57"
+  HREF="unforgeable.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html51"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html60"
+  HREF="node6.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html58"
+  HREF="unforgeable.html">Unforgeable Marker Sequences</A>
+<B> Previous:</B> <A NAME="tex2html52"
+  HREF="node4.html">A Convenient Test for</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

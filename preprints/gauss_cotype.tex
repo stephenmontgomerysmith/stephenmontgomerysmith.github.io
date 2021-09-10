@@ -1,0 +1,394 @@
+\magnification=\magstep1
+\baselineskip =5.5mm
+\lineskiplimit =1.0mm
+\lineskip =1.0mm
+
+\def\sqr{\vcenter {\hrule height.3mm
+\hbox {\vrule width.3mm height 2mm \kern2mm
+\vrule width.3mm } \hrule height.3mm }}
+
+\def\ts#1{{\textstyle{#1}}}
+\def\ds#1{{\displaystyle{#1}}}
+\def\moreproclaim{\par}
+\def\step #1: #2\par{\medskip\noindent
+{\bf Step #1:\ \ \ }#2\par}
+\def\heading #1:{\medskip\noindent{\bf #1:\ \ \ }}
+\def\Proof:{\heading Proof:}
+\def\Proofof #1:{\heading Proof of #1:}
+\def\endproof{\hfill$\sqr$\bigskip}
+\def\comment#1{}
+
+\def\of{\bf}
+\def\R{{\of R}}
+\def\C{{\of C}}
+\def\E{{\of E}}
+
+\def\a{\alpha}
+\def\w{\omega}
+\def\widedot{\,\cdot\,}
+
+\def\Phip{{\Phi_p}}
+\def\LPhip{{L_\Phip}}
+
+\def\G{{\cal G}}
+\def\A{{C(K,l_1)}}
+\def\Y{{\cal Y}}
+
+\def\normo#1{\left\| #1 \right\|}
+
+\def\modo#1{\left| #1 \right|}
+
+\def\list#1#2{#1_1$, $#1_2,\ldots,$\ $#1_{#2}}
+\def\ttss_#1{#1}
+\def\set#1{\{\list\ttss#1\}}
+\def\lists#1{#1_1$, $#1_2,\ldots}
+
+\def\invp{{1\over p}}
+\def\inva{{1\over a}}
+\def\smallinvt{{\ts{1\over t}}}
+\def\dtot{{\,dt\over t}}
+\def\half{{1\over2}}
+\def\pot{{p\over2}}
+\def\top{{2\over p}}
+
+\def\sumS{\sum_{s=1}^S}
+\def\sums{\sum_{s=1}^\infty}
+\def\sumT{\sum_{t=1}^T}
+\def\sumt{\sum_{t=1}^\infty}
+\def\supS{\sup_{1\le s\le S}}
+\def\supK{\sup_{\w\in K}}
+\def\supT{\sup_{1\le t\le T}}
+\def\supt{\sup_{t\ge1}}
+
+\def\Gausswalk{\normo{\sums \gamma_s x_s}_\infty}
+
+
+
+\centerline{\bf The Gaussian Cotype of Operators from $C(K)$}
+\medskip
+\centerline{\bf S.J.~Montgomery-Smith}
+
+\bigskip
+
+\beginsection Abstract
+
+We show that the canonical embedding $C(K) \to L_\Phi(\mu)$\ has Gaussian
+cotype $p$, where $\mu$\ is a Radon probabilty measure on $K$, and
+$\Phi$ is an Orlicz function equivalent to $t^p (\log t)^\pot$\ for
+large $t$.
+
+\bigskip
+\centerline{* * * * * *}
+\bigskip
+
+In [6], I showed that the Gaussian cotype 2 constant of the canonical
+embedding $l_\infty^N \to L_{2,1}^N$\ is bounded by $\log\log N$.
+Talagrand [9] showed that this embedding does not have uniformly bounded
+cotype 2 constant. In fact, a careful study of his proof yields that the
+cotype 2 constant is bounded below by $\sqrt{\log\log N}$.
+In this paper, we will show that this is the correct value for the
+Gaussian cotype 2 constant of this operator.
+However, we will show
+this via a different result, which we will give presently. First, let us
+define our terms.
+
+We will
+write $\Phip$\ for an Orlicz function such that $\Phip(t) \approx t^p
+(\log t)^\pot$\ for large t.
+
+For any bounded linear operator $T: X \to Y$,
+where $X$\ and $Y$\ are Banach spaces, and any $2\le p<\infty$, we
+say that $T$\ has {\it Gaussian
+cotype $p$}\ if there is a number $C<\infty$ such that for all sequences
+$\lists x \in X$\ we have
+$$ \E \normo{\sums \gamma_s x_s}
+   \ge C^{-1} \left( \sums \normo{Tx_s}^p \right)^\invp .$$
+(Here, as elsewhere, $\lists \gamma$\ denote independent $N(0,1)$\
+Gaussian random variables.)
+We call the least value of $C$\ the {\it Gaussian cotype $p$\ constant}
+of $T$, and denote it by $\beta^{(p)}(T)$.
+
+Throughout this paper, we shall use the letter $c$\ to denote a positive
+finite constant, whose value may change with each occurence. We
+shall write $A \approx B$\ to mean $A \le c\,B$\ and $B \le c\,A$.
+
+\proclaim Theorem 1. Let $\mu$\ be a Radon probability measure on a
+compact Hausdorff
+topological space $K$, and let $2\le p<\infty$. Then the canonical
+embedding $C(K) \to \LPhip (\mu)$\ has Gaussian cotype $p$.
+
+
+Finding the Gaussian cotype $p$\ constant of an operator from $C(K)$\
+involves finding lower bounds for the quantity $\E\Gausswalk$, where
+$\lists x\in C(K)$. In fact, since we really only need to consider
+finite
+sequences $\list xS \in C(K)$, in order to prove Theorem~1, it is
+sufficient to show that
+the Gaussian cotype $p$\ constant of the canonical embedding $C(K) \to
+\LPhip(\mu)$\ is uniformly bounded over all $\it finite\/$ $K$. Now we
+see that we are trying to find lower bounds for the supremum of the
+finite Gaussian process, $\supK \modo{\Gamma_\w}$, where $\Gamma_\w =
+\sums \gamma_s x_s(\w) $. Hence we can apply the following result due to
+Talagrand [8].
+
+\proclaim Theorem 2. Let $(\,\Gamma_\w:\w\in K)$\ be a finite
+Gaussian process.
+\item{i)} Let
+$$ V_1 = \E\left(\supK \modo{\Gamma_\w}\right) .$$
+\item{ii)} Let $V_2$\ be the infimum of
+$$ \left( \supt \sqrt{1+\log t}
+   \left(\E\modo{Y_t}^2\right)^\half\right)
+   \left(\supK \sumt \modo{\a_t(\w)} \right) $$
+over all Gaussian processes $(Y_t)_{t=1}^\infty$\ and over all sequences
+$(\a_t)_{t=1}^\infty$\ of functions on $K$\ such that
+$\Gamma_\w = \sumt \a_t(\w) Y_t$.
+\moreproclaim\noindent
+Then $V_1 \approx V_2$.
+
+We can rewrite this corollary in the following way. First, let us define
+the following spaces (here we are assuming $K$\ is finite).
+$$ \eqalignno{
+   \G
+     &= \left\{\, \bigl(x_s \in C(K)\bigr)_{s=1}^\infty:
+     \normo{(x_s)}_\G
+     = \normo{\sums \gamma_s x_s}_\infty <\infty
+     \right\} , \cr
+   \A
+     &= \left\{\, \bigl(\a_t \in C(K)\bigr)_{t=1}^\infty:
+     \normo{(\a_t)}_\A
+     = \normo{\sumt \modo{\a_t}}_\infty <\infty
+     \right\} , \cr
+   \Y
+     &= \left\{\, \bigl( y_t \in l_2\bigr)_{t=1}^\infty:
+     \normo{(y_t)}_\Y
+     = \supt \sqrt{1+\log t} \normo{y_t}_2 <\infty
+     \right\} . \cr }$$
+Let $m:\A\times\Y\to\G$\ be the bilinear map $m\bigl(
+(\a_t),(y_t)\bigr) = (x_s)$, where
+$$ x_s = \sumt y_t(s) \a_t .$$
+
+\proclaim Corollary 3. The map $m$\ has the following two properties:
+\item{i)} $m$\ is bounded;
+\item{ii)} $m$\ is open, that is, if $\normo{(x_s)}_\G \le 1$, then
+there are $\normo{(\a_t)}_\A \le c$\ and $\normo{(y_t)}_\Y \le c$ such
+that $m(\bigl((\a_t),(y_t)\bigr) = (x_s)$.
+\moreproclaim
+
+\Proof: This is just restating Theorem~2, setting
+$\Gamma_\w = \sums \gamma_s x_s(\w)$, and $Y_t = \sums \gamma_s
+y_t(s)$.
+\endproof
+
+From this we obtain the following corollary, for which we first give a
+definition.
+
+\proclaim Definition. If $2\le p <\infty$, and $T:C(K)\to Y$\ is a
+bounded linear map,
+where $K$\ is a finite Hausdorff space, and $Y$\ is a Banach space, then
+we set
+$$ H^{(p)}(T) = \sup \left\{ \left( \sums \normo{Tx_s}^p
+   \right)^\invp \right\} ,$$
+where the supremum is over all $ x_s = \sumt y_t(s) \a_t $, with $\lists
+\a$ pairwise disjoint
+elements of the unit ball of $C(K)$, and $\normo{(y_t)}_2 \le
+{1\over\sqrt{1+\log t}}$\ for each $t\ge 1$.
+
+\proclaim Corollary 4. For any $2\le p<\infty$, and for any bounded
+linear operator $T:C(K)\to
+Y$, where $K$\ is a finite Hausdorff space, and $Y$\ is a Banach space,
+we have
+$$ H^{(p)}(T) \approx \beta^{(p)}(T) .$$
+
+\Proof: This follows straight away from Corollary~3 and the following
+lemma.
+
+\proclaim Lemma 5. Let $B$\ be the set of $(\a_t) \in \A$\ such that the
+$\a_t$\ are pairwise disjoint elements of the unit ball of $C(K)$.
+Then the closed convex hull of
+$B$\ is the unit ball of $\A$.
+
+\Proof: See [5], Lemma~4 or [3], Proposition~14.4.
+\endproof
+
+Now we are almost in a position to prove Theorem~1; we just need the
+following properties of $\LPhip(\mu)$.
+
+\proclaim Lemma 6. If $\mu$\ is a Radon probability measure on a compact
+Hausdorff space $K$, then
+\item{i)} for any Borel subset $I$ of $K$, we have
+$\normo{\chi_I}_\Phip \approx \bigl(\mu(I)\bigr)^\invp
+\sqrt{\log{1\over \mu(I)}}$;
+\item{ii)} the space $\LPhip$\ satisfies an upper $p$\ estimate.
+
+\Proofof Theorem 1: We want to show that $H^{(p)}\bigl(C(K) \to
+\LPhip(\mu)\bigr) \le c$, where $\mu$\ is a probability measure on a
+finite Hausdorff space $K$. So consider $(x_s)$, $(\a_t)$\ and $(y_t)$\
+as given in the definition of $H^{(p)}(T)$. Then we need to show that
+$$ \sums \normo{x_s}_\Phip^p  \le c .$$
+First note, by Lemma~6, that
+$$ \eqalignno{
+   \normo{x_s}_\Phip^p
+   &\le c \sumt y_t(s)^p \normo{a_t}_\Phip^p \cr
+   &\le c \sumt y_t(s)^p \mu(I_t) \left(\log{1\over\mu(I_t)}\right)^\pot
+   ,\cr }$$
+where $I_t$\ is the support of $\a_t$. Hence
+$$ \eqalignno{
+   \sums \normo{x_s}_\Phip^p
+   &\le c \sumt \sums y_t(s)^p \mu(I_t)
+   \left(\log{1\over\mu(I_t)}\right)^\pot \cr
+   &\le c \sumt {1\over (1+\log t)^\pot} \mu(I_t)
+   \left(\log{1\over\mu(I_t)}\right)^\pot ,\cr }$$
+since $\normo{y_t}_p \le \normo{y_t}_2 \le {1\over\sqrt{1+\log t}}$. But
+now, splitting the sum into the two cases $\mu(I_t) \ge {1\over t^2}$\ or
+$\mu(I_t) < {1\over t^2}$, we deduce that this sum is bounded by some
+universal constant.
+\endproof
+
+\beginsection Concluding Remarks
+
+We first note that there is a nice way to calculate the Orlicz norms
+$\normo\widedot_\Phip$\ provided by the following result of Bennett and
+Rudnick.
+
+\proclaim Theorem 7. If $1\le p<\infty$\ and $a\in\R$, then the Orlicz
+probability
+norm given by the function $\Theta(t) \approx t^p (\log t)^a$\ ($t$\
+large) is equivalent to the norm
+$$ \normo x = \left( \int_0^1 (1+\log\smallinvt)^a x^*(t)^p \,dt \right)
+              ^\invp ,$$
+where $x^*$\ is the non-increasing rearrangement of $\modo x$.
+
+\Proof: See [1], Theorem~D.
+\endproof
+
+Thus we can now deduce the following result.
+
+\proclaim Theorem 8. The Gaussian cotype 2 constant of the canonical
+embedding $l_\infty^N \to L_{2,1}^N$\
+is bounded by $\sqrt{\log\log N}$.
+
+\Proof: Let $K=\set N$, and let $\mu$\ be the measure $\mu(A) = {\modo
+A\over N}$. Now notice that if $x\in l_\infty^N = C(K)$, then $x^*(t)$\
+is constant over $0\le t \le {1\over N}$, and hence
+$$ \eqalignno{
+   \normo x_{L_{2,1}^N}
+   &= \half \int_0^1 {x^*(t)\over\sqrt t} \,dt \cr
+   &= {x^*(1/N)\over\sqrt N} +
+      \half \int_{1\over N}^1 {x^*(t)\over\sqrt t} \,dt \cr
+   &\le \left(\int_0^{1\over N} (1+\log\smallinvt) x^*(t)^2 \,dt
+        \right)^\half
+        + \half \left(\int_{1\over N}^1 {1\over t(1+\log\smallinvt)} \,dt
+        \right)^\half
+        \left(\int_{1\over N}^1 (1+\log\smallinvt) x^*(t)^2 \,dt
+        \right)^\half \cr
+   &\le c\,\sqrt{\log\log N} \, \normo x_{\Phi_2} .\cr}$$
+This is sufficient to prove the result.
+\endproof
+
+An obvious question is the following.
+
+\proclaim Problem 9. Is there a rearrangement invariant norm
+$\normo\widedot_X$\ on $[0,1]$\ which is strictly larger than
+$\normo\widedot_\Phip$, but for which the canonical embedding $C(K) \to
+X(\mu)$\ has Gaussian cotype $p$?
+
+\comment{
+A partial answer to this problem is provided by the following result.
+%
+%\proclaim Proposition 12. If the canonical embedding $C[0,1]\to X$\ has
+Gaussian cotpye $p$, then $\normo{\chi_A}_X \le c\, \normo{\chi_A}_\Phip
+\approx \bigl(\mu(A)\bigr)^\invp \sqrt{\log{1\over\mu(A)}}$, where $A$\ is
+any measurable subset of $[0,1]$.
+%
+%\Proof: Without loss of generality suppose that $\mu(A) = {1\over 2S}$.
+Let $\list xS \in C(K)$\ be disjoint functions such that $0 \le x_s \le
+1$\ and $\mu(x_s=1)={1\over2S}$. Then
+$$ \eqalignno{
+   S^\invp \normo{\chi_A}_X
+  &\le \left(\sumS \normo{x_s}_X^p \right)^\invp \cr
+  &\le c\, \E \Gausswalk \cr
+  &= c\, \E\left(\supS \modo{\gamma_s}\right) \cr
+  &\approx \sqrt{\log S} ,\cr}$$
+as desired.
+%\endproof
+}
+
+For $p>2$, the answer is yes. The embedding $C(K) \to
+L_{p,1}(\mu)$\ has cotype $p$\ (this follows from results in [2]). Hence
+$X = \LPhip \cap L_{p,1}$\ equipped with the norm $\normo x = \max \{
+\normo x_\Phip , \normo x_{p,1} \}$\ provides the counterexample.
+
+For $p=2$, the answer is no. Talagrand [10] has recently shown that if
+$C[0,1] \to X$\ has Gaussian cotype $2$, then $\normo\widedot_X$\ is
+bounded by a constant times $\normo\widedot_{\Phi_2}$.
+
+Another problem is also suggested by Theorem~1.
+
+\proclaim Problem 10. If $T:C(K)\to X$\ is a linear map with Gaussian
+cotpye $2$, does it follow that there is a Radon probability measure
+$\mu$\ on $K$\ such that $\normo{Tx} \le c \normo x_{L_{\Phi_2}(\mu)}$\
+for $x\in C(K)$?
+
+Talagrand [10] has recently shown that this not the case.
+
+\beginsection Acknowledgements
+
+Much of the contents of this paper also appear in my Ph.D.\ thesis [7],
+which I studied at Cambridge University under the supervision of
+Dr.~D.J.H.~Garling, to whom I would like to express my thanks. I would
+also like to acknowledge simplifications communicated to me by
+M.~Talagrand, including the statement of Corollary~4.
+
+\beginsection References
+
+\halign{\rm#\hfil & \quad\vtop{\hsize=5.5 true
+in\parindent=0pt\hangindent=0pt \strut\rm#\strut\smallskip}\cr
+1. & C.~Bennett and K.~Rudnick,\rm\ On Lorentz--Zygmund spaces,\sl\
+Dissert.\
+Math.\ {\bf 175} (1980), 1--72.\cr
+2. & J.~Creekmore,\rm\ Type and cotype in Lorentz $L_{p,q}$\ spaces,\sl\
+Indag.\ Math.\ {\bf 43} (1981), 145--152.\cr
+3. & G.J.O.~Jameson,\sl\ Summing and Nuclear Norms in Banach Space
+Theory,\rm\
+London Math.\ Soc., Student Texts 8.\cr
+4. & J.~Lindenstrauss and L.~Tzafriri,\sl\ Classical Banach Spaces
+I---Se\-qu\-ence
+Spa\-ces,\rm\ Springer-Verlag.\cr
+\comment{
+5. & G.G.~Lorentz,\rm\ Relations between function spaces,\sl\ Proc.\
+A.M.S.\ {\bf 12}
+(1961), 127--132.\cr
+}
+5. & B.~Maurey,\rm\ Type et cotype dans les espaces munis de structures
+locales
+inconditionelles,\sl\ Seminaire Maurey-Schwartz 1973--74,
+Expos\'es~24--25.\cr
+6. & S.J.~Montgomery-Smith,\rm\ On the cotype of operators
+from $l_\infty^n$,\sl\ preprint.\cr
+7. & S.J.~Montgomery-Smith,\sl\ The Cotype of Operators
+from $C(K)$,\rm\ Ph.D.\ thesis, Cambridge University, August 1988.\cr
+\comment{
+9. & W.~Rudin,\sl\ Functional Analysis,\rm\ McGraw--Hill.\cr
+}
+8. & M.~Talagrand,\rm\ Regularity of Gaussian processes,\sl\ Acta
+Math. {\bf
+159} (1987), 99--149.\cr
+9. & M.~Talagrand,\rm\ The canonical injection from $C([0,1])$\ into
+$L_{2,1}$\ is not of cotype 2,\sl\ Contemporary Mathematics, Volume {\bf
+85} (1989), 513--521.\cr
+10. & M.~Talagrand,\rm\ Private communication.\cr
+}
+
+\bigskip
+
+S.J.~Montgomery-Smith,
+
+Department of Mathematics,
+
+University of Missouri at Columbia,
+
+Columbia, Missouri 65211,
+
+U.S.A.
+
+\bye

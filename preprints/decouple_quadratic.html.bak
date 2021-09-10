@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Bounds on the tail probability of U-statistics and quadratic forms.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith and <A HREF="http://www.stat.columbia.edu/pg_pena.html">Victor de la Pe&ntilde;a</A>&#44; Bounds on the tail probability of U-statistics and quadratic forms.</B>
+<I>Bull. Amer. Math. Soc. (N.S.) <B>31</B> (1994) 223-227.</I>
+The authors announce a general tail estimate, called a decoupling inequality, for a symmetrized sum of non-linear $k$-correlations of $n > k$ independent random variables.
+(<A HREF="decouple_quadratic.tex">tex</A>,
+<A HREF="decouple_quadratic.dvi">dvi</A>,
+<A HREF="decouple_quadratic.ps">ps</A>,
+<A HREF="decouple_quadratic.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

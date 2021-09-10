@@ -1,0 +1,48 @@
+#!/usr/bin/perl
+
+open(LIST,"list");
+@list = <LIST>;
+close LIST;
+
+$complete = 0;
+while (<>) {if (/Data from/) {
+  $a = <>;
+  $b = <>;
+  chomp $a;
+  chomp $b;
+  $l{$a} = $b;
+  while (defined($l{$complete})) {
+    $n = 0;
+    foreach $x (split ' ',$l{$complete}) {
+      $count[$n] += $x;
+      $n++;
+    }
+    undef $l{$complete};
+    $complete++;
+    if (log($complete)/log(10)-int((log($complete)/log(10)+1e-12))<1e-12 ||
+        $complete/10000==int($complete/10000)) {
+      print_info();
+    }
+  }
+}}
+
+print_info();
+
+sub print_info {
+  return if $complete==$last_complete;
+  $last_complete = $complete;
+  print "The number of primes p less than $complete,000,000,000 for which:\n";
+  for ($n=0;$n<=$#list && $n<=$#count;$n++) {
+    print "  ";
+    @neg = split ' ',$list[$n];
+    if ($#neg==0) {
+      print "p-$neg[0] is prime";
+    } else {
+      for ($m=0;$m<$#neg-1;$m++) {
+        print "p-$neg[$m], ";
+      }
+      print "p-$neg[$m] and p-$neg[$m+1] are prime";
+    }
+    print " is $count[$n]\n";
+  }
+}

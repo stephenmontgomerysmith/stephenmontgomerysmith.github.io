@@ -1,0 +1,6 @@
+navier2d - solves Navier-Stokes in 2D periodic boundary conditions.
+navier3d - solves Navier-Stokes in 3D periodic boundary conditions.
+navier3d-mag - solves Navier-Stokes in 3D periodic boundary conditions,
+also computing the so called magnetization variables:
+  dm/dt = viscosity laplacian m - u . grad m - m . transpose(grad u)
+(so u = leray-projection of m).

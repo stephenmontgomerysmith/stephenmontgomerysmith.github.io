@@ -1,0 +1,963 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The decay of </TITLE>
+<META NAME="description" CONTENT="The decay of ">
+<META NAME="keywords" CONTENT="mo_smpok8">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="mo_smpok8.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="mo_smpok8.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html61"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html59"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html53"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html62"
+  HREF="node6.html">The Probabilistic Approach</A>
+<B> Up:</B> <A NAME="tex2html60"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<B> Previous:</B> <A NAME="tex2html54"
+  HREF="node4.html">Construction of the Fluid</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00050000000000000000">
+The decay of <!-- MATH
+ $\nabla \mathbf{A}^N-{\mathbf{I}}$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\nabla \mathbf{A}^N-{\mathbf{I}}$"></A>
+</H1>
+
+<P>
+Let us now look in particular at <!-- MATH
+ $\nabla \mathbf{A}^N$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$\nabla \mathbf{A}^N$"> for <IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img151.png"
+ ALT="$t &gt; t_0$">. We have that 
+<!-- MATH
+ $\nabla \mathbf{A}^N$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$\nabla \mathbf{A}^N$"> satisfies the heat equation
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial }{\partial t} (\nabla \mathbf{A}^N) - \nu \Delta (\nabla \mathbf{A}^N) = {\mathbf {0}}
+ \qquad {\rm in \ }
+\mbox{\Bbbb R}^3 \times (t_0,\infty) \\
+\nabla \mathbf{A}^N(t_0) \quad {\rm given.}
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="382" HEIGHT="69" BORDER="0"
+ SRC="img152.png"
+ ALT="\begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial }{\partial t}...
+...ty) \\
+\nabla \mathbf{A}^N(t_0) \quad {\rm given.}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Therefore also
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\displaystyle \frac {\partial }{\partial t} (\nabla \mathbf{A}^N - {\mathbf{I}}) - \nu \Delta (\nabla \mathbf{A}^N-{\mathbf{I}}) 
+= {\mathbf {0}}\qquad {\rm in \ }
+\mbox{\Bbbb R}^3 \times (t_0,\infty)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="445" HEIGHT="46" BORDER="0"
+ SRC="img153.png"
+ ALT="\begin{displaymath}
+\displaystyle \frac {\partial }{\partial t} (\nabla \mathbf{...
+...f {0}}\qquad {\rm in \ }
+\mbox{\Bbbb R}^3 \times (t_0,\infty)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and, especially, at <!-- MATH
+ ${\mathbf{x}}={\mathbf {0}}$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img154.png"
+ ALT="${\mathbf{x}}={\mathbf {0}}$">,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\nabla \mathbf{A}^N({\mathbf {0}}, t) - {\mathbf{I}}= \frac {C}{(t-t_0)^{\frac 32} \nu^{\frac 32}} 
+\int_{\mbox{\Bbbbb R}^3} {\rm e}\,^{-\frac{|{\mathbf{p}}|^2}{4\nu (t-t_0)}} (\nabla \mathbf{A}^N-{\mathbf{I}})({\mathbf{p}},t_0) 
+d{\mathbf{p}}\, .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="4.1"></A><IMG
+ WIDTH="509" HEIGHT="54" BORDER="0"
+ SRC="img155.png"
+ ALT="\begin{displaymath}
+\nabla \mathbf{A}^N({\mathbf {0}}, t) - {\mathbf{I}}= \frac ...
+...mathbf{A}^N-{\mathbf{I}})({\mathbf{p}},t_0)
+d{\mathbf{p}}\, .
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+Our first goal will be to show that the function <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img76.png"
+ ALT="$F$"> in Lemma&nbsp;<A HREF="node2.html#homotopy">2.2</A>
+satisfies <!-- MATH
+ $F(t,s) \to (1,0)$
+ -->
+<IMG
+ WIDTH="129" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="$F(t,s) \to (1,0)$"> as <IMG
+ WIDTH="60" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img157.png"
+ ALT="$t \to \infty$"> uniformly in <!-- MATH
+ $s \in [0,2\pi]$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$s \in [0,2\pi]$">.
+This will complete the proof that <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img76.png"
+ ALT="$F$"> is continuous on 
+<!-- MATH
+ $[0,\infty]\times[0,2\pi]$
+ -->
+<IMG
+ WIDTH="124" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$[0,\infty]\times[0,2\pi]$">, and that <!-- MATH
+ $F(\infty,s) = (1,0)$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.png"
+ ALT="$F(\infty,s) = (1,0)$">, so that
+<IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img76.png"
+ ALT="$F$"> is indeed a homotopy.
+
+<P>
+We have that <!-- MATH
+ $\nabla\mathbf{A}^N - {\mathbf{I}}= (\nabla\mathbf{A}^N- \nabla\mathbf{A}^E) +  (\nabla\mathbf{A}^E
+-{\mathbf{I}})$
+ -->
+<IMG
+ WIDTH="345" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$\nabla\mathbf{A}^N - {\mathbf{I}}= (\nabla\mathbf{A}^N- \nabla\mathbf{A}^E) + (\nabla\mathbf{A}^E
+-{\mathbf{I}})$">.
+Using the fact that <!-- MATH
+ $\nabla \mathbf{A}^E({\mathbf{p}}, t_0) -{\mathbf{I}}$
+ -->
+<IMG
+ WIDTH="129" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.png"
+ ALT="$\nabla \mathbf{A}^E({\mathbf{p}}, t_0) -{\mathbf{I}}$"> has bounded support and 
+<!-- MATH
+ $\|\nabla (\mathbf{A}^N -\mathbf{A}^E)\|_p(t_0) \leq C$
+ -->
+<IMG
+ WIDTH="211" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.png"
+ ALT="$\Vert\nabla (\mathbf{A}^N -\mathbf{A}^E)\Vert _p(t_0) \leq C$">,
+we use the H&#246;lder inequality and end up with
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+|\nabla \mathbf{A}^N(0, t) - {\mathbf{I}}| \leq \frac{C}{(t-t_0)^a}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="218" HEIGHT="51" BORDER="0"
+ SRC="img163.png"
+ ALT="\begin{displaymath}
+\vert\nabla \mathbf{A}^N(0, t) - {\mathbf{I}}\vert \leq \frac{C}{(t-t_0)^a}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+with some positive power <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img164.png"
+ ALT="$a$"> (<IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img165.png"
+ ALT="$C$"> may depend on any constants which
+appeared above, but is independent of the time).
+
+<P>
+Since it is clear that <IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img166.png"
+ ALT="$F(\cdot,0)$"> is the constant function,
+the proof of Lemma&nbsp;<A HREF="node2.html#homotopy">2.2</A> will be complete when we have
+shown that 
+<IMG
+ WIDTH="68" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img167.png"
+ ALT="$F(\cdot,2\pi)$"> is homotopic to the function whose winding number is <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img33.png"
+ ALT="$1$">,
+at least if <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.png"
+ ALT="$\nu$">, <IMG
+ WIDTH="69" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img169.png"
+ ALT="$R^o-R_i$">, and <IMG
+ WIDTH="68" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.png"
+ ALT="$Z^o-Z_i$"> are small enough.
+
+<P>
+It is clear that the representation of 
+<!-- MATH
+ $\nabla\mathbf{A}^E_{2\pi}(\cdot,0)$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.png"
+ ALT="$\nabla\mathbf{A}^E_{2\pi}(\cdot,0)$"> has this property.  
+So let us put <IMG
+ WIDTH="59" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img172.png"
+ ALT="$s=2\pi$">.  
+We need to
+show that <!-- MATH
+ $\nabla\mathbf{A}^E_{2\pi}(\cdot,0) - \nabla\mathbf{A}^N_{2\pi}(\cdot,0)$
+ -->
+<IMG
+ WIDTH="199" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.png"
+ ALT="$\nabla\mathbf{A}^E_{2\pi}(\cdot,0) - \nabla\mathbf{A}^N_{2\pi}(\cdot,0)$"> is 
+small enough
+to construct a linear homotopy between the representation of
+<!-- MATH
+ $\mathbf{A}^E_{2\pi}(\cdot,0)$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img174.png"
+ ALT="$\mathbf{A}^E_{2\pi}(\cdot,0)$"> and 
+<IMG
+ WIDTH="68" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img167.png"
+ ALT="$F(\cdot,2\pi)$"> that does not pass through <IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img175.png"
+ ALT="$(0,0)$">.  We have already shown
+this property for <IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.png"
+ ALT="$t \le t_0$"> in equation&nbsp;(<A HREF="node4.html#3.4">4.3</A>), at least when <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.png"
+ ALT="$\nu$">
+is sufficiently small.  So all that remains is to show the following result.
+
+<P>
+<P>
+<DIV><A NAME="l_4.1"><B>Lemma  5.1</B></A> &nbsp; 
+<I>There exist <!-- MATH
+ $\varepsilon _1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img177.png"
+ ALT="$\varepsilon _1$"> and <!-- MATH
+ $\varepsilon _2 >0$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img178.png"
+ ALT="$\varepsilon _2 &gt;0$"> such that if <!-- MATH
+ $\max \{R^o-R_i, 
+Z^o-Z_i\} \leq \varepsilon _1$
+ -->
+<IMG
+ WIDTH="236" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img179.png"
+ ALT="$\max \{R^o-R_i,
+Z^o-Z_i\} \leq \varepsilon _1$"> and <!-- MATH
+ $\nu \leq \varepsilon _2(\varepsilon _1)$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img180.png"
+ ALT="$\nu \leq \varepsilon _2(\varepsilon _1)$"> then for <IMG
+ WIDTH="59" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img172.png"
+ ALT="$s=2\pi$">,
+<!-- MATH
+ $\nabla \mathbf{A}^N - {\mathbf{I}})(0,t) \leq \frac{1}{10}$
+ -->
+<IMG
+ WIDTH="170" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.png"
+ ALT="$ \nabla \mathbf{A}^N - {\mathbf{I}})(0,t) \leq \frac{1}{10}$"> for any 
+<IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img182.png"
+ ALT="$t\geq t_0$">.</I></DIV><P></P>
+
+<P>
+<B>Proof:</B> 
+We denote by <IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.png"
+ ALT="$I_1$"> the part of integral (<A HREF="#4.1">5.1</A>)
+with  <!-- MATH
+ $(\nabla \mathbf{A}^N-{\mathbf{I}})({\mathbf{p}},t_0)$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.png"
+ ALT="$(\nabla \mathbf{A}^N-{\mathbf{I}})({\mathbf{p}},t_0)$"> replaced by <!-- MATH
+ $(\nabla \mathbf{A}^N-\nabla
+\mathbf{A}^E)({\mathbf{p}},t_0)$
+ -->
+<IMG
+ WIDTH="180" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img185.png"
+ ALT="$(\nabla \mathbf{A}^N-\nabla
+\mathbf{A}^E)({\mathbf{p}},t_0)$">, and by <IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img186.png"
+ ALT="$I_2$">-<IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.png"
+ ALT="$I_5$"> the parts of integral (<A HREF="#4.1">5.1</A>)
+with <!-- MATH
+ $(\nabla \mathbf{A}^N-{\mathbf{I}})({\mathbf{p}},t_0)$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.png"
+ ALT="$(\nabla \mathbf{A}^N-{\mathbf{I}})({\mathbf{p}},t_0)$"> replaced by <!-- MATH
+ $(\nabla \mathbf{A}^E-{\mathbf{I}})({\mathbf{p}},t_0)$
+ -->
+<IMG
+ WIDTH="143" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img188.png"
+ ALT="$(\nabla \mathbf{A}^E-{\mathbf{I}})({\mathbf{p}},t_0)$">;
+namely by <IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img186.png"
+ ALT="$I_2$"> the integral over the inner cylinder, by <IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img189.png"
+ ALT="$I_3$"> over the cylinder 
+<IMG
+ WIDTH="82" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.png"
+ ALT="$C(R^o,Z_i)$"> without the inner cylinder, by <IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$I_4$"> the integral over the 
+outer cylinder <IMG
+ WIDTH="86" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img192.png"
+ ALT="$C(R^o,Z^o)$"> minus the cylinder <IMG
+ WIDTH="82" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img190.png"
+ ALT="$C(R^o,Z_i)$"> and finally by
+<IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.png"
+ ALT="$I_5$"> over the complement of the outer cylinder.
+
+<P>
+Evidently, <IMG
+ WIDTH="96" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img193.png"
+ ALT="$I_2 = I_5 = 0$"> since <IMG
+ WIDTH="59" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img172.png"
+ ALT="$s=2\pi$">. Let us now consider <IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img189.png"
+ ALT="$I_3$">.
+If we rewrite <!-- MATH
+ $\nabla A^E({\mathbf {0}}, t_0)-{\mathbf{I}}$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.png"
+ ALT="$\nabla A^E({\mathbf {0}}, t_0)-{\mathbf{I}}$"> (in Cartesian components) 
+into the cylindrical coordinates, we get that it is equal to <!-- MATH
+ ${\mathbf{M}}_0 +
+{\mathbf{M}}_1 + {\mathbf{M}}_2$
+ -->
+<IMG
+ WIDTH="135" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="${\mathbf{M}}_0 +
+{\mathbf{M}}_1 + {\mathbf{M}}_2$"> with
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{l}
+{\mathbf{M}}_0 =
+\left( \begin{array}{ccc}
+\cos [2\pi\alpha (r)]-1, &
+\sin[2\pi \alpha (r)], & 0 \\
+-\sin [2\pi\alpha (r)], &  
+\cos [2\pi\alpha (r)]-1, & 0 \\
+0, & 0, & 0 \end{array} \right)\, ,
+\\[6pt]
+{\mathbf{M}}_1 =
+\left( \begin{array}{ccc}
+- 2\pi r \sin [2\pi\alpha (r)]\alpha '(r)\cos^2\vartheta , &
+2\pi r  \cos [2\pi \alpha (r)]\alpha '(r) \sin^2\vartheta , & 0 \\
+- 2\pi r \cos [2\pi\alpha (r)]\alpha '(r) \cos^2\vartheta , & - 2\pi r 
+\sin [2\pi\alpha (r)]\alpha '(r) \sin^2\vartheta , & 0 \\
+0, & 0, & 0 \end{array} \right)\, ,
+\\[6pt]
+{\mathbf{M}}_2 =
+\left( \begin{array}{ccc}
+2\pi r  \cos [2\pi\alpha (r)]\alpha '(r) \sin \vartheta \cos\vartheta , & - 2\pi r 
+\sin [2\pi\alpha (r)]\alpha '(r)\sin\vartheta \cos\vartheta , & 0 \\
+- 2\pi r \sin [2\pi\alpha (r)]\alpha '(r)\sin \vartheta \cos\vartheta , &  
+-2\pi r \cos [2\pi\alpha (r)]\alpha '(r) \sin\vartheta \cos\vartheta , & 0 \\
+0, & 0, & 0 \end{array} \right)\, .
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="642" HEIGHT="214" BORDER="0"
+ SRC="img196.png"
+ ALT="\begin{displaymath}
+\begin{array}{l}
+{\mathbf{M}}_0 =
+\left( \begin{array}{ccc}
+...
+...theta , &amp; 0 \\
+0, &amp; 0, &amp; 0 \end{array} \right)\, .
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+The heat kernel is independent of the angle <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.png"
+ ALT="$\vartheta $">; after integration over 
+it the matrix <!-- MATH
+ ${\mathbf{M}}_2$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="${\mathbf{M}}_2$"> disappears and from <!-- MATH
+ ${\mathbf{M}}_1$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.png"
+ ALT="${\mathbf{M}}_1$"> 
+we are left with integrals of the type
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{C}{(t-t_0)^{\frac 32} \nu^{\frac 32}} \int_{
+ -->
+
+<IMG
+ WIDTH="367" HEIGHT="53" BORDER="0"
+ SRC="img199.png"
+ ALT="\begin{displaymath}
+\frac{C}{(t-t_0)^{\frac 32} \nu^{\frac 32}} \int_{\index {\b...
+...2}{4\nu (t-t_0)}} r^2
+\sin [2\pi \alpha (r)] \alpha '(r) dr dz
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+(in some terms, <IMG
+ WIDTH="28" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img200.png"
+ ALT="$\sin$"> is replaced by <IMG
+ WIDTH="30" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img201.png"
+ ALT="$\cos$">). Using the standard change of 
+variables and integrating over the <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img202.png"
+ ALT="$z$"> variable we end up with 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+C \int_{\frac{R_i}{\sqrt{\nu(t-t_0)}} \leq u \leq 
+\frac{R^o}{\sqrt{\nu(t-t_0)}} } {\rm e}\,^{-\frac{u^2}{4}} u^2 \sin \Big(2\pi 
+\alpha (u \sqrt{\nu(t-t_0)})\Big) \alpha '(u\sqrt {\nu(t-t_0)}) d u\, .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="575" HEIGHT="55" BORDER="0"
+ SRC="img203.png"
+ ALT="\begin{displaymath}
+C \int_{\frac{R_i}{\sqrt{\nu(t-t_0)}} \leq u \leq
+\frac{R^o...
+... \sqrt{\nu(t-t_0)})\Big) \alpha '(u\sqrt {\nu(t-t_0)}) d u\, .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Now the application of the Taylor theorem on the function <!-- MATH
+ ${\rm e}\,^{-\frac{u^2}{4}} u^2$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img204.png"
+ ALT="${\rm e}\,^{-\frac{u^2}{4}} u^2$">
+yields 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\rm e}\,^{-\frac{u^2}{4}} u^2 = {\rm e}\,^{- \frac{R_i^2}{4 \nu (t-t_0)}} \frac{R_i^2}
+{\nu (t-t_0)} + {\rm e}\,^{-\frac {\xi^2}{4}} \Big(2\xi - \frac{\xi^3}{2}\Big) 
+\Big(u-\frac
+{R_i}
+{\sqrt{\nu (t-t_0)}}\Big)\, ,
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="522" HEIGHT="63" BORDER="0"
+ SRC="img205.png"
+ ALT="\begin{displaymath}
+{\rm e}\,^{-\frac{u^2}{4}} u^2 = {\rm e}\,^{- \frac{R_i^2}{4...
+...i^3}{2}\Big)
+\Big(u-\frac
+{R_i}
+{\sqrt{\nu (t-t_0)}}\Big)\, ,
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <!-- MATH
+ $\xi \in (\frac {R_i} {\sqrt{\nu (t-t_0)}}, \frac {R^o} 
+{\sqrt{\nu (t-t_0)}})$
+ -->
+<IMG
+ WIDTH="189" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.png"
+ ALT="$\xi \in (\frac {R_i} {\sqrt{\nu (t-t_0)}}, \frac {R^o}
+{\sqrt{\nu (t-t_0)}})$">. Moreover
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\int_{\frac{R_i}{\sqrt{\nu(t-t_0)}} \leq u \leq 
+\frac{R^o}{\sqrt{\nu(t-t_0)}} } \sin \Big(2\pi \alpha (u \sqrt
+{\nu(t-t_0)})\Big) \alpha '(u\sqrt {\nu(t-t_0)}) d u = 0\, .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="529" HEIGHT="53" BORDER="0"
+ SRC="img207.png"
+ ALT="\begin{displaymath}
+\int_{\frac{R_i}{\sqrt{\nu(t-t_0)}} \leq u \leq
+\frac{R^o}{...
+...t
+{\nu(t-t_0)})\Big) \alpha '(u\sqrt {\nu(t-t_0)}) d u = 0\, .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+A similar argument can be applied also on terms coming from <!-- MATH
+ ${\mathbf{M}}_0$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.png"
+ ALT="${\mathbf{M}}_0$">. Thus
+we have
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{c}
+\displaystyle 
+|I_3| \leq C{\rm e}\,^{-\frac{R_i^2}{4\nu (t-t_0)}} \Big(\frac {2 R^o}{\sqrt{\nu 
+(t-t_0)}} + \frac {(R^o)^3}{\Big(\sqrt{\nu 
+(t-t_0)}\Big)^3}\Big) \\[6pt]
+\displaystyle \max_{u \in (\frac {R_i}{\sqrt{\nu (t-t_0)}},\frac 
+{R^o}{\sqrt{\nu (t-t_0)}})}|\alpha '(u \sqrt{\nu (t-t_0)})| \frac{(R^o-R_i)^2}
+{\nu(t-t_0)} +{\rm e}\,^{-\frac{R_i^2}{4\nu (t-t_0)}} (R^o-R_i)\frac{R^o}
+{\sqrt{\nu(t-t_0)}}\, .
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="646" HEIGHT="123" BORDER="0"
+ SRC="img209.png"
+ ALT="\begin{displaymath}
+\begin{array}{c}
+\displaystyle
+\vert I_3\vert \leq C{\rm e}...
+...-t_0)}} (R^o-R_i)\frac{R^o}
+{\sqrt{\nu(t-t_0)}}\, .
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+We can choose <IMG
+ WIDTH="40" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.png"
+ ALT="$\alpha (r)$"> in such a way that <!-- MATH
+ $\alpha '(r) \leq \frac{C}{R^o-R_i}$
+ -->
+<IMG
+ WIDTH="117" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.png"
+ ALT="$\alpha '(r) \leq \frac{C}{R^o-R_i}$"> and
+as 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\rm e}\,^{-\frac{R_i^2}{4\nu (t-t_0)}} \Big(\sqrt{\nu (t-t_0)}\Big)^a \leq C(a, R_i)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="276" HEIGHT="45" BORDER="0"
+ SRC="img212.png"
+ ALT="\begin{displaymath}
+{\rm e}\,^{-\frac{R_i^2}{4\nu (t-t_0)}} \Big(\sqrt{\nu (t-t_0)}\Big)^a \leq C(a, R_i)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+for any <!-- MATH
+ $a \in \mbox{\Bbbb R}$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.png"
+ ALT="$a \in \mbox{\Bbbb R}$">, we finally get
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+|I_3| \leq C (R^o-R_i)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="141" HEIGHT="33" BORDER="0"
+ SRC="img214.png"
+ ALT="\begin{displaymath}
+\vert I_3\vert \leq C (R^o-R_i)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+with the constant in particular independent of <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.png"
+ ALT="$\nu$"> and <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$t$">. Therefore for 
+the "boundary layer" sufficiently thin, this term can be done arbitrarily 
+small, independently of the viscosity and the time.
+
+<P>
+Similarly we can estimate <IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$I_4$">; here <!-- MATH
+ $(\nabla \mathbf{A}^E)_{i,3}^{i=1,2}({\mathbf{p}},t_0)$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img215.png"
+ ALT="$(\nabla \mathbf{A}^E)_{i,3}^{i=1,2}({\mathbf{p}},t_0)$">
+are odd functions in <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img202.png"
+ ALT="$z$"> and thus we get zero after the integration of 
+the <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img202.png"
+ ALT="$z$"> variable. 
+For the components <IMG
+ WIDTH="28" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img216.png"
+ ALT="$i,j$">; <IMG
+ WIDTH="80" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.png"
+ ALT="$i,j=1,2$"> proceed similarly as above and end up with 
+the following integral
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\int_\Omega {\rm e}\,^{-\frac{u^2+v^2}{4}} 
+u^2 \sin \Bigg(2\pi \alpha \Big[u \sqrt
+{\nu(t-t_0)}\Big] \beta \Big[|v|\sqrt{\nu (t-t_0)\Big]}\Bigg) \alpha '\Big(u\sqrt {\nu(t-t_0)}
+\Big) d u d v
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="602" HEIGHT="54" BORDER="0"
+ SRC="img218.png"
+ ALT="\begin{displaymath}
+\int_\Omega {\rm e}\,^{-\frac{u^2+v^2}{4}}
+u^2 \sin \Bigg(2...
+..._0)\Big]}\Bigg) \alpha '\Big(u\sqrt {\nu(t-t_0)}
+\Big) d u d v
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+with <!-- MATH
+ $\Omega =\{(u,v); \frac{R_i}{\sqrt{\nu(t-t_0)}} \leq u \leq 
+\frac{R^o}{\sqrt{\nu(t-t_0)}},   \frac{Z_i}{\sqrt{\nu (t-t_0)}} \leq |v|
+\leq \frac{Z^o}{\sqrt{\nu(t-t_0)}}\}$
+ -->
+<IMG
+ WIDTH="514" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.png"
+ ALT="$\Omega =\{(u,v); \frac{R_i}{\sqrt{\nu(t-t_0)}} \leq u \leq
+\frac{R^o}{\sqrt{\n...
+...Z_i}{\sqrt{\nu (t-t_0)}} \leq \vert v\vert
+\leq \frac{Z^o}{\sqrt{\nu(t-t_0)}}\}$">. 
+But now <IMG
+ WIDTH="51" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$\beta \neq 1$"> and we cannot proceed as above. Nevertheless, we get
+that the integral above is bounded by
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+C (Z^o-Z_i) (\nu (t-t_0))^a {\rm e}\,^{-\frac{R_i^2 + Z_i^2}{4\nu (t-t_0)}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="254" HEIGHT="41" BORDER="0"
+ SRC="img221.png"
+ ALT="\begin{displaymath}
+C (Z^o-Z_i) (\nu (t-t_0))^a {\rm e}\,^{-\frac{R_i^2 + Z_i^2}{4\nu (t-t_0)}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+with the constant independent of <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.png"
+ ALT="$\nu$"> and <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$t$">.
+Thus, if <IMG
+ WIDTH="68" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.png"
+ ALT="$Z^o-Z_i$"> is small, we get that also <IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$I_4$"> is small.
+
+<P>
+Finally,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{c}
+\displaystyle |I_1|  \leq \frac{C}{\Big(\nu(t-t_0)\Big)^{\frac 32}} \int_{\mbox{\Bbbbb R}^3} {\rm e}\,^{-\frac
+{|{\mathbf{p}}|^2}{4\nu (t-t_0)}} |\nabla \mathbf{A}^N - \nabla \mathbf{A}^E|({\mathbf{p}},t_0) d{\mathbf{p}}\\[6pt]
+\leq
+C \|\nabla \mathbf{A}^N - \nabla \mathbf{A}^E\|_\infty(t_0) \leq \nu C(R^o-R_i, Z^o-Z_i, t_0)\,.
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="451" HEIGHT="89" BORDER="0"
+ SRC="img222.png"
+ ALT="\begin{displaymath}
+\begin{array}{c}
+\displaystyle \vert I_1\vert \leq \frac{C}{...
+...t _\infty(t_0) \leq \nu C(R^o-R_i, Z^o-Z_i, t_0)\,.
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+width7pt height7pt depth0pt
+
+<P>
+<P>
+<DIV><B>Remark  5.1</B> &nbsp; 
+<I><A NAME="r_5.2"></A></I>We have shown that <IMG
+ WIDTH="34" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$\mathbf{A}^N$"> may have no smooth inverse.  However it would be
+more interesting to provide an example in which it can be shown that
+<IMG
+ WIDTH="34" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$\mathbf{A}^N$"> has no inverse at all.
+Looking at the representation of <!-- MATH
+ $\nabla \mathbf{A}^E_s({\mathbf {0}}, t_0)$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.png"
+ ALT="$\nabla \mathbf{A}^E_s({\mathbf {0}}, t_0)$"> it is not 
+difficult to see 
+that <!-- MATH
+ $\nabla^2 \mathbf{A}_s^E({\mathbf {0}}, t_0)$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img224.png"
+ ALT="$\nabla^2 \mathbf{A}_s^E({\mathbf {0}}, t_0)$"> is odd in <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img225.png"
+ ALT="$x$"> and <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img226.png"
+ ALT="$y$"> and therefore, 
+since
+the same holds also for <!-- MATH
+ $\nabla^2 \mathbf{A}_s^N({\mathbf {0}}, t_0)$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img227.png"
+ ALT="$\nabla^2 \mathbf{A}_s^N({\mathbf {0}}, t_0)$">, we get
+that  <!-- MATH
+ $\nabla^2 \mathbf{A}_s^N({\mathbf {0}}, t) = {\mathbf {0}}$
+ -->
+<IMG
+ WIDTH="134" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.png"
+ ALT="$\nabla^2 \mathbf{A}_s^N({\mathbf {0}}, t) = {\mathbf {0}}$"> for any <IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img151.png"
+ ALT="$t &gt; t_0$"> and any <!-- MATH
+ $s \in 
+[0,2\pi]$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$s \in [0,2\pi]$"> and thus
+<IMG
+ WIDTH="34" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$\mathbf{A}^N$"> is in fact invertible with a non-smooth inverse.</DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html61"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html59"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html53"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html62"
+  HREF="node6.html">The Probabilistic Approach</A>
+<B> Up:</B> <A NAME="tex2html60"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<B> Previous:</B> <A NAME="tex2html54"
+  HREF="node4.html">Construction of the Fluid</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-25
+</ADDRESS>
+</BODY>
+</HTML>

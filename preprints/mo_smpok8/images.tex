@@ -1,0 +1,2113 @@
+\batchmode
+\documentclass[12pt,twoside]{article}
+\RequirePackage{ifthen}
+
+
+\usepackage{a4,latexsym}
+
+
+\font\Bbb=msbm10
+\font\Bbbb=msbm7%
+\providecommand{\bX}{\mathbf{X}}%
+\providecommand{\bY}{\mathbf{Y}}%
+\providecommand{\bE}{\mathbf{E}}%
+\providecommand{\bZ}{\mathbf{Z}}%
+\providecommand{\bA}{\mathbf{A}} 
+
+
+
+\newtheorem{defi}{Definition}[section] 
+\newtheorem{theo}{Theorem}[section] 
+\newtheorem{corr}{Corollary}[section] 
+\newtheorem{lema}{Lemma}[section] 
+\newtheorem{rema}{Remark}[section] 
+
+%
+\renewcommand{\div}{{\rm div}\,}%
+\providecommand{\dett}{{\rm det}\,}%
+\providecommand{\ee}{{\rm e}\,}%
+\providecommand{\sign}{{\rm sign}\,} 
+\font\Bbb=msbm10 scaled \magstep 1
+\font\Bsub=msbm10 scaled \magstep 2
+\font\Bbbb=msbm10 at 12pt
+\font\Bbbbb=msbm7 scaled \magstep1
+\font\BB=msbm7
+\font\Bb=msbm10 scaled \magstep 3
+\font\BBB=msbm10 scaled \magstep 5%
+\providecommand{\rdt}{\mbox{\Bb R}}%
+\providecommand{\rrd}{\mbox{\BBB R}}%
+\providecommand{\rtt}{\mbox{\Bbbbb R}}%
+\providecommand{\rttt}{\mbox{\BB R}}%
+\providecommand{\rd}{\mbox{\Bbb R}}%
+\providecommand{\rsubd}{\mbox{\Bsub R}}%
+\providecommand{\rdd}{\mbox{\Bbbb R}}%
+\providecommand{\rddt}{\mbox{\Bbbbb R}}%
+\providecommand{\NN}{\mbox{\Bbbbb N}}%
+\providecommand{\N}{\mbox{\Bbbb N}}%
+\providecommand{\bnul}{{\mathbf {0}}}%
+\providecommand{\bv}{{\mathbf{v}}}%
+\providecommand{\bvnek}{{\mathbf{v}}_\infty}%
+\providecommand{\bee}{{\mathbf{e}}}%
+\providecommand{\bu}{{\mathbf{u}}}%
+\providecommand{\bI}{{\mathbf{I}}}%
+\providecommand{\bM}{{\mathbf{M}}}%
+\providecommand{\bT}{{\mathbf{T}}}%
+\providecommand{\bU}{{\mathbf{U}}}%
+\providecommand{\bff}{{\mathbf{f}}}%
+\providecommand{\bx}{{\mathbf{x}}}%
+\providecommand{\bm}{{\mathbf{m}}}%
+\providecommand{\bn}{{\mathbf{n}}}%
+\providecommand{\ba}{{\mathbf{a}}}%
+\providecommand{\bz}{{\mathbf{z}}}%
+\providecommand{\bq}{{\mathbf{q}}}%
+\providecommand{\bb}{{\mathbf{b}}}%
+\providecommand{\bh}{{\mathbf{h}}}%
+\providecommand{\bp}{{\mathbf{p}}}%
+\providecommand{\byy}{{\mathbf{y}}}%
+\providecommand{\bG}{{\mathbf{G}}}%
+\providecommand{\bN}{{\mathbf{N}}}%
+\providecommand{\bQ}{{\mathbf{Q}}}%
+\providecommand{\bw}{{\mathbf{w}}}%
+\providecommand{\bW}{{\mathbf{W}}}%
+\providecommand{\bF}{{\mathbf{F}}}%
+\providecommand{\bL}{{\mathbf{L}}}%
+\providecommand{\bB}{{\mathbf{B}}}%
+\providecommand{\pder}[2]{\frac {\partial #1}{\partial #2}}%
+\providecommand{\demo}{{\bf Proof:} } 
+
+
+%
+\providecommand{\vnor}{\hookrightarrow} 
+\font\index = cmr7%
+\providecommand{\wor}[2]{W^{#1,#2}(\mbox{\Bbbb R}^3)}%
+\providecommand{\worr}[2]{W^{#1,#2}(\mbox{\Bbbbb R}^3)}%
+\providecommand{\worrr}[2]{W^{#1,#2}(\mbox{\Bbbbb R}^3)} 
+%
+\renewcommand{\lor}[1]{L^{#1}(\mbox{\Bbbb R}^3)}%
+\providecommand{\wrn}[2]{W^{#1,#2}(\mbox{\Bbbb R}^N)}%
+\providecommand{\lorr}[1]{L^{#1}(\mbox{\Bbbb R}^3)}%
+\providecommand{\loRR}[1]{L^{#1}(\mbox{\Bbbbb R}^3)} 
+
+
+\arraycolsep 1pt
+
+
+
+
+\usepackage[dvips]{color}
+
+
+\pagecolor[gray]{.7}
+
+\usepackage[latin1]{inputenc}
+
+
+
+\makeatletter
+
+\makeatletter
+\count@=\the\catcode`\_ \catcode`\_=8 
+\newenvironment{tex2html_wrap}{}{}%
+\catcode`\<=12\catcode`\_=\count@
+\newcommand{\providedcommand}[1]{\expandafter\providecommand\csname #1\endcsname}%
+\newcommand{\renewedcommand}[1]{\expandafter\providecommand\csname #1\endcsname{}%
+  \expandafter\renewcommand\csname #1\endcsname}%
+\newcommand{\newedenvironment}[1]{\newenvironment{#1}{}{}\renewenvironment{#1}}%
+\let\newedcommand\renewedcommand
+\let\renewedenvironment\newedenvironment
+\makeatother
+\let\mathon=$
+\let\mathoff=$
+\ifx\AtBeginDocument\undefined \newcommand{\AtBeginDocument}[1]{}\fi
+\newbox\sizebox
+\setlength{\hoffset}{0pt}\setlength{\voffset}{0pt}
+\addtolength{\textheight}{\footskip}\setlength{\footskip}{0pt}
+\addtolength{\textheight}{\topmargin}\setlength{\topmargin}{0pt}
+\addtolength{\textheight}{\headheight}\setlength{\headheight}{0pt}
+\addtolength{\textheight}{\headsep}\setlength{\headsep}{0pt}
+\setlength{\textwidth}{349pt}
+\newwrite\lthtmlwrite
+\makeatletter
+\let\realnormalsize=\normalsize
+\global\topskip=2sp
+\def\preveqno{}\let\real@float=\@float \let\realend@float=\end@float
+\def\@float{\let\@savefreelist\@freelist\real@float}
+\def\liih@math{\ifmmode$\else\bad@math\fi}
+\def\end@float{\realend@float\global\let\@freelist\@savefreelist}
+\let\real@dbflt=\@dbflt \let\end@dblfloat=\end@float
+\let\@largefloatcheck=\relax
+\let\if@boxedmulticols=\iftrue
+\def\@dbflt{\let\@savefreelist\@freelist\real@dbflt}
+\def\adjustnormalsize{\def\normalsize{\mathsurround=0pt \realnormalsize
+ \parindent=0pt\abovedisplayskip=0pt\belowdisplayskip=0pt}%
+ \def\phantompar{\csname par\endcsname}\normalsize}%
+\def\lthtmltypeout#1{{\let\protect\string \immediate\write\lthtmlwrite{#1}}}%
+\newcommand\lthtmlhboxmathA{\adjustnormalsize\setbox\sizebox=\hbox\bgroup\kern.05em }%
+\newcommand\lthtmlhboxmathB{\adjustnormalsize\setbox\sizebox=\hbox to\hsize\bgroup\hfill }%
+\newcommand\lthtmlvboxmathA{\adjustnormalsize\setbox\sizebox=\vbox\bgroup %
+ \let\ifinner=\iffalse \let\)\liih@math }%
+\newcommand\lthtmlboxmathZ{\@next\next\@currlist{}{\def\next{\voidb@x}}%
+ \expandafter\box\next\egroup}%
+\newcommand\lthtmlmathtype[1]{\gdef\lthtmlmathenv{#1}}%
+\newcommand\lthtmllogmath{\lthtmltypeout{l2hSize %
+:\lthtmlmathenv:\the\ht\sizebox::\the\dp\sizebox::\the\wd\sizebox.\preveqno}}%
+\newcommand\lthtmlfigureA[1]{\let\@savefreelist\@freelist
+       \lthtmlmathtype{#1}\lthtmlvboxmathA}%
+\newcommand\lthtmlpictureA{\bgroup\catcode`\_=8 \lthtmlpictureB}%
+\newcommand\lthtmlpictureB[1]{\lthtmlmathtype{#1}\egroup
+       \let\@savefreelist\@freelist \lthtmlhboxmathB}%
+\newcommand\lthtmlpictureZ[1]{\hfill\lthtmlfigureZ}%
+\newcommand\lthtmlfigureZ{\lthtmlboxmathZ\lthtmllogmath\copy\sizebox
+       \global\let\@freelist\@savefreelist}%
+\newcommand\lthtmldisplayA{\bgroup\catcode`\_=8 \lthtmldisplayAi}%
+\newcommand\lthtmldisplayAi[1]{\lthtmlmathtype{#1}\egroup\lthtmlvboxmathA}%
+\newcommand\lthtmldisplayB[1]{\edef\preveqno{(\theequation)}%
+  \lthtmldisplayA{#1}\let\@eqnnum\relax}%
+\newcommand\lthtmldisplayZ{\lthtmlboxmathZ\lthtmllogmath\lthtmlsetmath}%
+\newcommand\lthtmlinlinemathA{\bgroup\catcode`\_=8 \lthtmlinlinemathB}
+\newcommand\lthtmlinlinemathB[1]{\lthtmlmathtype{#1}\egroup\lthtmlhboxmathA
+  \vrule height1.5ex width0pt }%
+\newcommand\lthtmlinlineA{\bgroup\catcode`\_=8 \lthtmlinlineB}%
+\newcommand\lthtmlinlineB[1]{\lthtmlmathtype{#1}\egroup\lthtmlhboxmathA}%
+\newcommand\lthtmlinlineZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetinline}
+\newcommand\lthtmlinlinemathZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetmath}
+\newcommand\lthtmlindisplaymathZ{\egroup %
+  \centerinlinemath\lthtmllogmath\lthtmlsetmath}
+\def\lthtmlsetinline{\hbox{\vrule width.1em \vtop{\vbox{%
+  \kern.1em\copy\sizebox}\ifdim\dp\sizebox>0pt\kern.1em\else\kern.3pt\fi
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\lthtmlsetmath{\hbox{\vrule width.1em\kern-.05em\vtop{\vbox{%
+  \kern.1em\kern0.8 pt\hbox{\hglue.17em\copy\sizebox\hglue0.8 pt}}\kern.3pt%
+  \ifdim\dp\sizebox>0pt\kern.1em\fi \kern0.8 pt%
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\centerinlinemath{%
+  \dimen1=\ifdim\ht\sizebox<\dp\sizebox \dp\sizebox\else\ht\sizebox\fi
+  \advance\dimen1by.5pt \vrule width0pt height\dimen1 depth\dimen1 
+ \dp\sizebox=\dimen1\ht\sizebox=\dimen1\relax}
+
+\def\lthtmlcheckvsize{\ifdim\ht\sizebox<\vsize 
+  \ifdim\wd\sizebox<\hsize\expandafter\hfill\fi \expandafter\vfill
+  \else\expandafter\vss\fi}%
+\providecommand{\selectlanguage}[1]{}%
+\makeatletter \tracingstats = 1 
+
+
+\begin{document}
+\pagestyle{empty}\thispagestyle{empty}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hsize=\the\hsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength vsize=\the\vsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hoffset=\the\hoffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength voffset=\the\voffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topmargin=\the\topmargin}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topskip=\the\topskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headheight=\the\headheight}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headsep=\the\headsep}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength parskip=\the\parskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength oddsidemargin=\the\oddsidemargin}\lthtmltypeout{}%
+\makeatletter
+\if@twoside\lthtmltypeout{latex2htmlLength evensidemargin=\the\evensidemargin}%
+\else\lthtmltypeout{latex2htmlLength evensidemargin=\the\oddsidemargin}\fi%
+\lthtmltypeout{}%
+\makeatother
+\setcounter{page}{1}
+\onecolumn
+
+% !!! IMAGES START HERE !!!
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3071}%
+$\Gamma $%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3074}%
+$\nabla \@mathbf {A}^N-{\@mathbf {I}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmldisplayA{displaymath179}%
+\begin{displaymath} 
+%1.1
+\begin{array}{c}
+\left. \begin{array}{c}
+\displaystyle \frac {\partial {\mathbf{u}}}{\partial t} + {\mathbf{u}}\cdot \nabla {\mathbf{u}}+ \nabla p = {\mathbf{f}}\\[6pt]
+\div {\mathbf{u}}= 0 
+\end{array} \right\} {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[10pt]
+{\mathbf{u}}({\mathbf{x}},0) = {\mathbf{u}}_0({\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, ,
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1752}%
+${\mathbf{u}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1754}%
+$p$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1756}%
+${\mathbf{u}}: \mbox{\Bbbb R}^3 \times(0,T) 
+\mapsto \mbox{\Bbbb R}^3$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1758}%
+$p: \mbox{\Bbbb R}^3 \times(0,T) 
+\mapsto \mbox{\Bbbb R}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1760}%
+$0<T\leq \infty$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath196}%
+\begin{displaymath} 
+\begin{array}{c}
+\left. \begin{array}{c}
+\displaystyle \frac {\partial {\mathbf{m}}}{\partial t} + {\mathbf{u}}\cdot \nabla {\mathbf{m}}+ {\mathbf{m}}\cdot (\nabla {\mathbf{u}})^T = 
+  {\mathbf{f}}\\[6pt]
+{\mathbf{u}}= {\mathbf{m}}- \nabla \eta \\[6pt]
+\div {\mathbf{u}}= 0 
+\end{array} \right\} {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[10pt]
+{\mathbf{m}}({\mathbf{x}},0) = {\mathbf{u}}_0({\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1762}%
+${\mathbf{m}}:\mbox{\Bbbb R}^3 \times(0,T) 
+\mapsto \mbox{\Bbbb R}^3$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1764}%
+${\mathbf{m}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath209}%
+\begin{displaymath}
+{\mathbf{m}}({\mathbf{x}},0) = \sum_{i=1}^R \beta_i({\mathbf{x}},0) \nabla \alpha_i({\mathbf{x}},0) ,
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1766}%
+$\alpha$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1768}%
+$\beta$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath1770}%
+\begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial \alpha_i}{\partial t} + {\mathbf{u}}\cdot \nabla \alpha_i = 0
+\\[6pt]
+\displaystyle \frac {\partial \beta_i}{\partial t} + {\mathbf{u}}\cdot \nabla \beta_i 
+= \sum_{j=1}^R Q_{j,i} f_j
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1772}%
+${\mathbf{Q}}= (Q_{i,j})$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1774}%
+$\frac {\partial \alpha_i}{\partial x_j}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1776}%
+$R=3$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1778}%
+${\mathbf{f}}= 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath1780}%
+\begin{displaymath}
+{\mathbf{m}}({\mathbf{x}},t) = \sum_{i=1}^R \beta_i({\mathbf{x}},t) \nabla \alpha_i({\mathbf{x}},t) 
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1790}%
+$\alpha_i({\mathbf{x}},0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1792}%
+$i$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1794}%
+$\beta_i({\mathbf{x}},0) = u_i({\mathbf{x}},0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1796}%
+$1 \le i \le R = 3$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1798}%
+$A^E_i({\mathbf{x}},t) = \alpha_i({\mathbf{x}},t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1800}%
+$v_i({\mathbf{x}},t) = \beta_i({\mathbf{x}},t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1802}%
+$\mathbf{A}^E({\mathbf{x}},t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1804}%
+${\mathbf{x}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1806}%
+$t$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1810}%
+${\mathbf{v}}({\mathbf{x}},t) = {\mathbf{u}}_0(\mathbf{A}^E({\mathbf{x}}))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1814}%
+$\mathbf{A}^E(\cdot,t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1816}%
+$\mathbf{A}^E$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1818}%
+$1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1820}%
+$\div {\mathbf{u}}= 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1822}%
+${\mathbf{Q}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath229}%
+\begin{displaymath} 
+%1.2
+m_i({\mathbf{x}},t) = \frac {\partial \mathbf{A}^E({\mathbf{x}}, t)}{\partial x_i} \cdot {\mathbf{v}}^E({\mathbf{x}}, t) .
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath234}%
+\begin{displaymath} 
+%{1.3} 
+\begin{array}{c}
+\left. \begin{array}{c}
+\displaystyle \frac {\partial {\mathbf{u}}}{\partial t} + {\mathbf{u}}\cdot \nabla {\mathbf{u}}- \nu \Delta {\mathbf{u}}+ \nabla p = {\mathbf{f}}\\[6pt]
+\div {\mathbf{u}}= 0 
+\end{array} \right\} {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[10pt]
+{\mathbf{m}}({\mathbf{x}},0) = {\mathbf{u}}_0({\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath249}%
+\begin{displaymath} 
+%{1.3a} 
+\begin{array}{c}
+\left. \begin{array}{c}
+\displaystyle \frac {\partial {\mathbf{m}}}{\partial t} -\nu \Delta {\mathbf{m}}+ {\mathbf{u}}\cdot \nabla {\mathbf{m}}+ {\mathbf{m}}\cdot (\nabla {\mathbf{u}})^T = 
+  {\mathbf{f}}\\[6pt]
+{\mathbf{u}}= {\mathbf{m}}- \nabla \eta \\[6pt]
+\div {\mathbf{u}}= 0 
+\end{array} \right\} {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[10pt]
+{\mathbf{u}}({\mathbf{x}},0) = {\mathbf{u}}_0({\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1826}%
+$\nu \Delta {\mathbf{m}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1828}%
+$\mathbf{A}^N$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1830}%
+${\mathbf{v}}^N$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath1834}%
+\begin{displaymath}
+u_i({\mathbf{x}},t) = \frac {\partial \mathbf{A}^N({\mathbf{x}},t)}{\partial x_i} \cdot {\mathbf{v}}^N({\mathbf{x}},t) - \frac {\partial n({\mathbf{x}},t)}{\partial x_i}\, ,
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath269}%
+\begin{displaymath} 
+\begin{array}{c}
+\Gamma (\mathbf{A}^N) = {\mathbf {0}}\qquad {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[6pt]
+\mathbf{A}^N({\mathbf{x}}, 0) = {\mathbf{x}}\qquad {\rm in \ } \mbox{\Bbbb R}^3 
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath1836}%
+\begin{displaymath}
+\Gamma = \frac {\partial }{\partial t} + {\mathbf{u}}\cdot \nabla - \nu \Delta\, ,
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath1840}%
+\begin{displaymath}
+\Gamma (v^N_i) = 2 \nu C_{m,k;i} \frac {\partial v_m}{\partial x_k} + Q_{j,i} f_j\, ,
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1844}%
+$\nabla \mathbf{A}^N$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1846}%
+$\Gamma_{i,j}^m =
+- Q_{k,j} C_{m,k;i}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1848}%
+${\mathbf{v}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath286}%
+\begin{displaymath} 
+% {0.1}
+\begin{array}{c}
+\Gamma ({\mathbf{Q}}) = (\nabla {\mathbf{u}}) {\mathbf{Q}}+ 2\nu {\mathbf{Q}}\partial_k (\nabla \mathbf{A}^N) \partial_k {\mathbf{Q}}
+\qquad {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[6pt]
+{\mathbf{Q}}({\mathbf{x}},0) = {\mathbf{I}}\qquad {\rm in \ } \mbox{\Bbbb R}^3\, ,
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1856}%
+${\mathbf{u}}\in C^\infty_0(\mbox{\Bbbb R}^3 \times [0,\infty))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1860}%
+$t>0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1862}%
+$\mathbf{A}^N({\mathbf {0}}, t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1864}%
+$\limsup_{\tau \to t^-} \|{\mathbf{Q}}\|_\infty(\tau) = \infty$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+\setcounter{equation}{0}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1872}%
+${\mathbf{u}}_s$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1874}%
+$s \in [0,2\pi]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1876}%
+$s_0 \in [0,2\pi]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1878}%
+$u_{s_0}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1880}%
+${\mathbf{u}}_s = (0, u_\theta(r,z,t), 0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1884}%
+$t_0>0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1886}%
+$\nabla \mathbf{A}^N_{s_0}(0,t_0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1890}%
+$\nabla \mathbf{A}^N_s({\mathbf {0}}, t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath1892}%
+\begin{displaymath}
+\left(\begin{array}{lll}
+a_s \cos b_s, & -a_s \sin b_s & 0\\
+a_s \sin b_s, &  a_s \cos b_s & 0\\
+0 & 0 & 1
+\end{array} \right)
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1894}%
+$a_s(t)\in \mbox{\Bbbb R}^+$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1896}%
+$b_s(t) \in [0,2\pi)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1906}%
+$a_{s_0}(t_0) = 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1908}%
+$[0,\infty] \to \mbox{\Bbbb R}^2-\{(0,0)\}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1910}%
+$0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1912}%
+$\infty$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1914}%
+$(1,0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1916}%
+$f$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1918}%
+$g$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1922}%
+$F:[0,\infty] \times [0,2\pi] \to \mbox{\Bbbb R}^2-\{(0,0)\}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1924}%
+$F(\cdot,0) = f$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1926}%
+$F(\cdot,2\pi) = g$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1928}%
+$F(0,\cdot) = F(\infty,\cdot) = (1,0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1930}%
+$F$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1932}%
+$f(t) = (1,0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1934}%
+$g(t) = (\cos(2\pi t/(1+t)),\sin(2\pi t/(1+t)))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1936}%
+$\mbox{\Bbbb R}^2-\{(0,0)\}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath1940}%
+\begin{displaymath} F(t,s) = (a_s(t) \cos b_s(t), a_s(t) \sin b_s(t)) \end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+\setcounter{equation}{0}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1950}%
+$[0,\infty)\times[0,2\pi]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1952}%
+${\mathbf{u}}\in C^\infty_0([0,T)\times \mbox{\Bbbb R}^3)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1954}%
+$T>0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1956}%
+$V_k= \{{\mathbf{v}}\in L^2((0,T); L^{2}_{loc}(\mbox{\Bbbb R}^3)); {\mathbf{v}}-{\mathbf{x}}
+\in L^2((0,T); W^{k,2}(\mbox{\Bbbb R}^3)); \frac {\partial {\mathbf{v}}}{\partial t} \in L^2((0,T);
+W^{k-2,2} (\mbox{\Bbbb R}^3))\}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1958}%
+$k\geq 2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1960}%
+$C^\infty((0,T]\times \mbox{\Bbbb R}^3) \cap 
+C([0,T]\times \mbox{\Bbbb R}^3)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1962}%
+$\mathbf{A}^N-{\mathbf{x}}\in L^2((0,T);
+W^{k,2}(\mbox{\Bbbb R}^3))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1964}%
+$k\geq 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1970}%
+$L^\infty((0,T); L^{2}(\mbox{\Bbbb R}^3))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1972}%
+$\cap L^2((0,T);
+W^{1,2}(\mbox{\Bbbb R}^3))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1974}%
+$\cap L^1((0,T);
+L^{\infty}(\mbox{\Bbbb R}^3))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1976}%
+$\mathbf{A}^N-{\mathbf{x}}\in L^\infty((0,T);
+W^{1,2}(\mbox{\Bbbb R}^3)) \cap L^2((0,T);
+W^{2,2}(\mbox{\Bbbb R}^3)) \cap L^\infty((0,T);
+L^{\infty}(\mbox{\Bbbb R}^3))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1978}%
+$\frac {\partial \mathbf{A}^N}{\partial t} \in L^2((0,T);
+L^{2}(\mbox{\Bbbb R}^3))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1980}%
+$(0,t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath1988}%
+\begin{displaymath}
+\mathbf{Z}= (\nabla \mathbf{A}^N) {\mathbf{Q}}- {\mathbf{I}}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath367}%
+\begin{displaymath} 
+\Gamma \mathbf{Z}= 2\nu \mathbf{Z}\partial_k(\nabla \mathbf{A}^N)\partial_k {\mathbf{Q}}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1990}%
+$\mbox{\Bbbb R}^3 \times (0,T)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1992}%
+$\mathbf{Z}({\mathbf{x}},0) = {\mathbf {0}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1994}%
+$\nabla^2 \mathbf{A}^N$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1996}%
+$\nabla {\mathbf{Q}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline1998}%
+$\mathbf{Z}\equiv {\mathbf {0}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2000}%
+${\mathbf{Q}}= (\nabla \mathbf{A}^N)^{-1}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2002}%
+${\mathbf{F}}: \mbox{\Bbbb R}^2 \mapsto \mbox{\Bbbb R}^2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2004}%
+$C^1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2006}%
+$F_r$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2008}%
+$F_\vartheta $%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2010}%
+$\vartheta $%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2012}%
+\begin{displaymath}
+\frac {\partial F_x({\mathbf {0}})}{\partial x} = \frac {\partial F_y({\mathbf {0}})}{\partial y}\, , \qquad 
+\frac {\partial F_x({\mathbf {0}})}{\partial y} = -\frac {\partial F_y({\mathbf {0}})}{\partial x}\, .
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2014}%
+$F_r = f(r)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2016}%
+$F_\vartheta = g(r)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2018}%
+\begin{displaymath}
+\frac {\partial F_x}{\partial x} = f' \cos^2 \vartheta + \frac{f}{r} \sin^2 \vartheta - g' \sin \vartheta 
+\cos \vartheta + \frac{g}{r} \sin \vartheta \cos \vartheta \, .
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2020}%
+$\lim_{r\to 0} \frac {\partial F_x}{\partial x}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2022}%
+\begin{displaymath}
+\lim_{r\to 0} \Big(f'(r) - \frac{f(r)}{r}\Big) = 0 \qquad \mbox{ and }
+\qquad \lim_{r\to 0} \Big(g'(r) - \frac{g(r)}{r}\Big) = 0\, .
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2024}%
+$\frac {\partial F_x({\mathbf {0}})}{\partial x} = f'(0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2026}%
+\begin{displaymath}
+\frac {\partial F_y}{\partial y} = f' \sin^2 \vartheta + \frac{f}{r} \cos^2 \vartheta + g' \sin \vartheta 
+\cos \vartheta - \frac{g}{r} \sin \vartheta \cos \vartheta 
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2028}%
+$\frac {\partial F_y({\mathbf {0}})}{\partial y} = f'(0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2030}%
+$\frac {\partial F_x({\mathbf {0}})}{\partial y} = -g'(0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2032}%
+$\frac {\partial F_y({\mathbf {0}})}{\partial x} = g'(0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+\setcounter{equation}{0}
+{\newpage\clearpage
+\lthtmldisplayA{displaymath418}%
+\begin{displaymath}  
+{\mathbf{u}}_s = {\mathbf{u}}= (0, u_\theta(r,z,t), 0)
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2034}%
+$u_\theta(r,z,t) = \alpha (r) \beta (|z|) \gamma _s(t) r$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2036}%
+\begin{displaymath}
+\begin{array}{l}
+\begin{array}{rlllrlllll}
+\alpha (r) &= 0 &\, {\rm for \ } & r\geq R^o, & \alpha (r) &= 1 &  \, {\rm for \ }
+& r \leq R^i \, , & \alpha \in C^\infty_0([0,\infty)) \, , & 0\leq \alpha (r) \leq 1 \\[6pt]
+\beta (|z|) &= 0 &\, {\rm for \ } & |z|\geq Z^o, & \beta (|z|) &= 1 &  \, {\rm for \ }
+& |z| \leq Z^i \, , & \beta \in C^\infty_0(\mbox{\Bbbb R}) \, , & 0\leq \beta (r) \leq 1 \\[6pt]
+\gamma _s(t) &= 0 &\, {\rm for \ } & t\geq t_0, & \gamma _s(0) &= 0, & &  \gamma _s(t)
+ \geq 0  
+\end{array}
+\\[6pt]
+\displaystyle \int_0^\infty \gamma _s(\tau) d \tau = \int_0^{t_0} \gamma _s(\tau) d \tau = s \in
+[0,2\pi]\, .
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2040}%
+$(x,y,z)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2042}%
+${\mathbf{f}}^E$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2044}%
+${\mathbf{f}}^N$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2048}%
+$|z|\leq Z_i$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2050}%
+$r\leq R_i$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2052}%
+$s$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2054}%
+$[0,t_0]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2056}%
+$|z|\leq Z^o$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2058}%
+$r\leq R^o$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2062}%
+\begin{displaymath}
+\mathbf{A}^E(r,z,\vartheta , t_0) = \Big(r \cos [\vartheta - s \alpha (r)\beta (|z|)], 
+r \sin[\vartheta - s \alpha (r) \beta (|z|) ], z\Big)
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2064}%
+\begin{displaymath}
+\begin{array}{lcr}
+\mathbf{A}^E(x,y,z,t_0)& = &\Big( x \cos[s \alpha (\sqrt{x^2+ y^2})\beta (|z|)]
+ +  y \sin[s \alpha (\sqrt{x^2+ y^2})\beta (|z|) ], \\[4pt]
+& & -x \sin[s \alpha (\sqrt{x^2+ y^2})\beta (|z|)] + y \cos[s \alpha (\sqrt{x^2+ y^2})
+\beta (|z|) ] , z \Big)\, .
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2066}%
+\begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+\cos s, & \sin s, & 0 \\
+-\sin s, & \cos s, & 0 \\
+0, & 0, & 1 \end{array} \right)\, ;
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2068}%
+\begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+1, & 0, & 0 \\
+0, & 1, & 0 \\
+0, & 0, & 1 \end{array} \right)\, ;
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2072}%
+$R_i \leq r\leq R^o$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2074}%
+\begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+\cos [s \alpha (r) ], & \sin [s \alpha (r) ],  & 0 \\
+-\sin [s \alpha (r)], & \cos [s \alpha (r) ] , & 0 \\
+0, & 0,& 1 \end{array} \right) + {\mathbf{M}}_1 +{\mathbf{M}}_2
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2076}%
+\begin{displaymath}
+\begin{array}{l}
+{\mathbf{M}}_1 =
+\left( \begin{array}{ccc}
+- s\frac{x^2}{r} \sin [s\alpha (r)]\alpha '(r), &
+s\frac{y^2}{r} \cos [s\alpha (r)]\alpha '(r), & 0 \\
+-s\frac{x^2}{r} \cos [s\alpha (r)]\alpha '(r), & - s\frac{y^2}{r} 
+\sin [s\alpha (r)]\alpha '(r), & 0 \\
+0, & 0, & 0 \end{array} \right)\, ,
+\\[6pt]
+{\mathbf{M}}_2 =
+\left( \begin{array}{ccc}
+s\frac{xy}{r} \cos [s\alpha (r)]\alpha '(r), & - s\frac{xy}{r} 
+\sin [s\alpha (r)]\alpha '(r), & 0 \\
+- s\frac{xy}{r} \sin [s\alpha (r)]\alpha '(r), & 
+-s\frac{xy}{r} \cos [s\alpha (r)]\alpha '(r), & 0 \\
+0, & 0, & 0 \end{array} \right)\, ;
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2078}%
+$Z_i\leq |z|\leq Z^o$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2082}%
+\begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+1, & 0, & -s x  \, {\rm sign}\,(z) \sin [s \beta (|z|)] \beta '(|z|)  +s y \, {\rm sign}\,(z) \cos 
+[s \beta (|z|)] \beta '(|z|)\\
+0, & 1, &  -s y \, {\rm sign}\,(z) \sin [s \beta (|z|)] \beta '(|z|)  -sx \, {\rm sign}\,(z) \cos 
+[s \beta (|z|)] \beta '(|z|)\\
+0, & 0, & 1 \end{array} \right)\, ;
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2088}%
+$\nabla \mathbf{A}^E$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2094}%
+\begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial }{\partial t} (\mathbf{A}^N - \mathbf{A}^E) + {\mathbf{u}}\cdot \nabla (\mathbf{A}^N - \mathbf{A}^E) = \nu \Delta \mathbf{A}^N
+\\[6pt]
+(\mathbf{A}^N - \mathbf{A}^{E})({\mathbf{x}}, 0) = {\mathbf {0}}\, .
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath485}%
+\begin{displaymath} 
+\frac {\partial }{\partial t} [\nabla (\mathbf{A}^N - \mathbf{A}^E)] + {\mathbf{u}}\cdot \nabla [\nabla (\mathbf{A}^N - \mathbf{A}^E)]
+ = \nu \Delta \nabla \mathbf{A}^N - (\nabla (\mathbf{A}^N-\mathbf{A}^E))\nabla {\mathbf{u}}\, .
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2096}%
+\begin{displaymath}
+\sup _{t \in [0,t_0]}\|\nabla ^3 \mathbf{A}^N\|_p \leq C (\|\nabla {\mathbf{u}}\|_{k,p})
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2098}%
+$k$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2100}%
+$|\nabla (\mathbf{A}^N-\mathbf{A}^E)|^{p-2}\nabla (\mathbf{A}^N - \mathbf{A}^E)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2102}%
+\begin{displaymath}
+\frac{d}{dt} \|\nabla (\mathbf{A}^N-\mathbf{A}^E)\|_p \leq \nu \|\nabla^3 \mathbf{A}^N\|_p +
+\|\nabla {\mathbf{u}}\|_\infty  \|\nabla (\mathbf{A}^N-\mathbf{A}^E)\|_p\, .
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2104}%
+$\nabla (\mathbf{A}^N-\mathbf{A}^E)({\mathbf{x}},0) = {\mathbf {0}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath496}%
+\begin{displaymath} 
+\sup _{t \in [0,t_0]} \|\nabla (\mathbf{A}^N-\mathbf{A}^E)\|_p \leq \nu 
+C(\|\nabla {\mathbf{u}}\|_{k,2}, t_0)
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2106}%
+$p\in (1,\infty]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2108}%
+$\nabla \mathbf{A}^N-{\mathbf{I}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\setcounter{equation}{0}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2112}%
+$t > t_0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2116}%
+\begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial }{\partial t} (\nabla \mathbf{A}^N) - \nu \Delta (\nabla \mathbf{A}^N) = {\mathbf {0}}
+ \qquad {\rm in \ }
+\mbox{\Bbbb R}^3 \times (t_0,\infty) \\
+\nabla \mathbf{A}^N(t_0) \quad {\rm given.}
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2118}%
+\begin{displaymath}
+\displaystyle \frac {\partial }{\partial t} (\nabla \mathbf{A}^N - {\mathbf{I}}) - \nu \Delta (\nabla \mathbf{A}^N-{\mathbf{I}}) 
+= {\mathbf {0}}\qquad {\rm in \ }
+\mbox{\Bbbb R}^3 \times (t_0,\infty) 
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2120}%
+${\mathbf{x}}={\mathbf {0}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath514}%
+\begin{displaymath} 
+\nabla \mathbf{A}^N({\mathbf {0}}, t) - {\mathbf{I}}= \frac {C}{(t-t_0)^{\frac 32} \nu^{\frac 32}} 
+\int_{\mbox{\Bbbbb R}^3} {\rm e}\,^{-\frac{|{\mathbf{p}}|^2}{4\nu (t-t_0)}} (\nabla \mathbf{A}^N-{\mathbf{I}})({\mathbf{p}},t_0) 
+d{\mathbf{p}}\, .
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2124}%
+$F(t,s) \to (1,0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2126}%
+$t \to \infty$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2132}%
+$[0,\infty]\times[0,2\pi]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2134}%
+$F(\infty,s) = (1,0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2138}%
+$\nabla\mathbf{A}^N - {\mathbf{I}}= (\nabla\mathbf{A}^N- \nabla\mathbf{A}^E) +  (\nabla\mathbf{A}^E
+-{\mathbf{I}})$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2140}%
+$\nabla \mathbf{A}^E({\mathbf{p}}, t_0) -{\mathbf{I}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2142}%
+$\|\nabla (\mathbf{A}^N -\mathbf{A}^E)\|_p(t_0) \leq C$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2144}%
+\begin{displaymath}
+|\nabla \mathbf{A}^N(0, t) - {\mathbf{I}}| \leq \frac{C}{(t-t_0)^a}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2146}%
+$a$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2148}%
+$C$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2150}%
+$F(\cdot,0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2152}%
+$F(\cdot,2\pi)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2156}%
+$\nu$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2158}%
+$R^o-R_i$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2160}%
+$Z^o-Z_i$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2162}%
+$\nabla\mathbf{A}^E_{2\pi}(\cdot,0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2164}%
+$s=2\pi$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2166}%
+$\nabla\mathbf{A}^E_{2\pi}(\cdot,0) - \nabla\mathbf{A}^N_{2\pi}(\cdot,0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2168}%
+$\mathbf{A}^E_{2\pi}(\cdot,0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2172}%
+$(0,0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2174}%
+$t \le t_0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2178}%
+$\varepsilon _1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2180}%
+$\varepsilon _2 >0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2182}%
+$\max \{R^o-R_i, 
+Z^o-Z_i\} \leq \varepsilon _1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2184}%
+$\nu \leq \varepsilon _2(\varepsilon _1)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2188}%
+$ \nabla \mathbf{A}^N - {\mathbf{I}})(0,t) \leq \frac{1}{10}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2190}%
+$t\geq t_0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2192}%
+$I_1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2194}%
+$(\nabla \mathbf{A}^N-{\mathbf{I}})({\mathbf{p}},t_0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2196}%
+$(\nabla \mathbf{A}^N-\nabla
+\mathbf{A}^E)({\mathbf{p}},t_0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2198}%
+$I_2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2200}%
+$I_5$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2204}%
+$(\nabla \mathbf{A}^E-{\mathbf{I}})({\mathbf{p}},t_0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2208}%
+$I_3$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2210}%
+$C(R^o,Z_i)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2212}%
+$I_4$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2214}%
+$C(R^o,Z^o)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2220}%
+$I_2 = I_5 = 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2226}%
+$\nabla A^E({\mathbf {0}}, t_0)-{\mathbf{I}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2228}%
+${\mathbf{M}}_0 +
+{\mathbf{M}}_1 + {\mathbf{M}}_2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2230}%
+\begin{displaymath}
+\begin{array}{l}
+{\mathbf{M}}_0 =
+\left( \begin{array}{ccc}
+\cos [2\pi\alpha (r)]-1, &
+\sin[2\pi \alpha (r)], & 0 \\
+-\sin [2\pi\alpha (r)], &  
+\cos [2\pi\alpha (r)]-1, & 0 \\
+0, & 0, & 0 \end{array} \right)\, ,
+\\[6pt]
+{\mathbf{M}}_1 =
+\left( \begin{array}{ccc}
+- 2\pi r \sin [2\pi\alpha (r)]\alpha '(r)\cos^2\vartheta , &
+2\pi r  \cos [2\pi \alpha (r)]\alpha '(r) \sin^2\vartheta , & 0 \\
+- 2\pi r \cos [2\pi\alpha (r)]\alpha '(r) \cos^2\vartheta , & - 2\pi r 
+\sin [2\pi\alpha (r)]\alpha '(r) \sin^2\vartheta , & 0 \\
+0, & 0, & 0 \end{array} \right)\, ,
+\\[6pt]
+{\mathbf{M}}_2 =
+\left( \begin{array}{ccc}
+2\pi r  \cos [2\pi\alpha (r)]\alpha '(r) \sin \vartheta \cos\vartheta , & - 2\pi r 
+\sin [2\pi\alpha (r)]\alpha '(r)\sin\vartheta \cos\vartheta , & 0 \\
+- 2\pi r \sin [2\pi\alpha (r)]\alpha '(r)\sin \vartheta \cos\vartheta , &  
+-2\pi r \cos [2\pi\alpha (r)]\alpha '(r) \sin\vartheta \cos\vartheta , & 0 \\
+0, & 0, & 0 \end{array} \right)\, .
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2234}%
+${\mathbf{M}}_2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2236}%
+${\mathbf{M}}_1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2238}%
+\begin{displaymath}
+\frac{C}{(t-t_0)^{\frac 32} \nu^{\frac 32}} \int_{} {\rm e}\,^{-\frac{r^2+z^2}{4\nu (t-t_0)}} r^2
+\sin [2\pi \alpha (r)] \alpha '(r) dr dz
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2240}%
+$\sin$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2242}%
+$\cos$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2244}%
+$z$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2246}%
+\begin{displaymath}
+C \int_{\frac{R_i}{\sqrt{\nu(t-t_0)}} \leq u \leq 
+\frac{R^o}{\sqrt{\nu(t-t_0)}} } {\rm e}\,^{-\frac{u^2}{4}} u^2 \sin \Big(2\pi 
+\alpha (u \sqrt{\nu(t-t_0)})\Big) \alpha '(u\sqrt {\nu(t-t_0)}) d u\, .
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2248}%
+${\rm e}\,^{-\frac{u^2}{4}} u^2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2250}%
+\begin{displaymath}
+{\rm e}\,^{-\frac{u^2}{4}} u^2 = {\rm e}\,^{- \frac{R_i^2}{4 \nu (t-t_0)}} \frac{R_i^2}
+{\nu (t-t_0)} + {\rm e}\,^{-\frac {\xi^2}{4}} \Big(2\xi - \frac{\xi^3}{2}\Big) 
+\Big(u-\frac
+{R_i}
+{\sqrt{\nu (t-t_0)}}\Big)\, ,
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2252}%
+$\xi \in (\frac {R_i} {\sqrt{\nu (t-t_0)}}, \frac {R^o} 
+{\sqrt{\nu (t-t_0)}})$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2254}%
+\begin{displaymath}
+\int_{\frac{R_i}{\sqrt{\nu(t-t_0)}} \leq u \leq 
+\frac{R^o}{\sqrt{\nu(t-t_0)}} } \sin \Big(2\pi \alpha (u \sqrt
+{\nu(t-t_0)})\Big) \alpha '(u\sqrt {\nu(t-t_0)}) d u = 0\, .
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2256}%
+${\mathbf{M}}_0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2258}%
+\begin{displaymath}
+\begin{array}{c}
+\displaystyle 
+|I_3| \leq C{\rm e}\,^{-\frac{R_i^2}{4\nu (t-t_0)}} \Big(\frac {2 R^o}{\sqrt{\nu 
+(t-t_0)}} + \frac {(R^o)^3}{\Big(\sqrt{\nu 
+(t-t_0)}\Big)^3}\Big) \\[6pt]
+\displaystyle \max_{u \in (\frac {R_i}{\sqrt{\nu (t-t_0)}},\frac 
+{R^o}{\sqrt{\nu (t-t_0)}})}|\alpha '(u \sqrt{\nu (t-t_0)})| \frac{(R^o-R_i)^2}
+{\nu(t-t_0)} +{\rm e}\,^{-\frac{R_i^2}{4\nu (t-t_0)}} (R^o-R_i)\frac{R^o}
+{\sqrt{\nu(t-t_0)}}\, .
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2260}%
+$\alpha (r)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2262}%
+$\alpha '(r) \leq \frac{C}{R^o-R_i}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2264}%
+\begin{displaymath}
+{\rm e}\,^{-\frac{R_i^2}{4\nu (t-t_0)}} \Big(\sqrt{\nu (t-t_0)}\Big)^a \leq C(a, R_i)
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2266}%
+$a \in \mbox{\Bbbb R}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2268}%
+\begin{displaymath}
+|I_3| \leq C (R^o-R_i)
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2276}%
+$(\nabla \mathbf{A}^E)_{i,3}^{i=1,2}({\mathbf{p}},t_0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2282}%
+$i,j$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2284}%
+$i,j=1,2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2286}%
+\begin{displaymath}
+\int_\Omega {\rm e}\,^{-\frac{u^2+v^2}{4}} 
+u^2 \sin \Bigg(2\pi \alpha \Big[u \sqrt
+{\nu(t-t_0)}\Big] \beta \Big[|v|\sqrt{\nu (t-t_0)\Big]}\Bigg) \alpha '\Big(u\sqrt {\nu(t-t_0)}
+\Big) d u d v
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2288}%
+$\Omega =\{(u,v); \frac{R_i}{\sqrt{\nu(t-t_0)}} \leq u \leq 
+\frac{R^o}{\sqrt{\nu(t-t_0)}},   \frac{Z_i}{\sqrt{\nu (t-t_0)}} \leq |v|
+\leq \frac{Z^o}{\sqrt{\nu(t-t_0)}}\}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2290}%
+$\beta \neq 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2292}%
+\begin{displaymath}
+C (Z^o-Z_i) (\nu (t-t_0))^a {\rm e}\,^{-\frac{R_i^2 + Z_i^2}{4\nu (t-t_0)}}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2302}%
+\begin{displaymath}
+\begin{array}{c}
+\displaystyle |I_1|  \leq \frac{C}{\Big(\nu(t-t_0)\Big)^{\frac 32}} \int_{\mbox{\Bbbbb R}^3} {\rm e}\,^{-\frac
+{|{\mathbf{p}}|^2}{4\nu (t-t_0)}} |\nabla \mathbf{A}^N - \nabla \mathbf{A}^E|({\mathbf{p}},t_0) d{\mathbf{p}}\\[6pt]
+\leq
+C \|\nabla \mathbf{A}^N - \nabla \mathbf{A}^E\|_\infty(t_0) \leq \nu C(R^o-R_i, Z^o-Z_i, t_0)\,.
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2308}%
+$\nabla \mathbf{A}^E_s({\mathbf {0}}, t_0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2310}%
+$\nabla^2 \mathbf{A}_s^E({\mathbf {0}}, t_0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2312}%
+$x$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2314}%
+$y$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2316}%
+$\nabla^2 \mathbf{A}_s^N({\mathbf {0}}, t_0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2318}%
+$\nabla^2 \mathbf{A}_s^N({\mathbf {0}}, t) = {\mathbf {0}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\setcounter{equation}{0}
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2330}%
+${\mathbf{b}}_t$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2332}%
+$\tilde{\mathbf{u}}({\mathbf{x}},t) = {\mathbf{u}}({\mathbf{x}}+ 2\nu {\mathbf{b}}_t,t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2334}%
+$\widetilde {\mathbf{m}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath652}%
+\begin{displaymath} 
+\begin{array}{c}
+\displaystyle \frac {\partial \widetilde{\mathbf{m}}}{\partial t} + \tilde{\mathbf{u}}\cdot \nabla \widetilde{\mathbf{m}}
+  + \widetilde{\mathbf{m}}\cdot (\nabla \tilde{\mathbf{u}})^T = 
+  0
+\quad {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[10pt]
+\widetilde {\mathbf{m}}({\mathbf{x}},0) = {\mathbf{u}}_0({\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2336}%
+$\overline{\mathbf{m}}({\mathbf{x}},t) = {\mathbf{m}}(x-2\nu{\mathbf{b}}_t,t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2338}%
+${\mathbf{m}}({\mathbf{x}},t) = E(\overline{\mathbf{m}}({\mathbf{x}},t))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2340}%
+$E(\cdot)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2342}%
+\begin{displaymath} \frac {\partial \overline{\mathbf{m}}}{\partial t} + {\mathbf{u}}\cdot \nabla \overline{\mathbf{m}}
+   + \overline{\mathbf{m}}\cdot (\nabla {\mathbf{u}})^T = 
+   \nu \Delta \overline {\mathbf{m}}+ 2 \nu \frac {\partial {\mathbf{b}}}{\partial t} \cdot \nabla \overline{\mathbf{m}},\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2346}%
+\begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial \alpha_i}{\partial t} + \tilde{\mathbf{u}}\cdot \nabla \alpha_i = 0
+\\[6pt]\\
+\displaystyle \frac {\partial \beta_i}{\partial t} + \tilde{\mathbf{u}}\cdot \nabla \beta_i =0
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2348}%
+\begin{displaymath}
+\widetilde {\mathbf{m}}({\mathbf{x}},t) = \sum_{i=1}^R \beta_i({\mathbf{x}},t) \nabla \alpha_i({\mathbf{x}},t) 
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2350}%
+$\alpha_i({\mathbf{x}},t) = \alpha_i(\tilde\mathbf{A}({\mathbf{x}},t),0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2352}%
+$\beta_i({\mathbf{x}},t) = \beta_i(\tilde\mathbf{A}({\mathbf{x}},t),0)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2354}%
+$\tilde\mathbf{A}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2356}%
+$\tilde {\mathbf{u}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2358}%
+$W^{-1,BMO}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2360}%
+$\mbox{\Bbbb R}^3$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2362}%
+$L^{\infty}(I; W^{-1,BMO})$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2366}%
+$W^{-1+\epsilon,BMO}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2368}%
+$\epsilon>0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2372}%
+$R$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2374}%
+$\alpha_i$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2376}%
+$\beta_i$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2382}%
+$L^\infty$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2384}%
+$\nabla \alpha_i$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2396}%
+$\tilde {\mathbf{m}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2406}%
+$_1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2408}%
+$\Delta
+{\mathbf{u}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2412}%
+\begin{displaymath}
+\left| \int \Delta {\mathbf{u}}\cdot ({\mathbf{u}}\cdot \nabla {\mathbf{u}}) \right| =
+\left|\int \frac\partial{\partial x_i} {\mathbf{u}}\cdot 
+ \left(\frac\partial{\partial x_i} {\mathbf{u}}\cdot \nabla \right){\mathbf{u}}\right|
+\le \| \nabla {\mathbf{u}}\|_3^3 . \end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2414}%
+\begin{displaymath}
+\frac 12 \frac{d}{dt} \|\nabla {\mathbf{u}}\|_2^2 + \nu \|\nabla ^2 {\mathbf{u}}\|_2^2
+\leq \| \nabla {\mathbf{u}}\|_3^3 .
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath2416}%
+\begin{displaymath}
+\|\nabla {\mathbf{u}}\|_3 \leq C \|{\mathbf{u}}\|_{-1,BMO}^{\frac 13} \|\nabla^2 {\mathbf{u}}\|_2^{\frac 23}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath699}%
+\begin{displaymath}
+ \frac{d}{dt} \|\nabla {\mathbf{u}}\|_2^2 + \nu \|\nabla ^2 {\mathbf{u}}\|_2^2
+ \leq
+ C \|{\mathbf{u}}\|_{-1,BMO} \|\nabla^2 {\mathbf{u}}\|_2^2     
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline2418}%
+$\|{\mathbf{u}}\|_{-1,BMO}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+
+\end{document}

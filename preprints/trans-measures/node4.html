@@ -1,0 +1,2382 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Transference in Spaces of Analytic measures</TITLE>
+<META NAME="description" CONTENT="Transference in Spaces of Analytic measures">
+<META NAME="keywords" CONTENT="trans-measures">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="trans-measures.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="trans-measures.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html50"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html48"
+  HREF="trans-measures.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html42"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html51"
+  HREF="node5.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html49"
+  HREF="trans-measures.html">Transference in Spaces of</A>
+<B> Previous:</B> <A NAME="tex2html43"
+  HREF="node3.html">Proof of the Main</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00040000000000000000">
+Transference in Spaces of Analytic measures</A>
+</H1>
+
+<P>
+In the remainder of this paper,
+we transfer a result from Littlewood-Paley theory in <!-- MATH
+ $H^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="$ H^1(\mathbb{R})$">
+to spaces of measures on which <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> is acting.
+We then show 
+how this transferred result implies 
+with ease several of the main results of Bochner [<A
+ HREF="node5.html#bs">3</A>],
+de Leeuw and Glicksberg [<A
+ HREF="node5.html#deleeuwglicksberg">6</A>], and Forelli [<A
+ HREF="node5.html#forelli">9</A>].
+
+<P>
+We start by setting our notation.  Let
+<!-- MATH
+ \begin{displaymath}
+H^\infty(\mathbb{R})=\left\{f\in L^\infty(\mathbb{R}):\ \int_\mathbb{R}f(t)g(t)\, dt=0\ \mbox{for all}\ g\in H^1(\mathbb{R})\right\}\, .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="530" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.png"
+ ALT="$\displaystyle H^\infty(\mathbb{R})=\left\{f\in L^\infty(\mathbb{R}):\ \int_\mathbb{R}f(t)g(t)\, dt=0\ \mbox{for all}\ g\in H^1(\mathbb{R})\right\}\, .$">
+</DIV><P></P>
+Let <!-- MATH
+ $M(\Sigma)=M(\O ,\Sigma)$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img258.png"
+ ALT="$ M(\Sigma)=M(\O ,\Sigma)$"> denote a space of measures and  
+let <!-- MATH
+ $T=(T_t)_{t\in\mathbb{R}}$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.png"
+ ALT="$ T=(T_t)_{t\in\mathbb{R}}$"> denote a sup path attaining representation of 
+<!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> by isomorphisms of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">.
+  According to Forelli [<A
+ HREF="node5.html#forelli">9</A>],
+a measure <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ \mu\in M(\Sigma)$"> 
+is called <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$">-analytic if <!-- MATH
+ ${\rm spec}_T(\mu)\subset [0,\infty)$
+ -->
+<IMG
+ WIDTH="151" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img260.png"
+ ALT="$ {\rm spec}_T(\mu)\subset [0,\infty)$">.
+We now introduce another equivalent definition.
+<P>
+<DIV><B>Definition  4.1</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> is a sup path attaining representation of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$">
+by isomorphisms of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">.  A measure <!-- MATH
+ $\mu\in {\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$"> is 
+called weakly analytic if the mapping <!-- MATH
+ $t\mapsto T_t\mu(A)$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ t\mapsto T_t\mu(A)$"> 
+is in <!-- MATH
+ $H^\infty(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.png"
+ ALT="$ H^\infty(\mathbb{R})$"> for every <!-- MATH
+ $A\in\Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ A\in \Sigma$">.
+<A NAME="weakanalyticmeasure"></A></I></DIV><P></P>
+It is easy to see that if <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$">-analytic then it is 
+weakly analytic.  The converse is also true.  The proof is based on the 
+fact that <!-- MATH
+ $[0,\infty)$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.png"
+ ALT="$ [0,\infty)$"> is a set of spectral synthesis (see [<A
+ HREF="node5.html#ams2">1</A>, Proposition 1.7]).
+
+<P>
+For <!-- MATH
+ $n\in\mathbb{Z}$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img263.png"
+ ALT="$ n\in\mathbb{Z}$">,
+let <!-- MATH
+ $m_n\in L^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img264.png"
+ ALT="$ m_n\in L^1(\mathbb{R})$"> be the function whose Fourier
+transform is piecewise linear and satisfies
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="mnHat"></A><!-- MATH
+ \begin{equation}
+\widehat{m_n}(s)=\left\{
+\begin{array}{ll}
+0 & \mbox{if $s\not\in [2^{n-1},2^{n+1}]$;}\\
+1 &  \mbox{if $s=2^n$.}
+\end{array}
+\right.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="280" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img265.png"
+ ALT="$\displaystyle \widehat{m_n}(s)=\left\{ \begin{array}{ll} 0 &amp; \mbox{if $s\not\in [2^{n-1},2^{n+1}]$;}\\ 1 &amp; \mbox{if $s=2^n$.} \end{array} \right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(22)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Let <!-- MATH
+ $h\in L^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img266.png"
+ ALT="$ h\in L^1(\mathbb{R})$"> be the function whose Fourier transform is piecewise
+linear and satisfies
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="anotherhhat"></A><!-- MATH
+ \begin{equation}
+\widehat{h}(s)=\left\{
+\begin{array}{ll}
+0 & \mbox{if $s\not\in [-1,1]$,}\\
+1 &  \mbox{if $|s|\leq \frac{1}{2}$.}
+\end{array}
+\right.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="228" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.png"
+ ALT="$\displaystyle \widehat{h}(s)=\left\{ \begin{array}{ll} 0 &amp; \mbox{if $s\not\in [-1,1]$,}\\ 1 &amp; \mbox{if $\vert s\vert\leq \frac{1}{2}$.} \end{array} \right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(23)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+It is easy to check that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="newhat"></A><!-- MATH
+ \begin{equation}
+\widehat{h}(s)+\sum^\infty_{n=0} \widehat{m_n}(s)
+=\left\{
+\begin{array}{ll}
+1 & \mbox{if $s\geq -\frac{1}{2}$,}\\
+0 &  \mbox{if $s\leq -1 $,}
+\end{array}
+\right.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="306" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img268.png"
+ ALT="$\displaystyle \widehat{h}(s)+\sum^\infty_{n=0} \widehat{m_n}(s) =\left\{ \begin...
+...mbox{if $s\geq -\frac{1}{2}$,}\\ 0 &amp; \mbox{if $s\leq -1 $,} \end{array} \right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(24)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and that the left side of 
+(<A HREF="#newhat">24</A>) is continuous and piecewise linear.
+The following theorem is a consequence of 
+standard facts from Littlewood-Paley theory.
+We postpone its proof to the end of this section.
+
+<P>
+<P>
+<DIV><B>Theorem  4.2</B> (i)  &nbsp; 
+<I>Let <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.png"
+ ALT="$ h$"> and <IMG
+ WIDTH="30" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$ m_n$"> be as above, 
+<IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ f$"> be any function in <!-- MATH
+ $H^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="$ H^1(\mathbb{R})$">,
+ and <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img270.png"
+ ALT="$ N$"> be any
+nonnegative integer.  Then 
+there is a 
+positive constant <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img271.png"
+ ALT="$ a$">, independent of <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ f$"> and <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img270.png"
+ ALT="$ N$">, such that
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="h1-conv"></A><!-- MATH
+ \begin{equation}
+\|h*f+ \sum^N_{n=0}
+\epsilon_n m_n*f\|_1 \leq a \|f\|_1
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="270" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.png"
+ ALT="$\displaystyle \Vert h*f+ \sum^N_{n=0} \epsilon_n m_n*f\Vert _1 \leq a \Vert f\Vert _1$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(25)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+for any choice of <!-- MATH
+ $\epsilon_n=-1$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$ \epsilon_n=-1$"> or <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img274.png"
+ ALT="$ 1$">.
+  (ii)  For
+<!-- MATH
+ $f\in H^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.png"
+ ALT="$ f\in H^1(\mathbb{R})$">, we have
+</I><!-- MATH
+ \begin{displaymath}
+h*f+ \lim_{N\rightarrow\infty} \sum^N_{n=0}
+m_n*f=f
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="232" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img276.png"
+ ALT="$\displaystyle h*f+ \lim_{N\rightarrow\infty} \sum^N_{n=0}
+m_n*f=f$">
+</DIV><P></P><I>
+unconditionally in <!-- MATH
+ $L^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$ L^1(\mathbb{R})$">.  
+<BR>(iii) For <!-- MATH
+ $f\in H^\infty (\mathbb{R})$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.png"
+ ALT="$ f\in H^\infty (\mathbb{R})$">, we have
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="hinfty-conv"></A><!-- MATH
+ \begin{equation}
+h*f+ \lim_{N\rightarrow\infty} \sum^N_{n=0}
+m_n*f=f
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="232" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img276.png"
+ ALT="$\displaystyle h*f+ \lim_{N\rightarrow\infty} \sum^N_{n=0}
+m_n*f=f$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(26)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+almost everywhere on <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$">.
+<A NAME="conv-hinfty"></A></I></DIV><P></P>
+
+<P>
+Our main theorem is the following.
+<P>
+<DIV><B>Theorem  4.3</B> &nbsp; 
+<I>Let <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> be a representation of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">
+that is sup path attaining,
+and let <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.png"
+ ALT="$ h$"> and <!-- MATH
+ $m_n, n=0,1 ,2 , \ldots$
+ -->
+<IMG
+ WIDTH="150" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img279.png"
+ ALT="$ m_n, n=0,1 ,2 , \ldots$">
+be as in Theorem <A HREF="#conv-hinfty">4.2</A>.  Suppose that
+ <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ \mu\in M(\Sigma)$"> is weakly analytic.  Then 
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="eq-15.2.95"></A><!-- MATH
+ \begin{equation}
+\|h*_T\mu + \sum_{n=0}^N\epsilon_n m_n*_T \mu\|\leq a c^3 C\|\mu\|
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="306" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.png"
+ ALT="$\displaystyle \Vert h*_T\mu + \sum_{n=0}^N\epsilon_n m_n*_T \mu\Vert\leq a c^3 C\Vert\mu\Vert$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(27)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+for any choice of <!-- MATH
+ $\epsilon_n\in \{-1,1\}$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img281.png"
+ ALT="$ \epsilon_n\in \{-1,1\}$">, 
+where <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img271.png"
+ ALT="$ a$"> is as in  (<A HREF="#h1-conv">25</A>), 
+<IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ c$"> as in (<A HREF="node1.html#uniformlybded">1</A>) and <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img42.png"
+ ALT="$ C$"> as in (<A HREF="node1.html#ineqhypa">7</A>).
+Moreover,
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="greatdecomp"></A><!-- MATH
+ \begin{equation}
+\mu=h*_T\mu+\sum_{n=0}^\infty m_n*_T \mu,
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="216" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.png"
+ ALT="$\displaystyle \mu=h*_T\mu+\sum_{n=0}^\infty m_n*_T \mu,$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(28)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+where the series converges unconditionally in 
+<IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">.
+<A NAME="ucc-analytic"></A></I></DIV><P></P>
+
+<P>
+
+<B>Proof.</B>  To prove (<A HREF="#eq-15.2.95">27</A>), 
+combine Theorems <A HREF="node1.html#maintransferenceth">1.6</A> and <A HREF="#conv-hinfty">4.2</A>.
+Inequality (<A HREF="#eq-15.2.95">27</A>) states that the partial sums of the series 
+<!-- MATH
+ $h*_T \mu+\sum_{n=0}^\infty m_n*_T \mu$
+ -->
+<IMG
+ WIDTH="193" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$ h*_T \mu+\sum_{n=0}^\infty m_n*_T \mu$">
+are unconditionally bounded.  
+To prove that they converge unconditionally, we recall
+the Bessaga-Pe<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img284.png"
+ ALT="\l">czynski Theorem from [<A
+ HREF="node5.html#bp">2</A>].  This theorem
+tells us that for any Banach
+space, every unconditionally bounded series is 
+unconditionally convergent if and
+only if the Banach space does not contain an isomorphic copy of <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.png"
+ ALT="$ c_0$">.
+Now since
+<IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$"> is weakly complete and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.png"
+ ALT="$ c_0$"> is not 
+(see [<A
+ HREF="node5.html#dunford">7</A>, Chap IV.9, Theorem 3, and IV.13.9]), we conclude that
+ <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$"> does not contain <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.png"
+ ALT="$ c_0$">.
+Applying the Bessaga-Pe<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img284.png"
+ ALT="\l">czynski Theorem, we infer that there is a measure <!-- MATH
+ $\eta\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="$ \eta\in M(\Sigma)$">
+such that 
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="infer1"></A><!-- MATH
+ \begin{equation}
+\eta=h*_T\mu+\sum_{n=0}^\infty m_n*_T \mu
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="209" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$\displaystyle \eta=h*_T\mu+\sum_{n=0}^\infty m_n*_T \mu$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(29)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+unconditionally in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">.  Moreover, <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.png"
+ ALT="$ \eta$"> is weakly measurable,
+because of (<A HREF="#infer1">29</A>).
+It remains to show that <IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img289.png"
+ ALT="$ \eta=\mu$">.
+By Proposition <A HREF="node2.html#weakhypa">2.4</A>,
+it is enough to show that
+for every <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ A\in \Sigma$">, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="toshow1"></A><!-- MATH
+ \begin{equation}
+T_t\mu(A)=T_t\eta(A)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="141" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img290.png"
+ ALT="$\displaystyle T_t\mu(A)=T_t\eta(A)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(30)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for almost every <!-- MATH
+ $t\in \mathbb{R}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$ t \in \mathbb{R}$">.  
+Since <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is weakly analytic, the function <!-- MATH
+ $t\mapsto T_t\mu(A)$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ t\mapsto T_t\mu(A)$">
+is in <!-- MATH
+ $H^\infty (\mathbb{R})$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.png"
+ ALT="$ H^\infty(\mathbb{R})$">.
+By Theorem <A HREF="#conv-hinfty">4.2</A> (iii),
+we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="wehave1"></A><!-- MATH
+ \begin{equation}
+T_t\mu(A)=h*T_t\mu(A)+\sum_{n=0}^\infty m_n* T_t \mu(A)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="325" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img291.png"
+ ALT="$\displaystyle T_t\mu(A)=h*T_t\mu(A)+\sum_{n=0}^\infty m_n* T_t \mu(A)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(31)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for almost every <!-- MATH
+ $t\in \mathbb{R}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$ t \in \mathbb{R}$">.  On the other hand, from
+the unconditional convergence of the series in 
+(<A HREF="#infer1">29</A>), (<A HREF="node1.html#uniformlybded">1</A>), and (<A HREF="node1.html#commut">3</A>), it 
+follows that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="wehave2"></A><!-- MATH
+ \begin{equation}
+T_t\eta(A)=h*T_t\mu(A)+\sum_{n=0}^\infty m_n* T_t \mu(A)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="324" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.png"
+ ALT="$\displaystyle T_t\eta(A)=h*T_t\mu(A)+\sum_{n=0}^\infty m_n* T_t \mu(A)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(32)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all <!-- MATH
+ $t\in \mathbb{R}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$ t \in \mathbb{R}$">.  Comparing (<A HREF="#wehave1">31</A>) and 
+(<A HREF="#wehave2">32</A>), we see that (<A HREF="#toshow1">30</A>)
+holds, completing the proof of the theorem.
+
+<P>
+<P>
+<DIV><B>Remarks  4.4</B> &nbsp; It is interesting to note that
+ Theorem <A HREF="#ucc-analytic">4.3</A>
+implies the classical
+ F. and M. Riesz theorem for measures defined on the real line.
+To see this, consider the representation
+of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> acting by translation on the Banach space
+of complex regular 
+Borel measures on <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$">. 
+It is easy to see that a regular Borel measure is analytic
+if and only if its Fourier-Stieltjes transform is supported in
+<!-- MATH
+ $[0,\infty)$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.png"
+ ALT="$ [0,\infty)$">. 
+In this case, each term in
+(<A HREF="#greatdecomp">28</A>) belongs to <!-- MATH
+ $L^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$ L^1(\mathbb{R})$">,
+being the convolution of an <!-- MATH
+ $L^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$ L^1(\mathbb{R})$">
+function with a regular Borel measure.
+Thus, the unconditional convergence of the
+series in (<A HREF="#greatdecomp">28</A>) implies that the
+measure <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is absolutely continuous.
+<I>
+<A NAME="classicalf_SPMamp_m"></A></I></DIV><P></P>
+
+<P>
+This argument provides a 
+new proof of the F. and M. Riesz Theorem,
+based on Littlewood-Paley theory and the result of 
+Bessaga-Pe<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img284.png"
+ ALT="\l">czynski [<A
+ HREF="node5.html#bp">2</A>].  Also, it can be used to 
+prove the following version of Bochner's generalization of the F. and M. Riesz Theorem.
+
+<P>
+<P>
+<DIV><B>Theorem  4.5</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> is a locally compact abelian group with
+dual group <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \Gamma$">, and <!-- MATH
+ $\psi:\ \Gamma \rightarrow \mathbb{R}$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ \psi:\ \Gamma \rightarrow \mathbb{R}$"> is a 
+continuous homomorphism.  Suppose that <!-- MATH
+ $\nu\in M(G)$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$ \nu \in M(G)$"> is such that,
+for every real number <IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img293.png"
+ ALT="$ s$">, 
+<!-- MATH
+ $\psi^{-1}((-\infty,s])\cap {\rm supp}(\widehat{\nu})$
+ -->
+<IMG
+ WIDTH="198" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img294.png"
+ ALT="$ \psi^{-1}((-\infty,s])\cap {\rm supp}(\widehat{\nu})$"> is compact.  
+Then <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \nu$"> is absolutely continuous with 
+respect to Haar measure on <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$">.  That is, <!-- MATH
+ $\nu\in L^1(G)$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.png"
+ ALT="$ \nu\in L^1(G)$">.
+<A NAME="bochner-thm"></A></I></DIV><P></P>
+
+ <B>Proof.</B> 
+Let <!-- MATH
+ $\phi:\ \mathbb{R}\rightarrow G$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img296.png"
+ ALT="$ \phi:\ \mathbb{R}\rightarrow G$"> denote the continuous adjoint homomorphism
+of <IMG
+ WIDTH="17" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.png"
+ ALT="$ \psi$">.  Define a representation <!-- MATH
+ $T=(T_t)_{t\in\mathbb{R}}$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.png"
+ ALT="$ T=(T_t)_{t\in\mathbb{R}}$"> of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> on
+the regular Borel measures <IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ M(G)$"> by
+<!-- MATH
+ \begin{displaymath}
+T_t(\mu)(A)=\mu(A+\phi(t)),
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="201" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.png"
+ ALT="$\displaystyle T_t(\mu)(A)=\mu(A+\phi(t)),$">
+</DIV><P></P>
+for all <!-- MATH
+ $\mu\in M(G)$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$ \mu\in M(G)$"> and all Borel subsets <!-- MATH
+ $A\subset G$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img300.png"
+ ALT="$ A\subset G$">.
+By Example <A HREF="node2.html#exhypa2">2.2</A>, <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> is sup path attaining,
+and every measure <!-- MATH
+ $\mu\in M(G)$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$ \mu\in M(G)$"> is weakly measurable.
+Moreover, <!-- MATH
+ $\mu\in M(G)$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$ \mu\in M(G)$"> is weakly analytic (equivalently, <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$">-analytic)
+if and only if <!-- MATH
+ ${\rm supp}(\widehat{\mu})\subset \psi^{-1}([0,\infty))$
+ -->
+<IMG
+ WIDTH="189" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img301.png"
+ ALT="$ {\rm supp}(\widehat{\mu})\subset \psi^{-1}([0,\infty))$"> (see
+[<A
+ HREF="node5.html#deleeuwglicksberg">6</A>]).
+
+<P>
+To prove the theorem, we can, without loss of generality,
+suppose that <!-- MATH
+ ${\rm supp}(\widehat{\nu})\subset \psi^{-1}([0,\infty))$
+ -->
+<IMG
+ WIDTH="188" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$ {\rm supp}(\widehat{\nu})\subset \psi^{-1}([0,\infty))$">.
+Otherwise, we consider the measure <!-- MATH
+ $\overline{\chi} \nu$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img303.png"
+ ALT="$ \overline{\chi} \nu$">, where 
+<!-- MATH
+ $\psi(\chi) +\psi({\rm supp}(\widehat{\nu}))\subset [0,\infty)$
+ -->
+<IMG
+ WIDTH="232" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ \psi(\chi) +\psi({\rm supp}(\widehat{\nu}))\subset [0,\infty)$">.
+
+<P>
+Let <!-- MATH
+ $S=\psi^{-1}([0,\infty))$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img305.png"
+ ALT="$ S=\psi^{-1}([0,\infty))$">.  Then <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ S$"> is a <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img57.png"
+ ALT="$ {\cal T}$">-set.  Applying Theorem <A HREF="#ucc-analytic">4.3</A>, we see that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="ucc"></A><!-- MATH
+ \begin{equation}
+\nu=h*_T\nu +\sum_{n=1}^\infty m_n*_T \nu,
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="212" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img306.png"
+ ALT="$\displaystyle \nu=h*_T\nu +\sum_{n=1}^\infty m_n*_T \nu,$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(33)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+unconditionally in <IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ M(G)$">.
+For <!-- MATH
+ $f\in L^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img307.png"
+ ALT="$ f\in L^1(\mathbb{R})$">, a 
+straightforward calculation shows that
+<!-- MATH
+ $\widehat{f*_T\nu}(\chi)=\widehat{f}(\psi (\chi))\widehat{\nu}(\chi)$
+ -->
+<IMG
+ WIDTH="208" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img308.png"
+ ALT="$ \widehat{f*_T\nu}(\chi)=\widehat{f}(\psi (\chi))\widehat{\nu}(\chi)$"> for all
+<!-- MATH
+ $\chi\in\Gamma$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img179.png"
+ ALT="$ \chi\in\Gamma$">.  
+Since
+<!-- MATH
+ $\psi^{-1}((-\infty,s])\cap {\rm supp}(\widehat{\nu})$
+ -->
+<IMG
+ WIDTH="198" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img294.png"
+ ALT="$ \psi^{-1}((-\infty,s])\cap {\rm supp}(\widehat{\nu})$"> is compact
+for every <!-- MATH
+ $s\in \mathbb{R}$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ s\in \mathbb{R}$">, it follows that
+  <!-- MATH
+ ${\rm supp}(\widehat{h*_T\nu})$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.png"
+ ALT="$ {\rm supp}(\widehat{h*_T\nu})$"> 
+and <!-- MATH
+ ${\rm supp}(\widehat{m_n*_T\nu})$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img311.png"
+ ALT="$ {\rm supp}(\widehat{m_n*_T\nu})$">
+are compact.  Thus <IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img312.png"
+ ALT="$ h*_T\nu$"> and <IMG
+ WIDTH="69" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$ m_n*_T\nu$"> 
+are in <!-- MATH
+ $M(G)\cap L^2(G)$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.png"
+ ALT="$ M(G)\cap L^2(G)$">, and hence they belong to <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="$ L^1(G)$">.
+As a consequence, (<A HREF="#ucc">33</A>) implies that 
+<!-- MATH
+ $\nu\in L^1(G)$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.png"
+ ALT="$ \nu\in L^1(G)$">.
+<BR>
+<P>
+With Theorem <A HREF="#ucc-analytic">4.3</A> in hand, we can derive with ease
+several fundamental properties of analytic measures
+that were obtained previously by 
+ de Leeuw-Glicksberg
+[<A
+ HREF="node5.html#deleeuwglicksberg">6</A>], and
+Forelli [<A
+ HREF="node5.html#forelli">9</A>].  We note however, that the techniques
+in [<A
+ HREF="node5.html#deleeuwglicksberg">6</A>] and [<A
+ HREF="node5.html#forelli">9</A>] do not apply
+in our more general settings.
+<P>
+<DIV><B>Theorem  4.6</B> &nbsp; 
+<I>Let <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> be a representation of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">
+that is sup path attaining,
+and let <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> be a
+weakly analytic measure in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">.
+Then the mapping <!-- MATH
+ $t\mapsto T_t \mu$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img315.png"
+ ALT="$ t\mapsto T_t \mu$"> is 
+continuous from <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> into <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">.
+<A NAME="general-forelli"></A></I></DIV><P></P>
+
+<B>Proof.</B>  Using the uniform continuity
+of translation in <!-- MATH
+ $L^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$ L^1(\mathbb{R})$">, it is a simple matter to show that
+for any function <!-- MATH
+ $f\in L^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img307.png"
+ ALT="$ f\in L^1(\mathbb{R})$">, and any weakly measurable
+<!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ \mu\in M(\Sigma)$">, the mapping
+<!-- MATH
+ $t\mapsto f*_T T_t\mu$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.png"
+ ALT="$ t\mapsto f*_T T_t\mu$"> is continuous.
+Now use Theorem <A HREF="#ucc-analytic">4.3</A> to complete the proof.
+<BR>
+<P>
+Theorem <A HREF="#general-forelli">4.6</A> is very specific to
+representations of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> or <!-- MATH
+ $\mathbb{T}$
+ -->
+<IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img317.png"
+ ALT="$ \mathbb{T}$">, in the sense that
+no similar result holds on more general groups.
+To see this, consider the 
+group <!-- MATH
+ $G=\mathbb{T}\times \mathbb{T}$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img318.png"
+ ALT="$ G=\mathbb{T}\times \mathbb{T}$"> with a lexicographic order on the dual
+group <!-- MATH
+ $\mathbb{Z}\times \mathbb{Z}$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img319.png"
+ ALT="$ \mathbb{Z}\times \mathbb{Z}$">.  Let <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.png"
+ ALT="$ \mu_0$"> denote the normalized Haar
+measure on the subgroup <!-- MATH
+ $\{(x,y):\ y=0\}$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img321.png"
+ ALT="$ \{(x,y):\ y=0\}$">, and consider the measure
+<!-- MATH
+ $e^{-i x}\mu_0$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img322.png"
+ ALT="$ e^{-i x}\mu_0$">.  Its spectrum is supported on
+the coset <!-- MATH
+ $\{(m,1):\ m\in \mathbb{Z}\}$
+ -->
+<IMG
+ WIDTH="147" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.png"
+ ALT="$ \{(m,1):\ m\in \mathbb{Z}\}$"> and thus it is
+analytic with respect to the
+regular action of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> by translation in
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ M(G)$">.  Clearly, the measure <!-- MATH
+ $e^{-i x}\mu_0$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img322.png"
+ ALT="$ e^{-i x}\mu_0$">
+does not translate continuously, and so
+a straightforward analog of 
+Theorem <A HREF="#general-forelli">4.6</A>
+fails in this setting.
+
+<P>
+The following application concerns bounded operators <IMG
+ WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img324.png"
+ ALT="$ {\cal P}$">
+from <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$"> into <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">
+that commute with <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> in the following sense:
+<!-- MATH
+ \begin{displaymath}
+{\cal P}\circ T_t=T_t\circ {\cal P}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="129" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img325.png"
+ ALT="$\displaystyle {\cal P}\circ T_t=T_t\circ {\cal P}$">
+</DIV><P></P>
+for all <!-- MATH
+ $t\in \mathbb{R}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$ t \in \mathbb{R}$">.  
+<P>
+<DIV><B>Theorem  4.7</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> is a representation of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> that is sup path
+attaining,
+and that <IMG
+ WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img324.png"
+ ALT="$ {\cal P}$"> commutes with <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$">.
+Let <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ \mu\in M(\Sigma)$"> be weakly analytic.
+Then <!-- MATH
+ ${\cal P}\mu$
+ -->
+<IMG
+ WIDTH="31" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.png"
+ ALT="$ {\cal P}\mu$"> is also weakly analytic.
+<A NAME="aboutPforR"></A></I></DIV><P></P>
+
+<B>Proof.</B>  
+First note that by Theorem <A HREF="#general-forelli">4.6</A>, the mapping
+<!-- MATH
+ $t\mapsto T_t \mu(A)$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ t\mapsto T_t\mu(A)$">
+is continuous, and hence measurable.  
+
+<P>
+Now suppose that <!-- MATH
+ $g \in H^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.png"
+ ALT="$ g \in H^1(\mathbb{R})$">.  Again, by Theorem <A HREF="#general-forelli">4.6</A>,
+the
+map <!-- MATH
+ $t\mapsto g(t) T_t\mu$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.png"
+ ALT="$ t\mapsto g(t) T_t\mu$"> is Bochner integrable.
+Let
+<!-- MATH
+ \begin{displaymath}
+\nu = \int_\mathbb{R}g(t) T_t \mu dt .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="144" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.png"
+ ALT="$\displaystyle \nu = \int_\mathbb{R}g(t) T_t \mu dt .$">
+</DIV><P></P>
+Then by properties of the Bochner integral, 
+and since <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is weakly analytic, we have that
+for all <!-- MATH
+ $A \in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ A\in \Sigma$">
+<!-- MATH
+ \begin{displaymath}
+\nu(A) = \int_\mathbb{R}g(t) T_t\mu(A) dt = 0 .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="236" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.png"
+ ALT="$\displaystyle \nu(A) = \int_\mathbb{R}g(t) T_t\mu(A) dt = 0 .$">
+</DIV><P></P>
+Hence <IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.png"
+ ALT="$ \nu = 0$">.
+Therefore, for all <!-- MATH
+ $A \in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ A\in \Sigma$"> we have
+<!-- MATH
+ \begin{displaymath}
+\int_\mathbb{R}g(t) T_t({\cal P}\mu)(A) dt
+   =
+   \int_\mathbb{R}g(t) {\cal P}(T_t\mu)(A) dt
+   =
+   {\cal P}\nu(A) = 0.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="463" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img332.png"
+ ALT="$\displaystyle \int_\mathbb{R}g(t) T_t({\cal P}\mu)(A) dt
+=
+\int_\mathbb{R}g(t) {\cal P}(T_t\mu)(A) dt
+=
+{\cal P}\nu(A) = 0. $">
+</DIV><P></P>
+Since this is true for all <!-- MATH
+ $g \in H^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.png"
+ ALT="$ g \in H^1(\mathbb{R})$">, it follows that
+<!-- MATH
+ ${\cal P}\mu$
+ -->
+<IMG
+ WIDTH="31" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.png"
+ ALT="$ {\cal P}\mu$"> is weakly analytic.
+
+<P>
+<P>
+<DIV><B>Definition  4.8</B> &nbsp; 
+<I>Let <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> be a sup path attaining 
+representation of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">.
+A weakly measurable <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="$ \sigma$"> in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$"> is
+called quasi-invariant if 
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.png"
+ ALT="$ T_t\sigma$"> and <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="$ \sigma$">
+are mutually absolutely continuous for all <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ t\in G$">.  Hence
+if <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="$ \sigma$"> is quasi-invariant
+and <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ A\in \Sigma$">, then 
+<!-- MATH
+ $|\sigma|(A)=0$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.png"
+ ALT="$ \vert\sigma\vert(A)=0$"> if and only if <!-- MATH
+ $|T_t(\sigma)|(A)=0$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.png"
+ ALT="$ \vert T_t(\sigma)\vert(A)=0$">
+for all <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ t\in G$">.
+<A NAME="qi"></A></I></DIV><P></P>
+
+<P>
+We can use Theorem <A HREF="#aboutPforR">4.7</A> to generalize a result of
+de Leeuw-Glicksberg [<A
+ HREF="node5.html#deleeuwglicksberg">6</A>] 
+and Forelli [<A
+ HREF="node5.html#forelli">9</A>], concerning quasi-invariant measures.  In this application, it 
+is necessary to restrict
+to sup path attaining representations given by isometries of  <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">.
+We need a lemma.
+
+<P>
+<P>
+<DIV><B>Lemma  4.9</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> is a linear isometry of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$"> onto itself.
+Let <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$">, <!-- MATH
+ $\nu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.png"
+ ALT="$ \nu\in M(\Sigma)$">.  Then,
+<BR>(a) <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> and <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="$ \sigma$"> are mutually singular (in symbols, <!-- MATH
+ $\mu\perp\sigma$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.png"
+ ALT="$ \mu\perp\sigma$">)
+if and only if
+<!-- MATH
+ $T\mu\perp T\sigma$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.png"
+ ALT="$ T\mu\perp T\sigma$">;
+<BR>(b)  <!-- MATH
+ $\mu<<\sigma$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.png"
+ ALT="$ \mu&lt;&lt;\sigma$"> if and only if
+<!-- MATH
+ $T\mu<<T\sigma.$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img340.png"
+ ALT="$ T\mu&lt;&lt;T\sigma.$"> 
+<A NAME="finallem"></A></I></DIV><P></P>
+
+<P>
+
+<B>Proof.</B> For (a), simply recall that two measures <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> and <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="$ \sigma$">
+are mutually singular if and only if <!-- MATH
+ $\|\mu+\sigma\|=\|\mu\|+\|\sigma\|$
+ -->
+<IMG
+ WIDTH="178" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img341.png"
+ ALT="$ \Vert\mu+\sigma\Vert=\Vert\mu\Vert+\Vert\sigma\Vert$">, and 
+<!-- MATH
+ $\|\mu-\sigma\|=\|\mu\|+\|\sigma\|$
+ -->
+<IMG
+ WIDTH="179" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.png"
+ ALT="$ \Vert\mu-\sigma\Vert=\Vert\mu\Vert+\Vert\sigma\Vert$">.
+For (b), it is clearly enough to prove the implication in one direction.
+So suppose that 
+<!-- MATH
+ $\mu<<\sigma$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.png"
+ ALT="$ \mu&lt;&lt;\sigma$"> and write <!-- MATH
+ $\mu=\mu_1+\mu_2$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.png"
+ ALT="$ \mu=\mu_1+\mu_2$"> where 
+<!-- MATH
+ $T\mu_1<<T\sigma$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.png"
+ ALT="$ T\mu_1&lt;&lt;T\sigma$"> and 
+<!-- MATH
+ $T\mu_2\perp T\sigma$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img345.png"
+ ALT="$ T\mu_2\perp T\sigma$">.
+Then 
+<!-- MATH
+ $T\mu_1\perp T\mu_2$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img346.png"
+ ALT="$ T\mu_1\perp T\mu_2$">.  Hence 
+<!-- MATH
+ $\mu_1\perp  \mu_2$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img347.png"
+ ALT="$ \mu_1\perp \mu_2$">, and hence <!-- MATH
+ $\mu_2<<\mu<<\sigma$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.png"
+ ALT="$ \mu_2&lt;&lt;\mu&lt;&lt;\sigma$">.
+But <!-- MATH
+ $T\mu_2\perp T\sigma$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img345.png"
+ ALT="$ T\mu_2\perp T\sigma$"> implies that <!-- MATH
+ $\mu_2\perp \sigma$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.png"
+ ALT="$ \mu_2\perp \sigma$">.  So
+<IMG
+ WIDTH="58" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img350.png"
+ ALT="$ \mu_2=0$">.  Thus <!-- MATH
+ $T\mu=T\mu_1<<T\sigma$
+ -->
+<IMG
+ WIDTH="152" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.png"
+ ALT="$ T\mu=T\mu_1&lt;&lt;T\sigma$">.
+
+<P>
+<P>
+<DIV><B>Theorem  4.10</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> is a sup path attaining representation
+of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> by isometries of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">.  Suppose 
+that <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ \mu\in M(\Sigma)$"> is weakly analytic, and
+<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="$ \sigma$"> is quasi-invariant.  Write
+<!-- MATH
+ $\mu=\mu_a+\mu_s$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.png"
+ ALT="$ \mu=\mu_a+\mu_s$"> for the Lebesgue decomposition of <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$">
+with respect to <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="$ \sigma$">.  Then both
+<IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \mu_a$"> and <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.png"
+ ALT="$ \mu_s$"> are weakly analytic.  In particular,
+the spectra of <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \mu_a$"> and <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.png"
+ ALT="$ \mu_s$"> are
+contained in <!-- MATH
+ $[0,\infty)$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img262.png"
+ ALT="$ [0,\infty)$">.
+<A NAME="lebesgue-decomp-forR"></A></I></DIV><P></P>
+
+<B>Proof.</B>  Let <!-- MATH
+ ${\cal P}(\mu)=\mu_s$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.png"
+ ALT="$ {\cal P}(\mu)=\mu_s$">.  
+Since <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="$ \sigma$"> is quasi-invariant, the operator
+<IMG
+ WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img324.png"
+ ALT="$ {\cal P}$"> commutes with <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> by Lemma <A HREF="#finallem">4.9</A>.  
+Now apply Theorem 
+<A HREF="#aboutPforR">4.7</A>.
+
+<P>
+Let us finish with an example to show that the hypothesis of 
+sup path attaining is required in these results.  The
+next example is a variant of Example <A HREF="node2.html#exnohypa">2.5</A>.
+
+<P>
+<P>
+<DIV><B>Example  4.11</B> &nbsp; Let <IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.png"
+ ALT="$ \Sigma_1$"> denote the sigma algebra of countable
+and co-countable subsets of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$">, let <IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img355.png"
+ ALT="$ \Sigma_2$"> denote
+the Borel subsets of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$">, and let <!-- MATH
+ $\Sigma = \Sigma_1 \otimes
+\Sigma_2$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img356.png"
+ ALT="$ \Sigma = \Sigma_1 \otimes
+\Sigma_2$"> denote the product sigma algebra on <!-- MATH
+ $\mathbb{R}\times \mathbb{R}$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.png"
+ ALT="$ \mathbb{R}\times \mathbb{R}$">.
+Let <!-- MATH
+ $\nu_1:\Sigma_1 \to \{0,1\}$
+ -->
+<IMG
+ WIDTH="134" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img358.png"
+ ALT="$ \nu_1:\Sigma_1 \to \{0,1\}$"> be the measure that takes countable sets
+to 0 and co-countable sets to <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img274.png"
+ ALT="$ 1$">, let <!-- MATH
+ $\delta_t:\Sigma_1\to\{0,1\}$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img359.png"
+ ALT="$ \delta_t:\Sigma_1\to\{0,1\}$">
+be the measure that takes sets to <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img274.png"
+ ALT="$ 1$"> if they contain <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img153.png"
+ ALT="$ t$">, and to 0 otherwise,
+and let <IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img360.png"
+ ALT="$ \nu_2$"> denote the measure on <IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img355.png"
+ ALT="$ \Sigma_2$"> given by
+<!-- MATH
+ \begin{displaymath}
+\nu_2(A) = \int_A \exp(-x^2) \, dx .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="205" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img361.png"
+ ALT="% latex2html id marker 4936
+$\displaystyle \nu_2(A) = \int_A \exp(-x^2) \, dx .$">
+</DIV><P></P>
+Let <!-- MATH
+ $\nu = \nu_1\otimes \nu_2$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img362.png"
+ ALT="$ \nu = \nu_1\otimes \nu_2$">, 
+let <!-- MATH
+ $\theta = \delta_0\otimes\nu_2$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img363.png"
+ ALT="$ \theta = \delta_0\otimes\nu_2$">, and
+let <!-- MATH
+ $\mu = \nu-\theta$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img364.png"
+ ALT="$ \mu = \nu-\theta$">.
+Finally, let <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$ T_t$"> be the representation given by 
+<!-- MATH
+ $T_t(x,y) = (x+t,y+t)$
+ -->
+<IMG
+ WIDTH="193" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img365.png"
+ ALT="$ T_t(x,y) = (x+t,y+t)$">.
+
+<P>
+Then, we see that <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \nu$"> is quasi-invariant, and that
+<IMG
+ WIDTH="14" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img366.png"
+ ALT="$ \theta$"> and <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \nu$"> are mutually singular.
+Arguing as in
+Example <A HREF="node2.html#exnohypa">2.5</A>, we see that <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is weakly analytic.
+However, the singular part of <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> with respect to <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \nu$">
+is <IMG
+ WIDTH="29" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img367.png"
+ ALT="$ -\theta$">, and it may be readily seen that this is
+not weakly analytic, for example
+<!-- MATH
+ \begin{displaymath}
+T_t\theta(\mathbb{R}\times[-1,1])
+   = \int_{-1}^1 \exp(-(x-t)^2) \, dx ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="341" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img368.png"
+ ALT="% latex2html id marker 4962
+$\displaystyle T_t\theta(\mathbb{R}\times[-1,1])
+= \int_{-1}^1 \exp(-(x-t)^2) \, dx ,$">
+</DIV><P></P>
+is not in <!-- MATH
+ $H^\infty(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.png"
+ ALT="$ H^\infty(\mathbb{R})$">.</DIV><P></P>
+
+<P>
+ 
+<P>
+We end this section by proving Theorem <A HREF="#conv-hinfty">4.2</A>.
+We have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="SummnHat"></A><!-- MATH
+ \begin{equation}
+\sum^\infty_{n=-\infty} \widehat{m_n}(s)
+=\left\{
+\begin{array}{ll}
+1 & \mbox{if $s>0$;}\\
+0 &  \mbox{if $s\leq 0$.}
+\end{array}
+\right.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="248" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img369.png"
+ ALT="$\displaystyle \sum^\infty_{n=-\infty} \widehat{m_n}(s) =\left\{ \begin{array}{ll} 1 &amp; \mbox{if $s&gt;0$;}\\ 0 &amp; \mbox{if $s\leq 0$.} \end{array} \right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(34)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Recall the Fej&#233;r kernels <!-- MATH
+ $\{k_a\}_{a>0}$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img370.png"
+ ALT="$ \{k_a\}_{a&gt;0}$">, where
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="FourierTransformOfFejer"></A><!-- MATH
+ \begin{equation}
+\widehat{k_a}(s)
+=\left\{
+\begin{array}{ll}
+1-\frac{|s|}{a} & \mbox{if $|s|<a$;}\\
+0 &  \mbox{otherwise.}
+\end{array}
+\right.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="251" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img371.png"
+ ALT="$\displaystyle \widehat{k_a}(s) =\left\{ \begin{array}{ll} 1-\frac{\vert s\vert}{a} &amp; \mbox{if $\vert s\vert&lt;a$;}\\ 0 &amp; \mbox{otherwise.} \end{array} \right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(35)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+By Fourier inversion, we see that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="mnInTermsOfFejer"></A><!-- MATH
+ \begin{equation}
+m_n(x) =\exp(i 2^n x) k_{2^{n-1}}(x)+
+\frac{1}{2}  \exp (i 3\ 2^{n-1} x) k_{2^{n-1}} (x).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="446" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img372.png"
+ ALT="% latex2html id marker 4972
+$\displaystyle m_n(x) =\exp(i 2^n x) k_{2^{n-1}}(x)+ \frac{1}{2} \exp (i 3\ 2^{n-1} x) k_{2^{n-1}} (x).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(36)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P>
+<DIV><B>Theorem  4.12</B> (i)  &nbsp; 
+<I>Let <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ f$"> be any function in <!-- MATH
+ $H^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.png"
+ ALT="$ H^1(\mathbb{R})$">, and let 
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img373.png"
+ ALT="$ M$"> and <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img270.png"
+ ALT="$ N$"> be arbitrary positive integers.  Then 
+there is a 
+positive constant <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img271.png"
+ ALT="$ a$">, independent of <IMG
+ WIDTH="47" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.png"
+ ALT="$ f, M,$"> and <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img270.png"
+ ALT="$ N$"> such that
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="eq1lpth1"></A><!-- MATH
+ \begin{equation}
+\|\sum_{n=-M}^N\epsilon_n m_n*f\|_1\leq a \|f\|_1
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="226" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.png"
+ ALT="$\displaystyle \Vert\sum_{n=-M}^N\epsilon_n m_n*f\Vert _1\leq a \Vert f\Vert _1$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(37)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+for any choice of <!-- MATH
+ $\epsilon_n=-1$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$ \epsilon_n=-1$"> or 1.  (ii)  Moreover,
+for <!-- MATH
+ $f\in H^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img275.png"
+ ALT="$ f\in H^1(\mathbb{R})$">,
+</I><!-- MATH
+ \begin{displaymath}
+\lim_{M,N\rightarrow\infty} \sum^N_{n=-M}
+m_n*f=f
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="202" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img376.png"
+ ALT="$\displaystyle \lim_{M,N\rightarrow\infty} \sum^N_{n=-M}
+m_n*f=f$">
+</DIV><P></P><I>
+unconditionally in <!-- MATH
+ $L^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$ L^1(\mathbb{R})$">.
+<A NAME="UnconditionalConvergenceOnR"></A></I></DIV><P></P>
+
+<B>Proof.</B>  
+The proof of (ii) is immediate from (i) and (<A HREF="#SummnHat">34</A>),
+by Fourier inversion.  
+For part (i), 
+use (<A HREF="#mnInTermsOfFejer">36</A>), 
+to write 
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\sum_{n=-M}^N\epsilon_n m_n		&=&
+\sum_{n=-M}^N\epsilon_n\exp(i 2^n x) k_{2^{n-1}}(x)+
+\frac{1}{2}  \exp (i 3\ 2^{n-1} x) k_{2^{n-1}} (x)\\
+					&=&
+\sum_{n=-M}^{-1}\epsilon_n\exp(i 2^n x) k_{2^{n-1}}(x)
++\sum_{n=0}^N\epsilon_n\exp(i 2^n x) k_{2^{n-1}}(x)\\
+&+&
+\frac{1}{2}
+\sum_{n=-M}^{-1} \epsilon_n
+  \exp (i 3\ 2^{n-1} x) k_{2^{n-1}} (x)
++ \frac{1}{2}\sum_{n=0}^N
+	\epsilon_n
+  \exp (i 3\ 2^{n-1} x) k_{2^{n-1}} (x)\\
+					&=&
+K_1(x)+K_2 (x)+K_3 (x)+K_4(x).
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="93" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img377.png"
+ ALT="$\displaystyle \sum_{n=-M}^N\epsilon_n m_n$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="432" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img378.png"
+ ALT="% latex2html id marker 5008
+$\displaystyle \sum_{n=-M}^N\epsilon_n\exp(i 2^n x) k_{2^{n-1}}(x)+
+\frac{1}{2} \exp (i 3\ 2^{n-1} x) k_{2^{n-1}} (x)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="433" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img379.png"
+ ALT="% latex2html id marker 5012
+$\displaystyle \sum_{n=-M}^{-1}\epsilon_n\exp(i 2^n x) k_{2^{n-1}}(x)
++\sum_{n=0}^N\epsilon_n\exp(i 2^n x) k_{2^{n-1}}(x)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img380.png"
+ ALT="$\displaystyle +$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="531" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img381.png"
+ ALT="% latex2html id marker 5016
+$\displaystyle \frac{1}{2}
+\sum_{n=-M}^{-1} \epsilo...
+... (x)
++ \frac{1}{2}\sum_{n=0}^N
+\epsilon_n
+\exp (i 3\ 2^{n-1} x) k_{2^{n-1}} (x)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="273" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img382.png"
+ ALT="$\displaystyle K_1(x)+K_2 (x)+K_3 (x)+K_4(x).$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+Hence, to prove (<A HREF="#eq1lpth1">37</A>) 
+it is enough to show that there is a positive constant
+<IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img271.png"
+ ALT="$ a$">, independent of <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ f$"> such that
+<!-- MATH
+ $\|K_j*f\|_1\leq a \|f\|_1$
+ -->
+<IMG
+ WIDTH="157" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.png"
+ ALT="$ \Vert K_j*f\Vert _1\leq a \Vert f\Vert _1$">, for <IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img384.png"
+ ALT="$ j=1,2,3,4$">.
+Appealing to [<A
+ HREF="node5.html#stein">15</A>, Theorem 3, p. 114], we will be done once we
+establish that:
+ <P></P>
+<DIV ALIGN="CENTER"><A NAME="condition1"></A><!-- MATH
+ \begin{equation}
+\left|\widehat{K_j}\right|\leq A,
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="85" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img385.png"
+ ALT="$\displaystyle \left\vert\widehat{K_j}\right\vert\leq A,$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(38)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and the H&#246;rmander condition
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="condition3"></A><!-- MATH
+ \begin{equation}
+\sup_{y>0} \int_{|x|>2y} |K_j(x-y)-K_j(x)|dx\leq B,
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="320" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.png"
+ ALT="$\displaystyle \sup_{y&gt;0} \int_{\vert x\vert&gt;2y} \vert K_j(x-y)-K_j(x)\vert dx\leq B,$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(39)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ A$"> and <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img140.png"
+ ALT="$ B$"> are absolute constants.
+Inequality (<A HREF="#condition1">38</A>) 
+holds with <IMG
+ WIDTH="53" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img387.png"
+ ALT="$ A=1$">, since the 
+Fourier transforms of the summands defining the 
+kernels <IMG
+ WIDTH="28" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img388.png"
+ ALT="$ K_j$"> have disjoint supports and are 
+bounded by 1.  Condition (<A HREF="#condition3">39</A>), is well-known. 
+For a proof, see [<A
+ HREF="node5.html#eg">8</A>, pp. 138-140, and 7.2.2, p. 142].
+<BR>
+<P>
+<B>Proof of Theorem <A HREF="#conv-hinfty">4.2</A>.</B>  
+Parts (i) and (ii) follow
+as in Theorem <A HREF="#UnconditionalConvergenceOnR">4.12</A>,
+so we only prove (iii).  
+For notational convenience, let
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="kN"></A><!-- MATH
+ \begin{equation}
+\kappa_N(x)=\sum_{n=0}^N m_n(x),\quad N=0,\,1,\, 2\, \ldots
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="309" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img389.png"
+ ALT="$\displaystyle \kappa_N(x)=\sum_{n=0}^N m_n(x),\quad N=0,\,1,\, 2\, \ldots$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(40)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Let <IMG
+ WIDTH="34" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img390.png"
+ ALT="$ V_{2^N}$"> denote the de la Vall&#233;e
+Poussin kernels on <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> of order <IMG
+ WIDTH="27" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img391.png"
+ ALT="$ 2^N$">.
+Its Fourier transform is 
+continuous, piecewise linear, 
+and satisfies 
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="Vn-hat"></A><!-- MATH
+ \begin{equation}
+\widehat{V_{2^N}}(s)=\left\{
+\begin{array}{ll}
+0 & \mbox{if $s\not\in [-2^{n+1},2^{n+1}]$;}\\
+1 &  \mbox{if $|s|\leq 2^n$.}
+\end{array}
+\right.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="299" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img392.png"
+ ALT="$\displaystyle \widehat{V_{2^N}}(s)=\left\{ \begin{array}{ll} 0 &amp; \mbox{if $s\no...
+...2^{n+1},2^{n+1}]$;}\\ 1 &amp; \mbox{if $\vert s\vert\leq 2^n$.} \end{array} \right.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(41)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+It is well-known that <IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img393.png"
+ ALT="$ V_{n}$"> is a summability kernel for 
+<!-- MATH
+ $L^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$ L^1(\mathbb{R})$"> and, in particular, that <IMG
+ WIDTH="63" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img394.png"
+ ALT="$ V_{2^N}*f$">
+converges pointwise almost everywhere to <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ f$">
+for all <!-- MATH
+ $f\in L^p(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img395.png"
+ ALT="$ f\in L^p(\mathbb{R})$">, for <!-- MATH
+ $1\leq p\leq \infty$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img396.png"
+ ALT="$ 1\leq p\leq \infty$">.
+Thus, we will be done, if we can show that for <!-- MATH
+ $f\in
+H^\infty(R)$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img397.png"
+ ALT="$ f\in
+H^\infty(R)$">,
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="toshow15.feb.95"></A><!-- MATH
+ \begin{equation}
+V_{2^N}*f=h*f+ \sum^N_{n=0}  m_n*f.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="241" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img398.png"
+ ALT="$\displaystyle V_{2^N}*f=h*f+ \sum^N_{n=0} m_n*f.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(42)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Write <!-- MATH
+ $V_{2^N}=(h+\kappa_{N})+(V_{2^N}-(h+\kappa_{N}))$
+ -->
+<IMG
+ WIDTH="294" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img399.png"
+ ALT="$ V_{2^N}=(h+\kappa_{N})+(V_{2^N}-(h+\kappa_{N}))$">,
+where <IMG
+ WIDTH="28" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img400.png"
+ ALT="$ \kappa_N$"> is as in (<A HREF="#kN">40</A>).
+For <IMG
+ WIDTH="56" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img401.png"
+ ALT="$ N\geq 1$">, the Fourier transform of <!-- MATH
+ $(V_{2^N}-(h+\kappa_{N}))$
+ -->
+<IMG
+ WIDTH="144" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img402.png"
+ ALT="$ (V_{2^N}-(h+\kappa_{N}))$">,
+vanishes on <!-- MATH
+ $[-\frac{1}{2},\infty)$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img403.png"
+ ALT="$ [-\frac{1}{2},\infty)$">.
+Thus, for <!-- MATH
+ $f\in H^\infty(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.png"
+ ALT="$ f\in H^\infty (\mathbb{R})$">, we have
+<!-- MATH
+ $(V_{2^N}-(h+\kappa_{N}))*f=0$
+ -->
+<IMG
+ WIDTH="208" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img404.png"
+ ALT="$ (V_{2^N}-(h+\kappa_{N}))*f=0$">, and so
+(<A HREF="#toshow15.feb.95">42</A>) follows, and the proof
+is complete.
+
+<P>
+<B>Acknowledgements</B>  The work of the second author was supported
+by a grant from the National Science Foundation (U.S.A.).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html50"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html48"
+  HREF="trans-measures.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html42"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html51"
+  HREF="node5.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html49"
+  HREF="trans-measures.html">Transference in Spaces of</A>
+<B> Previous:</B> <A NAME="tex2html43"
+  HREF="node3.html">Proof of the Main</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

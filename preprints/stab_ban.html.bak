@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Stability radius and internal versus external stability in Banach spaces: an evolution semigroup approach.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B><A HREF="http://www.umr.edu/~clark/">Stephen Clark</A>, <A HREF="http://www.math.missouri.edu/people/ylatushkin.html">Yuri Latushkin</A>, Stephen Montgomery-Smith and <A HREF="http://www.umr.edu/~randolph/">Tim Randolph</A>&#44; Stability radius and internal versus external stability in Banach spaces: an evolution semigroup approach.</B>
+<i> <a href="http://epubs.siam.org/sam-bin/dbq/toclist/SICON">S.I.A.M. J. of Control Optim</a>, <a href="http://epubs.siam.org/sam-bin/dbq/toc/SICON/38/6"><b>38</b>, (2000), 1757-1793</a>.</i>
+In this paper the theory of evolution semigroups is developed and used to provide a framework  to study the stability of general linear control systems. These include time-varying systems modeled with unbounded state-space operators acting on Banach spaces.  This approach allows one to apply the classical theory of strongly continuous semigroups to time-varying  systems.  In particular, the complex stability radius may be expressed explicitly in terms of the generator of a (evolution) semigroup.  Examples are given to show that classical formulas  for the stability radius of an autonomous Hilbert-space system fail in more general settings. Upper and lower bounds on the stability radius are provided for these general systems.  In addition, it is shown that the theory of evolution semigroups allows for a straightforward operator-theoretic analysis of internal stability as determined by classical frequency-domain and input-output operators, even for nonautonomous Banach-space systems.
+(<A HREF="stab_ban_4.tex">tex</A>,
+<A HREF="stab_ban_4.dvi">dvi</A>,
+<A HREF="stab_ban_4.ps">ps</A>,
+<A HREF="stab_ban_4.pdf">pdf</A>,
+<a href="http://epubs.siam.org/sam-bin/dbq/article/34212">actual article</a>.
+The tex file also requires <a href="siamltex.cls">siamltex.cls</a> and <a href="siam10.clo">siam10.clo</a>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

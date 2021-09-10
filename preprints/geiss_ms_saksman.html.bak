@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>On singular integral and martingale transforms.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>S. Geiss, Stephen Montgomery-Smith and E. Saksman&#44; On singular integral and martingale transforms.</B>
+<i>Transactions of the American Math Society, <b>362</b>, (2010), 553-575.</i>
+Linear equivalences of norms of vector-valued singular integral operators and vector-valued martingale transforms are studied. In particular, it is shown that the UMD-constant of a Banach space $X$ equals the norm of the real (or the imaginary) part of the Beurling-Ahlfors singular integral operator, acting on $L^p_X(\mathbb R^2)$ with $p\in (1,\infty).$ Moreover, replacing equality by a linear equivalence, this is found to be the typical property of even multipliers.  A corresponding result for odd multipliers and the Hilbert transform is given. 
+(<A HREF="geiss_ms_saksman.tex">tex</A>,
+<A HREF="geiss_ms_saksman.dvi">dvi</A>,
+<A HREF="geiss_ms_saksman.ps">ps</A>,
+<A HREF="geiss_ms_saksman.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

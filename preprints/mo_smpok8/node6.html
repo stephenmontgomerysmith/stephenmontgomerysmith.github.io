@@ -1,0 +1,526 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Probabilistic Approach</TITLE>
+<META NAME="description" CONTENT="The Probabilistic Approach">
+<META NAME="keywords" CONTENT="mo_smpok8">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="mo_smpok8.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="mo_smpok8.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html71"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html69"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html63"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html72"
+  HREF="node7.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html70"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<B> Previous:</B> <A NAME="tex2html64"
+  HREF="node5.html">The decay of</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00060000000000000000">
+The Probabilistic Approach</A>
+</H1>
+
+<P>
+Here we will describe a probabilistic approach to solving 
+equation&nbsp;(<A HREF="node1.html#navier-stokes-m">1.6</A>).  For simplicity let us
+consider the case when the forcing term <!-- MATH
+ ${\mathbf{f}}= 0$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="${\mathbf{f}}= 0$">.  
+We will not be rigorous.
+
+<P>
+We will
+suppose that we have found <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="${\mathbf{u}}$"> using equation&nbsp;(<A HREF="node1.html#navier-stokes-u">1.5</A>).
+Now let <!-- MATH
+ ${\mathbf{b}}_t$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.png"
+ ALT="${\mathbf{b}}_t$"> be a Brownian motion in 3 dimensions, starting at
+the origin.  Define <!-- MATH
+ $\tilde{\mathbf{u}}({\mathbf{x}},t) = {\mathbf{u}}({\mathbf{x}}+ 2\nu {\mathbf{b}}_t,t)$
+ -->
+<IMG
+ WIDTH="196" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.png"
+ ALT="$\tilde{\mathbf{u}}({\mathbf{x}},t) = {\mathbf{u}}({\mathbf{x}}+ 2\nu {\mathbf{b}}_t,t)$">.
+Let <!-- MATH
+ $\widetilde {\mathbf{m}}$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img231.png"
+ ALT="$\widetilde {\mathbf{m}}$"> be a random vector field that satisfies
+the equations
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{c}
+\displaystyle \frac {\partial \widetilde{\mathbf{m}}}{\partial t} + \tilde{\mathbf{u}}\cdot \nabla \widetilde{\mathbf{m}}
+  + \widetilde{\mathbf{m}}\cdot (\nabla \tilde{\mathbf{u}})^T = 
+  0
+\quad {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[10pt]
+\widetilde {\mathbf{m}}({\mathbf{x}},0) = {\mathbf{u}}_0({\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="euler-tilde-m"></A><IMG
+ WIDTH="384" HEIGHT="79" BORDER="0"
+ SRC="img232.png"
+ ALT="\begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial \widetilde{\m...
+...\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(6.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Now let <!-- MATH
+ $\overline{\mathbf{m}}({\mathbf{x}},t) = {\mathbf{m}}(x-2\nu{\mathbf{b}}_t,t)$
+ -->
+<IMG
+ WIDTH="208" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.png"
+ ALT="$\overline{\mathbf{m}}({\mathbf{x}},t) = {\mathbf{m}}(x-2\nu{\mathbf{b}}_t,t)$">.  Then
+<!-- MATH
+ ${\mathbf{m}}({\mathbf{x}},t) = E(\overline{\mathbf{m}}({\mathbf{x}},t))$
+ -->
+<IMG
+ WIDTH="177" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="${\mathbf{m}}({\mathbf{x}},t) = E(\overline{\mathbf{m}}({\mathbf{x}},t))$"> satisfies 
+equation&nbsp;(<A HREF="node1.html#navier-stokes-m">1.6</A>).
+(Here <IMG
+ WIDTH="39" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.png"
+ ALT="$E(\cdot)$"> represents the expected value.)
+
+<P>
+The reason why this works is because of the It&#244; formula.  We have
+that
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac {\partial \overline{\mathbf{m}}}{\partial t} + {\mathbf{u}}\cdot \nabla \overline{\mathbf{m}}
+   + \overline{\mathbf{m}}\cdot (\nabla {\mathbf{u}})^T = 
+   \nu \Delta \overline {\mathbf{m}}+ 2 \nu \frac {\partial {\mathbf{b}}}{\partial t} \cdot \nabla \overline{\mathbf{m}},
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="411" HEIGHT="46" BORDER="0"
+ SRC="img236.png"
+ ALT="\begin{displaymath}\frac {\partial \overline{\mathbf{m}}}{\partial t} + {\mathbf...
+...l {\mathbf{b}}}{\partial t} \cdot \nabla \overline{\mathbf{m}},\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and taking expectations the result follows.
+
+<P>
+The solution to equation&nbsp;(<A HREF="#euler-tilde-m">6.1</A>) can be computed as 
+follows.  Suppose that the initial value of <IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="${\mathbf{m}}$"> satisfies
+equation&nbsp;(<A HREF="node1.html#init-m-alpha-beta">1.3</A>).  Then if 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial \alpha_i}{\partial t} + \tilde{\mathbf{u}}\cdot \nabla \alpha_i = 0
+\\[6pt]\\
+\displaystyle \frac {\partial \beta_i}{\partial t} + \tilde{\mathbf{u}}\cdot \nabla \beta_i =0
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="147" HEIGHT="112" BORDER="0"
+ SRC="img237.png"
+ ALT="\begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial \alpha_i}{\pa...
+...tial t} + \tilde{\mathbf{u}}\cdot \nabla \beta_i =0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+then 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\widetilde {\mathbf{m}}({\mathbf{x}},t) = \sum_{i=1}^R \beta_i({\mathbf{x}},t) \nabla \alpha_i({\mathbf{x}},t)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="239" HEIGHT="58" BORDER="0"
+ SRC="img238.png"
+ ALT="\begin{displaymath}
+\widetilde {\mathbf{m}}({\mathbf{x}},t) = \sum_{i=1}^R \beta_i({\mathbf{x}},t) \nabla \alpha_i({\mathbf{x}},t)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is the solution to system&nbsp;(<A HREF="#euler-tilde-m">6.1</A>).  But the transport
+equations are easily solved by
+<!-- MATH
+ $\alpha_i({\mathbf{x}},t) = \alpha_i(\tilde\mathbf{A}({\mathbf{x}},t),0)$
+ -->
+<IMG
+ WIDTH="195" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img239.png"
+ ALT="$\alpha_i({\mathbf{x}},t) = \alpha_i(\tilde\mathbf{A}({\mathbf{x}},t),0)$"> and
+<!-- MATH
+ $\beta_i({\mathbf{x}},t) = \beta_i(\tilde\mathbf{A}({\mathbf{x}},t),0)$
+ -->
+<IMG
+ WIDTH="192" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img240.png"
+ ALT="$\beta_i({\mathbf{x}},t) = \beta_i(\tilde\mathbf{A}({\mathbf{x}},t),0)$">, where <!-- MATH
+ $\tilde\mathbf{A}$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img241.png"
+ ALT="$\tilde\mathbf{A}$"> is the
+back to coordinates map induced by the flow <!-- MATH
+ $\tilde {\mathbf{u}}$
+ -->
+<IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img242.png"
+ ALT="$\tilde {\mathbf{u}}$">.
+
+<P>
+This can be used to obtain the following plausibility argument for the
+regularity of the Navier-Stokes equations.  Let <IMG
+ WIDTH="83" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img243.png"
+ ALT="$W^{-1,BMO}$"> denote the
+space of functions from <!-- MATH
+ $\mbox{\Bbbb R}^3$
+ -->
+<IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$\mbox{\Bbbb R}^3$"> for which minus one derivative is in
+the space of functions of bounded mean oscillation.  It is known that the
+space <!-- MATH
+ $L^{\infty}(I; W^{-1,BMO})$
+ -->
+<IMG
+ WIDTH="142" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$L^{\infty}(I; W^{-1,BMO})$"> is a critical space for proving
+regularity for the Navier-Stokes
+equations (see below).  That is, if one can show that the solution to the Navier-Stokes
+equations is uniformly in time in any space better than <IMG
+ WIDTH="83" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img243.png"
+ ALT="$W^{-1,BMO}$"> (such as <!-- MATH
+ $W^{-1+\epsilon,BMO}$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img246.png"
+ ALT="$W^{-1+\epsilon,BMO}$">
+for any <IMG
+ WIDTH="47" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.png"
+ ALT="$\epsilon&gt;0$">), then the solution is regular.
+
+<P>
+Now if the initial data are very nice, then by using some partition of unity
+argument, we may suppose that indeed the initial value of <IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="${\mathbf{m}}$"> does satisfy
+equation&nbsp;(<A HREF="node1.html#init-m-alpha-beta">1.3</A>) for some finite value of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img248.png"
+ ALT="$R$">, 
+where the initial values of  <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img249.png"
+ ALT="$\alpha_i$"> and <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$\beta_i$"> are compactly
+supported smooth functions.  Then it is easy to see that the solutions
+for <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img249.png"
+ ALT="$\alpha_i$"> and <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$\beta_i$"> provided by the transport equations stay
+uniformly in <IMG
+ WIDTH="32" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img251.png"
+ ALT="$L^\infty$">.  Thus it follows that <!-- MATH
+ $\nabla \alpha_i$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.png"
+ ALT="$\nabla \alpha_i$"> is uniformly
+in the space <IMG
+ WIDTH="83" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img243.png"
+ ALT="$W^{-1,BMO}$">.
+
+<P>
+Thus <!-- MATH
+ $\widetilde {\mathbf{m}}$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img231.png"
+ ALT="$\widetilde {\mathbf{m}}$"> is a finite sum of a product of functions uniformly in <IMG
+ WIDTH="32" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img251.png"
+ ALT="$L^\infty$">
+and functions uniformly in <IMG
+ WIDTH="83" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img243.png"
+ ALT="$W^{-1,BMO}$">.  Thus it might seem that we
+are close to showing that <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="${\mathbf{u}}$"> (which is the Leray projection of an average
+of translations of <!-- MATH
+ $\tilde {\mathbf{m}}$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img253.png"
+ ALT="$\tilde {\mathbf{m}}$">) is in a space that is critical for proving
+regularity.
+
+<P>
+There are some large, probably insurmountable problems with this approach.
+The lesser problem is that we need a space that is better than critical.
+The bigger problem is that the space created by taking the convex closure
+of products of bounded
+functions and functions in <IMG
+ WIDTH="83" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img243.png"
+ ALT="$W^{-1,BMO}$"> is not really a well defined
+space, in that it encompasses every function.
+
+<P>
+<B>Criticality of <!-- MATH
+ $L^{\infty}(I; W^{-1,BMO})$
+ -->
+<IMG
+ WIDTH="142" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$L^{\infty}(I; W^{-1,BMO})$">:</B> Let us present a
+formal proof of this fact, in the case of the Cauchy problem with zero
+right-hand side.
+Let <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="${\mathbf{u}}$"> be the solution to the Navier-Stokes
+equations which belongs to the space <!-- MATH
+ $L^{\infty}(I;
+W^{-1,BMO})$
+ -->
+<IMG
+ WIDTH="142" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$L^{\infty}(I; W^{-1,BMO})$">. Multiply equation (<A HREF="node1.html#navier-stokes-u">1.5</A>)<IMG
+ WIDTH="12" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img254.png"
+ ALT="$_1$"> by <!-- MATH
+ $\Delta
+{\mathbf{u}}$
+ -->
+<IMG
+ WIDTH="32" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img255.png"
+ ALT="$\Delta
+{\mathbf{u}}$"> and integrate over <!-- MATH
+ $\mbox{\Bbbb R}^3$
+ -->
+<IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$\mbox{\Bbbb R}^3$">. Notice also that
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left| \int \Delta {\mathbf{u}}\cdot ({\mathbf{u}}\cdot \nabla {\mathbf{u}}) \right| =
+\left|\int \frac\partial{\partial x_i} {\mathbf{u}}\cdot 
+ \left(\frac\partial{\partial x_i} {\mathbf{u}}\cdot \nabla \right){\mathbf{u}}\right|
+\le \| \nabla {\mathbf{u}}\|_3^3 .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="445" HEIGHT="54" BORDER="0"
+ SRC="img256.png"
+ ALT="\begin{displaymath}
+\left\vert \int \Delta {\mathbf{u}}\cdot ({\mathbf{u}}\cdot ...
+...athbf{u}}\right\vert
+\le \Vert \nabla {\mathbf{u}}\Vert _3^3 . \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Then
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac 12 \frac{d}{dt} \|\nabla {\mathbf{u}}\|_2^2 + \nu \|\nabla ^2 {\mathbf{u}}\|_2^2
+\leq \| \nabla {\mathbf{u}}\|_3^3 .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="266" HEIGHT="46" BORDER="0"
+ SRC="img257.png"
+ ALT="\begin{displaymath}
+\frac 12 \frac{d}{dt} \Vert\nabla {\mathbf{u}}\Vert _2^2 + \...
+...athbf{u}}\Vert _2^2
+\leq \Vert \nabla {\mathbf{u}}\Vert _3^3 .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Using the inequality
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\|\nabla {\mathbf{u}}\|_3 \leq C \|{\mathbf{u}}\|_{-1,BMO}^{\frac 13} \|\nabla^2 {\mathbf{u}}\|_2^{\frac 23}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="243" HEIGHT="35" BORDER="0"
+ SRC="img258.png"
+ ALT="\begin{displaymath}
+\Vert\nabla {\mathbf{u}}\Vert _3 \leq C \Vert{\mathbf{u}}\Ve...
+...,BMO}^{\frac 13} \Vert\nabla^2 {\mathbf{u}}\Vert _2^{\frac 23}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+(see [<A
+ HREF="node7.html#Oru">9</A>]) we get
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\frac{d}{dt} \|\nabla {\mathbf{u}}\|_2^2 + \nu \|\nabla ^2 {\mathbf{u}}\|_2^2
+ \leq
+ C \|{\mathbf{u}}\|_{-1,BMO} \|\nabla^2 {\mathbf{u}}\|_2^2
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="interp"></A><IMG
+ WIDTH="358" HEIGHT="46" BORDER="0"
+ SRC="img259.png"
+ ALT="\begin{displaymath}
+\frac{d}{dt} \Vert\nabla {\mathbf{u}}\Vert _2^2 + \nu \Vert...
+...athbf{u}}\Vert _{-1,BMO} \Vert\nabla^2 {\mathbf{u}}\Vert _2^2
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(6.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+and if <!-- MATH
+ $\|{\mathbf{u}}\|_{-1,BMO}$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img260.png"
+ ALT="$\Vert{\mathbf{u}}\Vert _{-1,BMO}$"> is sufficiently small, the solution is
+smooth.
+The proof can be done rigorously using the fact that for smooth
+initial condition there exists a local smooth solution; on this
+interval we obtain estimate (<A HREF="#interp">6.2</A>) and therefore the solution
+can not blow up.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html71"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html69"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html63"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html72"
+  HREF="node7.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html70"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<B> Previous:</B> <A NAME="tex2html64"
+  HREF="node5.html">The decay of</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-25
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Numerical evaluation of single fiber motion for short fiber composites materials processing.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Dongdong Zhang, Douglas E. Smith, David A. Jack and Stephen Montgomery-Smith&#44; Numerical evaluation of single fiber motion for short fiber composites materials processing.</B>
+<I>Proceedings of the ASME 2010 International Mechanical Engineering Congress & Exposition IMECE 2010 November 12-18, Vancouver, British Columbia, Canada.</I>
+This paper presents a numerical approach for calculating the single fiber motion in a viscous flow. This approach addresses such issues as the role of axis ratio and fiber shape on the dynamics of a single fiber, which was not addressed in Jeffery's original work. We develop a Finite Element Method (FEM) for modeling the dynamics of a single rigid fiber suspended in a moving fluid. Low Reynolds number viscous flows are considered since these best represent the flow conditions for a polymer melt within a mold cavity. Our approach seeks the fiber angular velocities that zero the hydrodynamic torques acting on the fiber using the Newton-Raphson method. Fiber motion is then computed with a Runge-Kutta method to update the position, i.e. the angle of the fiber as a function of time. This method is quite general and allows for fiber shapes that include, but are not limited to, ellipsoidal fibers (such as that studied in Jeffery's original work), cylindrical fibers and beads-chain fibers. The relationships between equivalent axis ratios and geometrical axis ratios for cylindrical and beads-chain fibers are derived in this paper.
+(<A HREF="IMECE2010_39424_Dongdong_Published.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

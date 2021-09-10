@@ -1,0 +1,248 @@
+\magnification=\magstep1
+\baselineskip =5.5mm
+\lineskiplimit =1.0mm
+\lineskip =1.0mm
+
+\def\sqr{\vcenter {\hrule height.3mm
+\hbox {\vrule width.3mm height 2mm \kern2mm
+\vrule width.3mm } \hrule height.3mm }}
+
+\def\ts#1{{\textstyle{#1}}}
+\def\ds#1{{\displaystyle{#1}}}
+\def\moreproclaim{\par}
+\def\heading #1:{\medskip\noindent{\bf #1.\ \ \ }}
+\def\Proof:{\heading Proof:}
+\def\Proofof #1:{\heading Proof of #1:}
+\def\endproof{\hfill$\sqr$\bigskip}
+
+\def\of{\bf}
+\def\R{{\of R}}
+\def\C{{\of C}}
+\def\E{{\of E}}
+
+\def\O{\Omega}
+\def\w{\omega}
+\def\widedot{\,\cdot\,}
+
+\def\normo#1{\left\| #1 \right\|}
+
+\def\modo#1{\left| #1 \right|}
+
+\def\list#1#2{#1_1$, $#1_2,\ldots,$\ $#1_{#2}}
+\def\ttss_#1{#1}
+\def\set#1{\{\list\ttss#1\}}
+
+\def\invp{{1\over p}}
+\def\ominvp{{1-\invp}}
+\def\half{{1\over2}}
+
+\def\pipoT{\pi_{p,1}(T)}
+\def\NCS{\ds{\left({N-1\atop S-1}\right)}}
+\def\chiOn{{\chi_{\O_n}}}
+\def\sumBnp{\sumN \modo{B_n}^p}
+
+\def\sumN{\sum_{n=1}^N}
+\def\sumS{\sum_{s=1}^S}
+\def\summn{\sum_{m=1}^n}
+
+\def\supS{\sup_{1\le s\le S}}
+
+
+\centerline{\bf The $p^\invp$ in Pisier's Factorization Theorem}
+\medskip
+\centerline{\bf S.J.~Montgomery-Smith}
+
+\bigskip
+
+\beginsection Abstract
+
+We show that the constants in Pisier's factorization theorem for
+$(p,1)$-summing operators from $C(\O)$\ cannot be improved.
+
+\bigskip
+\centerline{* * * * * *}
+\bigskip
+
+A theorem of Pisier (see [3]) states the following.
+
+\proclaim Theorem 1. Let $T:C(\O) \to X$\ be a bounded linear operator, where
+$\O$\ is a compact Hausdorff topological space and $X$\ is a Banach space. Then
+the following are equivalent.
+\item{i)} $T$\ is $(p,1)$-summing.
+\item{ii)} There is a constant $C<\infty$\ and a Radon probability measure
+$\mu$\ on $\O$\ such that for all $f \in C(\O)$\ we have 
+$$ \normo{Tf} \le C \, \normo f_{L_1(\mu)}^\invp
+   \, \normo f_\infty^\ominvp . \eqno(1) $$
+\item{iii)} There is a constant $C<\infty$\ and a Radon probability measure
+$\mu$\ on $\O$\ such that for all $f \in C(\O)$\ we have 
+$$ \normo{Tf} \le C \, \normo f_{L_{p,1}(\mu)} . \eqno(2) $$
+
+If we examine the proof of this theorem carefully, we can deduce the following.
+Let $\pipoT$\ denote the $(p,1)$-summing norm of $T$.
+
+\proclaim Theorem 2. Let $T:C(\O) \to X$\ be a bounded linear operator as in
+Theorem~1 that is $(p,1)$-summing. Then we can say the following.
+\item{i)} The set of $C$\ and $\mu$\ that satisfy $(1)$\
+coincide with the set of $C$\ and $\mu$\ that satisfy $(2)$.
+\item{ii)} $\pipoT \le C$\ for all $C$\ satisfying $(1)$\ or $(2)$.
+\item{iii)} We can choose $C = p^\invp \, \pipoT$\ in $(1)$\ and $(2)$.
+
+%\item{i)} Let $C_1 = \pipoT$.
+%\item{ii)} Let $C_2$ be the least $C$\ such that there is a Radon probability
+%measure $\mu$\ on $\O$\ such that for all $f \in C(\O)$\ we have 
+%$$ \normo{Tf} \le C \, \normo f_{L_1(\mu)}^\invp
+%   \, \normo f_\infty^\ominvp . $$
+%\item{iii)} Let $C_3$\ be the least $C$\ such that there is a Radon probability
+%measure $\mu$\ on $\O$\ such that for all $f \in C(\O)$\ we have 
+%$$ \normo{Tf} \le C \, \normo f_{L_{p,1}(\mu)} . $$
+%\moreproclaim\noindent
+%Then $C_2 = C_3$, and $C_1 \le C_2 \le p^\invp C_1$.
+
+Part~(i) of this theorem is straight forward to demonstrate (we merely note
+that one needs the inequality: $\normo f_{p,1} \le \normo f_1^\invp \,
+\normo f_\infty^\ominvp $). Part~(ii) is also easy to verify. However,
+to show part~(iii), the main part of Pisier's theorem, is much harder.
+Furthermore, the methods do not indicate whether the $p^\invp$\ factor can be
+made smaller, or even completely removed (that is, replaced by $1$).
+
+The purpose of this paper is to show the rather surprising fact that the
+$p^\invp$\ factor cannot be reduced at all.
+
+\proclaim Theorem 3. Given $\epsilon>0$, there is an operator $T:C(\O) \to X$\
+such that for any Radon probability measure $\mu$\ on $\O$, if $C$\ is the least
+number satisfying $(1)$\ or $(2)$, then $C \ge p^\invp \, \pipoT \,
+(1-\epsilon)$.
+
+\heading Construction:
+Let $1\le S \le N$\ be integers, and let $\O$\ be the collection of
+$S$-subsets of $\set N$. For each $1\le n\le N$, let $\O_n = \{\, \w\in\O
+: n\in\w \}$. We note the following facts for later on:
+$$ \eqalignno{
+   \modo{\O_n}             &= \NCS ,                 & (3) \cr
+   {1\over N} \sumN \chiOn &= {S\over N}\,\chi_\O .  & (4) \cr }$$
+We give $\O$\ the discrete topology, and define a norm
+$\normo\widedot_*$\ on $C(\O)$\ by
+$$ \normo f_* = \sup_{1\le n\le N} \sum_{\w\in\O_n} \modo{f(\w)} .$$
+We let $T$\ be the canonical embedding
+$$ T : \bigl( C(\O) , \normo\widedot_\infty \bigr)
+   \to \bigl( C(\O) , \normo\widedot_* \bigr) .$$
+
+\proclaim Lemma 4. For $1\le p<\infty$, the $(p,1)$-summing norm of
+$T$\ may be estimated by
+$$ \pipoT \le {N^{S-1+\invp}\over (S-1)!\,(Sp-p+1)^\invp} .$$
+
+In order to show Lemma~4, we will need two more lemmas.
+
+\proclaim Lemma 5. If $1\le p <\infty$, and $T:C(\O) \to X$\ is a bounded
+linear operator, where $X$\ is a Banach space, then the $(p,1)$-summing
+norm of $T$\ may be calculated by the formula
+$$ \pipoT = \sup \left\{ \left( \sumS \normo{Tf_s}^p \right)^\invp
+   \right\} ,$$
+where the supremum is over all sequences $\list fS$\ of disjoint elements
+of the unit ball of $C(\O)$.
+
+\Proof: See [2], Lemma~6 or [1], Proposition~14.4.
+\endproof
+
+\proclaim Lemma 6. If $1\le n\le N$, then
+$$ \modo{ \O_1 \cup \O_2 \cup \ldots \cup \O_n } \le
+   {1\over (S-1)!} \summn (N-m)^{S-1} .$$
+
+\Proof:
+A simple counting argument shows that
+$$ \modo{ \O_1 \cup \O_2 \cup \ldots \cup \O_m \setminus
+   \O_1 \cup \O_2 \cup \ldots \cup \O_{m-1} } =
+   \left({N-m \atop S-1}\right) ,$$
+and this is bounded by $(N-m)^{S-1}/(S-1)!$.
+\endproof
+
+\Proofof Lemma 4:
+By Lemma~5, it is easy to see that
+$$ \pipoT
+   = \sup \left\{ \left( \sumN \normo{\chi_{B_n}}_*^p \right)^\invp
+   \right\}
+   = \sup \left\{ \left( \sumN \modo{B_n}^p \right)^\invp
+   \right\}, $$
+where the supremum is over disjoint sets $\list BN \subseteq \O$\ such
+that $B_n \subseteq \O_n$\ for each $1\le n\le N$. Since $\list \O N$\
+interact with one another in a completely symmetric fashion, we may
+assume, without loss of generality, that
+$\modo{B_1} \ge \modo{B_2} \ge \ldots \ge \modo{B_N} $.
+
+Now
+$$ \sumBnp = \sumN \left( \summn \modo{B_m} \right)
+                   \left( \modo{B_n}^{p-1} - \modo{B_{n+1}}^{p-1} \right)
+.$$
+(We take $B_{N+1}=\emptyset$.) Since $\modo{B_n}^{p-1} -
+\modo{B_{n+1}}^{p-1} \ge 0$, and $B_1 \cup B_2 \cup \ldots \cup B_n
+\subseteq \O_1 \cup \O_2 \cup \ldots \cup \O_n$, we have, by Lemma~6,
+that
+$$ \eqalignno{
+   \sumBnp
+   &\le {1\over(S-1)!} \sumN \left( \summn (N-m)^{S-1} \right)
+              \left( \modo{B_n}^{p-1} - \modo{B_{n+1}}^{p-1} \right) \cr
+   &= {1\over(S-1)!} \sumN (N-n)^{S-1} \modo{B_n}^{p-1} .\cr}$$
+Now, applying H\"older's inequality and dividing, we deduce
+$$ \left(\sumBnp\right)^\invp \le {1\over(S-1)!}
+   \left( \sumN (N-n)^{Sp-p} \right)^\invp .$$
+Finally, we estimate the last quantity by an integral, and derive
+$$ \eqalignno{
+   \left(\sumBnp\right)^\invp
+   &\le {1\over(S-1)!} \left(\int_0^N x^{Sp-p} \,dx \right)^\invp \cr
+   &\le {N^{S-1+\invp}\over (S-1)!\,(Sp-p+1)^\invp} ,\cr}$$
+as desired.
+\endproof
+
+\Proofof Theorem 3:
+By the hypothesis on $C$, there is a probability measure $\mu$\ on
+$\O$\ such that
+inequality $(1)$\ holds. In particular, if we substitute $f=\chiOn$, we
+deduce that
+$$ \modo{\O_n}^p = \normo{\chiOn}_*^p
+   \le C^p \int \chiOn \,d\mu .$$
+Hence
+$$ {1\over N} \sumN \modo{\O_n}^p 
+   \le C^p \int {1\over N} \sumN \chiOn
+   \,d\mu ,$$
+and so by equalities $(3)$\ and $(4)$\ we have
+$$ C \ge {N^\invp \NCS \over S^\invp} .$$
+Thus, by Lemma~4, we deduce
+$$ C \ge {N^\invp \NCS (S-1)!\, (Sp-p+1)^\invp
+             \over S^\invp N^{S-1+\invp}} \, \pipoT .$$
+Choosing $N$\ much larger than $S$, we find that
+$$ C \ge \left({Sp-p+1\over S}\right)^\invp \, \pipoT \, (1-\ts{\half}\epsilon)
+   .$$ 
+Finally, choosing $S$\ large, we have the desired result, that is,
+$C \ge p^\invp \, \pipoT \, (1-\epsilon)$.
+\endproof
+
+\beginsection References
+
+\halign{\rm#\hfil & \quad\vtop{\hsize=5.5 true
+in\parindent=0pt\hangindent=0pt \strut\rm#\strut\smallskip}\cr
+1. & Jameson G.J.O.: Summing and Nuclear Norms in Banach Space
+Theory.
+London Math.\ Soc., Student Texts 8, 1987.\cr
+2. & Maurey B.: Type et cotype dans les espaces munis de structures
+locales
+inconditionelles, Expos\'es~24--25. In: Seminaire Maurey-Schwartz
+1973--74 (Ecole Polytechnique).\cr
+3. & Pisier G.: Factorization of operators through $L_{p\infty}$\
+or $L_{p1}$\ and non-com\-mut\-at\-ive generalizations. Math.\
+Ann.\
+{\bf 276} 105--136 (1986).\cr
+}
+
+\bigskip
+
+S.J.~Montgomery-Smith,
+
+Department of Mathematics,
+
+University of Missouri at Columbia,
+
+Columbia, Missouri 65211,
+
+U.S.A.
+
+\bye

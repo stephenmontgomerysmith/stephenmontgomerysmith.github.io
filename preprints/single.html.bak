@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Numerical evaluation of single fiber motion for short-fiber-reinforced composite materials processing.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Dongdong Zhang, Douglas E. Smith, David Jack and Stephen Montgomery-Smith&#44; Numerical evaluation of single fiber motion for short-fiber-reinforced composite materials processing.</B>
+<I>Journal of Manufacturing Science and Engineering, 133(5), 2011, doi:10.1115/1.4004831.</I>
+This paper presents a computational approach for simulating the motion of a single fiber suspended within a viscous fluid. We develop a Finite Element Method (FEM) for modeling the dynamics of a single rigid fiber suspended in a moving fluid. Our approach seeks solutions using the Newton-Raphson method for the fiber's linear and angular velocities such that the net hydrodynamic forces and torques acting on the fiber are zero. Fiber motion is then computed with a Runge-Kutta method to update the fiber position and orientation as a function of time. Low-Reynolds-number viscous flows are considered since these best represent the flow conditions for a polymer melt within a mold cavity. This approach is first used to verify Jeffery's orbit (1922) and addresses such issues as the role of a fiber's geometry on the dynamics of a single fiber, which were not addressed in Jeffery's original work. The method is quite general and allows for fiber shapes that include, but are not limited to, ellipsoidal fibers (such as that studied in Jeffery's original work), cylindrical fibers and bead-chain fibers. The relationships between equivalent aspect ratio and geometric aspect ratio of cylindrical and other axisymmetric fibers are derived in this paper.
+(<A HREF="single.pdf">pdf</A>, <A HREF="http://manufacturingscience.asmedigitalcollection.asme.org/article.aspx?articleid=1441266">actual article</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

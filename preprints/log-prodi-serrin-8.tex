@@ -1,0 +1,772 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsmath,amssymb,url}
+%\usepackage{setspace}
+%\onehalfspacing
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{defn}[thm]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\E}{{\mathbb E}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+
+\newcommand{\modo}[1]{{\left|#1\right|}}
+\newcommand{\normo}[1]{{\left\|#1\right\|}}
+\newcommand{\smodo}[1]{{\mathopen|#1\mathclose|}}
+\newcommand{\snormo}[1]{{\mathopen\|#1\mathclose\|}}
+
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\divergence}{div}
+
+\begin{document}
+\title[Regularity of Navier-Stokes]
+{A condition implying regularity of the three dimensional Navier-Stokes
+equation}
+\author{Stephen Montgomery-Smith}
+\makeatletter
+\address{Department of Mathematics,
+University of Missouri,
+Columbia, MO 65211}
+\email{stephen@math.missouri.edu}
+\urladdr{\url{http://www.math.missouri.edu/~stephen}}
+\thanks{The author was
+partially supported
+by an NSF grant.}
+\keywords{Navier-Stokes equation, vorticity, 
+Prodi-Serrin condition, Orlicz norm, stochastic methods}
+\subjclass[2000]{Primary 35Q30, 76D05, Secondary 60H30, 46E30}
+
+\begin{abstract}
+This paper presents a logarithmic improvement to the usual Prodi-Serrin
+conditions.  After this paper was written and widely dispersed, the
+author realised that there is a much simpler and more standard
+proof of the main result.
+This paper (which is now a draft) first presents the simpler proof,
+and then presents the original more complicated proof.
+
+It is shown that if $u$ is the solution to the
+three dimensional Navier-Stokes equation, then a sufficient condition
+for regularity is that 
+$\int_0^T {\snormo{u(t)}_q^p}/{(1+\log^+ \snormo{u(t)}_q)}
+ \, dt < \infty $,
+for all $T>0$, and some
+$2 < p < \infty$, $3 < q < \infty$,
+$\frac2p+\frac3q=1$.  This represents a logarithmic
+improvement over the usual Prodi-Serrin conditions.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+The version of the three dimensional
+Navier-Stokes equation we will study is the
+differential equation in
+$u = u(t) = u(x,t)$, where $ t\ge 0$, and $x \in \R^3$:
+$$ \frac{\partial u}{\partial t}
+   = \Delta u - u \cdot \nabla u + \nabla P ,
+   \quad \divergence u = 0 ,
+   \quad u(0) = u_0.$$
+We will also work with the vorticity form.  For the remainder of the paper
+we denote $w = w(t) = w(x,t) = \curl u$.
+Then
+$$ \frac{\partial w}{\partial t}
+   = \Delta w - u \cdot \nabla w + w \cdot \nabla u ,
+   \quad w(0) = \curl u_0 .$$
+A famous open problem is to prove regularity of the Navier-Stokes
+equation, that is, if the initial data $u_0$ is in $L_2$ and is
+regular (which in this paper we will define to mean that it is
+in the Sobolev spaces $W^{n,q}$ for some $2\le q<\infty$ and all positive
+integers $n$), then the solution $u(t)$ is regular for all
+$t\ge0$.  Such regularity would also imply uniqueness of the solution
+$u(t)$.  Currently the existence of weak solutions is known.
+Also, it is known that for each regular $u_0$ that there exists
+$t_0>0$ such that $u(t)$ is regular for $0\le t \le t_0$.
+We refer the reader to 
+\cite{cannone}, \cite{constantin-foias}, \cite{doering-gibbons},
+\cite{lemarie-rieusset}, \cite{temam}.
+
+In studying this problem various conditions that imply regularity
+have been obtained.  For example, the 
+Prodi-Serrin conditions (\cite{prodi}, \cite{serrin})
+state that for some
+$2 \le p < \infty$, $3<q\le\infty$ with
+$\frac2p + \frac 3q \le 1$ that
+$$ \int_0^T \snormo{u(t)}_q^p \, dt < \infty $$
+for all $T>0$.
+If $u$ is
+a weak solution to the Navier-Stokes equation 
+satisfying a Prodi-Serrin condition,
+with regular initial
+data $u_0$, then $u$ is regular (see \cite{sohr}).
+(Recently Escauriaza, Seregin and Sver\'ak \cite{escauriaza et al}
+showed that the condition when $q=3$ and $p=\infty$ is also sufficient.)
+This is a long way from what is currently known for weak
+solutions:
+$$ \int_0^T \snormo{u(t)}_q^p \, dt < \infty $$
+for $\frac2p + \frac 3q \ge \frac32$, $2 \le q \le 6$.
+The purpose of this paper is to slightly reduce this rather
+large gap as follows.
+
+%Dimensions: $t = L^2$, $\smodo x = L$, $u = 1/L$, 
+%$\snormo u_q = L^{3/q-1} = L^{-2/p}$, $\nabla^n u = 1/L^{n+1}$, 
+%$\snormo{\nabla u}_2 = L^{1/2-n}$
+%
+%Usual Prodi-Serrin conditions
+%have dimension $L^0$.
+%What is known is that $\sup_t \snormo{u(t)}_2<\infty$ 
+%which has dimension $L^{1/2}$.
+%Need to close the gap between $L^0$ and $L^{1/2}$.  
+
+\begin{thm} \label{main}
+Let 
+$2 < p < \infty$, $3<q < \infty$ with
+$\frac2p+\frac3q=1$.
+If $u$ is a solution to the Navier-Stokes equation satisfying
+$$ \int_0^T \frac{\snormo{u(t)}_q^p}{1+\log^+\snormo{u(t)}_q}
+   \, dt < \infty $$
+for some $T>0$, 
+then $u(t)$ 
+is regular for $0 < t\le T$.
+\end{thm}
+
+\section{The Simple Proof}
+
+\begin{proof}[First Proof of Theorem~\ref{main}]
+Let $T^* > T_0$ be the first point of non-regularity for $u(t)$.
+It is well known that 
+in order to show that $T^* > T$,
+it is sufficient to show an \emph{a priori} estimate, that is
+$\sup_{T_0 \le t < \min\{T^*,T\}} \snormo{u(t)}_q < \infty$.
+This is because it is then possible to extend the regularity beyond
+$T^*$ if $T^* \le T$.
+Without loss of generality, it is sufficient to consider the case
+$T = T^*$ (so as to obtain a contradiction).
+
+Also, from now on, we will allow all constants to implicitly
+depend upon $p$ and $q$.
+
+We will work with the Navier-Stokes equation written as
+$$ \frac{\partial u}{\partial t} = 
+   \Delta u - L \divergence(u \otimes u) ,$$
+where $L$ denotes the Leray projection.
+
+Let us define quantities
+\begin{align*}
+v &= u \smodo u^{q/2-1} ,\\
+A &= \sum_{i,j=1}^3 \left(\smodo u^{q/2-1} 
+     \frac{\partial u_i}{\partial x_j} \right)^2 ,\\
+B &= \sum_{i,j=1}^3 \left(\smodo u^{q/2-3} u_i \sum_{k=1}^3 u_k 
+     \frac{\partial u_k}{\partial x_j}\right)^2
+\end{align*}
+Note that
+\begin{gather*}
+   \smodo{\nabla v}^2 := \sum_{i,j=1}^3 \left(
+   \frac{\partial v_i}{\partial x_j}\right)^2
+   \approx A + B,\\
+   \sum_{i,j=1}^3 \frac\partial{\partial x_j}\left( \smodo u^{q-2} u_i \right)
+   \frac{\partial u_i}{\partial x_j}
+   \approx A + B,\\
+   \sum_{i,j=1}^3 \left(\frac\partial{\partial x_j} 
+   \left(\smodo u^{q-2} u_i\right)\right)^2
+   \le
+   c \smodo u^{q-2} \smodo{\nabla v}^2 .
+\end{gather*}
+We start with the Navier-Stokes equation, take the inner product with 
+$u \smodo{u}^{q-2}$, and integrate over $\R^3$ to obtain
+$$
+    \snormo u_q^{q-1} \frac{\partial}{\partial t} \snormo u_q
+    =
+    \int \smodo u^{q-2} u \cdot \Delta u \, dx
+    -
+    \int \smodo u^{q-2} u \cdot L \divergence (u \otimes u) \, dx .
+$$
+Integrating by parts, we see that
+$$ \int \smodo u^{q-2} u \cdot \Delta u \, dx
+   =
+   - \int 
+   \sum_{i,j=1}^3 \frac\partial{\partial x_j}\left( \smodo u^{q-2} u_i \right)
+   \frac{\partial u_i}{\partial x_j}
+   \, dx
+   \approx
+   - \snormo{\nabla v}_2^2 ,$$
+and
+\begin{align*} 
+   \int \smodo u^{q-2} u \cdot L \divergence (u \otimes u) \, dx
+   &=
+   \int \sum_{i,j=1}^3
+        \frac\partial{\partial x_j} \left(\smodo u^{q-2} u_i\right)
+        [L (u_j u)]_i \, dx \\
+   &\le
+   c \snormo{\smodo{u}^{q/2-1}}_s \snormo{\nabla v}_2 \snormo{L(u \otimes u)}_r
+\end{align*}
+where $r = 1+q/2$ and $s = (2q+4)/(q-2)$.  Now the Leray projection is a bounded
+operator on $L_r$, and hence 
+$\snormo{L(u \otimes u)}_r \approx \snormo u_{2+q}^2$.  Also
+$\snormo{\smodo{u}^{q/2-1}}_s \approx \snormo u_{2+q}^{q/2-1}$.  Hence
+$$ \int \smodo u^{q-2} u \cdot L \divergence (u \otimes u) \, dx
+   \le c \snormo u_{2+q}^{1+q/2} \snormo{\nabla v}_2 
+   = c \snormo v_{2+4/q}^{1+2/q} \snormo{\nabla v}_2 .$$
+From the Sobolev and interpolation inequalities
+$$ \snormo v_{2+4/q} \le c \snormo{ \smodo{\nabla}^{3/(q+2)} v}_2
+   \le c \snormo v_2^{(q-1)/(q+2)} \snormo{\nabla v}_2^{3/(q+2)} ,$$
+and hence
+$$ \int \smodo u^{q-2} u \cdot L \divergence (u \otimes u) \, dx
+   \le c
+   \snormo v_2^{1-1/q} \snormo{\nabla v}_2^{1+3/q} .$$
+Now apply Young's inequality $ab \le ((q-3)a^{2q/(q-3)} + (q+3)b^{2q/(q+3)})/2q$
+for $a,b \ge 0$, to obtain
+$$
+   \int \smodo u^{q-2} u \cdot L \divergence (u \otimes u) \, dx
+   \le 
+   c_1 \snormo{\nabla v}_2^2 + c_2 \snormo v_2^{2(q-1)/(q-3)} ,
+$$
+where $c_1$ may be made as small as required by making $c_2$ larger.  
+Hence
+$$ \snormo u_q^{q-1} \frac\partial{\partial t}\snormo u_q
+   \le c \snormo v_2^{2(q-1)/(q-3)},$$
+that is,
+$$ \frac\partial{\partial t}\snormo u_q
+   \le c \snormo u_q^{p+1} ,$$
+and so
+$$ \frac\partial{\partial t}
+   \log(1+\log^+\snormo u_q)
+   \le 
+   \frac{c \snormo u_q^p}{1+\log^+\snormo u_q} .$$
+Integrating, we see that for $T_0 \le t < T$
+$$ \log(1+\log^+\snormo{u(t)}_q) \le
+   \log(1+\log^+\snormo{u(T_0)}_q) + 
+   c \int_{T_0}^T \frac{\snormo{u(s)}_q^p}{1+\log^+\snormo{u(s)}_q} \, ds ,$$
+which provides a uniform bound for $\snormo{u(t)}_q$.
+\end{proof}
+
+\begin{rem}
+Note that this proof can easily be adapted to show that a sufficient condition
+for regularity is that
+$$
+   \int_{T_0}^T \frac{\snormo{u(s)}_q^p}{\Theta(\snormo{u(s)}_q)} 
+   \, ds < \infty ,$$
+where $\Theta$ is any increasing function for which 
+$$ \int_1^\infty \frac1{x\Theta(x)} \, dx = \infty .$$
+\end{rem}
+
+\section{The Original Proof}
+
+The hypothesis of Theorem~\ref{main} imply that, 
+given $\epsilon \in (0,T)$, there exists
+$t' \in (0,\epsilon)$ with $u(t') \in L_q$.
+Then by known results (for example Theorem~\ref{space analytic} below), 
+it follows
+that there exists $0 < T_0<\epsilon$ such that 
+$\snormo{w(T_0)}_{r}$ is bounded for all $r \in [q,\infty]$.
+
+Let $T^* > T_0$ be the first point of non-regularity for $u(t)$.
+It is well known that 
+in order to show that $T^* > T$,
+it is sufficient to show an \emph{a priori} estimate, that is
+$\sup_{T_0 \le t < \min\{T^*,T\}} \snormo{w(t)}_q < \infty$.
+This is because it is then possible to extend the regularity beyond
+$T^*$ if $T^* \le T$.
+Without loss of generality, it is sufficient to consider the case
+$T = T^*$ (so as to obtain a contradiction), and this we do
+in the remainder of the paper.
+
+Also, from now on, let us fix $p$ and $q$ satisfying the hypothesis of 
+Theorem~\ref{main}, and allow all constants to implicitly
+depend upon $p$ and $q$.
+
+\section{A Stochastic Description}
+
+This is a more rigorous formulation of the description
+given in \cite{montgomery-smith-pokorny}.  As we have just stated, we are
+supposing that $u(t)$ is regular for all $T_0 \le t < T$.
+
+If $f\colon\R^3 \to \R$ is regular, and
+$T_0 \le t_0 \le t_1 < T$,
+define $A_{t_0,t_1} f(x) = \alpha(x,t_1)$, where 
+$\alpha$ satisfies the transport equation
+$$ \frac{\partial\alpha}{\partial t} = \Delta \alpha - u\cdot\nabla \alpha,
+   \qquad
+   \alpha(x,t_0) = f(x) .$$
+Since $\divergence(u) = 0$, an easy integration by parts argument shows
+that
+$$ \frac\partial{\partial t} \int \alpha(x,t) \, dx = 0 ,$$
+and hence if $f$ is also in $L_1$, then
+$$ \int A_{t_0,t_1} f(x) \, dx = \int f(x) \, dx .$$
+Since stochastic
+differential equations traditionally move forwards in time, it will be 
+convenient to consider a time reversed equation.
+Let $b(t)$ be three dimensional Brownian motion.
+For $T_0 \le t_0 \le t_1 < T_1$, define the random function
+$\varphi_{t_0,t_1}\colon\R^3\to\R^3$ by
+$\varphi_{t_0,t_1}(x) = X(-t_0)$, where $X$ satisfies the 
+stochastic differential equation:
+$$ dX(t) = u(X(t),t) \, dt + \sqrt2 \, db(t),
+   \qquad
+   X(-t_1) = x .$$
+It follows by the Ito Calculus \cite{karatzas-shreve} that
+if $T_0 \le t_0 \le t_1 < T$, then
+$$ A_{t_0,t_1} f(x) = \E f(\varphi_{t_0,t_1}(x)) .$$
+(Here as in the rest of the paper, $\E$ denotes expected value.)
+Note that if $f$ is also in $L_1$, then
+$$ \int \E f(\varphi_{t_0,t_1}(x)) \, dx = \int f(x) \, dx .$$
+Applying the usual dominated and monotone convergence theorems, it
+quickly follows that the last equality is also true if $f$ is any
+function in $L_1$, or if $f$
+is any positive function.
+
+Now, we note that $w$ is the unique solution to the integral
+equation
+$$ w(t) = A_{T_0,t} w(T_0) + 
+   \int_{T_0}^t A_{s,t} (w(s) \cdot \nabla u(s)) \, ds 
+   \quad (T_0 \le t < T).$$
+Uniqueness follows quickly by the usual fixed point argument
+over short intervals, 
+remembering that $u(t)$ is regular for $T_0 \le t < T$.
+
+Consider also the random quantity
+$\tilde w = \tilde w(x,t)$ as the solution to the integral equation
+for $T_0 \le t < T$
+$$ \tilde w(x,t) = w(\varphi_{T_0,t}(x),T_0) +
+   \int_{T_0}^t \tilde 
+   w(\varphi_{s,t}(x),s) \cdot \nabla u(\varphi_{s,t}(x),s) \, ds .$$
+Again, 
+it is very easy to show that a solution exists by using a fixed point
+argument over short time intervals.
+
+It is seen that $\E\tilde w$ satisfies the same equation as $w$, and
+hence $\E \tilde w = w$.
+By Gronwall's inequality, if $T_0 \le t < T$
+$$ \smodo{\tilde w(x,t)}
+   \le
+   \exp\left(\int_{T_0}^t \smodo{\nabla u(\varphi_{s,t}(x),s)} \, ds\right)
+   \smodo{w(\varphi_{T_0,t}(x),T_0)} .$$
+(This is essentially the Feynman-Kac formula.)
+The goal, then, is to find uniform estimates on the quantity
+$$ \exp\left(\int_{T_0}^t \smodo{\nabla u(\varphi_{s,t}(x),s)} \, ds\right) .$$
+This we will proceed to do in the next section.
+
+\begin{rem}
+Let us give a little motivation.  If instead we defined $\varphi_{t_0,t_1}(x)$
+to be $X(-t_0)$, where $X$ satisfies
+the equation
+$$ dX(t) = u(X(t),t) \, dt,
+   \qquad
+   X(-t_1) = x ,$$
+then $\varphi_{t_0,t_1}$ would be the ``back to coordinates map'' that
+takes a point at $t=t_1$ to where it was carried from by the flow of the
+fluid at time $t=t_0$.
+See for
+example \cite{constantin}.  Thus with the addition of Brownian
+motion, $\varphi_{t_0,t_1}$ 
+becomes a ``randomly perturbed back to coordinates map.''
+In essence, we are considering a kind of Lagrangian approach to the
+Navier-Stokes equation.
+\end{rem}
+
+\section{Inequalities}
+
+Let us 
+introduce some functions defined for $\lambda \ge 0$:
+$$ \Phi(\lambda) = \left(\frac{e^\lambda-1}{e-1}\right)^q ,\qquad
+   \Theta(\lambda) = \frac\lambda{2+\log^+\lambda} .$$
+Notice that for any $a>0$, that
+there exist constants $c_1,c_2>0$ such that
+$c_1 \Theta(\lambda) \le \lambda/(1+\Phi^{-1}(\lambda^a)) 
+\le c_2 \Theta(\lambda)$;
+that $\Theta$ is a strictly increasing bijection on $[0,\infty)$;
+and that $\Theta$ and $\Theta^{-1}$ obey a moderate growth condition, that is,
+given $c_1>1$ there exists $c_2,c_3>1$ such that $c_2 \Theta(\lambda) \le
+\Theta(c_1 \lambda) \le c_3 \Theta(\lambda)$.
+
+We define the
+$\Phi$-Orlicz norm on
+the space of measurable functions by the formula
+$$ \snormo f_\Phi = 
+   \inf\left\{\lambda>0:
+   \int \Phi(\smodo{f(x)}/\lambda) \, dx \le 1 \right\} .$$
+The triangle inequality is a consequence of the fact that
+$\Phi$ is convex (see \cite{kras-rutickii}).
+We extend the definition of the Orlicz norm to random
+functions $F$ as follows
+$$ \snormo F_\Phi = 
+   \inf\left\{\lambda>0:
+   \int \E \Phi(\smodo{F(x)}/\lambda) \, dx \le 1 \right\} .$$
+Using the notation from the previous section,
+we see for $T_0 \le t_0 \le t_1 < T$ that
+$\snormo{f\circ\varphi_{t_0,t_1}}_\Phi = \snormo f_\Phi$.
+
+Let us fix the function
+$$ M(\lambda) = 
+   \int_{\{t\in[0,T] \colon \snormo{u(t)}_q \ge \lambda\}}
+   \Theta(\snormo{u(t)}_q^p) \, dt .$$
+The hypothesis of Theorem~\ref{main} tells us that
+ $M(\lambda) \to 0$ as $\lambda \to \infty$.
+
+The following result is very much related to the \emph{a priori} estimates
+obtained in \cite{foias et al}.
+
+\begin{lemma}
+\label{localization to integral}
+There are constants $c_1,c_2,c_3,c_4>0$ 
+such that if
+$\lambda>\max\{c_1,T^{-1}\}$,
+then
+$$ \int_{\{t \in [\lambda^{-1},T] \colon
+         \snormo{\nabla u(t)}_\infty \ge c_2 \lambda\}}
+   \snormo{\nabla u(t)}_{\Phi} \, dt \le c_3 M(c_4\lambda^{1/p}) .$$
+\end{lemma}
+
+Let us first show how to use this result.
+
+\begin{proof}[Proof of Theorem~\ref{main}]
+By Lemma~\ref{localization to integral}, there exists $\lambda>T_0^{-1}$ such
+that
+$$ \int_{B}
+   \snormo{\nabla u(t)}_{\Phi} \, dt \le \frac1q .$$
+where 
+$B = \{t \in [T_0,T] \colon \snormo{\nabla u(t)}_\infty \ge c_2 \lambda\}$.
+Thus for $T_0 \le t < T$, we have that $\smodo{\tilde w(x,t)}$ is bounded
+by
+$$ e^{c_2 \lambda (t-T_0)}
+   \exp\left(\int_{B\cap[T_0,t]} 
+   \smodo{\nabla u(\varphi_{s,t}(x),s)} \, ds\right)
+   \smodo{w(\varphi_{T_0,t}(x),T_0)} .$$
+Hence by Jensen's and
+H\"older's inequalities, $\snormo{w(t)}_{q}^{q} \le 
+\int \E\smodo{\tilde w(t)}^{q} \, dx \le 
+e^{c_2 q \lambda (t-T_0)}(N_q^q + N_{qq'}^q \tilde N)$, where
+$q' = q/(q-1)$, 
+$$
+   N_r
+   =
+   \left(\int \E \smodo{w(\varphi_{T_0,t}(x),T_0)}^r\,dx\right)^{1/r} 
+   = \snormo{w(T_0)}_r \qquad (r \ge 1), $$
+and
+$$
+   \tilde N
+   =
+   \int \E \left(
+   \exp\left(q\int_{B \cap [T_0,t]}
+   \modo{\nabla u(\varphi_{s,t}(x),s)} \, ds \right) - 1 \right)^q
+   \, dx .
+$$
+Since the Orlicz norm satisfies the triangle inequality, 
+$$ \normo{\int_{B\cap[T_0,t]} \smodo{\nabla u(\varphi_{s,t}(\cdot),s)} \, ds}
+    _\Phi \le \frac1q ,$$
+that is, $\tilde N \le (e-1)^q $.
+Since $a^q + b^q \le (a+b)^q$ for $a,b \ge 0$,
+we conclude that 
+$$ \snormo{w(t)}_q \le \snormo{w(T_0)}_q + 
+   (e-1) e^{c_2 \lambda (t-T_0)} \snormo{w(T_0)}_{qq'} ,$$
+and the result follows.
+\end{proof}
+
+\begin{lemma}  \label{upper bound for L_Phi}
+There is a constant $c>0$ such that if $f$ is a measurable
+function, then
+$$
+  \snormo f_\Phi \le c
+  \left(\snormo f_q + 
+  \frac{\snormo f_\infty}{1+\Phi^{-1}(({\snormo f_\infty}/{\snormo f_q})^q)}
+  \right) .$$
+\end{lemma}
+
+\begin{proof}
+Let us assume that $\snormo f_\infty = 1$, 
+and set $a = \snormo f_q$, $b = \Phi^{-1}(a^{-q})$ and
+$n = a+1/(1+b)$.  
+Let $f^*:[0,\infty]\to[0,\infty]$ be the non-increasing rearrangement
+of $\modo{f}$, that is,
+$$ f^*(t) =  
+   \sup \{ \lambda>0 : \smodo{\{ x:\smodo{f(x)}>\lambda\}} > t \} ,$$
+so $\int F(\modo{f(x)}) \, dx = \int_0^\infty F(f^*(t)) \, dt$ for any
+Borel measurable function $F$.  Notice that $f^*(t) \le \min\{1,a t^{-1/q}\}$.
+
+Let us first
+consider the case $a \le 1$, so that $b \ge 1$, $2n \ge 1/b$, and
+$n \ge a$.
+Then
+$$
+   \int \Phi(\modo{f(x)}/2n) \, dx
+   \le
+   \int_0^\infty \Phi(f^*(t)/2n) \, dt .$$
+We split this integral up into three pieces.  First,
+$$ 
+   \int_0^{a^q} \Phi(f^*(t)/2n) \, dt 
+   \le
+   \int_0^{a^q} \Phi(b) \, dt 
+   = 1.
+$$
+Next, since $(\Phi(\lambda))^{1/2q}$ is convex for $\lambda \ge 1$,
+\begin{align*}
+   \int_{a^q}^{a^q b^q} \Phi(f^*(t)/2n) \, dt 
+   &\le
+   \int_{a^q}^{a^q b^q} \Phi(abt^{-1/q}) \, dt \\
+   &\le 
+   \int_{a^q}^{a^q b^q} \frac{a^{2q}\Phi(b)}{t^2} \, dt  \\
+   &\le 1.
+\end{align*}
+Next, for $t \ge a^q b^q$, $f^*(t) \le 1/b \le 2n$, and
+$\Phi(\lambda) \le \lambda^q$ for $0 \le \lambda \le 1$, so
+$$
+   \int_{a^q b^q}^\infty \Phi(f^*(t)/2n) \, dt 
+   \le
+   \int_{a^q b^q}^\infty (f^*(t)/2n)^q \, dt 
+   \le 1.
+$$
+Since $\Phi(\lambda/3) \le \Phi(\lambda)/3$ for
+$\lambda\ge0$,
+$$
+   \int \Phi(\modo{f(x)}/6n) \, dx
+   \le 1 ,
+$$
+that is, $\snormo f_\Phi \le 6 n$.
+
+The case $a \ge 1$ (so $b \le 1$ and $2n \ge 1+2a$) is simpler, as
+it is easy to estimate
+$$
+   \int_0^\infty \Phi(f^*(t)/2n) \, dt 
+   \le
+   \int_0^1 \Phi(1) \, dt 
+   +
+   \int_1^\infty (f^*(t)/2n)^q \, dt 
+   \le 2.
+$$
+
+\end{proof}
+
+The following result is due to 
+Gruji\'c and Kukavica \cite{grujic-kukavica}.
+
+\begin{thm} \label{space analytic}
+There exist constants $a,c>0$ and a function
+$T:(0,\infty) \to (0,\infty)$, with $T(\lambda) \to \infty$ as $\lambda\to 0$,
+with the following properties.  If $u_0 \in L_q(\R^3)$, then there is
+a solution $u(t)$ $(0 \le t \le T(\snormo{u_0}_q))$
+to the Navier-Stokes equation, with $u(0) = u_0$, and
+$u(x,t)$ is the restriction of an analytic function 
+$u(x+iy,t) + iv(x+iy,t)$ in the region
+$\{x+iy \in \C^3 : \smodo y \le a \sqrt t\}$, and
+$\snormo{u(\cdot+iy,t) + iv(\cdot+iy,t)}_q \le c \snormo{u_0}_q$ for
+$\smodo y \le a \sqrt t$.
+\end{thm}
+
+This next result is related to Scheffer's Theorem \cite{scheffer} 
+that states that the Hausdorff dimension
+of the set of $t$ for which the solution $u(t)$ is not regular is
+$1/2$.
+
+\begin{lemma}  \label{localization}
+There exists constants
+$0<c_5<1<c_6$, such
+that if $0<r<1$, and
+$u(t)$ is a regular
+solution
+to the Navier-Stokes equation with
+$$ \smodo{\{t \in [t_0-r^2,t_0] : \snormo{u(t)}_q \ge c_5 r^{-2/p}\}} 
+   < c_5 r^2 ,$$
+then
+$$ \snormo{\nabla u(t_0)}_{\Phi}
+   + \Theta(\snormo{\nabla u(t_0)}_\infty)
+   < c_6 \Theta(r^{-2}) .$$
+\end{lemma}
+
+\begin{proof}
+Let us first consider the case when $t_0 = 0$ and $r = 1$.
+By hypothesis, we see that there exists
+$t \in [-1,-1+c_5]$
+with
+$ \snormo{w(t)}_2 < c_5$.  
+By Theorem~\ref{space analytic} and the appropriate Cauchy integrals, 
+if $c_5$
+is small enough, then there exists a constant $c_7>0$ such that
+$\snormo{\nabla u(0)}_q < c_7$  
+and
+$\snormo{\nabla u(0)}_\infty < c_7$  
+
+Next, by replacing 
+$u(x,t)$
+by
+$r^{-1} u(r^{-1}x,r^{-2}(t-t_0))$, we can relax the restriction $r=1$ and
+$t_0=0$, and we see that
+$\snormo{\nabla u(t_0)}_q < c_7 r^{-2/p-1}$
+and
+$\snormo{\nabla u(t_0)}_{\infty} < c_7 r^{-2}$.
+Finally, the result follows
+from Lemma~\ref{upper bound for L_Phi},
+and some simple estimates.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{localization to integral}]
+Let $c_5$ and $c_6$ be as in Lemma~\ref{localization}.
+Define the sets
+$$ A_\mu = \{t \in [1/\Theta^{-1}(\mu),T]:
+   \snormo{\nabla u(t)}_\Phi + 
+   \Theta(\snormo{\nabla u(t)}_\infty) \ge 
+   c_6 \mu \} ,$$
+and
+$$ B_\mu 
+   =
+   \{t \in [0,T]:
+   \Theta(\snormo{u(t)}_q^p) \ge \mu\} .$$
+Notice that
+$$
+   \int_{\{t \in [0,T] \colon
+         \snormo{u(t)}_q \ge \lambda^{1/p}\}}
+   \Theta(\snormo{u(t)}_q^p) \, dt
+   =
+   \Theta(\lambda) \smodo{B_{\Theta(\lambda)}}
+   +
+   \int_{\Theta(\lambda)}^\infty \smodo{B_\mu} \, d\mu ,
+$$
+and similarly if $c_2>0$ is chosen to always exceed 
+$\mu^{-1} \Theta^{-1}(c_6 \Theta(\mu))$ for $\mu > 0$, then
+$$
+   c_6^{-1} \int_{\{t \in [\lambda^{-1},T] \colon
+         \snormo{\nabla u(t)}_\infty \ge c_2 \lambda\}}
+   \snormo{\nabla u(t)}_{\Phi} \, dt
+   \le 
+   \Theta(\lambda) \smodo{A_{\Theta(\lambda)}}
+   + 
+   \int_{\Theta(\lambda)}^\infty \smodo{A_\mu} \, d\mu .
+$$
+Thus it is sufficient to show the existence of constants $c_8,c_9>0$ such
+that for $\mu > 1$ that $\modo{A_\mu} < c_8 \smodo{B_{c_9\mu}}$.
+Define $r$ by the relation $\mu = \Theta(r^{-2})$.  Note that
+$0 < r < 1$.  Then
+$$ A_\mu = \{t \in [r^2,T]:
+   \snormo{\nabla u(t)}_\Phi + 
+   \Theta(\snormo{\nabla u(t)}_\infty) \ge 
+   c_6 \Theta(r^{-2}) \} ,$$
+and for sufficiently small $c_9$
+$$ B_{c_9\mu} \supset \{t \in [0,T]:\snormo{u(t)}_q \ge c_5 r^{-2/p}\} .$$
+It is trivial to find a finite collection $t_1,\dots,t_N$
+in the closure of $A_r$
+such that the disjoint sets $(t_n-r^2,t_n]$ cover $A_r$.
+Furthermore, by Lemma~\ref{localization}
+$$ \smodo{\{t \in [t_n-r^2,t_n] : \snormo{u(t)}_q \ge c_5 r^{-2/p}\}} 
+   < c_5 r^2 .$$
+Hence
+$$ \smodo{A_\mu}
+   \le
+   N r^2
+   <
+   c_5^{-1} \sum_{n=1}^N \smodo{[t_n-r^2,t_n] \cap B_{c_9\mu}}
+   \le
+   c_5^{-1} \smodo{B_{c_9\mu}} .
+$$
+\end{proof}
+
+\section*{Acknowledgments}
+
+The author wishes to extend his sincere gratitude to Michael Taksar for
+help with understanding stochastic processes.
+
+
+\begin{thebibliography}{999}
+
+\bibitem{cannone}
+M.~Cannone,  Ondelettes, paraproduits et Navier-Stokes, (French) 
+[Wavelets, paraproducts and Navier-Stokes], 
+with a preface by Yves Meyer, 
+Diderot Editeur, Paris, 1995.
+
+\bibitem{constantin}
+P.~Constantin,
+An Eulerian-Lagrangian approach to the Navier-Stokes equations, 
+Comm. Math. Phys.  216  (2001), 663--686.
+
+\bibitem{constantin-foias}
+P.~Constantin and C.~Foia\c s, 
+Navier-Stokes equations, 
+Chicago Lectures in Mathematics,
+University of Chicago Press, Chicago, IL, 1988.
+
+\bibitem{doering-gibbons}
+C.R.~Doering and J.D.~Gibbon,
+Applied analysis of the Navier-Stokes equations,
+Cambridge Texts in Applied Mathematics,
+Cambridge University Press, Cambridge, 1995.
+
+\bibitem{escauriaza et al}
+L.~Escauriaza, G.~Seregin and V.~Sver\'ak,
+On 
+$L_{3,\infty}$-solutions to the Navier-Stokes equations and backward 
+uniqueness,
+preprint, \url{http://www.ima.umn.edu/preprints/dec2002/dec2002.html}.
+
+\bibitem{foias et al}
+C.~Foia\c s, C.~Guillop\'e and R.~Temam,
+New a priori estimates for Navier-Stokes equations in dimension $3$,
+Comm. Partial Differential Equations 6 (1981), no. 3, 329--359.
+
+\bibitem{grujic-kukavica}
+Z.~Gruji\'c and I.~Kukavica,
+Space analyticity for the Navier-Stokes and related 
+equations with initial data in $L\sp p$,
+J. Funct. Anal.  152  (1998), 447--466.
+
+\bibitem{karatzas-shreve}
+I.~Karatzas and S.E.~Shreve,
+Brownian motion and stochastic calculus,
+second edition. Graduate Texts in Mathematics, 113,
+Springer-Verlag, New York, 1991.
+
+\bibitem{kras-rutickii}
+M.A.~Krasnosel'ski{\u\i} and Ja.B.~Ruticki\u\i,
+Convex functions and Orlicz spaces,
+translated from the first Russian edition by Leo F. Boron, 
+P. Noordhoff Ltd., 
+Groningen 1961.
+
+\bibitem{lemarie-rieusset}
+P.G.~Lemari\'e-Rieusset,
+Recent developments in the Navier-Stokes problem,
+Chapman and Hall/CRC, 2002.
+
+\bibitem{montgomery-smith-pokorny}
+S.J.~Montgomery-Smith and M.~Pokorn\'y,
+A counterexample to the smoothness of the solution to an 
+equation arising in fluid mechanics,
+Comment. Math. Univ. Carolin.  43  (2002),  61--75.
+
+\bibitem{prodi}
+G.~Prodi,
+Un teorema di unicit\`a per le equazioni di Navier-Stokes,
+Ann. Mat. Pura Appl. (4)  48  (1959) 173--182.
+
+\bibitem{scheffer}
+V.~Scheffer,
+Turbulence and Hausdorff dimension, 
+Turbulence and Navier-Stokes equations
+(Proc. Conf., Univ. Paris-Sud, Orsay, 1975), 174--183,
+Lecture Notes in Math., Vol. 565, Springer, Berlin, 1976. 
+
+\bibitem{serrin}
+J.~Serrin,
+On the interior regularity of weak solutions of the Navier-Stokes equations,
+Arch. Rational Mech. Anal.  9  (1962), 187--195.
+
+\bibitem{sohr}
+H.~Sohr,
+Zur Regularit\"atstheorie der instation\"aren Gleichungen von Navier-Stokes, 
+Math. Z.  184  (1983),  no. 3, 359--375.
+
+\bibitem{temam}
+R.~Temam,
+Infinite-dimensional dynamical systems in mechanics and physics,
+second edition, Applied Mathematical Sciences, 68,
+Springer-Verlag, New York, 1997.
+
+\end{thebibliography}
+
+\end{document}

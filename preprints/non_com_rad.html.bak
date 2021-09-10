@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>The Distribution of Non-Commutative Rademacher Series.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith&#44; The Distribution of Non-Commutative Rademacher Series.</B>
+<I>Math. Ann. <B>302</B>, (1995), 395-416.</I>
+We give a formula for the tail of the distribution of the non-commutative Rademacher series, which generalizes the result that is already available in the commutative case. As a result, we are able to calculate the norm of these series in many rearrangement invariant spaces, generalizing work of Pisier and Rodin and Semyonov.
+(<A HREF="non_com_rad.tex">tex</A>,
+<A HREF="non_com_rad.dvi">dvi</A>,
+<A HREF="non_com_rad.ps">ps</A>,
+<A HREF="non_com_rad.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>On a Bayesian Approach to Estimating Class Number.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith&#44; On a Bayesian Approach to Estimating Class Number.</B>
+<i>Preprint.</i>
+We examine a Bayesian approach to estimating the number of classes in a population, in the situation that we are able to take many independent samples from an
+infinite population.
+(<A HREF="class-bayesian.tex">tex</A>,
+<A HREF="class-bayesian.dvi">dvi</A>,
+<A HREF="class-bayesian.ps">ps</A>,
+<A HREF="class-bayesian.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

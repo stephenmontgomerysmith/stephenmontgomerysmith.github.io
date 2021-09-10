@@ -1,0 +1,335 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Calculation of the Number of Unforgeable Sequences</TITLE>
+<META NAME="description" CONTENT="Calculation of the Number of Unforgeable Sequences">
+<META NAME="keywords" CONTENT="unforgeable">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="unforgeable.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="unforgeable.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html29"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html27"
+  HREF="unforgeable.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html21"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html30"
+  HREF="node3.html">Generating Sets of Unforgeable</A>
+<B> Up:</B> <A NAME="tex2html28"
+  HREF="unforgeable.html">Unforgeable Marker Sequences</A>
+<B> Previous:</B> <A NAME="tex2html22"
+  HREF="node1.html">Number of Unforgeable Sequences</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00002000000000000000">
+Calculation of the Number of Unforgeable Sequences</A>
+</H2>
+
+<P>
+We have a recurrence relation for <IMG
+ WIDTH="45" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ F(n)$"> given by
+
+<P>
+<!-- MATH
+ \begin{displaymath}
+F(n) = \left\{
+\begin{tabular}{ll}
+  $2$\  & for $n=1$\  \\
+  $2 F(n-1) - F(n/2)$\  & for $n$\  even \\
+  $2 F(n-1)$\  & otherwise. \\
+\end{tabular}
+\right.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="374" HEIGHT="88" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$\displaystyle F(n) = \left\{
+\begin{tabular}{ll}
+$2$\ &amp; for $n=1$\ \\
+$2 F(n-1...
+...F(n/2)$\ &amp; for $n$\ even \\
+$2 F(n-1)$\ &amp; otherwise. \\
+\end{tabular}\right.
+$">
+</DIV><P></P>
+The proof is by induction on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n$">.  The cases <IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ n = 1$"> and <IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ n = 2$"> are taken from
+the previous tabulation.  Let us assume that the recurrence relation
+holds for <IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ n-2$"> and <IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ n-1$">.
+
+<P>
+If <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n$"> is odd, we can put <!-- MATH
+ $n = 2m + 1$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$ n = 2m + 1$">.  Now the sequence of length n
+<!-- MATH
+ \begin{displaymath}
+x_1, x_2, ..., x_{m-1}, x_m, x_{m+1}, ..., x_n
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="255" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$\displaystyle x_1, x_2, ..., x_{m-1}, x_m, x_{m+1}, ..., x_n
+$">
+</DIV><P></P>
+is not forgeable if and only if the sequence of length <IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ n-1$">
+<!-- MATH
+ \begin{displaymath}
+x_1, x_2, ..., x_{m-1}, x_{m+1}, ..., x_n
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="223" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$\displaystyle x_1, x_2, ..., x_{m-1}, x_{m+1}, ..., x_n
+$">
+</DIV><P></P>
+is not forgeable (where <IMG
+ WIDTH="28" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ x_m$"> can be either 0 or 1).  Therefore there
+are two unforgeable sequences of length <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n$"> for every unforgeable
+sequence of length <IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ n-1$">, that is, <!-- MATH
+ $F(n) = 2 F(n-2)$
+ -->
+<IMG
+ WIDTH="153" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ F(n) = 2 F(n-2)$">.
+
+<P>
+If <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n$"> is even, we can put <IMG
+ WIDTH="67" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$ n = 2 m$">.  It is sufficient to show that
+<!-- MATH
+ \begin{displaymath}
+F(n) = 4 F(n-2) - F(n/2)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="235" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$\displaystyle F(n) = 4 F(n-2) - F(n/2)
+$">
+</DIV><P></P>
+It is clear that the sequence of length n
+<!-- MATH
+ \begin{displaymath}
+x_1, x_2, ..., x_{m-1}, x_m, x_{m+1}, ..., x_n
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="255" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$\displaystyle x_1, x_2, ..., x_{m-1}, x_m, x_{m+1}, ..., x_n
+$">
+</DIV><P></P>
+is not forgeable if and only if both
+
+<OL>
+<LI><A NAME="cond1"></A>the sequence of length <IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ n-2$">
+<!-- MATH
+ \begin{displaymath}
+x_1, x_2, ..., x_{m-1}, x_{m+1}, ..., x_n
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="223" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$\displaystyle x_1, x_2, ..., x_{m-1}, x_{m+1}, ..., x_n
+$">
+</DIV><P></P>
+is not forgeable and,
+</LI>
+<LI><A NAME="cond2"></A>the two sequences of length <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$ m$">
+<!-- MATH
+ \begin{displaymath}
+x_1, x_2, ..., x_{m-1}  \hbox{\rm\quad and\quad} x_{m+1}, ..., x_n
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="283" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$\displaystyle x_1, x_2, ..., x_{m-1} \hbox{\rm\quad and\quad} x_{m+1}, ..., x_n
+$">
+</DIV><P></P>
+are not the same.
+</LI>
+</OL>
+The number of times condition&nbsp;(<A HREF="#cond1">1</A>) is satisfied is <IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$ 4 F(n-2)$"> since
+<IMG
+ WIDTH="28" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ x_m$"> and <IMG
+ WIDTH="45" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ x_{m+1}$"> may freely range over the values 0 and 1.  So it only
+remains to show that the number of times condition&nbsp;(<A HREF="#cond1">1</A>) is satisfied
+while condition&nbsp;(<A HREF="#cond2">2</A>) is not, is given by <IMG
+ WIDTH="64" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ F(n/2)$">.  However, 
+condition&nbsp;(<A HREF="#cond1">1</A>) is true
+while condition&nbsp;(<A HREF="#cond2">2</A>) is not if and only if the following two 
+subsidiary conditions are met
+
+<OL>
+<LI><!-- MATH
+ $x_1, x_2, ..., x_{m-1}$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ x_1, x_2, ..., x_{m-1}$"> and <!-- MATH
+ $x_{m+1}, ..., x_n$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ x_{m+1}, ..., x_n$">
+are the same, and
+</LI>
+<LI>the sequence <!-- MATH
+ $x_1, x_2, ..., x_{m}$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ x_1, x_2, ..., x_{m} $"> is unforgeable.
+</LI>
+</OL>
+This happens <IMG
+ WIDTH="50" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ F(m)$"> times as <!-- MATH
+ $x_1, x_2, ..., x_{m}$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ x_1, x_2, ..., x_{m} $"> range over all possible
+values, and <!-- MATH
+ $F(m) = F(n/2)$
+ -->
+<IMG
+ WIDTH="134" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$ F(m) = F(n/2)$">.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html29"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html27"
+  HREF="unforgeable.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html21"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html30"
+  HREF="node3.html">Generating Sets of Unforgeable</A>
+<B> Up:</B> <A NAME="tex2html28"
+  HREF="unforgeable.html">Unforgeable Marker Sequences</A>
+<B> Previous:</B> <A NAME="tex2html22"
+  HREF="node1.html">Number of Unforgeable Sequences</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

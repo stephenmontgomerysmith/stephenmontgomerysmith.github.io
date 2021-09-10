@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>$p$-summing operators on injective tensor products of spaces.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith and <A HREF="http://www.math.missouri.edu/people/psaab.html">Paulette Saab</A>&#44; $p$-summing operators on injective tensor products of spaces.</B>
+<I>B. Royal Soc. Edin. <B>120A</B>, (1992), 283-296.</I>
+Let $X$, $Y$ and $Z$ be Banach spaces, and let $\Pi_p(X,Y)$ $(1 \le p < \infty)$ denote the space of $p$-summing operators from $Y$ to $Z$. We show that, if $X$ is a $\mathcal L_\infty$-space, then a bounded linear operator $T:X\otimes_\epsilon Y\to Z$ is 1-summing if and only if a naturally associated operator $T^\#:X\to \Pi_1(Y,Z)$ is 1-summing. This result need not be true if $X$ is not a $\mathcal L_\infty$-space. For $p>1$, several examples are given with $X = C[0,1]$ to show that $T^\#$ can be $p$-summing without $T$ being $p$-summing. Indeed, there is an operator $T$ on $C[0,1]\otimes_\epsilon \ell_1$ whose associated operator $T^\#$ is 2-summing, but for all $N\in\mathbb N$, there exists an $N$-dimensional subspace $U$ of $C[0,1]\otimes_\epsilon \ell_1$ such that $T$ restricted to $U$ is equivalent to the identity operator on $\ell_\infty^N$. Finally, we show that there is a compact Hausdorff space $K$ and a bounded linear operator $T:C(K) \otimes_\epsilon \ell_1 \to \ell_2$ for which $T^\#:C(K) \to \Pi_1(\ell_1,\ell_2)$ is not 2-summing.
+(<A HREF="p_summing.tex">tex</A>,
+<A HREF="p_summing.dvi">dvi</A>,
+<A HREF="p_summing.ps">ps</A>,
+<A HREF="p_summing.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

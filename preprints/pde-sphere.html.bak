@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>A Systematic Approach to Obtaining Numerical Solutions of Jeffery's Type Equations using Spherical Harmonics.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith, David Jack and Douglas E. Smith&#44; A Systematic Approach to Obtaining Numerical Solutions of Jeffery's Type Equations using Spherical Harmonics.</B>
+<I><a href="http://www.elsevier.com/locate/compositesa">Composites Part A</a>, Volume 41, Issue 7, July 2010, Pages 827-835.</I>
+This paper extends the work of Bird, Warner, Stewart, Sorensen, Larson, Ottinger, Vukadinovic, and Forest <i>et al.</i>, who have applied Spherical Harmonics to numerically solve certain types of partial differential equations on the two-dimensional sphere. We present a systematic approach and implementation for solving such equations with efficient numerical solutions.  In particular we are able to solve a wide variety of fiber orientation equations considered before by Jeffery, Folgar and Tucker, and Koch, and include several recently introduced fiber orientation collision models. The main tools used to compute the coefficients for the Spherical Harmonic-based expansion are Rodrigues' formula and the ladder operators. We show that solutions of the Folgar-Tucker model using our new algorithm retains the accuracy of full simulations of the fiber orientation distribution function with computational efforts that are only slightly more than the Advani-Tucker orientation/moment tensor solutions commonly used in industrial applications. The spherical harmonic approach requires a computational effort of just three times that of the orientation tensor approach employing the orthotropic closure of VerWeyst, but with less than 1/1000th the computational effort of numerical solutions of the full orientation distribution function obtained using control volume methods.
+(<A HREF="pde-sphere.pdf">pdf</A>, <A HREF="http://dx.doi.org/10.1016/j.compositesa.2010.02.010">actual article</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

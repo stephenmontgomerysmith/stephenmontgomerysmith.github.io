@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Modeling Orientational Diffusion in Short Fiber Composite Processing Simulations.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Douglas E. Smith, Stephen Montgomery-Smith and David Jack&#44; Modeling Orientational Diffusion in Short Fiber Composite Processing Simulations.</B>
+<I>Preprint.</I>
+Numerical simulations of fiber orientation in short-fiber composites have relied on the Folgar and Tucker (1984) model for diffusion for over twenty years. Unfortunately, it has recently been shown that this fiber collision model tends to over-predict the rate of alignment; exposing the need for a new fundamental approach to more accurately capture fiber interactions within the melt flow. Here we present our initial work in the development of an objective directional diffusion model and a variable lambda model for fiber collisions where we modify Jeffery's model (1922) to incorporate local directionally dependent effects assumed proportional to the probability of fiber-fiber collisions. We show that our directional diffusion model performs well in extensional flows, whereas its usefulness appears limited in shearing flows.  Conversely, preliminary results from the variable lambda model in both elongational and shearing flows are quite promising and will be the focus of future investigations.
+(<A HREF="Smith_Montgomery_Jack_CMMI_2009_ver4.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

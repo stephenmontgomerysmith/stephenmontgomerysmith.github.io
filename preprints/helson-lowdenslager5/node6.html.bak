@@ -1,0 +1,615 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Generalized F. and M. Riesz Theorems</TITLE>
+<META NAME="description" CONTENT="Generalized F. and M. Riesz Theorems">
+<META NAME="keywords" CONTENT="helson-lowdenslager5">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="helson-lowdenslager5.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="helson-lowdenslager5.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html69"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html67"
+  HREF="helson-lowdenslager5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html61"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html70"
+  HREF="node7.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html68"
+  HREF="helson-lowdenslager5.html">Decomposition of analytic measures</A>
+<B> Previous:</B> <A NAME="tex2html62"
+  HREF="node5.html">Decomposition of Analytic Measures</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00060000000000000000">
+Generalized F. and M. Riesz Theorems</A>
+</H1>
+
+<P>
+Throughout this section, 
+we adopt the notation of Section 5, specifically, 
+the notation and assumptions of 
+Theorem <A HREF="node5.html#decomp_of_measures">5.1</A>.
+
+<P>
+Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> is a sup path attaining representation of <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \Bbb R$"> by isomorphisms of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$">.
+In [<A
+ HREF="node7.html#amss">4</A>], we proved the following 
+result concerning bounded operators <IMG
+ WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img473.png"
+ ALT="$ {\cal P}$">
+from <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$"> into <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$">
+that commute with the representation <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> in the following sense:
+<!-- MATH
+ \begin{displaymath}
+{\cal P}\circ T_t=T_t\circ {\cal P}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="129" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img474.png"
+ ALT="$\displaystyle {\cal P}\circ T_t=T_t\circ {\cal P}$">
+</DIV><P></P>
+for all <!-- MATH
+ $t\in \Bbb R$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img475.png"
+ ALT="$ t\in \Bbb R$">.  
+<P>
+<DIV><B>Theorem  6.1</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> is a representation of <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \Bbb R$"> that is sup path
+attaining,
+and that <IMG
+ WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img473.png"
+ ALT="$ {\cal P}$"> commutes with <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$">.
+Let <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in M(\Sigma)$"> be weakly analytic.
+Then <!-- MATH
+ ${\cal P}\mu$
+ -->
+<IMG
+ WIDTH="31" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$ {\cal P}\mu$"> is also weakly analytic.
+<A NAME="caseofR"></A></I></DIV><P></P>
+
+<P>
+To describe an interesting application
+of this theorem from [<A
+ HREF="node7.html#amss">4</A>], let us recall the following.
+
+<P>
+<P>
+<DIV><B>Definition  6.2</B> &nbsp; 
+<I>Let <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> be a sup path attaining 
+representation of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$">.
+A weakly measurable <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img416.png"
+ ALT="$ \sigma$"> in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$"> is
+called quasi-invariant if 
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img476.png"
+ ALT="$ T_t\sigma$"> and <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img416.png"
+ ALT="$ \sigma$">
+are mutually absolutely continuous for all <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ t\in G$">.  Hence
+if <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img416.png"
+ ALT="$ \sigma$"> is quasi-invariant
+and <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">, then 
+<!-- MATH
+ $|\sigma|(A)=0$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img477.png"
+ ALT="$ \vert\sigma\vert(A)=0$"> if and only if <!-- MATH
+ $|T_t(\sigma)|(A)=0$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img478.png"
+ ALT="$ \vert T_t(\sigma)\vert(A)=0$">
+for all <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ t\in G$">.
+<A NAME="qi"></A></I></DIV><P></P>
+
+<P>
+Using Theorem <A HREF="#caseofR">6.1</A> we obtained in [<A
+ HREF="node7.html#amss">4</A>] the following extension of results of 
+de Leeuw-Glicksberg [<A
+ HREF="node7.html#deleeuwglicksberg">9</A>] and 
+Forelli [<A
+ HREF="node7.html#forelli">12</A>], concerning quasi-invariant measures.  
+
+<P>
+<P>
+<DIV><B>Theorem  6.3</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> is a sup path attaining representation
+of <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \Bbb R$"> by isometries of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$">.  Suppose 
+that <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in M(\Sigma)$"> is weakly analytic, and
+<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img416.png"
+ ALT="$ \sigma$"> is quasi-invariant.  Write
+<!-- MATH
+ $\mu=\mu_a+\mu_s$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img479.png"
+ ALT="$ \mu=\mu_a+\mu_s$"> for the Lebesgue decomposition of <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mu$">
+with respect to <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img416.png"
+ ALT="$ \sigma$">.  Then both
+<IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img480.png"
+ ALT="$ \mu_a$"> and <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.png"
+ ALT="$ \mu_s$"> are weakly analytic.  In particular,
+the spectra of <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img480.png"
+ ALT="$ \mu_a$"> and <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.png"
+ ALT="$ \mu_s$"> are
+contained in <!-- MATH
+ $[0,\infty)$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img482.png"
+ ALT="$ [0,\infty)$">.
+<A NAME="lebesgue-decomp-forR"></A></I></DIV><P></P>
+
+<P>
+Our goal in this section is to extend Theorems <A HREF="#caseofR">6.1</A>
+above to representations of a locally compact abelian group <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> with ordered dual group <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">.
+More specifically, we want to prove the following theorems.
+
+<P>
+<P>
+<DIV><A NAME="application1"><B>Theorem  6.4</B></A> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> is a sup path attaining 
+representation of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> by isomorphisms of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$"> such that 
+<!-- MATH
+ $T_{\phi_\alpha}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$ T_{\phi_\alpha}$"> is sup path attaining for each <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img210.png"
+ ALT="$ \alpha$">.
+Suppose that <IMG
+ WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img473.png"
+ ALT="$ {\cal P}$"> commutes with <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> in the sense
+that 
+</I><!-- MATH
+ \begin{displaymath}
+{\cal P}\circ T_t=T_t\circ {\cal P}
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="129" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img474.png"
+ ALT="$\displaystyle {\cal P}\circ T_t=T_t\circ {\cal P}$">
+</DIV><P></P><I>
+for all <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ t\in G$">.  
+Let <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in M(\Sigma)$"> be weakly analytic.
+Then <!-- MATH
+ ${\cal P}\mu$
+ -->
+<IMG
+ WIDTH="31" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$ {\cal P}\mu$"> is also weakly analytic.</I></DIV><P></P>
+
+<P>
+As shown in [<A
+ HREF="node7.html#amss">4</A>, Theorem (4.10)] 
+for the case <IMG
+ WIDTH="58" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img483.png"
+ ALT="$ G=\Bbb R$">, 
+an immediate corollary of Theorem <A HREF="#application1">6.4</A>
+is the following result.
+
+<P>
+<P>
+<DIV><A NAME="application2"><B>Theorem  6.5</B></A> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> is a sup path attaining representation
+of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> by isometries of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$">, such that 
+<!-- MATH
+ $T_{\phi_\alpha}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$ T_{\phi_\alpha}$"> is sup path attaining for each <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img210.png"
+ ALT="$ \alpha$">.
+  Suppose 
+that <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in M(\Sigma)$"> is weakly analytic with respect to <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$">, and
+<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img416.png"
+ ALT="$ \sigma$"> is quasi-invariant with respect to <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$">.  Write
+<!-- MATH
+ $\mu=\mu_a+\mu_s$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img479.png"
+ ALT="$ \mu=\mu_a+\mu_s$"> for the Lebesgue decomposition of <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mu$">
+with respect to <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img416.png"
+ ALT="$ \sigma$">.  Then both
+<IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img480.png"
+ ALT="$ \mu_a$"> and <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.png"
+ ALT="$ \mu_s$"> are weakly analytic with respect to <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$">.  In particular,
+the <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$">-spectra of <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img480.png"
+ ALT="$ \mu_a$"> and <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.png"
+ ALT="$ \mu_s$"> are
+contained in <!-- MATH
+ $\overline{P}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img145.png"
+ ALT="$ \overline{P}$">.</I></DIV><P></P>
+
+<P>
+<B>Proof of Theorem <A HREF="#application1">6.4</A>.</B>&nbsp;&nbsp;&nbsp;&nbsp;
+Write
+<!-- MATH
+ \begin{displaymath}
+\mu=\mu_{\alpha_0}*_T\mu +\sum_\alpha d_\alpha *_T\mu,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="226" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img389.png"
+ ALT="$\displaystyle \mu = \mu_{\alpha_0}*_T\mu+ \sum_\alpha d_\alpha *_T\mu ,$">
+</DIV><P></P>
+as in (<A HREF="node5.html#decomp_of_measures">5.1</A>), where the series converges unconditionally
+in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$">.
+Then
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="-3"></A><!-- MATH
+ \begin{equation}
+{\cal P}\mu={\cal P}(\mu_{\alpha_0}*_T\mu) +\sum_\alpha
+{\cal P}(d_\alpha *_T\mu).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(42)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="300" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img484.png"
+ ALT="$\displaystyle {\cal P}\mu={\cal P}(\mu_{\alpha_0}*_T\mu) +\sum_\alpha {\cal P}(d_\alpha *_T\mu).$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+It is enough to show that the <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$">-spectrum of
+each term is contained in <!-- MATH
+ $\overline{P}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img145.png"
+ ALT="$ \overline{P}$">.
+Consider the measure 
+<!-- MATH
+ $\mu_{\alpha_0}*_T\mu$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img485.png"
+ ALT="$ \mu_{\alpha_0}*_T\mu$">.  We have 
+<!-- MATH
+ ${\rm spec}_T(\mu_{\alpha_0}*_T\mu)\subset S_{\alpha_0}$
+ -->
+<IMG
+ WIDTH="185" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img486.png"
+ ALT="$ {\rm spec}_T(\mu_{\alpha_0}*_T\mu)\subset S_{\alpha_0}$">.
+Hence by Theorem <A HREF="node4.html#equiv-def">4.4</A>, 
+<!-- MATH
+ $\mu_{\alpha_0}*_T\mu$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img485.png"
+ ALT="$ \mu_{\alpha_0}*_T\mu$"> is <!-- MATH
+ $T_{\phi_{\alpha_0}}$
+ -->
+<IMG
+ WIDTH="40" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img487.png"
+ ALT="$ T_{\phi_{\alpha_0}}$">-analytic.  Applying Theorem <A HREF="#caseofR">6.1</A>, we see that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="-2"></A><!-- MATH
+ \begin{equation}
+{\rm spec}_{T_{\phi_{\alpha_0}}} ({\cal P}(\mu_{\alpha_0}*_T\mu))\subset [0,\infty[.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(43)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="260" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img488.png"
+ ALT="$\displaystyle {\rm spec}_{T_{\phi_{\alpha_0}}} ({\cal P}(\mu_{\alpha_0}*_T\mu))\subset [0,\infty[.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Since <IMG
+ WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img473.png"
+ ALT="$ {\cal P}$"> commutes with <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$">, it is easy to see  
+from Proposition <A HREF="node3.html#proposition5.9">3.10</A> and Corollary <A HREF="node3.html#corollary5.10">3.11</A> that
+<!-- MATH
+ \begin{displaymath}
+{\rm spec}_T ({\cal P}(\mu_{\alpha_0}*_T\mu))\subset C_{\alpha_0}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="221" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img489.png"
+ ALT="$\displaystyle {\rm spec}_T ({\cal P}(\mu_{\alpha_0}*_T\mu))\subset C_{\alpha_0}.$">
+</DIV><P></P>
+Hence by (<A HREF="#-2">43</A>) and Theorem <A HREF="node4.html#equiv-def">4.4</A>, 
+<!-- MATH
+ \begin{displaymath}
+{\rm spec}_T ({\cal P}(\mu_{\alpha_0}*_T\mu))\subset S_{\alpha_0},
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="219" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img490.png"
+ ALT="$\displaystyle {\rm spec}_T ({\cal P}(\mu_{\alpha_0}*_T\mu))\subset S_{\alpha_0},$">
+</DIV><P></P>
+which shows the desired result for the first term
+of the series in 
+(<A HREF="#-3">42</A>).  The other terms of the series 
+(<A HREF="#-3">42</A>) are handled similarly.
+
+<BR>
+<P>
+
+<B>Acknowledgments</B>  The second author is 
+grateful for financial support from the National Science Foundation (U.S.A.) and the Research Board of the 
+University of Missouri.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html69"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html67"
+  HREF="helson-lowdenslager5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html61"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html70"
+  HREF="node7.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html68"
+  HREF="helson-lowdenslager5.html">Decomposition of analytic measures</A>
+<B> Previous:</B> <A NAME="tex2html62"
+  HREF="node5.html">Decomposition of Analytic Measures</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Outline of the Proof of Theorem 1.1</TITLE>
+<META NAME="description" CONTENT="Outline of the Proof of Theorem 1.1">
+<META NAME="keywords" CONTENT="mo_smpok8">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="mo_smpok8.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="mo_smpok8.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html31"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html29"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html23"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html32"
+  HREF="node3.html">Properties of the operator</A>
+<B> Up:</B> <A NAME="tex2html30"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<B> Previous:</B> <A NAME="tex2html24"
+  HREF="node1.html">Introduction</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000">
+Outline of the Proof of Theorem </A><A HREF="node1.html#t_0.1">1.1</A>
+</H1>
+
+<P>
+In this section we will give the plan for the proof of Theorem&nbsp;<A HREF="node1.html#t_0.1">1.1</A>.
+The idea of the proof is really quite simple.  We will in fact construct
+a family of divergence free, smooth solutions <!-- MATH
+ ${\mathbf{u}}_s$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="${\mathbf{u}}_s$"> 
+to (<A HREF="node1.html#Q-equ">1.8</A>)
+parameterized by a number <!-- MATH
+ $s \in [0,2\pi]$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$s \in [0,2\pi]$">.  We will use simple ideas
+from algebraic topology to show that there exists <!-- MATH
+ $s_0 \in [0,2\pi]$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$s_0 \in [0,2\pi]$"> such that
+<IMG
+ WIDTH="29" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$u_{s_0}$"> provides an example to prove Theorem&nbsp;<A HREF="node1.html#t_0.1">1.1</A>.
+
+<P>
+In fact all of the solutions we construct will be axisymmetric, indeed,
+when written in cylindrical coordinates, they have the form:
+<!-- MATH
+ ${\mathbf{u}}_s = (0, u_\theta(r,z,t), 0)$
+ -->
+<IMG
+ WIDTH="172" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="${\mathbf{u}}_s = (0, u_\theta(r,z,t), 0)$">.
+We will prove that there exists <!-- MATH
+ $s_0 \in [0,2\pi]$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$s_0 \in [0,2\pi]$"> and <IMG
+ WIDTH="53" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$t_0&gt;0$"> 
+such that the Jacobian <!-- MATH
+ $\nabla \mathbf{A}^N_{s_0}(0,t_0)$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$\nabla \mathbf{A}^N_{s_0}(0,t_0)$"> is non-invertible.
+To this end we have the following representation result.
+
+<P>
+<P>
+<DIV><A NAME="c_5.1"><B>Lemma  2.1</B></A> &nbsp; 
+<I>For any <IMG
+ WIDTH="46" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$t&gt;0$">, <!-- MATH
+ $\nabla \mathbf{A}^N_s({\mathbf {0}}, t)$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$\nabla \mathbf{A}^N_s({\mathbf {0}}, t)$"> can be 
+uniquely written as
+</I>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left(\begin{array}{lll}
+a_s \cos b_s, & -a_s \sin b_s & 0\\
+a_s \sin b_s, &  a_s \cos b_s & 0\\
+0 & 0 & 1
+\end{array} \right)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="182" HEIGHT="76" BORDER="0"
+ SRC="img62.png"
+ ALT="\begin{displaymath}
+\left(\begin{array}{lll}
+a_s \cos b_s, &amp; -a_s \sin b_s &amp; 0\\...
+... \sin b_s, &amp; a_s \cos b_s &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{array} \right)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P><I>
+for some <!-- MATH
+ $a_s(t)\in \mbox{\Bbbb R}^+$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.png"
+ ALT="$a_s(t)\in \mbox{\Bbbb R}^+$"> and <!-- MATH
+ $b_s(t) \in [0,2\pi)$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$b_s(t) \in [0,2\pi)$">.</I></DIV><P></P>
+
+<P>
+The proof of Theorem&nbsp;<A HREF="node1.html#t_0.1">1.1</A> will proceed as follows.
+For each <!-- MATH
+ $s \in [0,2\pi]$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$s \in [0,2\pi]$">, we will construct <!-- MATH
+ ${\mathbf{u}}_s$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="${\mathbf{u}}_s$">.  The Theorem
+will be proved if we can show the existence of <!-- MATH
+ $s_0 \in [0,2\pi]$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$s_0 \in [0,2\pi]$">
+and <IMG
+ WIDTH="53" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$t_0&gt;0$"> such that <!-- MATH
+ $a_{s_0}(t_0) = 0$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.png"
+ ALT="$a_{s_0}(t_0) = 0$">.  We will assume the opposite,
+and give a proof by contradiction.
+
+<P>
+We will need some simple facts from algebraic
+topology.  We refer the reader to [<A
+ HREF="node7.html#Mau">8</A>] for more details.
+Let us consider the collection of continuous functions 
+<!-- MATH
+ $[0,\infty] \to \mbox{\Bbbb R}^2-\{(0,0)\}$
+ -->
+<IMG
+ WIDTH="187" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.png"
+ ALT="$[0,\infty] \to \mbox{\Bbbb R}^2-\{(0,0)\}$"> which map <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="$0$"> and <IMG
+ WIDTH="24" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img68.png"
+ ALT="$\infty$"> to <IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$(1,0)$">.
+We will say two such functions <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$f$"> and <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.png"
+ ALT="$g$"> 
+are <I>homotopic with base point <IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$(1,0)$"></I> (or simply <I>homotopic</I>) 
+if there exists a jointly continuous 
+function <!-- MATH
+ $F:[0,\infty] \times [0,2\pi] \to \mbox{\Bbbb R}^2-\{(0,0)\}$
+ -->
+<IMG
+ WIDTH="290" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.png"
+ ALT="$F:[0,\infty] \times [0,2\pi] \to \mbox{\Bbbb R}^2-\{(0,0)\}$"> such that
+<!-- MATH
+ $F(\cdot,0) = f$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$F(\cdot,0) = f$">, <!-- MATH
+ $F(\cdot,2\pi) = g$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.png"
+ ALT="$F(\cdot,2\pi) = g$"> and
+<!-- MATH
+ $F(0,\cdot) = F(\infty,\cdot) = (1,0)$
+ -->
+<IMG
+ WIDTH="211" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.png"
+ ALT="$F(0,\cdot) = F(\infty,\cdot) = (1,0)$">.  We will call the function <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img76.png"
+ ALT="$F$">
+a homotopy.  Clearly being homotopic is an
+equivalence relation.  
+
+<P>
+It is well known that a constant map
+<IMG
+ WIDTH="104" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$f(t) = (1,0)$">, and a map with ``winding number 1'', for example,
+<!-- MATH
+ $g(t) = (\cos(2\pi t/(1+t)),\sin(2\pi t/(1+t)))$
+ -->
+<IMG
+ WIDTH="342" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.png"
+ ALT="$g(t) = (\cos(2\pi t/(1+t)),\sin(2\pi t/(1+t)))$"> are not homotopic.
+(Since <!-- MATH
+ $\mbox{\Bbbb R}^2-\{(0,0)\}$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$\mbox{\Bbbb R}^2-\{(0,0)\}$"> is homotopy equivalent to the unit circle,
+this is basically saying that the fundamental group of the unit circle
+is non-trivial.)
+
+<P>
+In order to provide our contradiction we will prove the following result.
+
+<P>
+<P>
+<DIV><A NAME="homotopy"><B>Lemma  2.2</B></A> &nbsp; 
+<I>If <!-- MATH
+ ${\mathbf{u}}_s$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="${\mathbf{u}}_s$"> is constructed as described in the
+next section, with the various parameters chosen appropriately, 
+then the function
+</I>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+F(t,s) = (a_s(t) \cos b_s(t), a_s(t) \sin b_s(t))
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="308" HEIGHT="33" BORDER="0"
+ SRC="img80.png"
+ ALT="\begin{displaymath}F(t,s) = (a_s(t) \cos b_s(t), a_s(t) \sin b_s(t)) \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P><I>
+provides a homotopy between the function <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$f$">
+and a function homotopic to <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.png"
+ ALT="$g$">.</I></DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html31"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html29"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html23"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html32"
+  HREF="node3.html">Properties of the operator</A>
+<B> Up:</B> <A NAME="tex2html30"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<B> Previous:</B> <A NAME="tex2html24"
+  HREF="node1.html">Introduction</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-25
+</ADDRESS>
+</BODY>
+</HTML>

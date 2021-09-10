@@ -1,0 +1,607 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR"
+ content="Mozilla/4.79 [en] (X11; U; Linux 2.4.2 i386) [Netscape]">
+  <meta name="Author" content="Stephen Montgomery-Smith">
+  <title>The Dispense Package</title>
+</head>
+<body bgcolor="#ff99ff">
+<center>
+<h1> The Dispense Package</h1>
+</center>
+<h2> Short Description</h2>
+The Dispense Package is designed to be an out of the box way to do
+distributed programming.&nbsp; For example, suppose you want to count
+the number of twin primes (prime numbers <i>p</i> for which <i>p</i>-2
+is also prime).&nbsp; Suppose you have a program <tt>count-primes</tt>
+which takes as input a number b, and outputs the number of twin primes
+between 1,000,000,000 <i>b</i> and 1,000,000,000 (<i>b</i>+1).&nbsp; If
+you want a count of primes up to 10<sup>14</sup>, you create a file <tt>primes-input</tt>
+which consists of lines, each containing an integer, starting at 0, and
+ending at 99999.&nbsp; So to get the desired count, you would type:
+<p><tt>&nbsp;&nbsp;&nbsp; ./count-primes &lt; primes-input &gt;
+primes-output</tt><br>
+</p>
+<p>and then add up all the numbers in the file <tt>primes-output</tt>. </p>
+<p>Well this program could take a long time to run.&nbsp; So you want
+to spread the load over several computers.&nbsp; This package allows you
+to do that.&nbsp; You have a central task dispensing computer (call it <tt>dispense.domain</tt>)
+where you run the program: </p>
+<p><tt>&nbsp;&nbsp;&nbsp; dispense pass-key 3000 10 &lt; primes-input
+&gt; primes-output</tt><br>
+</p>
+<p>and then on several other computers, you type </p>
+<p><tt>&nbsp;&nbsp;&nbsp; enact ./count-primes pass-key dispense.domain
+3000</tt><br>
+</p>
+<p>Each <tt>enact</tt> program asks the <tt>dispense</tt> program for a
+line from <tt>primes-input</tt>.&nbsp; (In this instance, the <tt>dispense</tt>
+program is listening on port 3000, and uses <tt>pass-key</tt> to verify
+that the <tt>enact</tt> program is working on the correct
+problem.)&nbsp; The <tt>enact</tt> program works on that problem piece,
+and then sends the answer back to the <tt>dispense</tt> program. </p>
+<p>If for some reason the <tt>enact</tt> program dies, after 10 minutes
+the <tt>dispense</tt> program will give that same problem piece to
+another <tt>enact</tt> program.&nbsp; The <tt>dispense</tt> program
+collects all the outputs from the <tt>enact</tt> programs, and places
+them in <tt>primes-output</tt>, along with other information such as
+the I.P. address of the computer which did that particular computation. </p>
+<h2> How to Build</h2>
+This package was designed on FreeBSD.&nbsp; It should work fine on
+Linux.&nbsp; If you want to help me port it to other Unix's (or even
+Windows) that would be great.
+<p>This package needs the Berkeley database revision 3.&nbsp; You can
+find it at <a href="http://www.sleepycat.com/">http://www.sleepycat.com/</a> </p>
+<p>Download the package <a href="all-versions/dispense-0.23.tar.gz">dispense-0.23.tar.gz</a>.&nbsp;
+After un-tarring the distribution, and changing to the created
+directory, type <br>
+<tt>&nbsp;&nbsp;&nbsp; make all-enact</tt><br>
+<tt>&nbsp;&nbsp;&nbsp; make install-enact</tt><br>
+to create and install the <tt>enact</tt> programs, and <br>
+<tt>&nbsp;&nbsp;&nbsp; make all-dispense</tt><br>
+<tt>&nbsp;&nbsp;&nbsp; make install-dispense</tt><br>
+to make and install the <tt>dispense</tt> programs.&nbsp; To make and
+install everything, type <br>
+<tt>&nbsp;&nbsp;&nbsp; make all</tt><br>
+<tt>&nbsp;&nbsp;&nbsp; make install</tt><br>
+</p>
+<h3>How to Use</h3>
+To use this package, you will need to create two items.&nbsp; You need
+to create a program that does your computations, and you need to create
+a file that has a list of input values to your program.&nbsp; (For
+example, in this package, there is an example of a program called <tt>add</tt>,
+that takes two numbers and outputs their sum.)
+<h3> The Program</h3>
+The program should accept one line of input, and then create one line
+of output in response.&nbsp; Then it should repeat this over
+again.&nbsp; The basic structure of the program should be something like
+this:
+<p><tt>main () {</tt><br>
+<tt>&nbsp; char input[1000], output[1000];</tt><br>
+<tt>&nbsp; setlinebuf(stdout);</tt><br>
+<tt>&nbsp; while ((fgets(input,1000,stdin)!=NULL) {</tt><br>
+<tt>&nbsp;&nbsp;&nbsp; do_computations(input,output);</tt><br>
+<tt>&nbsp;&nbsp;&nbsp; puts(output);</tt><br>
+<tt>&nbsp; }</tt><br>
+<tt>&nbsp; exit(0);</tt><br>
+<tt>}</tt><br>
+</p>
+<p>Be sure that <tt>output</tt> consists of a single line terminated by
+the sequence "\n\0".&nbsp; The <tt>setlinebuf(stdout)</tt> is necessary,
+unless you use the <tt>-p</tt> option described below.&nbsp; Your
+program should always produce some kind of output.&nbsp; If the input
+data is invalid, you might like to have it some kind of error
+message.&nbsp; The program may be a script. </p>
+<h3> The Enacting Program</h3>
+On each computer where you wish to do the computations, you start the <tt>enact</tt>
+program as follows:
+<p><tt>&nbsp;&nbsp;&nbsp; enact freddy program-name dispense.domain 3000</tt> </p>
+<p>where 3000 is replaced by whatever port number the <tt>dispense</tt>
+program is using, and "<tt>freddy</tt>" is a password so that the <tt>dispense</tt>
+program knows that it is communicating with a legitimate <tt>enact</tt>
+program. </p>
+<p>You may run this program with some options: </p>
+<ul>
+  <li> <tt>-f</tt>&nbsp;&nbsp;&nbsp;&nbsp; The program will run in the
+foreground (otherwise it will run in the background);</li>
+  <li> <tt>-n <i>number</i></tt>&nbsp;&nbsp;&nbsp;&nbsp; Set the
+"nice" level of the program --- type "<tt>man nice</tt>" to see what
+this is about.&nbsp; The default value is 20, which means that the
+program will get the lowest priority in obtaining CPU time.</li>
+  <li> <tt>-q <i>number</i></tt>&nbsp;&nbsp;&nbsp;&nbsp; This causes
+enact to get several input lines from <tt>dispense</tt> (up to <i><tt>number</tt></i>),
+and put them in its own queue, before working on them.&nbsp; This
+option is useful if the internet access is bad or intermittent.</li>
+  <li> <tt>-t <i>number</i></tt>&nbsp;&nbsp;&nbsp;&nbsp; This asks the <tt>dispense</tt>
+program to use this timeout (in minutes) instead of the one <tt>dispense</tt>
+is provided.&nbsp; This is useful if the <tt>-q</tt> option is being
+used.&nbsp; The dispense program may decide not to honor this value (see
+below).</li>
+  <li> <tt>-p</tt>&nbsp;&nbsp;&nbsp;&nbsp; If this is set, the <tt>enact</tt>
+program opens <tt>program-name</tt> using a pseudo terminal.&nbsp; The
+effect of this is that <tt>program-name</tt> will automatically have
+line buffering for <tt>stdout</tt>.</li>
+  <li><span style="font-family: monospace;">-i <span
+ style="font-style: italic;">identifier</span></span> &nbsp; &nbsp; This
+allows the <span style="font-family: monospace;">enact</span> program to
+send a message to the <span style="font-family: monospace;">dispense</span>
+program. &nbsp;Typically this will be an identifier, like the email
+address of the person starting the enact program.</li>
+  <li><span style="font-family: monospace;">-s <span
+ style="font-style: italic;">file-name</span></span> &nbsp; &nbsp;
+Everytime <span style="font-family: monospace;">enact</span> changes its
+internal queue, it saves the queue in the file called <span
+ style="font-family: monospace; font-style: italic;">file-name</span>.
+&nbsp;If this file exists when <span style="font-family: monospace;">enact</span>
+is started, enact will read and load its internal queue from this file.
+&nbsp;This is useful if the program is likely to be killed and restarted
+on a regular basis.<br>
+  </li>
+</ul>
+<h3> The Dispensing Program</h3>
+One computer serves as the central dispenser, which gives out the
+pieces of the problem.&nbsp; On this computer, run the <tt>dispense</tt>
+program as follows:
+<p><tt>&nbsp;&nbsp;&nbsp; dispense freddy 3000 5 &lt; input-file
+&gt;&gt; output-file</tt> </p>
+<p>The word "<tt>freddy</tt>" is a password so that only legitimate <tt>enact</tt>
+programs can connect.&nbsp; Replace 3000 with the port you want to
+use.&nbsp; Generally any number between 1024 and 65535 should be
+OK.&nbsp; If you get a "cannot bind" message when you try to start the <tt>dispense</tt>
+program, wait a minute, or try another port (see the remarks
+below).&nbsp; The last number, in our case 5, is the minimum number of
+minutes to wait until the <tt>dispense</tt> program decides that an <tt>enact</tt>
+program has taken too long to solve a particular problem piece. </p>
+<p>You may run this program with a couple of options. </p>
+<ul>
+  <li> <tt>-c</tt>&nbsp;&nbsp;&nbsp;&nbsp; This option determines how
+the dispense program behaves when all the input lines are used up.&nbsp;
+With this option, the <span style="font-family: monospace;">dispense</span>
+program will quit, leaving the various <tt>enact</tt> programs on the
+other computers running.&nbsp; (So if there is another project coming
+up, the programs are still running.)&nbsp; Without this option, the <tt>dispense</tt>
+program will keep running indefinitely, and it will tell the various <tt>enact</tt>
+programs that connect to it to quit.</li>
+  <li> <tt>-t <i>number</i></tt>&nbsp;&nbsp;&nbsp;&nbsp; This is the
+maximum timeout that the <tt>dispense</tt> program will allow <tt>enact</tt>
+to ask for.</li>
+  <li><span style="font-family: monospace;">-s <span
+ style="font-style: italic;">number</span></span> &nbsp; &nbsp; When the
+inputs to <span style="font-family: monospace;">dispense</span> have
+been exhausted, <span style="font-family: monospace;">dispense</span>
+recycles the unused inputs so that every <span
+ style="font-family: monospace;">enact</span> program that connects to
+it gets data. &nbsp;This can be controlled by the <span
+ style="font-family: monospace;">-s</span> option so that it only sends
+each input line to at most <span style="font-family: monospace;">number</span>
+of the <span style="font-family: monospace;">enact</span> programs that
+ask for it. &nbsp;This is useful if the computers are also running other
+computer intensive pojects, so that computers are not unnecessarily
+recomputing the same work. &nbsp;But you may wish for <span
+ style="font-family: monospace;">number</span> to be greater than 1 in
+case some computers are very slow, and you want to increase the chances
+that a fast computer works on these last computations.</li>
+  <li><span style="font-family: monospace;">-q filename</span> &nbsp;
+&nbsp; This is useful when you are restarting the <span
+ style="font-family: monospace;">dispense</span> program. &nbsp;This
+option allows you to enter a <span style="font-family: monospace;">filename</span>
+which consists of lines of inputs that will immediately be entered into <span
+ style="font-family: monospace;">dispense</span>'s <span
+ style="font-family: monospace;">queue_db</span> database (see below in <span
+ style="font-weight: bold;">How it Works</span>, and also in <span
+ style="font-weight: bold;">Optional Topic</span><span
+ style="font-weight: bold;">s</span>).</li>
+  <li><span style="font-family: monospace;">-r</span> &nbsp; &nbsp; If
+you stop <span style="font-family: monospace;">dispense</span>, then
+sometimes it can take several minutes before it can be started again.
+&nbsp;This is because of the way TCP/IP works in Unix. &nbsp;You can
+overcome this problem by setting the <span
+ style="font-family: monospace;">-r</span> option. &nbsp;However this
+does have some security considerations in that it is possible for
+another program on the same server (but not necessarily the same user)
+to use this same port, and in effect hijack connections to <span
+ style="font-family: monospace;">dispense</span>.</li>
+  <li><span style="font-family: monospace;">-w</span> &nbsp; &nbsp; If
+the software has been compiled suitably, this option enables <span
+ style="font-family: monospace;">tcp_wrappers</span> to verify if
+incoming connections are from allowed sources.<br>
+  </li>
+</ul>
+<h3> Format of Output File</h3>
+Each line in the input file will result in 3 lines in the output file,
+which will look something like this
+<p><tt>Data from 1.2.3.4:11 (fred@dom.com) [Thu Dec&nbsp; 6 08:39:13
+2001 -6:00]</tt><br>
+<tt>input data</tt><br>
+<tt>output data</tt><br>
+</p>
+<p>(The identifier in parenthesis will only be there if the enact
+program is run with the <span style="font-family: monospace;">-i</span>
+option.)<br>
+</p>
+<p>At the beginning of the output file will be the single line </p>
+<p><tt>Starting [Thu Dec&nbsp; 6 08:30:56 2001 -6:00]</tt> </p>
+<p>and when the <tt>dispense</tt> program finishes, it will put at the
+end of the output file the single line </p>
+<p><tt>Finished [Thu Dec&nbsp; 6 08:39:19 2001 -6:00]</tt> </p>
+<p>If you want to see how far the project has progressed, count the
+number of lines in the output file by typing </p>
+<p><tt>&nbsp;&nbsp;&nbsp; wc -l output-file</tt> </p>
+<p>which, when the project is finished, will have two more than three
+times as many lines as the input file. </p>
+<p>If you want to see which hosts have submitted data, and how many
+lines each has submitted, type </p>
+<p><tt>&nbsp;&nbsp;&nbsp; check-ips output-file<br>
+</tt></p>
+<h3>Remarks</h3>
+1.&nbsp; Make sure that each problem piece takes a reasonable amount of
+time.&nbsp; Otherwise you might flood your internet connection.&nbsp; If
+your input file consist of some lines that will take a long time, and
+some lines that will take a small amount of time, you can mix up the
+input file using the randomize command:
+<p><tt>&nbsp;&nbsp;&nbsp; randomize &lt; input-file &gt;
+randomized-input-file</tt> </p>
+<p>2.&nbsp; The purpose of the password is not to provide any kind of
+real security --- rather if one is doing several projects, it helps to
+stop them getting mixed up (so you should give each project a different
+password). </p>
+<p>3.&nbsp; If the <tt>dispense</tt> program quits for some reason, on
+many versions of Unix, the port that it was using may not be available
+for a minute or so.&nbsp; If you wish to restart the <tt>dispense</tt>
+program, you will get a "cannot bind" error message.&nbsp; The solution
+is to wait&nbsp; minute or two. </p>
+<p>4.&nbsp; The input lines should be unique.&nbsp; If you require
+duplicate input lines (for example, maybe you are doing Monte Carlo
+integration), add an artificial extra parameter to each input line,
+simply to make them unique. </p>
+<p>5.&nbsp; The lines of input and output must be less than 50,000
+characters. </p>
+<p>6.&nbsp; This program is early in its development, and it is the
+author's first exercise in threaded internet applications, so it may be
+buggy. </p>
+<p>7.&nbsp; This package includes a directory <tt>example-primes</tt>,
+which is a program to calculate the number of primes <i>p</i> for which <i>p</i>-<i>a</i><sub>1</sub>,<i>p</i>-<i>a</i><sub>2</sub>,...,<i>p</i>-<i>a</i><sub><i>k</i></sub>
+are also prime, for selected sequences <i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>,...,<i>a</i><sub><i>k</i></sub>.&nbsp;
+If it is only counting twin primes that you wish to do, you may be
+better off with the sophisticated code available at <a
+ href="http://www.cs.rpi.edu/research/twinp/">http://www.cs.rpi.edu/research/twinp/</a>.</p>
+<p>8.&nbsp; This package also includes a directory <tt>example-polyominoes</tt>,
+which are programs to count the number of ways to place polyominoes
+into various shapes.&nbsp;  The code is derived from the package <tt>polyomino-0.4</tt>,
+available at <a
+ href="http://www.math.missouri.edu/%7Estephen/software/#polyominoes">http://www.math.missouri.edu/~stephen/software/#polyominoes</a>,
+and was used to verify some of the results at <a
+ href="http://www.xs4all.nl/%7Egp/PolyominoSolver/Polyomino.html">http://www.xs4all.nl/~gp/PolyominoSolver/Polyomino.html</a>.</p>
+<h3> What if the Programs Die or the Connection goes down?</h3>
+If an <tt>enact</tt> program dies, that is not a problem.&nbsp; If that <tt>enact</tt>
+program was working on a particular problem piece, the <tt>dispense</tt>
+program will wait a while, then give that piece to another <tt>enact</tt>
+program.&nbsp; You may restart the <tt>enact</tt> program any time you
+like.
+<p>If the <tt>dispense</tt> program dies, the <tt>enact</tt> programs
+will keep retrying to connect every minute for up to two days.&nbsp;
+Before restarting the <tt>dispense</tt> program, you want to weed the
+input file so that lines that have already been computed don't get done
+again.&nbsp; So type </p>
+<p><tt>&nbsp;&nbsp;&nbsp; filter-input -o output-file &lt; input-file
+&gt; new-input-file</tt> </p>
+<p>to create a new input file.&nbsp; (<tt>filter-input</tt> will also
+check for duplicate input lines.) </p>
+<h2> Optional Topics:</h2>
+<h3> Killing the Project</h3>
+If you simply wish to stop the dispense program, use the <tt>kill</tt>
+command.&nbsp; If you wish to kill the project, that is, to have the <tt>dispense</tt>
+program continue to run, but for all the <tt>enact</tt> programs that
+contact it to quit, use the <tt>kill</tt> command as follows:
+<p><tt>&nbsp;&nbsp;&nbsp; kill -USR1 pid</tt> </p>
+<p>where <tt>pid</tt> is the process identifier of the <tt>dispense</tt>
+program (use <tt>ps</tt> to find this process identifier).&nbsp; On some
+systems, you may be able to achieve the same effect with the command </p>
+<p><tt>&nbsp;&nbsp;&nbsp; killall -USR1 dispense</tt> </p>
+<h3> Security for the Dispensing Program</h3>
+If your system supports it, it is possible to have incoming connections
+to <span style="font-family: monospace;">dispense</span> checked using <span
+ style="font-family: monospace;">tcp_wrappers</span>. &nbsp;Uncomment
+the line <br>
+<span style="font-family: monospace;">#LIBWRAP=-DLIBWRAP -lwrap</span><br>
+in the <span style="font-family: monospace;">Makefile</span> before
+creating the software, and then run the <span
+ style="font-family: monospace;">dispense</span> program with the <span
+ style="font-family: monospace;">-w</span> option. &nbsp;Refer to your
+local documentation on how to use <span style="font-family: monospace;">tcp_wrappers</span>
+on your system.<br>
+<h3>Make Your Own Enacting Programs</h3>
+You can make your own special purpose enacting programs.&nbsp; They go
+something like this (you write the <tt>do_computations</tt> function):
+<p><tt>#include &lt;dispense.h&gt;</tt> </p>
+<p><tt>void do_computations(char *input, char *output);</tt> </p>
+<p><tt>int main(int argc, char **argv) {</tt><br>
+<tt>&nbsp; char *input=(void*)0;</tt><br>
+<tt>&nbsp; char output[1000];</tt><br>
+<tt>&nbsp; prepare_enact(argc,argv,"",0);</tt><br>
+<tt>&nbsp; while (1) {</tt><br>
+<tt>&nbsp;&nbsp;&nbsp; get_dispensed(&amp;input);</tt><br>
+<tt>&nbsp;&nbsp;&nbsp; do_computations(input,output);</tt><br>
+<tt>&nbsp;&nbsp;&nbsp; send_enacted(output);</tt><br>
+<tt>&nbsp; }</tt><br>
+<tt>}</tt><br>
+</p>
+<p>Compile the program like this: </p>
+<p><tt>&nbsp;&nbsp;&nbsp; cc enact-my-job.c -o enact-my-job -ldispense
+-pthread</tt> </p>
+<p>Invoke the program thus: </p>
+<p><tt>&nbsp;&nbsp;&nbsp; ./enact-my-job pass-key dispense.domain 3000</tt> </p>
+<p>with the options <tt>-f,</tt> <tt>-n</tt> and <tt>-t</tt> if you
+like. </p>
+<h3> Catching the Output of the Dispense Program</h3>
+The <tt>dispense</tt> program outputs some useful messages to standard
+error (for example, abortive attempts to connect, or how the <tt>dispense.allow</tt>
+file is interpreted).&nbsp; Normally these messages will simply be
+output to the screen.&nbsp; You can save these messages, depending upon
+which shell you are using.&nbsp; If you are using <tt>sh</tt> or <tt>bash</tt>,
+type something like
+<p><tt>&nbsp;&nbsp;&nbsp; dispense freddy 3000
+5&lt;input-file&gt;&gt;output-file 2&gt;dispense.log&amp;</tt> </p>
+<p>If you are using <tt>csh</tt> or <tt>tcsh</tt>, the following will
+work: </p>
+<p><tt>&nbsp;&nbsp;&nbsp; (dispense freddy 3000
+5&lt;input-file&gt;&gt;output-file)&gt;&amp;dispense.log&amp;</tt> </p>
+<p>Note the use of <tt>&gt;&gt;</tt> instead of <tt>&gt;</tt> in
+collecting the output to <tt>output-file</tt>.&nbsp; This is
+appropriate if for some reason you are restarting <tt>dispense</tt>, as
+it appends to <tt>output-file</tt> instead of writing over it.&nbsp;
+Note also the final <tt>&amp;</tt> at the end of the command line ---
+this will cause <tt>dispense</tt> to run in the background.<br>
+</p>
+<h3>Keeping the Queue Database when Stopping and Starting the Dispense
+Program</h3>
+<p>It is possible that you may wish to stop the <span
+ style="font-family: monospace;">dispense</span> program, and then
+restart it (perhaps to change some parameter like the timeout, or to add
+more data to the input file). &nbsp;This can mean that some computations
+are duplicated, because the program will lose its database of inputs
+sent out that have not received an input. &nbsp;To this end, if you kill <span
+ style="font-family: monospace;">dispense</span> with the <span
+ style="font-family: monospace;">kill</span> command, <span
+ style="font-family: monospace;">dispense</span> will send a list of all
+items in its queue to stderr. &nbsp;You may store these values in a
+file, and then invoke <span style="font-family: monospace;">dispense</span>
+with the <span style="font-family: monospace;">-q</span> option with the
+name of this file. &nbsp;This will greatly reduce the number of
+duplicated computations. &nbsp;You can extract the most recent queue
+listed in your log file with the command:<br>
+</p>
+<p><span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+log-to-queue &lt; dispense.log &gt; queue-file</span><br>
+</p>
+<p>Each item in the resulting <span style="font-family: monospace;">queue-file</span>
+has two lines. &nbsp;The first line is the actual input line. &nbsp;The
+second line has two numbers, first how many minutes it has left before
+it times out (or -1 if it is ready for use), the second number is how
+many different enact programs have asked to work on this line.</p>
+<p>You can remove the appropriate inputs with a command line something
+like:</p>
+<p><tt>&nbsp;&nbsp;&nbsp; filter-input -o output-file -q queue_file
+&lt; input-file &gt; new-input-file<br>
+</tt></p>
+<h3>Sending intermediate results</h3>
+<p>There is another protocol for sending intermediate results.
+&nbsp;This is useful if the calculation of each piece takes a very long
+time, and you want to get a glimpse of upcoming results as soon as
+possible. &nbsp;This is only possible in a "home rolled" <span
+ style="font-family: monospace;">enact</span> program. &nbsp;This is
+done by calling the <span style="font-family: monospace;">send_intermediate(char
+*s)</span> function where <span style="font-family: monospace;">s</span>
+is a <span style="font-family: monospace;">'\n'</span> terminated string
+that you want to send.<br>
+</p>
+<h2>How it Works (The Protocol)</h2>
+<h3> Overview</h3>
+The <tt>dispense</tt> and <tt>enact</tt> programs have a server-client
+relationship --- the <tt>dispense</tt> program acts as the server, and
+the <tt>enact</tt> program acts as the client.&nbsp; Thus it is the <tt>enact</tt>
+program that initiates contact, both to request data to use as input to
+the program <tt>program-name</tt> (specified in the argument list of <tt>enact</tt>),
+and to send data obtained as output from <tt>program-name</tt>.
+<p>Note that all lines sent and received over the TCP/IP network by
+these programs must be terminated by the sequence "\r\n", otherwise the
+programs will not accept these lines. </p>
+<h3> The Enacting Program</h3>
+When the <tt>enact</tt> program is started, it attempts to connect to
+the <tt>dispense.domain</tt> host on the appropriate port, as specified
+in the argument list.&nbsp; If it does not succeed, it will keep trying
+again every minute, until two days are up, when the program will
+quit.&nbsp; After it connects, it sends the lines
+<p><tt>&nbsp;&nbsp;&nbsp; connection from enact</tt><br>
+<tt>&nbsp;&nbsp;&nbsp; pass-key</tt><tt><br>
+&nbsp;&nbsp;&nbsp; <i>number</i></tt><br>
+</p>
+<p>to <tt>dispense.domain</tt> where <i><tt>number</tt></i> is the
+requested timeout (0 if none is requested). &nbsp;If the <span
+ style="font-family: monospace;">enact</span> program is started with
+the <span style="font-family: monospace;">-i</span> option, then the
+first line is replaced by<br>
+</p>
+<p><span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; connection
+from enact: identifier</span><br>
+</p>
+<p>If the <tt>enact</tt> program wants data to work on, it sends the
+line </p>
+<p><tt>&nbsp;&nbsp;&nbsp; request data</tt> </p>
+<p>It then expects to receive one line of data, the input line.&nbsp;
+If the input line is "<tt>Finished</tt>", the <tt>enact</tt> program
+quits. &nbsp;If the input line is "<span style="font-family: monospace;">No
+data</span>" this means that there is no data available right now, but
+the project is not finished. &nbsp;The <span
+ style="font-family: monospace;">enact</span> program will wait a
+minute, and then ask again. </p>
+<p>If the <tt>enact</tt> program wants to send the results of
+computations, it sends three lines </p>
+<p><tt>&nbsp;&nbsp;&nbsp; sending data</tt><br>
+<tt>&nbsp;&nbsp;&nbsp; input data</tt><br>
+<tt>&nbsp;&nbsp;&nbsp; output data</tt><br>
+</p>
+<p>If the <tt>enact</tt> program fails to send data or receive in any
+way, or if the TCP/IP connection is inactive for over a minute, the
+connection is broken.&nbsp; When more communication is required, the
+connection is reestablished as described above.<br>
+<br>
+If the enact is working with an internal queue of length greater than
+one, it may request or send data in batches. &nbsp;The protocol for
+requesting data is then something like<br>
+</p>
+<p><span style="font-family: monospace;">&nbsp; &nbsp; request data 6</span><br>
+</p>
+<p>when dispense should then send 6 lines of inputs. &nbsp;These might
+include lines like "<span style="font-family: monospace;">No data</span>"
+or "<span style="font-family: monospace;">Finished</span>", in which
+case no more lines of input will be sent (even if it means sending less
+than 6 lines). &nbsp;The protocol for sending data will be<br>
+</p>
+<p><span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; sending
+data 2</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; input line 1</span><br
+ style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; output line 1</span><br
+ style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; input line 2</span><br
+ style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; output line 2</span><br>
+</p>
+<p>The maximum number of lines that may be requested or sent in this
+manner is 256.<br>
+</p>
+<h3> The Dispensing Program</h3>
+The <tt>dispense</tt> program attempts to dispense the various lines
+sent to it via <tt>stdin</tt> to the <tt>enact</tt> programs that
+connect to it.&nbsp; After the <tt>enact</tt> programs have worked on
+each line of input, the <tt>dispense</tt> program collects back the
+outputs from the <tt>enact</tt> programs, and sends those outputs, with
+their corresponding inputs, to <tt>stdout</tt>.
+<p>The program maintains two internal databases, a queue of inputs <tt>queue_db</tt>,
+and a list of inputs ready to use, <tt>use_db</tt>.&nbsp; Initially
+both of these databases are empty.&nbsp; The items in <tt>queue_db</tt>
+have a number attached to them, which represents the number of minutes
+before that item should be moved to <tt>use_db</tt>.&nbsp; Every
+minute, the <tt>dispense</tt> program runs a <tt>de_queue</tt>
+sub-program, which decreases these numbers in <tt>queue_db</tt> by one,
+and places those with a negative number into <tt>use_db</tt>. </p>
+<p>The <tt>dispense</tt> program listens on the appropriate port.&nbsp;
+When it receives a connection (and assuming that the connection passes
+the rules in <tt>dispense.allow</tt>, otherwise the connection is
+immediately terminated), it looks at the first three lines.&nbsp; It
+expects the first line to be "<tt>connection from enact</tt>", the
+second line to match <tt>pass-key</tt>, and the third line to be a
+number which is a request timeout.&nbsp; Then the program enters into a
+loop, providing or receiving data as requested, until either the client
+breaks the connection, or until the protocol is broken. </p>
+<p>If next line is "<tt>request data</tt>", the program looks in its
+database <tt>use_db</tt>.&nbsp; If there are any items there, it sends
+one of them down the connection.&nbsp; If not, the <tt>dispense</tt>
+program gets a line from <tt>stdin</tt>, and if there is such a line,
+sends that.&nbsp; If <tt>stdin</tt> is at the end of file, the <tt>dispense</tt>
+program repeatedly calls the <tt>de_queue</tt> sub-program until there
+is an item in <tt>use_db</tt>, which it then sends.&nbsp; If the <tt>queue_db</tt>
+is also empty, the <tt>dispense</tt> program acts as follows depending
+upon whether the <tt>-c</tt> option has been set or not.&nbsp; If the
+option is set, the program simply quits.&nbsp; Otherwise the program
+sends the line "<tt>Finished</tt>". </p>
+<p>Then the <tt>dispense</tt> program puts the sent data into <tt>queue_db</tt>,
+with an attached number equal to the timeout value specified in the
+argument list. </p>
+<p>If the next line received is "<tt>sending data</tt>", the <tt>dispense</tt>
+program receives two more lines.&nbsp; It checks the second line to see
+if it is in <tt>queue_db</tt> or <tt>use_db</tt>.&nbsp; If that is the
+case, the item is removed from the database that it is in, and the
+received second and third lines are sent to <tt>stdout</tt>, along with
+information about which host send the data.<br>
+</p>
+<h3>Querying Inputs</h3>
+<p>If the <span style="font-family: monospace;">enact</span> program
+has a large amount of queued data, it may ask the <span
+ style="font-family: monospace;">dispense</span> program if certain
+input lines are still in the <span style="font-family: monospace;">queue_db</span>
+or <span style="font-family: monospace;">use_db</span>. &nbsp;This is
+useful so that the <span style="font-family: monospace;">enact</span>
+program can check to see if certain input lines are still useful
+computations to make (perhaps because some other <span
+ style="font-family: monospace;">enact</span> program may have finished
+working on it). &nbsp;In this case, the <span
+ style="font-family: monospace;">enact</span> program sends lines like<br>
+<br>
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; query 3</span><span
+ style="font-family: monospace;"><br>
+&nbsp;&nbsp;&nbsp; line 1</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; line 2</span><br
+ style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; line 3</span><br>
+</p>
+<p>where this example is asking to check on three input lines.
+&nbsp;(The maximum number of lines that may be queried at a time is
+256.) &nbsp;The <span style="font-family: monospace;">dispense</span>
+program then answers with a single line:<br>
+</p>
+<p><span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; yny</span><br>
+</p>
+<p>where each character ('<span style="font-family: monospace;">y</span>'
+for yes, '<span style="font-family: monospace;">n</span>' for no)
+corresponds to each input line being queried. &nbsp;(If <span
+ style="font-family: monospace;">enact</span> wishes only to query one
+line, the number may be ommitted.)<br>
+</p>
+<h3>Relinquishing Inputs</h3>
+<p>The <span style="font-family: monospace;">enact</span> program might
+decide the it does not have time to work on some of its inputs. &nbsp;In
+that case it may relinquish its hold on input lines, so that other enact
+programs may immediately receive them (so we do not need to wait for
+them to timeout):<br>
+</p>
+<p><span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; relinquish
+data 3</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; line 1</span><br
+ style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; line 2</span><br
+ style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; line 3</span><br>
+</p>
+<p>Again, if <span style="font-family: monospace;">enact</span> only
+wants to relinquish one line, then the number is not needed.<br>
+</p>
+<h3>Sending Intermediate Results</h3>
+<p>The <span style="font-family: monospace;">enact</span> program can
+send intermediate results to the server program using lines like<br>
+</p>
+<p style="font-family: monospace;">&nbsp;&nbsp;&nbsp; sending
+intermediate 2<br>
+&nbsp;&nbsp;&nbsp; input line 1<br>
+&nbsp;&nbsp;&nbsp; output line 1<br>
+&nbsp;&nbsp;&nbsp; input line 2<br>
+&nbsp;&nbsp;&nbsp; output line 2<br>
+</p>
+<p>As usual the number is not required if <span
+ style="font-family: monospace;">enact</span> only wants to send one
+line. &nbsp;These will appear in stdout of <span
+ style="font-family: monospace;">dispense</span> as lines like<br>
+</p>
+<p style="font-family: monospace;">Intermediate from xx.xx.xx.xx
+[date-time]<br>
+input line<br>
+output line<br>
+</p>
+<h2> License Terms</h2>
+This program is free software, and available under a very
+non-restrictive BSD style license.&nbsp; Read the file <tt>LICENSE</tt>
+for details.
+<h2> History</h2>
+This package is derived from special purpose programs written by
+Stephen Montgomery-Smith to solve certain combinatorial problems.&nbsp;
+The first project was to compute the number of ways to place the 12
+pentominoes and 5 tetrominoes in a 10x8 rectangle - the answer turned
+out to be 3,386,001,688.&nbsp; (See <a
+ href="http://www.xs4all.nl/%7Egp/PolyominoSolver/Polyomino.html">http://www.xs4all.nl/~gp/PolyominoSolver/Polyomino.html</a>
+for details.)
+</body>
+</html>

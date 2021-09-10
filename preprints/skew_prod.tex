@@ -1,0 +1,2850 @@
+\documentstyle[12pt]{amsart}
+
+%%%%%%%%% THEOREMS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%-default--- \theoremstyle{plain}
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{thm}[prop]{Theorem}
+\newtheorem{hyp}[prop]{Hypothesis}
+\newtheorem{cor}[prop]{Corollary}
+\newtheorem{ques}[prop]{Question}
+\newtheorem{lem}[prop]{Lemma}
+\newtheorem{res}[prop]{Result}
+\newtheorem{prob}[prop]{Problem}
+
+\newtheorem{introSMT}{Spectral Mapping Theorem}
+ \renewcommand{\theintroSMT}{}
+\newtheorem{introSPT}{Spectral Projection Theorem}
+ \renewcommand{\theintroSPT}{}
+\newtheorem{introPDT}{Pointwise Dichotomy Theorem}
+ \renewcommand{\theintroPDT}{}
+
+%%
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+
+%%
+\theoremstyle{remark}
+\newtheorem{claimone}{Claim 1} \renewcommand{\theclaimone}{}
+\newtheorem{claimtwo}{Claim 2} \renewcommand{\theclaimtwo}{}
+\newtheorem{claim}{Claim}\renewcommand{\theclaim}{}
+\newtheorem{casekone}{Case $k=1$}\renewcommand{\thecasekone}{}
+\newtheorem{casek}{Case $k>1$}\renewcommand{\thecasek}{}
+
+\newtheorem{conj}{Conjecture}  \renewcommand{\theconj}{}
+\newtheorem{exmp}[prop]{Example}  %\renewcommand{\theexmp}{}
+\newtheorem{rems}[prop]{Remarks}  \renewcommand{\therems}{}
+\newtheorem{rem}{Remark} %\renewcommand{\therem}{}
+\newtheorem{ack}{Acknowledgments} \renewcommand{\theack}{}
+
+%%%%%%%%%%%%%% Abbrev. for fonts %%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bbC}{{\Bbb{C}}}
+\newcommand{\bbD}{{\Bbb{D}}}
+\newcommand{\bbN}{{\Bbb{N}}}
+\newcommand{\bbR}{{\Bbb{R}}}
+\newcommand{\bbT}{{\Bbb{T}}}
+\newcommand{\bbZ}{{\Bbb{Z}}}
+\newcommand{\bbK}{{\Bbb{K}}}
+
+\newcommand{\calP}{{\cal{P}}}
+\newcommand{\calQ}{{\cal{Q}}}
+\newcommand{\calM}{{\cal{M}}}
+\newcommand{\calB}{{\cal{B}}}
+\newcommand{\calD}{{\cal{D}}}
+\newcommand{\calH}{{\cal{H}}}
+\newcommand{\calE}{{\cal{E}}}
+\newcommand{\calA}{{\cal{A}}}
+\newcommand{\calL}{{\cal{L}}}
+\newcommand{\calX}{{\cal{X}}}
+
+\newcommand{\frakA}{{\frak{A}}}
+\newcommand{\frakB}{{\frak{B}}}
+\newcommand{\frakC}{{\frak{C}}}
+\newcommand{\frakD}{{\frak{D}}}
+
+%%%%%%%%%%%%%%% operatornames %%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\supp}{\operatorname{supp}}
+\renewcommand{\mod}{\operatorname{mod}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\mes}{\operatorname{mes}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\esssup}{\operatornamewithlimits{ess\, sup}}
+\renewcommand{\max}{\operatornamewithlimits{max}}
+\newcommand{\Res}{\operatornamewithlimits{Res}}
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\loc}{{\operatornamewithlimits{loc}}}
+\newcommand{\dist}{{\operatornamewithlimits{dist}}}
+\newcommand{\dint}{\displaystyle\int}
+
+%%%%%%%%%%%%%%% GREEK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\TH}{\Theta}
+\newcommand{\th}{\theta}
+\newcommand{\lam}{\lambda}
+\newcommand{\sig}{\sigma}
+\newcommand{\eps}{\epsilon}
+\newcommand{\gam}{\gamma}
+\newcommand{\Gam}{\Gamma}
+\newcommand{\vphi}{\varphi}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\bd}{\text{{\bf d}}}
+
+%%%%%%%%%%%%%%%% other abbreviations %%%%%%%%%%%%%%%%
+\newcommand{\scr}{\scriptstyle}
+\newcommand{\disp}{\displaystyle}
+\newcommand{\lb}{\label}
+\newcommand{\ti}{\tilde}
+\newcommand{\no}{\nonumber}
+\newcommand{\bi}[1]{\bibitem[#1]{#1}}
+%\newcommand{\bi}{\bibitem}
+\newcommand{\bs}{\backslash}
+\newcommand{\hp}{{\hat{\vphi}}}
+
+\newcommand{\co}{C_0(\Theta,X)}
+\newcommand{\coR}{C_0(\bbR,X)}
+\newcommand{\Bco}{B(C_0(\Theta,X))}
+\newcommand{\linf}{\ell_\infty(\bbZ,X)}
+\newcommand{\Blinf}{B(\ell_\infty(\bbZ,X))}
+
+\newcommand{\sumk}{\sum_{k=-\infty}^\infty}
+\newcommand{\sumj}{\sum_{j=-\infty}^\infty}
+
+%%%%%%%%%%%%%% NUMBERING %%%%%%%%%%%%%%%%%%%
+
+%\setcounter{page}{0}
+\setcounter{section}{0}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\theprop}{\arabic{section}.\arabic{prop}}
+
+
+%------------------- article  ----------------
+\begin{document}
+
+\baselineskip=16pt
+
+%\pagestyle{empty}
+%\renewcommand{\thepage}{{}}
+\title[EVOLUTIONARY SEMIGROUPS AND\\
+DICHOTOMY OF LSPF]{EVOLUTIONARY SEMIGROUPS AND\\ DICHOTOMY OF
+LINEAR SKEW-PRODUCT FLOWS\\ ON LOCALLY COMPACT SPACES WITH BANACH
+FIBERS}
+\makeatletter
+\author{Y.~Latushkin}
+\address{ Department of  Mathematics\\
+University of Missouri\\ Columbia, MO
+65211}
+\email{mathyl@mizzou1.missouri.edu}
+\thanks{
+Supported by
+the National Science
+ Foundation under the grant  DMS-9400518 and by the Summer Research
+Fellowship of the University of Missouri.}
+\author{S.~Montgomery-Smith}
+\address{ Department of  Mathematics\\
+University of Missouri\\ Columbia, MO 65211}
+\email{stephen@mont.cs.missouri.edu}
+\thanks{Supported by
+the National Science
+ Foundation under the grant  DMS-9201357.}
+\author{T.~Randolph}
+\address{ Department of  Mathematics\\
+University of Missouri\\ Rolla, MO 65401}
+\email{randolph@umrvmb.umr.edu}
+\makeatother
+\thanks{Supported by the University of Missouri Research Board.}
+
+\keywords {Evolutionary semigroups, spectral
+mapping theorems, linear skew-product flows,
+exponential dichotomy}
+
+
+\subjclass {47D06, 34G10, 34C35}
+\maketitle
+\begin{abstract}
+We study evolutionary semigroups generated by a strongly
+continuous semi-cocycle over a locally compact metric space
+acting on Banach fibers. This setting simultaneously covers
+evolutionary semigroups arising from nonautonomuous
+abstract Cauchy problems and $C_0$-semigroups, and linear
+skew-product flows.
+
+The spectral mapping theorem for these semigroups is proved. The
+hyperbolicity of the semigroup is related to the exponential dichotomy
+of the corresponding linear skew-product flow. To this end a Banach
+algebra of weighted composition operators is studied. The results
+are applied in the study of: ``roughness'' of
+the dichotomy, dichotomy and solutions of
+nonhomogeneous equations,
+Green's function for a linear skew-product flow,
+``pointwise'' dichotomy versus ``global'' dichotomy, and
+evolutionary semigroups along trajectories of the flow.
+\end{abstract}
+
+
+
+
+
+
+
+%------------------- section 1 ---------------
+\section{Introduction}
+
+The spectral theory of linear skew-product flows (or processes) with
+finite dimensional fibers is, by now, a well-developed area in
+asymptotics theory of differential equations (see, e.g.,
+\cite{Hale,HL,JPS,Palm2,SSDich,SSSpT,Sam,Sel}). J.~Hale in
+\cite[p.60]{Hale} stressed that this theory should be extended to
+the infinite dimensional setting. Indeed, in recent years
+significant progress has been made in the study of linear
+skew-product flows (LSPFs) with Banach fibers
+(\cite{ChLe1,ChLe2,ChLe3,Mag,SSBan}) over a compact metric space
+(see also \cite{ChLinLu,ChLu,Lin}). An impressive list of possible
+applications can be found in \cite{ChLe1,Hale,HL,Henry,SSBan}.
+
+In this paper we consider strongly continuous linear skew-product
+semiflows on bundles with Banach fibers over a locally compact
+metric space.  Our philosophy is {\em not} to start with a
+pointwise construction of stable and unstable foliations (as in
+\cite{Sel,ChLe1,ChLe2,Mag,SSDich,SSBan}), but
+instead to begin by associating with the linear skew-product
+flow an {\it evolutionary semigroup}
+of operators, $\{T^t\}_{t\ge0}$, on the space of continuous
+sections of the bundle. We prove two  facts
+concerning the spectrum of this semigroup
+that relate its spectral properties to the asymptotic properties of
+the linear skew-product flow.  The first of these
+facts is the Spectral Mapping Theorem (Theorem \ref{SMT}) for
+$\{T^t\}_{t\ge0}$ and its generator $\Gamma$,
+\[ e^{t\sigma(\Gamma)}=\sigma(T^t)\bs \{0\},\quad t>0,\]
+while the second concerns the description of the
+spectral projections (Theorem \ref{SPT}).
+
+As a result of this approach, we not only answer questions
+concerning LSPFs, but also address the
+theory of evolutionary semigroups associated with strongly
+continuous evolutionary families as studied in the theory
+of nonautonomous Cauchy problems and the general theory of
+$C_0$ semigroups (see \cite{Evans,Gold,Howland,Lum,Nag,Nei,Rab}).
+Consequently,  classical theorems on the
+exponential dichotomy  of differential equations
+(see, e.g., \cite{DK,MS}) can easily be extended to the case
+concerning differential equations with unbounded coefficients.
+Some of the results appearing here were announced in
+\cite{LMS2}.
+
+The connection between evolutionary semigroups and the dichotomy
+of LSPFs is not new. In one of the first papers in this
+direction, J.~Mather \cite{Mather} proved that the LSPF
+generated by the differential of a diffeomorphism of
+a smooth manifold is Anosov
+(i.e., is hyperbolic or, in the terminology of the
+present paper, exponentially dichotomic) if and only if
+the corresponding evolutionary operator is hyperbolic (it's
+spectrum does not intersect the unit circle).
+This led to the notion of the Mather
+spectrum $\calM:=\sigma(T)$.  Here $T=T^1$ and  $\sigma(\cdot)$
+denotes the usual spectrum of an operator.
+This notion is widely used in the
+theory of hyperbolic dynamical systems (see \cite{Pesin} for
+further references). The articles \cite{CS,J} proved the spectral
+mapping theorem for evolutionary semigroups in the finite
+dimensional setting, and they described the spectral subbundles of
+these operators via the spectral subbundles of the corresponding LSPF.
+Moreover, they related the spectrum of $\Gamma$ to
+the dynamical spectrum, $\Sigma$, of the LSPF, as defined by
+R.~Sacker and G.~Sell in $\cite{SSSpT}$.
+
+In the present paper we proceed in the opposite direction:
+we derive the existence of spectral subbundles from
+the existence, and description, of the Riesz projections
+corresponding to $T$; the properties of $\Sigma$ are described
+via the spectrum of the generator, $\sigma(\Gamma)$.  These techniques
+build upon those used in \cite{Ant} which
+addresses the finite dimensional setting and uses
+some $C^*$-algebraic methods. These methods were also used in \cite{LS}
+to prove the results  for a uniformly continuous cocycle
+on a Hilbert space.  The results have recently been
+generalized in \cite{Rau} to the case involving a
+strongly continuous cocycle on a compact metric space
+with Banach fibers.  The important articles
+\cite{Rau,Rau1,Rau2} linked this theory with the theory of
+evolutionary semigroups associated with strongly continuous
+evolutionary families (as initiated and developed in
+\cite{Evans,Gold,Howland,Lum,Nei}).
+As we will see below,
+the latter situation corresponds to a LSPF over
+the translations of $\bbR$; the evolutionary family can be thought
+of as the propagator of a well-posed differential equation on a
+Banach space \cite{Nag,Nag2,Tan}.
+For this situation, in the Banach space setting,
+the Spectral Mapping Theorem has been proven in \cite{LMS1,LMS2}
+(see \cite{Henry1},\cite{Nag} and \cite{Pazy} for a general discussion
+on this theorem)  and the Spectral Projection Theorem in
+\cite{LMS1,LMS2,LatRand,Rab,Rau1,Rau2}.
+
+The Spectral Mapping Theorem appearing in the present paper applies to
+{\em any} evolutionary semigroup associated with a
+LSPF over a nonperiodic flow
+on a locally
+compact space, $\TH$, but it also provides a new proof for semigroups
+arising from evolutionary families, i.e., when $\TH=\bbR$ and the flow
+is translation on $\bbR$.  In fact, the same idea applies to
+evolutionary semigroups in the space of divergence-free sections of a
+bundle---a situation which is important for applications
+to hydromagnetodynamics \cite{CLMS}.
+Our proof of the Spectral Projection
+Theorem for LSPFs also differs from that in \cite{Rau}.
+Here, we extend the algebraic technique used in
+\cite{Ant,LS} (for Hilbert spaces) so that it
+applies in the general setting of Banach spaces.
+One advantage to this approach is that
+we are able to discuss the case of ``discrete'' time
+$t\in\bbZ$ and ``pointwise dichotomies'' (see Section~5;
+cf.~\cite{ChLe1}).
+
+We now make the previous discussion more explicit by
+establishing some notation and outlining the main results.
+
+For $t\in\bbR$, let $\vphi^t$ be a continuous flow on
+a locally compact metric space  $\TH$.
+Throughout the paper, the aperiodic trajectories of
+the flow are assumed to be
+dense in $\TH$.  Let $X$ be a Banach space and let
+$\calL_s(X)$ be the space of bounded linear operators on
+$X$  endowed strong-operator topology.
+Let $\Phi : \TH\times\bbR_+\to \calL_s(X)$ be a  continuous
+(semi)cocycle  over $\vphi^t$.  Since $\TH$ is locally compact, we
+will allow $\Phi$ to grow at infinity not faster then exponentially. The
+linear skew-product (semi)flow $\hp^t$ is defined by the
+following formula (see Section 2)
+ \[ \hp^t :\TH\times X\to \TH\times X,
+\quad  (\th,x)\mapsto (\vphi^t\th,\Phi(\th,t)x).\]
+
+\begin{exmp}\lb{ex1.1} As a very particular example, which
+will be referred as the ``norm continuous compact
+setting,'' assume $\TH$ is compact
+and $A\colon \TH\to \calL(X)$ is a continuous
+operator-valued function. Then, for each $\th\in\TH$, the operator
+ $\Phi(\th,t)$
+can be thought of as a solving operator for the variational equation
+\begin{equation}\label{vareq}
+\dfrac{dx}{dt}=A(\vphi^t\th)x(t),
+\quad \th\in \TH,\; t\in\bbR.
+\end{equation}
+Here, $\Phi$ is uniformly continuous and takes
+invertible values in $\calL(X)$.
+\end{exmp}
+
+\begin{exmp}\lb{ex1.2}
+As another example  (see also \cite{ChLe3}), which will be referred to
+as the ``norm continuous line setting," assume $\TH=\bbR$,  and let
+$A\colon \bbR\to \calL(X)$ be a
+bounded, continuous operator-valued function.
+Let $\{U(\tau,s)\}_{\tau\ge s}$ be the propagator of the
+nonautonomous differential equation
+\begin{equation}\label{difeq}
+\dfrac{dx}{dt}=A(t)x(t),
+\quad t\in\bbR;
+\end{equation}
+that is, the solution $x(\cdot)$ of \eqref{difeq} satisfies
+$x(\tau)=U(\tau,s)x(s)$.  This can be related to the previous example
+by defining $\Phi(\th ,t)=U(\th +t,\th)$ and identifying the flow as
+translation, $\vphi^t\th=\th+t$ for $\th\in \TH=\bbR$ and $t\in\bbR$.
+Since the propagator $U$ satisfies \cite{DK} the
+identity $U(\tau,s)= U(\tau,r)U(r,s)$, for  $\tau\geq r\geq s$,
+and $U(s,s)=I$, $\Phi$ is a cocycle over $\vphi^t$.
+\end{exmp}
+
+These two examples show
+(see also \cite{ChLe3}) how both the
+variational equation \eqref{vareq} and the nonautonomous
+equation \eqref{difeq} can be addressed in terms of
+linear skew-product flows on a locally compact
+metric space.  We stress that the
+{\it strongly} continuous setting considered in the present paper
+(as opposed to the norm continuous situation described
+above) allows one to study the equations
+ \eqref{vareq} and \eqref{difeq}  even in the situation where the operators
+given by $A(\cdot)$ are {\em un}bounded.
+
+Given a LSPF $\hp^t$, we associate to it a semigroup
+$\{T^t\}_{t\ge0}$ of {\it evolutionary operators} defined
+on $\co$, the space of strongly continuous functions vanishing
+at infinity (with the $\sup$-norm), by
+\[(T^tf)(\th )=\Phi(\vphi^{-t}\th ,t)f(\vphi^{-t}\th ),\quad \th\in \TH,
+\quad f\in\co.\]  The generator of such a semigroup will
+be denoted by $\Gamma$.
+For the line setting this semigroup becomes a well-known
+\cite{Evans,Gold,Howland,Lum,Nag2,Nei,Rau1,Rau2} evolutionary
+semigroup:
+\[(T^tf)(\tau)=U(\tau,\tau-t)f(\tau-t), \quad
+\tau\in\bbR,\quad f\in C_0(\bbR,X).\]
+
+The generator, $\Gamma$, of the evolutionary semigroups
+arising in the norm continuous setting of examples
+\ref{ex1.1} and \ref{ex1.2} can be expressed, respectively, as
+$$(\Gamma f)(\th )
+=-\left.\dfrac{d}{dt}f\circ\vphi^t(\th)\right|_{t=0}+A(\th)f(\th),
+\text{  and  }\; (\Gamma f)(\tau)
+=-\dfrac{df}{d\tau}+A(\tau)f(\tau).$$
+A discussion on the delicate question about when these formulas hold
+for the strongly continuous setting can be found in
+\cite{Nag2,NagRh}. If, for the line setting, $A_0\equiv A(\tau)$
+generates a $C_0$ semigroup $\{e^{tA_0}\}_{t\ge0}$, then
+$(T^tf)(\tau)=e^{tA_0}f(\tau-t)$ and $\Gamma$ is the closure
+of $-d/dt+A_0$. If $\Phi$ is the differential of a diffeomorphism on
+a smooth manifold $\TH$, then $T^t$ is the ``push-forward'' operator
+and $\Gamma$ is the Lie derivative.
+
+In Section~3, for the strongly continuous locally compact
+setting, we prove the following theorem.
+
+\begin{introSMT}
+The spectrum $\sigma(\Gamma)$ is invariant with respect to
+translations along the imaginary axis, and the spectrum
+$\sigma(T^t)$, $t>0$, is invariant with respect to
+rotations centered at origin. Moreover,
+$\sigma(T^t)\bs \{0\}= e^{t\sigma(\Gamma)}$.
+\end{introSMT}
+
+The proof of this theorem develops some ideas from
+\cite{Mather} on ``localization'' of almost-eigenfunctions for
+evolutionary operators.
+
+In Section~4 we discuss exponentially dichotomic LSPFs.
+The terminology ``exponential dichotomy," as in \cite{ChLe1} (see also
+\cite{HL,Henry,Mag,SSBan}), refers to the existence of a strongly
+continuous, bounded projection-valued function $P\colon \TH\to
+\calL_s(X)$. This $P(\cdot)$ defines a
+$\hp^t$-invariant splitting
+$\TH\times X=\calX_P+\calX_Q$ with uniform exponential decay of
+$\Phi_P$ on $\calX_P$ and of $\Phi_Q^{-1}$ on $\calX_Q$, $Q:=I-P$.
+The  subscripts here denote the restrictions of the LSPF; since we
+do not assume that $\Phi$ is invertible, the existence of
+$\Phi_Q^{-1}$ is part of the definition of exponential dichotomy.
+
+The main result in Section~4 is the following theorem where
+ an operator $T$ is called {\em hyperbolic} if
+$\sigma(T)\cap\bbT=\emptyset$. If $T$ is hyperbolic,
+its Riesz projection corresponding to
+$\sigma(T)\cap\bbD$ is denoted by $\calP$.
+(Here, $\bbT$ and $\bbD$ denote the unit circle and unit disk in
+$\bbC$.)
+
+\begin{introSPT}
+Assume $T$ is hyperbolic.
+Then its Riesz projection, $\calP$, is an operator of
+multiplication. That is, if $f\in\co$, then $(\calP
+f)(\th)=P(\th)f(\th)$ for some strongly continuous bounded
+projection-valued function $P(\cdot)\colon \TH\to \calL_s(X)$.
+\end{introSPT}
+
+We use this theorem to show that the LSPF $\hp^t$ has exponential
+dichotomy with $P(\cdot)$ if and only if $T$ is hyperbolic, and we
+relate $P(\cdot)$ with the Riesz projection for $T$, as above.
+The related result for compact $\TH$ was proved in \cite{Rau} (see
+also \cite{Rab,Rau1,Rau2} for $\TH=\bbR$), where a quite
+different method is used.  We stress that our method also
+works for ``discrete'' time $t\in\bbZ$, that is, when $\vphi$
+is a homeomorphism, and $\Phi:\TH\times\bbZ\to \calL_s(X)$. For
+``continuous'' time, $t\in\bbR$, together with the Spectral Mapping
+Theorem, this shows that the LSPF $\hp^t$ has exponential dichotomy
+with $P(\cdot)$ if and only if $\Gamma$ is invertible. This
+generalizes some results in \cite{Gohb,Palm}. In particular (see
+\cite{LMS1,LMS2}), for $\TH=\bbR$ and $A(\tau)\equiv A_0$ this shows
+that the growth bound for any $C_0$ semigroup $\{e^{tA_0}\}_{t\ge0}$
+on $X$ coincides with the spectral bound for $-d/dt+A_0$ on
+$C_0(\bbR,X)$. A similar fact (see \cite{LMS1})
+for $L_p$-spaces can be used in a
+variety of contexts (cf. \cite{Mont,We}).
+
+Our method of proof exploits the invertibility properties of a
+particular Banach algebra of weighted translation operators on $\co$.
+To prove the Spectral Projection Theorem, we consider for each $\th\in
+\TH$ a weighted shift  operator, $\pi_\th(T)$, acting  on the space
+$\ell_\infty(\bbZ,X)$ and given by the diagonal matrix:
+\[ \pi_\th(T)=\diag \{\Phi(\vphi^{n-1}\th,1)\}_{n\in\bbZ}S;\]
+here, $S$ denotes the shift operator on $\linf$:
+$(x_n)_{n\in\bbZ}\mapsto (x_{n-1})_{n\in\bbZ}$.
+The hyperbolicity of $\pi_\th(T)$ is equivalent to
+the existence of the discrete exponential dichotomy for $\hp^t$ along
+the trajectory through $\th$. These operators were, in fact, introduced
+in \cite{Henry} for the line setting, and in
+\cite{Ant,ChLe1,LS} for the
+ compact setting.  A byproduct of our approach is the
+following theorem.
+
+\begin{introPDT} The LSPF $\hp^t$ has
+exponential dichotomy on $\TH$ if and only if $\pi_\th(T)$ is
+hyperbolic for every $\th\in \TH$, and
+$\sup\{\|(\lambda-\pi_\th(T))^{-1}\|: \lambda\in\bbT,\th\in \TH\}
+<\infty.$
+\end{introPDT}
+
+The theorems listed above help to unify a number of
+ideas concerning ``spectral properties" of dynamical systems.
+Recall that the dynamical spectrum, $\Sigma$, for the LSPF $\hp^t$
+(see \cite{SSSpT}) is the set of all $\lambda\in\bbR$ such that the
+LSPF, $\hp^t_\lambda$, corresponding to the cocycle $e^{-\lambda
+t}\Phi(\th,t)$ does not have exponential dichotomy.
+The Bohl spectrum, $\calB$, for equation \eqref{vareq}
+is the set of $\lambda\in\bbR$ such that the equation
+$x'=[A(\tau)-\lam]x$ does not have exponential dichotomy
+(see \cite{DK}).
+Using the above theorems, one can relate all of these sets
+(in the general strongly continuous, locally compact setting) as
+follows:
+\begin{equation}\label{spectra}
+\Sigma=\calB=\ln \calM=\sigma
+(\Gamma)\cap\bbR=\ln|\sigma(T)\setminus\{0\}|.
+\end{equation}
+
+Finally, consider an autonomous equation $x'(t)=A_0x(t)$,
+$t\in\bbR$, where $A_0$  generates a $C_0$ semigroup,
+$\{e^{tA_0}\}_{t\ge0}$. Assume, in addition, that the spectral
+mapping theorem is valid for $\{e^{tA_0}\}_{t\ge0}$. This happens,
+e.g., if $A_0$ is a sectorial operator (see \cite{Nag} for a detailed
+discussion). Then each of the sets in \eqref{spectra} coincides with
+$\{z+i\xi: z\in\sigma (A_0), \xi\in\bbR\}\cap\bbR$. If $X$ is a
+Hilbert space and $A_0$ is self-adjoint, then the last set is just
+$\sigma(A_0)$.  This shows that for abstract Cauchy problems for
+nonautonomous differential equations and for LSPFs in Banach spaces,
+the spectrum of $\Gamma$  should play the same role as the
+spectrum of $A_0$ for autonomous equations.
+
+In Section~5 we give several consequences of the results
+mentioned above. The list of these topics
+includes: ``roughness'' of
+the dichotomy, dichotomy and solutions of
+nonhomogenious equations \eqref{vareq}--\eqref{difeq},
+Green's function for a LSPF,
+``pointwise'' dichotomy versus ``global'' dichotomy, and
+evolutionary semigroups along trajectories of the flow.
+The paper concludes by listing several open problems.
+
+The following notation is used throughout the paper:
+$\TH$ denotes a locally compact metric space; for $\th\in\TH$ and
+$\delta>0$, $B(\th,\delta)$ denotes an open ball of radius $\delta$
+centered at $\th$.  For any Banach space $X$,
+$\calL(X)$ denotes the space of bounded linear operators on $X$, and
+$\calL_s(X)$ denotes this space endowed with the strong-operator
+topology.  For any operator $A$ on $X$, its domain is denoted by
+$\calD(A)$ and its spectrum  by $\sigma(A)$.  In  $\bbC$, let $\bbT=\{z
+:|z|=1\}$, and $\bbD=\{z: |z|\le 1\}$. For a set of operators
+$d^{(n)}$, $n\in\bbZ$, in $\calL(X)$,  $\diag\{d^{(n)}\}_{n\in\bbZ}$
+acts on $\linf$ as the infinite matrix consisting of diagonal entries
+$d^{(n)}$. For a projection $P$ (or $\calP$, or a projection-valued
+function $P(\cdot)$), we use the letter $Q$ (respectively, $\calQ$,
+$Q(\cdot)$) to denote the complementary projection: $Q=I-P$.
+
+
+
+
+%------------------- section 2 ----------------
+
+\section{Evolutionary Semigroups: Preliminaries}
+\setcounter{equation}{0}
+
+\subsection{Evolutionary semigroups}
+
+Let $\vphi^t$ be a continuous flow on $\TH$, and
+let $\Phi\colon \TH\times\bbR_{+}\to \calL(X)$ be a
+strongly continuous, exponentially bounded
+cocycle over $\vphi^t$.  That is, we assume the function
+$$(\th,t) \mapsto \Phi(\th,t)x$$
+to be continuous from $\TH\times\bbR_{+}$ to $X$
+for each $x\in X$, and there exist $C,\omega>0$ such that
+for every $\th\in \TH$,
+\newcounter{aa}
+\begin{list}{\alph{aa})}{\usecounter{aa}}
+\item $\Phi(\th,t+s)=\Phi(\vphi^t\th,s)\Phi(\th,t)\quad$for $t,s>\ge0$;
+\item $\Phi(\th,0)=I$;
+\item  $\|\Phi(\th,t)\|_{\calL(X)}\le C
+e^{\omega t}$ for all $t\in\bbR_+$.
+\end{list}
+Note that the operators $\Phi(\th,t)$ are not assumed to be invertible.
+The last inequality holds automatically if $\TH$ is compact.
+
+The {\em linear skew-product flow} (LSPF) associated with $\Phi$ is
+the map
+\begin{equation}\lb{LSPF}
+\hp^t\colon \TH\times X\ \to \TH\times X,\qquad
+\hp^t(\th,x)=(\vphi^t\th,\Phi(\th,t)x),\qquad t\ge 0.
+\end{equation}
+We note that for exponentially bounded cocycles, the map $\hp^t$ is
+continuous if and only if the corresponding cocycle is strongly
+continuous.
+
+To a cocycle $\Phi$ over a flow $\vphi^t$, one can
+associate the family of operators $\{T^t\}_{t\ge 0}$ in $\Bco$
+defined by
+\begin{equation}\lb{evolSG}
+(T^tf)(\th)=\Phi(\vphi^{-t}\th,t)f(\vphi^{-t}\th),\quad \th\in \TH,
+\quad f\in\co.
+\end{equation}
+It's easy to check that this defines a semigroup of operators:
+$T^{t+s}=T^tT^s$, $T^0=I$.  As noted below, this {\em evolutionary
+semigroup} is a strongly continuous
+semigroup on $\co$ if and only if $\Phi$ is a strongly continuous,
+exponentially bounded cocycle.  The generator will be denoted by
+$\Gamma$.
+
+\begin{thm}\lb{t2.1}
+$\{T^t\}_{t\ge 0}$, as defined in \eqref{evolSG},
+is a $C_0$ semigroup
+on $\co$ if and only if $\Phi$ is an exponentially bounded,
+strongly continuous cocycle.
+\end{thm}
+
+\begin{pf}  If $\Phi$ is a strongly continuous cocycle with
+$\|\Phi(\th,t)\|\le C e^{\omega t}$ for some $C,\omega>0$,
+then $\{T^t\}_{t\ge0}$ can be seen to be strongly continuous
+as in \cite{LS} or \cite{Rau}.
+
+Conversely, assume $\{T^t\}_{t\ge 0}$ is a $C_0$ semigroup.
+Clearly, $\Phi$ is exponentially bounded.
+Fix $\th_0\in \TH$, $t_0\in\bbR$, and $x\in X$.  Let $\epsilon>0$.
+For $\th\in \TH$, and $t\in\bbR$, consider
+\begin{equation}\lb{t2.1-2}
+\begin{aligned}
+\|\Phi(\th,t)x-\Phi(\th_0,t_0)x\|
+&\le\|\Phi(\th_0,t)x-\Phi(\th_0,t)x\|
++\|\Phi(\th_0,t)x-\Phi(\vphi^{t-t_0}\th_0,t_0)x\|\\
+&\qquad+\|\Phi(\vphi^{t-t_0}\th_0,t_0)x-\Phi(\th_0,t_0)x\|.
+\end{aligned}
+\end{equation}
+Let $D$ be a compact set in $\TH$ containing $\th_0$ in its interior.
+Choose $\alpha\colon \TH\to[0,1]$ with compact support
+such that $\alpha(\th)=1$ for all $\th\in D$.
+Define $f\in\co$ as $f(\th)=\alpha(\th)x$, and note that
+for $\th\in D$ and $t\in\bbR$,
+$$
+\Phi(\th,t)x=(T^tf)(\vphi^t\th).
+$$
+First consider the middle term on the right-hand side of
+\eqref{t2.1-2} and choose $\delta_1>0$
+such that $\vphi^{t-t_0}\th_0\in D$
+for all $|t-t_0|<\delta_1$.  Choose $\delta_2\in(0,\delta_1]$ such
+that $|t-t_0|<\delta_2$ implies $\|T^tf-T^{t_0}f\|\le\epsilon/3$.
+Then for $|t-t_0|<\delta_2$,
+$$\begin{aligned}
+\|\Phi(\th_0,t)x-\Phi(\vphi^{t-t_0}\th_0,t_0)x\|
+&=\|(T^tf)(\vphi^t\th_0)-(T^{t_0}f)(\vphi^{t_0}(\vphi^{t-t_0}\th_0))\|\\
+&=\|(T^tf)(\vphi^t\th_0)-(T^{t_0}f)(\vphi^t\th_0)\|\\
+&\le\sup_{\th\in \TH}\|T^tf(\th)-T^{t_0}f(\th)\|<\epsilon/3.
+\end{aligned}
+$$
+
+Secondly, since $T^tf$ is continuous, there exists $\delta'>0$ such
+that $d(\th_1,\th_2)<\delta'$ implies
+$\|T^{t_0}f(\th_1)-T^{t_0}f(\th_2)\|<\epsilon/3$.  Since $t\mapsto
+\vphi^t\th_0$ is continuous, there exists $\delta_3\in(0,\delta_2]$
+such that $|t-t_0|<\delta_3$ implies
+$d(\vphi^t\th_0,\vphi^{t_0}\th_0)<\delta'$.
+Then, $|t-t_0|<\delta_3$ implies
+$$\begin{aligned}
+\|\Phi(\vphi^{t-t_0}\th_0,t_0)x-\Phi(\th_0,t_0)x\|
+&=\|T^{t_0}f(\vphi^{t_0}(\vphi^{t-t_0}\th_0))-T^{t_0}
+  f(\vphi^{t_0}\th_0)\|\\
+&=\|T^{t_0}f(\vphi^t\th_0)-T^{t_0}f(\vphi^{t_0}\th_0)\|<\epsilon/3.
+\end{aligned}$$
+
+Finally, choose $\delta''>0$ so that $B(\th_0,\delta'')\subset D$, and
+$\th\in B(\th_0,\delta'')$ implies
+\[ \|(T^tf)(\vphi^t\th)-(T^tf)(\vphi^t\th_0)\|<\epsilon/3.\]
+We note that $\delta''=\delta''(t)$ depends on $t$, but on the
+compact interval $[t_0-\delta_3,t_0+\delta_3]$, the map
+$t\mapsto T^tf(\vphi^t\cdot\,)$ is
+uniformly continuous, so $\delta''$ may be chosen independent of $t$.
+Therefore, if
+$|t-t_0|<\delta_3$ and $\th\in B(\th_0,\delta'')$, then \eqref{t2.1-2}
+shows that $\|\Phi(\th,t)x-\Phi(\th_0,t_0)x\|<\epsilon$.
+\end{pf}
+
+\subsection{Examples}
+
+We give several examples of cocycles and corresponding
+evolutionary semigroups.
+
+\begin{exmp}\lb{exuvareqn} {\it Norm continuous compact setting.}
+Let $\vphi^t$ be a continuous flow on a compact metric space $\TH$,
+and let $A\colon \TH\to \calL(X)$ be (norm) continuous. For each
+$\th\in\TH$ consider the equation \begin{equation}\label{vareqn}
+\dfrac{dx}{dt}=A(\vphi^t\th)x(t),
+\quad \th\in \TH,\; t\in\bbR.
+\end{equation}
+Let $\Phi(\th,t)$, $t\in\bbR$, be the solving operator for
+\eqref{vareqn}: $x(t)=\Phi(\th,t)x(0)$.
+Then $\Phi$ is a cocycle
+and $\displaystyle{\left.A(\th)=\frac{d}{dt}\Phi(\th,t)\right|_{t=0}}$.
+Denote
+$(\bd f)(\th)=\left.\dfrac{d}{dt}f\circ\vphi^t(\th)\right|_{t=0}$.
+The generator $\Gamma$ of the group \eqref{evolSG} is given as
+follows: \begin{equation}\label{genucc}
+ (\Gamma f)(\th)  =
+-(\bd f)(\th)+A(\th)f(\th),
+\end{equation}
+and its domain
+$\calD(\Gamma)$ is, in this case,
+$\calD(\Gamma)  =
+\{f\in\co:\bd f\in\co\}$.
+
+Equations of the type \eqref{vareqn} arise from
+two sources. Firstly, they can be thought of as a linearization of a
+nonlinear equation in $X$ in the vicinity of a compact invariant
+set $\TH$ for the nonlinear equation.
+Secondly, $\TH$ might be a compact hull,
+$\TH=\text{closure}\{a(\,\cdot\,+\tau): \tau\in\bbR\}$, of a given
+function $a\colon\bbR\to \calL(X)$ (see \cite{Hale,SSDich}).
+\end{exmp}
+
+\begin{exmp}\lb{exsvareqn} {\it Strongly continuous compact setting.}
+We now allow the operators $A(\th)$ in \eqref{vareqn} to be
+unbounded. A strongly continuous (semi)cocycle $\Phi$
+is said to solve \eqref{vareqn} if: For every $\th\in \TH$ and every
+$x_\th\in\calD(A(\th))$ the function $t\mapsto x(t):=\Phi(\th,t)x_\th$
+is differentiable for $t>0$, $x(t)\in\calD(A(\vphi^t\th))$, and
+$x(\cdot)$ satisfies \eqref{vareqn}. By Theorem~\ref{t2.1} the cocycle
+generates an evolutionary semigroup given by \eqref{evolSG}.
+
+This setting might occur if, after the
+linearization of a nonlinear equation in $X$, the Frechet derivative
+$A(\th)$ is an unbounded operator. Numerous examples of this
+strongly continuous setting can be found in \cite{ChLe1}.
+\end{exmp}
+
+\begin{exmp}\lb{constcoc}
+To be more specific, in the setting of Example~\ref{exsvareqn},
+assume $A(\th)\equiv A_0$, $\th\in \TH$, where $A_0$  generates a
+$C_0$ semigroup $\{e^{tA_0}\}_{t\ge 0}$ on $X$. The cocycle $\Phi$ for
+\eqref{vareqn} is $\Phi(\th,t)=e^{tA_0}$. In the tensor product
+$\co=C_0(\TH,\bbR)\bigotimes X$ one can express the
+evolutionary semigroup  defined in \eqref{evolSG} by
+$T^t=V^t\bigotimes e^{tA_0}$, where $V^tf:=f\circ \vphi^{-t}$. Then
+(see, e.g., \cite[p.~23]{Nag}) the generator $\Gamma_0$ of
+$\{T^t\}_{t\ge 0}$ is the closure of the operator
+${\Gamma'}_0 f  =
+-\bd f+A_0f$ with
+\begin{equation}\notag
+\calD(\Gamma'_0)  =
+\{f\in\co:\bd f\in\co,\; f:\TH\to \calD(A_0), \;\bd f-A_0f\in\co\}.
+\end{equation}
+\end{exmp}
+
+\begin{exmp}\lb{bddpertconstcoc}
+Suppose, in the setting of Example~\ref{exsvareqn}, that
+\begin{equation}\lb{pertA}
+A(\th)=A_0+A_1(\th),\quad \th\in \TH,
+\end{equation}
+where $A_0$ is a generator of a
+$C_0$ semigroup $\{e^{tA_0}\}_{t\ge 0}$ on $X$ and $A_1: \TH\to
+\calL_s(X)$ is (strongly) continuous and bounded on $\TH$. Note
+that $A_1(\cdot)$ defines an operator $\calA_1\in \Bco$ by the
+rule $(\calA_1f)(\th)=A_1(\th)f(\th)$. For $\Gamma_0$ as in
+Example~\ref{constcoc} we have:
+
+\begin{prop}\lb{formofgen} Assume that there
+exists a strongly continuous cocycle $\Phi$ that solves
+\eqref{vareqn} with $A(\cdot)$ as in \eqref{pertA}.
+Then the generator $\Gamma$ of the evolutionary semigroup
+\eqref{evolSG} is given by
+\begin{equation}\lb{A0A1}
+(\Gamma f)(\th)=-(\bd f)(\th)+A_0f(\th)+A_1(\th)f(\th),\quad
+\calD(\Gamma)=\calD(\Gamma_0).
+\end{equation}
+\end{prop}
+
+\begin{pf} Since $\Phi$ defines a classical solution of
+\eqref{vareqn}--\eqref{pertA}, $\Phi$  also is a mild solution of
+\eqref{vareqn}, that is, $\Phi$ satisfies
+\begin{equation}\lb{milds}
+\Phi(\th,t)x=e^{tA_0}x+\int\limits_0^te^{(t-\tau)A_0}A_1(\vphi^\tau
+\th)\Phi(\th,\tau)x\, d\tau,
+ \end{equation}
+for $x\in X$, $\th\in \TH$, $t\ge 0$.
+(We point out the interesting Theorem~5.1 in \cite{ChLe3} where the
+existence of a mild solution $\Phi$ was proved for any equations
+\eqref{vareqn}--\eqref{pertA}.)
+
+Since $\Gamma_0$ generates a $C_0$ semigroup, and $\calA_1\in
+\Bco$, the operator $\Gamma=\Gamma_0+\calA_1$ also
+generates (see, e.g., \cite[p.~77]{Pazy}) a $C_0$ semigroup,
+$\{S^t\}_{t\ge 0}$, which is the unique solution of the integral
+equation
+\begin{equation}\lb{sgeq}
+S^tf=e^{t\Gamma_0}f+\int\limits_0^te^{(t-\tau)\Gamma_0}\calA_1S^\tau
+f\, d\tau,\quad f\in\co, \; t\ge 0.
+ \end{equation}
+We show that $S^t=T^t$. Indeed,
+for $f\in\co$ define
+$g=\int\limits_0^te^{(t-\tau)\Gamma_0}\calA_1T^\tau
+f\, d\tau$.
+Then \eqref{milds} implies
+$$\begin{aligned}
+g(\th)&=  \int\limits_0^te^{(t-\tau)A_0}A_1(\vphi^\tau(\vphi^{-t}\th))
+\Phi(\vphi^{-t}\th,\tau)f(\vphi^{-t}\th)\,d\tau\\
+&=\Phi(\vphi^{-t}\th,t)f(\vphi^{-t}\th)-e^{tA_0}f(\vphi^{-t}\th)\\
+&=(T^tf)(\th)-\left(e^{t\Gamma_0}f\right)(\th).
+\end{aligned}$$
+Therefore, $\{T^t\}_{t\ge0}$ satisfies \eqref{sgeq}, and so $T^t=S^t$.
+The generator, $\Gamma=\Gamma_0+\calA_1$, of this semigroup is given by
+\eqref{A0A1}.
+ \end{pf}
+\end{exmp}
+
+\begin{exmp}\lb{nacp} {\it Norm continuous line setting.}
+Let $\TH=\bbR$, and assume $A\colon\bbR\to \calL(X)$ is a bounded
+continuous function. Let $U(\tau,s)$, $\tau,s\in\bbR$, denote the
+propagator for the equation
+\begin{equation}\label{difeqn}
+\dfrac{dx}{dt}=A(t)x(t),
+\quad t\in\bbR.
+\end{equation}
+This means that the solution $x(\cdot)$ of \eqref{difeqn}
+satisfies $x(\tau)=U(\tau,s)x(s)$.
+Denote $\vphi^t(\tau)=\tau+t$ and $\Phi(\tau,t)=U(\tau+t,\tau)$,
+for $\tau,t\in\bbR$ (cf. \cite{ChLe3}). Then
+$\Phi$ is a cocycle. In this case, the group
+\eqref{evolSG} is given by $(T^tf)(\tau)=U(\tau,\tau-t)f(\tau-t)$,
+$f\in\coR$, and the generator $\Gamma$ is given by the formula:
+\[(\Gamma f)(\tau)=-\dfrac{df}{d\tau}+A(\tau)f(\tau),
+\quad \calD(\Gamma)=\{f\in\coR: f'\in\coR\}.\]
+\end{exmp}
+
+\begin{exmp} \lb{exslset}{\it Strongly continuous line setting.}
+In the case of $\TH=\bbR$, consider a well-posed differential equation
+\eqref{difeqn} with, generally, unbounded operators $A(\tau)$.
+Let  $\{U(t,s)\}_{t\ge s}$ be the associated
+strongly continuous evolutionary family of
+operators in $\calL(X)$.  This means that
+$(\tau,s)\mapsto U(\tau,s)x$ is continuous for each $x\in X$,
+$U(\tau,s)=U(\tau,r)U(r,s)$  for $\tau\ge r\ge s$, $U(s,s)=I$, and
+$\|U(\tau,s)\|\le C e^{\omega (\tau-s)}$ for some
+$C,\omega>0$. The flow $\vphi^t$, the cocycle $\Phi$, and the
+evolutionary semigroup can be defined exactly as in the previous
+example. If, in particular, $A(\tau)\equiv A_0$ is a generator of a
+$C_0$ semigroup $\{e^{tA_0}\}_{t\ge0}$ on $X$, then
+$U(\tau,s)=e^{(\tau-s)A_0}$, and
+$\Gamma$ is the closure of \[\Gamma'=-\dfrac{d}{dt}+A_0,\quad
+\calD(\Gamma')=\{f\in\coR: f'+A_0f\in\coR,\: f:\bbR\to\calD(A_0)\}.\]
+
+For $\TH=\bbR$ consider now the case where each of the operators $A(t)$,
+$t\in\bbR$ in \eqref{difeqn} is an (unbounded) operator on
+$X$ with dense domain.
+For each $t\in\bbR$, denote
+the domain of $A(t)$\ by $\calD_t:=\calD(A(t))$.
+Consider the following nonautonomous abstract Cauchy problem (cf.
+\cite{Nag2}):
+\begin{equation}\lb{nCP}
+\dfrac{dx}{dt}=A(t)x(t) \mbox{  for  } t\ge s\in\bbR,\quad\mbox{
+and  } x(s)=x_s,
+\end{equation}
+  where $x_s\in\calD_s$, $s\in\bbR$.
+We say (see \cite{Nag2}) that the evolutionary family
+$\{U(\tau,s)\}_{\tau\ge
+s}$ solves \eqref{nCP} if $x(\cdot)=U(\cdot\,,s)x_s$ is a unique
+solution of \eqref{nCP} for every $x_s\in\calD_s$, that is
+$x(\cdot)$ is differentiable, $x(t)\in\calD_t$ for $t\ge s$, and
+\eqref{nCP} holds.
+\begin{prop}\lb{bestgen} Assume that a strongly continuous
+evolutionary family $\{U(\tau,s)\}_{\tau\ge
+s}$ solves \eqref{nCP}. Then the generator $\Gamma$ of the
+evolutionary semigroup $(T^tf)(\tau)=U(\tau,\tau-t)f(\tau-t)$ on
+$\coR$ is the closure of the operator $\Gamma'$,
+with domain consisting of differentiable functions $f$\ such
+that $f(t) \in \calD_t$ and $\Gamma'f\in\coR$, defined
+as follows:
+\begin{equation}\lb{gamma'}
+(\Gamma'f)(\tau)=-\dfrac{df}{d\tau}+A(\tau)f(\tau),
+\quad
+\tau\in\bbR.
+\end{equation}
+ \end{prop}
+\begin{pf}
+Fix $s\in\bbR$ and $x_s\in\calD_s$. For any smooth
+$\alpha:\bbR\to\bbR$ with compact support $\supp\alpha\subset
+[s,\infty)$, consider a function $f\in\coR$, defined by
+\begin{equation}\lb{deff}
+f(\tau)=\alpha(\tau)U(\tau,s)x_s \mbox{  for  } \tau> s \mbox{  and
+} f(\tau)=0 \mbox{ for } \tau\le s.
+\end{equation}
+Then $\Gamma f=\Gamma' f$.  Indeed
+\[ (T^tf)(\tau)=\alpha(\tau-t)U(\tau,\tau-t)U(\tau-t,s)x_s=
+\alpha(\tau-t)U(\tau,s)x_s
+\] for
+$\tau-t>s$, and zero otherwise.
+Hence,
+$$\left.\dfrac{d}{dt}(T^t
+f)(\tau)\right|_{t=0}=-\alpha'(\tau)U(\tau,s)x_s,\quad \tau\in\bbR.
+$$
+On the other hand, since $\tau\mapsto U(\tau,s)x_s$ satisfies
+\eqref{nCP}, one has:
+\[\dfrac{df}{d\tau}=\alpha'(\tau)U(\tau,s)x_s+
+\alpha(\tau)\dfrac{d}{d\tau}U(\tau,s)x_s=
+\alpha'(\tau)U(\tau,s)x_s+\alpha(\tau)A(\tau)U(\tau,s)x_s.\]
+
+To finish the proof, we need to show
+ that  linear combinations of
+functions $f$, as in \eqref{deff}, are dense in $\coR$. To see this,
+first observe that the
+set of finite sums $\sum\beta_jv_j$ with arbitrary $v_j\in X$ and
+smooth $\beta_j:\bbR\to\bbR$ with compact support, is dense in
+$\coR$.
+
+Now, consider any function $g=\beta v$ with fixed
+$v\in X$ and smooth $\beta:\bbR\to\bbR$ with compact support.
+We show that $g$ can be
+approximated by a sum of functions $f$ as in \eqref{deff}.
+
+To see that, fix $\epsilon>0$. For every $\tau_0\in\supp\beta$,
+the map $(\tau,s)\mapsto U(\tau,s)v$, $\tau\ge s$ is continuous at
+the point $(\tau_0,\tau_0)$ by the definition of $\{U(\tau,s)\}$.
+Hence, there exist $s_0\le s'_0$ such that for the interval $I_0=I(\tau_0)
+:=(s_0,\, s'_0)$, containing $\tau_0$, one has
+$\|U(\tau,s_0)v-v\|\le\epsilon/2$ for  $\tau\in I_0$.
+Thus, we obtain an open covering of
+$\supp\beta$, formed by $I(\tau_0)$, $\tau_0\in\supp\beta$.
+Take a finite subcovering $\{I_j\}_{j=1}^n$.  For
+$I_j:=(s_j,s'_j)$, one has  $\|U(\tau,s_j)v-v\|\le\epsilon/2$ for
+ $\tau\in I_j$, $j=1,\dots, n$.
+
+Consider a smooth partition of
+unity $\{\gamma_j\}_{j=1}^n$ for $\{I_j\}_{j=1}^n$, that is, smooth
+functions $\gamma_j:\bbR\to [0,1]$ such that
+\[ \sum\limits_{j=1}^n \gamma_j(\tau)=1 \mbox{ for }
+\tau\in\supp\beta, \mbox{ and } \supp\gamma_j\subset I_j, j=1,\dots, n.\]
+Since the $\calD_{s_j}$ are dense in $X$, one can choose
+$v_j\in\calD_{s_j}$ such that
+$\|v-v_j\|\le\epsilon/2$.
+
+Define the function
+\[ h(\tau):=\sum_{j=1}^n \beta (\tau) \gamma_j(\tau) U(\tau,
+s_j)v_j,\quad \tau\in\bbR.\]
+Since $\supp\gamma_j\subset (s_j,s'_j)$, the function $h$ is a sum
+of functions $f$ as in \eqref{deff}.
+Also,
+\begin{eqnarray*}
+\|g(\tau)-h(\tau)\|& = &\left\|
+\beta (\tau) \sum_{j=1}^n \gamma_j(\tau) v-
+\sum_{j=1}^n \beta (\tau) \gamma_j(\tau) U(\tau,
+s_j)v_j\right\| \\
+&\le&
+|\beta(\tau)|
+\left(\sum_{j=1}^n\gamma_j(\tau)\| v-v_j\| +
+\sum_{j=1}^n\gamma_j(\tau)\|
+v_j-U(\tau,s_j)v_j\|\right)\\
+& \le &\epsilon\max_\tau|\beta(\tau)|, \end{eqnarray*}
+and the proof is completed.
+\end{pf}
+\end{exmp}
+
+\subsection{An algebra of weighted translation operators}
+
+In Section~4 we study the spectrum of $T=T^1$, that is, the
+invertibility of $b=\lambda I-T$. This operator belongs to an
+algebra, $\frakB$, of weighted translation operators which we now
+define.
+
+Let $C_b(\TH;\calL_s(X))$ denote the set of strongly continuous and  bounded
+functions $a\colon \TH\to \calL_s(X)$.  For $a\in
+C_b(\TH,\calL_s(X))$, set  $\|a\|_u:= \sup_{\th\in \TH} \|a(\th)\|_{\calL(X)}$.
+Such a function induces a multiplication operator
+on $\co$ defined by $(M_af)(\th)=a(\th)f(\th)$.
+The mapping $a\mapsto M_a$ is an isometry from the Banach space
+$C_b(\TH,\calL_s(X))$ to $\Bco$ and so
+the operator $M_a$ will be
+denoted simply by $a$, its
+norm given by $\|a\|=\|a\|_{\Bco}=\|a\|_u$.
+Let $\frak A$ denote
+the set of all such
+multiplication operators $a=M_a\in\Bco$.
+
+Now let $\vphi=\vphi^1$ be a homeomorphism on $\TH$.
+Denote by $V$ the translation
+operator on $\co$ given by $(Vf)(\th)=f(\vphi^{-1}\th)$.
+Define $\frakB$ to be the set of all operators $b\in\Bco$
+such that
+\begin{equation}\lb{b}
+b=\sumk a_kV^k, \quad\text{ where }a_k\in\frakA,\text{ and }
+\|b\|_1:=\sumk \|a_k\| < \infty.
+\end{equation}
+
+\begin{prop}
+If the set of aperiodic points of
+$\vphi$ is dense in $\TH$, then the representation
+\eqref{b} of an
+element $b\in\frakB$ is unique.
+\end{prop}
+\begin{pf}
+This follows from the observation
+that for any polynomial $b_N=\sum^N_{k=-N} a_kV^k$ in $\Bco$, where
+$a_k\in\frakA$ and $N\in\bbN$,
+\begin{equation}\lb{lemma0}
+\|b_N\|_{\Bco} \ge \|a_k\|_{\Bco},\quad |k|\le N.
+\end{equation}
+To prove \eqref{lemma0}, first note that
+by replacing $b$ by $bV^{-k}$ it suffices to consider only the case
+$k=0$. Fix $\epsilon > 0$.  For $a\in\frakA$,
+$\displaystyle{\|a\|_{\Bco} = \sup_{\th\in \TH} \sup_{\|x\|_X=1}
+\|a(\th)x\|_X}$, so there exists a nonperiodic point $\th_0$ of
+$\{\vphi^t\}_{t\in\bbR}$, and a $x\in X$,
+$\|x\|=1$, such  that
+$$
+\|a_0(\th_0)x\|_X\ge \|a_0\|_{\Bco} - \epsilon.
+$$
+Choose $\delta>0$ such that for $B=B(\th_0,\delta)$, $\varphi^k(B)\cap
+\varphi^j(B) = \emptyset$ for $k\ne j, \; |k|, \; |j|\le N$.  Choose a
+continuous function $\alpha:\TH\to [0,1]$ such that $\alpha(\th_0) =1$
+and $\alpha(\th) = 0$ for $\th\notin B$.
+Define $f\in \co$ by
+$$f(\th)=\cases
+\alpha(\varphi^{-k}\th)x,\quad\text{ if }
+\th\in\varphi^k(B), \; |k|\le N\\
+0\quad\text{ otherwise}.\endcases$$
+Then $\|f\|_{\co}=1$ and
+$$\begin{aligned}
+\|b\|_{\Bco} &\ge \|bf\|_{\co}
+  = \max\sb{\th\in \TH}\left\|\sum^N_{k=-N}
+     a_k(\th)\alpha(\varphi^{-k}\th) x\right\|_X \\
+&=\max\sb{\th\in \TH} \max\sb{|k| \le N} \|a_k(\th)
+   \alpha(\varphi^{-k}\th)x\|_X \ge \|a_0(\th_0)x\|_X\\
+&\ge \|a_0\|_{\Bco} - \epsilon.
+\end{aligned}
+$$
+\end{pf}
+
+\begin{prop}
+$(\frakB,\|\cdot\|_1)$ is a Banach algebra.
+\end{prop}
+\begin{pf}
+The norm $\|\cdot\|_1$ is an algebra norm.
+To see that it is
+complete, consider a $\|\cdot\|_1$-Cauchy sequence
+$\{b^{(n)}\}_{n=1}^\infty$ in $\frakB$, $b^{(n)} =
+\displaystyle\sumk a^{(n)}_k V^k$.  Set $a_k =
+\|\cdot\|_1$-$\displaystyle\lim\sb{m\to \infty} a^{(m)}_k$,
+$k\in\bbZ$.  For every $m,n$ in $\bbZ$,
+$$
+\left|\sumk\|a_k^{(m)}\|-\sumk\|a^{(n)}_k\|\right| \le
+\|b^{(m)}-b^{(n)}\|_1.
+$$
+So a sequence $(\|a^{(m)}_k\|)_{k\in\bbZ} \in \ell_1(\bbZ,\bbR)$
+converges to $\left(\|a_k\|\right)_{k\in\bbZ}$ in $\ell_1(\bbZ,\bbR)$.
+Hence $b=\sum\sb{k} a_kV^k$ is an element of $\frakB$.
+For every $\epsilon > 0$ and for sufficiently large $m,n$, the
+inequality
+$$
+\epsilon \ge \|b^{(m)}-b^{(n)}\|_1 = \sumk
+\|a^{(m)}_k-a^{(n)}_k \| \ge \sum^N_{k=-N} \|a^{(m)}_k-a^{(n)}_k\|
+$$
+holds for every $N\in \bbN$.
+Taking the limit as $n\to\infty$, and then the limit as
+$N\to\infty$ shows $\|b^{(m)}-b\|_1\to 0$.
+\end{pf}
+
+In  Section~4, we consider the relationship
+between the invertibility of a weighted translation
+operator $b$ in $\frak B$ and a family of representations
+(weighted shift operators), $\pi_\th (b)$, in $\Blinf$.
+To define the representation $\pi_\th$ of $\frakB$,
+denote by $S$ the shift operator on $\linf$:
+\[ S:\; (x_n)_{n\in\bbZ}\mapsto (x_{n-1})_{n\in\bbZ},
+\quad (x_n)_{n\in\bbZ}\in \linf.\]
+For $a\in\frakA$ and $\th\in \TH$, let
+$\pi_\th(a)=\diag\{a(\vphi^n\th)\}_{n\in\bbZ}$.
+Defining $\pi_\th(aV)=\pi_\th(a)S$ gives a continuous
+homomorphism from $\frakB$ into $\Blinf$:
+for $b=\sum_k a_kS^k$ in $\frakB$,
+\begin{equation}\lb{pisubx}
+\pi_\th(b)=\sumk \pi_\th(a_k)S^k.
+\end{equation}
+
+With this in mind, let $\frak C$ denote
+the set of operators in
+$\Blinf$ of the form
+$d=\diag\{d^{(n)}\}_{n\in\bbZ}$, where
+$d^{(n)}\in \calL(X)$, and consider the Banach algebra
+$(\frak D,\|\cdot\|_1)$ of operators on $\linf$ of
+the form
+\[d=\sumk d_k S^k\;
+\text{ where } \; d_k\in\frakC,\;\text{ and }\;
+\|d\|_1 := \sumk\|d_k\|_{\Blinf} < \infty.\]
+
+The following lemma points out, in particular, that $\frakD$
+is an inverse-closed subalgebra of $\Blinf$. The proof
+follows exactly as in Lemma 1.6 and Remark 1.7 of \cite{LatRand}.
+
+\begin{prop}\lb{p2.8}
+Let $\displaystyle{d(\th)=\sumk d_k(\th)S^k}$ be an operator in $\frakD$,
+and assume that
+\[\displaystyle\sumk\sup\sb{\th\in \TH}\|d_k(\th)\|_{\Blinf} <
+\infty.\] If $d(\th)^{-1}\in\Blinf)$ for each $\th\in \TH$
+and if for some $C>0$,
+$$
+\sup\sb{\th\in \TH} \|d(\th)^{-1} \|_{\Blinf} < C,
+$$
+then $d(\th)^{-1} \in \frakD$ for each $\th\in \TH$.  Moreover, if
+$d(\th)^{-1}= \displaystyle\sumk c_k(\th)S^k$, then
+$$\sumk \sup\sb{\th\in \TH}
+\| c_k(\th)\|_{\Blinf} < \infty.$$
+\end{prop}
+
+
+
+
+
+%------------------- section 3 ----------------
+\section{Spectral Mapping Theorem}
+\setcounter{equation}{0}
+
+In this section we prove that the spectral mapping property
+\begin{equation}\lb{smteq}
+e^{t\sigma(\Gamma)}=\sigma(T^t)\bs \{0\},\quad t>0,
+\end{equation}
+holds for any evolutionary semigroup \eqref{evolSG} with
+generator $\Gamma$.
+As usual, the nonperiodic points of $\{\vphi^t\}_{t\in\bbR}$
+are assumed to be dense in $\TH$.  For a general $C_0$ semigroup
+$\{T^t\}_{t\ge0}$ generated by an operator $\Gamma$,
+the spectral inclusion
+$e^{t\sigma(\Gamma)}\subseteq \sigma(T^t)\bs \{0\}$
+is well known, as are examples showing that the inclusion is,
+in general, proper.  Moreover, equality holds for the point
+spectrum and residual spectrum \cite{Nag}, so to prove
+\eqref{smteq} we focus on the approximate point spectrum,
+$\sigma_{ap}(\cdot)$.
+By a standard rescaling technique \cite{Nag},
+it suffices to consider only $T=T^1$.
+
+We build on the ideas of \cite{Mather} and observe, in particular,
+that the $\epsilon$-eigenfunctions of $T$ obey the following
+``localization" principle:  if $1\in\sigma_{ap}(T)$, then for every
+$N\in\bbN$, there exists a point $\th_0\in \TH$, a function
+$f\in\co$ with $\|f\|=1$, and an open neighborhood $D$
+of $\th_0$ such that $\displaystyle{
+\supp f\subseteq\cup_{j=0}^{2N} \vphi^j(D) }$
+and $\|Tf-f\|=O({1\over N})$.  Using $f$, we construct a function
+$g\in\co$ such that $\|\Gamma g\|=O({1\over N})\|g\|$, hence
+showing that $0\in\sigma_{ap}(\Gamma)$.
+
+Before beginning the proof of \eqref{smteq}, we prove two
+technical lemmas which verify the existence of an appropriate
+$f\in\co$ and aid in the subsequent construction of $g$,
+as described above.
+
+\begin{lem}\lb{lemmaA}
+Let $A\in \calL(X)$ and assume $1\in\sigma_{ap}(A)$. For each
+$N\ge 2$, there exists $x\in X$, $\|x\|=1$, such that
+\begin{list}{\alph{aa})}{\usecounter{aa}}
+\item $\|A^Nx-x\|_X\le {1 \over 8}$;
+\item $\|A^kx\|_X\le 2 \quad\text{for } k=0,1,\ldots,2N$.
+\end{list} \end{lem}
+
+\begin{pf}  Set $c=\sum^{2N}_{k=0}\|A\|^k$.  From the
+identity $A^k-I=(A^{k-1}+\ldots + A+I) (A-I)$, for
+$k=2,\ldots, 2N$, it follows that for any $x\in X$,
+\begin{equation}\lb{lA-1}
+\|(A^k-I)x\| \le c\|(A-I) x\|, \quad k=0,1,\ldots,2N.
+\end{equation}
+Since $1\in \sigma_{ap}(A)$, there exists a $x\in X$, $\|x\|=1$,
+such that $\|(A-I)x\|\le {1\over 8c}$.
+Set $k=N$ in \eqref{lA-1} to obtain $a)$.
+Moreover, \eqref{lA-1} shows that for $k=0,1,\ldots,2N$,
+\[ \|A^kx\| \le \|(A^k-I)x\|+\|x\|
+\le c\|(A-I)x\| + 1 \le c{1\over 8c}+1 \le 2. \]
+\end{pf}
+
+Now let $\th_0\in \TH$ be a nonperiodic point of $\vphi^t$, and
+fix $s\in(0,1)$ and $N\ge 2$.  If $B$ is a neighborhood of $\th_0$,
+then for $\th\in \TH$  we use the notation $R(\th)=\{t\in \bbR:
+|t|\le N, \; \vphi^tx\in B \}$. Lebesgue measure on $\bbR$ will be
+denoted by $m$.
+
+
+\begin{lem}\lb{lemmaB}  There exists a sufficiently small open
+neighborhood, $B$, of $\th_0$ and a continuous ``bump'' function
+$\alpha\colon \TH\to[0,1]$ such that:
+\begin{list}{\alph{aa})}{\usecounter{aa}}
+\item  $\alpha(\vphi^t\th_0)=1, \quad\text{ for }|t|\le{s\over 4}$;
+\item  $\alpha(\vphi^t\th_0)=0, \quad\text{ for } s\le |t|\le 2N$;
+\item  $m(R(\th)) \le 2s, \quad\text{ for all } \th\in \TH$.
+\end{list}
+\end{lem}
+
+For the important case $\TH=\bbR$ with $\vphi^t\th=\th+t$, this is
+trivial: for any $\th_0\in\bbR$ take $B=(\th_0-s,\th_0+s)$, and
+$\alpha:\bbR\to [0,1]$ with $\supp\alpha\subset B$ and $\alpha(\th)=1$
+for $x\in (\th_0-s/4,\th_0+s/4)$.
+
+\begin{pf}  We begin with:
+
+\begin{claimone}  For sufficiently small
+$\epsilon_{*} > 0$, and all $\epsilon \le \epsilon_{*}$,
+if $\delta<\epsilon$, then
+ $\th\in B':=B(\th_0,\delta)$ implies $\vphi^t\th\notin B'$
+ provided ${s\over 2} \le |t|\le 5N$.
+\end{claimone}
+
+\begin{pf*}{Proof of Claim 1}    Suppose, to the contrary,
+that there exists a sequence $\delta_n\downarrow 0$ such that
+for some $\th_n \in B_n:=B(\th_0,\delta_n)$ and some $t_n$ with
+${s \over 2} \le |t_n| \le 5N$, one has
+$\vphi^{t_{n}}\th_n \in B_n$. Passing to a subsequence, one can
+assume $t_n \to t_{*}$ for some $t_{*}$ with
+${s\over 2} \le |t_{*}| \le 5N$.  Since the map
+$(\th,t) \mapsto \vphi^t\th$ from $\TH\times\bbR$ to $\TH$
+is continuous at the point $(\th_0, t_{*})$, and since
+$\th_n\in B_n$, it follows that $\th_n\to \th_0$.
+Thus $t_n\to t_{*}$ implies $\vphi^{t_{n}}\th_n\to
+\vphi^{t_{*}}\th_0$.  On the other hand,
+$\vphi^{t_{n}}\th_n \in B_n$ implies $\vphi^{t_{n}}\th_n\to \th_0$,
+as  $t_n\to t_{*}$.
+But then  $\vphi^{t_{*}} \th_0=\th_0$,
+which contradicts the assumption that $\th_0$ is a nonperiodic
+point of $\vphi^t$.  This proves Claim 1.
+\end{pf*}
+
+Now let $\delta<\epsilon_{*}$, and set $B'=B(\th_0,\delta)$ as in
+Claim 1.  Choose an open neighborhood $B''$ of $\th_0$
+such that $\overline{B''} \subset B'$.  Denote:
+\begin{equation}\lb{defBC}
+ B:=\bigcup_{|t|\le {s\over 4}} \vphi^t(B'),\quad
+ C:=\bigcup_{|t|\le {s\over 4}} \vphi^t(B'').
+\end{equation}
+Since $\overline{C} \subset B$, there exists a continuous
+$\alpha\colon \TH\to [0,1]$ such that $\alpha(\th)=1$ for $\th\in C$,
+and $\alpha(\th)=0$ for $\th\notin B$.
+
+Note that since $\th_0 \in B''$, it follows that
+$\{\vphi^t\th_0: |t|\le{s\over 4}\} \subset C$ and so
+$\alpha(\vphi^t\th_0) =1$ whenever $|t|\le {s\over 4}$.
+This proves $a)$.
+
+To prove $b)$ we first prove
+
+\begin{claimtwo} If $\th\in B$ and if $s\le |t|\le 2N$,
+then $\vphi^t\th\notin B$.
+\end{claimtwo}
+
+\begin{pf*}{Proof of Claim 2}  Suppose, to the contrary,
+that there exists a $\th\in B$ and a $t_{*}\in\bbR$ satisfying
+$s\le |t_{*}| \le 2N$ and $\vphi^{t_{*}}\th\in B$.
+By the definition \eqref{defBC} of $B$,
+there exist $\th_1$ and $\th_2$ in $B'$ such that
+\[
+\th=\vphi^{t_1}\th_1 \quad\text{and}\quad \vphi^{t_{*}}\th
+=\vphi^{t_{2}}\th_2,
+\]
+for some numbers $t_1,\;t_2$ with $|t_1|,\;|t_2|\le\dfrac{s}{4}$.
+This implies
+\begin{equation}\lb{Cl2-1}
+\varphi^{t_{*} + t_{1}-t_{2}}\th_1 \in B'.
+\end{equation}
+Note that
+$$
+|t_{*}+t_1-t_2|\le 2N + \dfrac{s}{4} + \dfrac{s}{4} \le 5N
+$$
+and
+$$
+|t_{*}+t_1-t_2|\ge |t_{*}|-|t_1|-|t_2|\ge s-\dfrac{s}{4}-
+\dfrac{s}{4} = \dfrac{s}{2},
+$$
+and so \eqref{Cl2-1} contradicts Claim 1.
+This proves Claim 2.
+\end{pf*}
+
+Since, in particular, $\th_0\in B$ and $\alpha(\th)=0$
+for $\th\notin B$, Claim 2 proves part $b)$ of the lemma.
+
+To prove $c)$, fix $\th_1\in \TH$ and denote the orbit by
+$O(\th_1) = \{\vphi^t\th_1: |t| \le N\}$.
+Clearly, $m(R(\th_1)) =0$ provided $O(\th_1)\cap B=\emptyset$,
+so consider the case $O(\th_1) \cap B\ne \emptyset$.
+Fix any $\th\in O(\th_1) \cap B$.  Then $\th=\vphi^{t_1}\th_1$
+for some $t_1$ with $|t_1| \le N$.
+Further, for any $t_{*} \in R(\th_1)$, one has
+$|t_{*}-t_1|\le 2N$ and
+\begin{equation}\lb{lB-1}
+\vphi^{t_{*}}\th_1 = \vphi^{t_{*}-t_1}\th\in B.
+\end{equation}
+Since $\th\in B$, Claim 2 shows that \eqref{lB-1} can only hold
+provided $|t_{*} -t_1|<s$, that is, $t_{*} \in (t_1-s, t_1+s)$.
+Since $t_{*}$  was chosen arbitrarily in $R(\th_1)$, this shows
+$R(\th_1) \subseteq (t_1-s,t_1+s)$.  Thus, $m(R(\th_1)) \le 2s$.
+This completes the proof of the lemma.
+\end{pf}
+
+We now proceed with the proof of the Spectral Mapping Theorem.
+
+\setcounter{equation}{0} %%%-reset counter for this eq'n %%%
+\begin{thm}\lb{SMT}  Let $\Gamma$ be the generator of the
+evolutionary semigroup \eqref{evolSG}.  Then
+\begin{equation}
+e^{t\sigma(\Gamma)}=\sigma(T^t)\setminus \{0\},\quad t>0.
+\end{equation}
+Moreover, the spectrum $\sigma(\Gamma)$ is invariant with
+respect to translations along the imaginary axis, and the spectrum
+$\sigma(T^t)$, $t>0$, is invariant with respect to
+rotations centered at origin.
+\end{thm}
+\setcounter{equation}{5} %%%-return counter to previous value %%%
+
+\begin{pf} As noted in the beginning of this section,  to prove
+\eqref{smteq} it suffices to show: $1\in\sigma_{ap}(T)$ implies
+$0\in\sigma_{ap}(\Gamma)$.  In fact, we show that
+$\sigma_{ap}(\Gamma)$ contains the entire imaginary axis
+whenever $1\in\sigma_{ap}(T)$.  Since $\sigma_{ap}(\Gamma)$
+contains the boundary of $\sigma(\Gamma)$, all assertions of
+the theorem follow from this.
+
+Let $1\in\sigma_{ap}(T)$, and let $\xi\in\bbR$.  We begin by using
+Lemma \ref{lemmaA} with $A=T$ to obtain, for any $N\ge 2$, a function
+$f\in\co$ satisfying:
+\addtocounter{equation}{1}  %%%--these are eq'ns (3.6a-c)%%%
+\begin{list}{(\theequation\alph{aa})}{\usecounter{aa}}
+\item $\|f\|_{\co} =1$;
+\item $\|T^Nf-f\|_{\co} \le {1\over 8}$;
+\item $\|T^kf\|_{\co} \le 2,\text{ for } k=0,1,\ldots,2N$.
+\end{list}
+For this $f$, fix $s\in (0,1)$ such that
+\begin{equation}\lb{SMT-2}
+\|T^{t+N}f-T^Nf\|_{\co}\le{1\over 16},\quad\text{ for }|t| \le s,
+\end{equation}
+and at the same time
+\begin{equation}\lb{SMT-3}
+|e^{-i\xi t}-1|\le{1\over 32},\quad\text{ for }|t| \le s.
+\end{equation}
+
+
+With the goal of constructing an approximate eigenfunction $g$,
+for $\Gamma$, corresponding to $i\xi$, choose a smooth
+function $\gamma\colon\bbR\to[0,1]$
+such that:
+\addtocounter{equation}{1} %%%--these are eq'ns (3.9a-c)%%%
+\begin{list}{(\theequation\alph{aa})}{\usecounter{aa}}
+\item $\gamma(t) = 0, \quad\text{ for } t\notin (0,2N)$;
+\item $|\gamma'(t)|\le {2\over N}, \quad\text{ for all } t\in\bbR$;
+\item $\gamma(t) =1, \quad\text{ for } |t-N|\le s$.
+\end{list}
+
+Now fix  $\th_0\in \TH$, a nonperiodic point of $\vphi^t$ which
+satisfies
+\begin{equation}\lb{SMT-4}
+\|f(\th_0)\| \ge\dfrac{7}{8}\|f\|_{C_0(\TH,X)} = \dfrac{7}{8}.
+\end{equation}
+Set $\th_N:=\vphi^{-N}\th_0$, and use Lemma \ref{lemmaB}
+to obtain an open neighborhood, $B$, of $\th_N$ and a ``bump''function
+$\alpha$ with the properties $a)-c)$ listed there.
+Define $g\in\co$ by
+\begin{equation}\lb{defing}
+g(\th) = \int^{\infty}_{-\infty} e^{-i\xi t}\gamma(t) (T^t\alpha
+f)(\th)\,dt,\quad \th\in \TH.
+\end{equation}
+Note that due to (3.9a), the integration goes from $0$ to $2N$.
+Also, note that
+\[
+\Gamma g = i\xi g
+-\int^{\infty}_{-\infty}e^{-i\xi t}\gamma'(t)(T^t\alpha f)\,dt.
+\]
+Indeed,
+$$\begin{aligned}
+\Gamma g &= \left.\dfrac{d}{d\tau}\right|_{\tau=0} T^{\tau}g
+=\left.\dfrac{d}{d\tau}\right|_{\tau=0} \int^{\infty}_{-\infty}
+    e^{-i\xi t}\gamma(t)(T^{t+\tau}\alpha f)\,dt\\
+&= \left.\dfrac{d}{d\tau}\right|_{\tau=0}\int^{\infty}_{-\infty}
+   e^{-i\xi (t-\tau)}\gamma(t-\tau)(T^t\alpha f)\,dt\\
+&=\int^{\infty}_{-\infty}
+\left[i\xi e^{-i\xi t}\gamma(t) (T^t \alpha
+f)-e^{-i\xi t}\gamma'(t) (T^t \alpha f)\right]\,dt.
+\end{aligned}$$
+
+We now proceed to show that $\|\Gamma g-i\xi\|=O({1\over N})\|g\|$
+with the following two claims.
+
+\begin{claimone}
+Set $\displaystyle{C:=\max_{0\le t\le 1}\|T^t\|_{\calL(X)}}$. Then
+$\displaystyle{\|\Gamma g-i\xi g\|_{\co} \le \frac{8Cs}{N} }$.
+\end{claimone}
+
+\begin{pf*}{Proof of Claim 1} First use (3.9a) and (3.9b) to obtain
+\begin{equation}\lb{SMT-6}
+\begin{aligned}
+\|\Gamma g-i\xi g\| &= \left\|-\int^{2N}_0 e^{-i\xi t}\gamma'(t)
+   \alpha(\vphi^{-t}\cdot)T^tf(\cdot)\,dt \right\| \\
+&\le \dfrac{2}{N}\cdot \max_{0\le t\le 2N} \|T^tf\|
+   \cdot \max_{x\in \TH} \int^{2N}_0 \alpha(\vphi^{-t}\th)\,dt.
+\end{aligned}
+\end{equation}
+Using (3.6c), note that
+\begin{equation}\lb{SMT-7}
+\max_{0\le t\le 2N} \|T^tf\|
+   \le \max_{0\le k\le 2N}\max_{0\le \tau\le 1}
+   \|T^{\tau}T^kf\| \le 2C.
+\end{equation}
+Also, the change of variable $t\mapsto -t+N$ gives
+\[
+\max_{x\in \TH}\int^{2N}_0\alpha(\vphi^{-t}\th)\,dt
+=\max_{x\in \TH}\int^N_{-N}\alpha(\vphi^t(\vphi^{-N}\th))\,dt
+=\max_{x\in \TH}\int^N_{-N} \alpha(\vphi^t\th)\,dt.
+\]
+Now, for fixed $\th\in \TH$, recall from Lemma \ref{lemmaB} that the set
+$R(\th)=\{t\in\bbR: |t|\le N,\;\vphi^t\th\in B\}$
+ has measure $m(R(\th))\le 2s$.
+Consider $|t|\le N$; then $\alpha(\vphi^t\th)\le 1$ for $t\in R(\th)$,
+and $\alpha(\vphi^t\th)=0$ for $t\notin R(\th)$, and so
+\begin{equation}\lb{SMT-8}
+\max_{\th\in \TH} \int^N_{-N} \alpha(\vphi^t\th)\,dt
+\le \max_{\th\in \TH}\int_{R(\th)}dt \le 2s.
+\end{equation}
+Using \eqref{SMT-7} and \eqref{SMT-8} in the inequality \eqref{SMT-6}
+gives
+$$
+\|\Gamma g-i\xi g\| \le \dfrac{2}{N}\cdot 2C\cdot 2s
+= \dfrac{8Cs}{N}.
+$$
+This proves Claim 1.
+\end{pf*}
+
+\begin{claimtwo}  $\displaystyle{\|g\|_{\co}\ge \frac{s}{128} }$.
+\end{claimtwo}
+
+\begin{pf*}{Proof of Claim 2} Recall $\th_N=\vphi^{-N}\th_0$.
+Using (3.9a) and a change of variable $t\mapsto t+N$ gives:
+$$\begin{aligned}
+g(\th_0) &= \int^{2N}_0  e^{-i\xi t} \gamma(t)
+          \alpha(\vphi^{-t}\th_0)(T^tf)(\th_0)\,dt\\
+&=\int^N_{-N}
+e^{-i\xi(t+N)}\gamma(t+N)\alpha(\vphi^{-t}\th_N)(T^{t+N}f) (\th_0)\,dt.
+\end{aligned}$$
+And so, Lemma \ref{lemmaB} $b)$ and (3.9c) show that
+$$\begin{aligned}
+g(\th_0) &= \int^s_{-s}e^{-i\xi(t+N)}\gamma(t+N)
+   \alpha(\vphi^{-t}\th_N)(T^{t+N}f)(\th_0)\,dt\\
+&=e^{-i\xi N} \int^s_{-s}
+e^{-i\xi t}\alpha(\vphi^{-t}\th_N)(T^{t+N}f)(\th_0)\,dt\\
+&= e^{-i\xi N}(I_1 +
+I_2 + I_3), \end{aligned}$$
+where we have denoted for brevity:
+$$\begin{aligned}
+I_1 &=f(\th_0)\int^s_{-s} e^{-i\xi t}\alpha(\vphi^{-t}\th_N)\,dt,\\
+I_2&=(T^N-I)f(\th_0)\int^s_{-s}e^{-i\xi t}
+    \alpha(\vphi^{-t}\th_N)\,dt,\\
+I_3 &=\int^s_{-s}e^{-i\xi t}\alpha(\vphi^{-t}\th_N)
+    [(T^{t+N}-T^N)f](\th_0)\,dt.
+\end{aligned}$$
+It follows from Lemma \ref{lemmaB} $a)$
+(and recall $0\le\alpha(\th)\le 1$), and \eqref{SMT-3} and \eqref{SMT-4}
+that
+
+$$\begin{aligned}
+\|I_1\| &= \|f(\th_0)\|\left|\int^s_{-s}
+        e^{-i\xi t}\alpha(\vphi^{-t}\th_N)\,dt\right| \\
+&\ge\|f(\th_0)\|\left(\left|\int^s_{-s}\alpha(\vphi^{-t}\th_N)\,dt\right|
+     -\left|\int^s_{-s}(e^{-i\xi t}-1)\alpha(\vphi^{-t}\th_N)\,dt
+     \right|\right) \\
+&\ge \|f(\th_0)\|\left(\left|\int^{-\frac{s}{4}}_{\frac{s}{4}}
+     \alpha(\vphi^{-t}\th_N)\,dt\right|
+     -\int^s_{-s}\left|(e^{-i\xi t}-1)\right|\,dt \right) \\
+&\ge \|f(\th_0)\|\left( \frac{s}{2}-\frac{1}{32}2s\right)
+\ge \frac{7}{8}\left(\frac{7s}{16}\right)=\frac{49s}{128}.
+\end{aligned}$$
+On the other hand, (3.6b) and \eqref{SMT-2} show that
+$$\begin{aligned}
+\|I_2\| &\le \left\|(T^N-I)f\right\| \left|\int^s_{-s}
+   e^{-i\xi t}\alpha(\vphi^{-t}\th_N)\,dt\right|
+    \le \frac{1}{8}2s = \dfrac{s}{4}, \\
+\|I_3\| &\le \int^s_{-s}
+\left|e^{-i\xi t}\alpha(\vphi^{-t}\th_0)\right|
+  \left\|(T^{t+N}-T^N)f\right\|\,dt
+  \le \dfrac{1}{16}2s = \dfrac{s}{8}.
+\end{aligned}$$
+As a result,
+\[ \|g\| \ge \|g(\th_0)\|=
+  \|I_1+I_2+I_3\|\ge \|I_1\|-\|I_2\|-\|I_3\| \ge
+  \dfrac{49s}{128}-\dfrac{s}{4}-\dfrac{s}{8}=\dfrac{s}{128}.\]
+This proves Claim 2.
+\end{pf*}
+
+Returning to the proof of the theorem, we combine Claim 1
+with Claim 2 to obtain $$\|\Gamma g-i\xi g\|\le \dfrac{8Cs}{N}
+\le \dfrac{8C}{N}\cdot 128\|g\|.$$
+Since $N\ge 2$ was arbitrary, this shows
+$i\xi\in\sigma_{ap}(\Gamma)$.
+\end{pf}
+
+
+
+
+
+%------------------- section 4 ----------------
+\section{Exponential Dichotomy}
+\setcounter{equation}{0}
+
+Let $\{T^t\}_{t\ge0}$ be an evolutionary semigroup
+\eqref{evolSG}.  In this section, we relate the hyperbolicity of
+the weighted translation operator $T=T^1=aV$, where
+$a(\th)=\Phi(\vphi^{-1}\th,1)$, to the exponential dichotomy
+of the LSPF $\hp^t$. One can assume in this section, that
+$t\in\bbZ$.
+
+We also relate the hyperbolicity of $T$ to the hyperbolicity of
+weighted shift operators $\pi_\th(T)$, $\th\in \TH$.  The
+representation $\pi_\th$ of $\frakB$ was introduced in Section~2
+(see \eqref{pisubx}). For each $\th\in \TH$,
+the weighted shift operator $\pi_\th(T)$ acts on $\linf$
+by the rule
+\[\pi_\th(T)=\diag\{\Phi(\vphi^{n-1}\th,1)\}_{n\in\bbZ}S,
+\quad\text{where }
+S\colon (x_n)_{n\in\bbZ}\mapsto(x_{n-1})_{n\in\bbZ}.\]
+It is useful to make the observation that for $k\in\bbZ$,
+\begin{equation}\lb{pixTk}
+\pi_\th(T^k)=[\pi_\th(T)]^k
+=\diag\{\Phi(\vphi^{n-k}\th,k)\}_{n\in\bbZ}S^k
+=S^k\diag\{\Phi(\vphi^n\th,k)\}_{n\in\bbZ}.
+\end{equation}
+
+For $\bar x=(x_n)_{n\in\bbZ}$, and $\bar y=(y_n)_{n\in\bbZ}$ in
+$\linf$, note that the equation $[I-\pi_\th(T)]\bar x=\bar y$ can be
+expressed componentwise as \[ x_{n+1}-\Phi(\vphi^n\th,1)x_n=y_{n+1},
+\quad n\in\bbZ.\] As seen in Section 5.4 (see also
+\cite[Prop.~3.22]{LS}), the hyperbolicity of $\pi_\th(T)$ is equivalent
+to the existence of exponential dichotomy for $\hp^t$ along the orbit
+through $\th$, i.e., ``pointwise'' dichotomy (see \cite[Theorem
+7.6.5]{Henry} and \cite{ChLe1}).
+
+We begin with the definition of exponential dichotomy on $\TH$
+(or ``global'' dichotomy \cite{ChLe1,ChLe2,Henry,HL,Mag,SSBan}).
+
+\begin{defn}\lb{ED}
+A linear skew product flow $\hp^t$ has {\em exponential
+dichotomy} on $\TH$ if there exists a continuous projection
+$P\colon \TH\to \calL_s(X)$ such that for $\th\in\TH$ and $t\ge0$,
+\begin{list}{\alph{aa})}{\usecounter{aa}}
+\item  $P(\vphi^t\th)\Phi(\th,t) =\Phi(\th,t)P(\th)$;
+\item  $\Phi_Q(\th,t)$ is invertible from $\Im Q(\th)$ to
+$\Im Q(\vphi^t\th)$;
+\item there exist constants $M$, $\beta >0$ such that for $t>0$
+$$
+\|\Phi_P(\th,t)\| \leq Me^{-\beta t},\quad
+\|[\Phi_Q(\th,t)]^{-1}\| \leq Me^{-\beta t}.
+$$
+\end{list}
+\end{defn}
+
+If a projection $P\colon \TH\to \calL(X)$ and a cocycle $\Phi$
+satisfy a), above, then $\Phi_P(\th,t)$ and $\Phi_Q(\th,t)$
+will be used to denote the restrictions
+$\Phi(\th,t)P(\th)\colon \Im P(\th)\to\Im P(\vphi^t\th)$ and
+$\Phi(\th,t)Q(\th)\colon \Im Q(\th)\to\Im Q(\vphi^t\th)$, respectively.
+
+The main result of this section follows.  As usual, the set of
+nonperiodic points of $\vphi^t$ is assumed to be dense in $\TH$.
+
+
+\begin{thm}\lb{SPT}
+The following are equivalent:
+\newcounter{rr}
+\begin{list}{\roman{rr})}{\usecounter{rr}}
+\item $\sigma (T) \cap \bbT = \emptyset \text{ in  } C_0(\TH,X)$;
+\item $\sigma(\pi_\th(T))\cap \bbT = \emptyset$, on $\linf$,  for all
+$\th\in \TH$ and there exists a  constant $C>0$,  such that
+\begin{equation}\label{unbddpix}
+   \|[\pi_\th(T)-\lambda I]^{-1}\|_{\Blinf}\le C
+   \text{ for all } \th\in \TH, \; \lambda \in \bbT;\end{equation}
+\item The LSPF $\hp^t$ has exponential dichotomy.
+\end{list}
+\end{thm}
+
+We note (see Remark~\ref{poinwise-global} in Section~5.6) that
+condition \eqref{unbddpix} often follows automatically  from
+$\sigma(\pi_\th(T))\cap \bbT = \emptyset$, $\th\in \TH$. For
+results related to $i)\Leftrightarrow iii)$, see
+\cite{Rab,Rau,Rau1,Rau2} where a quite different method was used.
+
+We begin the proof of the theorem with
+an observation about the operators $\pi_\th(T)$.
+
+\begin{prop}\label{p4.3}
+$\sigma(\pi_\th (T))$ is invariant
+with respect to rotations centered at
+the origin.  Moreover, for $\sigma (\pi_\th(T)) \cap \bbT =
+\emptyset$, \[
+\| [\lambda-\pi_\th(T)]^{-1} \|_{\Blinf} = \| [I-\pi_\th(T)]^{-1}
+\|_{\Blinf},\quad \lambda\in\bbT.\]
+\end{prop}
+
+\begin{pf}
+For $\omega\in\bbT$, define $\Lam=\diag\{\omega^n\}_{n\in\bbZ}$.
+Then $\Lam$ is an invertible operator on $\linf$, and
+$$
+\Lam\pi_\th(\lambda-T)
+\Lam^{-1}=\lambda-\omega\diag\{a(\varphi^{n}\th)\}_{n\in\bbZ}S
+ =\omega(\omega^{-1}\lambda -\pi_\th(T)).
+$$
+Hence,
+$\|[\lambda-\pi_\th(T)]^{-1}\|=\|[\omega^{-1}\lambda-\pi_\th(T)]^{-1}\|$
+and the proposition follows. \end{pf}
+
+As a result, statement $ii$) in Theorem~\ref{SPT} can be
+replaced by the statement
+ \bigskip
+\begin{list}{$ii')$}
+\item  $I-\pi_\th(T)$ is invertible
+for all $\th \in \TH,$ and there exists $C>0$ such that
+$\|[I-\pi_\th(T)]^{-1} \|_{\Blinf} \le C$ for all $\th \in \TH$.
+\end{list}
+
+\bigskip
+
+The proof of Theorem \ref{SPT} will follow from a series of
+lemmas.
+
+The {\em Proof of $i)\Rightarrow ii')$} is
+given by the following lemma.
+
+\begin{lem}\lb{l4.3} If $b=I-T$ is an invertible operator on $\co$,
+then $\pi_\th(b)$ is invertible on $\linf$ for all $\th\in \TH$.
+Moreover, \[\|[\pi_\th(b)]^{-1}\|_{\Blinf}\leq \|b^{-1}\|_{\Bco}\] for
+all $\th\in \TH$.
+\end{lem}
+
+\begin{pf}  We first show that $\pi_\th(b)$ is injective, uniformly
+for $\th\in \TH$,  by showing that for any $\bar x\in\linf$,
+\begin{equation}\lb{l4.3-1}
+\| \pi_\th(b)\bar x\|_{\linf} \ge
+(\|b^{-1}\|_{\Bco})^{-1} \|\bar x\|_{\linf}.
+\end{equation}
+ It suffices to prove \eqref{l4.3-1} for
+finitely supported $\bar x=(x_n)^N_{n=-N}$.
+
+Let $\th_0\in \TH$ be a
+nonperiodic point of $\vphi^t$.  Let $\epsilon>0$.  Since $\th\mapsto
+a(\th)x$ is continuous for all $x\in X$, there exists $\delta>0$ such
+that for $B:=B(\th_0,\delta)$,
+\begin{equation}\lb{l4.3-2}
+\th\in B\ \text{ implies }
+\ \|[a(\th_0)-a(\th)]x_n\|_X\ <\epsilon,\; \text{ for all }|n|\le N.
+\end{equation}
+Moreover, $\delta$ can be chosen so that, in addition,
+$$
+\vphi^n(B)\cap\vphi^k(B)=\emptyset\;\text{ for all }k\ne
+n,\; |n|,|k|\le N.
+$$
+Choose a continuous function $\alpha\colon \TH\to[0,1]$ such that
+$\alpha(\th_0)=1$, and $\alpha(\th)=0$ for $\th\notin B$.
+Define $f\in \co$ by
+$$f(\th)=\cases
+\alpha(\vphi^{-n}\th)x_n,\quad
+\text{if } \th\in\vphi^n(B),\; |n|\le N\\
+0,\quad\text{otherwise}.
+\endcases$$
+Since $b^{-1}\in\Bco$, we have
+\begin{equation}\lb{l4.3-3}
+\|b^{-1}\| \cdot \|bf\| \ge \|f\|_{\co}
+= \sup_{\th\in \TH} \|f(\th)\|_X =\|\bar x\|_{\linf}.
+\end{equation}
+Also, since
+$f(\varphi^{-1}\th)=\alpha(\varphi^{-n}\th)x_{n-1}$
+for $\th\in\varphi^n(B), \; |n|\le N$,
+and $f(\varphi^{-1}\th)=0$ otherwise, we have
+$$\begin{aligned}
+\|bf\|_{\co}&=\sup_{\th\in \TH}\|f(\th)-a(\th)f(\varphi^{-1}\th)\|_X\\
+&=\sup_{|n|\le N}\sup_{\th\in \TH}\|\alpha(\varphi^{-n}\th)x_n
+  -a(\th)\alpha(\varphi^{-n}\th)x_{n-1}\|_X\\
+&\le\sup_{|n|\le N}\sup_{\th\in \TH}\|x_n
+  -a(\varphi^n\th)x_{n-1}\|_X\\
+&\le\sup_{|n|\le N}\sup_{\th\in \TH}
+     \{\|x_n-a(\varphi^n\th_0)x_{n-1}\|_X
+     +\|a(\varphi^n\th_0)x_{n-1}
+      -a(\varphi^n\th) x_{n-1}\|_X\}\\
+&<\|\pi_{\th_0}(b)\bar x\|_{\linf} +\epsilon,
+\end{aligned}$$
+using \eqref{l4.3-2} in the last inequality.  So,
+\begin{equation}\lb{l4.3-4}
+\|bf\|_{\co}\le\|\pi_{\th_0}(b)\bar x\|_{\linf}.
+\end{equation}
+Combining \eqref{l4.3-3} and \eqref{l4.3-4} shows
+$$
+\|\pi_{\th_0}(b)\bar x\|_{\linf}
+\ge\|bf\|_{\co}\ge\frac{1}{\|b^{-1}\|_{\Bco}}\|\bar x\|_{\linf}.
+$$
+
+We have shown that \eqref{l4.3-1} holds for all nonperiodic points
+of $\vphi^t$.  If $\th_0$ is a periodic point of $\vphi^t$, then
+choose a sequence of nonperiodic points $\{\th_k\}_{k=1}^\infty$ in
+$\TH$ converging to $\th_0$. Since the map
+$\th\mapsto \pi_\th(b)\bar x$ is continuous, \eqref{l4.3-1} holds, and
+hence $\pi_\th(b)$ is uniformly injective for all $\th\in \TH$.
+
+
+We now check that $\pi_\th(b)$ is surjective for all $\th\in \TH$.
+Let $\bar x\in\linf$.  As before,
+consider $\bar x=(x_n)_{n=-N}^N$.
+First suppose $\th_0$ is a nonperiodic point of $\vphi^t$.
+Define $f\in \co$ as above and note that since $b$ is surjective,
+there exists a $g\in\co$ such that $bg=f$; that is,
+$$
+g(\th)-a(\th)g(\vphi^{-1}\th)=f(\th)\quad\text{ for all }\th\in \TH.
+$$
+Substituting $\th=\vphi^n\th_0$ into this equation and
+defining  $\bar y\in\linf$ by $y_n=g(\vphi^n\th_0)$  for $|n|\le N$,
+gives $\pi_{\th_0}(b)\bar y=\bar x$.
+
+To address the case for which $\th_0$ is a periodic point of
+$\vphi^t$, so that $\vphi^k\th_0=\th_0$ for some $k\in\bbZ$, we begin
+with
+
+\begin{casekone} Assume $\vphi \th_0=\th_0$.  If $T=aV$ is hyperbolic
+on $\co$, then $\pi_{\th_0}(T)=\diag\{a(\th_0)\}_{n\in\bbZ}S$ is
+hyperbolic on $\linf$.
+\end{casekone}
+
+\begin{pf} By hypothesis, $I-aV$ is surjective on $\co$,
+and so $I-a(\th_0)$ is surjective on $X$.  Indeed, given $x\in X$,
+choose $f\in\co$ with $f(\th_0)=x$ and then choose $g\in\co$ so that
+$(I-aV)g=f$; setting $y=g(\th_0)$ gives $(I-a(\th_0))y=x$.   Therefore,
+$a(\th_0)$ is hyperbolic on $X$.  As in Lemma 2.4 of \cite{LMS1},
+this implies that $\diag\{a(\th_0)\}_{n\in\bbZ}S$ is hyperbolic on
+$\linf$.
+\renewcommand{\qed}{}\end{pf}
+
+\begin{casek} Assume $\vphi^k\th_0=\th_0$.  If $T$ is hyperbolic on
+$\co$, then $\pi_{\th_0}(T)$ is hyperbolic on $\linf$.
+\end{casek}
+
+\begin{pf} By standard spectral properties, it
+suffices to consider hyperbolicity for $T^k$.  First
+ note (see \eqref{pixTk}) that
+\[ \pi_{\th_0}(T^k)
+=S^k \diag\{\Phi(\vphi^n \th_0,k)\}_{n\in\bbZ}.\]
+This can be expressed as the operator
+\begin{equation}\lb{l4.3-5}
+\hat S\diag\{d\}_{n\in\bbZ},\quad\text{on}\quad
+\ell_{\infty}(\bbZ,X^k)\approx\linf,
+\end{equation}
+ where $\hat S$, on $\ell_{\infty}(\bbZ,X^k)$, and $d$, on
+$X^k$, are defined as
+$$\left(\begin{array}{ccc}
+x_{n+1}\\  \vdots  \\ x_{n+k}
+\end{array}\right)_{n\in\bbZ}
+\mapsto
+\left(\begin{array}{ccc}
+x_{n+k+1}\\  \vdots  \\ x_{n+2k}
+\end{array}\right)_{n\in\bbZ}
+\text{and }
+d=\left[\begin{array}{ccc}
+\Phi(\th_0,k)&        &  \\
+           & \ddots &  \\
+           &        & \Phi(\varphi^{k-1}\th_0,k)
+\end{array}\right].
+$$
+As in Lemma~2.4 of \cite{LMS1}, \eqref{l4.3-5} is hyperbolic on
+$\ell_{\infty}(\bbZ,X^k)$ provided $d$ is hyperbolic on $X^k$.
+Therefore, it suffices to show that
+$\Phi(\th_0,k),\ldots,\Phi(\vphi^{k-1}\th_0,k)$ are hyperbolic on $X$.
+Applying {\em Case $k=1$} with $\phi:=\vphi^k$
+and the representation
+$\pi_{\th,\phi}\colon a\mapsto \diag\{a(\phi^{-n}\th)\}_{n\in\bbZ}$
+shows that
+\[ \pi_{\th_0,\phi}(T^k)
+=S^k\diag\{\Phi(\vphi^{kn}\th_0,k)\}_{n\in\bbZ}
+=S^k\diag\{\Phi(\th_0,k)\}_{n\in\bbZ} \]
+is hyperbolic.  As before, expressing this operator as
+$\hat S\diag\{\Phi(\th_0,k)\}_{n\in\bbZ}$ on
+$\ell_{\infty}(\bbZ,X^k)$ and applying Lemma~2.4 of \cite{LMS1}
+shows that $\Phi(\th_0,k)$ is hyperbolic.  This proves the case
+$k>1$
+\end{pf}
+Thus, the lemma is proved.
+\end{pf}
+
+The {\em Proof of $ii)\Rightarrow i)$} requires
+showing that the invertibility of $b$ in $\frakB$ can be
+derived from the invertibility of all its images $\pi_\th(b)$ in
+$\Blinf$.  To do this,
+we consider the algebra $\frakD$ of operators in $\Blinf$ as
+defined in Section~2.  The next lemma proves a slightly stronger
+statement than $ii)\Rightarrow i)$.
+
+
+\begin{lem}\lb{l4.4} Let $b=\lambda I-T$.  Assume $\pi_\th(b)$ is
+invertible in $\Blinf$ and that there exists a $C>0$ such that
+$$
+\|[\pi_\th(b)]^{-1}\|_{\Blinf}\le C\quad\text{ for all } \th\in \TH.
+$$
+Then $b^{-1}$ exists and is an element of $\frakB$.
+\end{lem}
+
+\begin{pf}  Let $b=I-T$; the proof remains the same
+for $b=\lambda I-T$, $\lambda\in\bbT$.
+Using the notation of Proposition~\ref{p2.8}, set
+$d(\th):=\pi_\th(b)= I-\pi_\th(a)S$.
+Since $\sup_{\th\in \TH} \|a(\th)\|_{\calL(X)}<\infty$,
+it follows that \[\sum_k\sup_{\th\in \TH}\|d_k(\th)\|_{\Blinf}
+=1+\sup_{\th\in \TH}\|\pi_\th(a)\|_{\Blinf} < \infty,\] and hence
+$d(\th)$ satisfies the
+conditions of Proposition \ref{p2.8}.
+Consequently, for each $\th$, $\pi_\th(b)=d(\th)$
+has an inverse that is in $\frakD$:
+$$
+[\pi_\th(b)]^{-1}= \sumk c_k(\th) S^k,
+\quad\text{for some } c_k(\th)=\diag\{c_k^{(n)}(\th)\}_{n\in\bbZ}
+\text{ in }\frakC, \; k\in\bbZ.$$
+Moreover, since $\sup_{\th\in \TH}\|\pi_\th(b)\|_{\Blinf}\le C$,
+Proposition \ref{p2.8}, shows that
+\[\sum_k \sup_{\th\in \TH} \|c_k(\th)\|_{\Blinf} < \infty.\]
+
+The lemma is proved by showing that for each $k\in\bbZ$,
+\begin{equation}\lb{l4.4-1}
+\th  \mapsto c^{(0)}_k(\th)
+\text{ is a continuous, bounded function from } \TH\to \calL_s(X),
+\end{equation}
+(in the notation of Section 2, $c_k^{(0)}\in\frakA$)
+and then showing that the operator $r:=\sumk c_k^{(0)}V^k$
+is in $\frakB$ and satisfies $r=b^{-1}$.
+
+Let $k\in\bbZ$, and fix $x\in X$ and $\th_0\in \TH$.
+Define $\bar x=(x_n)_{n\in\bbZ}$
+in $\linf$ by $x_n=x$ if $n=-k$, and $x_n=0$ if $n\ne -k$.
+Then for any $\th\in \TH$,
+$$\begin{aligned}
+\|[c^{(0)}_k(\th)-c^{(0)}_k(\th_0)]x\|_X
+&=\left\|\sumj[c^{(0)}_j(\th)-c^{(0)}_j(\th_0)]x_{-j}\right\|_X\\
+&\le\sup_{n\in\bbZ}\left\|\sumj
+   [c^{(n)}_j(\th)-c_j^{(n)}(\th_0)]x_{n-j} \right\|_X \\
+&=\left\|\left(\sumj\diag
+  \{c^{(n)}_j(\th)-c_j^{(n)}(\th_0)\}_{n\in\bbZ}S^j\right)
+  \bar x\right\|_{\linf}\\
+&=\left\|\left(\sumj[c_j(\th)-c_j(\th_0)]S^j
+  \right)\bar x\right\|_{\linf}\\
+&=\left\| [\pi_\th(b)]^{-1}[\pi_{\th_{0}}(b)-
+   \pi_\th(b)][\pi_{\th_0}(b)]^{-1}\bar x\right\|_{\linf}\\
+&\le C\left\|[\pi_{\th_0}(b)-\pi_\th(b)]\bar y\right\|_{\linf},
+\end{aligned}
+$$
+where the last inequality comes from letting
+$\bar y=[\pi_{\th_0}(b)]^{-1}\bar x$ and using the assumption
+$\|[\pi_\th(b)]^{-1}\|\le C$.  Since the map
+$\th\mapsto \pi_\th(b)\bar y$ is continuous for any $\bar y\in\linf$,
+$c_k^{(0)}$ is continuous at $\th_0$.
+
+
+Moreover, note that $c_k(\th)=\diag\{c_k^{(n)}(\th)\}_{n\in\bbZ}$
+satisfies, for each $n\in\bbZ$, the inequality
+\[\|c_k(\th)\|_{\Blinf}\ge\|c_k^{(n)}(\th)\|_{\calL(X)}.\]
+  Therefore,
+ $\sum_k \sup_{\th\in \TH} \|c_k(\th)\|_{\Blinf} < \infty$
+implies, in particular, that
+$\sup_{\th\in \TH} \|c^{(0)}_k(\th) \|_{\calL(X)} < \infty$, and so
+each $c_k^{(0)}$ is bounded.  Thus, \eqref{l4.4-1} holds.
+
+
+Also, since
+$\|c^{(0)}_k\|_{\Bco}=\sup_{\th\in \TH}\|c^{(0)}_k(\th)\|_{\calL(X)}$,
+it follows that
+$$\sumk \|c^{(0)}_k \|_{\Bco}
+=\sumk\sup_{\th\in \TH}\|c^{(0)}_k(\th)\|_{\calL(X)}
+\le \sumk\sup_{\th\in \TH}\|c_k(\th)\|_{\Blinf} < \infty.$$
+Therefore, the operator $r:=\sumk c^{(0)}_k V^k$ is in $\frakB$.
+
+Now observe that
+\begin{equation}\lb{l4.4-2}
+c^{(n)}_k(\th) = c^{(0)}_k (\vphi^n\th), \quad n\in \bbZ.
+\end{equation}
+Indeed, for any $n\in \bbZ$, $\pi_\th(a)S^n=S^n\pi_{\vphi^n\th}(a)$,
+and so
+\[ \pi_{\vphi^n\th} (b)
+ =I-\diag\{a(\varphi^{n+k}\th)\}_{k\in\bbZ}S
+ =S^{-n} \pi_\th(b)S^n. \]
+Therefore,
+$$\begin{aligned}
+[\pi_{\vphi^n\th}(b)]^{-1} &= S^{-n}[\pi_\th(b)]^{-1}S^{n}
+=S^{-n}\left(\sumk\diag\{c^{(i)}_k(\th)\}_{i\in \bbZ}
+  S^k\right)S^{n}\\
+&=\sumk\diag\{c^{(i+n)}_k(\th)\}_{i\in\bbZ}S^k.
+\end{aligned}$$
+On the other hand,
+\[
+[\pi_{\vphi^n\th}(b)]^{-1}= \sumk c_k(\vphi^n\th)S^k=
+\sumk\diag\{c^{(i)}_k
+(\vphi^n\th)\}_{i\in\bbZ}S^k,\]
+so \eqref{l4.4-2} holds.
+
+As a consequence, $rb=br=I$.  Indeed, using \eqref{l4.4-2},
+$$\begin{aligned}
+\pi_\th(r) &= \sumk \pi_\th(c^{(0)}_k) S^k
+= \sumk \diag\{c^{(0)}_k(\varphi^n\th)\}_{n\in\bbZ}S^k \\
+ &= \sumk \diag\{c^{(n)}_k(\th)\}_{n\in\bbZ}S^k
+=\sumk c_k(\th)S^k = [\pi_\th(b)]^{-1}.
+\end{aligned}$$
+Therefore, $I=\pi_\th(r)\pi_\th(b) = \pi_\th(rb)$, and so
+$\pi_\th(rb-I) = 0$ for all $\th$.
+One checks directly that for
+$\pi_\th\colon\frakB\to\frakD$, $\bigcap_{\th\in \TH}\Ker\pi_\th=\{0\}$ and
+so $rb=I$. \end{pf}
+
+The  proof $i)\Rightarrow iii)$  uses  the
+following corollary to  Lemma~\ref{l4.4}.
+
+\begin{cor}\lb{c4.5} If $\sigma(T)\cap\bbT = \emptyset$,
+then the Riesz projection, $\calP$, corresponding to $\sigma(T)
+\cap \bbD$ has the form $\calP f(\th)=P(\th)f(\th)$, $f\in\co$, for some
+bounded, continuous projection-valued function $P:\TH\to \calL_s(X)$.
+\end{cor}
+
+\begin{pf}  If $\sigma(T)\cap\bbT =\emptyset$, then statement $ii)$
+of Theorem~\ref{SPT} holds, and so Lemma~\ref{l4.4} applies
+and shows $(\lambda I -T)^{-1}$ is in $\frakB$ for all
+$\lambda\in\bbT$.  Consequently,
+$\calP=\frac{1}{2\pi i}\int_{\bbT}(\lambda I-T)^{-1}\,d\lambda$ is
+an element of $\frakB$.  Proceeding exactly as in
+\cite{LS} or \cite[Lemma 3]{LATGDDE}, one can show that $\calP \in
+\frakA$. \end{pf}
+
+Before proceeding, we make an additional observation.
+
+\begin{prop}\lb{rppi} Assume
+$\sigma(T)\cap\bbT = \emptyset$, and let
+$\calP$ be the Riesz
+projection corresponding to $\sigma(T)\cap\bbD$, where $\calP
+f(\th)=P(\th)f(\th)$, as above.
+Then the Riesz projection $\calP_\th$ in $\Blinf$
+corresponding to $\sigma(\pi_\th(T))\cap\bbD$ is
+given by \[\pi_\th(\calP)=\diag\{P(\vphi^n\th)\}_{n\in\bbZ}.\]
+\end{prop}
+
+\begin{pf}  As in the previous corollary, $\calP\in\frakB$.
+Moreover,
+$\pi_\th((\lambda I-T)^{-1})=[\lambda I-\pi_\th(T)]^{-1}$ is in
+$\frakD$, for $\lambda\in\bbT$, and the Riesz projection
+corresponding to $\sigma(\pi_\th(T))\cap\bbD$, given by
+$\calP_\th=\frac{1}{2\pi i} \int_{\bbT}[\lambda
+I-\pi_\th(T)]^{-1}\,d\lambda$, is in $\frakD$. Since  $\pi_\th\colon
+\frakB\to\frakD$ is a continuous homomorphism,
+$\calP_\th=\pi_\th(\calP)$.  Since $\calP$ is given by $P(\cdot)$, if
+follows that
+$\calP_\th=\pi_\th(\calP)=\diag\{P(\vphi^n\th)\}_{n\in\bbZ}$.
+\end{pf}
+
+
+The {\em Proof of $i)\Rightarrow iii)$} is a consequence of
+the next lemma.
+
+\begin{lem}\lb{hypED}  If $\sigma(T)\cap\bbT = \emptyset$, then
+the LSPF $\widehat\vphi^t$ has exponential dichotomy.
+\end{lem}
+
+\begin{pf}  Let $\calP$ be the Riesz projection corresponding to
+$\sigma(T)\cap\bbD$.  By Corollary~\ref{c4.5}, $\calP$ is
+ given by $(\calP f)(\th)=P(\th)f(\th)$ for some
+projection-valued function $P\colon \TH\to X$.
+We show that $P$ satisfies the properties of Definition \ref{ED}.
+As already  shown, the statement $\sigma(T)\cap\bbT
+= \emptyset$ implies statement $ii)$ of
+Theorem~\ref{SPT}.  We use the latter to show that $\Phi(\th,t)$ is
+invertible as an operator from $\Im Q(\th)$ to $\Im Q(\vphi^t\th)$.
+
+Fix $\th\in \TH$.  Statement $ii)$ implies that
+$\pi_\th(T)\cap\bbT=\emptyset$, and Proposition \ref{rppi} shows that
+the corresponding Riesz projection is given by
+$\calP_\th=\pi_\th(\calP)= \diag\{P(\vphi^n\th)\}_{n\in\bbZ}$.  Set
+$\calQ_\th=I-\calP_\th$, and let $k\in\bbZ$.  Since
+$\pi_\th(T)\calQ_\th$ is invertible on $\Im\calQ_\th$, so is
+$[\pi_\th(T)\calQ_\th]^k=\pi_\th(T^k)\calQ_\th$.
+Hence, for any $\bar y=(y_n)_{n\in\bbZ}\in\Im\calQ_\th$,
+there exists a unique $\bar x=(x_n)_{n\in\bbZ}\in\Im\calQ_\th$
+such that (see \eqref{pixTk})
+$$
+\{\Phi(\vphi^{n-k}\th,k)x_{n-k}\}_{n\in\bbZ}=
+\pi_\th(T^k)\bar x=\bar y.
+$$
+The fact $\bar y\in\Im\calQ_\th$ means precisely that
+$y_n\in\Im Q(\vphi^n\th)$ for every $n\in\bbZ$.  So fix
+$y\in\Im Q(\vphi^k\th)$ and define $\bar y$ by $y_n=y$
+for $n=k$, and $y_n=0$, for $n\ne k$.  There exists a unique
+$\bar x\in\Im\calQ_\th$ such that
+$$
+\Phi(\vphi^{n-k}\th,k)x_{n-k}=y_n,\quad n\in\bbZ.
+$$
+In particular, for $n=k$, $\Phi(\th,n)x_0=y$.  This shows that
+$\Phi(\th,n)$ is invertible from $\Im Q(\th)$ to $\Im Q(\vphi^n\th)$ for
+all $\th\in \TH$, $n\in\bbZ$.
+
+To see that $\Phi(\th,t)$ is invertible for all $t\in\bbR$, fix $t$
+and choose $n\in\bbZ$ such that $t\in[n,n+1)$.  Since
+$\Phi(\th,n)$ is invertible, the identity
+$$
+\Phi(\th,t)=\Phi(\vphi^n\th,t-n)\Phi(\th,n)
+$$
+shows that it suffices to prove $\Phi(\vphi^n\th,t-n)$ is invertible.
+But the identities
+$$\begin{aligned}
+\Phi(\vphi^n\th,1)&=\Phi(\vphi^t\th,n+1-t)\Phi(\vphi^n\th,t-n)\\
+\Phi(\vphi^{t-1}\th,1)&=\Phi(\vphi^n\th,t-n)\Phi(\vphi^{t-1}\th,n-(t-1))
+\end{aligned}$$
+show, respectively, that $\Phi(\vphi^n\th,t-n)$ has a left and a
+right inverse.  Hence $\Phi(\th,t)$ is invertible from $\Im Q(\th)$ to
+$\Im Q(\vphi^t\th)$.
+
+Part $b)$ for $t\in\bbZ_+$ follows from \eqref{pixTk} and the fact
+that $\pi_\th(T)\calP=\pi_\th(T)\calP$. As in \cite[Prop.~3.10]{LS}, the
+statement is seen to hold  for $t\in\bbR_+$.
+
+Finally, since
+$\sigma(T^t)\cap \bbT=\emptyset$, there
+exist $M,\beta>0$ such that
+\[ \sup_{t\in\bbR}\|\Phi(\th,t) P(\th)\|_{\calL(X)}
+=\|\calP T^t\calP\|_{\Bco}\le
+Me^{-\beta t}.\]  The first inequality in Definition \ref{ED} $c)$
+follows. The second inequality is shown similarly.
+\end{pf}
+
+The {\em Proof of $iii)\Rightarrow i)$} is
+trivial.  This completes the proof of Theorem~\ref{SPT}.
+
+  Let us make the following
+observation concerning the dynamical spectrum, $\Sigma$
+(see the Introduction for the definition).
+ As a result of Theorem~\ref{SPT} and Corollary~\ref{c4.5},
+the dynamical spectrum $\Sigma$ coincides with
+$\ln|\sigma(T)\setminus\{0\}|$.  An application of Theorem \ref{SMT}
+gives the formula \eqref{spectra} in the introduction.
+Also, the  spectral subbundles for $\hp^t$ are determined by the
+spectral projections for $T$.
+
+
+
+
+
+%------------------- section 5 ----------------
+\section{Consequences}
+\setcounter{equation}{0}
+
+In this section we formulate a
+variety of consequences which follow, almost immediately, from the
+results of the previous sections.
+
+\subsection{Invertibility of $\Gamma$}
+
+An immediate consequence of the Theorem~ \ref{SMT} and
+Theorem~\ref{SPT} ( see $i)\Leftrightarrow iii)$) is the fact that a
+LSPF has exponential dichotomy if and only if the spectrum of the
+generator $\Gamma$ of the corresponding evolutionary semigroup
+\eqref{evolSG} satisfies  $\sigma(\Gamma)\cap i\bbR=\emptyset$.
+Since $\sigma(\Gamma)$ is invariant with respect to translations
+along $i\bbR$, we conclude:
+
+\begin{cor}\lb{c5.1}  The LSPF $\hp^t$ has exponential
+dichotomy if and only if $\Gamma$ is invertible.
+\end{cor}
+
+Now recall that in the norm continuous compact
+setting, the generator of the evolutionary semigroup is given by
+\eqref{genucc}.  Consequently, the LSPF generated by the cocycle
+in Example~\ref{exuvareqn} is hyperbolic if and only if
+the equation
+\[\left.\dfrac{d}{dt}f\circ\vphi^t(\th)\right|_{t=0}-A(\th)f(\th)=g(\th)\]
+has a unique solution $f$ for every $g\in\co$.
+
+Applying Corollary~\ref{c5.1} to  Example~\ref{exslset}, we
+note that an evolutionary family $\{U(\tau,s)\}$, ${\tau\ge s}$
+has exponential dichotomy if and only if $\Gamma$ is invertible
+on $C_0(\bbR,X)$ (cf. \cite{LMS1,LMS2,LatRand}).  In the special case
+where $A(\tau)\equiv A_0$ generates a $C_0$ semigroup
+$\{e^{tA_0}\}_{t\ge0}$ on $X$
+(here, $U(\tau,s)=e^{(\tau-s)A_0}$),
+this gives a result from \cite{Pruss}: a $C_0$ semigroup
+$\{e^{tA_0}\}_{t\ge0}$ is hyperbolic if and only if the equation
+$f'-A_0f=g$ has a unique solution for every $g\in\coR$.
+
+On the other hand, for the norm continuous line setting
+(Example~\ref{nacp}), we conclude that \eqref{difeqn} has
+exponential dichotomy if and only if $\Gamma=-d/dt+A(\cdot)$ is
+invertible \cite{Gohb,Palm}, or, equivalently,  the equation
+$f'(t)-A(t)f(t)=g(t)$, $t\in\bbR$, has a unique solution for every
+$g\in C_0(\bbR,X)$ (see \cite{DK,MS}).
+
+\subsection{Roughness of the dichotomy}
+
+In this subsection we give a very short proof of the facts that the
+exponential dichotomy persists under small perturbations.
+
+\begin{thm}\lb{roughness}
+Assume that the LSPF $\hp^t_1$ over the flow $\varphi^t$
+generated by a cocycle $\Phi_1(\th,t)$ has exponential dichotomy.
+Then there exists $\epsilon > 0$ such that for every cocycle
+$\Phi_2(\th,t)$ satisfying
+\begin{equation}\lb{rough-1}
+\sup\sb{\th\in \TH} \|\Phi_1(\th,1)-\Phi_2(\th,1) \|_{\calL(X)}<\epsilon,
+\end{equation}
+the LSPF $\hp^t_2$ over $\vphi^t$ generated by
+$\Phi_2(\th,t)$ also has the exponential dichotomy.
+\end{thm}
+
+\begin{pf}
+By Theorem~\ref{SPT}, $i)\Leftrightarrow iii)$, the operator
+$T_1$, $(T_1f)(\th) = \Phi_1(\vphi^{-1}\th,1) f(\varphi^{-1}\th), $ is
+hyperbolic in $\co$.  Note that for $(T_2f)(\th)=\Phi_2(\varphi^{-1}\th,
+1)f(\varphi^{-1}\th)$,
+$$\begin{aligned}
+\|T_1 - T_2\|_{\Bco} &= \sup\sb{\|f\|_{\co}=1} \left\|\left[\Phi_1
+(\vphi^{-1}\cdot\,,1)-\Phi_2(\vphi^{-1}\cdot\,,1)\right]
+f(\vphi^{-1} \cdot\,)\right\|_{\co}\\
+&\le \sup_{\th\in \TH}\|\Phi_1(\th,1) -\Phi_2(\th,1)\|_{\calL(X)}.
+\end{aligned}$$
+For sufficiently small $\epsilon >0$, \eqref{rough-1} implies
+$\sigma(T_2)\cap\bbT =\emptyset$.
+\end{pf}
+
+>From Corollary~\ref{c5.1} we derive the following.
+
+\begin{cor}  Let $\hp_1^t$ and $\hp_2^t$ be two LSPFs over $\vphi^t$,
+and let $\Gamma_1$ and $\Gamma_2$ denote the respective generators of
+the corresponding evolutionary semigroups \eqref{evolSG}.  If
+$\hp_1^t$  has exponential dichotomy, then there exists
+$\epsilon>0$, $\epsilon=\epsilon(\hp_1^t)$ such that
+$\|\Gamma_1-\Gamma_2\|<\epsilon$ implies $\hp_2^t$ also has exponential
+dichotomy. \end{cor}
+
+Since the ``typical'' generator $\Gamma$ for a variational equation
+\eqref{vareqn} has the form \eqref{genucc}, this can be used when
+the unbounded operators $A(\th)$ are perturbed by  bounded operators
+such that $\Gamma_1-\Gamma_2$ is bounded.
+
+For the strongly continuous setting, we have the following
+ roughness result (cf. \cite{Palm2}) for the variational equation in
+Example~\ref{bddpertconstcoc}. Recall that in that example the
+generator of the evolutionary semigroup is identified in
+\eqref{A0A1}.
+
+\begin{cor}  Let $A_0$ be a generator of a $C_0$ semigroup
+$\{e^{tA_0}\}_{t\ge0}$ on $X$, and assume
+$A_1$ and $A_2\colon \TH\to \calL_s(X)$ be bounded and
+continuous. Consider the equations:
+\[
+\dfrac{dx}{dt}=A_0x(t)+A_1(\vphi^t\th)x(t),\quad
+\dfrac{dx}{dt}=A_0x(t)+A_2(\vphi^t\th)x(t), \quad \th\in \TH,\;
+t\in\bbR \]
+(see \eqref{vareqn}--\eqref{pertA}). Assume that the LSPF $\hp_1^t$ over
+$\vphi^t$ generated by the first equation has exponential dichotomy.
+Then there exists $\epsilon>0$, $\epsilon=\epsilon(\hp_1^t)$ such that
+$\|A_1(\th)-A_2(\th)\|<\epsilon$ implies the LSPF $\hp_2^t$ over
+$\vphi^t$ generated by the second equation has exponential dichotomy,
+provided the both cocycles are strongly continuous. \end{cor}
+
+This gives an alternate way of addressing the situation of Theorem~5.2
+in \cite{ChLe1}.
+
+\subsection{Green's function}
+
+We describe the existence of
+exponential dichotomy for $\hp^t$ in terms of the existence and
+uniqueness of a Green's function. Let $P\colon \TH\to \calL_s(X)$
+be a bounded continuous projection-valued function that satisfies
+the following properties for  $\th\in \TH$ and $t>0$:
+\begin{list}{\alph{aa})}{\usecounter{aa}}
+\item $\Phi(\th,t)P(\th) = P(\varphi^t\th) \Phi(\th,t)$;
+\item $\Phi(\th,t)$ is invertible as an operator from
+      $\Im Q(\th)$ to $\Im Q(\varphi^t\th).$
+\end{list}
+Define
+\begin{equation}\lb{Gxt}
+G(\th,t)=
+\begin{cases}
+   \Phi_P(\th,t), & t>0\\
+   \Phi_Q(\th,t), & t<0.
+\end{cases}
+\end{equation}
+Here we have denoted:
+\begin{align*}
+\Phi_P(\th,t)  &= P(\vphi^t\th) \Phi(\th,t) P(\th)\; \text{ for } t>0\\
+\Phi_Q(\th,t) &= \left[Q(\vphi^{-t}\th) \Phi(\th,-t) Q(\th)\right]^{-1}
+\;\text{ for } t<0,
+\end{align*}
+and used a) and b).
+
+\begin{defn}\lb{Grfcn}  We say that the LSPF $\hp^t$ has a Green's function
+if there exists a bounded continuous projection $P\colon \TH\to \calL_s(X)$,
+such that for $G$ from
+\eqref{Gxt}  the operator
+\begin{equation}\lb{Grfcn-1}
+(\widehat{G}f)(\th) = \int^{\infty}_{-\infty} G(\vphi^{-t}\th,t)
+f(\vphi^{-t}\th)\,dt,\quad \th\in \TH,
+\end{equation}
+is bounded on $\co$.
+\end{defn}
+The following result generalizes \cite{Sam} (see also
+\cite{LATGDDE}).
+
+\begin{thm}\lb{t5.5}
+The LSPF $\hp^t$ has exponential dichotomy if and only if
+the Green's function exists and is unique.
+\end{thm}
+
+\begin{pf}
+For every $P(\cdot)$ satisfying a)-b), define
+$\calP\in\Bco$ by $\calP f(\th)=P(\th)f(\th)$, and set
+$\calQ=I-\calP$.  Then $\calP$ commutes with $T^t$, and
+$T^t_Q\equiv \calQ T^t\calQ$ is invertible in $\Im \calQ$.  We
+note that \eqref{Grfcn-1} can be rewritten as
+$\widehat{G} = -\tilde{G}$, where
+\begin{equation}\lb{t5.5-1}
+\tilde{G}f=\int^{\infty}_0 T^{-t}_Qf\,dt
+  -\int^{\infty}_0 T^t_Q f\,dt.
+\end{equation}
+
+If $\Gamma$ denotes the generator of $T^t$, then the
+Spectral Mapping Theorem, \ref{SMT}, shows that
+$\Gamma^{-1}\in \Bco$ if and only if $T^t$ is hyperbolic.
+
+Assume the Green's function, $G$, exists and is unique.
+Then $\tilde{G}$ is bounded.  By \cite[Lemma 4.2]{LatRand} then
+$\Gamma$ is invertible
+and $\Gamma^{-1} = \tilde{G}.$  Since $T^t$ is hyperbolic,
+$i)\Rightarrow iii)$ of Theorem \ref{SPT} shows that $\hp^t$
+has exponential dichotomy.
+
+Conversely, assume $\hp^t$ has exponential dichotomy.
+Then $T^t$ is hyperbolic with Riesz projection $\calP=P(\cdot)$.
+By \cite{BAG} this projection is unique.  The standard
+norm-estimates in \eqref{t5.5-1} shows that $\tilde{G}$ and
+$\widehat{G}$ are bounded.
+\end{pf}
+
+\subsection{Pointwise dichotomy}
+
+In this subsection we consider the interrelation between
+``global'' and ``pointwise'' dichotomies. Let $\bbK$ denote either
+$\bbR$ or $\bbZ$. Fix a point $\th_0\in \TH$.
+We define an exponential dichotomy of $\hp^t$ over the orbit
+through $\th_0$ as  follows.
+
+\begin{defn} \label{pointdich}
+The LSPF $\hp^t$ has {\em exponential dichotomy}
+over $\bbK$ at $\th_0$ if for all $\tau\in\bbK$, there exists
+a projection $P(\vphi^\tau \th_0)\in \calL(X)$  such that
+\begin{list}{\alph{aa})}{\usecounter{aa}}
+\item  $P(\vphi^\tau \th_0)\Phi(\th_0,\tau) =\Phi(\th_0,\tau)P(\th_0)$;
+\item  $\Phi_Q(\vphi^\tau \th_0,t)$ is invertible from
+       $\Im Q(\vphi^\tau \th_0)$ to $\Im Q(\vphi^{\tau+t}\th_0)$ for all $t>0$
+       and $\tau\in\bbK$;
+\item there exist positive constants $M=M(\th_0)$, $\beta=\beta(\th_0)$
+such that for all $\tau\in\bbR$ and $t>0$:
+$$\|\Phi_P(\vphi^\tau \th_0,t) \|
+\leq Me^{-\beta t},\quad
+\|\left[\Phi_Q(\vphi^\tau \th_0,t) \right]^{-1}\|
+\leq Me^{-\beta t}.
+$$
+\end{list}
+For $\bbK=\bbR$ we require, in addition, that
+$\tau\mapsto P(\vphi^\tau \th_0)$ is a (strongly) continuous function
+from $\bbR$ to $\calL_s(X)$.
+\end{defn}
+
+For invertible-valued cocycles $\Phi\colon \TH\times \bbK\to \calL(X)$,
+Definition~\ref{pointdich} is
+equivalent to the classical definition of exponential
+dichotomy of a LSPF at a point:  There exists a projection $P$ and
+constants $M$, $\beta$, such that $\|\Phi( \th_0,s') P\Phi^{-1}(
+\th_0,s)\| \leq Me^{-\beta (s'-s)}$ for $s'\geq s$, and
+$\|\Phi( \th_0,s') Q\Phi^{-1}( \th_0,s)\|
+\leq Me^{-\beta (s-s')}$ for $s\geq s'$
+(see, e.g., \cite{SSDich}).
+
+The following assertion has appeared previously.  For the sake of
+completeness, we include a brief proof that is consistent with the
+approach of the present paper (see also \cite{ChLe1},
+\cite[Thm.~7.6.5]{Henry}, and \cite[Thm.~3.22]{LS}).
+
+\begin{lem}\label{invpx} The LSPF $\hp^t$ has exponential dichotomy
+over $\bbZ$ at $\th_0\in \TH$ if and only if $\pi_{\th_0}(T)$ is
+hyperbolic in $l_\infty(\bbZ;X)$.
+\end{lem}
+
+\begin{pf} Indeed, the spectral radius $r$ of
+$\pi_{\th_0}(T)\calP_{\th_0}$ is given by the formula
+\[r=\lim_{k\to \infty}\left( \sup_{n\in\bbZ}
+\|\Phi(\vphi^n\th_0,k)P(\vphi^n\th_0)\|\right)^{1/k},\]
+and the exponential dichotomy of $\hp^t$ at $\th_0$ implies
+the hyperbolicity of $\pi_{\th_0}(T)$ with Riesz projection
+\begin{equation}\label{RPx}
+\calP_{\th_0}=\diag \{P_n\}_{n\in\bbZ}
+\end{equation}
+for $P_n:=P(\vphi^n\th_0)$.
+
+Conversely, assume $\pi_{\th_0}(T)\cap\bbT=\emptyset$. Then for all
+$\lambda\in\bbT$, $[\lambda I-\pi_{\th_0}(T)]^{-1}\in\frakD$.
+Therefore, as in Corollary \ref{c4.5}, the Riesz projection
+$\calP_{\th_0}$ corresponding to  $\sigma(\pi_{\th_0}(T)\cap\bbD$ is
+an element of $\frakD$.  Proceeding as in \cite[Lemma~3]{LATGDDE},
+one can show that $\calP_{\th_0}\in\frakC$.  I.e., there exist
+operators $P_n$ in $\calL(X)$ such that
+$\calP_{\th_0}=\diag\{P_n\}_{n\in\bbZ}$.
+Now define $P(\vphi^n\th_0):=P_n$ for each $n\in\bbZ$.
+This defines projections in $\calL(X)$, which, by the fact that
+$\pi_{\th_0}(T)\calP_{\th_0}= \calP_{\th_0}\pi_{\th_0}(T)$, are seen to
+satisfy part  $a)$ of Definition \ref{pointdich}:
+\[ P(\vphi^\tau \th_0)\Phi(\th_0,\tau) =\Phi(\th_0,\tau)P(\th_0),
+\quad \tau\in\bbZ \]
+(use \eqref{pixTk}).
+Also, as in the proof of Lemma \ref{hypED},
+$\Phi_Q(\th_0,k)\colon \Im Q(\th_0)\to\Im Q(\vphi^k\th_0)$
+is invertible for all $\th\in \TH$, $k\in\bbZ$.
+In particular, $\Phi_Q(\vphi^n\th_0,k)\colon
+\Im Q(\vphi^n\th_0)\to\Im Q(\vphi^{n+k}\th_0)$
+is invertible for all $n,k\in\bbZ$.
+
+The estimates in Definition \ref{pointdich} $c)$ are also verified
+as in Lemma \ref{hypED}.
+\end{pf}
+
+Combining this with Theorem~\ref{SPT} gives
+the following fact.
+
+\begin{cor}\label{pntw} The LSPF $\hp^t$ has exponential dichotomy
+on $\TH$ if and only if it has exponential dichotomy at every
+$\th\in \TH$ and $\|[\pi_\th(T)-\lambda I]^{-1}\|\le C $,
+$\th\in\TH$, $\lambda\in\bbT$. \end{cor}
+
+
+\subsection{Evolutionary semigroups along trajectories}
+
+Next we relate the exponential dichotomy of
+$\hp^t$ to an associated evolutionary semigroup
+defined on $C_0(\bbR,X)$ along each trajectory of the flow
+(cf.~\cite{LATGDDE,LS}).  Fix $\th\in \TH$, and consider the semigroup
+$\{\Pi_\th^t\}_{t\ge0}$ defined by
+$$
+(\Pi^t_\th f)(s)=\Phi(\vphi^{s-t}\th, t)f(s-t),\quad s\in\bbR,\; t\ge
+0,\; f\in C_0(\bbR,X).
+$$
+Let $L_\th$ denote the generator.  The semigroup
+$\{\Pi_\th^t\}_{t\ge0}$ is, in fact, an
+evolutionary semigroup in the sense of the strongly continuous
+line setting.  Indeed, for $s\ge \tau$, set $U(s,\tau) =
+\Phi(\vphi^{\tau}\th, s-\tau)$. Then $U(s,s) = I$, and for
+$s\ge r\ge \tau$,
+$$\begin{aligned}
+U(s,\tau)=\Phi(\vphi^{\tau}\th, s-t)&=\Phi(\vphi^{r-\tau}
+(\vphi^{\tau}\th), s-r) \Phi(\vphi^{\tau}\th, r-t)\\
+&=\Phi(\vphi^r\th, s-r) \Phi(\vphi^{\tau}\th, r-\tau) \\
+&=U(s,r)U(r,\tau).
+\end{aligned}$$
+Hence, $\{U(s,\tau)\}_{s\ge \tau}$ is an evolutionary family
+on $X$, and $(\Pi^t_\th f)(s) = U(s,s-t) f(s-t)$.
+As shown in \cite{LMS1,LMS2} (see also \cite{Rau1,Rau2}), any such
+evolutionary semigroup has the following properties:
+
+\begin{lem}\lb{l5.2}
+$\sigma(\Pi^t_\th)$ is invariant under rotations centered at origin,
+$\sigma(L_\th)$ is invariant under translation along $i\bbR$, and the
+spectral mapping theorem holds:
+$$
+\sigma(\Pi^t_\th) \bs \{0\} = e^{t\sigma(L_\th)}, \quad t> 0.
+$$
+Further, when $\sigma(\Pi^1_\th)\cap\bbT=\emptyset$, the
+corresponding Riesz projection $\calP$ is an operator of
+multiplication: $(\calP f)(s)=P(s)f(s)$, for some
+bounded, continuous projection-valued $P:\bbR\to \calL_s(X)$.
+\end{lem}
+
+Theorem~\ref{SPT} and Lemma~\ref{invpx} give the following
+result.
+\begin{thm}\lb{t5.3}
+The following are equivalent
+\setcounter{rr}{0}
+\begin{list}{\roman{rr})}{\usecounter{rr}}
+\item  The LSPF $\widehat{\vphi}^t$ has exponential dichotomy;
+\item  $\sigma(\Pi^1_\th)\cap\bbT = \emptyset$ for all $\th\in \TH$, and
+there exists $C>0$ such that
+$$
+\|\left[\Pi^1_\th-\lambda I\right]^{-1} \|_{B(C_{0}(\bbR; X))}\le C,
+  \quad \th\in \TH,\; \lambda\in\bbT;
+$$
+\item $\sigma(L_\th)\cap i\bbR=\emptyset$ for all $\th\in \TH$, and
+there exists $C>0$ such that
+$$
+\|\left[i\xi-L_\th\right]^{-1}\|_{B(C_{0}(\bbR;X))}\le C,\quad \th\in
+\TH,\; \xi\in\bbR.
+$$
+\end{list}
+\end{thm}
+
+As in Theorem~\ref{SPT} (see also [LMS1]), one
+can replace the inequalities in $ii)$ and $iii)$ by the
+inequalities
+$$
+\|[\Pi^1_\th-I]^{-1}\|_{B(C_{0}(\bbR;X))} \le C,\;\text{ and }\;
+\|L^{-1}_\th \|_{B(C_{0}(\bbR; X))} \le C, \quad \th\in \TH,
+$$
+respectively. We note that the operators $L_\th$ are
+differential operators of the first order, and
+$i)\Leftrightarrow iii)$ reduces the problem of the existence of
+exponential dichotomy on $\TH$ to the problem of invertibility
+of these operators.
+
+\begin{pf} Lemma \ref{l5.2} proves the equivalence of
+$iii)$ and $ii)$. To prove $i) \Leftrightarrow ii)$, we
+introduce operators on the space
+$$
+C_0(\bbR\times \TH,X) = C_0(\TH,C_0(\bbR,X)) = C_0(\bbR,C_0(\TH,X))
+$$
+defined as
+$$\begin{aligned}
+(\Pi h)(s,\th) & = \Phi(\vphi^{s-1}\th, 1) h(s-1, \th),\\
+(\hat{T}h)(s,\th) & = \Phi(\vphi^{-1}\th,1) h(s-1,\vphi^{-1}\th),\\
+(Jh)(s,\th) & = h(s,\vphi^s\th),
+(J^{-1}h)(s,\th) = h (s,\vphi^{-s}\th),
+\end{aligned}$$
+for $s\in\bbR$, $\th\in \TH$, $h\in C_0(\bbR\times \TH,X)$.
+These operators satisfy
+\begin{equation}\lb{5-1}
+J^{-1} \Pi J=\hat{T}.
+\end{equation}
+Indeed, for $r_1(s,\th) = h(s,\vphi^s\th)$ one has $(\Pi r_1) (s,\th) =
+\Phi(\vphi^{s-1}\th,1) h(s-1,\vphi^{s-1}\th)$, and $(J^{-1}\Pi J h)
+(s,\th) = \Phi (\vphi^{s-1} (\vphi^{-s} \th), 1)h(s-1,\vphi^{s-1}
+(\vphi^{-s}\th) = (\hat{T}h)(s,\th).$
+
+Next, note that for a function $F\colon \TH\to C_0(\bbR, X)$, the
+operator $\Pi$ acts as the multiplication by $\Pi_\th^1$:
+$(\Pi F)(\th) = \Pi_\th^1F(\th)$.  Hence,
+for $\lambda\in\bbT$, the operator $\lambda-\Pi$ of multiplication
+by $\lambda-\Pi^1_\th$ is invertible on $C_0(\TH,C_0(\bbR,X))$ if
+and only if $\lambda-\Pi^1_\th$ is invertible on $C_0(\bbR,X)$ for
+each $\th\in \TH$, and $\|(\lambda-\Pi^1_\th)^{-1}\|\le C$ for some
+$C>0$. This means, that the
+statement $\sigma (\Pi) \cap \bbT = \emptyset$ is equivalent to
+$ii)$.
+
+By Theorem~\ref{SPT}, $i)$ is equivalent to the statement $\sigma
+({T})\cap\bbT = \emptyset$ on $\co$. From \cite{LMS1} (Theorem 2.5, (1)
+$\Leftrightarrow$ (2)), we conclude that $\sigma ({T})\cap\bbT =
+\emptyset$ on $\co$ is equivalent to
+$\sigma (\hat{T})\cap\bbT = \emptyset$ on $C_0(\bbR,\co)$.  Indeed,
+for $f\colon\bbR\to C_0(\TH,X)$, $\hat{T}$ acts as $(\hat{T} f) (s) =
+Tf(s-1)$, and this is exactly the case considered in Theorem 2.5 of
+\cite{LMS1}. Hence, $i)$ is equivalent to $\sigma (\hat{T})\cap\bbT =
+\emptyset$.  Equation \eqref{5-1} shows that
+$\sigma(\Pi) = \sigma(\hat{T})$, and hence $i)\Leftrightarrow ii)$.
+\end{pf}
+
+\subsection{Open Problems and Concluding Remarks}
+
+\begin{rem}\label{LP} An  open problem is to prove
+analogues of Theorems~\ref{SMT} and \ref{SPT} in the
+$L_p$-setting:  Let $\mu$ be a Borel measure on $\TH$, positive on
+open sets, and quasi-invariant with respect to the flow $\vphi^t$.
+The semigroup \eqref{evolSG} could be replaced by
+\[(T^tf)(\th)=\left(\dfrac{d\mu\circ \vphi^t}{d\mu}(\th)\right)^{1/p}
+\Phi(\vphi^{-t}\th,t)f(\vphi^{-t}\th),\quad f\in L_p(\TH,\mu,X).\]
+The proof of Theorem~\ref{SMT} would require minor changes.
+However, the proof of Lemma~\ref{l4.3}
+should be modified essentially.
+Theorem~\ref{SPT} has been proven for the
+strongly continuous line setting for $L_p$ \cite{LMS1,LatRand};
+in this setting, the statement $i)\Leftrightarrow iii)$
+is proved  in \cite{Rab} using an
+interesting alternative $C_0$-semigroup approach.
+\end{rem}
+
+\begin{rem}\label{Generators} It would be interesting to
+determine under which conditions on the cocycle $\Phi$ and in which
+sense (in strongly continuous locally compact setting) the
+generator $\Gamma$ is given by formula \eqref{genucc} (see
+\cite{Nag2,NagRh} for the line setting).
+\end{rem}
+
+\begin{rem}\label{poinwise-global} We conjecture that
+the condition \eqref{unbddpix} in Theorem~\ref{SPT} and
+the corresponding inequalities in Corollary~\ref{pntw}
+and Theorem~\ref{t5.3}  are
+redundant, at least for the norm continuous compact setting.
+This means that the LSPF is exponentially dichotomic on
+$\TH$ if and only if it is exponentially dichotomic at every
+$\th\in \TH$. This conjecture is
+true for finite dimensional $X$ \cite[Lemma 2A]{SSSpT} and for the
+norm continuous compact setting where $X$ is a Hilbert space
+\cite{LS}. The corresponding algebraic question here is whether the
+set of representations $\{\pi_\th\}_{\th\in \TH}$ of the algebra $\frakB$ is
+sufficient, that is, whether $b\in\frakB$ is invertible if and only if
+$\pi_\th(b)$ is invertible for all $\th\in \TH$.
+\end{rem}
+
+\begin{rem}\label{epstraj} A problem related
+to Remark~\ref{poinwise-global} is to
+consider, instead of $\pi_\th(T)$, weighted shift operators
+$\pi_{\bar{\th}}(T)$ along
+$\epsilon$-trajectories $\bar{\th}$. Recall,
+that a sequence $\bar{\th}=\{\th_n\}_{n\in\bbZ}$ is called an
+$\epsilon$-trajectory for $\vphi=\vphi^1$ if $\text{dist}
+(\vphi \th_n,\th_{n+1})\leq \epsilon$ for $n\in\bbZ$. The operator
+$\pi_{\bar{\th}}(T)$ can be defined on $l_\infty(\bbZ,X)$ as
+$\pi_{\bar{\th}}(T)=\diag\{\Phi(\th_{n-1},1)\}_{n\in\bbZ} S$. We
+suspect that the LSPF has exponential dichotomy over $\TH$ if and
+only if $\pi_{\bar{\th}}(T)$ is hyperbolic for all
+$\epsilon$-trajectories  with sufficiently small $\epsilon$.
+\end{rem}
+
+\begin{rem}\label{semiaxis} An area open for investigation
+is the case when $\Phi$ is a (semi)cocycle over a {\it semiflow}
+$\{\vphi^t\}_{t\in\bbR_+}$. For the line setting, this
+corresponds to the dichotomy on the semiaxis.
+\end{rem}
+
+\begin{rem}\label{stabil} We showed in this paper that
+exponential dichotomy persists under small perturbations of the
+cocycle. A theorem by R.~Sacker and G.~Sell \cite[Thm. 6]{SSSpT}
+says that dichotomy persists under ``small'' perturbations of a
+$\vphi^t$-invariant compact subset $\TH_0\subset \TH$. The proof in
+\cite{SSSpT} is essentially finite-dimensional. It would be of
+interest to know whether the theorem holds in the strongly continuous
+setting.  We note that Remark~\ref{epstraj} helps to prove the
+theorem for the uniformly continuous setting when $X$ is a
+Hilbert space (in preparation).
+\end{rem}
+
+\begin{rem}\label{Oseledets} We note that Lyapunov numbers
+(see \cite{ChLe1,JPS,SSSpT}) for the cocycle $\Phi$ belong to the
+dynamical spectrum $\Sigma=\sigma(\Gamma)\cap\bbR$. As proven
+in \cite{JPS} for the finite dimensional setting and in \cite{LS}
+for the uniformly continuous setting on a Hilbert space $X$, the
+boundaries of $\Sigma$ can be computed via the {\it exact}
+Lyapunov-Oseledets exponents given by
+the multiplicative ergodic theorem. This theorem is now available
+for Banach spaces \cite{Mane}. A natural question then is to
+characterize the boundaries of $\Sigma$ for the compact-valued
+cocycles on a Banach space.
+\end{rem}
+
+\begin{rem}\label{Nonperiodic} Another natural question is to relax
+our main assumption that the aperiodic trajectories of $\vphi^t$ are
+dense in $\TH$. Without this assumption the Spectral Mapping Theorem
+does not hold (see \cite{CS} and \cite{LS}). Let $p(\th)=\inf\{t:
+\vphi^t\th=\th\}$ denote the prime period of $\th\in \TH$, and set
+\[p_0(\th):=\inf_{U} \sup_{y\in U} p(y),\]
+ where $U$ denotes an open set containing $\th$.
+Let $\calH(S)$ denote the union of the circles, centered at
+origin, intersecting a set $S\subset\bbC$.
+
+Assume $p_0(\th)\geq c>0$ for all $\th\in \TH$ and some $c$. We conjecture
+that the following Annular Hull Theorem (see \cite{CS}) is valid:
+\[ \exp {t\sigma (\Gamma)} \subset \sigma(T^t)\setminus \{0\}
+\subset \calH(\exp {t\sigma (\Gamma)}).\]
+There are infinite-dimensional counterexamples (similar to one in
+\cite{Mont})
+ showing the theorem
+fails without the assumption $p_0(\th)\geq c>0$.
+
+To prove this conjecture it might be helpful to consider
+the following function:
+\[y(\th)=\int\limits_0^{p_0(\th)}\rho(t/p_0(\th))(T^tw)(\th)+
+(1-\rho(t/p_0(\th)))(T^{t+p_0(\th)}w)(\th) dt,\]
+instead of \eqref{defing} in the proof of the Spectral Mapping
+Theorem. The function $\rho:[0,1]\to [0,1]$ here (see \cite[p.~46]{LMS2}) is a
+smooth function such that that $\rho(\tau)=0$ for $\tau\in [0,1/3]$ and
+$\rho(\tau)=1$ for $\tau\in [2/3,1]$.
+\end{rem}
+
+\section{Acknowledgments}
+
+Y.~Latushkin is grateful to Professor Shui-Nee Chow,
+Professor Jack Hale, and Professor Yingfei Yi for
+the  suggestions, questions, and discussions during
+his visit to Georgia Tech in 1994, and to Hugo Leiva for
+helpful discussions on Remarks~\ref{poinwise-global} and
+\ref{stabil}.
+
+
+
+%--------------- Bibliography ----------
+
+\begin{thebibliography}{99}
+
+\bibitem{Ant} A.~B.~Antonevich,
+Two methods for investigating the invertibility of operators from
+$C^*$-algebras generated by dynamical systems,
+{\em Math.~USSR-Sb}
+{\bf 52} (1985), 1--20.
+
+\bibitem{BAG}
+H.~Bart, I.~Gohberg, and M.~A.~Kaashoek,
+ Wiener-Hopf factorization,
+inverse Fourier transform and
+exponentially dichotomous operators,
+{\em J.~Funct.~Anal.}
+{\bf  68} (1986),1-42.
+
+\bibitem{Gohb} A.~Ben-Artzi and I.~Gohberg,
+ Dichotomy of systems and
+invertibility of linear ordinary
+differential operators,
+{\em Oper.~Theory Adv.~Appl.}
+{\bf  56} (1992), 90--119.
+
+%\bibitem{CLat} C.~Chicone and Y.~Latushkin,
+% Quadratic Lyapunov functions for
+%linear skew-product flows and weighted
+%composition operators,
+%J.~Int.~Diff.~Eqns., to appear.
+
+\bibitem{CS} C.~Chicone and R.~Swanson,
+ Spectral theory for linearization of dynamical systems,
+{\em J.~Differential Equations}
+{\bf 40} (1981), 155--167.
+
+\bibitem{CLMS} C.~Chicone, Y.~Latushkin and S.~Montgomery-Smith,
+ The spectrum of the kinematic dynamo operator for an ideally
+conducting fluid,  submitted.
+
+\bibitem{ChLinLu} S.-N.~Chow, X.-B.~Lin, and K.~Lu,
+ Smooth invariant foliations in infinite dimensional spaces,
+{\em J.~Differential Equations}
+{\bf 94} (1991), 266--291.
+
+\bibitem{ChLu} S.-N.~Chow, and K.~Lu,
+ Invariant manifolds for flows in Banach spaces,
+{\em J.~Differential Equations}
+{\bf 74} (1988), 285--317.
+
+\bibitem{ChLe1} S.-N. Chow and H. Leiva,
+ Existence and roughness of the exponential dichotomy for
+linear skew-product semiflows in Banach spaces,
+{\em J.~Differential Equations},
+to appear.
+
+\bibitem{ChLe2} S.-N. Chow and H. Leiva,
+ Two definitions of the exponential dichotomy for
+ skew-product semiflow in Banach spaces,
+preprint.
+
+\bibitem{ChLe3} S.-N. Chow and H. Leiva,
+Dynamical spectrum for time dependent linear systems in Banach spaces,
+{\em Japan J.~Industr. Appl. Math.}, {\bf 11}, no. 3 (1994).
+
+
+\bibitem{DK} J.~Daleckij and M.~Krein,
+``Stability of Differential Equations in Banach Space,"
+Amer.~Math.~Soc., Providence, RI, 1974.
+
+\bibitem{Evans}
+D.~E.~Evans,  Time dependent perturbations and scattering
+of strongly continuous groups on Banach spaces,
+{\em Math.~Ann.}
+{\bf 221} (1976), 275--290.
+
+%\bibitem{GohLeit}  I.~Gohberg and J.~Leiterer,
+%Factorization of operator functions with respect to a
+%contour. II. Factorization of operator functions close to the
+%identity,  {\em Math. Nach.} {\bf 54} (1973), 41--74.
+
+\bibitem{Gold} J. Goldstein,
+Asymptotics for bounded semigroups
+on Hilbert space, {\em in} ``Aspects of Positivity in Functional
+Analysis," Mathematics Studies, Vol.~122  (1986).
+
+\bibitem{Hale} J.~Hale,
+``Asymptotic Behavior of Dissipative Systems,"
+Math.~Surveys Mongoraphs Vol.~25,
+Amer.~Math.~Soc., Providence, RI, 1988.
+
+\bibitem{HL} J.~Hale and S.~M.~Verduyn Lunel,
+``Introduction to Functional Differential Equations,''
+Appl. Math. Sci. {\bf 99}, Springer-Verlag, New York, 1993.
+
+\bibitem{Henry} D.~Henry,
+``Geometric Theory of Nonlinear Parabolic Equations,"
+Lecture Notes in Math., no.~840,  Springer-Verlag, New York, 1981.
+
+\bibitem{Henry1} D.~Henry,
+``Topics in analysis,"
+{\em Publ.~Mat.}
+{\bf 31} (1) (1987), 29--84.
+
+\bibitem{Howland} J.~S.~Howland,
+Stationary scattering theory for time-dependent hamiltonians,
+{\em Math.~Ann.}
+{\bf 207} (1974), 315--335.
+
+\bibitem{J} R.~Johnson,
+Analyticity of spectral subbundles,
+{\em J.~Diff.~ Eqns.}
+{\bf 35} (1980), 366--387.
+
+\bibitem{JPS}  R. Johnson, K. Palmer, and G. Sell,
+Ergodic properties of linear dynamical systems,
+{\em SIAM J.~Math.~Anal.}
+{\bf 1}, no.~1 (1987), 1--33.
+
+\bibitem{LATGDDE} Y.~Latushkin,
+Green's function, continual weighted composition operators along
+trajectories, and hyperbolicity of linear extensions for dynamical
+systems,
+{\em J.~Dynamics  Differential Equations}
+{\bf 6} (1) (1994), 1--21.
+
+\bibitem{LMS1} Y.~Latushkin and S.~Montgomery-Smith,
+Evolutionary semigroups and Lyapunov theorems in Banach spaces,
+{\em J.~Funct.~Anal.},
+to appear.
+
+\bibitem{LMS2} Y.~Latushkin and S.~Montgomery-Smith,
+Lyapunov theorems for Banach spaces,
+{\em Bull.~Amer.~Math.~Soc.~(N.S.)},
+{\bf 31}, no.~1 (1994), 44--49.
+
+\bibitem{LatRand} Y.~Latushkin and T.~Randolph,
+Dichotomy of differential equations on Banach spaces and an
+algebra of weighted composition operators,
+submitted.
+
+\bibitem{LS} Y.~Latushkin and A.~M.~Stepin,
+Weighted composition operators and linear extensions of dynamical
+systems,
+{\em Russian Math.~Surveys},
+{\bf 46}, no.~2 (1992), 95--165.
+
+\bibitem{Lin} X.-B.~Lin,
+Exponential dichotomies in intermediate spaces with applications
+to a diffusively perturbed predator-prey model,
+{\em J.~Differential Equations}
+{\bf 108} (1994), 36--63.
+
+\bibitem{Lum}  G.~Lumer,
+Equations de diffusion dans le domaines $(x,t)$ non-cylindriques et
+semigroupes ``espace-temps",
+Lecture Notes in Math., no.~1393,
+Springer-Verlag, New York, 1989, 161--179.
+
+\bibitem{Mag} L.~T.~Magalh\~aes,
+Persistence and smoothness of hyperbolic
+invariant manifold for functional differential equations,
+{\em SIAM J.~Math.~Anal.},
+{\bf 18} (3) (1987), 670--693.
+
+\bibitem{Mane} R.~M\~an\'e,
+Lyapunov exponents and stable manifolds for compact transformations,
+{\em in} ``Geometric Dynamics," J.~Palis (ed.),
+Lecture Notes in Math., no.~1007,  Springer-Verlag, New York, 1983,
+522--577.
+
+\bibitem{Mather} J.~Mather,
+Characterization of Anosov diffeomorphisms,
+{\em Indag.~Math.},
+{\bf 30} (1968), 479--483.
+
+\bibitem{MS} J.~Massera and J.~Schaffer,
+``Linear Differential Equations and Function Spaces,"
+Academic Press, NY, 1966.
+
+\bibitem{Mont} S.~Montgomery-Smith,
+Stability and dichotomy of positive semigroups on $L_p$,
+preprint.
+
+\bibitem{Nag} R.~Nagel (ed.)
+``One Parameters Semigroups of Positive Operators",
+Lecture Notes in Math., no.~1184, Springer-Verlag, Berlin, 1984.
+
+\bibitem{Nag2} R.~Nagel,
+Semigroup methods for non-autonomous Cauchy problems,
+{\em Tubingen Berichte zur Funktionalanalysis},
+Heft 2, Jahrang 1992/93, (1993) 103--118.
+
+\bibitem{NagRh} R.~Nagel and A.~Rhandi,
+A characterization of Lipschitz continuous evolution families on
+Banach spaces,
+{\em Integral Equations Operator Theory},
+to appear.
+
+\bibitem{Nei} H.~Neidhardt,
+On abstract linear evolution equations, I,
+{\em Math.~Nachr.}
+{\bf 103} (1981), 283--298.
+
+\bibitem{Palm} K. Palmer,
+Exponential dichotomy and Fredholm operators,
+{\em Proc.~Amer.~Math.~Soc.},
+{\bf 104} (1988), 149-156.
+
+\bibitem{Palm2} K. Palmer,
+Exponential dichotomies and transversal homoclinic points,
+{\em J.~Differential Equations}
+{\bf 55} (1984), 225--256.
+
+\bibitem{Pazy} A.~Pazy,
+``Semigroups of Linear Operators and Applications to Partial
+Differential Equations,"
+Springer-Verlag, N.Y./Berlin, 1983.
+
+\bibitem{Pesin}  Ya.~B.~Pesin,
+``Hyperbolic theory,"
+{\em in} Encyclop.~Math.~Sci.~Dynamical Systems {\bf 2} (1988).
+
+\bibitem{Pruss} J.~Pr\"uss,
+On the spectrum of $C_0$-semigroups,
+{\em Trans.~Amer.~Math.~Soc.}
+{\bf  284}, no. 2 (1984), 847--857.
+
+\bibitem{Rab} F.~R\"{a}biger and R.~Schnaubelt,
+A spectral characterization of exponentially dichotomic and hyperbolic
+evolution families,
+preprint.
+
+\bibitem{Rau}  R.~Rau,
+Hyperbolic linear skew-product semiflows,
+preprint.
+
+\bibitem{Rau1}  R.~Rau,
+Hyperbolic evolutionary semigroups on vector-valued function spaces,
+{\em Semigroup Forum},
+{\bf 48} (1994), 107--118.
+
+\bibitem{Rau2} R.~Rau,
+Hyperbolic evolution groups and exponential dichotomy of evolution
+families,
+{\em J.~Funct.~Anal.}, to appear.
+
+\bibitem{SSDich} R.~Sacker and G.~Sell,
+Existence of dichotomies and invariant splitting for linear
+differential systems, I,II,III
+{\em J.~Differential Equations}
+{\bf 15, 22} (1974,1976) 429--458, 478--522.
+
+\bibitem{SSSpT}  R.~Sacker and G.~Sell,
+A spectral theory for linear differential systems,
+{\em J.~Differential Equations}
+{\bf  27} (1978), 320--358.
+
+\bibitem{SSBan} R.~Sacker and G.~Sell,
+``Dichotomies for Linear Evolutionary Equations in Banach Spaces,"
+IMA Preprint No.~838 (1991).
+
+\bibitem{Sam} Y.~A.~Mitropolskij, A.~M.~Samojlenko, and V.~L.Kulik,
+Issledovanija Dichotomii Lineinyh Sistem  Differencial'nyh Uravnenij,
+Russian (Dichotomy of Systems of Linear Differential Equations),
+Naukova Dumka, Kiev, 1990.
+
+\bibitem{Sel} J.~Selgrade,
+Isolated invariant sets for flows on vector bundles,
+{\em Trans.~Amer.~Math.~Soc.}
+{\bf 203} (1975) 359--390.
+
+\bibitem{Tan}  H.~Tanabe,
+``Equations of Evolution,"
+Pitman, London, 1979.
+
+\bibitem{We} L.~Weis,
+The stability of positive semigroups on $L_p$ spaces,
+{\em Proc.~Amer.~Math.~Soc.}, to appear.
+
+\end{thebibliography}
+
+\end{document}
+
+
+
+
+
+
+

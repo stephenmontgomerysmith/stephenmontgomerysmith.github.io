@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Ph.D. Thesis. The Cotype of Operators from $C(K)$, 1988 (<A HREF="http://www.dpmms.cam.ac.uk/">Cambridge</A>)</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith&#44; Ph.D. Thesis. The Cotype of Operators from $C(K)$, 1988 (<A HREF="http://www.dpmms.cam.ac.uk/">Cambridge</A>)</B>
+If you want to see tortuous mathematical writing, I can recommend my own Ph.D. thesis. Unfortunately, at the time I wrote this, I did not know much about how to communicate effectively via the written word.  Well, maybe I still don't but I am better than this.
+(<A HREF="wholethesis.tex">tex</A>,
+<A HREF="wholethesis.dvi">dvi</A>,
+<A HREF="wholethesis.ps">ps</A>,
+<A HREF="wholethesis.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

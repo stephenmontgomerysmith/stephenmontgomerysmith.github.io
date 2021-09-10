@@ -1,0 +1,1367 @@
+\overfullrule=0pt
+\magnification=\magstep1
+\def\eps{\epsilon}
+\def\pf{\noindent{\bf Proof:}\ }
+\def\normo#1{\left\|#1\right\|}
+\def\snormo#1{{\mathopen\|#1\mathclose\|}} \def\pois (#1){{\rm Pois}(#1)}
+\def\modo#1{\left|#1\right|}
+\def\bs{\bigskip}
+\def\n{\noindent}
+\def\la{\lambda}
+\def\th{\theta}
+\def\tY{\tilde Y}
+\def\G{\Gamma}
+\def\a{\alpha}
+\def\d{\delta}
+
+
+\centerline{\bf Moment inequalities for sums of certain}
+\centerline{\bf independent symmetric random
+variables}\footnote{}{{\it AMS 1991 Subject Classification:} 60E15, 60G50}
+
+\vskip .5cm
+\centerline{by}\vskip .5cm
+\centerline{P. HITCZENKO\footnote
+{*}{Supported in part by NSF grant DMS 9401345} (Raleigh, NC), S. J.
+MONTGOMERY-SMITH\footnote{$^\dagger$}{Supported in part by NSF grant DMS
+9424396}
+(Columbia, MO)} \centerline{ and K. OLESZKIEWICZ \footnote
+{$^\ddagger$}{Supported in part by
+Foundation for Polish Science and KBN Grant 2 P301 022 07} (Warszawa)}
+
+
+\vskip .5cm
+
+\beginsection Abstract
+
+This paper gives upper and lower bounds for moments of
+sums of independent random
+variables $(X_k)$ which satisfy the condition that
+$P(\modo X_k \ge t) = \exp(-N_k(t))$, where $N_k$ are concave functions.
+As a consequence we obtain precise information about the tail probabilities
+of linear combinations of independent random variables for which
+$N(t) = \modo t^r$ for some fixed $0<r\le 1$.  
+This
+complements work of Gluskin and Kwapie\'{n} who have done the same for
+convex functions $N$.
+
+
+
+
+\beginsection 1. Introduction.
+
+Let $X_1,X_2\dots$ be a sequence of
+independent random variables. In this
+paper we will be interested in obtaining estimates on the $L_p$-norm of
+sums of $(X_k)$, i.e. we will be interested in the quantity,
+$$\normo{\sum X_k}_p=\left(E\left|\sum
+X_k\right|^p\right)^{1/p},\qquad 2\le p<\infty. $$ 
+Although using standard symmetrization arguments our results carry over to
+more general
+cases, we
+will assume for the sake of simplicity that $X_k$ have symmetric
+distributions, i.e. that
+$P(X_k\le t)=P(-X_k\le t)$ for all $t\in {\bf R}$. 
+
+Let us start by considering the case of linear combinations of identically
+distributed, independent (i.i.d.) random variables, that is
+$X_k = a_k Y_k$, where $Y, Y_1, \dots$ are i.i.d.
+We can assume
+without loss of generality that all
+$a_k$'s are nonnegative. Also, since the $Y_k$'s are i.i.d., we can
+rearrange the terms of $(a_k)$ arbitrarily
+without affecting the sum $\sum a_kY_k$. Therefore, for notational
+convenience, we will adopt the following convention throughout this paper;
+whenever we are dealing with a sequence of real numbers we will {\it always
+}
+assume that its terms are nonnegative and form a nonincreasing sequence. In
+other words we identify a
+sequence $(a_k)$ with the decreasing rearrangement of $(|a_k|)$.
+
+Of course, a huge number of inequalities concerning the $L_p$-norm of a sum
+$\sum a_kY_k$ are known. Let us recall two of them. The first, called
+Khintchine's inequality, deals with the Rademacher sequence, i.e. $Y=\eps$,
+where $\eps$ takes values $\pm 1$, each with probability $1/2$. For $p\ge
+2$ it can be
+formulated as follows (see e.g. Ledoux and Talagrand (1991, Lemma 4.1));
+there exists an absolute constant $K$
+such that
+$$
+\left(\sum a_k^2\right)^{1/2}\le \normo{\sum a_k\eps_k}_p\le K\sqrt
+p\left(\sum a_k^2\right)^{1/2}.
+$$
+The value of the smallest constant that can be put in place of $K\sqrt p$
+is known (see Haagerup (1982)). The second inequality, was proved by
+Rosenthal (1970), and in our generality says that for $2\le p<\infty$ there
+exists a constant $B_p$ such that for a sequence $a=(a_k)\in\ell_2$, $$
+\max\{\normo a_2\normo Y_2,\normo a_p\normo Y_p\}\le \normo{\sum
+a_kY_k}_p\le B_p\max\{\normo a_2\normo Y_2,\normo a_p\normo Y_p\}, $$
+where $\|a\|_s$ denotes the $\ell_s$-norm of a sequence $a$. The best
+possible constant $B_p$ is known (cf. Utev (1985) for $p\ge 4$, and Figiel,
+Hitczenko, Johnson, Schechtman and Zinn (1995) for $2<p<4$). We refer the
+reader to the latter paper and references therein for more information on
+the best constants in Rosenthal's inequality. For our purpose, we only note
+that Johnson, Schechtman and Zinn (1983) showed that $B_p\le Kp/\log p$ for
+some absolute constant $K$, and that up to the value of $K$, this bound
+cannot be further improved. This, and other related results, were extended
+in various directions by Pinelis (1994). When specialized to our
+generality, his inequality reads as $$ \max\{\normo a_2\normo Y_2,\normo
+a_p\normo Y_p\}\le \normo{\sum a_kY_k}_p\le \inf_{1\le c\le p}\max\{\sqrt
+ce^{p/c}\normo a_2\normo Y_2,c\normo a_p\normo Y_p\}. $$ A common feature
+of these two inequalities is that they express the $L_p$-norm of a sum
+$\sum a_kY_k$ in terms of norms of individual terms $a_kY_k$. This is very
+useful and both inequalities found numerous applications. However, upper
+and lower bounds in these inequalities differ by a factor that depends on
+$p$, and sometimes are quite insensitive to the structure of the
+coefficient sequence. (Rosenthal's inequality is also insensitive to the
+common distribution of $Y_k$'s.) Consider, for example coefficient sequence
+$a_k=1/k$, $k\ge 1$. Then, the only information on $\normo{\sum
+a_k\eps_k}_p$ given by Khintchine's inequality is that it is essentially
+between 1 and $\sqrt p$.
+Practically the same conclusion is given for two quite different sequences,
+namely $a_k=2^{-k}$, $k\ge 1$,
+and $a_k=1/\sqrt n $ or 0 according to whether $k\le n$ or $k>n$, $n\in{\bf
+N}$. (The ``true values" of $\normo{\sum a_k\eps_k}_p$ are rather different
+in each of these three cases, and are of order $\log(1+p)$, 1, and
+$\sqrt{p\wedge n}$, respectively.)
+
+>From this point of view, it is natural to ask whether more precise
+information on the size of $\normo{\sum a_kY_k}_p$ can be obtained.
+Although, in general the answer to this question may be difficult, there
+are cases for which there is a satisfactory answer. First of all, if $Y_k$
+is a standard Gaussian random variable, then $\normo{\sum a_kY_k}_p=\normo
+a_2\normo Y_p$ so that
+$$
+c\sqrt p\normo a_2\le\normo{\sum a_kY_k}_p\le C\sqrt p\normo a_2, $$ for
+some absolute constants $c$ and $C$. Next consider the case when
+$(Y_k)=(\eps_k)$, a Rademacher sequence. We have: $$ c\left\{\sum _{k\le
+p}a_k+\sqrt
+p\left(\sum_{k>p}a_k^2\right)^{1/2}\right\}\le \normo{\sum a_k\eps_k}_p\le
+C\left\{\sum _{k\le p}a_k+\sqrt
+p\left(\sum_{k>p}a_k^2\right)^{1/2}\right\}. $$ (Recall, that according to
+our convention, $a_1\ge a_2\ge\dots\ge 0$.) The above inequality has been
+established in Hitczenko (1993), although the proof drew heavily on a
+technique from Montgomery-Smith
+(1990). (In fact, the inequality for Rademacher variables can be deduced
+from the results obtained in the
+latter paper.)
+The next step was done by Gluskin and Kwapie\'n (1995) who dealt with the
+case of random variables with
+logarithmically concave tails. To describe their result precisely, suppose
+that $Y$ is a symmetric random
+variable such that for $t>0$ one has $P(|Y|\ge t)=\exp(-N(t))$, where $N$
+is an Orlicz function
+(i.e. convex, nondecreasing , and $N(0)=0$). Recall, that if $M$ is an
+Orlicz function and $(a_k)$ is a sequence of scalars then the Orlicz norm
+of $(a_k)$ is defined by $\normo{(a_k)}_M=\inf\{u>0:\, \sum M(a_k/u)\le
+1\}$. Let $N'$ be a function conjugate to $N$ i.e. $N'(t)=\sup\{st-N(s):\,
+s>0\}$, and put $M_p(t)=N'(pt)/p$. Then Gluskin and Kwapie\'n (1995) proved
+that
+$$
+c\left\{\normo{(a_k)_{k\le p}}_{M_p}+\sqrt
+p\normo{(a_k)_{k>p}}_2\right\}\le \normo{\sum a_kY_k}_p\le
+C\left\{\normo{(a_k)_{k\le p}}_{M_p}+\sqrt
+p\normo{(a_k)_{k>p}}_2\right\}.$$
+
+In the special case $N(t)=|t|^r$,
+$r\ge 1$, this gives $$
+\eqalign{c\big\{\normo{(a_k)_{k\le p}}_{r'}\normo Y_p+&\sqrt
+p\normo{(a_k)_{k>p}}_2\normo Y_2\big\}\le \normo{\sum a_kY_k}_p\cr \le&
+C\big\{\normo{(a_k)_{k\le p}}_{r'}\normo Y_p+\sqrt
+p\normo{(a_k)_{k>p}}_2\normo Y_2 \big\},\cr} $$ where $1/r'+1/r=1$, and
+$c$, $ C
+$ are absolute constants.  From now on, we will refer to random variables
+corresponding to $N(t) = \modo t^r$ as symmetric Weibull
+random variables with parameter $r$.
+
+Now let us describe the results of this paper.  We will say that a
+symmetric random variable has a logarithmically convex tail if 
+$P(\modo X \ge t) = \exp(-N(t))$ for $t \ge 0$, where $N:R_+\to R_+$
+is a concave function with $N(0) = 0$.  We will show the following
+result.
+
+\proclaim
+Theorem 1.1. There exist absolute constants $c$ and $K$ such that if
+$(X_k)$ is a sequence of independent random variables with logarithmically
+convex tails, then for each
+$p \ge 2$,
+$$\eqalign{c\Big\{(\sum\|X_k\|_p^p)^{1/p}+&\sqrt
+p(\sum\|X_k\|_2^2)^{1/2}\Big\}\cr\le&
+\|\sum X_k\|_p\le K\Big\{(\sum\|X_k\|_p^p)^{1/p}+\sqrt
+p(\sum\|X_k\|_2^2)^{1/2}\Big\}.\cr}$$
+
+This result includes the special case of linear combinations of symmetric
+Weibull random variables with fixed parameter $r \le 1$,
+and in this case we are also able to obtain information about the 
+tail distributions of the sums.  In fact, we will give a second proof of
+the moment inequalities in this special case.  We include this second proof,
+because we believe that the methods will be of great interest to the
+specialists.
+
+Let us mention that the main difficulty is to obtain tight upper bounds.
+Once this is done the lower bounds are rather easy to prove. For this
+reason, the main emphasis of this paper is on the proofs of upper bounds.
+
+We will now outline the main
+steps in both proofs of the upper bounds, and at the same time describe the
+organization of this paper.  In Section 2, we describe a weaker version
+of the result that depends upon a certain moment condition.  In particular,
+if we specialise to linear combinations of symmetric Weibull random 
+variables, we obtain constants that become unbounded as the parameter
+$r$ tends to zero (but are still universal in $p \ge 2$).
+The proof is based on hypercontractive
+methods that were suggested to us by
+Kwapie\'{n}.
+In Section 3 we will show that moments of sums of symmetric random variables
+with logarithmeically convex tails are
+dominated by the linear combinations of suitably chosen multiples of
+standard exponential random
+variables by independent symmetric three valued random variables. 
+We are then able to obtain the main result.
+
+The main idea of
+the second proof is to reduce the
+problem to the situation 
+to the case of an i.i.d.\ sum. This is
+done in the Section 4. In Section 5 we deal with the problem of finding
+an upper
+bound for the $L_p$-norm of a sum of i.i.d.\ random variables. We accomplish
+this by estimating from above a decreasing rearrangement of the sum in
+terms of a decreasing rearrangement of an individual summand. In
+Section 6 we apply the results from the preceding two sections to obtain an
+upper bound on the $L_p$-norm
+of $\sum a_kX_k$, where $(X_k)$ are i.i.d.\ symmetric with
+$P(|X|>t)=\exp(-t^r)$, $0<r\le 1$. 
+
+\beginsection 2. Random variables satisfying moment condition.
+
+In this section we will prove a variant of Theorem 1.1, where the
+random variables satisfy a certain moment condition.  
+We use hypercontractive
+methods, similar to those in Kwapie\'{n} and Szulga (1991).
+This approach was suggested to us by S. Kwapie\'{n}. 
+It should be emphasized that if the result is specialized to symmetric
+Weibull random variables then the
+constant $B$ in Theorem 2.2 below
+depends on $r$.
+Let us begin with the following.
+
+\proclaim Definition 2.1. We say that a random variable $X$ satisfies
+moment condition
+if it is symmetric, all moments of $X$ are finite and there exist positive
+constants
+$b,c$ such that for all even natural numbers $n \geq k\ge2$
+$$
+{1\over b} {n\over k} \leq
+{\| X \|_n\over\| X \|_{k}} \leq
+c^{n-k}.
+$$
+
+
+\n It is easy to check that the existence of such a $c$ is equivalent to
+the finiteness
+of $$\sup_{n \in N} (E|X|^{n})^{1/n^{2}}$$ or $$\lim \sup_{t \to \infty}
+(\ln t)^{-2} \ln (P(|X|>t)<0.$$ Here is the main result of this section.
+
+
+\proclaim Theorem 2.2.
+If independent real random variables $X_{1}, X_{2}, \ldots$ satisfy moment
+condition with the same constants $b$ and $c$ then there exist positive
+constants $A$ and $B$ such that for any $p \geq 2,$ any natural number $m$,
+and
+$S=\sum_{i=1}^{m} X_{i}$, the following inequalities hold: $$
+A\Big(\sqrt{p} \| S \|_{2} +
+\big(\sum_{k=1}^{m}\|X_{k}\|_p^{p}\big)^{1/p}\Big) \leq \| S \|_{p} \leq
+B\Big(\sqrt{p} \| S \|_{2} + \big(\sum_{k=1}^{m}
+\|X_{k}\|_p^{p}\big)^{1/p}\Big).
+$$
+
+\n We will prove a lemma first.
+
+\proclaim Lemma 2.3.
+If $X$ satisfies moment condition then there exists positive constant $K$
+such that for any $q \geq 1$ and any real $x$ the following inequality
+holds true:
+$$
+(E|x+X|^{2q})^{1/q} \leq
+4e EX^{2} q + (|x|^{2q} + K^{2q} E|X|^{2q})^{1/q}. $$
+
+
+\pf Put $K= \sqrt{2} ebc^{4} + 1$.
+Let $n$ be the least natural number greater than $q$. We consider two cases:
+
+\item{(i)} $|x| \leq (K-1) \| X \|_{2q}$. Then $\| x+X \|_{2q} \leq |x|+ \|
+X \|_{2q} \leq K \| X \|_{2q}.$
+
+\item{(ii)} $|x| \geq (K-1) \| X \|_{2q} \geq {K-1\over c^{2}} \| X
+\|_{2n}$. Then
+
+$$
+\eqalign{E(x+X)^{2n} - x^{2n} =&
+\sum_{k=1}^{n} {2n(2n-1)\ldots (2n-2k+1)\over(2k)!} x^{2n-2k} EX^{2k}\cr
+\leq&4n^{2}x^{2n-2} \sum_{k=1}^{n}
+{(2n)^{2k-2} \| X \|_{2k}^{2k}\over(2k)! x^{2k-2}}\cr \leq& 4n^{2}x^{2n-2}
+\sum_{k=1}^{n} \| X \|_{2k}^{2} {(2n)^{2k-2}\over(2k)!({K-1\over
+c^{2}})^{2k-2}} ({\| X \|_{2k}\over\| X \|_{2n}})^{2k-2} \cr\leq&
+4n^{2}x^{2n-2} \sum_{k=1}^{n} (\| X \|_{2} c^{2k-2})^{2}
+{(2n)^{2k-2}({bk\over n})^{2k-2}\over(2k)!({K-1\over c^{2}})^{2k-2}}\cr =&
+4n^{2}x^{2n-2} \sum_{k=1}^{n} {EX^{2}\over(2k)!} \left({2bc^{4}k\over
+K-1}\right)^{2k-2}
+\cr\leq&
+n^{2}x^{2n-2}eEX^{2} \sum_{k=1}^{n} \left({ebc^{4}\over K-1}\right)^{2k-2}
+\cr\leq&
+2eEX^{2} n^{2}x^{2n-2}.\cr}
+$$
+Hence
+
+$$
+\| x+X \|_{2q} \leq \| x+X \|_{2n} \leq \sqrt{x^{2}+2eEX^{2}n} \leq
+\sqrt{x^{2}+4eEX^{2}q}.
+$$This completes the proof of Lemma 2.3. \bigskip
+
+
+\n{\bf Proof of Theorem 2.2:} We begin with the left hand side inequality.
+The inequality
+$$
+\| S \|_{p} \geq (\sum_{k=1}^{m} E|X_{k}|^{p})^{1/p}$$ follows from
+Rosenthal's inequality (Rosenthal (1970)), or by an easy induction 
+argument and the inequality
+$2(\modo x^p + \modo y^p) \le \modo{x+y}^p + \modo{x-y}^p$.
+To complete the proof of this
+part
+we will show that if $X$ is a random variable satisfying the left hand side
+inequality in Definition 2.1
+with constant $b$ then
+$$
+\| S\|_{p} \geq
+{1\over2 \sqrt{2} b} \| S\|_{2} \sqrt{p}. $$ To this end let $G$ be a
+standard Gaussian random variable. Then, for every even natural number $n$
+we have
+$$
+{\| X\|_{2}\over2b} \|G\|_{n} =
+((n-1)!!)^{1/n} {\|X\|_{2}\over2b} \leq
+n {\| X\|_{2}\over2b} \leq
+\| X\|_{n}.
+$$
+Hence, by the binomial formula,  for every even natural number $n$ and any
+real number $x$ $$ E|x+ {\| X\|_{2}\over2b} G|^{n} \leq E|x+X|^{n}. $$ If
+$G_k$'s are i.i.d. copies of $G$ then, by an easy induction argument, we
+get that $$
+E|x+ {\| S\|_{2}\over2b} G|^{n}=E|x+\sum{\|X_k\|_2\over2b}G_k|^n \leq
+E|x+S|^ {n}. $$
+Letting $n$ be the largest even number not exceeding $p$, and putting $x=0$
+we obtain
+$$
+\| S\|_{p} \geq \| S\|_{n} \geq
+{\| S\|_{2}\over2b} \| G\|_{n} \geq
+{\| S\|_{2}\over2b} \sqrt{n} \geq
+{1\over2 \sqrt{2} b} \| S\|_{2} \sqrt{p}, $$ which completes the proof of
+the first inequality of Theorem 2.2.
+
+To prove the second inequality
+we will proceed by induction. For $N=1,2, \ldots , m$, let $S_{N} =
+\sum_{k=1}^{N} X_{k}$, $h_{N} = K (\sum_{k=1}^{N} E|X_{k}|^{p})^{1/p}$, and
+$q= p/2$.
+We will show that for any real $x$
+$$
+(E|x+S_{N}|^{2q})^{1/q} \leq
+4eqES_{N}^{2} + (|x|^{2q} + h_{N}^{2q})^{1/q}. $$ For $N=1$ this is just
+Lemma 2.3. Assume that the above inequality is satisfied for $N<m$.
+Let $E' = E(\, \cdot\, | X_{1}, X_{2}, \ldots , X_{N})$, $E'' = E(\,
+\cdot\, | X_{N+1}).$
+Then
+$$
+(E|x+S_{N+1}|^{2q})^{1/q} =
+(E''E'|(x+ S_{N})+X_{N+1}|^{2q})^{1/q} \leq $$ by Lemma 2.3
+$$
+\eqalign{\leq&
+(E'(4eqEX_{N+1}^{2} + (|x+S_{N}|^{2q} +
+K^{2q}E|X_{N+1}|^{2q})^{1/q})^{q})^ {1/q} \cr\leq&
+4eqEX_{N+1}^{2} + (E'|x+S_{N}|^{2q} + K^{2q}E|X_{N+1}|^{2q})^{1/q}\cr} $$
+by the inductive assumption
+$$
+\eqalign{\le4eqEX_{N+1}^{2} +& ((4eqES_{N}^{2} + (|x|^{2q} +
+h_{N}^{2q})^{1/q})^{q}
++ K^{2q} E|X_{N+1}|^{2q})^{1/q}\cr=&
+4eqEX_{N+1}^{2}+
+\| (4eqES_{N}^{2}+(|x|^{2q}+h_{N}^{2q})^{1/q},
+K^{2}(E|X_{N+1}|^{2q})^{1/q})\|_{q}\cr
+\leq&
+4eqEX_{N+1}^{2}+\| (4eqES_{N}^{2},0)\|_{q} + \|
+((|x|^{2q}+h_{N}^{2q})^{1/q},K^{2}(E|X_{N+1}|^{2q})^{1/q})\|_{q}\cr =&
+4eqES_{N+1}^{2} + (|x|^{2q} + h_{N+1}^{2q})^{1/q}.\cr} $$ Our induction is
+finished. Taking $N=m$ and $x=0$ we have $$ \| S \|_{p} \leq
+\sqrt{2ep ES^{2} + h_{m}^{2}} \leq
+\sqrt{2e} \|S\|_{2} \sqrt{p} +
+K (\sum_{k=1}^{m} E|X_{k}|^{p})^{1/p}.
+$$
+This completes the proof of Theorem 2.2.
+
+\beginsection 3. Random variables with logarithmically convex tails.
+
+The aim of this section is to prove the main result, Theorem 1.1. 
+Although random variables with logarithmically convex tails do
+not have to satisfy moment condition we have the following.
+
+\proclaim Proposition 3.1. Let $\Gamma$ be an exponential random variable
+with density $e^{-x}$ for
+$x \geq 0$.
+If $X$ is a symmetric random variable with logarithmically convex tails
+then for
+any $p \geq q >0$ the following inequality is satisfied: $$
+{\| X \|_{p}\over\| \G \|_{p}}
+\geq
+{\| X \|_{q}\over\| \G \|_{q}}.
+$$
+In particular, random variables with logarithmically convex tails satisfy
+the first inequality of Definition 2.1 with constant $b=e/\sqrt2$.
+
+\pf
+Let $F=N^{-1}$. Then $|X|$ has the same distribution as $F(\G)$. Since $N$
+is a concave function and $N(0)=0$, it follows that $N(x)/x$ is
+nonincreasing. Therefore, $f(x)=F(x)/x$ is nondecreasing. By a standard
+inequality for a measure
+$x^{p} e^{-x} dx$ we have
+$$(
+{\int_{0}^{\infty} f^{p}(x) x^{p} e^{-x} dx\over\int_{0}^{\infty} x^{p}
+e^{-x} dx})^{1/p} \geq
+(
+{\int_{0}^{\infty} f^{q}(x) x^{p} e^{-x} dx\over\int_{0}^{\infty} x^{p}
+e^{-x} dx})^{1/q}, $$
+so it suffices to prove that
+$$
+{\int_{0}^{\infty} f(x)^{q} x^{p} e^{-x} dx\over\int_{0}^{\infty} x^{p}
+e^{-x} dx}
+\geq
+{\int_{0}^{\infty} f(x)^{q} x^{q} e^{-x} dx\over\int_{0}^{\infty} x^{q}
+e^{-x} dx}.
+$$
+Since $f^{q}(x)$ is a nondecreasing function, it is enough to show that $$
+{\int_{a}^{\infty} x^{p} e^{-x} dx\over\Gamma (p+1)} \geq
+{\int_{a}^{\infty} x^{q} e^{-x} dx\over\Gamma (q+1)},\qquad a\ge0. $$
+Let $$h(a)={\int_{a}^{\infty} x^{p} e^{-x} dx\over\Gamma (p+1)} -
+{\int_{a}^{\infty} x^{q} e^{-x} dx\over\Gamma (q+1)}. $$
+Then, $h(0)=0$ and $\lim_{a\to\infty}h(a)=0$. Since $h'(a)$ is positive on
+$(0,a_0)$, and negative on $(a_0,\infty)$, where $a_0=({\Gamma
+(p+1)\over\Gamma (q+1)})^{1/(p-q)}$, we conclude that $h(a)\ge0$. To see
+that $b=e/\sqrt2$, notice that the sequence $(n/\|\G\|_n)=((n^n/n!)^{1/n})$
+is increasing to $e$. Therefore, since $2/\|\G\|_2=\sqrt2$,
+$${\|X\|_n\over\|X\|_k}\ge{\|\G\|_n\over\|\G\|_k}\ge {n\over k}{\sqrt2\over
+e}.$$ This completes the proof.
+
+\bigskip
+
+Since the left hand side inequality in Theorem 1.1
+follows by exactly the same argument as
+in Theorem 2.3, we will concentrate on the right hand side inequality.
+We first establish a comparison result which may be of its own interest.
+Let $\G$ be an
+exponential random variable with mean 1. For a random variable $X$ with 
+logarithmically
+convex tails, and $p>2$, we denote by ${\cal E}_p(X)$ a random variable
+distributed like
+$a\Theta\G$, where $\Theta$ and $\G$ are independent, $\Theta$ is
+symmetric, 3-valued
+(i.e. $P(\Theta=\pm 1)=\a/2$, $P(\Theta=0)=1-\a$), and $a$, $\a$ are chosen
+so that
+$\|X\|_2=\|{\cal E}_p(X)\|_2$ and $\|X\|_p=\|{\cal E}_p(X)\|_p$.
+Proposition 3.1. guarantees that such $a$ and $\a$ exist. We begin with the
+following
+lemma.
+
+
+\proclaim Lemma 3.2. There exists an absolute constant $c$ such that for
+any random variable with logarithmically
+convex tails $X$ and for every $2\le q<p<\infty$ one has $$\|X\|_q\le
+c\|{\cal E}_p(X)\|_q.$$
+
+\pf Replacing $X$ by $X/a$ we can assume $a=1$. Assume first that $4\le
+q\le p/2$. We have
+$$\|X\|_q^q=q\int_0^{\infty}t^{q-1}e^{-N(t)}dt=q\Big(\int_0^2+\int_2^p+\int_
+p^{\infty}\Big)t^{q-1}e^{-N(t)}dt.$$We
+will estimate each integral separately. By Markov's inequality, for every
+$t>0$ we have
+$$t^pe^{-N(t)}\le \|X\|_p^p=\|\Theta\|_p^p\|\G\|_p^p.\leqno(*)$$Hence,
+$$\eqalign{\int_p^{\infty}t^{q-1}e^{-N(t)}dt\le&\|\Theta\|_p^p\|\G\|_p^p
+\int_p^{\infty}t^{q-1-p}dt
+\le\|\Theta\|_p^p\G(p+1){p^{q-p}\over p-q}\cr\le&\|\Theta\|_q^q{2^pp^q\over
+e^p}\le K^q\|\Theta\|_q^qq^q\le K^q\|\Theta\|_q^q\|\G\|_q^q.\cr}$$We
+estimate the first
+integral in a similar way; since for every $t>0$ $$t^2e^{-N(t)}\le
+\|\Theta\|_2^2\|\G\|_2^2,\leqno(_*^*)$$ we get
+$$\int_0^2t^{q-1}e^{-N(t)}dt\le\|\Theta\|_2^2\|\G\|_2^2\int_0^2t^{q-3}dt\le
+C^q\|\Theta\|_2^2\|\G\|_q^q= C^q\|\Theta\|_q^q\|\G\|_q^q.$$ It remains to
+estimate the
+middle integral. Notice, that $(*)$ with $t=p$ and $(_*^*)$ with $t=2$
+imply that
+$$N(p)\ge p\ln(p/\|\G\|_p)-\ln\a\ge p\ln(e/2)-\ln\a,$$ and $$N(2)\ge
+2\ln(e/2)-\ln\a.$$Hence, by concavity of $N$, we infer that $N(t)\ge
+t\ln(e/2)-\ln\a$, for $2\le t\le p$. Consequently,
+$$\int_2^pt^{q-1}e^{-N(t)}dt\le \a\int_0^{\infty}t^{q-1}e^{-t\ln(e/2)}dt\le
+K^q\|\Theta\|_q^q\|\G\|_q^q.$$Now consider the case $2\le q<4$. Since for
+$q<p$, $\|\G\|_q\ge k q/p \|\G\|_p$ for some absolute constant $k>0$, and
+for $\Theta$ H\"{o}lder's inequality is in fact equality, we obtain the
+following. If
+$0<s<1$ is chosen
+so that $1/q=s/(2q)+(1-s)/2$, then
+$$\eqalign{\|\Theta\G\|_q=&\|\Theta\|_{2q}^s\|\G\|_q^s\|\Theta\|_2^{1-s}\|\G
+\|_q^{1-s}\ge
+\|\Theta\|_{2q}^s\Big({k \over 2}\|\G\|_{2q}\Big)^s\|\Theta\|_2^{1-s}\|\
+G\|_2^{1-s}\cr\ge
+&{k \over 2}\|\Theta\G\|_{2q}^s\|\Theta\G\|_2^{1-s} \ge {k \over
+2}(\|X\|_{2q}/c_{1})^s\|X\|_2^{1-s}\cr\ge&{k \over 2} c_{1} \|X\|_q.\cr}$$
+Here $c_{1}$ denotes an absolute constant obtained in the first part of
+proof (as $2q \ge 4$).
+Since the similar argument (with $1/q=s/p+(1-s)/2$) works for
+$p/2\le q\le p$, the
+proof is
+completed.
+
+\bigskip\noindent In the remainder of this paper we will assume that if
+$(X_k)$ are independent,
+then the corresponding variables ${\cal E}_k$'s, are independent, too. We
+have the following.
+
+\proclaim Proposition 3.3. There exists an absolute constant $K$ such that
+if $(X_k)$ is a
+sequence of independent random variables with logarithmically convex tails
+and for $p>2$
+$({\cal E}_k)=({\cal E}_p(X_k))$ is the corresponding sequence of
+$(\Theta_k\G_k)$, then
+$$\|\sum X_k\|_p\le K\|\sum
+{\cal E}_k\|_p.$$
+
+\pf Let $q\in{\bf N}$ be an integer, $p/2\le2q<p$. 
+It follows from Kwapie\'n and Woyczy\'nski (1992, Proposition 1.4.2)
+(cf. Hitczenko (1994, Proposition 4.1) for details) that if $2q\le p$, and
+$(Z_k)$ is any sequence of independent, symmetric random variables, then 
+$$
+\|\sum Z_k\|_p\le K{p\over 2q}\big\{\|\sum
+Z_k\|_{2q}+\|\max|Z_k|\|_p\big\}\le K{p\over 2q}\big\{\|\sum
+Z_k\|_{2q}+(\sum\|Z_k\|_p^p)^{1/p}\big\} . $$ 
+Therefore,
+$$\|\sum X_k\|_p\le K\Big\{\|\sum
+X_k\|_{2q}+\big(\sum\|X_k\|_p^p\big)^{1/p}\Big\}.$$ 
+It follows from the
+binomial formula and
+Lemma 3.2 that $$\|\sum
+X_k\|_{2q}\le c\|\sum{\cal E}_k\|_{2q}.$$ Hence we obtain,
+$$\|\sum X_k\|_p\le K\Big\{\|\sum{\cal E}_k\|_{2q}+\big(\sum\|{\cal
+E}_k\|_p^p\big)^{1/p}\Big\}\le K\|\sum{\cal E}_k\|_p,$$
+as required.
+
+
+\bigskip
+\noindent{\bf Remark 3.4.} The above proposition is similar in spirit to a
+result of Utev
+(1985), who proved that if $p>4$, $(Y_k)$ is a sequence of independent
+symmetric random
+variables, and $(Z_k)$ is a sequence of independent symmetric three-valued
+random
+variables, whose second and $p$th moments are the same as $Y_k$'s, then
+$$\|\sum Y_k\|_p\le \|\sum Z_k\|_p.$$ We do not know what is the best
+constant $K$ in
+Proposition 3.3. We do know, however, that if $p$ is an even number, then
+$K\le e$.
+
+\bigskip\noindent In order
+to finish the proof of Theorem
+1.1 we need one more lemma.
+
+
+
+\proclaim Lemma 3.5. There exists a constant $K$, such that if $\Theta$ is
+a symmetric 3-valued
+random variable with $P(|\Theta|=1)=\d=1-P(\xi=0)$, independent of $\G$,
+then for
+every $q\ge1$ and $x\in{\bf R}$ we have
+$$\big(E|x+\Theta\G|^{2q}\big)^{1/q}\le
+eqE(\Theta\G)^2+\big(|x|^{2q}+K^{2q}E|\Theta\G|^{2q}\big)^{1/q}. $$
+
+\pf We need to prove that
+$$\big(|x|^{2q}+\d(E|x+\G|^{2q}-|x|^{2q})\big)^{1/q}\le
+2eq\d+\big(|x|^{2q}+\d K^{2q}E\G^{2q}\big)^{1/q}.$$
+Set for simplicity $A=E|x+\G|^{2q}-|x|^{2q}$ and $B=K^{2q}E\G^{2q}$. Since
+the case $A\le
+B$ is trivial, assume $A>B$. It suffices to show that
+$${\phi(A\d)-\phi(B\d)\over\d}\le
+2eq,$$
+where $\phi(t)=(x^{2q}+t)^{1/q}$.
+Since $\phi$ is a concave function, the left hand side above is decreasing
+in $\d$, so
+it suffices to check that
+$$2eq\ge\lim_{\d\to0}{\phi(A\d)-\phi(B\d)\over\d}=A\phi'(0)-B\phi'(0)={1\over
+q}(A-B)x^{2-2q}.$$ But this equivalent to $$E|x+\G|^{2q}-x^{2q}\le
+2eq^2x^{2q-2}+K^{2q}E\G^{2q}=eq^2x^{2q-2}E\G^2+K^{2q}E\G^{2q}. $$ The
+latter inequality follows from the proof of Lemma 2.3 since exponential
+variable satisfies moment
+condition. (A direct proof, giving $K=e^2$ can be given, too.) The proof is
+completed.
+
+
+\bigskip\noindent Proof of Theorem 1.1 is now very easy. By Proposition 3.3
+it suffices to prove the result for the sequence $({\cal E}_k)$. But, in
+view of the previous Lemma, and the proof of Theorem 2.2 we get that
+$$\|\sum
+{\cal E}_k\|_p\le K\Big\{\big(\sum\|{\cal E}_k\|_p^p\big)^{1/p}+\sqrt
+p\big(\sum\|{\cal
+E}_k\|_2^2\big)^{1/2}\Big\},$$ which completes the proof.
+
+\beginsection 4. $L_p$-domination of linear combinations by i.i.d. sums.
+
+The aim of this section is to prove the following
+
+\proclaim Theorem 4.1. Let $(Y_k)$ be i.i.d. symmetric random variables.
+For a sequence of scalars $(a_k)\in \ell_2$, we let
+$m=\lceil(\|a\|_2/\|a\|_p)^{2p/(p-2)}\rceil$, where $\lceil x\rceil$
+denotes the smallest integer no less than $x$. Then we have $$ \|\sum
+a_kY_k\|_p\le K{\|a\|_p\over
+m^{1/p}}\big\|\sum_{k=1}^{m\vee p}Y_k\big\|_p, $$ for some absolute
+constant $K$.
+
+\n{\bf Remark 4.2.} \item{(i)} This result is related to an inequality
+obtained by Figiel, Iwaniec and Pe\l czy\'nski (1984, Proposition 2.2$'$).
+They proved that if $(a_k)$ is a sequence of scalars, and $(Y_k)$ are
+symmetrically exchangeable then $$
+\|\sum_{k=1}^n a_kY_k\|_p\le {(\sum_{k=1}^n|a_k|^p)^{1/p}\over
+n^{1/p}}\big\|\sum_{k=1}^nY_k\big\|_p.
+$$
+Although we do not get constant 1, our $m$ is generally smaller than $n$.
+Also, (cf.Marshall and Olkin (1979, Chapter 12.G)) for certain random
+variables $(Y_k)$, including the Rademacher sequence, one has $$
+\|\sum_{k=1}^n
+a_kY_k\|_p\le {(\sum_{k=1}^n|a_k|^2)^{1/2}\over \sqrt
+n}\big\|\sum_{k=1}^nY_k\big\|_p.
+$$
+Our $m$ is chosen so that the $\ell_2$ and $\ell_p$ norms of a new
+coefficient sequence are essentially the same as those of the original one.
+
+
+
+\item{(ii)} If, roughly, the first $p$ coefficients in the sequence $(a_k)$
+are equal, then automatically $m\ge cp$, and thus $m\vee p$ in the upper
+limit of summation can be replaced by $m$. This follows from the fact that
+if $a_1\ge a_2\ge,\dots,\ge 0$, then the ratio $$
+{\sum_{j=1}^ka_j^2\over(\sum_{j=1}^ka_j^p)^{2/p}} $$ is increasing in $k$.
+This observation will be important in Section 6.
+
+\bs
+
+\n We will break up the proof of Theorem 4.1 into several propositions.
+Recall that for a random variable $Z\in L_{2q}$, $q\in {\bf N}$,
+$EZ^{2q}=(-1)^q\phi_Z^{(2q)}(0)$, where $\phi_Z$ is a characteristic
+function of $Z$ and $\phi_Z^{(2q)}$ its $2qth$ derivative.
+
+\proclaim Proposition 4.3. Let
+$(Y_k)$ be a sequence of i.i.d. symmetric random variables such that
+$$(-1)^l(\ln\phi_Y)^{(2l)}(0)\ge 0,\qquad {\rm for}\,\, l=1,\dots,q.$$
+Suppose that $a$ and $b$ are two sequences of real numbers such that
+$\|a\|_{2l}\le\|b\|_{2l} $ for $l=1,\dots,q$. Then
+$$E(\sum_{k=1}^na_kY_k)^{2q}\le E(\sum_{k=1}^nb_kY_k)^{2q}. $$
+
+\pf Let $S=\sum_{k=1}^na_kY_k$. We will show that
+$(-1)^q(\phi_S)^{(2q)}(0)$ is an increasing function of $\|a\|_{2l}$,
+$l=1,\dots,q$. We have
+$$
+\phi_S(t)=\exp\{\ln\phi_S(t)\}=
+\exp\{\sum_k\ln\phi_{a_kY}(t)\}.
+$$
+Differentiating once and then $2q-1$ times using Leibnitz formula we get $$
+\phi^{(2q)}_S=\sum_k(\phi_S\ln'\phi_{a_kY})^{(2q-1)}=\sum_k\sum_{j=0}^{2q-1}
+{{2q-1}
+\choose j}(\ln\phi_{a_kY})^{(j+1)}\phi_S^{(2q-1-j)}. $$ Hence, evaluating
+at zero, and using $\phi_S^{(j)}(0)=0$, for odd $j$'s, we get $$
+\eqalign{\phi^{(2q)}_S(0)=&\sum_k\sum_{j=0}^{2q-1}{2q-1 \choose
+j}(\ln\phi_{a_kY})^{(j+1)}(0)\phi_S^{(2q-1-j)}(0)\cr
+=&\sum_k\sum_{j=1}^q{2q-1
+\choose 2j-1}a_k^{2j}(\ln\phi_Y)^{(2j)}(0)\phi_S^{(2(q-j))} (0),\cr} $$ and
+it follows that
+$$\|S\|_{2q}^{2q}=(-1)^q\phi_S^{(2q)}(0)= \sum_{j=1}^q\|a\|_{2j}^{2j}{2q-1
+\choose 2j-1}(-1)^j(\ln\phi_Y)^{(2j)}(0)\|S\|_{2(q-j)}^{2(q-j)}. $$ Since
+we assume that $(-1)^j(\ln\phi_Y)^{(2j)}(0)\ge0$, the result follows by
+induction on $q$.
+
+
+\proclaim Proposition 4.4. Let $p\ge 2$. Suppose that $a$ and $b$ are two
+sequences of real numbers such that $\|a\|_s\le\|b\|_s$ for $2\le s\le p$.
+Let $(Y_k)$ be i.i.d. symmetric such that
+$(-1)^l(\ln\phi_Y)^{(2l)}(0)\ge0$, for all $l\le p$. Then $$
+\|\sum_{k=1}^na_kY_k\|_p\le K\|\sum_{k=1}^nb_kY_k\|_p, $$ for some absolute
+constant $K$.
+
+\pf It follows from Kwapie\'n and Woyczy\'nski (1992, Proposition 1.4.2)
+(cf. Hitczenko (1994, Proposition 4.1) for details) that if $2q\le p$, and
+$(Z_k)$ is any sequence of independent, symmetric random variables, then $$
+\|\sum Z_k\|_p\le K{p\over 2q}\big\{\|\sum
+Z_k\|_{2q}+\|\max|Z_k|\|_p\big\}\le K{p\over 2q}\big\{\|\sum
+Z_k\|_{2q}+(\sum\|Z_k\|_p^p)^{1/p}\big\} . $$ Applying this inequality to
+$Z_k=a_kY_k$, using Proposition 4.3, and the inequalities $$ \|\sum
+Z_k\|_{2q} \le \|\sum Z_k\|_p\qquad {\rm and}\qquad
+(\sum\|Z\|^p_p)^{1/p}\le\|\sum Z_k\|_p,$$ we get the desired result,
+provided $p/q\le C$.
+
+\bs
+
+\n
+{\bf Remark 4.5.} It is natural to ask whether the assumption
+$(-1)^l(\ln\phi_Y)^{(2l)}(0)\ge0$ can be dropped. In general it cannot. To
+see this let $(\eps_k)$ be a Rademacher sequence, and for $p\in{\bf N}$ let
+$a_k=1$ or 0 according to whether $k\le p$ or $k>p$. If $b_1=\sqrt p$ and
+$b_k=0$ for $k\ge 2$, then $\|a\|_s\le\|b\|_s$ for $2\le s\le p$, but
+$\|\sum a_k\eps_k\|_p\approx p$ and $\|\sum b_k\eps_k\|_p=\sqrt p$. \bs
+
+
+\n Before we proceed, we need some more notation. For a random variable $Z$
+we let $\pois (Z) =\sum_{k=1}^NZ_k$, where $N, Z_1,Z_2,\dots,$ are
+independent random variables, $N$ is a Poisson random variable with
+parameter 1, and $(Z_k)$ are i.i.d.\ copies of $Z$. Moreover, if the $Z_k$
+are independent, then $\pois(Z_k)$ will always be chosen so that they are
+independent. Since $P(|Y|>t)\le (1/2)(1-e^{-1}) P(|\pois(Y)|>t)$, the next
+proposition is a consequence of the contraction principle. \proclaim
+Proposition 4.6. Let $(Y_k)$ be a sequence of independent symmetric random
+variables. Then $$ \|\sum Y_k\|_p\le C\|\sum\pois(Y_k)\|_p, $$ for some
+absolute constant $C$.
+
+
+\bs
+
+\n Next we note that, for arbitrary random variable $Z$
+$$\phi_{\pois(Z)}=\exp\{\phi_Z-1\},
+$$
+and it follows, in particular, that if $Z$ is symmetric, then
+$(-1)^k(\ln\phi_{\pois(Z)})^{(2k)}(0)\ge 0$ for all $k$ and thus, by the
+above discussion, if $(Z_k)$ are i.i.d. copies of $Z$, then $$ \|\sum
+a_k\pois(Y_k)\|_p\le C\|\sum b_k\pois(Y_k)\|_p, $$ whenever $\|a\|_s\le
+\|b\|_s$, for $2\le s\le p$.
+
+Now fix a sequence $a$, and let $m=\lceil(\|a\|_2/\|a\|_p)^{2p/(p-2)}
+\rceil$ as in Theorem 4.1. Define a sequence $b$ by $$
+b_k=\cases{\beta,& if $k\le m$;\cr
+0,& otherwise,\cr}
+$$
+where $\beta=\|a\|_p/m^{1/p}$. Note that $\|b\|_2\ge\|a\|_2$, and
+$\|b\|_p=\|a\|_p$. Hence by H\"older's inequality $\|a\|_s\le\|b\|_s$ for
+all $2\le s\le p$. Therefore, for an arbitrary sequence of i.i.d.\
+symmetric random variables $(Y_k)\subset L_p$ we have $$ \|\sum
+a_kY_k\|_p\le K{\|a\|_p\over
+m^{1/p}}\big\|\sum_{k=1}^m\pois(Y_k)\big\|_p=K{\|a\|_p\over
+m^{1/p}}\big\|\sum_{k=1}^{N_m}Y_k\big\|_p, $$ where $N_m$ is a Poisson
+random variable with parameter $m$, independent of the sequence $(Y_k)$.
+
+Our final step is to estimate the quantity $\|\sum_{k=1}^{N_m}Y_k\|_p$. The
+following computation is rather straightforward; a very similar calculation
+can be found, for example, in Klass (1976, proof of Proposition 1).
+\proclaim Proposition 4.7. For $m\in {\bf N}$, and $(Y_k)$ and $N_m$ as
+above, we have $$ \big\|\sum_{k=1}^{N_m}Y_k\big\|_p\le
+K\big\|\sum_{k=1}^{m\vee p}Y_k\big\|_p. $$
+
+\pf
+For $j\ge 1$, let $S_j=\sum_{k=1}^j Y_k$. Note that, since $(S_j/j)$ is a
+reversed martingale (or by an application of the triangle
+inequality), $\|S_j/j\|_p$ is decreasing in $j$. Therefore, for
+$j_0$ to be specified later, we have $$
+\eqalign{\|\sum_{k=1}^{N_m}Y_k\|_p^p=&\sum_{j=1}^{\infty}\|S_j\|_p^p
+{e^{-m}m^j\over j!}\le \|S_{j_0}\|_p^p\sum_{j=1}^{j_0}{e^{-m}m^j\over
+j!}+{\|S_{j_0}\|_p^p\over j_0^p}\sum_{j>j_0}{j^pe^{-m}m^j\over j!}\cr
+\le&\|S_{j_0}\|_p^p\left(1+{e^{-m}\over j_0^p}\sum_{j>j_0}{j^pm^j\over
+j!}\right).\cr}
+$$
+The ratio of two consecutive terms in the last sum is equal to $$
+\left({j+1\over j}\right)^p{m\over j+1}\le {e^{p/j}m\over j+1}\le
+{1\over2}, $$ whenever $j\ge\max\{ 2em, p\}$. Therefore, choosing
+$j_0\approx \max\{2em,p\}$, we obtain $$ \|\sum_{k=1}^{N_m}Y_k\|_p^p\le
+\|S_{j_0}\|_p^p\left(1+{2e^{-m}\over j_0^p}j_0^p({m\over
+j_0})^{j_0}\right)\le2\|S_{j_0}\|_p^p\le K^p\|S_{m\vee p}\|_p^p.
+$$
+This completes the proof of Proposition 4.7.
+
+\bs
+\n Theorem 4.1 now follows immediately from the above results.
+
+\beginsection 5. Distribution of a sum of i.i.d. random variables.
+
+In this section, $Y_1,\dots,Y_n$\ are
+independent copies of a symmetric random variable $Y$. We fix $n$, and let
+$S = S_n = \sum_{i=1}^n Y_i$, and $M = M_n = \sup_{1\le i\le n} Y_i$. Our
+aim is to calculate $\normo S_p$, and as we will see below, this is
+equivalent to finding $\normo S_{p,\infty} + \normo{M}_p$. Let us recall,
+that for a random variable $Z$, $\normo Z_{p,\infty}$ is defined by $$
+\normo Z_{p,\infty}=\sup_{s>0}s^{1/p}Z^*(s), $$ where $Z^*$ denotes the
+decreasing rearrangement of the distribution function of $Z$ i.e. $$
+Z^*(s)=\sup\{t:\, P(|Z|>t)>s\} \qquad 0<s<1. $$The following simple
+observation will be useful \proclaim Lemma 5.1. Let $p\ge 2$. For any
+sequence of independent, symmetric random variables $(Z_k)\subset L_p$ we
+have $$
+{1\over4}\big\{\normo{\sum Z_k}_{p,\infty}+\normo{\max |Z_k|}_p\big\}\le
+\normo{\sum Z_k}_p\le K\big\{
+\normo{\sum Z_k}_{p,\infty}+\normo{\max |Z_k|}_p\big\}, $$ for some
+absolute constant $K$.
+
+\pf Since for $p> q\ge 1$ and for any random variable $W$, $\normo
+W_{q,\infty}\le \normo W_q\le \left({p\over p-q}\right)^{1/q}\normo
+W_{p,\infty}$, the first inequality is trivial. For the second inequality
+we first use a result of Kwapie\'n and Woyczy\'nski (see proof of
+Proposition 4.4 above)
+$$
+\normo{\sum Z_k}_p\le K{p\over q}\big\{
+\normo{\sum Z_k}_q+\normo{\max |Z_k|}_p\big\}, $$ and then the right
+estimate above with $q=p/2$. This completes the proof.
+
+\bs
+
+
+
+
+\n Throughout the rest of this section, by $f(x) \preceq g(x)$ we mean that
+$ f(cx) \le Cg(x)$ for some constants $c, C$. We will write $f(x) \approx
+g(x)$ if $f(x) \preceq g(x)$ and $g(x) \preceq f(x)$. With this convention
+we have
+\proclaim Theorem 5.2. For $0\le \th\le 1$ we have $$ S^*(\th) \preceq
+T_1(\th) + T_2(\th) ,$$ where
+$$ T_1(\th) = {\log(1/\th) \over \sqrt{\th^{-1/n}-1}}
+\normo{Y^*\big|_{[\th/n \vee (\th^{-1/n}-1),1]}}_2 ,$$ and $$ T_2(\th) =
+\log(1/\th) \sup_{\th/n \le t \le \th^{-1/n}-1} {Y^*(t) \over
+\log\left(1+{\th^{-1/n}-1\over t}\right)}. $$
+
+\pf Let $t>0$. Following the argument in Hahn and Klass (1995), for $a>0$
+we have
+$$\eqalign{P(S\ge t)\le& P(M\ge
+a)+\inf_{\la>0}E(e^{\la(S-t)}\big|M<a)P(M<a)\cr=& 1-P^n(Y<a)+\Big(\inf_{\la>0}
+E(e^{\la(Y-t/n)}\big|Y<a)P(Y<a)\Big)^n.\cr} $$
+
+If we choose $a$ so that these two terms are equal, and then we let
+$$\th=1-P^n(Y<a)=\Big(\inf_{\la >0}E(e^{\la(Y-t/n)}\big|Y<a)P(Y<a)\Big)^n,
+$$
+then, by the above computation
+$$
+P(S\ge t)\le 2\th.
+$$
+
+The whole idea now is to invert the above relationship, i.e. starting with
+$\th$ we will find
+a relatively small $t$ so that $S^*(\th)\preceq t$. Since the values of
+$S^*(\th)$ are of no importance for $\th$ close to 1 we can assume that
+$\th$ is bounded away from 1, $\th\le 1/10$, say. Then
+$P(Y<a)=(1-\th)^{1/n}
+\approx 1-\th/n$, so that $P(Y\ge a)\approx\th/n$ which, in
+turn, means that $Y^*(\th/n)\approx a$.
+
+In order to find a $t$, we will use the relation
+$$\th=\inf_{\la}E\left(e^{\la(Y-t/n)}\big|Y<a\right)^n=
+\inf_{\la}\left(Ee^{\la(\tY-t/n)}\right)^n,$$ where $\tY$ denotes
+$YI_{Y<a}$. Then, for $\la>0$ we have $$\th\le e^{-\la t}\left(Ee^{\la
+\tY}\right)^n,$$ and taking logarithms on both sides we get
+$$t\le{1\over\la}\ln(1/\th)+n\ln\left(Ee^{\la \tY}\right)^{1/\la}.$$ Hence,
+we can take
+$$t=\inf_{\la>0}\Big\{{1\over\la}\ln(1/\th)+n\ln\left(Ee^{\la \tY}\right)^
+{1/\la}\Big\}.$$
+Note that the second term, being equal to $n\ln\normo{e^{\tY}}_{\la}$, is
+an increasing function of $\la$.
+Since the first term is decreasing in $\la$, it follows that, up to a
+factor of 2,
+infimum is attained when both terms are equal. Thus
+$t\approx(1/\la)\ln(1/\th)$, where $\la$ is chosen so that
+$\ln(1/\th)=n\ln\left(Ee^{\la \tY}\right)$, i.e. $Ee^{\la \tY}=\th^{-1/n}$.
+Since $\tY$ is symmetric, $Ee^{\la \tY} =E\cosh(\la|\tY|)$, and the above
+equality is equivalent to
+$$E\left({\cosh(\la \tY)-1\over \th^{-1/n}-1}\right)=1.$$ But this simply
+means that
+$$t\approx \normo {\tY}_{\Phi}\ln(1/\th),\qquad {\rm where }\quad
+\Phi(s)={\cosh(s)-1\over\th^{-1/n}-1}.
+$$
+(Recall that if $\Psi$ is an Orlicz function and $Z$ is a random variable,
+then $\normo Z_{\Psi}=\inf\{u>0:\, E\Psi(Z/u)\le 1\}$.)
+
+In order to complete the proof, it suffices to show that, with $\Phi$ as
+above, we have $$\normo{\tY}_{\Phi}\approx\sup_{\th/n\le t\le
+\th^{-1/n}-1}{Y^*(t)\over\log \left(1+{\th^{-1/n}-1\over t}\right)}+{1\over
+\sqrt{\th^{-1/n}-1}}\normo{Y^*\big|_{[\th/n\vee(\th^{-1/n}-1),1]}}_2. $$
+
+We will need the following two observations. For an Orlicz function $\Psi$
+and a random variable $Z$, define
+the weak Orlicz norm by
+$$\normo Z_{\Psi,\infty}=\sup_{0<x<1}\left\{{1\over\Psi^{-1}(1/x)}
+Z^*(x)\right\}.$$
+
+\proclaim Lemma 5.3. Let $\psi(s)=e^s-1$. Then,
+$$\normo Z_{\psi,\infty}\le\normo Z_{\psi}\le 3\normo Z_{\psi,\infty}.$$
+
+\pf Only the second inequality needs justification. Suppose $\normo
+Z_{\psi,\infty}\le 1$. This means that $Z^*(x)\le \ln(1+1/x)$, for each
+$0<x<1$. Hence
+$$E\psi(Z/u)=Ee^{\{Z^*/u\}}-1\le \int_0^1e^{(1/u)\ln(1+1/x)}dx-1\le
+\int_0^1(2/x)^{1/u}dx-1={2^{1/u}u\over u-1}-1\le 1,$$ whenever $u\ge 3$.
+
+\noindent{\bf Remark 5.4.} The above relationship is true for more general
+Orlicz functions, as long as they do grow fast enough; see Theorem 4.6 in
+Montgomery-Smith (1992) for more details. \bigskip \proclaim Lemma 5.5.
+Suppose that $\Phi_1$, $\Phi_2:[0,\infty) \to [0,\infty)$\ are
+nondecreasing continuous functions that map zero to zero, and such that
+there exists a constant $c>1$\ such that $\Phi_i(x/c) \le \Phi_i(x)/2$\ ($i
+= 1,2$).
+Suppose further that there are numbers $a,A>0$\ such that $\Phi_1(a) =
+\Phi_2(a) = A$. Define $\Phi:[0,\infty) \to [0,\infty)$\ by $$ \Phi(x) =
+\cases{ \Phi_1(x) & if $x \le a$ \cr \Phi_2(x) & if $x > a $ . \cr }$$ Then
+for
+any measurable scalar valued function $f$, we have that $$ \normo f_\Phi
+\approx \snormo{f^*|_{[0,A^{-1}]}}_{\Phi_2} +
+\snormo{f^*|_{[A^{-1},\infty)}}_{\Phi_1} .$$ The constants of approximation
+depend only upon $c$.
+
+\pf
+Notice that $\Phi(x/c^2) \le \Phi(x)/2$. This is clear if both $x/c^2$\ and
+$x$\ lie on the same side of $a$, and otherwise it follows by considering
+the cases whether $x/c$\ is greater or less than $a$.
+
+Let us first suppose that the right hand side is less than $1$. Then $$
+\int_0^{A^{-1}} \Phi_2(f^*(x)) \, dx \le 1 \quad \hbox{and}\quad
+\int_{A^{-1}}^\infty \Phi_1(f^*(x)) \, dx \le 1 .$$
+>From the first inequality, we see that
+$A^{-1} \Phi_2(f^*(A^{-1})) \le 1$, from which it follows that $f^*(A^{-1})
+\le a$. Let $B$\ be such that $f^*(B^+) \le a \le f^*(B^-)$, so that $B \le
+A$. (Here, and in the rest of the proof, we define $f(A^+) =
+\lim_{x\searrow A} f(x)$, and
+$f(A^-) = \lim_{x\nearrow A} f(x)$.)
+Then
+$$ \int_0^B \Phi(f^*(x)) \, dx = \int_0^B \Phi_2(f^*(x)) \, dx \le 1 ,$$
+and $$ \int_B^{A^{-1}} \Phi(f^*(x)) \, dx \le A^{-1} \Phi(f^*(B^+)) \le
+1,$$ and $$ \int_{A^{-1}}^\infty \Phi(f^*(x)) \, dx = \int_{A^{-1}}^\infty
+\Phi_1(f^*(x)) \, dx \le 1 .$$ Hence $$ \int_0^\infty \Phi(f^*(x)) \, dx
+\le 3 ,$$ and so $$ \int_0^\infty \Phi(f^*(x)/c^4) \, dx \le 1 ,$$ that is,
+$$ \normo f_\Phi \le c^4 .$$
+
+Now suppose that $\normo f_\Phi \le 1$, so that $$ \int_0^\infty
+\Phi(f^*(x)) \, dx \le 1 .$$ Then $A^{-1} \Phi(f^*(A^{-1})) \le 1$, which
+implies that $f^*(A^{-1}) \le a$.
+Let $B$\ be such that $f^*(B^+) \le a \le f^*(B^-)$, so that $B \le A$.
+Then $$ \int_0^B \Phi_2(f^*(x)) \, dx = \int_0^B \Phi(f^*(x)) \, dx \le 1
+,$$ and $$ \int_B^{A^{-1}} \Phi_2(f^*(x)) \, dx \le A^{-1} \Phi_2(f^*(B^+))
+\le 1.$$ Hence
+$$ \int_0^{A^{-1}} \Phi_2(f^*(x)) \, dx \le 2,$$ from which it follows that
+$\snormo{f|_{[0,A^{-1}]}}_{\Phi_2} \le c$. Also $$ \int_{A^{-1}}^\infty
+\Phi_1(f^*(x)) \, dx = \int_{A^{-1}}^\infty \Phi(f^*(x)) \, dx \le 1 .$$
+and hence $\snormo{f|_{[A^{-1},\infty)}}_{\Phi_1} \le 1 $. This completes
+the proof of Lemma 5.5
+
+\bigskip
+
+Now, in order to finish the proof of Theorem 5.2, let
+$\Phi(s)={\cosh(s)-1\over \th^{-1/n} -1}$. Then,
+$$\Phi(s)=\cases{\Phi_1(s),& if $0\le s\le 1$;\cr \Phi_2(s),& if $s>1$;\cr}
+$$
+where $$\Phi_1(s)\approx {s^2\over \th^{-1/n}-1}\qquad{\rm and}\qquad
+\Phi_2(s)\approx {e^s-1\over \th^{-1/n}-1}.$$ Since
+$\tY^*=(YI_{Y<a})^*\approx (Y^*\big|_{[\th/n,1]})^*$, by Lemma 5.5 we
+obtain
+$$\eqalign{\normo{\tY}_{\Phi}\approx&
+\normo{Y^*\big|_{[0,\th^{-1/\th}-1]}}_{\Phi_2}+
+\normo{Y^*\big|_{[\th^{-1/\th}-1,1]}}_{\Phi_1}\cr
+\approx&\normo{Y^*\big|_{[0,\th^{-1/\th}-1]}}_{\Phi_2,\infty}+
+{1\over\sqrt{\th^{-1/\th}-1}} \normo{Y^*\big|_{[\th^{-1/\th}-1,1]}}_2 \cr
+\approx&\sup_{\th/n\le t\le \th^{-1/n}-1}{Y^*(t)\over\log
+\left(1+{\th^{-1/n}-1\over t}\right)}+{1\over
+\sqrt{\th^{-1/n}-1}}\normo{Y^*\big|_{[\th/n\vee(\th^{-1/n}-1),1]}}_2. \cr}
+$$
+This completes the proof of Theorem 5.2.
+
+
+
+
+
+
+\beginsection 6. Moments of linear combination of symmetric Weibull random
+variables.
+
+In this section we will apply our methods to obtain an upper bound for the
+$L_p$-norm of a linear
+combination of i.i.d.\ symmetric Weibull random variables with parameter
+$0<r<1$. We will also show that this upper bound is tight. A random
+variable $X$ will be called symmetric Weibull with parameter $r$,
+$0<r<\infty$ if $X$ is symmetric and $|X|$ has density given by $$
+f_{|X|}(t)=rt^{r-1}e^{-t^r},\quad t>0. $$ We refer to Johnson and Kotz
+(1970, Chapter 20) for more information on Weibull random variables. Here
+we only note that by change of variables $$\|X\|_p^p=\Gamma(1+{p\over
+r}),\quad p>0, $$ so that, using Stirling formula and elementary estimates
+we have the following.
+\proclaim Lemma 6.1. If $X$ is a symmetric Weibull random variable with
+parameter $0<r<1$, and $p\ge 2$, then $$ p\|X\|_2\le C\|X\|_p, $$ where $C$
+is a constant not depending on $p$ or $r$.
+
+\bs
+
+\n As we mentioned in the Introduction, Gluskin and Kwapie\'n (1995)
+established a two sided
+inequality for the $L_p$-norm of a linear combinations of i.i.d.\ symmetric
+random variables with logarithmically concave tails. In the special case
+where $P(|\xi|>t)=\exp(-t^r)$, $r\ge 1$, their result reads as follows
+$$
+\eqalign{c\big\{ (\sum_{k\le
+p}a_k^{r'})^{1/r'}\normo{\xi}_p+&\sqrt p\normo{\xi}_2
+(\sum_{k>p}a_k^2)^{1/2}\big\} \le\|\sum a_k\xi_k\|_p\cr\le& C\big\{
+(\sum_{k\le p}a_k^{r'})^{1/r'}\normo{\xi}_p +\sqrt p\normo{\xi}_2
+(\sum_{k>p}a_k^2)^{1/2}\big\},\cr} $$ where $r'$ is the exponent conjugate
+to $r$, i.e. $1/r+1/r'=1$, and $c$ and $C$ are absolute constants. In this
+section we
+complement the result of Gluskin and Kwapie\'n, by treating the case $r<1$.
+Here is the main
+result of this section.
+
+
+\proclaim Theorem 6.2. There exist absolute constants $c$, $C$ such that if
+$(X_i)$ is a sequence of i.i.d. symmetric Weibull random variables with
+parameter $r$, where $0<r<1$ and $(a_k)\in\ell_2$, then $$ c\max\{\sqrt
+p\|a\|_2\|X\|_2,\|a\|_p\|X\|_p\}\le\|\sum a_kX_k\|_p\le C\max\{\sqrt
+p\|a\|_2\|X\|_2,\|a\|_p\|X\|_p\}. $$
+
+\pf We begin with the following result.
+
+\proclaim Proposition 6.3. Let $p\ge 2$, and let $(X_i)$ be a sequence
+i.i.d. symmetric Weibull random variables with parameter $r$ where $0<r<1$.
+Then, the following is true.
+$$
+a_1\|X\|_p\le\|\sum_{k\le p} a_kX_k\|_p\le C a_1\|X\|_p. $$
+
+
+\pf The first inequality is trivial. To prove the second, note that $$
+\|\sum_{k\le p}a_kX_k\|_p\le a_1\|\sum_{k\le p}X_k\|_p\le a_1 \|\sum_{k\le
+p}|X_k|\; \|_p.
+$$
+Assume first that $r$ is bounded away from 0, say $r>1/2$. Then, letting
+$(\Gamma_i)$ be a sequence of i.i.d. exponential distributions with mean 1
+we can write
+$$
+\eqalign{E(\sum_{k\le p}|X_k|)^p=&E\left(\big [\sum_{k\le
+p}(|X_k|^r)^{1/r}\big]^r\right)^{p/r} = E\left(\big[\sum_{k\le
+p}\Gamma_k^{1/r}\big]^r\right)^{p/r}\cr \le& E\left(\sum_{k\le
+p}\Gamma_k\right)^{p/r}\le p{\Gamma(p+p/r)\over \Gamma(p)}\le
+p{(p(1+1/r))^p\over \Gamma(p)}\Gamma(1+p/r)\cr\le& K^p \Gamma(1+p/r),\cr}
+$$
+since $r$ is bounded away from zero.
+This shows the upper bound for $r>1/2$. To handle the case $r\le 1/2$ we
+will apply a method that was used in Schechtman and Zinn (1990). Let
+$(X_{(k)})$ denote the nonincreasing rearrangement of $(|X_k|)_{k\le p}$.
+For a number $t>0$ we have $$ P(\sum_{k\le p}|X_k|\ge t)=P(\sum _{k\le
+p}X_{(k)}\ge t)\le\sum_{k\le p}P(X_{(k)}\ge q_kt), $$ where $(q_k)$ is any
+sequence of nonnegative numbers such that $\sum_{k\le p}q_k\le 1$. Now,
+using the inequality $$ P(Y_{(k)}\ge s)\le {(\sum_{j\le p} P(Y_j\ge
+s))^k\over k!}, $$ valid for any sequence of independent random variables
+$(Y_k)$ (cf. e.g. Talagrand (1989, Lemma 9)) we get that $$ P(X_{(k)}\ge
+q_kt)\le {(p\exp\{-q_k^rt^r\})^k\over k!}. $$ Therefore, $$E(\sum_{k\le
+p}|X_k|)^p\le \sum_{k\le p}{p^k\over k!}\cdot
+p\int_0^{\infty}t^{p-1}\exp\{- kq_k^rt^r\}dt. $$ Substituting
+$u=(k^{1/r}q_kt)^r$ into the $k$th term and integrating we get
+$$\int_0^{\infty}t^{p-1}\exp\{-(k^{1/r}q_kt)^r\}dt={\Gamma(p/r)\over
+r(k^{1/r}q_k)^p}. $$ Therefore, $$E|\sum_{k\le
+p}X_k|^p\le(p/r)\Gamma(p/r)\big\{\sum_{k\le p}{p^{k+1}\over
+k!k^{p/r}q_k^p}\big\}\le(p/r)\Gamma(p/r){1\over(\inf_k
+\{k^{1/r}q_k\})^p}\sum_{k=1}^{\infty}{p^k\over k!},$$ which is bounded by
+$C^p\|X\|_p^p$, as long as $k^{1/r}q_k$ is bounded away from zero. The
+choice $q_k\approx k^{-1/r}$ concludes the proof of the Proposition.
+
+
+\bs
+
+\n Now for the general case. By the previous proposition we can and do
+assume that $n>p$. We will establish
+the upper bound first.
+
+We first observe that it suffices to prove the result under the additional
+assumption that the first
+$\lceil p\rceil$ entries in a coefficient sequence are equal. Indeed,
+suppose we know the result in that
+case. Then, for the general sequence $(a_k)$, we can write, $$
+\eqalign{\|\sum a_kX_k\|_p\le&\|\sum_{k\le p}a_1X_k+\sum_{k\ge
+1}a_kX_{\lceil p\rceil+k}\|_p\cr\le& C\max\Big\{\sqrt p\|X\|_2(\sqrt
+pa_1+\|a\|_2),(p^{1/p}a_1+\|a\|_p)\|X\|_p\Big\}\cr\le& C\max\{\sqrt
+p\|a\|_2\|X\|_2,\|a\|_p\|X\|_p\},\cr} $$ since, by Lemma 6.1, we have
+$$pa_1\|X\|_2\le Ka_1\|X\|_p\le K\|a\|_p\|X\|_p. $$ Next we note that if
+the first $\lceil p\rceil$ coefficients are equal, and $m$ is defined as in
+Theorem 4.1, then automatically
+$$m\approx(\|a\|_2/\|a\|_p)^{2p/(p-2)}\ge cp,$$ and the inequality of that
+theorem takes form $$\|\sum
+a_kX_k\|_p\le K{\|a\|_p\over m^{1/p}}\big\|\sum_{k=1}^mX_k\big\|_p. $$ By
+definition $m\le 2(\normo
+a_2/\normo a_p)^{2p/(p-2)}$, so that $$ {\|a\|_p\over m^{1/p}}\sqrt{pm}\le
+\sqrt{2p}\normo a_2. $$
+Therefore, in order to complete the proof it suffices to show that $$\|\sum
+_{k=1}^mX_k\|_p\le K\max\big\{\sqrt {pm}\|X\|_2,m^{1/p}\|X\|_p\big\}. $$ In
+other words, the problem has been reduced to the special case when all
+coefficients are equal.
+
+To prove the latter inequality we will use Theorem 5.2. Fix $n\in {\bf N}$.
+Let $S = \sum_{i=1}^n X_i$, and $M = \sup_{1\le i\le n} X_i$, that is,
+$M^*(t) \approx X^*(t/n)$. Our aim is to show $$ \normo S_p \le K\big\{
+\sqrt{np} \normo X_2 + \normo{M}_p\big\} .$$ (Note that $\normo{M}_p \le
+n^{1/p} \normo X_p$.)
+By Lemma 5.1,
+it suffices to
+estimate $\normo S_{p,\infty} +
+\normo{M}_p$. Let us recall that $X^*(t) = (\log(1/t))^{1/r}$.
+
+>From Theorem 5.2, we know that
+$$ S^*(x) \preceq T_1(x) + T_2(x) ,$$
+where
+$$ T_1(x) = {\log(1/x) \over \sqrt{x^{-1/n}-1}} \normo{X^*\big|_{[x/n \vee
+(x^{-1/n}-1),1]}}_2 ,$$ and $$ T_2(x) = \log(1/x) \sup_{x/n \le t \le
+x^{-1/n}-1} {X^*(t) \over \log\left(1+{x^{-1/n}-1\over t}\right)} .$$ Now,
+$\normo S_{p,\infty} \approx \sup_{0<x<1} x^{1/p} T_1(x) + \sup_{0<x<1}
+x^{1/p} T_2(x)$.
+
+To get a handle on these quantities, we use the following approximation: $$
+x^{-1/n} - 1 \approx
+\cases{ (1/n) \log(1/x) & if $x \ge e^{-n}$ \cr x^{-1/n}        & if $x \le
+e^{-n}$. \cr } $$
+Now, we can see that if $x \le e^{-n}$, then $T_1(x) = 0$, and if $x \ge
+e^{-n}$, then
+$$ T_1(x) \le c \sqrt n \sqrt{\log(1/x)} \normo X_2 .$$ Hence,
+$\sup_{0<x<1} x^{1/p} T_1(x) \le c \sqrt{np} \normo X_2$.
+
+As for $T_2$, we use similar approximations, and we arrive at the following
+formula. If $x \ge e^{-n}$, then $$ T_2(x) \approx \sup_{x/n \le t \le
+(1/n) \log(1/x)}
+{ \log(1/x) X^*(t) \over 1 + \log(1/t) - \log(n/\log(1/x)) } ,$$ and if $x
+\le e^{-n}$, then
+$$ T_2(x) \approx \sup_{x/n \le t \le x^{1/n}} { \log(1/x) X^*(t) \over
+\log(1/t) } .$$
+
+Now let us make the substitution $X^*(t) = (\log(1/t))^{1/r}$, where
+$0<r<1$. If $x \le e^{-n}$, then it is clear that the supremum that defines
+$T_2(x)$\ is attained when $t$\ is as small as possible, that is, $t =
+x/n$. But, since $x \le e^{-n}$, it follows that $\log(n/x) \approx
+\log(1/x)$, and hence
+$$ T_2(x) \approx X^*(x/n) \approx M^*(x) .$$
+
+Now consider the case $x \ge e^{-n}$. Then $$ T_2(x) \approx \sup_{x/n \le
+t \le (1/n) \log(1/x)} \log(1/x) H(\log(1/t)) ,$$ where
+$$ H(u) = {u^{1/r} \over 1 - \log(n/\log(1/x)) + u} .$$ Now, looking at the
+graph of $H(u)$, we see that supremum of $H(u)$ over an interval on which
+$H(u)$ is positive is attained at one of the endpoints of the interval.
+Hence $$ T_2(x) \approx \log(1/x) \max\{ H(\log(n/x)) ,
+H(\log(n/\log(1/x))) \} .$$ Now, $$ \log(1/x) H(\log(n/x)) = {\log(1/x)
+X^*(x/n) \over 1+\log(\log(1/x)/x)} \approx X^*(x/n) \approx M^*(x) ,$$
+because $1+\log(\log(1/x)/x) \approx \log(1/x)$. Also, $$ \log(1/x)
+H(\log(n/\log(1/x))) = \log(1/x) (\log(n/\log(1/x)))^{1/r} .$$
+
+Putting all this together, we have that
+$$ \sup_{0<x<1} x^{1/p} T_2(x) \approx \normo{M}_{p,\infty} + \sup_{x \ge
+e^{-n}} F(\log(1/x)) ,$$
+where
+$$ F(u) = e^{-u/p} u (\log(n/u))^{1/r} .$$ Thus, the proof will be complete
+if we can show that $F(u) \le \sqrt{np} \normo X_2$\ for all $u \le n$. To
+this end,
+from Stirling's formula,
+we have that $\normo X_2 = \Gamma(1+2/r)^{1/2} \ge c^{-1} \left({2\over r
+e}\right)^{1/r} $.
+
+Notice that
+$$ {u F'(u) \over F(u)} = -{u\over p} + 1 - {1 \over r \log(n/u)} .$$ This
+quantity is positive if $u$\ is small, it is negative if $u = p$\ or $u =
+n$, and it is decreasing. Hence, $F(u)$\ attains its supremum at $u_0$,
+where $F'(u_0) = 0$, and $u_0 \le p$. But then $$ F(u_0) \le \sqrt{np}
+G(n/u_0) ,$$
+where
+$$ G(v) = {(\log v)^{1/r}\over \sqrt v} .$$ Simple calculus shows us that
+$$ G(v) \le G(e^{2/r}) = \left({2\over r e}\right )^{1/r} \le c \normo X_2
+,$$
+which proves the right inequality in Theorem 6.2.
+
+
+\bs
+
+\n To prove the left inequality, notice that by the original proof of
+Rosenthal's inequality (Rosenthal (1970)) we have $$ \|\sum
+a_kX_k\|_p\ge(\sum a_k^p)^{1/p}\|X\|_p, $$ so it suffices to show that $$
+\|\sum a_kX_k\|_p\ge c\sqrt p(\sum a_k^2)^{1/2}\|X\|_2. $$ Let us assume
+without loss of generality that $p\ge 3$. Let $\delta={(\sum_{j\le
+p}a_j^2)^{1/2}\over \sqrt p}$, and define a sequence $d=(d_k)$ by the
+formula $$ d_k=\cases{\delta,& if $k\le p$;\cr a_k,& otherwise.\cr} $$
+Then,
+$$\|\sum a_kX_k\|_p\ge \kappa\|\sum d_kX_k\|_p, $$ for some absolute
+constant $\kappa>0$. Indeed, let $C$ be a constant such that $$
+\|\sum_{k\le p} X_k\|_p\le C \|X\|_p.
+$$
+Since $\delta\le a_1$ we have
+$$
+\eqalign{\|\sum d_kX_k\|_p\le& \delta\|\sum_{k\le p}X_k\|_p+\|
+\sum_{k>p}a_k X_k\|_p\le Ca_1\|X\|_p+\|\sum_{k>p}a_k X_k\|_p\cr\le&
+(C+1)\|\sum a_k X_k\|_p,\cr} $$ so that one can take $\kappa=1/(C+1)$. Let
+$(\eps_k)$ be a sequence of Rademacher random variables, independent of the
+sequence $(X_k)$. Notice that $\max d_j/\|d\|_2\le 1/\sqrt p$. Therefore,
+using the minimality property of Rademacher functions (cf. Figiel,
+Hitczenko, Johnson, Schechtman and Zinn (1995, Theorem 1.1), or Pinelis
+(1994, Corollary 2.5)) (here we use $p\ge3$) and then Hitczenko and
+Kwapie\'n (1994, Theorem 1) we get $$ \|\sum a_kX_k\|_p\ge\kappa\|\sum
+d_kX_k\|_p\ge \kappa \|\sum d_k\|X_k\|_2\eps_k\|_p\ge c\sqrt
+p\|d\|_2\|X\|_2=c\sqrt p\|a\|_2\|X\|_2. $$ The proof is completed.
+
+\bigskip
+
+\n
+{\bf Remark 6.4:} For $r=1$ our formula gives $p\|a\|_p+\sqrt p\|a\|_2$,
+while Gluskin and Kwapie\'{n}
+obtained $p\sup_{k\le p}a_k+\sqrt p (\sum_{k>p}a_k^2)^{1/2}$. Although
+these two quantities look different,
+they are equivalent. Clearly $p\sup_{k\le p}a_k+\sqrt p
+(\sum_{k>p}a_k^2)^{1/2}\le p\|a\|_p+\sqrt p\|a\|_2$. To see that opposite
+inequality holds with an absolute constant, notice that if $a_1$ and
+$\sum_{k>p}a_k^2$ are
+fixed, then $ p\|a\|_p+\sqrt p\|a\|_2$ maximized if the first several
+$a_k$'s are equal to $a_1$, the next one is between $a_1$ and 0, and the
+rest are 0. In this case it is very easy to check that the required
+inequality
+holds.
+
+\bigskip
+
+Theorem 6.2 implies the following result for tail probabilities.
+
+
+\proclaim Corollary 6.5. Let $ a=(a_k) \in \ell_2 $, $a\ne0$, and let
+$S=\sum a_kX_k$. Then
+$$ \lim_{t \to \infty} \log_t \ln 1/P(|S|>t) = r. $$
+
+
+
+ \pf Since $P(|S|>t)\ge
+{1\over2}P(a_1|X_1|>t)={1\over2}\exp\{-(t/a_1)^r\}$, we immediately get
+$$\lim \sup_{t \to \infty} \log_t \ln 1/P(|S|>t) \le r. $$ To show the
+opposite inequality note that if $s<r$ then
+$$E\exp\{|S|^s\}=1+\sum_{k=1}^{\infty}{E|S|^{sk}\over k!}<\infty,$$ by
+Theorem 6.2. Hence $P(|S|>t)\le\exp\{-t^s\}E\exp\{|S|^s\}$, which implies
+$$\lim \inf_{t \to \infty} \log_t \ln 1/P(|S|>t) \ge s.$$ Since this is
+true for every $s<r$, the result follows.
+
+
+\beginsection Acknowledgments.
+
+We would like to thank S. Kwapie\'n for his remarks and suggestions that
+led to discovery of the proof of
+Theorem 2.2.
+
+
+
+
+
+\centerline {\bf References}
+\nobreak
+\medskip
+\frenchspacing
+\newcount\refnum
+\refnum=0
+\def\ref{\global\advance\refnum by 1\item{\the\refnum .}} \ref Figiel, T.,
+Hitczenko, P., Johnson, W.B., Schechtman, G., Zinn, J. (1994) Extremal
+properties of Ra\-de\-ma\-cher functions with applications to Khintchine
+and Rosenthal inequalities,
+{\it Trans. Amer. Math. Soc.}, to appear. \ref Figiel, T., Iwaniec, T.,
+Pe\l czy\'nski, A. (1984) Computing norms and critical exponents of some
+operators in $L_p$-spaces, {\it Studia Math.} {\bf 79}, 227 -- 274. \ref
+Gluskin, E.D., Kwapie\'n, S. (1995) Tail and moment estimates for sums of
+independent random variables
+with logarithmically concave tails, {\it Studia Math.} {\bf 114}, 303 - 309.
+
+\ref Haagerup, U. (1982) Best constants in the Khintchine's inequality,
+{\it Studia Math.} {\bf 70}, 231 - 283.
+
+\ref Hahn, M.G., Klass, M.J. (1995) Approximation of partial sums of
+arbitrary i.i.d. random variables and the precision of the usual
+exponential bound, preprint.
+
+
+\ref Hitczenko, P. (1993) Domination inequality for martingale transforms
+of Rademacher sequence, {\it Israel J. Math.} {\bf 84}, 161 -- 178.
+
+\ref Hitczenko, P. (1994) On a domination of sums of random variables by
+sums of conditionally independent ones, {\it Ann. Probab.} {\bf 22}, 453 --
+468.
+
+\ref Hitczenko, P., Kwapie\'n, S. (1994) On the Rademacher series, {\it
+Probability in Banach Spaces, Nine, Sandbjerg, Denmark}, J. Hoffmann -- J\o
+rgensen, J. Kuelbs, M.B. Marcus, Eds. Birkh\"auser, Boston, 31 -- 36.
+
+\ref Johnson, N.L., Kotz, S.
+(1970) {\it Continuous Univariate Distributions}, Houghton -- Mifflin, New
+York. \ref Johnson, W.B., Schechtman, G., Zinn, J. (1983) Best constants in
+moment inequalities for linear combinations of independent and exchangeable
+random variables, {\it Ann. Probab.} {\bf 13}, 234 - 253.
+
+
+\ref Klass, M. (1976) Precision bounds for for the relative error in the
+approximation of $E|S_n|$ and extensions, {\it Ann. Probab.} {\bf 8}, 350
+-- 367.
+
+
+\ref Kwapie\'n, S., Szulga, J. (1991) Hypercontraction methods in moment
+inequalities for series of independent
+random variables in normed spaces, {\it Ann. Probab.} {\bf 19}, 1 - 8.
+
+
+\ref Kwapie\'n, S., Woyczy\'nski, W.A.
+(1992) {\it Random Series and Stochastic Integrals. Single and Multiple},
+Birkh\"auser, Boston.
+
+\ref Ledoux, M., Talagrand, M. (1991) {\it Probability in Banach Spaces.}
+Springer, Berlin, Heidelberg.
+
+
+\ref Marshall, A.W., Olkin, I. (1979) {\it Inequalities: Theory of
+Majorization and Its Applications,} Academic Press, New York.
+
+
+\ref Montgomery-Smith, S. J. (1990) The distribution of Rademacher sums.
+{\it Proc. Amer. Math. Soc.} {\bf 109}, 517 - 522.
+
+\ref Montgomery-Smith, S. J. (1992) Comparison of Orlicz--Lorentz spaces,
+{\it Studia Math.} {\bf 103}, 161 -- 189.
+
+
+
+\ref Pinelis, I. (1994) Extremal probabilistic problems and Hotelling's
+$T^2$ test under a symmetry condition, {\it Ann. Statist.} {\bf 22}, 357 --
+368.
+
+\ref Pinelis, I. (1994) Optimum bounds for the distributions of martingales
+in Banach spaces,
+{\it Ann. Probab.} {\bf 22}, 1679 -- 1706.
+
+\ref Rosenthal, H. P. (1970) On the subspaces of $L_p$ $(p>2)$ spanned by
+sequences of independent random variables. {\it Israel J. Math.} {\bf 8},
+273 - 303.
+
+\ref Schechtman, G., Zinn, J. (1990) On the volume of the intersection of
+two $L_p^n$ balls, {\it Proc. Amer. Math. Soc.} {\bf 110}, 217 -- 224.
+
+\ref Talagrand, M. (1989) Isoperimetry and integrability of the sum of
+independent Banach -- space valued random variables, {\it Ann. Probab.}
+{\bf 17}, 1546 -- 1570.
+
+\ref Utev, S.A. (1985) Extremal problems in moment inequalities, in: {\it
+Limit Theorems in Probability Theory}. Trudy Inst. Math., Novosibirsk,
+1985, 56 - 75 (in Russian).
+
+
+
+\bigskip
+\settabs
+\+Abrahama 18, 81--825 Sopot,
+Polandssssssssssss&
+Department of Theoretical Mathematicsasssssssss\cr \+P. Hitczenko& S. J.
+Montgomery-Smith\cr \+Department of Mathematics,&Department of
+Mathematics\cr \+North Carolina State University& University of Missouri --
+Columbia \cr \+Raleigh, NC 27695--8205,
+USA&Columbia, MO 65211\cr \+ {\tt e-mail: pawel@math.ncsu.edu}&{\tt e-mail:
+stephen@math.missouri.edu}\cr\smallskip \smallskip\settabs \+Abrahama 18,
+81--825 Sopot, Polandssssssssssss& Department of Theoretical
+Mathematicsasssssssss\cr \+ K. Oleszkiewicz&\cr \+ Instytut Matematyki&\cr
+\+ Uniwersytet Warszawski&\cr \+ ul. Banacha 2&\cr\+02-097 Warszawa,
+Poland&\cr \+{\tt e-mail: koles@mimuw.edu.pl}&\cr \end
+
+
+
+
+\end
+
+
+ 
+------ Forwarded message ends here ------
+
+

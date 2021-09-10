@@ -1,0 +1,103 @@
+\contentsline {note}{{Note}{}{}}{2}{note.1}
+\contentsline {definition}{{Definition}{1.{1}}{}}{3}{definition.1.1}
+\contentsline {definition}{{Definition}{1.{2}}{Monotonicity}}{3}{definition.1.2}
+\contentsline {definition}{{Definition}{1.{3}}{Superadditivity}}{3}{definition.1.3}
+\contentsline {definition}{{Definition}{1.{4}}{}}{3}{definition.1.4}
+\contentsline {axiom}{{Axiom}{1.{1}}{Efficiency}}{4}{axiom.1.1}
+\contentsline {definition}{{Definition}{1.{5}}{}}{4}{definition.1.5}
+\contentsline {axiom}{{Axiom}{1.{2}}{Symmetry}}{4}{axiom.1.2}
+\contentsline {definition}{{Definition}{1.{6}}{}}{4}{definition.1.6}
+\contentsline {axiom}{{Axiom}{1.{3}}{Null player property}}{4}{axiom.1.3}
+\contentsline {axiom}{{Axiom}{1.{4}}{Additivity}}{4}{axiom.1.4}
+\contentsline {theorem}{{Theorem}{1.{1}}{Shapley value}}{4}{theorem.1.1}
+\contentsline {definition}{{Definition}{1.{7}}{}}{4}{definition.1.7}
+\contentsline {definition}{{Definition}{1.{8}}{}}{4}{definition.1.8}
+\contentsline {definition}{{Definition}{1.{9}}{}}{5}{definition.1.9}
+\contentsline {theorem}{{Theorem}{1.{2}}{}}{5}{theorem.1.2}
+\contentsline {theorem}{{Theorem}{1.{3}}{}}{5}{theorem.1.3}
+\contentsline {theorem}{{Theorem}{1.{4}}{Krein-Milman}}{5}{theorem.1.4}
+\contentsline {definition}{{Definition}{2.{1}}{}}{6}{definition.2.1}
+\contentsline {axiom}{{Axiom}{2.{1}}{}}{6}{axiom.2.1}
+\contentsline {note}{{Note}{}{}}{7}{note.2}
+\contentsline {lemma}{{Lemma}{2.{1}}{}}{7}{lemma.2.1}
+\contentsline {proof}{{\proofname }{1}{}}{7}{proof.1}
+\contentsline {note}{{Note}{}{}}{7}{note.3}
+\contentsline {axiom}{{Axiom}{2.{2}}{}}{8}{axiom.2.2}
+\contentsline {lemma}{{Lemma}{2.{2}}{}}{8}{lemma.2.2}
+\contentsline {proof}{{\proofname }{2}{}}{8}{proof.2}
+\contentsline {note}{{Note}{}{}}{8}{note.4}
+\contentsline {lemma}{{Lemma}{2.{3}}{}}{8}{lemma.2.3}
+\contentsline {proposition}{{Proposition}{2.{4}}{}}{8}{proposition.2.4}
+\contentsline {lemma}{{Lemma}{2.{5}}{}}{8}{lemma.2.5}
+\contentsline {proof}{{\proofname }{3}{}}{9}{proof.3}
+\contentsline {definition}{{Definition}{2.{2}}{}}{10}{definition.2.2}
+\contentsline {note}{{Note}{}{}}{10}{note.5}
+\contentsline {definition}{{Definition}{2.{3}}{}}{10}{definition.2.3}
+\contentsline {definition}{{Definition}{2.{4}}{}}{10}{definition.2.4}
+\contentsline {remark}{{Remark}{}{}}{10}{remark.1}
+\contentsline {lemma}{{Lemma}{2.{6}}{}}{10}{lemma.2.6}
+\contentsline {proof}{{\proofname }{4}{}}{10}{proof.4}
+\contentsline {lemma}{{Lemma}{2.{7}}{}}{11}{lemma.2.7}
+\contentsline {proof}{{\proofname }{5}{}}{11}{proof.5}
+\contentsline {definition}{{Definition}{2.{5}}{}}{11}{definition.2.5}
+\contentsline {lemma}{{Lemma}{2.{8}}{}}{11}{lemma.2.8}
+\contentsline {proof}{{\proofname }{6}{}}{11}{proof.6}
+\contentsline {note}{{Note}{}{}}{11}{note.6}
+\contentsline {definition}{{Definition}{2.{6}}{}}{11}{definition.2.6}
+\contentsline {lemma}{{Lemma}{2.{9}}{}}{11}{lemma.2.9}
+\contentsline {proof}{{\proofname }{7}{}}{11}{proof.7}
+\contentsline {lemma}{{Lemma}{2.{10}}{}}{12}{lemma.2.10}
+\contentsline {proof}{{\proofname }{8}{}}{12}{proof.8}
+\contentsline {lemma}{{Lemma}{2.{11}}{}}{12}{lemma.2.11}
+\contentsline {proof}{{\proofname }{9}{}}{12}{proof.9}
+\contentsline {theorem}{{Theorem}{2.{12}}{Pairing of row elements}}{12}{theorem.2.12}
+\contentsline {proof}{{\proofname }{10}{}}{13}{proof.10}
+\contentsline {lemma}{{Lemma}{2.{13}}{}}{13}{lemma.2.13}
+\contentsline {proof}{{\proofname }{11}{}}{14}{proof.11}
+\contentsline {note}{{Note}{}{}}{14}{note.7}
+\contentsline {lemma}{{Lemma}{2.{14}}{}}{15}{lemma.2.14}
+\contentsline {proof}{{\proofname }{12}{}}{15}{proof.12}
+\contentsline {theorem}{{Theorem}{2.{15}}{}}{15}{theorem.2.15}
+\contentsline {proof}{{\proofname }{13}{}}{16}{proof.13}
+\contentsline {lemma}{{Lemma}{2.{16}}{}}{16}{lemma.2.16}
+\contentsline {proof}{{\proofname }{14}{}}{16}{proof.14}
+\contentsline {lemma}{{Lemma}{2.{17}}{}}{16}{lemma.2.17}
+\contentsline {proof}{{\proofname }{15}{}}{16}{proof.15}
+\contentsline {corollary}{{Corollary}{}{to \cref {thm:partialRowSum1}}}{16}{corollary.1}
+\contentsline {remark}{{Remark}{}{}}{17}{remark.2}
+\contentsline {lemma}{{Lemma}{2.{18}}{}}{17}{lemma.2.18}
+\contentsline {proof}{{\proofname }{16}{}}{17}{proof.16}
+\contentsline {lemma}{{Lemma}{2.{19}}{}}{17}{lemma.2.19}
+\contentsline {proof}{{\proofname }{17}{}}{17}{proof.17}
+\contentsline {lemma}{{Lemma}{2.{20}}{Extreme points of the reasonable, efficient allocations}}{18}{lemma.2.20}
+\contentsline {proof}{{\proofname }{18}{}}{18}{proof.18}
+\contentsline {theorem}{{Theorem}{2.{21}}{}}{20}{theorem.2.21}
+\contentsline {theorem}{{Theorem}{2.{22}}{}}{20}{theorem.2.22}
+\contentsline {proof}{{\proofname }{19}{}}{20}{proof.19}
+\contentsline {theorem}{{Theorem}{2.{23}}{}}{21}{theorem.2.23}
+\contentsline {proof}{{\proofname }{20}{}}{21}{proof.20}
+\contentsline {theorem}{{Theorem}{2.{24}}{}}{22}{theorem.2.24}
+\contentsline {note}{{Note}{}{}}{22}{note.8}
+\contentsline {proof}{{\proofname }{21}{}}{22}{proof.21}
+\contentsline {remark}{{Remark}{}{}}{22}{remark.3}
+\contentsline {axiom}{{Axiom}{3.{1}}{}}{22}{axiom.3.1}
+\contentsline {remark}{{Remark}{}{}}{22}{remark.4}
+\contentsline {axiom}{{Axiom}{3.{2}}{}}{22}{axiom.3.2}
+\contentsline {note}{{Note}{}{}}{22}{note.9}
+\contentsline {proposition}{{Proposition}{3.{1}}{}}{23}{proposition.3.1}
+\contentsline {proof}{{\proofname }{22}{}}{23}{proof.22}
+\contentsline {definition}{{Definition}{3.{1}}{\cref {def:reasonable}, redux}}{23}{definition.3.1}
+\contentsline {note}{{Note}{}{}}{23}{note.10}
+\contentsline {proposition}{{Proposition}{3.{2}}{}}{23}{proposition.3.2}
+\contentsline {proof}{{\proofname }{23}{}}{24}{proof.23}
+\contentsline {proposition}{{Proposition}{3.{3}}{}}{24}{proposition.3.3}
+\contentsline {proof}{{\proofname }{24}{}}{24}{proof.24}
+\contentsline {note}{{Note}{}{}}{24}{note.11}
+\contentsline {proposition}{{Proposition}{3.{4}}{}}{25}{proposition.3.4}
+\contentsline {proof}{{\proofname }{25}{}}{25}{proof.25}
+\contentsline {corollary}{{Corollary}{}{to \cref {prop:superreas-convex-combo}}}{25}{corollary.2}
+\contentsline {indeed}{{Indeed}{}{}}{25}{indeed.1}
+\contentsline {note}{{Note}{}{}}{25}{note.12}
+\contentsline {proposition}{{Proposition}{3.{5}}{}}{25}{proposition.3.5}
+\contentsline {proof}{{\proofname }{26}{}}{25}{proof.26}
+\contentsline {theorem}{{Theorem}{3.{6}}{}}{25}{theorem.3.6}

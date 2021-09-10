@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Unforgeable Marker Sequences</TITLE>
+<META NAME="description" CONTENT="Unforgeable Marker Sequences">
+<META NAME="keywords" CONTENT="unforgeable">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="unforgeable.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev_g.png">   
+<BR>
+<B> Next:</B> <A NAME="tex2html3"
+  HREF="node1.html">Number of Unforgeable Sequences</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<P>
+
+<P>
+
+<P>
+
+<P>
+<H1 ALIGN=CENTER>Unforgeable Marker Sequences</H1>
+<P ALIGN=CENTER><STRONG>
+D.J. Greaves
+<BR>
+University of Cambridge Computer Laboratory
+<BR>
+New Museums Site, Pembroke Street
+<BR>
+Cambridge CB2 3QG, United Kingdom.
+<BR>
+<BR>
+S.J. Montgomery-Smith<A NAME="tex2html1"
+  HREF="footnode.html#foot5"><SUP>1</SUP></A>
+<BR>
+Department of Mathematics
+<BR>
+University of Missouri
+<BR>
+Columbia, MO 65211, U.S.A.</STRONG></P>
+<P ALIGN=LEFT></P>
+
+<P>
+A binary number of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n$"> bits consists of an ordered sequence of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n$">
+digits taken from the set <IMG
+ WIDTH="51" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \{0, 1 \}$">.  A sequence is said to be an
+unforgeable marker if all subsequences of consecutive digits starting
+at the left-hand end are dissimilar from the sequence of the same
+length which ends at the right-hand end.  Unforgeable marker sequences
+are so called because, when misaligned in a shift-register or other
+view port of the correct length, there is no possibility of adjacent
+random digits impersonating the true sequence.  Such sequences are
+used for frame alignment purposes in serial data communications
+systems [<A
+ HREF="node6.html#dig">1</A>]. In many communications systems, the unforgeable marker is
+also a `comma sequence' in that it is guaranteed not to occur in any
+aligned or misaligned view of the data between the markers, but this
+relies on constraints on the data and does not impact on whether a
+sequence is an unforgeable marker or not
+
+<P>
+A sequence which is unforgeable with respect to right-hand misalignment
+is also unforgeable with respect to left-hand misalignment, and so
+there is a single set of unforgeable sequences of a given length. 
+
+<P>
+It is useful to denote a particular sequence by a decimal number
+by weighting its digits with power of 2 in the conventional way.
+We can then concisely tabulate the unforgeable sequences for <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n$"> up to 6.
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ n = 1$">:</TD>
+<TD ALIGN="LEFT">{0,1}</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ n = 2$">:</TD>
+<TD ALIGN="LEFT">{1,2}</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ n = 3$">:</TD>
+<TD ALIGN="LEFT">{1,3,4,6}</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="$ n = 4$">:</TD>
+<TD ALIGN="LEFT">{1,3,7,8,12,14}</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ n = 5$">:</TD>
+<TD ALIGN="LEFT">{1,3,5,7,11,15,16,20,24,26,28,30}</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$ n = 6$">:</TD>
+<TD ALIGN="LEFT">{1,3,5,7,11,13,15,19,23,31,32,40,44,48,50,52,56,58,60,62}</TD>
+</TR>
+</TABLE>
+
+<P>
+There is an even number of elements in each set because if 
+a number is unforgeable, so is the sequence obtained by complementing
+every digit.  This property is useful in NRZI (non-return to zero
+invert on ones) modulation since, in general, the absolute polarity
+of the sequence will not be known by the decoding hardware.  
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html4"
+  HREF="node1.html">Number of Unforgeable Sequences</A>
+<LI><A NAME="tex2html5"
+  HREF="node2.html">Calculation of the Number of Unforgeable Sequences</A>
+<LI><A NAME="tex2html6"
+  HREF="node3.html">Generating Sets of Unforgeable Sequences</A>
+<LI><A NAME="tex2html7"
+  HREF="node4.html">A Convenient Test for Unforgeability</A>
+<LI><A NAME="tex2html8"
+  HREF="node5.html">Appendix: Derivation of the ``26.78%''</A>
+<LI><A NAME="tex2html9"
+  HREF="node6.html">Bibliography</A>
+<LI><A NAME="tex2html10"
+  HREF="node7.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev_g.png">   
+<BR>
+<B> Next:</B> <A NAME="tex2html3"
+  HREF="node1.html">Number of Unforgeable Sequences</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

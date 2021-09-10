@@ -1,0 +1,953 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE> norms</TITLE>
+<META NAME="description" CONTENT=" norms">
+<META NAME="keywords" CONTENT="disttail11">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="disttail11.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="disttail11.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html72"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html70"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html64"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html73"
+  HREF="node7.html">Rearrangement invariant spaces</A>
+<B> Up:</B> <A NAME="tex2html71"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html65"
+  HREF="node5.html">Tail distributions</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00060000000000000000"></A>
+<A NAME="Lp"></A>
+<BR>
+<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ L_p$"> norms
+</H1>
+
+<P>
+The main result of this section establishes the
+relationship between the <IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ L_p$"> norm of sums of random variables and
+their tail distributions.
+
+<P>
+<P>
+<DIV><A NAME="lp"><B>Theorem  6.1</B></A> &nbsp; 
+<I>Given <IMG
+ WIDTH="56" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img301.png"
+ ALT="$ p_0&gt;0$">, if
+<IMG
+ WIDTH="56" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$ p \ge p_0$">, and <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> is a sequence of Banach valued
+independent random variables,
+then
+</I><!-- MATH
+ \begin{displaymath}
+{\mathopen\|U\mathclose\|}_p \approx U^*(e^{-p}/4) + {\mathopen\|\ell\mathclose\|}_p   \approx (U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/4) + {\mathopen\|\ell\mathclose\|}_p ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="470" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img303.png"
+ ALT="$\displaystyle {\mathopen\Vert U\mathclose\Vert}_p \approx U^*(e^{-p}/4) + {\mat...
+...U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/4) + {\mathopen\Vert\ell\mathclose\Vert}_p ,$">
+</DIV><P></P><I> 
+where the constants of approximation depend only upon
+<IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ p_0$">.</I></DIV><P></P>
+
+<P>
+We should note that we are not able to get universal control over
+the constants as <IMG
+ WIDTH="61" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img305.png"
+ ALT="$ p_0 \to0$">, as is shown by
+simple examples once one understands that <!-- MATH
+ ${\mathopen\|Y\mathclose\|}_p$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img306.png"
+ ALT="$ {\mathopen\Vert Y\mathclose\Vert}_p$"> converges to
+the geometric mean of <!-- MATH
+ ${\mathopen|Y\mathclose|}$
+ -->
+<IMG
+ WIDTH="30" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img307.png"
+ ALT="$ {\mathopen\vert Y\mathclose\vert}$"> as <IMG
+ WIDTH="53" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img308.png"
+ ALT="$ p \to 0$">.
+
+<P>
+Combining this with Corollary&nbsp;<A HREF="node3.html#klass-nowicki-decr">3.2</A>,
+we immediately obtain the  following result that compares <!-- MATH
+ ${\mathopen\|S\mathclose\|}_q$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ {\mathopen\Vert S\mathclose\Vert}_q$">
+to <!-- MATH
+ ${\mathopen\|S\mathclose\|}_p$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ {\mathopen\Vert S\mathclose\Vert}_p$">. This result extends results of Talagrand, (see
+Ledoux and Talagrand (1991, Theorem 6.20), Kwapien and Woyczynski
+(1992, Proposition 1.4.2 and comments following it;  see also 
+Hitczenko (1994, Proposition 4.1))   and Johnson, Schechtman and Zinn 
+(1983).  If this result is specialized to symmetric or positive real
+valued random variables, then by considering the cases <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.png"
+ ALT="$ p=2$"> or <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img311.png"
+ ALT="$ p=1$">, 
+it implies the inequality of Rosenthal
+(1970), including the 
+result of Johnson, Schechtman and Zinn (1983) that gives
+correct order of the constants as <!-- MATH
+ $p \to \infty$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ p\to \infty$">.  Note that
+<!-- MATH
+ ${\left\|\ell\right\|}_q \le 2^{1/q} {\left\|M\right\|}_q$
+ -->
+<IMG
+ WIDTH="141" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img312.png"
+ ALT="$ {\left\Vert\ell\right\Vert}_q \le 2^{1/q} {\left\Vert M\right\Vert}_q$"> by Proposition&nbsp;<A HREF="node2.html#ell-max">2.1</A>.
+
+<P>
+<P>
+<DIV><B>Theorem  6.2</B> &nbsp; 
+<I>Let <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> be a sequence of Banach valued independent random
+variables and let <IMG
+ WIDTH="56" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img301.png"
+ ALT="$ p_0&gt;0$">. Then there exist positive constants
+<IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$">, <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$"> 
+and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$ c_3$">, depending only upon <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ p_0$">, such that for <!-- MATH
+ $q \ge p \ge p_0$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$ q \ge p \ge p_0$">
+we 
+have 
+</I>
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+{\mathopen\|U\mathclose\|}_q
+  &\le& c_1 {\frac{q }{ \max\{p,\log(e+q)\}}}
+        \bigl({\mathopen\|U\mathclose\|}_p + M^*(c_2^{-1} e^{-q}) \bigr) +
+        c_1 {\left\|M\right\|}_q \\
+  &\le& c_3 {\frac{q }{ \max\{p,\log(e+q)\}}}
+        \bigl({\mathopen\|U\mathclose\|}_p + {\mathopen\|M\mathclose\|}_q \bigr). 
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.png"
+ ALT="$\displaystyle {\mathopen\Vert U\mathclose\Vert}_q$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="437" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img315.png"
+ ALT="$\displaystyle c_1 {\frac{q }{ \max\{p,\log(e+q)\}}}
+\bigl({\mathopen\Vert U\mathclose\Vert}_p + M^*(c_2^{-1} e^{-q}) \bigr) +
+c_1 {\left\Vert M\right\Vert}_q$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="309" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.png"
+ ALT="$\displaystyle c_3 {\frac{q }{ \max\{p,\log(e+q)\}}}
+\bigl({\mathopen\Vert U\mathclose\Vert}_p + {\mathopen\Vert M\mathclose\Vert}_q \bigr).$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+Let us proceed with the proofs.  First we need a lemma that allows 
+us to deal with the ``large'' parts of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$ U$">, so that they might be 
+effectively considered as a sum of disjoint random variables.
+
+<P>
+<P>
+<DIV><A NAME="disjoint"><B>Lemma  6.3</B></A> &nbsp; 
+<I>Let <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> be a sequence of Banach valued independent random 
+variables, and let <IMG
+ WIDTH="83" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img317.png"
+ ALT="$ 0&lt;r&lt;1$">.  Then we may express <!-- MATH
+ $U^{(>\ell(r))} =
+\sum_{k=1}^\infty V_k $
+ -->
+<IMG
+ WIDTH="157" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img318.png"
+ ALT="$ U^{(&gt;\ell(r))} =
+\sum_{k=1}^\infty V_k $">, where the random variables <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img319.png"
+ ALT="$ V_k$"> are
+disjoint, and <!-- MATH
+ $V_k^*(t) \le k \ell\bigl(t(k-1)!/r^{k-1}\bigr)$
+ -->
+<IMG
+ WIDTH="223" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.png"
+ ALT="$ V_k^*(t) \le k \ell\bigl(t(k-1)!/r^{k-1}\bigr) $">.</I></DIV><P></P>
+
+<P>
+
+<P>
+<BR>
+<B>Proof:</B>  In proving this result, we may suppose without loss of
+generality that <!-- MATH
+ $X_n = X_n^{(>\ell(r))}$
+ -->
+<IMG
+ WIDTH="116" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img321.png"
+ ALT="$ X_n = X_n^{(&gt;\ell(r))}$">, that is, we may suppose that
+<!-- MATH
+ $\sum_n\Pr(X_n \ne 0) \le r$
+ -->
+<IMG
+ WIDTH="165" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img322.png"
+ ALT="$ \sum_n\Pr(X_n \ne 0) \le r$">.
+
+<P>
+If <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ A$"> is a finite subset of <!-- MATH
+ ${\mathbb{N}}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ {\mathbb{N}}$">, define the event 
+<!-- MATH
+ \begin{displaymath}
+E_A = \{ X_n \ne 0\text{ if and only if } n \in A \} .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="123" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.png"
+ ALT="$\displaystyle E_A = \{ X_n \ne 0$"> if and only if&nbsp;<IMG
+ WIDTH="68" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.png"
+ ALT="$\displaystyle n \in A \} .$">
+</DIV><P></P>
+For each
+positive integer <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img74.png"
+ ALT="$ k$">, let <!-- MATH
+ $E_k = \bigcup_{\substack{A \subseteq {\mathbb{N}}\\{\mathopen|A\mathclose|} = k}}
+E_A$
+ -->
+<IMG
+ WIDTH="132" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img324.png"
+ ALT="$ E_k = \bigcup_{\substack{A \subseteq {\mathbb{N}}\\ {\mathopen\vert A\mathclose\vert} = k}}
+E_A$">. Set <!-- MATH
+ $V_k = U I_{E_k}$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img325.png"
+ ALT="$ V_k = U I_{E_k}$">. Notice that if <!-- MATH
+ ${\mathopen|A\mathclose|} = k$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.png"
+ ALT="$ {\mathopen\vert A\mathclose\vert} = k$">, then 
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\Pr(U I_{E_A} > x)
+  &\le& \sum_{n \in A}
+        \Pr({\mathopen|X_n\mathclose|} > x/k\text{ and } E_A) \\
+  &=& \sum_{n\in A} \Pr({\mathopen|X_n\mathclose|} > x/k) \prod_{m \in A \setminus\{n\}}
+      \Pr(X_m \ne 0) . 
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="118" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.png"
+ ALT="$\displaystyle \Pr(U I_{E_A} &gt; x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="153" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.png"
+ ALT="$\displaystyle \sum_{n \in A}
+\Pr({\mathopen\vert X_n\mathclose\vert} &gt; x/k$"> and&nbsp;<IMG
+ WIDTH="37" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img231.png"
+ ALT="$\displaystyle E_A)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="329" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.png"
+ ALT="$\displaystyle \sum_{n\in A} \Pr({\mathopen\vert X_n\mathclose\vert} &gt; x/k) \prod_{m \in A \setminus\{n\}}
+\Pr(X_m \ne 0) .$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+Hence, 
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\Pr(V_k > x)
+  &=& \sum_{\substack{A \subseteq {\mathbb{N}}\\{\mathopen|A\mathclose|} = k}}\Pr(U I_{E_A} > x) \\
+  &\le& \sum_{i_1 < \dots < i_k} \sum_{j=1}^k \Pr({\mathopen|X_{i_j}\mathclose|} > x/k) 
+        \prod_{\substack{l=1 \\l\ne j}}^k \Pr(X_{i_l} \ne 0) \\
+  &\le& {\frac{1}{ k!}} 
+        \sum_{i_1} \dots \sum_{i_k}\sum_{j=1}^k \Pr({\mathopen|X_{i_j}\mathclose|} > x/k) 
+        \prod_{\substack{l=1 \\l\ne j}}^k \Pr(X_{i_l} \ne 0) \\
+  &=& {\frac{k }{ k!}}
+      \sum_{i_1} \dots \sum_{i_k}\Pr({\mathopen|X_{i_1}\mathclose|} > x/k)
+      \prod_{l=2}^k \Pr(X_{i_l} \ne 0) \\
+  &=& {\frac{k }{ k!}} 
+      \left(\sum_n 
+      \Pr({\mathopen|X_n\mathclose|} > x/k) \right)\left(\sum_n \Pr(X_n \ne 0)\right)^{k-1} \\
+  &\le& {\frac{r^{k-1} }{ (k-1)!}} \Pr(\ell > x/k) . 
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="94" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.png"
+ ALT="$\displaystyle \Pr(V_k &gt; x)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="157" HEIGHT="91" ALIGN="MIDDLE" BORDER="0"
+ SRC="img331.png"
+ ALT="$\displaystyle \sum_{\substack{A \subseteq {\mathbb{N}}\\ {\mathopen\vert A\mathclose\vert} = k}}\Pr(U I_{E_A} &gt; x)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="347" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img332.png"
+ ALT="$\displaystyle \sum_{i_1 &lt; \dots &lt; i_k} \sum_{j=1}^k \Pr({\mathopen\vert X_{i_j}\mathclose\vert} &gt; x/k)
+\prod_{\substack{l=1 \\ l\ne j}}^k \Pr(X_{i_l} \ne 0)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="398" HEIGHT="84" ALIGN="MIDDLE" BORDER="0"
+ SRC="img333.png"
+ ALT="$\displaystyle {\frac{1}{ k!}}
+\sum_{i_1} \dots \sum_{i_k}\sum_{j=1}^k \Pr({\mat...
+...j}\mathclose\vert} &gt; x/k)
+\prod_{\substack{l=1 \\ l\ne j}}^k \Pr(X_{i_l} \ne 0)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="368" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.png"
+ ALT="$\displaystyle {\frac{k }{ k!}}
+\sum_{i_1} \dots \sum_{i_k}\Pr({\mathopen\vert X_{i_1}\mathclose\vert} &gt; x/k)
+\prod_{l=2}^k \Pr(X_{i_l} \ne 0)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="397" HEIGHT="83" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.png"
+ ALT="$\displaystyle {\frac{k }{ k!}}
+\left(\sum_n
+\Pr({\mathopen\vert X_n\mathclose\vert} &gt; x/k) \right)\left(\sum_n \Pr(X_n \ne 0)\right)^{k-1}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="177" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.png"
+ ALT="$\displaystyle {\frac{r^{k-1} }{ (k-1)!}} \Pr(\ell &gt; x/k) .$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+<P>
+<DIV><A NAME="disjoint-lp"><B>Corollary  6.4</B></A> &nbsp; 
+<I>Let <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> be a sequence of Banach valued independent random 
+variables, let <IMG
+ WIDTH="83" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img317.png"
+ ALT="$ 0&lt;r&lt;1$">, and let <!-- MATH
+ $0<p<\infty$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.png"
+ ALT="$ 0&lt;p&lt;\infty$">.  Then
+</I><!-- MATH
+ \begin{displaymath}
+{\mathopen\|U^{(>\ell(r))}\mathclose\|}_p \le 2 e^{2^p r/p} {\mathopen\|\ell\mathclose\|}_p .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="208" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.png"
+ ALT="$\displaystyle {\mathopen\Vert U^{(&gt;\ell(r))}\mathclose\Vert}_p \le 2 e^{2^p r/p} {\mathopen\Vert\ell\mathclose\Vert}_p .$">
+</DIV><P></P></DIV><P></P>
+
+<P>
+
+<P>
+<BR>
+<B>Proof:</B>  Apply Lemma&nbsp;<A HREF="#disjoint">6.3</A> to obtain the <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img319.png"
+ ALT="$ V_k$">.  
+Using the fact that <IMG
+ WIDTH="58" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.png"
+ ALT="$ k \le 2^k$">, we obtain that
+<!-- MATH
+ \begin{displaymath}
+{\mathopen\|V_k\mathclose\|}_p^p
+   \le k^p {\frac{r^{k-1}}{ (k-1)!}} {\mathopen\|\ell\mathclose\|}_p^p
+   \le 2^p {\frac{(2^p r)^{k-1}}{ (k-1)!}} {\mathopen\|\ell\mathclose\|}_p^p .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="347" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img340.png"
+ ALT="$\displaystyle {\mathopen\Vert V_k\mathclose\Vert}_p^p
+\le k^p {\frac{r^{k-1}}{ ...
+...e 2^p {\frac{(2^p r)^{k-1}}{ (k-1)!}} {\mathopen\Vert\ell\mathclose\Vert}_p^p .$">
+</DIV><P></P>
+Thus 
+<!-- MATH
+ \begin{displaymath}
+{\mathopen\|U^{(>\ell(r))}\mathclose\|}_p^p
+   = \sum_{k=1}^\infty {\mathopen\|V_k\mathclose\|}_p^p
+  \le 2^p {\mathopen\|\ell\mathclose\|}_p^p \sum_{k=1}^\infty {\frac{(2^p r)^{k-1}}{ (k-1)!}}
+  = 2^p e^{2^p r} {\mathopen\|\ell\mathclose\|}_p^p .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="484" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img341.png"
+ ALT="$\displaystyle {\mathopen\Vert U^{(&gt;\ell(r))}\mathclose\Vert}_p^p
+= \sum_{k=1}^...
+...p r)^{k-1}}{ (k-1)!}}
+= 2^p e^{2^p r} {\mathopen\Vert\ell\mathclose\Vert}_p^p .$">
+</DIV><P></P>
+
+<P>
+
+<P>
+<BR>
+<B>Proof of Theorem&nbsp;<A HREF="#lp">6.1</A>:</B>   Applying Proposition&nbsp;<A HREF="node2.html#ell-max">2.1</A>, we see that 
+<!-- MATH
+ \begin{displaymath}
+{\mathopen\|U\mathclose\|}_p \ge {\frac{1}{ 2}} {\mathopen\|M\mathclose\|}_p \ge 2^{-1-1/p} {\mathopen\|\ell\mathclose\|}_p
+.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="255" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.png"
+ ALT="$\displaystyle {\mathopen\Vert U\mathclose\Vert}_p \ge {\frac{1}{ 2}} {\mathopen\Vert M\mathclose\Vert}_p \ge 2^{-1-1/p} {\mathopen\Vert\ell\mathclose\Vert}_p
+.$">
+</DIV><P></P>
+Also, we have that <!-- MATH
+ \begin{displaymath}
+{\mathopen\|U\mathclose\|}_p^p = \int_0^1 (U^*(t))^p \, dt
+\ge 8^{-1} e^{-p} (U^*(e^{-p}/8))^p ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="372" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.png"
+ ALT="$\displaystyle {\mathopen\Vert U\mathclose\Vert}_p^p = \int_0^1 (U^*(t))^p \, dt
+\ge 8^{-1} e^{-p} (U^*(e^{-p}/8))^p ,$">
+</DIV><P></P>
+that is, <!-- MATH
+ ${\left\|U\right\|}_p \ge
+8^{-1/p}
+e^{-1} U^*(e^{-p}/8) \ge 8^{-1/p} e^{-1} U^*(e^{-p}/4)$
+ -->
+<IMG
+ WIDTH="397" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.png"
+ ALT="$ {\left\Vert U\right\Vert}_p \ge
+8^{-1/p}
+e^{-1} U^*(e^{-p}/8) \ge 8^{-1/p} e^{-1} U^*(e^{-p}/4)$">. 
+Hence we have shown that there exists a constant <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$">, depending only
+upon <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ p_0$">, such that <!-- MATH
+ \begin{displaymath}
+{\mathopen\|U\mathclose\|}_p \ge c_1^{-1}(U^*(e^{-p}/4) +
+{\mathopen\|\ell\mathclose\|}_p) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="257" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img345.png"
+ ALT="$\displaystyle {\mathopen\Vert U\mathclose\Vert}_p \ge c_1^{-1}(U^*(e^{-p}/4) +
+{\mathopen\Vert\ell\mathclose\Vert}_p) .$">
+</DIV><P></P>
+Furthermore, by Proposition&nbsp;<A HREF="node2.html#ell-max">2.1</A>, <!-- MATH
+ \begin{displaymath}
+\Pr(U \ne U^{(\le
+\ell(e^{-p}/8))}) \le \Pr(M > \ell(e^{-p}/8))   \le \Pr(M >
+M^*(e^{-p}/8)) \le e^{-p}/8 .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="607" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img346.png"
+ ALT="$\displaystyle \Pr(U \ne U^{(\le
+\ell(e^{-p}/8))}) \le \Pr(M &gt; \ell(e^{-p}/8)) \le \Pr(M &gt;
+M^*(e^{-p}/8)) \le e^{-p}/8 .$">
+</DIV><P></P>
+Hence <!-- MATH
+ $U^*(e^{-p}/8) \ge (U^{(\le
+\ell(e^{-p}/8))})^*(e^{-p}/4)$
+ -->
+<IMG
+ WIDTH="283" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img347.png"
+ ALT="$ U^*(e^{-p}/8) \ge (U^{(\le
+\ell(e^{-p}/8))})^*(e^{-p}/4)$">, and so we have shown that there is a
+constant <IMG
+ WIDTH="55" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.png"
+ ALT="$ c_2&gt;0$">, depending only upon <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ p_0$">, such that <!-- MATH
+ \begin{displaymath}
+{\mathopen\|U\mathclose\|}_p
+\ge c_2^{-1}((U^{(\le \ell(e^{-p}/8))})^*                (e^{-p}/4) +
+{\mathopen\|\ell\mathclose\|}_p) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="346" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.png"
+ ALT="$\displaystyle {\mathopen\Vert U\mathclose\Vert}_p
+\ge c_2^{-1}((U^{(\le \ell(e^{-p}/8))})^* (e^{-p}/4) +
+{\mathopen\Vert\ell\mathclose\Vert}_p) . $">
+</DIV><P></P>
+Now let us derive the converse inequalities. 
+Corollary&nbsp;<A HREF="node3.html#klass-nowicki-decr">3.2</A> tells us that for <!-- MATH
+ $t \le e^{-p}/2$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img350.png"
+ ALT="$ t \le e^{-p}/2$"> that 
+<!-- MATH
+ \begin{displaymath}
+(U^{(\le \ell(e^{-p}/8))})^*(t) \le c_2 {\frac{\log(1/t) }{ p +
+\log(2)}}
+\bigl((U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) + \ell(e^{-p}/8)
+\bigr).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="546" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.png"
+ ALT="$\displaystyle (U^{(\le \ell(e^{-p}/8))})^*(t) \le c_2 {\frac{\log(1/t) }{ p +
+\log(2)}}
+\bigl((U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) + \ell(e^{-p}/8)
+\bigr). $">
+</DIV><P></P>
+Thus
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+{\mathopen\|U^{(\le \ell(e^{-p}/8))}\mathclose\|}_p^p
+  &\le& \int_0^{e^{-p}/2} ((U^{(\le \ell(e^{-p}/8))})^*(t))^p \, dt
++(1-e^{-p}/2)(U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2)  \\
+  &\le& {\frac{1}{ (p + \log(2))^p}} \int_0^1 (\log(1/t))^p \, dt
+        \,\bigl((U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) + 
+        \ell(e^{-p}/8) \bigr)^p \\
+& & \qquad + (U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2)\\
+  &\le& c_3^p\bigl((U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) +
+       \ell(e^{-p}/8) \bigr)^p ,
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="120" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.png"
+ ALT="$\displaystyle {\mathopen\Vert U^{(\le \ell(e^{-p}/8))}\mathclose\Vert}_p^p$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="521" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.png"
+ ALT="$\displaystyle \int_0^{e^{-p}/2} ((U^{(\le \ell(e^{-p}/8))})^*(t))^p \, dt
++(1-e^{-p}/2)(U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="537" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.png"
+ ALT="$\displaystyle {\frac{1}{ (p + \log(2))^p}} \int_0^1 (\log(1/t))^p \, dt
+\,\bigl((U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) +
+\ell(e^{-p}/8) \bigr)^p$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="227" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img355.png"
+ ALT="$\displaystyle \qquad + (U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="312" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img356.png"
+ ALT="$\displaystyle c_3^p\bigl((U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) +
+\ell(e^{-p}/8) \bigr)^p ,$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+ 
+where <IMG
+ WIDTH="55" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.png"
+ ALT="$ c_3&gt;0$"> depends only upon <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ p_0$">. Furthermore, 
+<!-- MATH
+ \begin{displaymath}
+\ell(e^{-p}/8)^p \le 8 e^p \int_0^1 \ell(t)^p \, dt = 8 e^p
+{\mathopen\|\ell\mathclose\|}_p^p.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="311" HEIGHT="67" ALIGN="MIDDLE" BORDER="0"
+ SRC="img358.png"
+ ALT="$\displaystyle \ell(e^{-p}/8)^p \le 8 e^p \int_0^1 \ell(t)^p \, dt = 8 e^p
+{\mathopen\Vert\ell\mathclose\Vert}_p^p.$">
+</DIV><P></P>
+Hence, applying Corollary&nbsp;<A HREF="#disjoint-lp">6.4</A>, and the
+(quasi-)triangle 
+inequality for <IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ L_p$">, we deduce that
+ there exists a constant <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$ c_4$">, depending only upon <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ p_0$">, such that 
+<!-- MATH
+ \begin{displaymath}
+{\mathopen\|U\mathclose\|}_p \le c_4((U^{(\le \ell(e^{-p}/8))})^*  (e^{-p}/2)
+ + {\mathopen\|\ell\mathclose\|}_p) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="335" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img359.png"
+ ALT="$\displaystyle {\mathopen\Vert U\mathclose\Vert}_p \le c_4((U^{(\le \ell(e^{-p}/8))})^* (e^{-p}/2)
++ {\mathopen\Vert\ell\mathclose\Vert}_p) . $">
+</DIV><P></P>
+Finally the result follows by noticing that 
+<!-- MATH
+ \begin{displaymath}
+(U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) \le   (U^{(\le
+\ell(e^{-p}/8))})^*
+(e^{-p}/4) ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="377" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img360.png"
+ ALT="$\displaystyle (U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) \le (U^{(\le
+\ell(e^{-p}/8))})^*
+(e^{-p}/4) ,$">
+</DIV><P></P>
+and also, by an argument similar to one presented
+above, 
+that <!-- MATH
+ \begin{displaymath}
+(U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) \le U^*(3e^{-p}/8) \le
+U^*(e^{-p}/4) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="405" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img361.png"
+ ALT="$\displaystyle (U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) \le U^*(3e^{-p}/8) \le
+U^*(e^{-p}/4) .$">
+</DIV><P></P> 
+
+<P>
+Finally we remark that from the results mentioned at the end of 
+Section&nbsp;<A HREF="node3.html#Klass-nowicki">3</A> we can obtain one sided versions of 
+Theorem&nbsp;<A HREF="#lp">6.1</A> with <!-- MATH
+ ${\left|S\right|}$
+ -->
+<IMG
+ WIDTH="28" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.png"
+ ALT="$ {\left\vert S\right\vert}$"> in place of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$ U$">, for
+example, given <IMG
+ WIDTH="56" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$ p \ge p_0$">,
+<!-- MATH
+ \begin{displaymath}
+{\mathopen\|S\mathclose\|}_p \le c S^*(e^{-p}/c) + c {\mathopen\|\ell\mathclose\|}_p .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="227" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img362.png"
+ ALT="$\displaystyle {\mathopen\Vert S\mathclose\Vert}_p \le c S^*(e^{-p}/c) + c {\mathopen\Vert\ell\mathclose\Vert}_p .$">
+</DIV><P></P>
+where the constants depend only upon <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ p_0$">.
+
+<P>
+Obviously if the sequence of random variables satisfy the L&#233;vy property,
+then we can obtain the two sided inequality, but otherwise the other
+side of the inequality need not hold, as is shown by the example
+<IMG
+ WIDTH="62" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img363.png"
+ ALT="$ X_1 = 1$">, <IMG
+ WIDTH="77" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img364.png"
+ ALT="$ X_2 = -1$">, <IMG
+ WIDTH="64" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img365.png"
+ ALT="$ X_n = 0$"> (<IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.png"
+ ALT="$ n \ge 2$">).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html72"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html70"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html64"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html73"
+  HREF="node7.html">Rearrangement invariant spaces</A>
+<B> Up:</B> <A NAME="tex2html71"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html65"
+  HREF="node5.html">Tail distributions</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

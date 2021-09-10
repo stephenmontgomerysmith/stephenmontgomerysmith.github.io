@@ -1,0 +1,471 @@
+%%% ====================================================================
+%%% @AMSTeX-style-file{
+%%%   filename  = "ams-spec.sty",
+%%%   version   = "2.1f",
+%%%   date      = "1997/01/31",
+%%%   time      = "21:13:13 EST",
+%%%   checksum  = "15755 471 1088 17561",
+%%%   author    = "American Mathematical Society",
+%%%   address   = "PO Box 6248, Providence, RI 02940, USA",
+%%%   email     = "tech-support@ams.org (Internet)",
+%%%   supported = "yes",
+%%%   keywords  = "",
+%%%   abstract  = "This is an AMSTeX documentstyle containing specs
+%%%                that are shared in common between ams-m.sty and
+%%%                ams-p.sty (for AMS book series, monographs and
+%%%                proceedings respectively).",
+%%%   docstring = "The checksum field above contains: CRC-16 checksum,
+%%%                number of lines, number of words, and number of
+%%%                characters, as produced by Robert Solovay's checksum
+%%%                utility.",
+%%% }
+%%% ====================================================================
+
+%    Disallow widows, orphans, and hyphens at the end of a page.
+
+\brokenpenalty=10000
+\clubpenalty=10000
+\widowpenalty=10000
+
+\catcode`\@=11
+
+%    Dummy definition of \keyboarder, for now [mjd,1995/04/03]
+\def\keyboarder#1{}%
+
+%    Page dimensions = 30pc x 50.5pc
+\def\pagewidth#1{\hsize#1
+  \captionwidth@24pc}
+
+\pagewidth{30pc}
+
+\parindent=18\p@
+\normalparindent\parindent
+
+\parskip=\z@
+
+\def\foliofont@{\sevenrm}
+\def\headlinefont@{\sevenpoint}
+
+%  Heading styles are different from AMSPPT.STY:
+
+\def\specialheadfont@{\elevenpoint\smc}
+\def\headfont@{\bf}
+\def\subheadfont@{\bf}
+\def\refsheadfont@{\bf}
+\def\abstractfont@{\smc}
+\def\proclaimheadfont@{\smc}
+\def\xcaheadfont@{\smc}
+\def\captionfont@{\smc}
+\def\citefont@{\bf}
+\def\refsfont@{\eightpoint}
+
+\font\sixsy=cmsy6
+
+%    Added \msbfam and \eufmfam to all additional sizes so that \Bbb
+%    and \frak can be used in titles, running heads.  [bnb, 1996/05/07]
+
+%    Twelvepoint (12/14) used for titles
+\font@\twelverm=cmr10 scaled \magstep1
+\font@\twelvebf=cmbx10 scaled \magstep1
+\font@\twelveit=cmti10 scaled \magstep1
+\font@\twelvesl=cmsl10 scaled \magstep1
+\font@\twelvesmc=cmcsc10 scaled \magstep1
+\font@\twelvett=cmtt10 scaled \magstep1
+\font@\twelvei=cmmi10 scaled \magstep1
+\font@\twelvesy=cmsy10 scaled \magstep1
+\font@\twelveex=cmex10 scaled \magstep1
+\font@\twelvemsb=msbm10 scaled \magstep1
+\font@\twelveeufm=eufm10 scaled \magstep1
+
+\newtoks\twelvepoint@
+\def\twelvepoint{\normalbaselineskip14\p@
+  \abovedisplayskip12\p@ plus3\p@ minus9\p@
+  \belowdisplayskip\abovedisplayskip
+  \abovedisplayshortskip\z@ plus3\p@
+  \belowdisplayshortskip7\p@ plus3\p@ minus4\p@
+  \textonlyfont@\rm\twelverm \textonlyfont@\it\twelveit
+  \textonlyfont@\sl\twelvesl \textonlyfont@\bf\twelvebf
+  \textonlyfont@\smc\twelvesmc \textonlyfont@\tt\twelvett
+  \ifsyntax@ \def\big##1{{\hbox{$\left##1\right.$}}}%
+    \let\Big\big \let\bigg\big \let\Bigg\big
+  \else
+    \textfont\z@\twelverm  \scriptfont\z@\eightrm
+       \scriptscriptfont\z@\sixrm
+    \textfont\@ne\twelvei  \scriptfont\@ne\eighti
+       \scriptscriptfont\@ne\sixi
+    \textfont\tw@\twelvesy \scriptfont\tw@\eightsy
+       \scriptscriptfont\tw@\sixsy
+    \textfont\thr@@\twelveex \scriptfont\thr@@\eightex
+        \scriptscriptfont\thr@@\eightex
+    \textfont\itfam\twelveit \scriptfont\itfam\eightit
+        \scriptscriptfont\itfam\eightit
+    \textfont\bffam\twelvebf \scriptfont\bffam\eightbf
+        \scriptscriptfont\bffam\sixbf
+    \textfont\msbfam\twelvemsb \scriptfont\msbfam\eightmsb
+        \scriptscriptfont\msbfam\sixmsb
+    \textfont\eufmfam\twelveeufm \scriptfont\eufmfam\eighteufm
+        \scriptscriptfont\eufmfam\sixeufm
+    \setbox\strutbox\hbox{\vrule height8.5\p@ depth3.5\p@ width\z@}%
+    \setbox\strutbox@\hbox{\lower.5\normallineskiplimit\vbox{%
+        \kern-\normallineskiplimit\copy\strutbox}}%
+    \setbox\z@\vbox{\hbox{$($}\kern\z@}\bigsize@1.2\ht\z@
+  \fi
+  \normalbaselines\rm\dotsspace@1.5mu\ex@.2326ex\jot3\ex@
+  \the\twelvepoint@}
+
+%    Elevenpoint (11/13) used for authors in proceedings.
+\font@\elevenrm=cmr10 scaled \magstephalf
+\font@\elevenbf=cmbx10 scaled \magstephalf
+\font@\elevenit=cmti10 scaled \magstephalf
+\font@\elevensl=cmsl10 scaled \magstephalf
+\font@\elevensmc=cmcsc10 scaled \magstephalf
+\font@\eleventt=cmtt10 scaled \magstephalf
+\font@\eleveni=cmmi10 scaled \magstephalf
+\font@\elevensy=cmsy10 scaled \magstephalf
+\font@\elevenex=cmex10 scaled \magstephalf
+\font@\elevenmsb=msbm10 scaled \magstephalf
+\font@\eleveneufm=eufm10 scaled \magstephalf
+
+\newtoks\elevenpoint@
+\def\elevenpoint{\normalbaselineskip13\p@
+  \abovedisplayskip12\p@ plus3\p@ minus9\p@
+  \belowdisplayskip\abovedisplayskip
+  \abovedisplayshortskip\z@ plus3\p@
+  \belowdisplayshortskip7\p@ plus3\p@ minus4\p@
+  \textonlyfont@\rm\elevenrm \textonlyfont@\it\elevenit
+  \textonlyfont@\sl\elevensl \textonlyfont@\bf\elevenbf
+  \textonlyfont@\smc\elevensmc \textonlyfont@\tt\eleventt
+  \ifsyntax@ \def\big##1{{\hbox{$\left##1\right.$}}}%
+    \let\Big\big \let\bigg\big \let\Bigg\big
+  \else
+    \textfont\z@\elevenrm  \scriptfont\z@\eightrm
+       \scriptscriptfont\z@\sixrm
+    \textfont\@ne\eleveni  \scriptfont\@ne\eighti
+       \scriptscriptfont\@ne\sixi
+    \textfont\tw@\elevensy \scriptfont\tw@\eightsy
+       \scriptscriptfont\tw@\sixsy
+    \textfont\thr@@\elevenex \scriptfont\thr@@\eightex
+        \scriptscriptfont\thr@@\eightex
+    \textfont\itfam\elevenit \scriptfont\itfam\eightit
+        \scriptscriptfont\itfam\eightit
+    \textfont\bffam\elevenbf \scriptfont\bffam\eightbf
+        \scriptscriptfont\bffam\sixbf
+    \textfont\msbfam\elevenmsb \scriptfont\msbfam\eightmsb
+        \scriptscriptfont\msbfam\sixmsb
+    \textfont\eufmfam\eleveneufm \scriptfont\eufmfam\eighteufm
+        \scriptscriptfont\eufmfam\sixeufm
+    \setbox\strutbox\hbox{\vrule height8.5\p@ depth3.5\p@ width\z@}%
+    \setbox\strutbox@\hbox{\lower.5\normallineskiplimit\vbox{%
+        \kern-\normallineskiplimit\copy\strutbox}}%
+    \setbox\z@\vbox{\hbox{$($}\kern\z@}\bigsize@1.2\ht\z@
+  \fi
+  \normalbaselines\rm\dotsspace@1.5mu\ex@.2326ex\jot3\ex@
+  \the\elevenpoint@}
+
+\addto\tenpoint{\normalbaselineskip12\p@
+ \abovedisplayskip6\p@ plus6\p@ minus0\p@
+ \belowdisplayskip6\p@ plus6\p@ minus0\p@
+ \abovedisplayshortskip0\p@ plus3\p@ minus0\p@
+ \belowdisplayshortskip2\p@ plus3\p@ minus0\p@
+ \ifsyntax@
+ \else
+  \setbox\strutbox\hbox{\vrule height9\p@ depth4\p@ width\z@}%
+  \setbox\strutbox@\hbox{\vrule height8\p@ depth3\p@ width\z@}%
+ \fi
+ \normalbaselines\rm}
+
+%    Add sevenpoint for running heads.
+\newtoks\sevenpoint@
+\def\sevenpoint{\normalbaselineskip9\p@
+ \textonlyfont@\rm\sevenrm \textonlyfont@\it\sevenit
+ \textonlyfont@\sl\sevensl \textonlyfont@\bf\sevenbf
+ \textonlyfont@\smc\sevensmc \textonlyfont@\tt\seventt
+  \textfont\z@\sevenrm \scriptfont\z@\sixrm
+       \scriptscriptfont\z@\fiverm
+  \textfont\@ne\seveni \scriptfont\@ne\sixi
+       \scriptscriptfont\@ne\fivei
+  \textfont\tw@\sevensy \scriptfont\tw@\sixsy
+       \scriptscriptfont\tw@\fivesy
+  \textfont\thr@@\sevenex \scriptfont\thr@@\sevenex
+   \scriptscriptfont\thr@@\sevenex
+  \textfont\itfam\sevenit \scriptfont\itfam\sevenit
+   \scriptscriptfont\itfam\sevenit
+  \textfont\bffam\sevenbf \scriptfont\bffam\sixbf
+   \scriptscriptfont\bffam\fivebf
+  \textfont\msbfam\sevenmsb \scriptfont\msbfam\sixmsb
+   \scriptscriptfont\msbfam\fivemsb
+  \textfont\eufmfam\seveneufm \scriptfont\eufmfam\sixeufm
+   \scriptscriptfont\eufmfam\fiveeufm
+ \setbox\strutbox\hbox{\vrule height7\p@ depth3\p@ width\z@}%
+ \setbox\strutbox@\hbox{\raise.5\normallineskiplimit\vbox{%
+   \kern-\normallineskiplimit\copy\strutbox}}%
+ \setbox\z@\vbox{\hbox{$($}\kern\z@}\bigsize@1.2\ht\z@
+ \normalbaselines\sevenrm\dotsspace@1.5mu\ex@.2326ex\jot3\ex@
+ \the\sevenpoint@}
+
+%    Differences from amsppt.sty:
+%    - own skips above and below, not the same as \head
+%    - centered, not flush left
+\newskip\abovespecheadskip   \abovespecheadskip20\p@ plus8\p@ minus2\p@
+\newdimen\belowspecheadskip  \belowspecheadskip6\p@
+\outer\def\specialhead{%
+  \add@missing\endroster \add@missing\enddefinition
+  \add@missing\enddemo \add@missing\endexample
+  \add@missing\endproclaim
+  \penaltyandskip@{-200}\abovespecheadskip
+  \begingroup\interlinepenalty\@M\rightskip\z@ plus\hsize
+  \let\\\linebreak
+  \specialheadfont@\raggedcenter@\noindent}
+\def\endspecialhead{\endgraf\endgroup\nobreak\vskip\belowspecheadskip}
+
+\let\varindent@\indent
+
+\def\num#1{{\rm #1\enspace}}
+
+%    Differences from amsppt.sty:
+%    - no \penaltyandskip@ before
+\let\subsubhead\relax
+\outer\def\subsubhead{%
+  \add@missing\endroster \add@missing\enddefinition
+  \add@missing\enddemo
+  \add@missing\endexample \add@missing\endproclaim
+  \let\savedef@\subsubhead \let\subsubhead\relax
+  \def\subsubhead##1\endsubsubhead{\restoredef@\subsubhead
+      {\def\usualspace{\/{\subsubheadfont@\enspace}}%
+    \subsubheadfont@##1\unskip\frills@{.\enspace}}\ignorespaces}%
+  \nofrillscheck\subsubhead}
+
+%    Indentation for \proclaim, \demo, etc., are the same as for
+%    \subhead, and are taken care of by \varindent.
+%    \proclaim head font is small caps, and the text font is italic
+%    (not \sl). Vertical space only above proclaim, no added space to
+%    other math environments.
+
+\newskip\abstractindent 	\abstractindent=3pc
+\long\def\block #1\endblock{\vskip 6pt
+	{\leftskip=\abstractindent \rightskip=\abstractindent
+	\noindent #1\endgraf}\vskip 6pt}
+
+\long\def\ext #1\endext{\removelastskip\block #1\endblock}
+
+\outer\def\xca{\let\savedef@\xca \let\xca\relax
+  \add@missing\endproclaim \add@missing\endroster
+  \add@missing\endxca \envir@stack\endxca
+  \def\xca##1{\restoredef@\xca
+    \penaltyandskip@{-100}\medskipamount
+    \bgroup{\def\usualspace{{\xcaheadfont@\enspace}}%
+      \varindent@\xcaheadfont@\ignorespaces##1\unskip
+      \frills@{.\xcaheadfont@\enspace}}%
+      \ignorespaces}%
+  \nofrillscheck\xca}
+\def\endxca{\egroup\revert@envir\endxca
+  \par\medskip}
+
+%    Differences from amsppt.sty:
+%    - font is \smc, not \it
+%    - good break point before
+%    - skip after
+\def\remarkheadfont@{\smc}
+\def\remark{\let\savedef@\remark \let\remark\relax
+  \add@missing\endroster \add@missing\endproclaim
+  \envir@stack\endremark
+  \def\remark##1{\restoredef@\remark
+    \penaltyandskip@{-100}\medskipamount
+    {\def\usualspace{{\remarkheadfont@\enspace}}%
+     \varindent@\remarkheadfont@\ignorespaces##1\unskip
+     \frills@{.\enspace}}\rm
+    \ignorespaces}\nofrillscheck\remark}
+\def\endremark{\par\revert@envir\endremark\medskip}
+
+%    Differences from amsppt.sty:
+%    - square is flush right
+\def\qed{\ifhmode\unskip\nobreak\fi\hfill
+  \ifmmode\square\else$\m@th\square$\fi}
+
+
+%%%%%%
+
+%    Expand rosters to three item levels
+%    This is identical to code in ams-j.sty except for the width setting
+%    of \rosteritemitemitemwd (here "iii"; "ii" in ams-j.sty).
+\newdimen\rosteritemsep
+\rosteritemsep=.5pc
+
+\newdimen\rosteritemitemwd
+\newdimen\rosteritemitemitemwd
+
+\newbox\setwdbox
+\setbox\setwdbox\hbox{0.}\rosteritemwd=\wd\setwdbox
+\setbox\setwdbox\hbox{0.\hskip.5pc(c)}\rosteritemitemwd=\wd\setwdbox
+\setbox\setwdbox\hbox{0.\hskip.5pc(c)\hskip.5pc(iii)}%
+  \rosteritemitemitemwd=\wd\setwdbox
+
+%    Differences from amsppt.sty:
+%    - adds \itemitem, \itemitemitem
+%    - omits \enspace before item label
+%    - omits \smallskip following item
+\def\roster{%
+  \envir@stack\endroster
+  \edef\leftskip@{\leftskip\the\leftskip}%
+  \relaxnext@
+  \rostercount@\z@% Initialize \rostercount@ to 0.
+  \def\item{\FN@\rosteritem@}%
+  \def\itemitem{\FN@\rosteritemitem@}%
+  \def\itemitemitem{\FN@\rosteritemitemitem@}%
+  \DN@{\ifx\next\runinitem\let\next@\nextii@
+    \else\let\next@\nextiii@
+    \fi\next@}%
+  \DNii@\runinitem% If \runinitem occurs, \nextii@ must kill it off.
+    {\unskip% This unskips any space before the original \roster.
+     \DN@{\ifx\next[\let\next@\nextii@
+       \else\ifx\next"\let\next@\nextiii@\else\let\next@\nextiv@\fi
+       \fi\next@}%
+     \DNii@[####1]{\rostercount@####1\relax
+       \therosteritem{\number\rostercount@}~\ignorespaces}%
+     \def\nextiii@"####1"{{\rm####1}~\ignorespaces}%
+     \def\nextiv@{\therosteritem1\rostercount@\@ne~}%
+     \par@\firstitem@false% Before doing any of this we still change
+     \FN@\next@}%      End of definition of \nextii@\runinitem.
+  \def\nextiii@{\par\par@% End the present paragraph, change \everypar
+    \penalty\@m\vskip-\parskip
+    \firstitem@true}%
+  \FN@\next@}
+
+%    Differences from amsppt.sty:
+%    - \leftskip = .5pc, not .5em
+\def\rosteritem@{\iffirstitem@\firstitem@false
+  \else\par\vskip-\parskip
+  \fi
+  \leftskip\rosteritemwd \advance\leftskip\normalparindent
+  \advance\leftskip.5pc \noindent
+  \DNii@[##1]{\rostercount@##1\relax\itembox@}%
+  \def\nextiii@"##1"{\def\therosteritem@{\rm##1}\itembox@}%
+  \def\nextiv@{\advance\rostercount@\@ne\itembox@}%
+  \def\therosteritem@{\therosteritem{\number\rostercount@}}%
+  \ifx\next[\let\next@\nextii@
+  \else\ifx\next"\let\next@\nextiii@\else\let\next@\nextiv@\fi
+  \fi\next@}
+
+%    Differences from amsppt.sty:
+%    - \skip after label = .5pc, not \enspace
+\def\itembox@{\llap{\hbox to\rosteritemwd{\hss
+  \kern\z@ % kern to thwart \unskip in \rom
+  \therosteritem@}\hskip.5pc}\ignorespaces}
+
+%    Differences from amsppt.sty:
+%    - period after, no parentheses around label
+\def\therosteritem#1{\rom{\ignorespaces#1.\unskip}}
+
+%    Two new levels.
+\def\rosteritemitem@{\iffirstitem@\firstitem@false
+  \else\par\vskip-\parskip
+  \fi
+  \leftskip\rosteritemitemwd \advance\leftskip\normalparindent
+  \advance\leftskip.5pc \noindent
+  \DNii@[##1]{\rostercount@##1\relax\itemitembox@}%
+  \def\nextiii@"##1"{\def\therosteritemitem@{\rm##1}\itemitembox@}%
+  \def\nextiv@{\advance\rostercount@\@ne\itemitembox@}%
+  \def\therosteritemitem@{\therosteritemitem{\number\rostercount@}}%
+  \ifx\next[\let\next@\nextii@
+  \else\ifx\next"\let\next@\nextiii@\else\let\next@\nextiv@\fi
+  \fi\next@}
+
+\def\itemitembox@{\llap{\hbox to\rosteritemitemwd{\hss
+  \kern\z@ % kern to thwart \unskip in \rom
+  \therosteritemitem@}\hskip.5pc}\ignorespaces}
+
+\def\therosteritemitem#1{\rom{(\ignorespaces#1\unskip)}}
+
+\def\rosteritemitemitem@{\iffirstitem@\firstitem@false
+  \else\par\vskip-\parskip
+  \fi
+  \leftskip\rosteritemitemitemwd \advance\leftskip\normalparindent
+  \advance\leftskip.5pc \noindent
+  \DNii@[##1]{\rostercount@##1\relax\itemitemitembox@}%
+  \def\nextiii@"##1"{\def\therosteritemitemitem@{\rm##1}\itemitemitembox@}%
+  \def\nextiv@{\advance\rostercount@\@ne\itemitemitembox@}%
+  \def\therosteritemitemitem@{\therosteritemitemitem{\number\rostercount@}}%
+  \ifx\next[\let\next@\nextii@
+  \else\ifx\next"\let\next@\nextiii@\else\let\next@\nextiv@\fi
+  \fi\next@}
+
+\def\itemitemitembox@{\llap{\hbox to\rosteritemitemitemwd{\hss
+  \kern\z@ % kern to thwart \unskip in \rom
+  \therosteritemitemitem@}\hskip.5pc}\ignorespaces}
+
+\def\therosteritemitemitem#1{\rom{(\ignorespaces#1\unskip)}}
+
+\def\endroster{\relaxnext@
+  \revert@envir\endroster % restore \envir@end
+  \par\leftskip@% End the paragraph, and restore the \leftskip.
+  \penalty-50 % \vskip-\parskip% Add a good break
+  \DN@{\ifx\next\Runinitem\let\next@\relax
+    \else\nextRunin@false\let\item\plainitem@% Otherwise, set
+      \ifx\next\par% moreover, if \endroster is followed by \par,
+        \DN@\par{\everypar\expandafter{\the\everypartoks@}}%
+      \else% but if the \endroster isn't followed by a new paragraph,
+        \DN@{\noindent\everypar\expandafter{\the\everypartoks@}}%
+      \fi
+    \fi\next@}%
+  \FN@\next@}
+
+%%%%%%%%%%
+
+%    Differences with amsppt.sty (all address-related items):
+%    - break not suppressed before \address
+%    - \addressfont@ specified
+\def\address#1\endaddress{\global\advance\addresscount@\@ne
+  \expandafter\gdef\csname address\number\addresscount@\endcsname
+  {\vskip12\p@ minus6\p@\indent\addressfont@\smc\ignorespaces#1\par}}
+
+%  Current addresses as well as permanent ones must be accommodated.
+%  Check on the skip before the address; it may be a fixed 6pt.
+%  \smallskip has been assumed before the current address, as that
+%  is what has been used for \email.
+
+\def\curraddr{\let\savedef@\curraddr
+  \def\curraddr##1\endcurraddr{\let\curraddr\savedef@
+  \toks@\expandafter\expandafter\expandafter{%
+       \csname address\number\addresscount@\endcsname}%
+  \toks@@{##1}%
+  \expandafter\xdef\csname address\number\addresscount@\endcsname
+  {\the\toks@\endgraf\noexpand\nobreak
+    \indent\noexpand\addressfont@{\noexpand\rm
+    \frills@{{\noexpand\it Current address\noexpand\/}:\space}%
+    \def\noexpand\usualspace{\space}\the\toks@@\unskip}}}%
+  \nofrillscheck\curraddr}
+
+\def\email{\let\savedef@\email
+  \def\email##1\endemail{\let\email\savedef@
+  \toks@{\def\usualspace{{\it\enspace}}\endgraf\indent\addressfont@}%
+  \toks@@{{\tt ##1}\par}%
+  \expandafter\xdef\csname email\number\addresscount@\endcsname
+  {\the\toks@\frills@{{\noexpand\it E-mail address\noexpand\/}:%
+     \noexpand\enspace}\the\toks@@}}%
+  \nofrillscheck\email}
+
+
+\def\rom#1{{\rm #1}}
+
+%    Differences from amsppt.sty:
+%    - rule is 2pc, not 3em
+\def\bysame{\by\hbox to2pc{\hrulefill}\thinspace\kern\z@}
+
+%    Differences from amsppt.sty:
+%    - indent differs in style B
+\def\refstyle#1{\uppercase{%
+  \gdef\refstyle@{#1}%
+  \if#1A\relax \def\keyformat##1{[##1]\enspace\hfil}%
+  \else\if#1B\relax
+    \refindentwd2pc
+    \def\keyformat##1{\aftergroup\kern
+              \aftergroup-\aftergroup\refindentwd}%
+  \else\if#1C\relax
+%    \refindentwd\parindent
+    \def\keyformat##1{\hfil##1.\enspace}%
+  \fi\fi\fi}% end of \uppercase
+}
+
+\refstyle{A}
+
+\endinput

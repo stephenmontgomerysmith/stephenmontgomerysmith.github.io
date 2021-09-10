@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Contraction and decoupling inequalities for multilinear forms and u-statistics.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith, <A HREF="http://www.stat.columbia.edu/pg_pena.html">Victor de la Pe&ntilde;a</A> and <A HREF="http://www.auburn.edu/~szulgje/">Jerzy Szulga</A>&#44; Contraction and decoupling inequalities for multilinear forms and u-statistics.</B>
+<I>Annals Prob., <B>22</B>, (1994), 1745-1765.</I>
+We prove decoupling inequalities for random polynomials in independent random variables with coefficients in vector space. We use various means of comparison, including rearrangement invariant norms (e.g., Orlicz and Lorentz norms), tail distributions, tightness, hypercontractivity, etc.
+(<A HREF="decouple_hypercontractive.tex">tex</A>,
+<A HREF="decouple_hypercontractive.dvi">dvi</A>,
+<A HREF="decouple_hypercontractive.ps">ps</A>,
+<A HREF="decouple_hypercontractive.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

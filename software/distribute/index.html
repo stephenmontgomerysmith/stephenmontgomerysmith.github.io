@@ -1,0 +1,251 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.79 [en] (X11; U; Linux 2.4.2 i386) [Netscape]">
+   <meta name="Author" content="Stephen Montgomery-Smith">
+   <title>The Distribute Package</title>
+</head>
+<body bgcolor="#FF99FF">
+
+<center>
+<h1>
+The Distribute Package</h1></center>
+
+<h2>
+Short Description</h2>
+The Distribute Package is designed to be an out of the box way to do distributed
+programming.&nbsp; For example, suppose you want to count the number of
+twin primes (prime numbers <i>p</i> for which <i>p</i>-2 is also prime).&nbsp;
+Suppose you have a program <tt>count-primes</tt> which takes as input a
+number b, and outputs the number of twin primes between 1,000,000,000 <i>b</i>
+and 1,000,000,000 (<i>b</i>+1).&nbsp; If you want a count of primes up
+to 10<sup>14</sup>, you create a file <tt>primes-input</tt> which consists
+of lines each containing an integer, starting at 0, and ending at 99999.&nbsp;
+So to get the desired count, you would type:
+<p><tt>&nbsp;&nbsp;&nbsp; ./count-primes &lt; primes-input > primes-output</tt>
+<p>and then add up all the numbers in the file <tt>primes-output</tt>.
+<p>Well this program could take a long time to run.&nbsp; So you want to
+spread the load over several computers.&nbsp; This package allows you to
+do that.&nbsp; You have a central server computer (call it server.domain)
+where you run the program:
+<p><tt>&nbsp;&nbsp;&nbsp; distribute-server pass-key 3000 10 &lt; primes-input
+> primes-output</tt>
+<p>and then on several other computers, you type
+<p><tt>&nbsp;&nbsp;&nbsp; distribute-client ./count-primes pass-key server.domain
+3000</tt>
+<p>Each client program asks the server program for a line from <tt>primes-input</tt>.&nbsp;
+(In this instance, the server is listening on port 3000, and uses <tt>pass-key</tt>
+to verify that the client is working on the correct problem.)&nbsp; The
+client works on that problem piece, and then sends the answer back to the
+server program.
+<p>If for some reason the client program dies, after 10 minutes the server
+program will give that same problem piece to another client.&nbsp; The
+server program collects all the outputs from the clients, and places them
+in <tt>primes-output</tt>, along with other information such as which client
+did the computation.
+<h2>
+How to Build</h2>
+This package was designed on FreeBSD.&nbsp; It should work fine on Linux.&nbsp;
+If you want to help me port it to other Unix's (or even Windows) that would
+be great.
+<p>This package needs the Berkeley database revision 3.&nbsp; You can find
+it at <a href="http://www.sleepycat.com/update/">http://www.sleepycat.com/update/</a>
+<p>Download the package from <a href="distribute-0.8.tar.gz">http://faculty.missouri.edu/~stephen/software/distribute/distribute-0.8.tar.gz</a>.&nbsp;
+After un-tarring the distribution, and changing to the created directory,
+type
+<br><tt>&nbsp;&nbsp;&nbsp; make client</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; make install-client</tt>
+<br>to create and install the client programs, and
+<br><tt>&nbsp;&nbsp;&nbsp; make server</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; make install-server</tt>
+<br>to make and install the server programs.&nbsp; To make and install
+everything, type
+<br><tt>&nbsp;&nbsp;&nbsp; make all</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; make install</tt>
+<h2>
+How to Use</h2>
+To use this package, you will need to create two items.&nbsp; You need
+to create a program that does your computations, and you need to create
+a file that has a list of input values to your program.&nbsp; In the package,
+I have created an example of a program called <tt>add</tt>, that takes
+two numbers, waits one second, and then outputs the sum of the two numbers.
+<h3>
+The Program</h3>
+The program should accept one line of input, and then create one line of
+output in response.&nbsp; Then it should repeat this over again.&nbsp;
+The basic structure of the program should be something like this:
+<p><tt>main () {</tt>
+<br><tt>&nbsp; char input[1000], output[1000];</tt>
+<br><tt>&nbsp; setlinebuf(stdout);</tt>
+<br><tt>&nbsp; while ((fgets(input,1000,stdin)!=NULL) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; do_computations(output,input);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; puts(output);</tt>
+<br><tt>&nbsp; }</tt>
+<br><tt>&nbsp; _exit(0);</tt>
+<br><tt>}</tt>
+<p>The <tt>setlinebuf(stdout)</tt> is very important.&nbsp; (The <tt>_exit(0)</tt>
+is to be "correct" but really is not necessary.)
+<p>Your program should always produce some kind of output.&nbsp; If the
+input data is invalid, you might like to have it some kind of error message.
+<h3>
+The Client Program</h3>
+On each computer where you wish to do the computations, you start the client
+program as follows:
+<p><tt>&nbsp;&nbsp;&nbsp; distribute-client freddy program-name server.domain
+3000</tt>
+<p>where 3000 is replaced by whatever port number the server program is
+using, and "freddy" is a password so that the server knows that it is communicating
+with a legitimate client.
+<p>You may also run this program with a couple of options:
+<ul>
+<li>
+<tt>-f</tt>&nbsp;&nbsp;&nbsp; The program will run in the foreground (otherwise
+it will run in the background);</li>
+
+<li>
+<tt>-n <i>number</i></tt>&nbsp;&nbsp;&nbsp;&nbsp; Set the "nice" level of
+the program --- type "<tt>man nice</tt>" to see what this is about.&nbsp;
+The default value is 20, which means that the program will get the lowest
+priority in getting CPU time.</li>
+</ul>
+
+<h3>
+The Server Program</h3>
+One computer serves as the central server, which gives out the pieces of
+the problem.&nbsp; On this computer, run the server program as follows:
+<p><tt>&nbsp;&nbsp;&nbsp; distribute-server freddy 3000 5 &lt; input-file
+>> output-file</tt>
+<p>The word "freddy" is a password so that only legitimate clients can
+connect.&nbsp; Replace 3000 with the port you want to use.&nbsp; Generally
+any number between 1024 and 65535 should be OK.&nbsp; If you get a "cannot
+bind" message when you try to start the server program, wait a minute,
+or try another port.&nbsp; The last number,in our case 5, is the minimum
+number of minutes to wait until the server decides that a client has taken
+too long to solve a particular problem piece.
+<h3>
+Format of Output File</h3>
+Each line in the input file will result in 3 lines in the output file,
+which will look something like this
+<p><tt>Data from 12.34.56.78:1111 [Thu Dec&nbsp; 6 08:39:13 2001 -6:00]</tt>
+<br><tt>input data</tt>
+<br><tt>output data</tt>
+<p>When the server program has finished, it will put on the end of the
+output file the single line
+<p><tt>Finished [Thu Dec&nbsp; 6 08:39:19 2001 -6:00]</tt>
+<p>If you want to see how far the project has progressed, count the number
+of lines in the output file by typing
+<p><tt>&nbsp;&nbsp;&nbsp; wc -l output-file</tt>
+<p>which, when the project is finished, will have one more than three times
+as many lines as the input file.
+<p>If you want to see which hosts have submitted data, and how many lines
+each has submitted, type
+<p><tt>&nbsp;&nbsp;&nbsp; check-ips output-file</tt>
+<h3>
+Caveats</h3>
+1. Make sure that each problem piece takes a reasonable amount of time.&nbsp;
+Otherwise you will flood your internet connection.&nbsp; If your input
+file consist of some lines that will take a long time, and some lines that
+will take a small amount of time, you can mix up the input file using the
+randomize command:
+<p><tt>&nbsp;&nbsp;&nbsp; randomize &lt; input-file > randomized-input-file</tt>
+<p>2. The purpose of the password is not to provide any kind of real security
+--- rather if one is doing several projects, it helps to stop them getting
+mixed up (so you should give each project a different password).
+<p>3. Note that you may run a client program on the same computer that is
+running the server program.
+<p>4. This program is early in its development, and it is the author's first
+exercise in threaded internet applications, so it may be buggy.
+<h3>
+What if the Programs Die or the Connection goes down?</h3>
+If the client program dies, that is not a problem.&nbsp; If the client
+was working on a particular problem piece, the server will wait a while,
+then give that piece to another server.&nbsp; You may restart the client
+program if you want to.
+<p>If the server program dies, the client programs will keep retrying to
+connect every two minutes for up to two days.&nbsp; Before restarting the
+server program, you want to weed the input file so that lines that have
+already been computed don't get done again.&nbsp; So type
+<p><tt>&nbsp;&nbsp;&nbsp; filter-input output-file &lt; input-file > new-input-file</tt>
+<p>to create a new input file.
+<h2>
+Optional Topics:</h2>
+
+<h3>
+Killing the Server Program</h3>
+One way to kill the client program is as follows.&nbsp; From the same computer
+that is running the server, type
+<p><tt>&nbsp;&nbsp;&nbsp; telnet localhost 3000</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; finished</tt>
+<p>where 3000 is the port number that the server is listening to.
+<h3>
+Security for the Server Program</h3>
+There is a way to restrict which client programs may access the server
+program based upon IP number.&nbsp; Upon startup, the server program will
+attempt to read a file in the current directory called <tt>distribute.allow</tt>.&nbsp;
+This contains a list of rules that say whether to deny or allow access.&nbsp;
+The program applies the first rule that applies.
+<p>The rules should look something like
+<p><tt>&nbsp;&nbsp;&nbsp; allow 12.34.56.78</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; deny 23.34.56.0/24</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; deny 0.0.0.0/0</tt>
+<p>The first rule will allow access from a client program working on 12.34.56.78.&nbsp;
+The second rule will deny access from any client program working on a host
+with ip's in the range 23.34.56.0 to 23.34.56.255.&nbsp; The third rule
+will deny access from any host.
+<p>There will always be two unwritten rules: a first rule:
+<br><tt>&nbsp;&nbsp;&nbsp; allow 127.0.0.1</tt>
+<br>and a last rule
+<br><tt>&nbsp;&nbsp;&nbsp; allow 0.0.0.0/0</tt>
+<br>so localhost always has access, and if none of the written rules apply,
+then access is allowed.
+<p>If you want to change the rules while the server is running, first edit
+the file <tt>distribute.allow</tt> to reflect the rules you want (or delete
+the file if you no longer want any rules).&nbsp; Then from the same computer
+that is running the server, type
+<p><tt>&nbsp;&nbsp;&nbsp; telnet localhost 3000</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; new rules</tt>
+<p>where 3000 is the port number that the server is listening to.&nbsp;
+You will get a message indicating whether the new rules were successfully
+applied.
+<h3>
+Make Your Own Client Programs</h3>
+You can make your own special purpose client programs.&nbsp; They go something
+like this (you write the <tt>do_computations</tt> function):
+<p><tt>#include &lt;distribute.h></tt>
+<br><tt>int main(int argc, char **argv) {</tt>
+<br><tt>&nbsp; char *input=NULL;</tt>
+<br><tt>&nbsp; char output[1000];</tt>
+<br><tt>&nbsp; char *password;</tt>
+<br><tt>&nbsp; char *hostname;</tt>
+<br><tt>&nbsp; int port_nr;</tt>
+<br><tt>&nbsp; get_client_arguments(argc,argv,&amp;password,&amp;hostname,&amp;port_nr,0);</tt>
+<br><tt>&nbsp; while (1) {</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; get_client_data(&amp;input,hostname,port_nr,password);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; do_computations(input,output);</tt>
+<br><tt>&nbsp;&nbsp;&nbsp; send_client_data(input,output,hostname,port_nr,password);</tt>
+<br><tt>&nbsp; }</tt>
+<br><tt>}</tt>
+<p>Compile the program like this:
+<p><tt>&nbsp;&nbsp;&nbsp; cc my-client.c -o my-client -ldistribute</tt>
+<p>Invoke the program thus:
+<p><tt>&nbsp;&nbsp;&nbsp; ./my-client pass-key server.domain 3000</tt>
+<p>with the options <tt>-f</tt> and <tt>-n <i>number</i></tt> if you like.
+<h2>
+License Terms</h2>
+This program is free software, and available under a very non-restrictive
+BSD
+style license.&nbsp; Read the file <tt>LICENSE</tt> for details.
+<h2>
+History</h2>
+This package is derived from special purpose programs written by Stephen
+Montgomery-Smith to solve certain combinatorial problems.&nbsp; The
+first project
+was to compute the number of ways to place the 12 pentominoes and 5
+tetrominoes
+in a 10x8 rectangle - the answer turned out to be 3,386,001,688.&nbsp;
+(See
+<a href="http://www.xs4all.nl/~gp/PolyominoSolver/Polyomino.html">http://www.xs4all.nl/~gp/PolyominoSolver/Polyomino.html</a>
+for details.)
+</body>
+</html>

@@ -1,0 +1,21 @@
+This is the software I used to compute the number of ways of solving
+polyomino puzzles.  The later versions of the software have some
+small changes and bugs removed (the bugs don't seem to have affected
+the veracity of the numbers --- so far).  The earlier versions are
+what I actually used.
+
+The poly(n)omino programs do a depth first search looking for solutions.
+(For a while I misspelt polyomino.)
+
+The poly-net programs spread the problem out to allow many computers
+to work on different parts of the problem.  This is currently set up
+for the problem of placing the tetrominoes and pentominoes into a
+10x8 rectangle.  For a single 1GHz computer this computation would
+have taken about half a year.  I spread the problem amongst about
+140 computers, and it took a few days to show that there were 
+3386001688 solutions.  The file save-results shows the intermediate
+computations.
+
+Added Dec 27, 2010
+The patch polyomino.h-patch-0.4-1 applied to polyomino-0.4 seems to give
+quite a speed increase.

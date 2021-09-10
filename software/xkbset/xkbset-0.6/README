@@ -1,0 +1,27 @@
+xkbset is a program rather like xset in that it allows you to set
+various features of the X window interface.  It allows one to configure
+most of the options connected with the XKB extensions.  They are described
+in Section 10 of XKBlib.ps.
+
+This includes customizing the following:
+  MouseKeys:  using the numeric pad keys to move the mouse;
+  StickyKeys: where modifiers like control and shift will lock until the
+              next key press (good for one finger typing);
+  SlowKeys:   The keys will not work unless they are pressed for a certain
+              amount of time;
+  BounceKeys: If a key is pressed more than once rapidly, only one key
+              press will be registered.
+
+I also include a gui program xkbset-gui which is a GUI program to play
+with the mousekeys acceleration parameters.  It is written in Perl/Tk,
+so Perl/Tk will need to be installed on your machine.
+
+If you have any improvents or ideas, please send them to me.
+
+Also, if you use this program and like it, please tell me so.  If I
+don't get much feedback, I will assume no one is interested, and
+I won't develop it further (in particular I won't finish the man page).
+
+Stephen Montgomery-Smith
+stephen@missouri.edu
+http://faculty.missouri.edu/~stephen

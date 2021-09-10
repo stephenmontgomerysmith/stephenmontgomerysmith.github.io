@@ -1,0 +1,783 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introduction</TITLE>
+<META NAME="description" CONTENT="Introduction">
+<META NAME="keywords" CONTENT="mo_smpok8">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="mo_smpok8.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="mo_smpok8.html">
+<LINK REL="up" HREF="mo_smpok8.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html21"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html19"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html13"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html22"
+  HREF="node2.html">Outline of the Proof</A>
+<B> Up:</B> <A NAME="tex2html20"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<B> Previous:</B> <A NAME="tex2html14"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00010000000000000000">
+Introduction</A>
+</H1>
+
+<P>
+Recently there has been interest in some new variables describing 
+the solutions to the Navier-Stokes and Euler equations.  These variables
+go under various names, for example, <EM>the magnetization variables</EM>,
+<EM>impulse variables</EM>, <EM>velicity</EM> or <EM>Kuzmin-Oseledets variables</EM>.
+
+<P>
+Let us start by considering the incompressible Euler equations in the entire 
+three-dimensional space, that is,
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+%1.1
+\begin{array}{c}
+\left. \begin{array}{c}
+\displaystyle \frac {\partial {\mathbf{u}}}{\partial t} + {\mathbf{u}}\cdot \nabla {\mathbf{u}}+ \nabla p = {\mathbf{f}}\\[6pt]
+\div {\mathbf{u}}= 0 
+\end{array} \right\} {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[10pt]
+{\mathbf{u}}({\mathbf{x}},0) = {\mathbf{u}}_0({\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, ,
+\end{array}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="euleru"></A><IMG
+ WIDTH="313" HEIGHT="97" BORDER="0"
+ SRC="img3.png"
+ ALT="\begin{displaymath}
+%1.1
+\begin{array}{c}
+\left. \begin{array}{c}
+\displaystyle ...
+...\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, ,
+\end{array}\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="${\mathbf{u}}$"> and <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$p$"> are given functions, <!-- MATH
+ ${\mathbf{u}}: \mbox{\Bbbb R}^3 \times(0,T) 
+\mapsto \mbox{\Bbbb R}^3$
+ -->
+<IMG
+ WIDTH="174" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="${\mathbf{u}}: \mbox{\Bbbb R}^3 \times(0,T)
+\mapsto \mbox{\Bbbb R}^3$"> and <!-- MATH
+ $p: \mbox{\Bbbb R}^3 \times(0,T) 
+\mapsto \mbox{\Bbbb R}$
+ -->
+<IMG
+ WIDTH="164" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$p: \mbox{\Bbbb R}^3 \times(0,T)
+\mapsto \mbox{\Bbbb R}$">, <!-- MATH
+ $0<T\leq \infty$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$0&lt;T\leq \infty$"> (see Section 1 for further 
+explanation).
+
+<P>
+The question of global existence of even only weak solutions to 
+system&nbsp;(<A HREF="#euleru">1.1</A>) is an open question and only the existence of either 
+measure-valued solutions (see [<A
+ HREF="node7.html#DPMa">3</A>]) or dissipative solutions (see
+[<A
+ HREF="node7.html#Lio">7</A>]) is known. Nevertheless, a common approach to try to prove 
+the global existence of smooth solutions is to use local existence results,
+and thus reduce the problem to proving a priori estimates.  So we will
+assume that we have a smooth solution to the equations.
+
+<P>
+In that case, we can rewrite the Euler equations as the following system
+of equations (see for example [<A
+ HREF="node7.html#Ch">1</A>]):
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{c}
+\left. \begin{array}{c}
+\displaystyle \frac {\partial {\mathbf{m}}}{\partial t} + {\mathbf{u}}\cdot \nabla {\mathbf{m}}+ {\mathbf{m}}\cdot (\nabla {\mathbf{u}})^T = 
+  {\mathbf{f}}\\[6pt]
+{\mathbf{u}}= {\mathbf{m}}- \nabla \eta \\[6pt]
+\div {\mathbf{u}}= 0 
+\end{array} \right\} {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[10pt]
+{\mathbf{m}}({\mathbf{x}},0) = {\mathbf{u}}_0({\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eulerm"></A><IMG
+ WIDTH="383" HEIGHT="128" BORDER="0"
+ SRC="img9.png"
+ ALT="\begin{displaymath}
+\begin{array}{c}
+\left. \begin{array}{c}
+\displaystyle \frac...
+...\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Here <!-- MATH
+ ${\mathbf{m}}:\mbox{\Bbbb R}^3 \times(0,T) 
+\mapsto \mbox{\Bbbb R}^3$
+ -->
+<IMG
+ WIDTH="180" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="${\mathbf{m}}:\mbox{\Bbbb R}^3 \times(0,T)
+\mapsto \mbox{\Bbbb R}^3$"> is called the magnetization variable.  This new formulation
+has several advantages to the usual one, in particular the solution
+can be written rather nicely in the following way.  
+Suppose that
+the initial value for <IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="${\mathbf{m}}$"> may be written as
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+{\mathbf{m}}({\mathbf{x}},0) = \sum_{i=1}^R \beta_i({\mathbf{x}},0) \nabla \alpha_i({\mathbf{x}},0) ,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="init-m-alpha-beta"></A><IMG
+ WIDTH="253" HEIGHT="58" BORDER="0"
+ SRC="img12.png"
+ ALT="\begin{displaymath}
+{\mathbf{m}}({\mathbf{x}},0) = \sum_{i=1}^R \beta_i({\mathbf{x}},0) \nabla \alpha_i({\mathbf{x}},0) ,
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+and suppose that <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$\alpha$"> and <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$\beta$"> satisfy the transport equations,
+that is
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial \alpha_i}{\partial t} + {\mathbf{u}}\cdot \nabla \alpha_i = 0
+\\[6pt]
+\displaystyle \frac {\partial \beta_i}{\partial t} + {\mathbf{u}}\cdot \nabla \beta_i 
+= \sum_{j=1}^R Q_{j,i} f_j
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="206" HEIGHT="103" BORDER="0"
+ SRC="img15.png"
+ ALT="\begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial \alpha_i}{\pa...
+...u}}\cdot \nabla \beta_i
+= \sum_{j=1}^R Q_{j,i} f_j
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <!-- MATH
+ ${\mathbf{Q}}= (Q_{i,j})$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="${\mathbf{Q}}= (Q_{i,j})$"> is the matrix inverse of the matrix whose entries are
+<!-- MATH
+ $\frac {\partial \alpha_i}{\partial x_j}$
+ -->
+<IMG
+ WIDTH="30" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$\frac {\partial \alpha_i}{\partial x_j}$">.  (There is some difficulty to suppose that this
+inverse exists unless <IMG
+ WIDTH="54" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$R=3$"> -- see below.  But generally this will not 
+be a problem if <!-- MATH
+ ${\mathbf{f}}= 0$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="${\mathbf{f}}= 0$">.)
+Then 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\mathbf{m}}({\mathbf{x}},t) = \sum_{i=1}^R \beta_i({\mathbf{x}},t) \nabla \alpha_i({\mathbf{x}},t)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="239" HEIGHT="58" BORDER="0"
+ SRC="img20.png"
+ ALT="\begin{displaymath}
+{\mathbf{m}}({\mathbf{x}},t) = \sum_{i=1}^R \beta_i({\mathbf{x}},t) \nabla \alpha_i({\mathbf{x}},t)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is the solution to system&nbsp;(<A HREF="#eulerm">1.2</A>).  That is to say, at least in
+the case that <!-- MATH
+ ${\mathbf{f}}= 0$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="${\mathbf{f}}= 0$">, the 
+magnetization variable may be thought of as a ``1-form'' acting 
+naturally under a change of basis induced by the flow of the fluid.
+
+<P>
+The advantage of the magnetization variable is that it is local in that
+its support never gets larger, it is simply pushed around by the flow.
+It is only at the end, after one has calculated the final value of
+<IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="${\mathbf{m}}$">, that one needs to take the Leray projection to compute
+the velocity field <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="${\mathbf{u}}$">.
+
+<P>
+Indeed one very explicit way to write <IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="${\mathbf{m}}$"> according to 
+equation&nbsp;(<A HREF="#init-m-alpha-beta">1.3</A>) is to set <!-- MATH
+ $\alpha_i({\mathbf{x}},0)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$\alpha_i({\mathbf{x}},0)$">
+equal to the <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$i$">th unit vector, and <!-- MATH
+ $\beta_i({\mathbf{x}},0) = u_i({\mathbf{x}},0)$
+ -->
+<IMG
+ WIDTH="149" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$\beta_i({\mathbf{x}},0) = u_i({\mathbf{x}},0)$">, 
+for <!-- MATH
+ $1 \le i \le R = 3$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$1 \le i \le R = 3$">.  In that case
+let us denote <!-- MATH
+ $A^E_i({\mathbf{x}},t) = \alpha_i({\mathbf{x}},t)$
+ -->
+<IMG
+ WIDTH="155" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$A^E_i({\mathbf{x}},t) = \alpha_i({\mathbf{x}},t)$"> and 
+<!-- MATH
+ $v_i({\mathbf{x}},t) = \beta_i({\mathbf{x}},t)$
+ -->
+<IMG
+ WIDTH="142" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$v_i({\mathbf{x}},t) = \beta_i({\mathbf{x}},t)$">.  In that case we see that
+<!-- MATH
+ $\mathbf{A}^E({\mathbf{x}},t)$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$\mathbf{A}^E({\mathbf{x}},t)$"> is actually the
+back to coordinates map, that is, it denotes the initial position of the
+particle of fluid that is at <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="${\mathbf{x}}$"> at time <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$t$"> (see for example [<A
+ HREF="node7.html#Ch">1</A>]).  
+Furthermore
+in the case that <!-- MATH
+ ${\mathbf{f}}= 0$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="${\mathbf{f}}= 0$">, we see that <!-- MATH
+ ${\mathbf{v}}({\mathbf{x}},t) = {\mathbf{u}}_0(\mathbf{A}^E({\mathbf{x}}))$
+ -->
+<IMG
+ WIDTH="170" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="${\mathbf{v}}({\mathbf{x}},t) = {\mathbf{u}}_0(\mathbf{A}^E({\mathbf{x}}))$">.
+Furthermore, it is well known if <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="${\mathbf{u}}$"> is smooth, that
+<!-- MATH
+ $\mathbf{A}^E(\cdot,t)$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$\mathbf{A}^E(\cdot,t)$"> is smoothly invertible, and that the determinant of the 
+Jacobian of <IMG
+ WIDTH="32" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$\mathbf{A}^E$"> is identically equal to <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img33.png"
+ ALT="$1$"> (because <!-- MATH
+ $\div {\mathbf{u}}= 0$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.png"
+ ALT="$\div {\mathbf{u}}= 0$">).  
+Hence the matrix <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="${\mathbf{Q}}$"> exists.  For definiteness, we
+write the explicit equation for
+<IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="${\mathbf{m}}$">:
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+%1.2
+m_i({\mathbf{x}},t) = \frac {\partial \mathbf{A}^E({\mathbf{x}}, t)}{\partial x_i} \cdot {\mathbf{v}}^E({\mathbf{x}}, t) .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="m-A-v"></A><IMG
+ WIDTH="253" HEIGHT="51" BORDER="0"
+ SRC="img36.png"
+ ALT="\begin{displaymath}
+%1.2
+m_i({\mathbf{x}},t) = \frac {\partial \mathbf{A}^E({\ma...
+...x}}, t)}{\partial x_i} \cdot {\mathbf{v}}^E({\mathbf{x}}, t) .
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1.4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+The desire, then, is to try to extend this notion to the Navier-Stokes
+equations
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+%{1.3} 
+\begin{array}{c}
+\left. \begin{array}{c}
+\displaystyle \frac {\partial {\mathbf{u}}}{\partial t} + {\mathbf{u}}\cdot \nabla {\mathbf{u}}- \nu \Delta {\mathbf{u}}+ \nabla p = {\mathbf{f}}\\[6pt]
+\div {\mathbf{u}}= 0 
+\end{array} \right\} {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[10pt]
+{\mathbf{m}}({\mathbf{x}},0) = {\mathbf{u}}_0({\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="navier-stokes-u"></A><IMG
+ WIDTH="373" HEIGHT="97" BORDER="0"
+ SRC="img37.png"
+ ALT="\begin{displaymath}
+%{1.3}
+\begin{array}{c}
+\left. \begin{array}{c}
+\displaysty...
+...\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1.5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+(Only local-in-time existence of smooth solutions to the Navier-Stokes 
+equations is known -- see for example [<A
+ HREF="node7.html#KiLa">4</A>]; 
+globally in time, only  existence 
+of weak solutions is known, see [<A
+ HREF="node7.html#Le">6</A>].)
+
+<P>
+Again, these can be rewritten into the magnetic variables formulation
+as follows:
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+%{1.3a} 
+\begin{array}{c}
+\left. \begin{array}{c}
+\displaystyle \frac {\partial {\mathbf{m}}}{\partial t} -\nu \Delta {\mathbf{m}}+ {\mathbf{u}}\cdot \nabla {\mathbf{m}}+ {\mathbf{m}}\cdot (\nabla {\mathbf{u}})^T = 
+  {\mathbf{f}}\\[6pt]
+{\mathbf{u}}= {\mathbf{m}}- \nabla \eta \\[6pt]
+\div {\mathbf{u}}= 0 
+\end{array} \right\} {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[10pt]
+{\mathbf{u}}({\mathbf{x}},0) = {\mathbf{u}}_0({\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="navier-stokes-m"></A><IMG
+ WIDTH="451" HEIGHT="128" BORDER="0"
+ SRC="img38.png"
+ ALT="\begin{displaymath}
+%{1.3a}
+\begin{array}{c}
+\left. \begin{array}{c}
+\displayst...
+...\mathbf{x}}) \quad {\rm in \ } \mbox{\Bbbb R}^3\, .
+\end{array}\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1.6)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The problem is to find the analogue of equation&nbsp;(<A HREF="#m-A-v">1.4</A>).  The difficulty
+comes from the term <!-- MATH
+ $\nu \Delta {\mathbf{m}}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img39.png"
+ ALT="$\nu \Delta {\mathbf{m}}$">.  There are two ways known to the
+authors -- one is to use probabilistic techniques.  Since this technique
+seems to be not as widely known as it should be, we will include a 
+short (non-rigorous) description of this method at the end of the paper.
+We will also include a short plausibility argument for the global regularity
+for the Navier-Stokes equations.
+
+<P>
+Another approach was developed by Peter Constantin (see [<A
+ HREF="node7.html#Co">2</A>]).  He
+used new quantities <IMG
+ WIDTH="34" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$\mathbf{A}^N$"> and <!-- MATH
+ ${\mathbf{v}}^N$
+ -->
+<IMG
+ WIDTH="29" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="${\mathbf{v}}^N$"> obeying the following equations.
+Let us represent <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="${\mathbf{u}}$"> in a form similar to 
+(<A HREF="#eulerm">1.2</A>)
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+u_i({\mathbf{x}},t) = \frac {\partial \mathbf{A}^N({\mathbf{x}},t)}{\partial x_i} \cdot {\mathbf{v}}^N({\mathbf{x}},t) - \frac {\partial n({\mathbf{x}},t)}{\partial x_i}\, ,
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="344" HEIGHT="51" BORDER="0"
+ SRC="img42.png"
+ ALT="\begin{displaymath}
+u_i({\mathbf{x}},t) = \frac {\partial \mathbf{A}^N({\mathbf{...
+...{x}},t) - \frac {\partial n({\mathbf{x}},t)}{\partial x_i}\, ,
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where 
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{c}
+\Gamma (\mathbf{A}^N) = {\mathbf {0}}\qquad {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[6pt]
+\mathbf{A}^N({\mathbf{x}}, 0) = {\mathbf{x}}\qquad {\rm in \ } \mbox{\Bbbb R}^3 
+\end{array}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="0.3"></A><IMG
+ WIDTH="239" HEIGHT="63" BORDER="0"
+ SRC="img43.png"
+ ALT="\begin{displaymath}
+\begin{array}{c}
+\Gamma (\mathbf{A}^N) = {\mathbf {0}}\qquad...
+... = {\mathbf{x}}\qquad {\rm in \ } \mbox{\Bbbb R}^3
+\end{array}\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1.7)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\Gamma = \frac {\partial }{\partial t} + {\mathbf{u}}\cdot \nabla - \nu \Delta\, ,
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="180" HEIGHT="46" BORDER="0"
+ SRC="img44.png"
+ ALT="\begin{displaymath}
+\Gamma = \frac {\partial }{\partial t} + {\mathbf{u}}\cdot \nabla - \nu \Delta\, ,
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and <!-- MATH
+ ${\mathbf{v}}^N$
+ -->
+<IMG
+ WIDTH="29" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="${\mathbf{v}}^N$"> obeys a rather complicated equation
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\Gamma (v^N_i) = 2 \nu C_{m,k;i} \frac {\partial v_m}{\partial x_k} + Q_{j,i} f_j\, ,
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="252" HEIGHT="49" BORDER="0"
+ SRC="img45.png"
+ ALT="\begin{displaymath}
+\Gamma (v^N_i) = 2 \nu C_{m,k;i} \frac {\partial v_m}{\partial x_k} + Q_{j,i} f_j\, ,
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="${\mathbf{Q}}$"> is the inverse matrix to <!-- MATH
+ $\nabla \mathbf{A}^N$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$\nabla \mathbf{A}^N$"> and <!-- MATH
+ $\Gamma_{i,j}^m =
+- Q_{k,j} C_{m,k;i}$
+ -->
+<IMG
+ WIDTH="150" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="$\Gamma_{i,j}^m =
+- Q_{k,j} C_{m,k;i}$"> denotes the Christoffel coefficients.  
+In order for the equation
+for <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.png"
+ ALT="${\mathbf{v}}$"> to make sense, it is necessary for the map <IMG
+ WIDTH="34" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$\mathbf{A}^N$"> to have a
+smooth inverse.  An approach to proving such a result is to consider
+the system of PDE's
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+% {0.1}
+\begin{array}{c}
+\Gamma ({\mathbf{Q}}) = (\nabla {\mathbf{u}}) {\mathbf{Q}}+ 2\nu {\mathbf{Q}}\partial_k (\nabla \mathbf{A}^N) \partial_k {\mathbf{Q}}
+\qquad {\rm in \ } \mbox{\Bbbb R}^3 \times (0,T) \\[6pt]
+{\mathbf{Q}}({\mathbf{x}},0) = {\mathbf{I}}\qquad {\rm in \ } \mbox{\Bbbb R}^3\, ,
+\end{array}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Q-equ"></A><IMG
+ WIDTH="444" HEIGHT="63" BORDER="0"
+ SRC="img49.png"
+ ALT="\begin{displaymath}
+% {0.1}
+\begin{array}{c}
+\Gamma ({\mathbf{Q}}) = (\nabla {\m...
+...{\mathbf{I}}\qquad {\rm in \ } \mbox{\Bbbb R}^3\, ,
+\end{array}\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1.8)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+If the above equations have smooth solutions, then it can easily be shown
+that <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="${\mathbf{Q}}$"> is the inverse to <!-- MATH
+ $\nabla \mathbf{A}^N$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$\nabla \mathbf{A}^N$">.  However, the problem is that
+while it is easy and standard to show that equation&nbsp;(<A HREF="#Q-equ">1.8</A>) has local
+smooth solutions, it is not clear that it has global solutions in any
+sense at all.
+
+<P>
+The purpose of this note is to show that indeed global smooth solutions
+do not exist.  As Peter Constantin pointed out to us, this does not invalidate
+his method, but it does mean that to make his method work for a large
+time period that one has to break that
+interval into shorter pieces, and apply the method to each small interval.
+
+<P>
+The main result is summarized in the following theorem.
+<P>
+<DIV><B>Theorem  1.1</B> &nbsp; 
+<I><A NAME="t_0.1"></A>There exists <!-- MATH
+ ${\mathbf{u}}\in C^\infty_0(\mbox{\Bbbb R}^3 \times [0,\infty))$
+ -->
+<IMG
+ WIDTH="177" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="${\mathbf{u}}\in C^\infty_0(\mbox{\Bbbb R}^3 \times [0,\infty))$">, divergence free such 
+that if <IMG
+ WIDTH="34" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$\mathbf{A}^N$"> is a smooth solution to (<A HREF="#0.3">1.7</A>)
+then there exists <IMG
+ WIDTH="46" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$t&gt;0$"> such that
+</I><DL COMPACT>
+<DT>(a)</DT>
+<DD><!-- MATH
+ $\mathbf{A}^N({\mathbf {0}}, t)$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.png"
+ ALT="$\mathbf{A}^N({\mathbf {0}}, t)$"> does not have a smooth inverse
+</DD>
+<DT>(b)</DT>
+<DD><!-- MATH
+ $\limsup_{\tau \to t^-} \|{\mathbf{Q}}\|_\infty(\tau) = \infty$
+ -->
+<IMG
+ WIDTH="220" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$\limsup_{\tau \to t^-} \Vert{\mathbf{Q}}\Vert _\infty(\tau) = \infty$">,
+</DD>
+</DL><I>
+where <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="${\mathbf{Q}}$"> is a solution to (<A HREF="#Q-equ">1.8</A>)
+corresponding to <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="${\mathbf{u}}$"> 
+and <IMG
+ WIDTH="34" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$\mathbf{A}^N$">.</I></DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html21"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html19"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html13"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html22"
+  HREF="node2.html">Outline of the Proof</A>
+<B> Up:</B> <A NAME="tex2html20"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<B> Previous:</B> <A NAME="tex2html14"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-25
+</ADDRESS>
+</BODY>
+</HTML>

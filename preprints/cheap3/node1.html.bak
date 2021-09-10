@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bibliography</TITLE>
+<META NAME="description" CONTENT="Bibliography">
+<META NAME="keywords" CONTENT="cheap3">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cheap3.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="cheap3.html">
+<LINK REL="up" HREF="cheap3.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html14"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html12"
+  HREF="cheap3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html6"
+  HREF="cheap3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html15"
+  HREF="node2.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html13"
+  HREF="cheap3.html">Finite time blow up</A>
+<B> Previous:</B> <A NAME="tex2html7"
+  HREF="cheap3.html">Finite time blow up</A>
+<BR><BR>
+<!--End of Navigation Panel-->
+ 
+<H2><A NAME="SECTION00010000000000000000">
+Bibliography</A>
+</H2><DL COMPACT><DD>
+<P>
+<P></P><DT><A NAME="Ca1">Ca1</A>
+<DD>
+Cannone, Marco, <EM>Ondelettes, paraproduits et Navier-Stokes. (French) 
+[Wavelets, paraproducts and Navier-Stokes] With a preface by Yves
+Meyer. Diderot Editeur, Paris, 1995.</EM>
+
+<P>
+<P></P><DT><A NAME="Ca2">Ca2</A>
+<DD>
+Cannone, Marco, <EM>R&#244;le des oscillations et des espaces de Besov 
+dans la r&#233;solution des &#233;quations de Navier-Stokes. 
+Document de synth&#232;se pr&#233;sent&#233; pour obtenir une Habilitation &#224; 
+diriger des Recherches, Universit&#233; de Paris 7, 1-35, 1999.</EM>
+
+<P>
+<P></P><DT><A NAME="FJW">FJW</A>
+<DD> 
+Frazier, Michael; Jawerth, Bj&#246;rn; Weiss, Guido, 
+<EM>Littlewood-Paley theory and the study of function spaces. 
+CBMS Regional Conference
+Series in Mathematics, 79. 
+Published for the Conference Board of the Mathematical Sciences, 
+Washington, DC; by the American Mathematical Society,
+Providence, RI, 1991.</EM>
+
+<P>
+<P></P><DT><A NAME="FK">FK</A>
+<DD>
+Fujita, Hiroshi; Kato, Tosio, 
+On the Navier-Stokes initial value problem. I. 
+<EM>Arch. Rational Mech. Anal. 16 1964 269-315.</EM>
+
+<P>
+<P></P><DT><A NAME="FLT">FLT</A>
+<DD>
+Furioli, Giulia; Lemari&#233;-Rieusset, Pierre-Gilles; Terraneo, Elide, 
+Sur l'unicit&#233; dans <!-- MATH
+ $L\sp 3({{\mathbb{R}}}\sp 3)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.png"
+ ALT="$ L\sp 3({{\mathbb{R}}}\sp 3)$"> des solutions ``mild'' des 
+&#233;quations de Navier-Stokes.
+[On the uniqueness in
+<!-- MATH
+ $L\sp 3({{\mathbb{R}}}\sp 3)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.png"
+ ALT="$ L\sp 3({{\mathbb{R}}}\sp 3)$"> of mild solutions for the Navier-Stokes equations] 
+<EM>C. R. Acad. Sci. Paris S&#233;r. I Math. 325 (1997), no. 12, 1253-1256.</EM>
+
+<P>
+<P></P><DT><A NAME="GM">GM</A>
+<DD>
+Giga, Yoshikazu; Miyakawa, Tetsuro, Navier-Stokes flow in 
+<!-- MATH
+ ${\mathbb{R}}\sp 3$
+ -->
+<IMG
+ WIDTH="26" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img122.png"
+ ALT="$ {\mathbb{R}}\sp 3$"> with measures as initial vorticity and Morrey spaces. 
+<EM>Comm.
+Partial Differential Equations 14 (1989), no. 5, 577-618.</EM>
+
+<P>
+<P></P><DT><A NAME="K">K</A>
+<DD>
+Kato, Tosio, Strong <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img123.png"
+ ALT="$ L\sp{p}$">-solutions of the Navier-Stokes equation in 
+<!-- MATH
+ ${{\mathbb{R}}}\sp{m}$
+ -->
+<IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img124.png"
+ ALT="$ {{\mathbb{R}}}\sp{m}$">, with applications to weak solutions. 
+<EM>Math.
+Z. 187 (1984), no. 4, 471-480.</EM>
+
+<P>
+<P></P><DT><A NAME="KF">KF</A>
+<DD>
+Kato, Tosio; Fujita, Hiroshi  
+On the non-stationary 
+Navier-Stokes equations system, 
+<EM>Rend. Sem. Mat. Univ. 
+Padova 32:243-260, 1962.</EM>
+
+<P>
+<P></P><DT><A NAME="KT">KT</A>
+<DD>
+Koch, Herbert; Tataru, Daniel,
+Well-posedness for the Navier-Stokes equation, 
+<EM>preprint.</EM>
+
+<P>
+<P></P><DT><A NAME="O">O</A>
+<DD> Oru F.,
+<EM>R&#244;le des oscillations dans quelques probl&#232;mes d'analyse non 
+lin&#233;aire. Th&#232;se de Doctorat de l'ENS Cachan, 1998.</EM>
+
+<P>
+</DL>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

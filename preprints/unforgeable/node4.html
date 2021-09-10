@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>A Convenient Test for Unforgeability</TITLE>
+<META NAME="description" CONTENT="A Convenient Test for Unforgeability">
+<META NAME="keywords" CONTENT="unforgeable">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="unforgeable.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="unforgeable.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html49"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html47"
+  HREF="unforgeable.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html41"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html50"
+  HREF="node5.html">Appendix: Derivation of the</A>
+<B> Up:</B> <A NAME="tex2html48"
+  HREF="unforgeable.html">Unforgeable Marker Sequences</A>
+<B> Previous:</B> <A NAME="tex2html42"
+  HREF="node3.html">Generating Sets of Unforgeable</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00004000000000000000">
+A Convenient Test for Unforgeability</A>
+</H2>
+
+<P>
+This C routine gives returns a non-zero value 
+if the sequence held in
+the low order <TT>bitwidth</TT> bits of <TT>x</TT> is unforgeable.
+
+<P>
+<PRE>
+  int unforgeable(long x, int bitwidth)
+  {
+    long masklo, i, lo=x, hi=x;
+    masklo = (1&lt;&lt;bitwidth)-1;
+    for(i=1;i&lt;bitwidth;i++)
+    {
+      masklo &gt;&gt;= 1;
+      lo = lo &amp; masklo;
+      hi = (hi&gt;&gt;1) &amp; masklo;
+      if (hi==lo)
+        return 0;
+    }
+    return 1;
+  }
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

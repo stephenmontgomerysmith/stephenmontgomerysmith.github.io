@@ -1,0 +1,2772 @@
+\batchmode
+\documentclass[12pt]{article}
+\RequirePackage{ifthen}
+
+
+\usepackage{amsmath,amssymb}
+\usepackage{fullpage}
+
+
+
+\newtheorem{thm}{Theorem}[section] 
+\newtheorem{prop}[thm]{Proposition} 
+\newtheorem{lemma}[thm]{Lemma} 
+\newtheorem{cor}[thm]{Corollary} 
+%
+\providecommand{\N}{{\mathbb N}}%
+\providecommand{\E}{{\mathbb E}} 
+
+%
+\providecommand{\cL}{{\cal L}}%
+\providecommand{\cM}{{\cal M}}%
+\providecommand{\approxsb}[1]{\mathrel{\mathop{\approx}\limits_{#1}}}%
+\providecommand{\modo}[1]{{\left|#1\right|}}%
+\providecommand{\normo}[1]{{\left\|#1\right\|}}%
+\providecommand{\smodo}[1]{{\mathopen|#1\mathclose|}}%
+\providecommand{\snormo}[1]{{\mathopen\|#1\mathclose\|}}%
+\providecommand{\Proof}{\medskip\noindent{\bf Proof:}\ \ }%
+\providecommand{\Proofof}[1]{\medskip\noindent{\bf Proof of #1:}\ \ }%
+\providecommand{\qed}{\leavevmode\unskip\penalty9999
+                  \hbox{}\nobreak\hfill$\square$\goodbreak\medskip} 
+
+
+%
+\renewcommand{\theenumi}{(\roman{enumi})}
+%
+\renewcommand{\labelenumi}{(\roman{enumi})}
+
+
+
+
+\usepackage[dvips]{color}
+
+
+\pagecolor[gray]{.7}
+
+\usepackage[latin1]{inputenc}
+
+
+
+\makeatletter
+
+\makeatletter
+\count@=\the\catcode`\_ \catcode`\_=8 
+\newenvironment{tex2html_wrap}{}{}%
+\catcode`\<=12\catcode`\_=\count@
+\newcommand{\providedcommand}[1]{\expandafter\providecommand\csname #1\endcsname}%
+\newcommand{\renewedcommand}[1]{\expandafter\providecommand\csname #1\endcsname{}%
+  \expandafter\renewcommand\csname #1\endcsname}%
+\newcommand{\newedenvironment}[1]{\newenvironment{#1}{}{}\renewenvironment{#1}}%
+\let\newedcommand\renewedcommand
+\let\renewedenvironment\newedenvironment
+\makeatother
+\let\mathon=$
+\let\mathoff=$
+\ifx\AtBeginDocument\undefined \newcommand{\AtBeginDocument}[1]{}\fi
+\newbox\sizebox
+\setlength{\hoffset}{0pt}\setlength{\voffset}{0pt}
+\addtolength{\textheight}{\footskip}\setlength{\footskip}{0pt}
+\addtolength{\textheight}{\topmargin}\setlength{\topmargin}{0pt}
+\addtolength{\textheight}{\headheight}\setlength{\headheight}{0pt}
+\addtolength{\textheight}{\headsep}\setlength{\headsep}{0pt}
+\setlength{\textwidth}{349pt}
+\newwrite\lthtmlwrite
+\makeatletter
+\let\realnormalsize=\normalsize
+\global\topskip=2sp
+\def\preveqno{}\let\real@float=\@float \let\realend@float=\end@float
+\def\@float{\let\@savefreelist\@freelist\real@float}
+\def\liih@math{\ifmmode$\else\bad@math\fi}
+\def\end@float{\realend@float\global\let\@freelist\@savefreelist}
+\let\real@dbflt=\@dbflt \let\end@dblfloat=\end@float
+\let\@largefloatcheck=\relax
+\let\if@boxedmulticols=\iftrue
+\def\@dbflt{\let\@savefreelist\@freelist\real@dbflt}
+\def\adjustnormalsize{\def\normalsize{\mathsurround=0pt \realnormalsize
+ \parindent=0pt\abovedisplayskip=0pt\belowdisplayskip=0pt}%
+ \def\phantompar{\csname par\endcsname}\normalsize}%
+\def\lthtmltypeout#1{{\let\protect\string \immediate\write\lthtmlwrite{#1}}}%
+\newcommand\lthtmlhboxmathA{\adjustnormalsize\setbox\sizebox=\hbox\bgroup\kern.05em }%
+\newcommand\lthtmlhboxmathB{\adjustnormalsize\setbox\sizebox=\hbox to\hsize\bgroup\hfill }%
+\newcommand\lthtmlvboxmathA{\adjustnormalsize\setbox\sizebox=\vbox\bgroup %
+ \let\ifinner=\iffalse \let\)\liih@math }%
+\newcommand\lthtmlboxmathZ{\@next\next\@currlist{}{\def\next{\voidb@x}}%
+ \expandafter\box\next\egroup}%
+\newcommand\lthtmlmathtype[1]{\gdef\lthtmlmathenv{#1}}%
+\newcommand\lthtmllogmath{\lthtmltypeout{l2hSize %
+:\lthtmlmathenv:\the\ht\sizebox::\the\dp\sizebox::\the\wd\sizebox.\preveqno}}%
+\newcommand\lthtmlfigureA[1]{\let\@savefreelist\@freelist
+       \lthtmlmathtype{#1}\lthtmlvboxmathA}%
+\newcommand\lthtmlpictureA{\bgroup\catcode`\_=8 \lthtmlpictureB}%
+\newcommand\lthtmlpictureB[1]{\lthtmlmathtype{#1}\egroup
+       \let\@savefreelist\@freelist \lthtmlhboxmathB}%
+\newcommand\lthtmlpictureZ[1]{\hfill\lthtmlfigureZ}%
+\newcommand\lthtmlfigureZ{\lthtmlboxmathZ\lthtmllogmath\copy\sizebox
+       \global\let\@freelist\@savefreelist}%
+\newcommand\lthtmldisplayA{\bgroup\catcode`\_=8 \lthtmldisplayAi}%
+\newcommand\lthtmldisplayAi[1]{\lthtmlmathtype{#1}\egroup\lthtmlvboxmathA}%
+\newcommand\lthtmldisplayB[1]{\edef\preveqno{(\theequation)}%
+  \lthtmldisplayA{#1}\let\@eqnnum\relax}%
+\newcommand\lthtmldisplayZ{\lthtmlboxmathZ\lthtmllogmath\lthtmlsetmath}%
+\newcommand\lthtmlinlinemathA{\bgroup\catcode`\_=8 \lthtmlinlinemathB}
+\newcommand\lthtmlinlinemathB[1]{\lthtmlmathtype{#1}\egroup\lthtmlhboxmathA
+  \vrule height1.5ex width0pt }%
+\newcommand\lthtmlinlineA{\bgroup\catcode`\_=8 \lthtmlinlineB}%
+\newcommand\lthtmlinlineB[1]{\lthtmlmathtype{#1}\egroup\lthtmlhboxmathA}%
+\newcommand\lthtmlinlineZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetinline}
+\newcommand\lthtmlinlinemathZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetmath}
+\newcommand\lthtmlindisplaymathZ{\egroup %
+  \centerinlinemath\lthtmllogmath\lthtmlsetmath}
+\def\lthtmlsetinline{\hbox{\vrule width.1em \vtop{\vbox{%
+  \kern.1em\copy\sizebox}\ifdim\dp\sizebox>0pt\kern.1em\else\kern.3pt\fi
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\lthtmlsetmath{\hbox{\vrule width.1em\kern-.05em\vtop{\vbox{%
+  \kern.1em\kern0.8 pt\hbox{\hglue.17em\copy\sizebox\hglue0.8 pt}}\kern.3pt%
+  \ifdim\dp\sizebox>0pt\kern.1em\fi \kern0.8 pt%
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\centerinlinemath{%
+  \dimen1=\ifdim\ht\sizebox<\dp\sizebox \dp\sizebox\else\ht\sizebox\fi
+  \advance\dimen1by.5pt \vrule width0pt height\dimen1 depth\dimen1 
+ \dp\sizebox=\dimen1\ht\sizebox=\dimen1\relax}
+
+\def\lthtmlcheckvsize{\ifdim\ht\sizebox<\vsize 
+  \ifdim\wd\sizebox<\hsize\expandafter\hfill\fi \expandafter\vfill
+  \else\expandafter\vss\fi}%
+\providecommand{\selectlanguage}[1]{}%
+\makeatletter \tracingstats = 1 
+\providecommand{\Mu}{\textrm{M}}
+\providecommand{\Nu}{\textrm{N}}
+\providecommand{\Chi}{\textrm{X}}
+\providecommand{\Zeta}{\textrm{Z}}
+\providecommand{\Alpha}{\textrm{A}}
+\providecommand{\Omicron}{\textrm{O}}
+\providecommand{\omicron}{\textrm{o}}
+\providecommand{\Rho}{\textrm{R}}
+\providecommand{\Tau}{\textrm{T}}
+\providecommand{\Epsilon}{\textrm{E}}
+\providecommand{\Eta}{\textrm{H}}
+\providecommand{\Beta}{\textrm{B}}
+\providecommand{\Iota}{\textrm{J}}
+\providecommand{\Kappa}{\textrm{K}}
+
+
+\begin{document}
+\pagestyle{empty}\thispagestyle{empty}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hsize=\the\hsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength vsize=\the\vsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hoffset=\the\hoffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength voffset=\the\voffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topmargin=\the\topmargin}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topskip=\the\topskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headheight=\the\headheight}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headsep=\the\headsep}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength parskip=\the\parskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength oddsidemargin=\the\oddsidemargin}\lthtmltypeout{}%
+\makeatletter
+\if@twoside\lthtmltypeout{latex2htmlLength evensidemargin=\the\evensidemargin}%
+\else\lthtmltypeout{latex2htmlLength evensidemargin=\the\oddsidemargin}\fi%
+\lthtmltypeout{}%
+\makeatother
+\setcounter{page}{1}
+\onecolumn
+
+% !!! IMAGES START HERE !!!
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3196}%
+$ L_p$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3202}%
+$ p$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3210}%
+$ X_1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3212}%
+$ X_2,\dots,$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3214}%
+$ X_N$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3216}%
+$ {\mathopen|S\mathclose|}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3218}%
+$\displaystyle S =\sum_{n=1}^N X_n .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3220}%
+$ \Pr({\mathopen|S\mathclose|} > t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3222}%
+$ (X_n)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3224}%
+$ \Pr({\mathopen|S\mathclose|} > \sqrt N t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3226}%
+$ N \to \infty$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3228}%
+$ f(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3232}%
+$ c$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3234}%
+$\displaystyle c^{-1} f(c t) \le \Pr(|S|>t) \le c \, f(c^{-1} t) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3240}%
+$ {\mathopen\|S\mathclose\|}_p = ({\mathbb{E}}{\left|S\right|}^p)^{1/p}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3242}%
+$ A$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3246}%
+$\displaystyle c^{-1} A \le {\mathopen\|S\mathclose\|}_p \le c \, A .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3248}%
+$ {\mathopen\|S\mathclose\|}_p$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3250}%
+$ p\to \infty$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3258}%
+$ S = \sum_n X_n$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3260}%
+$ U = \sup_n {\left|\sum_{k=1}^n X_k\right|}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3262}%
+$ U$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3264}%
+$ S$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3278}%
+$ t$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3294}%
+$ P({\left|X\right|}\ge t)=\exp(-\phi(t))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3296}%
+$ \phi:[0,\infty)\to[0,\infty)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3298}%
+$ \phi$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlineA{tex2html_nomath_inline2496}%
+\l%
+\lthtmlinlineZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3302}%
+$ t \mapsto t^p$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3306}%
+$ s>0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3308}%
+$ X_n$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3310}%
+$ X^{(\le s)}_n + X^{(>s)}_n$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3312}%
+$ X^{(\le s)}_n = X_n
+I_{{\left|X_n\right|}\le 
+s}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3314}%
+$ X^{(>s)}_n = X_n I_{{\left|X_n\right|} > s}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3316}%
+$ (X_n^{(>s)})$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3318}%
+$ \sum_n X_n^{(\le s)}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3320}%
+$ s$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3325}%
+$ {\mathopen|\  \cdot\  \mathclose|}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3327}%
+$ f:[0,\infty) \to [0,\infty]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3329}%
+$\displaystyle f^{-1}(x-) = \sup\{ y: f(y) \ge x \} ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3331}%
+$\displaystyle f^{-1}(x+) = \sup\{ y: f(y) > x \} .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3333}%
+$ X$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3335}%
+$ t \mapsto \Pr({\mathopen|X\mathclose|} > t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3337}%
+$ X^*(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3339}%
+$ {\mathopen|X\mathclose|}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3341}%
+$ X^*$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3343}%
+$ [0,1]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3349}%
+$ t \mapsto
+X^*(t-)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3351}%
+$ X^*(t) \le x \le X^*(t-)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3353}%
+$ \Pr({\mathopen|X\mathclose|} > x) \le t \le \Pr({\mathopen|X\mathclose|} \ge x)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3357}%
+$ B$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3359}%
+$ A \approx B$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3361}%
+$ c_1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3363}%
+$ c_2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3365}%
+$ c_1^{-1} A \le B \le c_2
+A$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3373}%
+$ g(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3375}%
+$ [0,\infty)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3377}%
+$ f(t) \mathrel{\mathop{\approx}\limits_{t}} g(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3383}%
+$ c_3$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3385}%
+$ c_4$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3387}%
+$ c_1^{-1}
+f(c_2 t) \le g(t) \le c_3 f(c_4^{-1} t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3389}%
+$ t \ge 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3401}%
+$ Y$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3403}%
+$ \Pr({\mathopen|X\mathclose|} > t) \mathrel{\mathop{\approx}\limits_{t}} \Pr({\mathopen|Y\mathclose|} > t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3405}%
+$ X^*(t) \mathrel{\mathop{\approx}\limits_{t}} Y^*(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3407}%
+$ X^*(t) = 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3409}%
+$ t \ge 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3419}%
+$ c_5$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3421}%
+$ c_1^{-1} X^*(c_2 t) \le Y^*(t) \le c_3 X^*(c_4^{-1}
+t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3423}%
+$ t \le c_5^{-1}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3431}%
+$ {\mathbb{N}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3433}%
+$ S_A = \sum_{n \in A} X_n$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3435}%
+$ M_A = 
+\sup_{n \in A} {\mathopen|X_n\mathclose|}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3437}%
+$ k$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3439}%
+$ S_k = S_{\{1,\dots,k\}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3441}%
+$ M_k = M_{\{1,\dots,k\}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3443}%
+$ U_k = \sup_{1 \le n \le k}{\left|S_n\right|}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3445}%
+$ S = S_N$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3447}%
+$ M =
+M_N$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3449}%
+$ U = U_N$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3451}%
+$ N$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3457}%
+$ X_n^{(>s)} = X_n I_{{\mathopen|X_n\mathclose|} > s} $%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3459}%
+$ X_n^{(\le s)} = X_n I_{{\mathopen|X_n\mathclose|} \le s} = X_n - X_n^{(>s)}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3461}%
+$ A \subset{\mathbb{N}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3463}%
+$ S^{(\le s)}_A = \sum_{n
+\in A} X^{(\le s)}_n$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3465}%
+$ S^{(>s)}_A$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3467}%
+$ S^{(\le s)}_k$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3471}%
+$ \Omega \times {\mathbb{N}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3473}%
+$ (\omega,n)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3475}%
+$ X_n(\omega)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3477}%
+$ \tilde \ell:[0,\infty) \to [0,\infty]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3479}%
+$ \tilde \ell(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3481}%
+$\displaystyle \sum_n \Pr({\mathopen|X_n\mathclose|} > \tilde \ell(t)) \le t .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3483}%
+$ \ell(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3487}%
+$ 0 \le t \le
+1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3494}%
+$ \ell$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3500}%
+$ M$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3507}%
+$ 0<t < 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3509}%
+$\displaystyle \ell(2t) \le \ell(t/(1-t)) \le M^*(t) \le\ell(t) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3511}%
+$ t >
+1/2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3513}%
+$ \alpha_1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3515}%
+$ \alpha_2,\dots \ge 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3517}%
+$ \sum_n \alpha_n \le 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3519}%
+$\displaystyle 1-\sum_n \alpha_n \le \prod_n (1-\alpha_n)\le 1 - {\frac{\sum_n \alpha_n
+}{ 1 
++ \sum_n \alpha_n}} .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3521}%
+$ \Pr(\ell > x) = \sum_n \Pr({\mathopen|X_n\mathclose|}
+> x) 
+\le 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3523}%
+$\displaystyle \Pr(M > x) = 1-\prod_n (1-\Pr({\mathopen|X_n\mathclose|} > x)) ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3525}%
+$\displaystyle {\frac{\Pr(\ell > x) }{ 1+\Pr(\ell>x)}} \le \Pr(M>x) \le 
+\Pr(\ell > x) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3535}%
+$ K$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3537}%
+$\displaystyle \Pr(U > 2K t + (K-1)s)
+\le {\frac{1 }{ K!}} \left(\frac{\Pr(U > t) }{ 1 -
+\Pr(U > t) }\right)^{K}+ \Pr(M > s) ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3539}%
+$ \Pr(U>t) < 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3541}%
+$ K=2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3545}%
+$ K>2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3547}%
+$ K!$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3549}%
+$ (1-\Pr(U>t))$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3555}%
+$ (m,n]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3557}%
+$ m$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3559}%
+$ n$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3561}%
+$\displaystyle \Pr(U >  2K t+(K-1)s) 
+\le 
+\Pr(U >2K t+(K-1)s$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3562}%
+$\displaystyle M \le s) + \Pr(M > s) .
+$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3564}%
+$ U > 2K t+(K-1)s$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3566}%
+$ M \le s$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3568}%
+$ m_0,\dots,$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3570}%
+$ m_{K}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3574}%
+$ m_0 = 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3576}%
+$ m_{l-1}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3578}%
+$ m_l$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3582}%
+$ {\mathopen|S_{(m_{l-1},m_l]}\mathclose|} >
+2t$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3584}%
+$ l = 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3586}%
+$ m_l \le N$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3588}%
+$ 2 \le l \le K$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3590}%
+$ 1 \le l' \le l-1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3592}%
+$ m_{l'-1} < k \le m_{l'}-1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3594}%
+$ {\mathopen|S_{(m_{l'-1},k]}\mathclose|} \le 2t$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3596}%
+$ {\mathopen|X_{m_{l'}}\mathclose|} \le s$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3600}%
+$\displaystyle {\mathopen|S_{m_{l'}}\mathclose|} 
+=
+{\left| \sum_{j=1}^{l'} (S_{(m_{j-1},m_j-1]} + X_{m_j}) \right|}
+\le
+2 l' t + l's,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3604}%
+$\displaystyle {\mathopen|S_{k}\mathclose|} 
+=
+{\left| \left(\sum_{j=1}^{l'-1} (S_{(m_{j-1},m_j-1]} + X_{m_j})\right)
++ S_{(m_{l'-1},k]} \right|}
+\le
+2 l' t + (l'-1)s.$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3608}%
+$ {\mathopen|S_m\mathclose|} > 2K t+(K-1)s$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3610}%
+$ m > m_{l-1}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3612}%
+$ {\mathopen|S_{(m_{l-1},m]}\mathclose|} > 2K t + (K-1)s - 2(l-1)t - (l-1)s \ge 2t$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3614}%
+$\displaystyle \Pr( U > 2K t+(K-1)s$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3615}%
+$\displaystyle M \le s) \le \sum_{1 \le m_1
+< \cdots < m_{K} \le N}p_{0,m_1} p_{m_1,m_2} \cdots p_{m_{K-1},m_K}
+,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3617}%
+$\displaystyle p_{m,n} = \Pr($%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3618}%
+$\displaystyle ) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3620}%
+$\displaystyle \sum_{k=m+1}^n p_{m,k}
+\le
+{\frac{1}{ 1 - \Pr(U>t)}}\sum_{k=m+1}^n \tilde p_k ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3622}%
+$\displaystyle \tilde p_n = \Pr($%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3626}%
+$\displaystyle \sum_{k=m+1}^n p_{m,k}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3628}%
+$\displaystyle =$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3630}%
+$\displaystyle \Pr(\sup_{m < k \le n} {\mathopen|S_k - S_m\mathclose|} > 2t)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3634}%
+$\displaystyle \Pr(\sup_{m < k \le n} {\mathopen|S_k - S_m\mathclose|} > 2t \big| U_m \le t)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3636}%
+$\displaystyle \le$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3638}%
+$\displaystyle \Pr(\sup_{m < k \le n} {\mathopen|S_k\mathclose|} > t \big| U_m \le t)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3642}%
+$\displaystyle {\frac{\Pr(\sup_{m<k\le n} {\mathopen|S_k\mathclose|} > t
+\text{ and }\sup_{1 \le k \le m} {\mathopen|S_k\mathclose|} \le t)
+}{ \Pr(U_m \le t) }}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3646}%
+$\displaystyle {\frac{1}{ 1 - \! \Pr(U>t)}}\sum_{k=m+1}^n \tilde p_k ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3649}%
+$\displaystyle \sum_{1 \le m_1 < \cdots < m_{K} \le N}p_{0,m_1} p_{m_1,m_2}
+\cdots p_{m_{K-1},m_K}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3653}%
+$\displaystyle \sum_{1 \le m_1 < \cdots < m_{K-1} \le N}p_{0,m_1} p_{m_1,m_2}
+\cdots p_{m_{K-2},m_{K-1}} \sum_{m_K = m_{K-1}+1}^Np_{m_{K-1},m_K}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3657}%
+$\displaystyle {\frac{1 }{ 1 - \Pr(U>t)}}\sum_{1 \le m_1 < \cdots < m_{K-1} \le N}
+p_{0,m_1} p_{m_1,m_2} \cdots p_{m_{K-2},m_{K-1}}
+\sum_{m_K = m_{K-1}+1}^N \tilde p_{m_K} .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3664}%
+$\displaystyle {\frac{1 }{ 1 - \Pr(U>t)}}
+\sum_{1 \le m_1 < \cdots < m_{K-2} < m_K\le N}
+p_{0,m_1} p_{m_1,m_2} \cdots p_{m_{K-3},m_{K-2}} \tilde p_{m_K} \times$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3666}%
+$\displaystyle \times
+\sum_{m_{K-1} = m_{K-2}+1}^{m_K} p_{m_{K-2},m_{K-1}}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3670}%
+$\displaystyle {\frac{1 }{ (1- \Pr(U>t))^2}}
+\sum_{1 \le m_1 < \cdots < m_{K-2} < m_K\le N}
+p_{0,m_1} p_{m_1,m_2}
+\cdots p_{m_{K-3},m_{K-2}} \tilde p_{m_K} \times$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3672}%
+$\displaystyle \times
+\sum_{m_{K-1} = m_{K-2}+1}^{m_K} \tilde p_{m_{K-1}} .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3674}%
+$ (K-2)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3677}%
+$\displaystyle \sum_{1 \le m_ < \cdots < m_K \le N} p_{0,m_1} p_{m_1,m_2} \cdots
+p_{m_{K-1},m_K}\cr$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3684}%
+$\displaystyle \sum_{1 \le m_1 < \cdots < m_K \le N}
+\tilde p_{m_1} \tilde p_{m_2} \cdots \tilde p_{m_K}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3688}%
+$\displaystyle {\frac{1 }{ K!}}
+\sum_{\substack{1 \le m_1,m_2,\dots,m_K \le N\\m_1,m_2,\dots,m_K
+\text{ distinct}}} \tilde p_{m_1} \tilde p_{m_2} \cdots \tilde
+p_{m_K}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3692}%
+$\displaystyle {\frac{1 }{ K!}}
+\sum_{1 \le m_1,m_2,\dots,m_K \le N} \tilde p_{m_1} \tilde p_{m_2}
+\cdots \tilde p_{m_K}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3696}%
+$\displaystyle {\frac{1 }{ K!}} \left( \sum_{k=1}^N \tilde p_{k} \right)^K .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3698}%
+$\displaystyle \sum_{k=1}^N \tilde p_k= \Pr(U > t),$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3709}%
+$ 0<t\le s \le 1/2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3711}%
+$\displaystyle U^*(t) \le c_1 {\frac{\log(1/t) }{
+\max\{\log(1/s),\log\log(4/t)\}}} \bigl(U^*(s) + M^*(t/2)\bigr). $%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3713}%
+$ f,g:[0,\infty)\to[0,\infty]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3715}%
+$ (\max\{f,g\})^{-1} = \max\{f^{-1},g^{-1}\}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3717}%
+$ f \le g$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3719}%
+$ f^{-1} \le g^{-1}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3721}%
+$ f^{-1}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3723}%
+$ f$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3725}%
+$ A+B \le 2 \max\{A,B\}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3731}%
+$ s=t$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3733}%
+$ \Pr(U>t) \le 1/2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3737}%
+$\displaystyle \Pr(U > (3 K - 1) t)\le 2 \max \left\{{\frac{1 }{ K!}} 
+\bigl(2\Pr(U > t)\bigr)^K, \Pr(M > t) \right\} .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3739}%
+$ (K!t/2)^{1/K} \le 1/2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3741}%
+$\displaystyle {\frac{1 }{3K-1}} U^*(t) \le
+\max\left
+\{ U^*\left({\frac12}\left({\frac{K!t }{ 2}}\right)^{1/K}\right) ,
+M^*\left({\frac{t}{2}}
+\right) \right\} .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3743}%
+$ \max\{A,B\} \le A+B$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3751}%
+$ s \le(K!t / 2)^{1/K}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3753}%
+$ ({\left|X_n\right|}^*)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3755}%
+$ ({\left|X_n\right|})$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3761}%
+$\displaystyle \Pr(U > 2K t + (K-1)s)
+\le {\frac{1 }{ K!}} \left(\frac{\Pr(U > t) }{ 1 -
+\Pr(U > t) }\right)^{K}+ 
+\Pr\left(\sum_{n=1}^K {\left|X_n\right|}^* > (K-1)s\right) ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3767}%
+$ {\left|S\right|}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3771}%
+$ (\bar X_n)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3775}%
+$ \tilde X_n = X_n - \bar X_n$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3777}%
+$ \bar S$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3779}%
+$ \tilde S$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3781}%
+$ {\left|\tilde S\right|}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3783}%
+$\displaystyle \Pr({\left|\tilde S\right|} > c t)
+\ge \Pr({\left|S\right|} > (c+1)t$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3784}%
+$\displaystyle {\left|\bar S\right|}\le t)
+= \Pr({\left|S\right|} > (c+1)t) \Pr({\left|S\right|} \le t) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3792}%
+$\displaystyle \Pr(S > c_1 K(s+t))
+\le \frac{\Pr(S > t)^K }{ K!(1 -
+c_2 \Pr(S > c_3 t))^{K+1} }+ \Pr(M > s) ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3794}%
+$ \Pr(S > c_3 t) < c_2^{-1}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3809}%
+$ A
+\subseteq B 
+\subseteq {\mathbb{N}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3815}%
+$ t>0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3817}%
+$\displaystyle \Pr({\mathopen|S_A\mathclose|} > c_1 t)\le c_2 \Pr({\mathopen|S_B\mathclose|} > t) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3827}%
+$ (X_n^{(\le s)})$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3833}%
+$ 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3839}%
+$ 2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3841}%
+$ 10$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3843}%
+$ 3$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3845}%
+$ 5$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3847}%
+$ 4$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3849}%
+$ 7$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3866}%
+$\displaystyle \Pr( U > 3 c_1 t) \le3 c_2 \Pr ( {\mathopen|S\mathclose|} > t ) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3868}%
+$ M^*(t) \le 6 c_1
+S^*(t/3c_2)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3870}%
+$\displaystyle \Pr(U_N > 3 t)\le3 \sup_{1 \le k \le N} \Pr( {\mathopen|S_k\mathclose|} > t ) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3872}%
+$ M
+\le 2 U$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3887}%
+$ s \le 1/2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3891}%
+$\displaystyle (S^{(\le M^*(s))})^*(t) \le c_1
+S^*(c_2^{-1} t) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3899}%
+$ r \le s \le 1/2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3903}%
+$ (S^{(\le M^*(s))})^*(t) \le c_1 (S^{(\le M^*(r))})^*(c_2^{-1}t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3905}%
+$ 0 \le s \le t \le 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3907}%
+$ S^*(t) \le (S^{(\le 
+M^*(s))})^*(t-s)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3909}%
+$ (S^{(\le M^*(s))})^*(t) \le S^
+*(t-s)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3911}%
+$ S^*(t) \le (S^{(\le 
+M^*(t/2))})^*(t/2)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3913}%
+$ (S^{(\le 
+M^*(t/2))})^*(t) \le S^*(t/2)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3915}%
+$ \alpha,\beta > 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3917}%
+$\displaystyle (S^{(\le M^*(t))})^*(t)
+\mathrel{\mathop{\approx}\limits_{t}} (S^{(\le M^*(\alpha t))})^*(\beta t) $%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3919}%
+$ \alpha$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3921}%
+$ \beta$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3925}%
+$\displaystyle S^*(t) \mathrel{\mathop{\approx}\limits_{t}} (S^{(\le M^*(t))})^*(t) \mathrel{\mathop{\approx}\limits_{t}}
+(S^{(\le \ell(t))})^*(t) ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3929}%
+$ A \subseteq {\mathbb{N}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3931}%
+$\displaystyle E_A = \{ {\mathopen|X_n\mathclose|} \le M^*(s)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3932}%
+$\displaystyle n \in A \} .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3934}%
+$\displaystyle \{ {\mathopen|S^{(\le M^*(s))}\mathclose|} > x \} \cap E_A
+=
+\{ {\mathopen|S_A\mathclose|} > x \} \cap E_A .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3937}%
+$\displaystyle \Pr({\mathopen|S_A\mathclose|} > x$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3938}%
+$\displaystyle E_A)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3940}%
+$\displaystyle = \Pr({\mathopen|S_A\mathclose|} > x$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3941}%
+$\displaystyle {\mathopen|X_n\mathclose|} \le M^*(s)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3942}%
+$\displaystyle n \in A)
+\Pr({\mathopen|X_n\mathclose|} > M^*(s)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3943}%
+$\displaystyle n \notin A) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3946}%
+$\displaystyle \Pr({\mathopen|S^{(\le M^*(s))}\mathclose|} > x)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3948}%
+$\displaystyle = \sum_{A \subseteq {\mathbb{N}}}
+\Pr({\mathopen|S_A\mathclose|} > x$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3951}%
+$\displaystyle n \notin A)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3953}%
+$\displaystyle \le
+2 \sum_{A \subseteq {\mathbb{N}}}
+\Pr({\mathopen|S_A\mathclose|} > x)
+\Pr({\mathopen|X_n\mathclose|} \le M^*(s)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3957}%
+$\displaystyle \le c_2 \Pr({\mathopen|S\mathclose|} > c_1^{-1} x),$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3959}%
+$\displaystyle \Pr({\mathopen|X_n\mathclose|} \le M^*(s)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3960}%
+$\displaystyle n \in A) \ge \Pr(M \le M^*(s)) 
+\ge 1-s \ge 1/2 .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3962}%
+$ S^{(\le M^*(r))}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3964}%
+$\displaystyle \Pr(S \ne S^{(\le M^*(s))})\le\Pr(M > M^*(s)) \le s .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3966}%
+$ \Pr(S > \alpha) \ge t$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3968}%
+$ \Pr(S^{(\le M^*(s))} >
+\alpha) 
+\ge t-s$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3970}%
+$ \Pr(S^{(\le M^*(s))} > \alpha) > t$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3972}%
+$ \Pr(S >\alpha) \ge t-s$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3974}%
+$ \alpha=1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3976}%
+$ \beta > 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3978}%
+$ S^{(\le M^*(t))}(t) \ge S^{(\le M^*(t))}(\beta t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3986}%
+$ 0\le t \le 1/2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay3988}%
+$\displaystyle S^{(\le M^*(t))}(t) 
+\le c_1 S^{(\le M^*(c_2^{-1}\beta^{-1})t)}(c_2^{-1} t) 
+\le c_1 S^{(\le M^*(c_3^{-1}t)}(c_3^{-1} \beta t) ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3990}%
+$ c_3 = c_2 \beta$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3997}%
+$ U^*(e^{-p})$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline3999}%
+$ (1+x)^p$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4001}%
+$ e^{xp}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4003}%
+$ x$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4012}%
+$ F_1(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4014}%
+$ F_2(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4017}%
+$ t > 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4022}%
+$\displaystyle F_1(t)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4026}%
+$\displaystyle \inf\left\{ \lambda>0 :\prod_n
+{\mathbb{E}}(t^{X_n^{(\le \ell(t))}/\lambda}) \le t^{-1} \text{ and }
+\prod_n
+{\mathbb{E}}(t^{-X_n^{(\le \ell(t))}/\lambda}) \le t^{-1} \right\} ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4028}%
+$\displaystyle F_2(t)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4032}%
+$\displaystyle \inf\left\{ \lambda>0 :\prod_n {\mathbb{E}}(t^{X_n^{(\le
+M^*(t))}/\lambda}) \le t^{-1} \text{ and }
+\prod_n {\mathbb{E}}(t^{-X_n^{(\le
+M^*(t))}/\lambda}) \le t^{-1} \right\} .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4034}%
+$\displaystyle S^*(t)
+\mathrel{\mathop{\approx}\limits_{t}} F_1(t) \mathrel{\mathop{\approx}\limits_{t}} F_2(t) ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4038}%
+$ \Phi:[0,\infty) \to
+[0,\infty]$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4040}%
+$ \Phi(0) =
+0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4044}%
+$\displaystyle {\mathopen\|X\mathclose\|}_\Phi = \inf\{ \lambda>0 : {\mathbb{E}}\Phi({\mathopen|X\mathclose|}/\lambda) \le 1
+\}.$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4046}%
+$\displaystyle \Phi_t(x) = 
+{\frac{t^{-x} - 1 }{ t^{-1} - 1}} .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4055}%
+$ t \le 1/4$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4057}%
+$\displaystyle {\mathopen\|X\mathclose\|}_{\Phi_t} \approx \sup_{0\le x \le 1} {\frac{\log(t) }{
+\log(xt)}}
+X^*(x) ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4061}%
+$ {\mathopen\|X\mathclose\|}_{\Phi_t} \le 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4063}%
+$ {\mathbb{E}}\Phi_t(X) \le 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4065}%
+$\displaystyle x t^{-X^*(x)} 
+\le
+\int_0^1 t^{-X^*(y)} \, dy
+\le
+{\mathbb{E}}(t^{-{\mathopen|X\mathclose|}})
+\le t^{-1} ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4067}%
+$ X^*(x) \le \log(xt)/\log(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4071}%
+$ 0\le x \le
+1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4073}%
+$\displaystyle E\Phi_t(X/2)\le \int_0^1 \Phi_t\left(\frac{\log(xt)}{
+2\log(t)}\right) \, dx = {\frac{2t^{-1/2}-1
+}{ t^{-1}-1}} \le 1 .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4075}%
+$ S^*(t
+) \mathrel{\mathop{\approx}\limits_{t}} F_1(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4077}%
+$ X_n^{(\le \ell(t))}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4079}%
+$\displaystyle F_1(t) =\inf\left\{ \lambda>0 : 
+{\mathbb{E}}(t^{S^{(\le \ell(t))}/\lambda}) \le t^{-1} \text{ and } 
+{\mathbb{E}}(t^{-S^{(\le \ell(t))}/\lambda}) \le t^{-1} \right\} .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4085}%
+$\displaystyle {\textstyle {\frac{1}{ 2}}} {\mathbb{E}}(t^{-{\mathopen|Y\mathclose|}}) \le
+\max\{{\mathbb{E}}(t^Y),{\mathbb{E}}(t^{-Y})\} \le
+{\mathbb{E}}(t^{-{\mathopen|Y\mathclose|}}) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4087}%
+$\displaystyle F_1(t) \le\inf\left\{ \lambda>0 : 
+{\mathbb{E}}(t^{-{\mathopen|S^{(\le \ell(t))}/\lambda\mathclose|}}) \le t^{-1} \right\} = 
+{\mathopen\|S^{(\le \ell(t))}\mathclose\|}_{\Phi_t} ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4089}%
+$\displaystyle F_1(t)\ge\inf\left\{ \lambda>0 :{\mathbb{E}}(t^{-{\mathopen|S^{(\le
+\ell(t))}/\lambda\mathclose|}}) 
+\le 2t^{-1} \right\} = {\mathopen\|S^{(\le \ell(t))}\mathclose\|}_{\Psi_t} ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4091}%
+$ \Psi_t(x) = {\displaystyle{\frac{t^{-x} - 1}{ 2t^{-1} - 1}}}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4093}%
+$ x \ge 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4095}%
+$ t\le 1/2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4097}%
+$ \Psi_t(x) \ge {\frac{1}{ 3}} \Phi_t(x) \ge \Phi_t(x/3)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4099}%
+$ \Phi_t$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4101}%
+$\displaystyle F_1(t)
+\approx {\mathopen\|S^{(\le \ell(t))}\mathclose\|}_{\Phi_t} $%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4105}%
+$\displaystyle F_1(t) 
+\approx 
+\sup_{0\le x \le 1}{\frac{\log(t) }{ \log(xt)}} (S^{(\le \ell(t))})^*(x) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4107}%
+$ x = t$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4109}%
+$ {\frac{1}{ 2}} (S^{(\le\ell(t))})^*(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4111}%
+$ t \le x \le 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4113}%
+$\displaystyle {\frac{\log(t) }{ \log(xt)}} (S^{(\le \ell(t))})^*(x)
+\le (S^{(\le \ell(t))})^*(t) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4121}%
+$ 0 \le x \le t \le c_1^{-1}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4124}%
+$\displaystyle {\frac{\log(t) }{ \log(xt)}} (S^{(\le \ell(t))})^*(x)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4128}%
+$\displaystyle c_2 {\frac{\log(x) }{ \log(xt)}} \bigl((S^{(\le \ell(t))})^*(t)+
+(M^{(\ell(t))})^*(x/2)\bigr)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4132}%
+$\displaystyle c_2 \bigl((S^{(\le \ell(t))})^*(t) + \ell(t)\bigr) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4134}%
+$ S^*(t) \mathrel{\mathop{\approx}\limits_{t}} F_2(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4146}%
+$ p_0>0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4148}%
+$ p \ge p_0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4152}%
+$\displaystyle {\mathopen\|U\mathclose\|}_p \approx U^*(e^{-p}/4) + {\mathopen\|\ell\mathclose\|}_p   \approx (U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/4) + {\mathopen\|\ell\mathclose\|}_p ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4154}%
+$ p_0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4156}%
+$ p_0 \to0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4158}%
+$ {\mathopen\|Y\mathclose\|}_p$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4160}%
+$ {\mathopen|Y\mathclose|}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4162}%
+$ p \to 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4164}%
+$ {\mathopen\|S\mathclose\|}_q$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4168}%
+$ p=2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4170}%
+$ p=1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4174}%
+$ {\left\|\ell\right\|}_q \le 2^{1/q} {\left\|M\right\|}_q$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4193}%
+$ q \ge p \ge p_0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4196}%
+$\displaystyle {\mathopen\|U\mathclose\|}_q$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4200}%
+$\displaystyle c_1 {\frac{q }{ \max\{p,\log(e+q)\}}}
+\bigl({\mathopen\|U\mathclose\|}_p + M^*(c_2^{-1} e^{-q}) \bigr) +
+c_1 {\left\|M\right\|}_q$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4204}%
+$\displaystyle c_3 {\frac{q }{ \max\{p,\log(e+q)\}}}
+\bigl({\mathopen\|U\mathclose\|}_p + {\mathopen\|M\mathclose\|}_q \bigr).$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4215}%
+$ 0<r<1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4217}%
+$ U^{(>\ell(r))} = 
+\sum_{k=1}^\infty V_k $%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4219}%
+$ V_k$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4221}%
+$ V_k^*(t) \le k \ell\bigl(t(k-1)!/r^{k-1}\bigr) $%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4223}%
+$ X_n = X_n^{(>\ell(r))}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4225}%
+$ \sum_n\Pr(X_n \ne 0) \le r$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4231}%
+$\displaystyle E_A = \{ X_n \ne 0$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4236}%
+$ E_k = \bigcup_{\substack{A \subseteq {\mathbb{N}}\\{\mathopen|A\mathclose|} = k}} 
+E_A$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4238}%
+$ V_k = U I_{E_k}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4240}%
+$ {\mathopen|A\mathclose|} = k$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4243}%
+$\displaystyle \Pr(U I_{E_A} > x)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4247}%
+$\displaystyle \sum_{n \in A}
+\Pr({\mathopen|X_n\mathclose|} > x/k$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4252}%
+$\displaystyle \sum_{n\in A} \Pr({\mathopen|X_n\mathclose|} > x/k) \prod_{m \in A \setminus\{n\}}
+\Pr(X_m \ne 0) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4255}%
+$\displaystyle \Pr(V_k > x)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4259}%
+$\displaystyle \sum_{\substack{A \subseteq {\mathbb{N}}\\{\mathopen|A\mathclose|} = k}}\Pr(U I_{E_A} > x)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4263}%
+$\displaystyle \sum_{i_1 < \dots < i_k} \sum_{j=1}^k \Pr({\mathopen|X_{i_j}\mathclose|} > x/k)
+\prod_{\substack{l=1 \\l\ne j}}^k \Pr(X_{i_l} \ne 0)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4267}%
+$\displaystyle {\frac{1}{ k!}}
+\sum_{i_1} \dots \sum_{i_k}\sum_{j=1}^k \Pr({\mathopen|X_{i_j}\mathclose|} > x/k)
+\prod_{\substack{l=1 \\l\ne j}}^k \Pr(X_{i_l} \ne 0)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4271}%
+$\displaystyle {\frac{k }{ k!}}
+\sum_{i_1} \dots \sum_{i_k}\Pr({\mathopen|X_{i_1}\mathclose|} > x/k)
+\prod_{l=2}^k \Pr(X_{i_l} \ne 0)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4275}%
+$\displaystyle {\frac{k }{ k!}}
+\left(\sum_n
+\Pr({\mathopen|X_n\mathclose|} > x/k) \right)\left(\sum_n \Pr(X_n \ne 0)\right)^{k-1}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4279}%
+$\displaystyle {\frac{r^{k-1} }{ (k-1)!}} \Pr(\ell > x/k) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4290}%
+$ 0<p<\infty$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4292}%
+$\displaystyle {\mathopen\|U^{(>\ell(r))}\mathclose\|}_p \le 2 e^{2^p r/p} {\mathopen\|\ell\mathclose\|}_p .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4296}%
+$ k \le 2^k$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4298}%
+$\displaystyle {\mathopen\|V_k\mathclose\|}_p^p
+\le k^p {\frac{r^{k-1}}{ (k-1)!}} {\mathopen\|\ell\mathclose\|}_p^p 
+\le 2^p {\frac{(2^p r)^{k-1}}{ (k-1)!}} {\mathopen\|\ell\mathclose\|}_p^p .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4300}%
+$\displaystyle {\mathopen\|U^{(>\ell(r))}\mathclose\|}_p^p 
+= \sum_{k=1}^\infty {\mathopen\|V_k\mathclose\|}_p^p
+\le 2^p {\mathopen\|\ell\mathclose\|}_p^p \sum_{k=1}^\infty {\frac{(2^p r)^{k-1}}{ (k-1)!}}
+= 2^p e^{2^p r} {\mathopen\|\ell\mathclose\|}_p^p .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4302}%
+$\displaystyle {\mathopen\|U\mathclose\|}_p \ge {\frac{1}{ 2}} {\mathopen\|M\mathclose\|}_p \ge 2^{-1-1/p} {\mathopen\|\ell\mathclose\|}_p
+.$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4304}%
+$\displaystyle {\mathopen\|U\mathclose\|}_p^p = \int_0^1 (U^*(t))^p \, dt
+\ge 8^{-1} e^{-p} (U^*(e^{-p}/8))^p ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4306}%
+$ {\left\|U\right\|}_p \ge
+8^{-1/p} 
+e^{-1} U^*(e^{-p}/8) \ge 8^{-1/p} e^{-1} U^*(e^{-p}/4)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4312}%
+$\displaystyle {\mathopen\|U\mathclose\|}_p \ge c_1^{-1}(U^*(e^{-p}/4) +
+{\mathopen\|\ell\mathclose\|}_p) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4314}%
+$\displaystyle \Pr(U \ne U^{(\le 
+\ell(e^{-p}/8))}) \le \Pr(M > \ell(e^{-p}/8))   \le \Pr(M >
+M^*(e^{-p}/8)) \le e^{-p}/8 .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4316}%
+$ U^*(e^{-p}/8) \ge (U^{(\le
+\ell(e^{-p}/8))})^*(e^{-p}/4)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4318}%
+$ c_2>0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4322}%
+$\displaystyle {\mathopen\|U\mathclose\|}_p
+\ge c_2^{-1}((U^{(\le \ell(e^{-p}/8))})^*                (e^{-p}/4) +
+{\mathopen\|\ell\mathclose\|}_p) . $%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4324}%
+$ t \le e^{-p}/2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4326}%
+$\displaystyle (U^{(\le \ell(e^{-p}/8))})^*(t) \le c_2 {\frac{\log(1/t) }{ p +
+\log(2)}}
+\bigl((U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) + \ell(e^{-p}/8)
+\bigr). $%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4329}%
+$\displaystyle {\mathopen\|U^{(\le \ell(e^{-p}/8))}\mathclose\|}_p^p$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4333}%
+$\displaystyle \int_0^{e^{-p}/2} ((U^{(\le \ell(e^{-p}/8))})^*(t))^p \, dt
++(1-e^{-p}/2)(U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4337}%
+$\displaystyle {\frac{1}{ (p + \log(2))^p}} \int_0^1 (\log(1/t))^p \, dt
+\,\bigl((U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) +
+\ell(e^{-p}/8) \bigr)^p$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4339}%
+$\displaystyle \qquad + (U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2)$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4343}%
+$\displaystyle c_3^p\bigl((U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) +
+\ell(e^{-p}/8) \bigr)^p ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4345}%
+$ c_3>0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4349}%
+$\displaystyle \ell(e^{-p}/8)^p \le 8 e^p \int_0^1 \ell(t)^p \, dt = 8 e^p
+{\mathopen\|\ell\mathclose\|}_p^p.$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4357}%
+$\displaystyle {\mathopen\|U\mathclose\|}_p \le c_4((U^{(\le \ell(e^{-p}/8))})^*  (e^{-p}/2)
++ {\mathopen\|\ell\mathclose\|}_p) . $%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4359}%
+$\displaystyle (U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) \le   (U^{(\le
+\ell(e^{-p}/8))})^*
+(e^{-p}/4) ,$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4361}%
+$\displaystyle (U^{(\le \ell(e^{-p}/8))})^*(e^{-p}/2) \le U^*(3e^{-p}/8) \le
+U^*(e^{-p}/4) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4369}%
+$\displaystyle {\mathopen\|S\mathclose\|}_p \le c S^*(e^{-p}/c) + c {\mathopen\|\ell\mathclose\|}_p .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4373}%
+$ X_1 = 1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4375}%
+$ X_2 = -1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4377}%
+$ X_n = 0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4379}%
+$ n \ge 2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+\stepcounter{section}
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4382}%
+$ {\cal L}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4384}%
+$ 1 \in {\cal L}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4386}%
+$ X^* \le Y^*$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4388}%
+$ Y
+\in {\cal L}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4390}%
+$ X \in {\cal L}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4392}%
+$ {\left\|X\right\|}_{\cal L}\le {\left\|Y\right\|}_{\cal L}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4396}%
+$ 0<p\le \infty$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4402}%
+$ K>0$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4404}%
+$ {\left\|X+Y\right\|}_{\cal L}\le K({\left\|X\right\|}_{\cal L}+ {\left\|Y\right\|}_{\cal L})$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4406}%
+$ X,Y \in {\cal L}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4408}%
+$ X^*(2t) \le Y^*(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4414}%
+$ Y_1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4416}%
+$ Y_2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4418}%
+$ Y_1^*(t),Y_2^*(t) \le Y^*(t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4420}%
+$ {\left\|X\right\|}_{\cal L}\le 2K {\left\|Y\right\|}_{\cal L}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4424}%
+$ {\cal M}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4434}%
+$ X \in {\cal M}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4436}%
+$ {\left\|X\right\|}_{\cal M}\le c {\left\|X\right\|}_{\cal L}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4457}%
+$ L_q$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4469}%
+$ q/p$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4473}%
+$\displaystyle c^{-1}({\left\|U\right\|}_p + {\left\|\ell\right\|}_{\cal L}) \le {\left\|U\right\|}_{\cal L}\le 
+c({\left\|U\right\|}_p + {\left\|\ell\right\|}_{\cal L}) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4475}%
+$ {\left\|U\right\|}_{\cal L}\ge c_1^{-1}
+{\left\|U\right\|}_p$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4483}%
+$ U \ge {\frac{1}{ 2}} M$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4485}%
+$ \ell(t) \le M^*(2t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4487}%
+$ {\left\|U\right\|}_{\cal L}\ge (4K)^{-1}
+{\left\|\ell\right\|}_{\cal L}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4497}%
+$\displaystyle U^*(t) I_{0\le t \le 2^{-2q/p}} \le c_2 {\frac{2q }{ p}}
+(U^*(t^{p/2q}) + 
+M^*(t/2)). $%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4499}%
+$ U^*(t) I_{0\le t \le 2^{-2q/p}} \ge U^*(2^{2q/p}
+t)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4501}%
+$\displaystyle {\left\|U\right\|}_{{\cal L}} \le (2K)^{\lceil 2q/p \rceil} c_2 K
+{\frac{2q}{ p}} ({\mathopen\|t\mapsto U^*(t^{p/2q})\mathclose\|}_{\cal L}+ {\left\|M\right\|}_{\cal L}) .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4503}%
+$ {\left\|U\right\|}_p = \lambda$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4505}%
+$ U^*(t) \le \lambda t^{-1/p}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4514}%
+$\displaystyle {\mathopen\|t\mapsto U^*(t^{p/2q})\mathclose\|}_{\cal L}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4518}%
+$\displaystyle c_3 {\mathopen\|t\mapsto U^*(t^{p/2q})\mathclose\|}_q$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4522}%
+$\displaystyle c_3 \left(\int_0^1 (U^*(t^{p/2q}))^q \, dt \right)^{1/q}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4526}%
+$\displaystyle c_3 \lambda \left(\int_0^1 t^{-1/2} \, dt\right)^{1/q}$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_indisplay4530}%
+$\displaystyle 2^{1/q} c_3 \lambda .$%
+\lthtmlindisplaymathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline4535}%
+$ p > 2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+
+\end{document}

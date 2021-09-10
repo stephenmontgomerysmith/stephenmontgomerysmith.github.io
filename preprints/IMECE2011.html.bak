@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Rheological study on multiple fiber suspensions for fiber reinforced composite materials processing.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Dongdong Zhang, Douglas E. Smith, David Jack and Stephen Montgomery-Smith&#44; Rheological study on multiple fiber suspensions for fiber reinforced composite materials processing.</B>
+<I>Proceedings of the ASME 2011 International Mechanical Engineering Congress &amp; Exposition IMECE 2011 November 11-17, 2011, Denver, Colorado, USA.</I>
+This paper studies the rheological properties of a semi-dilute fiber suspension for short fiber reinforced composite materials processing. For industrial applications, the volume fraction of short fibers could be large for semi-dilute and concentrated fiber suspensions. Therefore, fiber-fiber interactions consisting of hydrodynamic interactions and direct mechanical contacts could affect fiber orientations and thus the rate of fiber alignment in the manufacturing processing.  In this paper, we study the semi-dilute fiber suspensions, i.e.  the gap between fibers becomes closer, and hydrodynamic interactions becomes stronger, but the physical/mechanical contacts are still rare. We develop a three-dimensional finite element approach for simulating the motions of multiple fibers in low-Reynolds-number flows typical of polymer melt flow. We extend our earlier single fiber model to consider hydrodynamic interactions between fibers.  This approach computes the hydrodynamic forces and torques on fibers by solving governing equations of motion in fluid. The hydrodynamic forces and torques result from two scenarios: gross fluid motion and hydrodynamic interactions from other fibers. Our approach seeks fibers' velocities that zero the hydrodynamic torques and forces acting on the fibers by the surrounding fluid. Fiber motions are then computed using a Runge-Kutta approach to update fiber positions and orientations as a function of time.  This method is quite general and allows for solving multiple fiber suspensions in complex fluids. Examples with fibers having various starting positions and orientations are considered and compared with Jeffery's single fiber solution (1922). Meanwhile, we study the effect of the presence of a bounded wall on fiber motions, which is ignored in Jeffery's original work. The possible reasons why fiber motions observed in experiments align slower than those predicted by Jeffery's theory are discussed in this
+paper.
+(<A HREF="IMECE2011-64498.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

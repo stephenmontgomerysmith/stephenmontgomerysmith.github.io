@@ -1,0 +1,37 @@
+%%% ====================================================================
+%%% @AMSTeX-style-file{
+%%%   filename  = "conm-p.sty",
+%%%   version   = "2.1b",
+%%%   date      = "1997/01/07",
+%%%   time      = "13:14:07 EST",
+%%%   checksum  = "11260 37 136 1230",
+%%%   author    = "American Mathematical Society",
+%%%   address   = "PO Box 6248, Providence, RI 02940, USA",
+%%%   email     = "tech-support@ams.org (Internet)",
+%%%   supported = "yes",
+%%%   keywords  = "",
+%%%   abstract  = "This is an AMSTeX documentstyle containing the specs
+%%%                for the Contemporary Math proceedings series that are
+%%%                different from those in ams-p.sty.",
+%%%   docstring = "The checksum field above contains: CRC-16 checksum,
+%%%                number of lines, number of words, and number of
+%%%                characters, as produced by Robert Solovay's checksum
+%%%                utility.",
+%%% }
+%%% ====================================================================
+
+%  First input the basic proceedings style
+
+\def\next{AMS-P}
+\ifx\styname\next \endinput \else\input ams-p.sty\fi
+
+\catcode`\@=11
+
+\def\journame{Contemporary Mathematics}
+
+\issn{0271-4132}
+
+\catcode`\@=13
+
+\def\amsversion{2.1b}
+\endinput

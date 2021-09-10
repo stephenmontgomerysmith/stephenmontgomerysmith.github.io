@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bibliography</TITLE>
+<META NAME="description" CONTENT="Bibliography">
+<META NAME="keywords" CONTENT="mo_smpok8">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="mo_smpok8.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="mo_smpok8.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html81"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html79"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html73"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html82"
+  HREF="node8.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html80"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<B> Previous:</B> <A NAME="tex2html74"
+  HREF="node6.html">The Probabilistic Approach</A>
+<BR><BR>
+<!--End of Navigation Panel-->
+ 
+<H2><A NAME="SECTION00070000000000000000">
+Bibliography</A>
+</H2><DL COMPACT><DD>
+<P>
+<P></P><DT><A NAME="Ch">1</A>
+<DD> Chorin, A. J.: <B>Vorticity and turbulence</B>, 
+Applied Mathematical Sciences, <B>103</B> Springer-Verlag, New York,
+(1994). 
+
+<P>
+<P></P><DT><A NAME="Co">2</A>
+<DD> Constantin P.: <I>An Eulerian-Lagrangian approach to the
+Navier-Stokes equations,</I> 
+preprint (2000).
+
+<P>
+<P></P><DT><A NAME="DPMa">3</A>
+<DD> DiPerna, R.J., Majda, A.: <I>Oscillations and Concentrations in
+Weak Solutions of the Incompressible Fluid Equations</I>, Comm. Math. Phys.
+<B>108</B> (1987) 667-212.
+
+<P>
+<P></P><DT><A NAME="KiLa">4</A>
+<DD> Kiselev, A. A., Ladyzhenskaya, O. A.: <I>On the existence and uniqueness of the solution of the nonstationary
+problem for a viscous, incompressible fluid,</I> (in Russian) 
+Izv. Akad. Nauk SSSR. Ser. Mat. <B>21</B> (1957) 655-680.
+
+<P>
+<P></P><DT><A NAME="LaSoUr">5</A>
+<DD> Ladyzhenskaja, O. A., Solonnikov, V. A., Uralceva, N. N.: 
+<B>Linear and quasilinear equations of parabolic
+type,</B> (in Russian) Translations of Mathematical Monographs, Vol. 23 
+American Mathematical Society, Providence, R.I. (1967). 
+
+<P>
+<P></P><DT><A NAME="Le">6</A>
+<DD> Leray, J.: <I>Sur le mouvement d'un liquide visqueux emplisant 
+l'espace</I>,  Acta Math. <B>63</B>,
+(1934) 193-248.
+
+<P>
+<P></P><DT><A NAME="Lio">7</A>
+<DD> Lions P.-L.: <B>Mathematical Topics in Fluid Mechanics</B>, 
+Vol. 1, Clarendon Press, Oxford (1996).
+
+<P>
+<P></P><DT><A NAME="Mau">8</A>
+<DD> Maunder, C. R. F.: <B>Algebraic topology</B>, 
+Cambridge University Press, Cambridge-New York, 1980.
+
+<P>
+<P></P><DT><A NAME="Oru">9</A>
+<DD> Oru, F.: <I>R&#244;le des oscillation dans quelques
+probl&#232;mes d'analyse non-lin&#233;aire</I>,
+Ph.D. thesis, ENS Cachan (1998). 
+</DL>
+
+<P>
+
+<I>Stephen Montgomery-Smith, University of Missouri,
+Department of Mathematics,  Math. Science Building, 65203 Columbia, MO,
+USA</I> <BR>(e-mail <TT>stephen@math.missouri.edu</TT>
+<BR>
+URL <TT>http://www.math.missouri.edu/~stephen</TT>).
+
+<P>
+
+<P><BR>
+
+<I>Milan Pokorn&#253;, Math. Institute of Charles University, 
+Sokolovsk&#225; 83, 186 75 Praha 8, Czech Republic</I> <BR>(e-mail <TT>pokorny@karlin.mff.cuni.cz</TT>).
+
+<P>
+<BR><HR>
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-25
+</ADDRESS>
+</BODY>
+</HTML>

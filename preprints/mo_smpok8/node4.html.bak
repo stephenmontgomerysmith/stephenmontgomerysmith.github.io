@@ -1,0 +1,575 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Construction of the Fluid Flow</TITLE>
+<META NAME="description" CONTENT="Construction of the Fluid Flow">
+<META NAME="keywords" CONTENT="mo_smpok8">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="mo_smpok8.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="mo_smpok8.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html51"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html49"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html43"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html52"
+  HREF="node5.html">The decay of</A>
+<B> Up:</B> <A NAME="tex2html50"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<B> Previous:</B> <A NAME="tex2html44"
+  HREF="node3.html">Properties of the operator</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00040000000000000000">
+Construction of the Fluid Flow</A>
+</H1>
+
+<P>
+We will consider the following vector field in cylindrical coordinates:
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+{\mathbf{u}}_s = {\mathbf{u}}= (0, u_\theta(r,z,t), 0)
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="3.1"></A><IMG
+ WIDTH="203" HEIGHT="33" BORDER="0"
+ SRC="img119.png"
+ ALT="\begin{displaymath}
+{\mathbf{u}}_s = {\mathbf{u}}= (0, u_\theta(r,z,t), 0)
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(4.1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+with <!-- MATH
+ $u_\theta(r,z,t) = \alpha (r) \beta (|z|) \gamma _s(t) r$
+ -->
+<IMG
+ WIDTH="232" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img120.png"
+ ALT="$u_\theta(r,z,t) = \alpha (r) \beta (\vert z\vert) \gamma _s(t) r$">, where
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{l}
+\begin{array}{rlllrlllll}
+\alpha (r) &= 0 &\, {\rm for \ } & r\geq R^o, & \alpha (r) &= 1 &  \, {\rm for \ }
+& r \leq R^i \, , & \alpha \in C^\infty_0([0,\infty)) \, , & 0\leq \alpha (r) \leq 1 \\[6pt]
+\beta (|z|) &= 0 &\, {\rm for \ } & |z|\geq Z^o, & \beta (|z|) &= 1 &  \, {\rm for \ }
+& |z| \leq Z^i \, , & \beta \in C^\infty_0(\mbox{\Bbbb R}) \, , & 0\leq \beta (r) \leq 1 \\[6pt]
+\gamma _s(t) &= 0 &\, {\rm for \ } & t\geq t_0, & \gamma _s(0) &= 0, & &  \gamma _s(t)
+ \geq 0  
+\end{array}
+\\[6pt]
+\displaystyle \int_0^\infty \gamma _s(\tau) d \tau = \int_0^{t_0} \gamma _s(\tau) d \tau = s \in
+[0,2\pi]\, .
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="635" HEIGHT="134" BORDER="0"
+ SRC="img121.png"
+ ALT="\begin{displaymath}
+\begin{array}{l}
+\begin{array}{rlllrlllll}
+\alpha (r) &amp;= 0 &amp;...
+...0^{t_0} \gamma _s(\tau) d \tau = s \in
+[0,2\pi]\, .
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The vector field <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="${\mathbf{u}}$"> from (<A HREF="#3.1">4.1</A>) is divergence free and
+smooth (in Cartesian coordinates <IMG
+ WIDTH="66" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.png"
+ ALT="$(x,y,z)$">). Evidently, there exist <!-- MATH
+ ${\mathbf{f}}^E$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img123.png"
+ ALT="${\mathbf{f}}^E$"> 
+and <!-- MATH
+ ${\mathbf{f}}^N$
+ -->
+<IMG
+ WIDTH="26" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img124.png"
+ ALT="${\mathbf{f}}^N$">, smooth axially symmetric vector fields such that <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="${\mathbf{u}}$"> satisfies
+(with constant pressure) the Euler equations and the Navier-Stokes equations,
+respectively. 
+
+<P>
+In the cylinder <IMG
+ WIDTH="68" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$\vert z\vert\leq Z_i$">, <IMG
+ WIDTH="59" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$r\leq R_i$">
+it corresponds to the rotation by the angle <IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img127.png"
+ ALT="$s$"> during the time interval <IMG
+ WIDTH="47" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$[0,t_0]$">
+and outside of the cylinder <IMG
+ WIDTH="72" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$\vert z\vert\leq Z^o$">, <IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="$r\leq R^o$"> the fluid does not
+move at all.
+
+<P>
+Let us start by analyzing <IMG
+ WIDTH="32" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$\mathbf{A}^E$">.  This is actually quite easy to
+compute explicitly.
+Writing the input vector in cylindrical coordinates, and the output
+in Cartesian coordinates, we have
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\mathbf{A}^E(r,z,\vartheta , t_0) = \Big(r \cos [\vartheta - s \alpha (r)\beta (|z|)], 
+r \sin[\vartheta - s \alpha (r) \beta (|z|) ], z\Big)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="521" HEIGHT="38" BORDER="0"
+ SRC="img131.png"
+ ALT="\begin{displaymath}
+\mathbf{A}^E(r,z,\vartheta , t_0) = \Big(r \cos [\vartheta -...
+...r \sin[\vartheta - s \alpha (r) \beta (\vert z\vert) ], z\Big)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+that is,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lcr}
+\mathbf{A}^E(x,y,z,t_0)& = &\Big( x \cos[s \alpha (\sqrt{x^2+ y^2})\beta (|z|)]
+ +  y \sin[s \alpha (\sqrt{x^2+ y^2})\beta (|z|) ], \\[4pt]
+& & -x \sin[s \alpha (\sqrt{x^2+ y^2})\beta (|z|)] + y \cos[s \alpha (\sqrt{x^2+ y^2})
+\beta (|z|) ] , z \Big)\, .
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="613" HEIGHT="68" BORDER="0"
+ SRC="img132.png"
+ ALT="\begin{displaymath}
+\begin{array}{lcr}
+\mathbf{A}^E(x,y,z,t_0)&amp; = &amp;\Big( x \cos[...
+...qrt{x^2+ y^2})
+\beta (\vert z\vert) ] , z \Big)\, .
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Inside the inner cylinder we have
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+\cos s, & \sin s, & 0 \\
+-\sin s, & \cos s, & 0 \\
+0, & 0, & 1 \end{array} \right)\, ;
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="225" HEIGHT="76" BORDER="0"
+ SRC="img133.png"
+ ALT="\begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+\cos s, &amp; \s...
+...-\sin s, &amp; \cos s, &amp; 0 \\
+0, &amp; 0, &amp; 1 \end{array} \right)\, ;
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+outside the outer cylinder
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+1, & 0, & 0 \\
+0, & 1, & 0 \\
+0, & 0, & 1 \end{array} \right)\, ;
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="154" HEIGHT="76" BORDER="0"
+ SRC="img134.png"
+ ALT="\begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+1, &amp; 0, &amp; 0 \\
+0, &amp; 1, &amp; 0 \\
+0, &amp; 0, &amp; 1 \end{array} \right)\, ;
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+for <IMG
+ WIDTH="68" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$\vert z\vert\leq Z_i$">, <!-- MATH
+ $R_i \leq r\leq R^o$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$R_i \leq r\leq R^o$">
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+\cos [s \alpha (r) ], & \sin [s \alpha (r) ],  & 0 \\
+-\sin [s \alpha (r)], & \cos [s \alpha (r) ] , & 0 \\
+0, & 0,& 1 \end{array} \right) + {\mathbf{M}}_1 +{\mathbf{M}}_2
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="401" HEIGHT="76" BORDER="0"
+ SRC="img136.png"
+ ALT="\begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+\cos [s \alp...
+..., &amp; 0,&amp; 1 \end{array} \right) + {\mathbf{M}}_1 +{\mathbf{M}}_2
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+with 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{l}
+{\mathbf{M}}_1 =
+\left( \begin{array}{ccc}
+- s\frac{x^2}{r} \sin [s\alpha (r)]\alpha '(r), &
+s\frac{y^2}{r} \cos [s\alpha (r)]\alpha '(r), & 0 \\
+-s\frac{x^2}{r} \cos [s\alpha (r)]\alpha '(r), & - s\frac{y^2}{r} 
+\sin [s\alpha (r)]\alpha '(r), & 0 \\
+0, & 0, & 0 \end{array} \right)\, ,
+\\[6pt]
+{\mathbf{M}}_2 =
+\left( \begin{array}{ccc}
+s\frac{xy}{r} \cos [s\alpha (r)]\alpha '(r), & - s\frac{xy}{r} 
+\sin [s\alpha (r)]\alpha '(r), & 0 \\
+- s\frac{xy}{r} \sin [s\alpha (r)]\alpha '(r), & 
+-s\frac{xy}{r} \cos [s\alpha (r)]\alpha '(r), & 0 \\
+0, & 0, & 0 \end{array} \right)\, ;
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="449" HEIGHT="152" BORDER="0"
+ SRC="img137.png"
+ ALT="\begin{displaymath}
+\begin{array}{l}
+{\mathbf{M}}_1 =
+\left( \begin{array}{ccc}
+...
+...a '(r), &amp; 0 \\
+0, &amp; 0, &amp; 0 \end{array} \right)\, ;
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+for <!-- MATH
+ $Z_i\leq |z|\leq Z^o$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$Z_i\leq \vert z\vert\leq Z^o$">, <IMG
+ WIDTH="59" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$r\leq R_i$">
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+1, & 0, & -s x  \, {\rm sign}\,(z) \sin [s \beta (|z|)] \beta '(|z|)  +s y \, {\rm sign}\,(z) \cos 
+[s \beta (|z|)] \beta '(|z|)\\
+0, & 1, &  -s y \, {\rm sign}\,(z) \sin [s \beta (|z|)] \beta '(|z|)  -sx \, {\rm sign}\,(z) \cos 
+[s \beta (|z|)] \beta '(|z|)\\
+0, & 0, & 1 \end{array} \right)\, ;
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="633" HEIGHT="76" BORDER="0"
+ SRC="img139.png"
+ ALT="\begin{displaymath}
+\nabla \mathbf{A}^E =
+\left( \begin{array}{ccc}
+1, &amp; 0, &amp; -s...
+...] \beta '(\vert z\vert)\\
+0, &amp; 0, &amp; 1 \end{array} \right)\, ;
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and finally for <!-- MATH
+ $Z_i\leq |z|\leq Z^o$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$Z_i\leq \vert z\vert\leq Z^o$">, <!-- MATH
+ $R_i \leq r\leq R^o$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$R_i \leq r\leq R^o$"> we get a combination
+of the last two cases. We will use the structure of <!-- MATH
+ $\nabla \mathbf{A}^E$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img140.png"
+ ALT="$\nabla \mathbf{A}^E$"> later.
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+Let us now look at the difference between <IMG
+ WIDTH="34" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img40.png"
+ ALT="$\mathbf{A}^N$"> and <IMG
+ WIDTH="32" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$\mathbf{A}^E$">, our goal
+being inequality&nbsp;(<A HREF="#3.4">4.3</A>) below.  We have
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial }{\partial t} (\mathbf{A}^N - \mathbf{A}^E) + {\mathbf{u}}\cdot \nabla (\mathbf{A}^N - \mathbf{A}^E) = \nu \Delta \mathbf{A}^N
+\\[6pt]
+(\mathbf{A}^N - \mathbf{A}^{E})({\mathbf{x}}, 0) = {\mathbf {0}}\, .
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="353" HEIGHT="72" BORDER="0"
+ SRC="img141.png"
+ ALT="\begin{displaymath}
+\begin{array}{c}
+\displaystyle \frac {\partial }{\partial t}...
+...mathbf{A}^{E})({\mathbf{x}}, 0) = {\mathbf {0}}\, .
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Taking the spatial gradient we get
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\frac {\partial }{\partial t} [\nabla (\mathbf{A}^N - \mathbf{A}^E)] + {\mathbf{u}}\cdot \nabla [\nabla (\mathbf{A}^N - \mathbf{A}^E)]
+ = \nu \Delta \nabla \mathbf{A}^N - (\nabla (\mathbf{A}^N-\mathbf{A}^E))\nabla {\mathbf{u}}\, .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="3.3"></A><IMG
+ WIDTH="555" HEIGHT="46" BORDER="0"
+ SRC="img142.png"
+ ALT="\begin{displaymath}
+\frac {\partial }{\partial t} [\nabla (\mathbf{A}^N - \mathb...
+... - (\nabla (\mathbf{A}^N-\mathbf{A}^E))\nabla {\mathbf{u}}\, .
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(4.2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Now, since 
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sup _{t \in [0,t_0]}\|\nabla ^3 \mathbf{A}^N\|_p \leq C (\|\nabla {\mathbf{u}}\|_{k,p})
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="244" HEIGHT="49" BORDER="0"
+ SRC="img143.png"
+ ALT="\begin{displaymath}
+\sup _{t \in [0,t_0]}\Vert\nabla ^3 \mathbf{A}^N\Vert _p \leq C (\Vert\nabla {\mathbf{u}}\Vert _{k,p})
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+for some <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img144.png"
+ ALT="$k$"> sufficiently large, we have, after testing equation (<A HREF="#3.3">4.2</A>)
+by <!-- MATH
+ $|\nabla (\mathbf{A}^N-\mathbf{A}^E)|^{p-2}\nabla (\mathbf{A}^N - \mathbf{A}^E)$
+ -->
+<IMG
+ WIDTH="261" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img145.png"
+ ALT="$\vert\nabla (\mathbf{A}^N-\mathbf{A}^E)\vert^{p-2}\nabla (\mathbf{A}^N - \mathbf{A}^E)$">
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{d}{dt} \|\nabla (\mathbf{A}^N-\mathbf{A}^E)\|_p \leq \nu \|\nabla^3 \mathbf{A}^N\|_p +
+\|\nabla {\mathbf{u}}\|_\infty  \|\nabla (\mathbf{A}^N-\mathbf{A}^E)\|_p\, .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="500" HEIGHT="46" BORDER="0"
+ SRC="img146.png"
+ ALT="\begin{displaymath}
+\frac{d}{dt} \Vert\nabla (\mathbf{A}^N-\mathbf{A}^E)\Vert _p...
+...rt _\infty \Vert\nabla (\mathbf{A}^N-\mathbf{A}^E)\Vert _p\, .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Thus, as <!-- MATH
+ $\nabla (\mathbf{A}^N-\mathbf{A}^E)({\mathbf{x}},0) = {\mathbf {0}}$
+ -->
+<IMG
+ WIDTH="195" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\nabla (\mathbf{A}^N-\mathbf{A}^E)({\mathbf{x}},0) = {\mathbf {0}}$">, we get
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+\sup _{t \in [0,t_0]} \|\nabla (\mathbf{A}^N-\mathbf{A}^E)\|_p \leq \nu 
+C(\|\nabla {\mathbf{u}}\|_{k,2}, t_0)
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="3.4"></A><IMG
+ WIDTH="335" HEIGHT="49" BORDER="0"
+ SRC="img148.png"
+ ALT="\begin{displaymath}
+\sup _{t \in [0,t_0]} \Vert\nabla (\mathbf{A}^N-\mathbf{A}^E)\Vert _p \leq \nu
+C(\Vert\nabla {\mathbf{u}}\Vert _{k,2}, t_0)
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(4.3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+for all <!-- MATH
+ $p\in (1,\infty]$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.png"
+ ALT="$p\in (1,\infty]$">.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html51"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html49"
+  HREF="mo_smpok8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html43"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html52"
+  HREF="node5.html">The decay of</A>
+<B> Up:</B> <A NAME="tex2html50"
+  HREF="mo_smpok8.html">A counterexample to the</A>
+<B> Previous:</B> <A NAME="tex2html44"
+  HREF="node3.html">Properties of the operator</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-25
+</ADDRESS>
+</BODY>
+</HTML>

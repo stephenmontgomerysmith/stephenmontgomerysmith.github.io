@@ -1,0 +1,1136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Klass-Nowicki Inequality</TITLE>
+<META NAME="description" CONTENT="The Klass-Nowicki Inequality">
+<META NAME="keywords" CONTENT="disttail11">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="disttail11.css">
+
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="disttail11.html">
+<LINK REL="next" HREF="node4.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html42"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html40"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html34"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html43"
+  HREF="node4.html">The L&#233;vy Property</A>
+<B> Up:</B> <A NAME="tex2html41"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html35"
+  HREF="node2.html">Notation and definitions</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00030000000000000000"></A>
+<A NAME="Klass-nowicki"></A>
+<BR>
+The Klass-Nowicki Inequality
+</H1>
+
+<P>
+This section is devoted to the following result -- the Klass-Nowicki
+Inequality.
+
+<P>
+<P>
+<DIV><A NAME="klass-nowicki"><B>Theorem  3.1</B></A> &nbsp; 
+<I>Let <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> be a sequence of Banach valued independent random
+variables. Then for all positive integers <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img108.png"
+ ALT="$ K$"> we have 
+</I><!-- MATH
+ \begin{displaymath}
+\Pr(U > 2K t + (K-1)s)
+   \le {\frac{1 }{ K!}} \left(\frac{\Pr(U > t) }{ 1 -
+   \Pr(U > t) }\right)^{K}+ \Pr(M > s) ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="539" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.png"
+ ALT="$\displaystyle \Pr(U &gt; 2K t + (K-1)s)
+\le {\frac{1 }{ K!}} \left(\frac{\Pr(U &gt; t) }{ 1 -
+\Pr(U &gt; t) }\right)^{K}+ \Pr(M &gt; s) ,$">
+</DIV><P></P><I>
+whenever <!-- MATH
+ $\Pr(U>t) < 1$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img110.png"
+ ALT="$ \Pr(U&gt;t) &lt; 1$">.</I></DIV><P></P>
+
+<P>
+The original inequality of this form was 
+for Rademacher (or Bernoulli) sums and <IMG
+ WIDTH="56" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.png"
+ ALT="$ K=2$">, and was due to Kahane
+(1968). This was extended by Hoffmann-J&#248;rgensen (1974)
+to general sums, at
+least for positive or symmetric random variables, for the case <IMG
+ WIDTH="56" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img111.png"
+ ALT="$ K=2$">.  
+Indeed, if one wants Theorem&nbsp;<A HREF="#klass-nowicki">3.1</A>
+for <IMG
+ WIDTH="56" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$ K&gt;2$">, but without 
+the <IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img113.png"
+ ALT="$ K!$"> factor, this may be obtained by iterating the
+Hoffmann-J&#248;rgensen Inequality, as was done by Johnson and 
+Schechtman (1989, Lemmas 6 and 7).
+(Both Kahane and Hoffmann-J&#248;rgensen obtained slightly different
+constants 
+than those we have presented.  Also, in neither case 
+did a factor like <!-- MATH
+ $(1-\Pr(U>t))$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.png"
+ ALT="$ (1-\Pr(U&gt;t))$"> 
+appear in their formulae.) 
+
+<P>
+Klass and Nowicki (1998) were able to obtain Theorem&nbsp;<A HREF="#klass-nowicki">3.1</A>, 
+at least in the case when the random variables are positive or
+symmetric. (However their constants are better than ours.) Removing
+the 
+positive or symmetric condition is really not so hard, but because 
+it does not appear in the literature in this manner, we will give a 
+complete proof of Theorem&nbsp;<A HREF="#klass-nowicki">3.1</A>.  
+
+<P>
+We also note that this inequality has some comparison with a result
+that 
+appears in Ledoux and Talagrand (1991, Theorem 6.17.)
+
+<P>
+
+<P>
+<BR>
+<B>Proof:</B>  Let <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img81.png"
+ ALT="$ N$"> be the length of the sequence <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">. During this
+proof, let us write <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$ (m,n]$"> for the set of integers greater than <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img116.png"
+ ALT="$ m$">
+and not greater than <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img117.png"
+ ALT="$ n$">.
+
+<P>
+We start with the observation 
+<!-- MATH
+ \begin{displaymath}
+\Pr(U >  2K t+(K-1)s)
+  \le 
+  \Pr(U >2K t+(K-1)s \text{ and } M \le s) + \Pr(M > s) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="431" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img118.png"
+ ALT="$\displaystyle \Pr(U &gt; 2K t+(K-1)s)
+\le
+\Pr(U &gt;2K t+(K-1)s$">&nbsp; &nbsp; and&nbsp;<IMG
+ WIDTH="183" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img119.png"
+ ALT="$\displaystyle M \le s) + \Pr(M &gt; s) .
+$">
+</DIV><P></P>
+Now, if we have that both <!-- MATH
+ $U > 2K t+(K-1)s$
+ -->
+<IMG
+ WIDTH="174" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img120.png"
+ ALT="$ U &gt; 2K t+(K-1)s$"> and <IMG
+ WIDTH="59" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.png"
+ ALT="$ M \le s$">, then we ensure
+the existence of an increasing sequence of non-negative integers
+<!-- MATH
+ $m_0,\dots,$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.png"
+ ALT="$ m_0,\dots,$"> 
+<IMG
+ WIDTH="34" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$ m_{K}$">, bounded by <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img81.png"
+ ALT="$ N$">, and defined as follows. Set <IMG
+ WIDTH="63" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$ m_0 = 0$">. 
+If we have picked <IMG
+ WIDTH="43" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$ m_{l-1}$">, let <IMG
+ WIDTH="26" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$ m_l$"> be the smallest positive
+integer greater than <IMG
+ WIDTH="43" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$ m_{l-1}$"> such that <!-- MATH
+ ${\mathopen|S_{(m_{l-1},m_l]}\mathclose|} >
+2t$
+ -->
+<IMG
+ WIDTH="130" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.png"
+ ALT="$ {\mathopen\vert S_{(m_{l-1},m_l]}\mathclose\vert} &gt;
+2t$">.  For <IMG
+ WIDTH="45" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img128.png"
+ ALT="$ l = 1$">, it is clear that such an integer exists.
+Let us explain why the  integer <IMG
+ WIDTH="68" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$ m_l \le N$"> exists if <!-- MATH
+ $2 \le l \le K$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="$ 2 \le l \le K$">.
+
+<P>
+For <!-- MATH
+ $1 \le l' \le l-1$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.png"
+ ALT="$ 1 \le l' \le l-1$">, and <!-- MATH
+ $m_{l'-1} < k \le m_{l'}-1$
+ -->
+<IMG
+ WIDTH="167" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ m_{l'-1} &lt; k \le m_{l'}-1$">, we have that
+<!-- MATH
+ ${\mathopen|S_{(m_{l'-1},k]}\mathclose|} \le 2t$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="$ {\mathopen\vert S_{(m_{l'-1},k]}\mathclose\vert} \le 2t$"> and <!-- MATH
+ ${\mathopen|X_{m_{l'}}\mathclose|} \le s$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$ {\mathopen\vert X_{m_{l'}}\mathclose\vert} \le s$">.  Hence
+for <!-- MATH
+ $1 \le l' \le l-1$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.png"
+ ALT="$ 1 \le l' \le l-1$">
+<!-- MATH
+ \begin{displaymath}
+{\mathopen|S_{m_{l'}}\mathclose|}
+   =
+   {\left| \sum_{j=1}^{l'} (S_{(m_{j-1},m_j-1]} + X_{m_j}) \right|}
+   \le
+   2 l' t + l's,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="379" HEIGHT="80" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$\displaystyle {\mathopen\vert S_{m_{l'}}\mathclose\vert}
+=
+{\left\vert \sum_{j=1}^{l'} (S_{(m_{j-1},m_j-1]} + X_{m_j}) \right\vert}
+\le
+2 l' t + l's,$">
+</DIV><P></P>
+and for <!-- MATH
+ $m_{l'-1} < k \le m_{l'}-1$
+ -->
+<IMG
+ WIDTH="167" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ m_{l'-1} &lt; k \le m_{l'}-1$">
+<!-- MATH
+ \begin{displaymath}
+{\mathopen|S_{k}\mathclose|}
+   =
+   {\left| \left(\sum_{j=1}^{l'-1} (S_{(m_{j-1},m_j-1]} + X_{m_j})\right)
+          + S_{(m_{l'-1},k]} \right|}
+   \le
+   2 l' t + (l'-1)s.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="535" HEIGHT="80" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.png"
+ ALT="$\displaystyle {\mathopen\vert S_{k}\mathclose\vert}
+=
+{\left\vert \left(\sum_{...
+...m_j-1]} + X_{m_j})\right)
++ S_{(m_{l'-1},k]} \right\vert}
+\le
+2 l' t + (l'-1)s.$">
+</DIV><P></P>
+But we know that there exists a number <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img116.png"
+ ALT="$ m$"> such that
+<!-- MATH
+ ${\mathopen|S_m\mathclose|} > 2K t+(K-1)s$
+ -->
+<IMG
+ WIDTH="194" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.png"
+ ALT="$ {\mathopen\vert S_m\mathclose\vert} &gt; 2K t+(K-1)s$">. Hence, we must 
+have that <!-- MATH
+ $m > m_{l-1}$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$ m &gt; m_{l-1}$">, and that 
+<!-- MATH
+ ${\mathopen|S_{(m_{l-1},m]}\mathclose|} > 2K t + (K-1)s - 2(l-1)t - (l-1)s \ge 2t$
+ -->
+<IMG
+ WIDTH="458" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$ {\mathopen\vert S_{(m_{l-1},m]}\mathclose\vert} &gt; 2K t + (K-1)s - 2(l-1)t - (l-1)s \ge 2t$">.
+
+<P>
+Therefore 
+<!-- MATH
+ \begin{displaymath}
+\Pr( U > 2K t+(K-1)s \text{ and } M \le s) \le \sum_{1 \le m_1
+< \cdots < m_{K} \le N}p_{0,m_1} p_{m_1,m_2} \cdots p_{m_{K-1},m_K}
+,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="201" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.png"
+ ALT="$\displaystyle \Pr( U &gt; 2K t+(K-1)s$">&nbsp; &nbsp; and&nbsp;<IMG
+ WIDTH="409" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$\displaystyle M \le s) \le \sum_{1 \le m_1
+&lt; \cdots &lt; m_{K} \le N}p_{0,m_1} p_{m_1,m_2} \cdots p_{m_{K-1},m_K}
+,$">
+</DIV><P></P>
+where <!-- MATH
+ \begin{displaymath}
+p_{m,n} = \Pr(\text{${\mathopen|S_{(m,k]}\mathclose|} \le 2t$ for $m \le
+k < n$, and ${\mathopen|S_{(m,n]}\mathclose|} > 2t$}) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="91" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.png"
+ ALT="$\displaystyle p_{m,n} = \Pr($">$|S_(m,k]| &le#le;2t$ for $m &le#le;
+k &lt; n$, and $|S_(m,n]| &gt; 2t$<IMG
+ WIDTH="17" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$\displaystyle ) .$">
+</DIV><P></P>
+Now let us show the following inequality: 
+<!-- MATH
+ \begin{displaymath}
+\sum_{k=m+1}^n p_{m,k}
+   \le
+   {\frac{1}{ 1 - \Pr(U>t)}}\sum_{k=m+1}^n \tilde p_k ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="308" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.png"
+ ALT="$\displaystyle \sum_{k=m+1}^n p_{m,k}
+\le
+{\frac{1}{ 1 - \Pr(U&gt;t)}}\sum_{k=m+1}^n \tilde p_k ,$">
+</DIV><P></P>
+where 
+<!-- MATH
+ \begin{displaymath}
+\tilde p_n = \Pr(\text{${\mathopen|S_k\mathclose|} \le t$ for $1 \le k < n$, and
+   ${\mathopen|S_n\mathclose|} > t$}) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="75" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img145.png"
+ ALT="$\displaystyle \tilde p_n = \Pr($">$|S_k| &le#le;t$ for $1 &le#le;k &lt; n$, and $|S_n| &gt; t$<IMG
+ WIDTH="17" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$\displaystyle ) .$">
+</DIV><P></P>
+Using independence, we have that 
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\sum_{k=m+1}^n p_{m,k}
+  &=&\Pr(\sup_{m < k \le n} {\mathopen|S_k - S_m\mathclose|} > 2t) \\
+  &=&\Pr(\sup_{m < k \le n} {\mathopen|S_k - S_m\mathclose|} > 2t \big| U_m \le t) \\
+  &\le& \Pr(\sup_{m < k \le n} {\mathopen|S_k\mathclose|} > t \big| U_m \le t) \\
+  &=& {\frac{\Pr(\sup_{m<k\le n} {\mathopen|S_k\mathclose|} > t
+      \text{ and }\sup_{1 \le k \le m} {\mathopen|S_k\mathclose|} \le t)
+      }{ \Pr(U_m \le t) }} \\
+  &\le& {\frac{1}{ 1 - \! \Pr(U>t)}}\sum_{k=m+1}^n \tilde p_k ,
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="88" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.png"
+ ALT="$\displaystyle \sum_{k=m+1}^n p_{m,k}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="210" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.png"
+ ALT="$\displaystyle \Pr(\sup_{m &lt; k \le n} {\mathopen\vert S_k - S_m\mathclose\vert} &gt; 2t)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="274" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.png"
+ ALT="$\displaystyle \Pr(\sup_{m &lt; k \le n} {\mathopen\vert S_k - S_m\mathclose\vert} &gt; 2t \big\vert U_m \le t)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="217" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img151.png"
+ ALT="$\displaystyle \Pr(\sup_{m &lt; k \le n} {\mathopen\vert S_k\mathclose\vert} &gt; t \big\vert U_m \le t)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="373" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.png"
+ ALT="$\displaystyle {\frac{\Pr(\sup_{m&lt;k\le n} {\mathopen\vert S_k\mathclose\vert} &gt; ...
+...{1 \le k \le m} {\mathopen\vert S_k\mathclose\vert} \le t)
+}{ \Pr(U_m \le t) }}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="195" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.png"
+ ALT="$\displaystyle {\frac{1}{ 1 - \! \Pr(U&gt;t)}}\sum_{k=m+1}^n \tilde p_k ,$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+ 
+as required.
+
+<P>
+Now we rearrange the sum as follows: 
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+&& \sum_{1 \le m_1 < \cdots < m_{K} \le N}p_{0,m_1} p_{m_1,m_2}
+    \cdots p_{m_{K-1},m_K}\\
+  &=& \sum_{1 \le m_1 < \cdots < m_{K-1} \le N}p_{0,m_1} p_{m_1,m_2} 
+      \cdots p_{m_{K-2},m_{K-1}} \sum_{m_K = m_{K-1}+1}^Np_{m_{K-1},m_K} \\
+  &\le& {\frac{1 }{ 1 - \Pr(U>t)}}\sum_{1 \le m_1 < \cdots < m_{K-1} \le N}
+        p_{0,m_1} p_{m_1,m_2} \cdots p_{m_{K-2},m_{K-1}} 
+       \sum_{m_K = m_{K-1}+1}^N \tilde p_{m_K} .
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="316" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="$\displaystyle \sum_{1 \le m_1 &lt; \cdots &lt; m_{K} \le N}p_{0,m_1} p_{m_1,m_2}
+\cdots p_{m_{K-1},m_K}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="517" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img155.png"
+ ALT="$\displaystyle \sum_{1 \le m_1 &lt; \cdots &lt; m_{K-1} \le N}p_{0,m_1} p_{m_1,m_2}
+\cdots p_{m_{K-2},m_{K-1}} \sum_{m_K = m_{K-1}+1}^Np_{m_{K-1},m_K}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="599" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="$\displaystyle {\frac{1 }{ 1 - \Pr(U&gt;t)}}\sum_{1 \le m_1 &lt; \cdots &lt; m_{K-1} \le ...
+..._{m_1,m_2} \cdots p_{m_{K-2},m_{K-1}}
+\sum_{m_K = m_{K-1}+1}^N \tilde p_{m_K} .$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+ 
+Now we rearrange this last quantity to get 
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+&&\sum_{1 \le m_1 < \cdots < m_{K} \le N} p_{0,m_1} p_{m_1,m_2}
+    \cdots p_{m_{K-1},m_K}\\
+  &\le& {\frac{1 }{ 1 - \Pr(U>t)}}
+        \sum_{1 \le m_1 < \cdots < m_{K-2} < m_K\le N} 
+        p_{0,m_1} p_{m_1,m_2} \cdots p_{m_{K-3},m_{K-2}} \tilde p_{m_K} \times\\
+  && \times
+        \sum_{m_{K-1} = m_{K-2}+1}^{m_K} p_{m_{K-2},m_{K-1}} \\
+  &\le& {\frac{1 }{ (1- \Pr(U>t))^2}}
+        \sum_{1 \le m_1 < \cdots < m_{K-2} < m_K\le N}
+        p_{0,m_1} p_{m_1,m_2}
+        \cdots p_{m_{K-3},m_{K-2}} \tilde p_{m_K} \times\\
+  && \times
+        \sum_{m_{K-1} = m_{K-2}+1}^{m_K} \tilde p_{m_{K-1}} .
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="316" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="$\displaystyle \sum_{1 \le m_1 &lt; \cdots &lt; m_{K} \le N}p_{0,m_1} p_{m_1,m_2}
+\cdots p_{m_{K-1},m_K}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="549" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$\displaystyle {\frac{1 }{ 1 - \Pr(U&gt;t)}}
+\sum_{1 \le m_1 &lt; \cdots &lt; m_{K-2} &lt; m_K\le N}
+p_{0,m_1} p_{m_1,m_2} \cdots p_{m_{K-3},m_{K-2}} \tilde p_{m_K} \times$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="221" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$\displaystyle \times
+\sum_{m_{K-1} = m_{K-2}+1}^{m_K} p_{m_{K-2},m_{K-1}}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="567" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.png"
+ ALT="$\displaystyle {\frac{1 }{ (1- \Pr(U&gt;t))^2}}
+\sum_{1 \le m_1 &lt; \cdots &lt; m_{K-2} &lt; m_K\le N}
+p_{0,m_1} p_{m_1,m_2}
+\cdots p_{m_{K-3},m_{K-2}} \tilde p_{m_K} \times$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="184" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$\displaystyle \times
+\sum_{m_{K-1} = m_{K-2}+1}^{m_K} \tilde p_{m_{K-1}} .$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+Repeating this 
+argument <IMG
+ WIDTH="69" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.png"
+ ALT="$ (K-2)$"> more times, we eventually see that 
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+&& \sum_{1 \le m_ < \cdots < m_K \le N} p_{0,m_1} p_{m_1,m_2} \cdots
+     p_{m_{K-1},m_K}\cr 
+  &\le& {\frac{1 }{ (1 - \Pr(U>t))^K}}\sum_{1 \le m_1 < \cdots < m_K \le N}
+        \tilde p_{m_1} \tilde p_{m_2} \cdots \tilde p_{m_K} .
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="309" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.png"
+ ALT="$\displaystyle \sum_{1 \le m_ &lt; \cdots &lt; m_K \le N} p_{0,m_1} p_{m_1,m_2} \cdots
+p_{m_{K-1},m_K}\cr$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+Now, since <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img108.png"
+ ALT="$ K$"> distinct numbers may be rearranged in <IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img113.png"
+ ALT="$ K!$"> different ways,
+we have that 
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+&& \sum_{1 \le m_1 < \cdots < m_K \le N}
+     \tilde p_{m_1} \tilde p_{m_2} \cdots \tilde p_{m_K}\\
+  &=& {\frac{1 }{ K!}}
+      \sum_{\substack{1 \le m_1,m_2,\dots,m_K \le N\\m_1,m_2,\dots,m_K 
+      \text{ distinct}}} \tilde p_{m_1} \tilde p_{m_2} \cdots \tilde
+      p_{m_K}\\
+  &\le& {\frac{1 }{ K!}}
+        \sum_{1 \le m_1,m_2,\dots,m_K \le N} \tilde p_{m_1} \tilde p_{m_2}
+        \cdots \tilde p_{m_K}\\
+  &=& {\frac{1 }{ K!}} \left( \sum_{k=1}^N \tilde p_{k} \right)^K . 
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="241" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$\displaystyle \sum_{1 \le m_1 &lt; \cdots &lt; m_K \le N}
+\tilde p_{m_1} \tilde p_{m_2} \cdots \tilde p_{m_K}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="289" HEIGHT="88" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$\displaystyle {\frac{1 }{ K!}}
+\sum_{\substack{1 \le m_1,m_2,\dots,m_K \le N\\ ...
+...dots,m_K
+\text{ distinct}}} \tilde p_{m_1} \tilde p_{m_2} \cdots \tilde
+p_{m_K}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$\displaystyle \le$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="280" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.png"
+ ALT="$\displaystyle {\frac{1 }{ K!}}
+\sum_{1 \le m_1,m_2,\dots,m_K \le N} \tilde p_{m_1} \tilde p_{m_2}
+\cdots \tilde p_{m_K}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="134" HEIGHT="85" ALIGN="MIDDLE" BORDER="0"
+ SRC="img166.png"
+ ALT="$\displaystyle {\frac{1 }{ K!}} \left( \sum_{k=1}^N \tilde p_{k} \right)^K .$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+ 
+Since <!-- MATH
+ \begin{displaymath}
+\sum_{k=1}^N \tilde p_k= \Pr(U > t),
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="164" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img167.png"
+ ALT="$\displaystyle \sum_{k=1}^N \tilde p_k= \Pr(U &gt; t),$">
+</DIV><P></P>
+we obtain the
+result.
+
+<P>
+Let us now understand what this result means in terms of the
+decreasing rearrangement.
+
+<P>
+<P>
+<DIV><A NAME="klass-nowicki-decr"><B>Corollary  3.2</B></A> &nbsp; 
+<I>There exists  a universal positive constant 
+<IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$"> such that for any sequence of Banach valued independent random variables
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">, and for <!-- MATH
+ $0<t\le s \le 1/2$
+ -->
+<IMG
+ WIDTH="134" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img168.png"
+ ALT="$ 0&lt;t\le s \le 1/2$"> we 
+have </I><!-- MATH
+ \begin{displaymath}
+U^*(t) \le c_1 {\frac{\log(1/t) }{
+\max\{\log(1/s),\log\log(4/t)\}}} \bigl(U^*(s) + M^*(t/2)\bigr).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="472" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img169.png"
+ ALT="$\displaystyle U^*(t) \le c_1 {\frac{\log(1/t) }{
+\max\{\log(1/s),\log\log(4/t)\}}} \bigl(U^*(s) + M^*(t/2)\bigr). $">
+</DIV><P></P></DIV><P></P>
+
+<P>
+
+<P>
+<BR>
+<B>Proof:</B>  Notice that if <!-- MATH
+ $f,g:[0,\infty)\to[0,\infty]$
+ -->
+<IMG
+ WIDTH="175" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.png"
+ ALT="$ f,g:[0,\infty)\to[0,\infty]$"> are 
+non-increasing functions,
+then <!-- MATH
+ $(\max\{f,g\})^{-1} = \max\{f^{-1},g^{-1}\}$
+ -->
+<IMG
+ WIDTH="264" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.png"
+ ALT="$ (\max\{f,g\})^{-1} = \max\{f^{-1},g^{-1}\}$">, and if <IMG
+ WIDTH="51" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$ f \le g$">, 
+then <!-- MATH
+ $f^{-1} \le g^{-1}$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.png"
+ ALT="$ f^{-1} \le g^{-1}$">, where here <IMG
+ WIDTH="34" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img174.png"
+ ALT="$ f^{-1}$"> denotes either the left
+or right continuous inverse of <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img175.png"
+ ALT="$ f$">. Since <!-- MATH
+ $A+B \le 2 \max\{A,B\}$
+ -->
+<IMG
+ WIDTH="186" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.png"
+ ALT="$ A+B \le 2 \max\{A,B\}$"> for
+any 
+two positive numbers <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ A$"> and <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.png"
+ ALT="$ B$">, from Theorem&nbsp;<A HREF="#klass-nowicki">3.1</A>, 
+and setting <IMG
+ WIDTH="45" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img177.png"
+ ALT="$ s=t$">, we have 
+that if 
+<!-- MATH
+ $\Pr(U>t) \le 1/2$
+ -->
+<IMG
+ WIDTH="139" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img178.png"
+ ALT="$ \Pr(U&gt;t) \le 1/2$">, then for all positive integers <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img108.png"
+ ALT="$ K$"> 
+<!-- MATH
+ \begin{displaymath}
+\Pr(U > (3 K - 1) t)\le 2 \max \left\{{\frac{1 }{ K!}}
+\bigl(2\Pr(U > t)\bigr)^K, \Pr(M > t) \right\} .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="518" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img179.png"
+ ALT="$\displaystyle \Pr(U &gt; (3 K - 1) t)\le 2 \max \left\{{\frac{1 }{ K!}}
+\bigl(2\Pr(U &gt; t)\bigr)^K, \Pr(M &gt; t) \right\} .$">
+</DIV><P></P>
+Taking inverses, we
+see 
+that if <!-- MATH
+ $(K!t/2)^{1/K} \le 1/2$
+ -->
+<IMG
+ WIDTH="147" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img180.png"
+ ALT="$ (K!t/2)^{1/K} \le 1/2$">, then <!-- MATH
+ \begin{displaymath}
+{\frac{1 }{3K-1}} U^*(t) \le
+\max\left
+\{ U^*\left({\frac12}\left({\frac{K!t }{ 2}}\right)^{1/K}\right) ,
+M^*\left({\frac{t}{2}}
+\right) \right\} .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="457" HEIGHT="76" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.png"
+ ALT="$\displaystyle {\frac{1 }{3K-1}} U^*(t) \le
+\max\left
+\{ U^*\left({\frac12}\left({\frac{K!t }{ 2}}\right)^{1/K}\right) ,
+M^*\left({\frac{t}{2}}
+\right) \right\} .$">
+</DIV><P></P>
+Now, using the fact that <!-- MATH
+ $\max\{A,B\} \le A+B$
+ -->
+<IMG
+ WIDTH="174" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img182.png"
+ ALT="$ \max\{A,B\} \le A+B$">
+for any 
+positive numbers <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ A$"> and <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.png"
+ ALT="$ B$">, and by choosing <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img108.png"
+ ALT="$ K$"> to be the smallest
+integer such that <!-- MATH
+ $s \le(K!t / 2)^{1/K}$
+ -->
+<IMG
+ WIDTH="128" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.png"
+ ALT="$ s \le(K!t / 2)^{1/K}$">, and by some elementary but
+tedious algebra, the result follows. 
+
+<P>
+Since this paper was submitted, Mark Rudelson pointed out to us a
+couple of ways that Theorem&nbsp;<A HREF="#klass-nowicki">3.1</A> can be improved.
+First, we may obtain a result closer to that of
+Ledoux and Talagrand (1991, Theorem 6.17.
+Let <!-- MATH
+ $({\left|X_n\right|}^*)$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.png"
+ ALT="$ ({\left\vert X_n\right\vert}^*)$"> be the order statistics of <!-- MATH
+ $({\left|X_n\right|})$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img185.png"
+ ALT="$ ({\left\vert X_n\right\vert})$">, that is,
+the values of <!-- MATH
+ $({\left|X_n\right|})$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img185.png"
+ ALT="$ ({\left\vert X_n\right\vert})$"> rearranged in decreasing order.  
+Then exactly the same proofs gives the
+following strengthening: for all positive integers <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img108.png"
+ ALT="$ K$">
+<!-- MATH
+ \begin{displaymath}
+\Pr(U > 2K t + (K-1)s)
+   \le {\frac{1 }{ K!}} \left(\frac{\Pr(U > t) }{ 1 -
+   \Pr(U > t) }\right)^{K}+
+   \Pr\left(\sum_{n=1}^K {\left|X_n\right|}^* > (K-1)s\right) ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="676" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img186.png"
+ ALT="$\displaystyle \Pr(U &gt; 2K t + (K-1)s)
+\le {\frac{1 }{ K!}} \left(\frac{\Pr(U &gt; t...
+...ht)^{K}+
+\Pr\left(\sum_{n=1}^K {\left\vert X_n\right\vert}^* &gt; (K-1)s\right) ,$">
+</DIV><P></P>
+whenever <!-- MATH
+ $\Pr(U>t) < 1$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img110.png"
+ ALT="$ \Pr(U&gt;t) &lt; 1$">.
+
+<P>
+Secondly, a similar result is also true if we replace <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$ U$"> by <!-- MATH
+ ${\left|S\right|}$
+ -->
+<IMG
+ WIDTH="28" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.png"
+ ALT="$ {\left\vert S\right\vert}$">.
+This is certainly the case if the sequence <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> consists of 
+symmetric random variables, since they satisfy the L&#233;vy property.  
+Now let <!-- MATH
+ $(\bar X_n)$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img188.png"
+ ALT="$ (\bar X_n)$"> be an independent
+copy of <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">, and let <!-- MATH
+ $\tilde X_n = X_n - \bar X_n$
+ -->
+<IMG
+ WIDTH="127" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img189.png"
+ ALT="$ \tilde X_n = X_n - \bar X_n$">.  Let <IMG
+ WIDTH="17" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img190.png"
+ ALT="$ \bar S$"> and
+<IMG
+ WIDTH="17" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img191.png"
+ ALT="$ \tilde S$"> respectively denote the sums formed from these two sequences of
+random variables.  Thus we have the result for <!-- MATH
+ ${\left|\tilde S\right|}$
+ -->
+<IMG
+ WIDTH="30" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img192.png"
+ ALT="$ {\left\vert\tilde S\right\vert}$">, since it is
+a sum of symmetric random variables.  But
+<!-- MATH
+ \begin{displaymath}
+\Pr({\left|\tilde S\right|} > c t)
+   \ge \Pr({\left|S\right|} > (c+1)t \text{ and } {\left|\bar S\right|}\le t)
+   = \Pr({\left|S\right|} > (c+1)t) \Pr({\left|S\right|} \le t) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="267" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img193.png"
+ ALT="$\displaystyle \Pr({\left\vert\tilde S\right\vert} &gt; c t)
+\ge \Pr({\left\vert S\right\vert} &gt; (c+1)t$">&nbsp; &nbsp; and&nbsp;<IMG
+ WIDTH="338" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.png"
+ ALT="$\displaystyle {\left\vert\bar S\right\vert}\le t)
+= \Pr({\left\vert S\right\vert} &gt; (c+1)t) \Pr({\left\vert S\right\vert} \le t) .$">
+</DIV><P></P>
+Arguing in this way, we quickly see that there are constants <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$">, <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$">,
+and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$ c_3$"> such that
+<!-- MATH
+ \begin{displaymath}
+\Pr(S > c_1 K(s+t))
+   \le \frac{\Pr(S > t)^K }{ K!(1 -
+   c_2 \Pr(S > c_3 t))^{K+1} }+ \Pr(M > s) ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="523" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="$\displaystyle \Pr(S &gt; c_1 K(s+t))
+\le \frac{\Pr(S &gt; t)^K }{ K!(1 -
+c_2 \Pr(S &gt; c_3 t))^{K+1} }+ \Pr(M &gt; s) ,$">
+</DIV><P></P>
+whenever <!-- MATH
+ $\Pr(S > c_3 t) < c_2^{-1}$
+ -->
+<IMG
+ WIDTH="151" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img196.png"
+ ALT="$ \Pr(S &gt; c_3 t) &lt; c_2^{-1}$">.
+
+<P>
+Thus a version of 
+Corollary&nbsp;<A HREF="#klass-nowicki-decr">3.2</A> is also true when <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$ U$"> is replaced
+by <!-- MATH
+ ${\left|S\right|}$
+ -->
+<IMG
+ WIDTH="28" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img187.png"
+ ALT="$ {\left\vert S\right\vert}$">.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html42"
+  HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html40"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html34"
+  HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html43"
+  HREF="node4.html">The L&#233;vy Property</A>
+<B> Up:</B> <A NAME="tex2html41"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html35"
+  HREF="node2.html">Notation and definitions</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

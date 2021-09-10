@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE></TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith&#44; </B> <A HREF="log-prodi-serrin.html"><b>Conditions implying regularity of the three dimensional Navier-Stokes equation.</b></A>
+<i>Applications of Mathematics <b>50</b>, (2005), 451-464.</i>
+We obtain logarithmic improvements for conditions for regularity of the Navier-Stokes equation, similar to those of Prodi-Serrin or Beale-Kato-Majda.  Some of the proofs make use of a stochastic approach involving Feynman-Kac like inequalities.  As part of the our methods, we give a different approach to a priori estimates of Foias, Guillope and Temam.
+(<A HREF="log-prodi-serrin-12.tex">tex</A>,
+<A HREF="log-prodi-serrin-12.dvi">dvi</A>,
+<A HREF="log-prodi-serrin-12.ps">ps</A>,
+<A HREF="log-prodi-serrin-12.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

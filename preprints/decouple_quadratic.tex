@@ -1,0 +1,433 @@
+\input amstex
+\documentstyle{amsppt}
+\overfullrule=0pt
+\document
+
+
+\topmatter
+\title Bounds on the Tail Probability of 
+U-Statistics and Quadratic Forms \endtitle
+\author Victor H. de la Pe\~na and S.~J.~Montgomery-Smith \endauthor
+\address  Department of Statistics, Columbia University, 
+New York, New York 10027
+\endaddress
+\email vp\@wald.stat.columbia.edu
+\endemail
+\address Department of Mathematics, University of Missouri, Columbia, Missouri
+65211
+\endaddress
+\email stephen\@mont.cs.missouri.edu
+\endemail
+\thanks Both authors were supported by NSF grants. \endthanks
+\subjclass AMS 1991 subject classifications:  Primary 60E15. 
+\indent Secondary 60D05,
+60E05 \endsubjclass
+\keywords
+U-statistics, Quadratic Forms, Decoupling \endkeywords
+
+\endtopmatter
+
+It is very common for expressions of the form:
+$$ \sum_{1\le i_1 \ne \dots \ne i_k \le n}
+   f_{i_1 \dots i_k}(X_{i_1},\dots,X_{i_k}) $$
+to appear in Probability theory.  Here $\{X_i\}$\ is a 
+sequence of independent
+random variables taking values in a measurable space $(S, {\Cal S})$,
+and $\{f_{i_1\dots i_k}\}$ is a sequence of measurable functions
+from  $S^k$ into a 
+Banach Space $(B,
+\| \cdot \|)$.  Special cases of this type of random variable appear, 
+for example, in Statistics in
+the form of U-statistics and quadratic forms.
+Throughout we will refer to them as generalized U-statistics.
+
+There is great interest in decoupling such quantities, that is, by replacing
+the above quantity by the expression
+$$ \sum_{1\le i_1 \ne \dots \ne i_k \le n}
+   f_{i_1 \dots i_k}(X_{i_1}^{(1)},\dots,X_{i_k}^{(k)}),$$
+where $\{X_i^{(1)}\}$, $\{X_i^{(2)}\},\dots$,
+$\{X_i^{(k)}\}$ are $k$\ independent
+copies of $\{X_i\}$.  
+
+Decoupling inequalities allow one to compare expressions of the first kind
+with expressions of the second kind.  
+Such results permit the almost direct transfer of results for sums of
+independent random variables to the case of generalized U-statistics. 
+The reason being that 
+conditionally on $\{X_i^{(2)}\},...,\{X_i^{(k)}\}$,
+the second sum above is a sum 
+independent random variables. 
+It is important to remark that such results have 
+led to the development of several optimal 
+results in the functional theory of U-Statistics (cf. [1]
+and [7]) and various other areas
+including the study of the invertibility of large matrices
+(cf. [2]),  
+stochastic integration (cf. [10]),
+the study of integral operators on Lebesgue-Bochner spaces 
+(cf. a result of T. R. McConnell and D. Burkholder found in
+[3]). Aside from those directly cited in this paper, other
+important contributors to the area of
+decoupling inequalities include
+A. de Acosta,  
+P. Hitczenko, 
+J. Jacod, 
+A. Jakubowski, 
+O. Kallenberg, 
+M. Klass,
+W. Krakowiak,
+G. Pisier,
+J. Rosinski, and
+J. Szulga.
+Due to space restrictions, we refer the reader to 
+[10] for a more complete account.
+
+In this paper, we announce a result, which allows one to compare
+the tail probabilities of the above quantities.
+In particular, this inequality 
+represents the definitive generalization 
+of the decoupling inequalities for multilinear forms of McConnell
+and Taqqu [11] and the more general decoupling inequalities for
+expectations of convex functions of U-statistics introduced in 
+[4]. 
+
+\proclaim{Theorem 1} There is a constant $C_k>0$, depending only on $k$, 
+such that
+for all $n\ge k$, 
+$$ P(\|\sum_{1\le i_1 \ne \dots \ne i_k \le n}
+   f_{i_1 \dots i_k}(X_{i_1},\dots,X_{i_k}) \| \ge t) \qquad \qquad 
+\qquad\qquad$$
+$$\qquad \qquad\le
+   C_k P(C_k\|\sum_{1\le i_1 \ne \dots \ne i_k \le n}
+   f_{i_1 \dots i_k}(X_{i_1}^{(1)},\dots,X_{i_k}^{(k)}) \| \ge t), \hbox
+{ for all $t>0$.}\leqno(1)$$
+Moreover, the reverse inequality holds if 
+the functions satisfy the condition
+$$ f_{i_1 \dots i_k}(X_{i_1},\dots,X_{i_k}) =
+   f_{i_{\pi(1)} \dots i_{\pi(k)}}(X_{i_{\pi(1)}},\dots,X_{i_{\pi(k)}}) $$
+for all permutations $\pi$\ of $\{1,\dots,k\}$. 
+That is, 
+$$ P(\|\sum_{1\le i_1 \ne \dots \ne i_k \le n}
+   f_{i_1 \dots i_k}(X_{i_1},\dots,X_{i_k}) \| \ge t) 
+\qquad\qquad
+\qquad\qquad$$
+$$ \qquad\qquad\ge
+  {1\over C_k} P({1\over C_k}\|\sum_{1\le i_1 \ne \dots \ne i_k \le n}
+   f_{i_1 \dots i_k}(X_{i_1}^{(1)},\dots,X_{i_k}^{(k)}) \| \ge t),  \hbox
+{ for all $t>0$.}\leqno(2)$$
+Note that
+the expression $  i_1 \ne \dots \ne i_k $\ means that $i_r \ne i_s$\ for all
+$1\le r \ne  s \le k$.
+\endproclaim
+
+An example to illustrate this result can be found in the study of random
+graphs (see also [5]).  
+Given a sequence of independent random points $\{X_i\}$\
+in $R^N$, we might consider a measure of clustering
+$$ D_1 = \sum_{1\le i \ne j \le n} d(X_i,X_j) ,$$
+where $d(x,y)$\ denotes the distance between $x$\ and $y$.
+The above result allows us to compare $D_1$, which measures the distance
+`within' the graph formed by the random cluster of points 
+$\{X_i\}$, to a quantity $D_2$, which is a  measure of the distance `between'
+the two independent clusters $\{X_i\}$ and $\{\tilde X_i \}$,
+$$D_2 = \sum_{1\le i \ne j \le n} d(\tilde X_i, X_j), $$
+\noindent where $\{\tilde X_i\}$ is an independent copy of $\{X_i\}$. 
+Then we have for all $t>0$ that,
+$$ C_2^{-1} P(|D_1| \ge C_2 t) \le P(|D_2| \ge t)
+   \le C_2 P(|D_1| \ge C_2^{-1} t) .$$
+
+Other examples where U-statistics are used in graph theory may be found
+in [8]. 
+
+\bigskip
+
+We will prove the Theorem in the special case that $k=2$. 
+For ease of notation, let us suppose that $ \tilde X_i = X_i^{(1)}$,
+and denote $ X_i = X_i^{(2)}$.
+The proof
+of the more general result will appear elsewhere.
+We will use a sequence of lemmas. 
+Following [6], 
+our point of departure is equation (4) below which
+provides a partial decoupling result and focuses attention on a
+polarized version of the U-statistic kernel as the key element in 
+the development of a solution of the problem at hand. 
+Let 
+$$T_n =
+\sum_{1\le i\ne j\le n} \{f_{ij}(X_i, X_j)+
+f_{ij}(X_i, \tilde X_j)+   
+f_{ij}(\tilde X_i, X_j)
++ f_{ij}(\tilde X_i,\tilde X_j)\}, \leqno (3)$$ then by using the
+triangle inequality one obtains that,
+$$\eqalign {\noindent P(\|\sum_{1\le i\ne j\le n} f_{ij}(X_i, X_j) 
++ f_{ij}(\tilde X_i,\tilde X_j)\| \ge  t )\le & \cr  
+P(\| T_n 
+\| \ge { t \over 3} ) 
++
+2P(\|\sum_{1\le i\ne j\le n} f_{ij}(X_i, \tilde X_j)\| \ge { t \over 3} ).
+} \leqno (4) $$
+This observation reduces the proof (1) to the problem  of 
+obtaining the bounds 
+$$P(\|\sum_{1\le i\ne j\le n} f_{ij}(X_i, X_j)\| \ge t) \le
+cP(c\|\sum_{1\le i\ne j\le n} f_{ij}(X_i, X_j) +
+f_{ij}(\tilde X_i,\tilde X_j)\| \ge  t )
+, \hbox{ and} \leqno (5)$$
+$$  P(\|T_n
+\| \ge { t } ) 
+ \le  
+cP(c\|\sum_{1\le i\ne j\le n} f_{ij}(\tilde X_i,X_j)\|  \ge  t).\leqno (6)$$ 
+We obtain (5) by means of Lemma 1 
+(possibly of independent interest).
+The proof of (6) is somewhat involved. In obtaining it, we used 
+(conditionally) an extension of the Paley-Zygmund inequality  found in
+[10] in combination with a symmetrization identity 
+similar to the one introduced in [12].
+
+\proclaim{Lemma 1} Let X, Y be two i.i.d. random variables.
+Then
+$$
+P(\|X\|\ge t)  \le 
+3P(\|X+Y\|\ge {2t\over 3}). \leqno (7) $$
+\endproclaim
+
+\demo{Proof}
+Let $X$, $Y$\ and $Z$ be i.i.d. random
+variables. Then
+$$\eqalign{P(\|X \|& \ge t)  \cr
+&=
+P(\|(X+Y) + (X+Z) - (Y+Z) \ge 2t) \cr
+& \le
+P(\|X+Y\| \ge {2t\over 3})+P(\|X+Z\| \ge {2t\over 3})+
+P(\|Y+Z\| \ge {2t\over 3}) \cr
+& =
+3P(\|X+Y\| \ge {2t\over 3}). \cr }$$
+\enddemo
+
+It is to be remarked that the
+very desirable `Universal Symmetrization Lemma', 
+$P(\|X\|\ge t)  \le 
+c P(c \|X-Y\|\ge t)$\ is not true.  This makes the above result all the more
+surprising.
+
+The following is an observation found in Section 6.2 of
+[10] will be used in combination with 
+Lemma 2 in proving Theorem 1.
+
+\proclaim{Proposition 1}
+Let $Y$ be any mean zero random variable with values in a
+Banach Space $(B, \|\cdot \|)$. Then, for all $a\in B$,
+$P(\|a+Y\| \ge \|a\|) \ge {\kappa \over 4}$, where,
+$\kappa = \inf_{x'\in B'}
+ {(E|x'(Y)|)^2 \over E(x'(Y))^2}$.
+\endproclaim
+
+As a consequence of the above we obtain the following lemma.
+
+\proclaim{Lemma 2}
+ Let $x, a_i, b_{ij}$ all belong to a Banach space $ (B, \|\cdot\|)$,
+with $b_{ii} =0$. Let $\{\epsilon_i\}$ be a sequence of independent and 
+symmetric
+Bernoulli
+random variables, that is, $P(\epsilon_i = 1) = P(\epsilon_i =-1) 
+={1\over 2}$.
+Then,
+for a universal constant $c > 0 $,
+$$P(\|x+\sum_{i=1}^n a_i \epsilon_i + 
+\sum_{1\le i\ne j \le n} b_{ij} \epsilon_i \epsilon_j \| \ge \|x\|)
+\ge c^{-1}.$$
+\endproclaim
+
+\demo{Proof} Suppose that $a_i, b_{ij}$ are in $R$, then it follows
+easily from (1.4) of [9] (see also sections 6.2 and
+6.5 of [10]) that
+$$ (E|\sum_{i=1}^n a_i\epsilon_i + 
+   \sum_{1\le i \ne j \le n} b_{ij} \epsilon_i \epsilon_j |^4)^{1\over 4} 
+   \le c (
+   E|\sum_{i=1}^n a_i\epsilon_i + 
+   \sum_{1\le i \ne j \le n} b_{ij} \epsilon_i \epsilon_j |^2)^{1/2} ,$$ 
+for some constant $c>0$.
+Next, observe that $\|\xi \|_4 \le c \|\xi \|_2 $ 
+implies that 
+$\|\xi \|_2 \le c^2 \|\xi \|_1 $ (since $E(\xi )^2 \le 
+(E|\xi |)^{2/3}\cdot (E(\xi )^4)^{1/3}$) . 
+The result then follows by
+Proposition~1.
+\enddemo
+
+\demo{Proof 
+of Theorem 1}
+We first transform the problem of proving (6) into a problem dealing  
+(conditionally) with a non-homogeneous binomial 
+in Bernoulli random variables.
+Let 
+$\{\epsilon_i \}$ be a sequence of independent
+and symmetric
+Bernoulli random variables independent of $\{X_i\}$, $\{\tilde X_i\}$.  
+Let $(Z_i, \tilde Z_i) = (X_i, \tilde X_i) $ if $\epsilon_i =  1$ 
+and $(Z_i, \tilde Z_i) = (\tilde X_i,  X_i) $ if $\epsilon_i = -  1$.
+Then, 
+$$\eqalign{ 4f_{ij}(\tilde Z_i, Z_j) & = \{(1-\epsilon_i)(1+\epsilon_j)
+f_{ij}(X_i,X_j) 
++ (1+\epsilon_i)(1+\epsilon_j)
+f_{ij}(\tilde X_i,X_j) \cr
+&
++ (1-\epsilon_i)(1-\epsilon_j)
+f_{ij}( X_i,\tilde X_j) 
++ (1+\epsilon_i)(1-\epsilon_j)
+f_{ij}( \tilde X_i,\tilde X_j) \} .\cr }\leqno (8)$$
+Setting ${\Cal G} = \sigma (X_i, \tilde X_i ; i=1,...,n)$
+we get 
+$$4E(f_{ij}(\tilde Z_i, Z_j)| {
+\Cal G})  =\{ 
+f_{ij}(X_i,X_j) + 
+f_{ij}(\tilde X_i,X_j) +
+f_{ij}( X_i,\tilde X_j) +
+f_{ij}( \tilde X_i,\tilde X_j)\}.\leqno (9) $$
+>From Lemma 2, (3), (8) and (9), and letting $x=T_n$,
+it follows that for some $c>0$,
+$$P(4\|\sum_{1\le i\ne j\le n} f_{ij}(\tilde Z_i, Z_j) \| \ge 
+\|T_n\|
+\big| {\Cal G} ) \ge c^{-1} .
+$$
+Integrating over the set
+$\{\| T_n
+\|  \ge t\}$
+we get
+$$ {1 \over c}P(\|
+T_n\|  \ge t) \le
+P(4\|\sum_{1\le i\ne j\le n} f_{ij}(\tilde Z_i,  Z_j) \|  \ge t) =  
+P(4\|\sum_{1\le i\ne j\le n} f_{ij}(\tilde X_i,  X_j) \| \ge  t),  $$ 
+\noindent since the sequence $\{(X_i,\tilde X_i), i=1,...,n\}$
+has the same distribution as
+$\{(Z_i,\tilde Z_i), i=1,...,n\}.$ The proof is completed by using this
+inequality along with (4) and (5).
+
+The proof of (2) is similar and  uses an analogue of (8) concerning
+$4f(Z_i,Z_j)$. 
+In obtaining this bound, one does not need to use Lemma 1. Instead
+one 
+uses the symmetry condition on the functions $f_{ij}$, introduced after (1) 
+and equation (3) to get,
+$$P(\|\sum_{1\le i \ne j \le n} f_{ij}(\tilde X_i,X_j) \| \ge t) =
+P(\|\sum_{1\le i \ne j \le n} f_{ij}(X_i,\tilde X_j) +
+f_{ij}(\tilde X_i,X_j) \| \ge 2t)  $$
+$$ \le P(\| T_n
+  \| \ge {2\over 3}t)  
++ 2P(\|\sum_{1\le i \ne j \le n} f_{ij}(X_i,X_j) \| \ge {2\over 3}t). $$
+
+\enddemo
+
+\Refs
+
+\ref \no 1 \by M.~Arcones and E.~Gin\'e \paper Limit theorems for U-processes
+\jour Ann. Probab. \vol 21 (3) \pages 1495--1592 \yr 1993 \endref
+
+\ref \no 2 \by J.~Bourgain and L.~Tzafriri \paper 
+Invertibility of ``large'' submatrices with
+applications to the geometry of Banach spaces and
+harmonic analysis
+\jour Israel J. Math. \vol 57 (3) \pages 137--224 \yr 1987 \endref
+
+\ref \no 3 \by D.~Burkholder \paper A geometric condition that implies the 
+existence
+of certain singular integrals of Banach-space-valued functions
+\inbook Conference on Harmonic Analysis in Honor of A. Zygmund
+\eds W.~Beckner, A.P.~Calderon, R.~Fefferman, P.~Jones
+\publ Wadsworth \pages 270--286 \yr 1983 \endref
+
+\ref \no 4 \by V.H.~de~la~Pe\~na \paper Decoupling and Khintchine's 
+inequalities
+for U-statistics \jour Ann. Probab. \vol 20 (4) \pages 1877--1892 \yr 1992
+\endref
+
+\ref \no 5 \by V.H.~de~la~Pe\~na \paper Nuevas desigualdades para 
+U-estad\'isticas y gr\'aficas aleatorias \inbook Proceedings of the fourth
+Latin American Congress of Probability and Math. Stat. (CLAPEM),
+M\'exico City, September 1990 \yr 1992 \endref
+
+\ref \no 6 \by V.H.~de~la~Pe\~na, S.J.~Montgomery-Smith and
+J.~Szulga \paper Contraction and decoupling inequalities for  
+multilinear forms and U-statistics \jour Preprint \yr 1992 \endref
+
+\ref \no 7 \by E.~Gin\'e and J.~Zinn
+\paper A remark on convergence in
+distribution of U-statistics
+\jour Ann. Probab. (to appear) \yr 1992 \endref
+
+\ref \no 8 \by S.~Janson and K.~Nowicki \paper The asymptotic distributions of 
+generalized U-statistics with applications to random graphs
+\jour Probab. Theory Relat. Fields \vol 90 \pages 341--375 \yr 1991 \endref
+
+\ref \no 9 \by S.~Kwapien and J.~Szulga \paper Hypercontraction methods in
+moment inequalities for series of independent random variables in
+normed spaces \jour Ann. Probab. \vol 19 (1)  \pages 369--379 \yr 1991 \endref
+
+\ref \no 10 \by S.~Kwapien and W.~Woyczynski 
+\book Random series and stochastic
+integrals: simple and multiple \publ Birkhauser, NY \yr 1992 \endref
+
+\ref \no 11 \by T.R.~McConnell and M.S.~Taqqu 
+\paper Decoupling inequalities
+for multilinear forms in independent symmetric random variables
+\jour Ann. Probab. \vol 14 (3) \pages 943--954 \yr 1986 \endref
+
+\ref \no 12 \by D.~Nolan and D.~Pollard D 
+\paper U-processes: rates of convergence
+\jour Annals of Stat. \vol 15 (2) \pages 780--799 \yr 1987 \endref
+
+\endRefs
+
+\enddocument
+
+
+
+\item{1.} Arcones, M. and Gin\'e, E. (1993). Limit theorems for U-processes.
+{\it Ann. Probab.}, Vol. {\bf 21} (3), 1494-1542.
+
+\item{2.} Bourgain, J. and Tzafriri, L. (1987).
+Invertibility of ``large'' submatrices with
+applications to the geometry of Banach spaces and
+harmonic analysis. {\it Israel J. Math.} {\bf 57} (3)
+137-224. 
+
+\item{3.} Burkholder, D. (1983). A geometric condition that implies the existenceof certain singular integrals of Banach-space-valued functions,
+{\it Conference on Harmonic Analysis in Honor of A. Zygmund}, W. Beckner, A.P. 
+Calderon, R. Fefferman, P. Jones, Eds., Wadsworth, pp. 270-286. 
+
+\item {4.} de la Pe\~na, V. H. (1992a). Decoupling and Khintchine's 
+inequalities
+for U-statistics. {\it Ann. Probab.}, Vol. {\bf 20} (4) 1877-1892.
+
+\item {5.} de la Pe\~na, V. H. (1992b). Nuevas desigualdades para 
+U-estad\'isticas y gr\'aficas aleatorias. {\it Proceedings of the fourth
+Latin American Congress of Probability and Math. Stat. (CLAPEM)},
+M\'exico City, September 1990.
+
+\item {6.} de la Pe\~na V. H., Montgomery-Smith, S. J.\ and
+Szulga, J.\ (1992).  Contraction and decoupling inequalities for  
+multilinear forms and U-statistics. {\it Preprint.}
+
+\item{7.} Gin\'e, E. and Zinn, J. (1992). A remark on convergence in
+distribution of U-statistics. To appear in {\it Ann. Probab.}
+
+\item{8.} Janson, S. and Nowicki, K. (1991). The asymptotic distributions of 
+generalized U-statistics with applications to random graphs.
+{\it Probab. Theory Relat. Fields} {\bf 90}, 341-375.
+
+\item{9.} Kwapien, S, and Szulga, J. Hypercontraction methods in
+moment inequalities for series of independent random variables in
+normed spaces. {\it Ann. Probab.} {\bf 19} (1), 369-379.
+
+\item {10.} Kwapien, S, and Woyczynski, W. (1992). 
+Random series and stochastic
+integrals: simple and multiple. Birkhauser, NY.
+
+\item {11.} McConnell, T.R. and Taqqu, M.S. (1986).  Decoupling inequalities
+for multilinear forms in independent symmetric random variables.
+{\it Ann. Probab.} {\bf 14} (3) 943-954.
+
+\item{12.} Nolan D. and Pollard D. (1987). U-processes: rates of convergence.
+{\it Annals of Stat.} {\bf 15} (2) 780-799.
+
+
+

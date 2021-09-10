@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Improved material point method for simulating the zona failure response in piezo-assisted intracytoplasmic sperm injection.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Yong Gan, Zhen Chen and Stephen Montgomery-Smith&#44; Improved material point method for simulating the zona failure response in piezo-assisted intracytoplasmic sperm injection.</B>
+<i>CMES: Computer Modeling in Engineering & Sciences, Vol. 73, No. 1, pp. 45-76, 2011.</i>
+The material point method (MPM), which is an extension from computational fluid dynamics (CFD) to computational solid dynamics (CSD), is improved for the coupled CFD and CSD simulation of the zona failure response in piezo-assisted intracytoplasmic sperm injection (piezo-ICSI). To evaluate the stresses at any zona material point, a plane stress assumption is made in the local tangent plane of the membrane point, and a simple procedure is proposed to find the effective point connectivity for the orientation of the local tangent plane. With an iterative algorithm in each time step, the original MPM is improved to better simulate fluid dynamics problems involving strong shocks. The use of an Eulerian mesh for solving the momentum equations enables the MPM to automatically handle fluid-membrane interactions without requiring the interface-tracking module.  Several examples are used to demonstrate the robustness and efficiency of the proposed numerical scheme for simulating three-dimensional fluid-membrane interactions. Finally, the proposed procedure is applied to the shock-induced zona failure analysis for the piezo-ICSI experiment.
+(<A HREF="fluid-membrane2.pdf">pdf</A>, <A HREF="http://www.techscience.com/doi/10.3970/cmes.2011.073.045.html">actual paper</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

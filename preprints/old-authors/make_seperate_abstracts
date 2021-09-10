@@ -1,0 +1,80 @@
+#!/usr/bin/perl -w
+
+open(INDEX,"index.html");
+$index = join '',<INDEX>;
+close(INDEX);
+
+$index =~ /(.*\<UL\>)(.*)(\<\/UL\>.*)/s;
+$start = $1;
+$middle = $2;
+$end = $3;
+
+open(INDEX,"> index2.html");
+print INDEX $start;
+
+@paperlist = split '<LI>',$middle;
+$first = 1;
+foreach $paper (@paperlist) {
+  if ($paper =~ /\<A HREF\=\"([^\"]+)\.tex\"\>/ || $paper =~ /\<A HREF\=\"([^\"\/]+)\.pdf\"\>/ || $paper =~ /^\s*\<B\>\s*\([^\(]*\)\s*\<A HREF\=\"[^\"]+\"\>\s*(\S+)/ || $paper =~ /^\s*\<B\>\s*\([^\(]*\)\s+(\S+)/) {
+    print "$1\n";
+    $name = $1;
+    $name =~ s/\d+$//;
+    $name =~ s/\_$//;
+    $name =~ s/\-$//;
+    $paper =~ s/^\n\<B\>(.*?)\<\/B\>//s;
+    $title = $1;
+    if ($title =~ s/(\(with.*?\)\s*)//s) {
+      $with = $1;
+    }
+    else {
+      $with = '';
+    }
+    print INDEX "<LI>" if !$first;
+    $first = 0;
+    print INDEX "\n<B>$with";
+    if ($title =~ /^\<A HREF/) {
+      print INDEX $title;
+    }
+    else {
+      print INDEX "<A HREF=\"$name.html\">$title</A>";
+    }
+    print INDEX "</B>$paper";
+    open(PAPER,"> $name.html");
+    $title = $1 if $title =~ /^\<A HREF\=\".*?\"\>(.*)\<\/A\>$/s;
+    print PAPER <<EOM;
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>$title</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['\$','\$'], ['\\\\(','\\\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+EOM
+    $paper =~ s/\<\/LI\>//;
+    print PAPER "<B>$with$title</B>$paper";
+    print PAPER <<EOM;
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>
+EOM
+    close PAPER;
+  }
+  else {
+    print INDEX "<LI>" if !$first;
+    $first = 0;
+    print INDEX "$paper";
+  }
+}
+
+print INDEX $end;

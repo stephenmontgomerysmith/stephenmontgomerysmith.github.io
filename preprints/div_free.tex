@@ -1,0 +1,1973 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This paper is typeset in LaTeX.
+%%
+%%
+%%
+%%
+%%
+%%
+%%
+%%
+%%
+%%
+
+\documentstyle[12pt,leqno]{article}
+
+\input amssym.def
+
+\def\eqref#1{(\ref{#1})}
+\def\operatorname#1{\text{#1}}
+\def\text#1{\hbox{\rm #1}}
+\def\dfrac#1#2{{\displaystyle{#1\over#2}}}
+
+\newenvironment{pf}{{\em Proof:}}{$\Box$\vspace{14.5pt}}
+\newenvironment{equation*}{\[}{\]}
+
+%%%%%%%%%THEOREMS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{thm}[prop]{Theorem}
+\newtheorem{cor}[prop]{Corollary}
+\newtheorem{lem}[prop]{Lemma}
+
+%\theoremstyle{definition}
+
+\newtheorem{defn}[prop]{Definition}
+
+%\theoremstyle{remark}
+\newtheorem{rem}{Remark} \renewcommand{\therem}{}
+
+%%%%%%%%%%%%%%FONTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\bbN}{{\Bbb{N}}}
+\newcommand{\bbR}{{\Bbb{R}}}
+\newcommand{\bbZ}{{\Bbb{Z}}}
+\newcommand{\bbC}{{\Bbb{C}}}
+\newcommand{\bbT}{{\Bbb{T}}}
+\newcommand{\bbD}{{\Bbb{D}}}
+
+
+
+
+\newcommand{\calM}{{\cal{M}}}
+\newcommand{\calD}{{\cal{D}}}
+\newcommand{\calS}{{\cal{S}}}
+\newcommand{\calP}{{\cal{P}}}
+\newcommand{\calQ}{{\cal{Q}}}
+\newcommand{\calL}{{\cal{L}}}
+\newcommand{\calF}{{\cal{F}}}
+\newcommand{\calE}{{\cal{E}}}
+\newcommand{\TX}{{{\cal{T}}X}}
+
+%%%%%%%%%%%%%%%GREEK%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\g}{\gamma}
+\newcommand{\de}{\delta}
+\newcommand{\e}{\varepsilon}
+\newcommand{\th}{\theta}
+\newcommand{\k}{\kappa}
+\newcommand{\la}{\lambda}
+\newcommand{\m}{\mu}
+\newcommand{\n}{\nu}
+\newcommand{\r}{\varrho}
+\newcommand{\s}{\sigma}
+\newcommand{\f}{\varphi}
+\newcommand{\h}{\chi}
+\newcommand{\p}{\psi}
+\newcommand{\om}{\omega}
+
+\newcommand{\Om}{\Omega}
+\newcommand{\La}{\Lambda}
+\newcommand{\D}{\Delta}
+\newcommand{\G}{\Gamma}
+%newcommand{\Sig}{\Sigma}
+\newcommand{\Th}{\Theta}
+%newcommand{\pa}{\partial}
+
+%%%%%%%%%%%%%%% operatornames %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\grad}{\operatorname{grad}}
+\newcommand{\proj}{\operatorname{proj}}
+\newcommand{\mes}{\operatorname{mes}}
+\renewcommand{\div}{\operatorname{div}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\sdiv}{\displaystyle\div}
+\renewcommand{\span}{\operatorname{span}}
+\newcommand{\supp}{\operatorname{supp}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\dint}{\displaystyle\int}
+
+%%%%%%%%%%%%%%%%%%ABBRS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\vl}[1]{{\bf #1}}
+\newcommand{\tp}[1]{``{\it #1\/}''}
+\newcommand{\disp}{\displaystyle}
+\newcommand{\lb}{\label}
+\newcommand{\ti}{\tilde}
+\newcommand{\bs}{\backslash}
+\newcommand{\bi}[1]{\bibitem{#1}}
+\newcommand{\emt}{\emptyset}
+\newcommand{\no}{\nonumber}
+\newcommand{\lra}{\longrightarrow}
+
+%%%%%%%%%%%%%%%%%%%%%%%%NUMBERING%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\subfig}{a}
+
+\begin{document}
+
+\makeatletter
+\def\@currentlabel{2.1}\label{e:dispaa}
+\def\@currentlabel{2.21}\label{e:dispau}
+\def\@currentlabel{2.22}\label{e:dispav}
+\def\@currentlabel{2.23}\label{e:dispaw}
+\def\@currentlabel{2.24}\label{e:dispax}
+\def\theequation{\thesection.\@arabic\c@equation}
+\def\Qed{\hfill \vrule height4pt width3pt depth2pt}
+
+\def\sap{\sigma_{\mbox{ap}}}
+\def\C{{C(X,\TX)}}
+\def\CND{{C_{ND}(X,\TX)}}
+
+\makeatother
+
+\makeatletter
+\def\alphenumi{%
+  \def\theenumi{\alph{enumi}}%
+  \def\p@enumi{\theenumi}%
+  \def\labelenumi{(\@alph\c@enumi)}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\zzz{\par}
+
+\title{The Spectrum of the
+Kinematic Dynamo Operator
+for an Ideally Conducting Fluid}
+
+\author{C.~Chicone\thanks{carmen$@$chicone.cs.missouri.edu,  supported by
+the NSF grant
+DMS-9303767;} ,\,
+Y.~Latushkin\thanks{mathyl$@$mizzou1.missouri.edu, supported  by the
+NSF grant DMS-9400518 and by the Summer
+Research Fellowship of the University of Missouri;} ,\,
+ and
+S.~Montgomery-Smith\thanks{stephen$@$mont.cs.missouri.edu, supported by
+the NSF grant  DMS-9201357;
+\zzz
+{\em Key words and phrases.} Hyperbolic dynamical systems,
+ Mather spectrum,
+magnetohydrodynamics,
+ideally conducting fluid, spectral
+mapping theorems, weighted composition
+operators.
+\zzz
+ {\em Mathematics Subject Classification.} 76W05, 58F99, 58G25.}\\
+\\
+Department of  Mathematics,
+University of Missouri\\ Columbia, MO 65211, USA}
+
+\maketitle
+
+\begin{abstract}
+The spectrum of the kinematic dynamo operator
+for an ideally
+conducting fluid and the spectrum of the
+corresponding group acting in the space of
+continuous divergence
+free vector fields on a compact Riemannian manifold
+are described.
+We prove that the spectrum
+of the kinematic
+dynamo operator is exactly one vertical strip whose
+boundaries can be determined in terms of
+the Lyapunov-Oseledets exponents
+with respect to all ergodic measures for the Eulerian flow.
+Also, we prove that the spectrum of the corresponding group is
+obtained from the spectrum of its generator by
+exponentiation. In particular, the growth bound for
+the group coincides with the spectral bound for
+the generator.
+\end{abstract}
+
+\section{Introduction}
+In this paper we give a  description of the
+spectrum of the kinematic dynamo operator
+and of the
+corresponding group it generates
+for an ideally conducting fluid
+in the
+space of continuous divergence free vector fields.
+
+
+Consider a steady incompressible conducting
+fluid with Eulerian velocity $v=v(x)$
+for $x\in \bbR^3$ and let $\phi^t$ denote the corresponding flow.
+The kinematic dynamo equations for the induction of
+a magnetic field ${\bf H}$ by the flow has the
+following form:
+\begin{equation}\label{kdeq}
+ \dot{\bf H}  =  \nabla\times (v\times {\bf
+H}) +  \varepsilon \Delta {\bf H},\quad
+ \div{\bf H}  = 0,
+\end{equation}
+where $\varepsilon= {{\cal R}e_m}^{-1}$, and ${\cal R}e_m$ is the
+magnetic Reynolds number (see, e.g., \cite[Ch.~6]{Moffatt}).
+The spectral properties of the kinematic dynamo operator
+$L_\varepsilon$, defined by \eqref{kdeq}, have been a subject of
+intensive study, in particular, in connection with
+the famous dynamo problem (see \cite{Arnold,AZRS,BC,FV,MRS,Vishik}
+and references therein).
+
+For the
+ideally conducting fluid, $\varepsilon =0$,
+these equations become:
+\begin{equation}\label{kde}
+\dot{\bf H}= - (v,\nabla) {\bf H} +
+( {\bf H}, \nabla ) v,
+\quad {\bf H}(x,0)={\bf H}_0(x),\quad \div{\bf H}  = 0.
+\end{equation}
+The last equation has \cite{Moffatt} so-called Alfven solutions
+$${\bf H}(x,t)=D\phi^t(\phi^{-t}x){\bf H} (\phi^{-t}x,0),$$
+given by the group $\{e^{tL}\}_{t\in\bbR}$ with the generator
+$L=L_0$ that acts by the rule
+\begin{equation}\label{defL}
+L: u\mapsto  (u,\nabla)v - (v,\nabla) u.
+\end{equation}
+
+In the present paper the kinematic dynamo
+operator $L$ is considered in the following  well known
+context. Let $v$ denote a
+continuous divergence-free vector field on
+a compact Riemannian manifold $X$ without boundary, let
+$\phi^t$ denote the flow generated by $v$ and let
+$D\phi^t(x)$  denote its differential.
+Consider the group $\{e^{tL}\}_{t\in\bbR}$ of push-forward
+operators generated by the  Lie derivative $L$ in the direction
+$v$.
+This group acts on  continuous sections
+of the tangent bundle $\TX$,
+by the rule
+\begin{equation}\label{defetL}
+\left(e^{tL}u\right)(x)=
+D\phi^t(\phi^{-t}x)u(\phi^{-t}x),\qquad x\in X,\quad t\in\bbR.
+\end{equation}
+We will consider
+the group $\{e^{tL}\}_{t\in\bbR}$ in the space
+$C_{ND}(X,\TX)$ of the  continuous
+vector fields with zero divergence.
+
+Operators of the form \eqref{defetL} belong to the class of
+weighted composition operators. This class has been widely investigated
+in connection with hyperbolic dynamical systems
+since the celebrated paper by
+J.~Mather \cite{Mather},
+see also \cite{HPS,Pesin}, the recent papers \cite{CL,LMS1,LMS2,Rau}
+and the detailed bibliography in \cite{LS}.
+The spectral
+properties of these operators in  spaces of continuous or
+$p$-summable  vector  fields
+are by now well understood.
+However, the investigation of their spectral properties in the
+space of divergence-free vector fields
+was initiated recently by R.~de~la~Llave.
+His important work \cite{Rafael}
+inspired the present paper.
+
+In Section 2 we  prove the spectral mapping
+theorem in $\CND$ for the
+group $\{e^{tL}\}_{t\in\bbR}$,
+assuming that the aperiodic trajectories of $\phi^t$ are
+dense in $X$ and $\dim X \geq 3$.
+Theorems of this type for continuous and
+for  $L_p$-section spaces over finite dimensional manifolds
+were proved in \cite{CS,J} while
+similar results for the infinite dimensional
+setting were obtained in
+\cite{LMS1,LMS2,LS}.
+
+The spectral mapping theorem states that
+the spectrum $\sigma(e^{tL})$ of $e^{tL}$
+can be obtained  from the spectrum of $L$ by
+exponentiation. It shows, in particular, that in the space of
+divergence-free vector fields the spectral bound  of
+the generator $L$ coincides with the
+growth bound  of the
+group, see also Remarks~2.9--2.11 below.
+
+Our proof of the spectral mapping theorem in Section~2
+exploits the fact (cf. \cite{Mather,Rafael}) that
+approximative eigenfunctions of the operator \eqref{defetL} can be
+``localized'' along trajectories of the flow.
+We also show that the
+spectrum of $L$ is invariant under vertical translations of the
+complex plane.
+The same
+idea can be used to analyze
+semigroups of weighted composition
+operators with general
+cocycles on Banach spaces, see \cite{LMSR}.
+
+In Section~3,  we
+show that, for $\dim X \geq 2$, the spectrum  $\sigma(e^{tL})$,
+$t\neq 0$ in $C_{ND}(X,\TX)$ is exactly one annulus centered
+at the origin of the complex plane.
+Our result generalizes a theorem
+in \cite{Rafael} where this fact was proved under the restriction
+that the flow is Anosov with one-dimensional spectral foliations.
+The possibility of relaxing the hypotheses of the theorem is
+discussed as an open problem in \cite{Rafael}. The relatively
+simple proofs of these facts in Section~3
+can be read independently of the
+more difficult proofs in Section~2.
+
+By Mather's theory
+(see, e.g., \cite{LS,Mather,Pesin}), the
+spectrum $\sigma(e^{tL})$ on the space
+$\C$ is generally the union of several disjoint annuli centered
+at the origin. Passing to the space $\CND$ dramatically changes
+the spectrum: the gaps, if any, between these annuli are filled.
+Also, using the Spectral Mapping Theorem,
+the spectrum of $L$ on
+$\CND$ is exactly one
+vertical strip. Since $Lv=0$, this strip always
+contains $i\bbR$, and \eqref{kde} does not have an exponential
+dichotomy. Moreover,  the equation \eqref{kde} in the space of
+divergence free
+vector fields (unlike the situation with Anosov flows, cf.
+\cite{Pesin}), does not possess a nontrivial uniform exponential
+dichotomy even after ``moding out'' the direction of the flow, see
+Remarks~3.7--3.8 below.
+
+Using the results in
+\cite{LS}, we give a description of
+the spectrum of $L$  in terms of the Lyapunov-Oseledets exponents
+over all ergodic
+measures on $X$, that is, we will determine
+the boundaries of the spectrum of $L$
+via the Lyapunov exponents.
+This description is related to a theorem by M.~Vishik \cite{Vishik}
+that states the ``fast'' dynamo action is
+impossible whenever all Lyapunov
+numbers are zero.
+
+Finally, we remark that we actually prove more general results than
+those just mentioned. In particular, we will only assume the
+operator $L$ generates a
+$C_0$-group
+of weighted composition operators that {\em preserves the set of
+divergence free vector fields} and has the form
+\begin{equation}\label{defTt}
+\left(T^tu\right)(x)=\Phi(\phi^{-t}x,t)u(\phi^{-t}x),
+\qquad x\in X,\quad t\in \bbR,
+\end{equation}
+where $\Phi(x,t)$ is a continuous cocycle over $\phi^t$, that is
+for $x\in X$ and $t,\tau\in \bbR$ one has
+$\Phi(x,t+\tau)=\Phi(\phi^tx,\tau)\Phi(x,t)$ and $\Phi(x,0)=I$.
+Throughout the paper we use $M$ to denote the generator of the
+group $\{T^t\}$, $T^t=e^{tM}$. In particular, if
+$\Phi(x,t)=D\phi^t(x)$, then \eqref{defTt} is the push-forward
+operator \eqref{defetL} and $M=L$ is the Lie derivative.
+
+We also note that our technique can be applied to obtain similar
+results for the space $L_2$.
+
+\section{The Spectral Mapping Theorem}
+In this section we will prove the Spectral Mapping Theorem.
+Throughout the section we suppose a smooth
+vector field $v$ to be given
+on a compact Riemannian manifold $X$ without boundary, that
+$v$ is divergence free with respect to the Riemannian volume
+and that the flow $\phi^t$ of $v$ satisfies the following
+{\it standing hypotheses}:
+the aperiodic trajectories of $\phi^t$ are
+dense in $X$ and $n= \dim X \geq 3$.
+Let $M$ be the generator of the group
+$\{T^t\}_{t\in\bbR}$ of weighted
+composition operators, as in \eqref{defTt},
+for some continuous cocycle $\Phi(x,t)$
+over $\phi^t$. We will assume $T^t$ is bounded on the space $\CND$
+of divergence free vector fields.
+
+There are at least two choices for the  space of continuous
+divergence free vector fields depending on whether the divergence is
+understood in the classical sense or in the sense of distributions.
+These spaces are defined, respectively, as follows:
+\begin{eqnarray}
+&C_{ND}^0(X,\TX) & =\text{ closure }
+\{f\in C^\infty(X,\TX): \div f=0\}, \label{class}\\
+ & C_{ND}^1(X,\TX) & = \{f\in\C :\nonumber\\
+&&\int\limits_X <f,\grad g> d\mu =0 \quad  \forall
+g\in C^\infty(X,\bbR)\}.\label{distr}
+\end{eqnarray}
+The closure in \eqref{class} is taken with respect to the $\sup$-norm
+while the scalar product $<\cdot,\,\cdot>$ and $\grad$ in \eqref{distr}
+are taken with respect to a  Riemannian metric and volume on $X$.
+We note that the space $C_{ND}^1(X,\TX)$
+is a closed subspace of $C_{ND}^0(X,\TX)$.
+
+For a linear operator $A$ in a Banach
+space $E$, we will sometimes use
+$\sigma (A;E)$ to denote the spectrum of $A$ on $E$
+and $\sigma_{\mbox{ap}}(A;E)$ to
+denote its approximate point spectrum. Since, as noted above,
+$$C_{ND}^1(X,\TX)\subset C_{ND}^0(X,\TX)\subset \C$$
+and since an $\epsilon$-eigenfunction for $T$
+in $C_{ND}^1(X,\TX)$ is an
+$\epsilon$-eigenfunction for $T$ in
+$C_{ND}^0(X,\TX)$, one has
+\begin{equation}\label{apprsp}
+\hspace*{.25in}\sigma_{\mbox{ap}}(T;C_{ND}^1(X,\TX))
+\subset \sigma_{\mbox{ap}}(T;C_{ND}^0(X,\TX))
+\subset \sigma_{\mbox{ap}}(T;C(X,\TX)).
+\end{equation}
+
+Throughout the remainder of the paper the space $\CND$ may be
+taken to be either
+$C_{ND}^0(X,\TX)$ or
+$C_{ND}^1(X,\TX)$.
+
+
+
+
+
+
+
+
+\begin{thm}[Spectral Mapping Theorem]\label{SMT}
+In the space of divergence-free
+vector fields
+$C_{ND}(X,\TX)$ the spectrum $\sigma (M;\CND)$
+is invariant under vertical translations of
+the complex plane. Moreover, for each $t\ne 0$,
+\begin{equation}\label{exp}
+\sigma (e^{tM}) = \exp t \sigma (M).
+\end{equation}
+\end{thm}
+
+Since the proof of Theorem~\ref{SMT}
+is quite technical, we pause to
+discuss our strategy.
+Using  standard facts from the
+theory of $C_0$-semigroups and by rescaling, we reduce
+the proof of Theorem~\ref{SMT} to the following main assertion
+(see our  Lemma~\ref{main} below):
+If $1\in\sigma_{\mbox{ap}}(T)$, $T:=T^1$ then
+$0\in\sigma_{\mbox{ap}}(M)$.
+
+Our strategy for the
+proof of this main assertion develops some ideas
+of J.~Mather \cite{Mather}. The fact that
+$1\in\sigma_{\mbox{ap}}(T)$ implies  the existence of an
+$\epsilon$-eigenfunction $u$ for $T$ for every $\epsilon>0$.
+That is,
+for every $\epsilon>0$,  there is a vector field $u$,
+with unit norm
+such that $\|Tu-u\|\le\epsilon$.
+As in  \cite{Mather} and \cite{Rafael}, the
+$\epsilon$-eigenfunctions of the operator
+$T$ have a nice feature: they can be ``localized'' along the
+trajectories of the flow. This means that for every $N\in\bbN$
+there exist  a point $x^0\in X$, a
+small neighborhood $D$ of this point, and a vector field $y$
+with $\supp y\subset \cup_{j=-N}^N \phi^j(D)$, such that
+$\|y-Ty\|=O(1/N)\|y\|$. In fact,
+starting from a given
+$\epsilon$-eigenfunction $u$ for $T$,
+define a
+``bump''-function $\alpha$ supported in $D$ and
+let $\gamma(j)=(N-|j|)/N$.
+The ``localization'' $y$ is
+defined to vanish outside $\cup_{j=-N}^N \phi^j(D)$ and by
+$y(x)=\gamma (j) \alpha(\phi^{-j}x)(T^ju)(x)$ for
+$x\in \phi^j(D)$ and $|j|\leq N$,
+equivalently,
+\[
+y(x)=\sum_{j=-N}^N \gamma (j)(T^j\alpha u)(x),\quad x\in X.
+\]
+
+To prove the main assertion above,
+our purpose is to construct a
+  vector field $y$ with zero divergence such that
+$\|M y\| = O(1/N) \|y\|$. We start with a
+divergence-free approximative eigenfunction $u$ of $T$.
+Since the set of divergence
+free vector fields is not closed under multiplication
+by ``bump''-functions, we can not
+use Mather's  construction directly.
+Instead, we will
+construct a divergence free vector-field $w$,
+supported in a small neighborhood $D$ of a given point $x^0\in X$
+in Lemma~\ref{loc}.
+The main part of this construction takes place in a
+special neighborhood $D$ of $x^0$,  taken to be a thin and long
+``ellipsoid'' with
+the longest axis directed along $u(x^0)$.
+The required vector field $w$ is constructed in
+the form $w(x)=\alpha(x) u(x^0)+w_n(x)$, where $\alpha$ is a
+``bump''- function, supported in $D$.
+The function $\alpha$ is chosen to have value identically one
+on a second thin and long
+``ellipsoid'' $B$ contained in $D$. Some ``fluid'' leaks from
+the neighborhood $D$, but this can be recycled within a slightly
+larger neighborhood.
+
+The desired
+almost-eigenfunction $y$ for $M$ is given by the formula
+$$
+y(x) = \int^{\infty}_{-\infty} \gamma(t) T^tw(x) \,dt,\quad x\in X,
+$$
+where, as above, $\gamma$ vanishes outside of $[-N,N]$.
+Direct calculation shows that
+$$
+(My)(x) = -\int^{\infty}_{-\infty}
+\gamma'(t) T^tw(x) \,dt, \quad x\in X.
+$$
+Since $\supp w\subset D$, the support of the integrand in each
+integral belongs to
+$\{t\in \bbR: |t|\le N\,\mbox{and}\,\phi^tx\in D\}$.
+To obtain the desired inequality, we estimate
+$\|My\|$ from above and $\|y\|$
+from below.  This  requires some estimates of the sojourn time
+of  the trajectory segment $\{\phi^t(x): |t|\leq N\}$ in
+$D$ and $B$.
+This is done in Lemma~\ref{bddtime}.
+
+We start, for completeness, from the following simple lemma.
+\begin{lem}
+If  $x^0\in X$, then there is a coordinate chart at $x^0$,
+with coordinate
+functions $(x_1,\ldots,x_n)$, such that
+the local representation of the volume element on $X$ is just the
+usual volume $dx_1\wedge\cdots\wedge dx_n$ on $\bbR^n$.
+Moreover, if $z\in T_{x^0}X$, then the coordinates
+can be chosen so that the local representative of $z$  is
+$\|z\|{\partial}/{\partial x_2}$.
+\end{lem}
+\begin{pf}
+Let $y_1,\ldots,y_n$ denote local coordinates at $x^0$. Clearly,
+there is a nonvanishing density function
+$\rho:\bbR^n\to \bbR$ such
+that volume element is given by
+$\rho(y_1,\ldots,y_n)dy_1\wedge\cdots\wedge dy_n$.
+We seek new coordinates
+in the form
+\[
+y_1=f(x_1,\ldots,x_n),\quad y_2=x_2,\cdots,y_n=x_n
+\]
+where the volume element has the form
+\[
+\rho(f(x_1,\ldots,x_n),x_2,\ldots,x_n)
+ \frac{\partial f}{\partial x_1}(x_1,\ldots,x_n)
+ dx_1\wedge\cdots\wedge dx_n.
+\]
+There is a smooth function $f$, defined in a
+neighborhood of the origin in $\bbR^n$, such that
+\begin{equation*}
+\frac{\partial f}{\partial x_1}(0,\ldots,0)\ne 0,\quad
+\frac{\partial f}{\partial x_1}(x_1,\ldots,x_n)=
+ (\rho(f(x_1,\ldots,x_n),x_2,\ldots,x_n))^{-1}.
+\end{equation*}
+The first condition together with  the Implicit Function Theorem
+implies the change of coordinates is
+invertible; the second condition
+ensures the volume element in the new coordinates
+has the desired form.
+
+For the second statement of the lemma, note that the volume
+element is invariant under a rigid rotation of Euclidean space.
+\end{pf}
+
+A coordinate chart, as in the lemma,
+is called {\em adapted} to the volume on $X$ and the vector $z$.
+Of course, in the adapted coordinates,
+the Riemannian metric will not be the usual one, rather,
+it will have the form $\Sigma g_{ij}(x_1,\ldots,x_n) dx_i\otimes dx_j$
+where the components $g_{ij}$ form a positive definite symmetric
+matrix of smooth functions. However, we make the following
+observation: if
+$u=(u_1,\ldots,u_n)$
+is a vector field defined
+in an adapted  coordinate chart, then
+\begin{equation}
+\label{divform}
+\div u=\sum_{i=1}^n\frac{\partial u_i}{\partial x_i}.
+\end{equation}
+
+Suppose $z\in {\cal T}_{x^0}X$ is a tangent vector
+and let
+$(x_1,\ldots, x_n)$ denote local coordinates at $x^0$ adapted to
+the volume on $X$ and the vector $z$.
+If the adapted coordinate system is defined in a coordinate ball of
+diameter $\delta>0$ and if
+$a,b\in \bbR$ are such that
+$0<a<b<\delta/8$, we define
+\begin{eqnarray*}
+D_{a,b}= &\{(x_1,\ldots, x_n): |x_j | \le 4b, \;
+j=1,2, \;  |x_j |\le a,\; j=3,\ldots,n\},     \\
+B_{a,b}= &\{(x_1,\ldots, x_n): |x_j | \le a/2, \;
+j=1,3,\ldots,n, \;  |x_2 |\le b/2\}.
+\end{eqnarray*}
+Note that the closure of $B_{a,b}$ is contained in $D_{a,b}$.
+We say there is an {\em $(a,b)$ divergence-free extension}
+of the vector $z$ at $x^0$
+if there is a smooth bump-function $\alpha:\bbR^n\to[0,1]$ with
+$ \alpha(x) =1$
+for $x \in B_{a,b}$ and
+$\alpha(x) =0$ for $x\notin D_{a,b}$
+and a continuously differentiable
+vector field $w_n$ with support in $D_{a,b}$
+such that
+\begin{itemize}
+\item[i)] The vector field
+$w(x):=\alpha(x)\|z\|{\partial}/{\partial x_2}+w_n(x)$
+is divergence free and has value $\|z\|{\partial}/{\partial x_2}$
+in $B_{a,b}$,
+% in some neighborhood of the origin,
+\item[ii)] There is a number $C>0$ independent of $a,b$ such
+that $\|w_n\|\le C a/b$.
+\end{itemize}
+
+\begin{lem}
+\label{loc}
+Every tangent vector on $X$ has an
+$(a,b)$ divergence-free extension.
+\end{lem}
+
+\begin{pf}
+Let $z \in {\cal T}_{x^0}X$.
+We will first prove the lemma for the case  $n=2$.
+To construct
+a vector field $W$ with the required
+properties in the $(x_1,x_2)$ coordinate plane, consider
+the curves given by
+\[
+\dfrac{x^4_1}{a^4} + \dfrac{x^4_2}{b^4} =1,\quad
+\dfrac{x^4_1}{a^4} + \dfrac{x^4_2}{b^4} = 2.
+\]
+Let $\rho:\bbR \to [0,1]$ denote a smooth function
+such that $\rho(t)=1$
+for $t\le 1$,
+$\rho(t)=0$ for $t\ge 2$, and
+$|\rho'(t) | \le 3$, $t\in \bbR$.
+Also, define the sets
+\begin{eqnarray*}
+R&=&\{(x_1, x_2): |x_1| \le
+2^{1/4}a, |x_2| \le 2^{1/4}b\}, \\
+S^+&=&\{(x_1, x_2):
+\dfrac{(x_1-2^{1/4}a)^4}{a^4} +
+  \dfrac{x^4_2}{b^4}\le 2,\,x_1\ge 2^{1/4}a\}, \\
+S^-&=&\{(x_1, x_2):
+\dfrac{(x_1+2^{1/4}a)^4}{a^4} +
+  \dfrac{x^4_2}{b^4}\le 2,\,x_1\le -2^{1/4}a\}
+\end{eqnarray*}
+and the functions $\theta:\bbR^2\to \bbR$, $f:\bbR^2\to \bbR$ and
+$\eta^\pm:\bbR\to\bbR$ by
+\begin{eqnarray*}
+\theta(x_1, x_2) &=& \rho \big(\dfrac{x^4}{a^4} +
+\dfrac{x^4_2}{b^4}\big),         \\
+f(x_1,x_2) &=&- \dfrac{4x^3_2
+\|z\|}{b^4} \int^{x_1}_0 \rho'
+\bigg(\dfrac{s^4}{a^4} + \dfrac{x^4_2}{b^4}\bigg)\,ds, \\
+\eta^+(\tau)&=&-\frac{4\| z\|}{b^4} \int^{2^{1/4}a}_0 \rho'
+\bigg(\dfrac{s^4}{a^4} + \dfrac{\tau}{b^4}\bigg)\,ds, \\
+\eta^-(\tau)&=&\frac{4\| z\|}{b^4} \int^0_{-2^{1/4}a}\rho'
+\bigg(\dfrac{s^4}{a^4} + \dfrac{\tau}{b^4}\bigg)\,ds,
+\end{eqnarray*}
+
+The vector field $w_2$ is defined in $R$ by
+$f(x_1,x_2)\partial/\partial x_1$,
+in $S^+$ by
+\[
+ \eta^+((x_1-2^{1/4}a)^4+x_2^4)x_2^3\frac{\partial}{\partial x_1}
+-\eta^+((x_1-2^{1/4}a)^4+x_2^4)(x_1-2^{1/4}a)^3\frac{\partial}{\partial x_2},
+\]
+in $S^-$ by
+\[
+ \eta^-((x_1+2^{1/4}a)^4+x_2^4)x_2^3
+   \frac{\partial}{\partial x_1}
+-\eta^-((x_1+2^{1/4}a)^4+x_2^4)(x_1+2^{1/4}a)^3
+   \frac{\partial}{\partial x_2}
+\]
+and $w_2$ is defined to vanish on the complement of $R\cup S^+\cup S^-$.
+
+We will complete the proof for $n=2$ by showing  the vector field
+\[
+W(x_1,x_2):=
+\theta(x_1,x_2)\|z\|\frac{\partial}{\partial x_2}+w_2(x_1,x_2)
+\]
+is the required extension of $z$.
+
+A direct computation using \eqref{divform} shows $\div W=0$ in the
+coordinate chart. Also, using the definition of $\rho$, we see
+the support of $W$ is in $D_{a,b}$. To show $W$ is $C^1$, just observe
+that $w_2$ and each of its
+first partial derivatives
+is continuous on the lines
+$x_1=\pm 2^{1/4}a$ and on the boundary of $R\cup S^+\cup S^-$.
+(We remark that additional smoothness can be obtained, if desired,
+by using the function  $x_1^k/a^k+x_2^k/b^k$ with $k$ a sufficiently
+large positive integer in place of the choice $k=4$ used here.)
+
+To obtain the required norm bound, let $G(x_1,\ldots,x_n)$ denote
+the matrix of the components $g_{ij}$ of the Riemannian metric
+in the adapted coordinates. The square of the norm of a vector $V$ at
+$x=(x_1,\ldots,x_n)$ is then given by $\langle G(x)V,V\rangle$. Thus, if
+$\|G\|$ denotes the supremum of the matrix norms  over the points
+in the chart, we have $\|V\|\le  \|G\||V|$ where the single bars denote
+the usual norm in $\bbR^n$.
+Then, for example, using the usual estimate for the integral in the
+definition of $f$, we estimate the norm of $w_2$ in $R$ by
+\[
+\|G\|\sup |f(x_1,x_2)|\le \|G\|(4\|z\|2^{3/4}b^3/b^4) 3 (2^{1/4}a)
+\le C_1 a/b
+\]
+where the constant $C_1$  does not depend on $a$ or $b$.
+Similarly, we can estimate the norm of $w_2$ in $S^\pm$. For example,
+in $S^+$ we find the upper bound
+\[
+\|G\|\sup\big|\eta^+((x_1-2^{1/4}a)^4+x_2^4)\big|\,
+((2^{1/4}b)^6+(2^{1/4}a)^6)^{1/2}
+\le C_2 a/b.
+\]
+
+To prove the lemma for the case $n\ge 3$, we will show
+how to extend the vector field $W$ defined above to a vector field on
+$\bbR^n$ with the required properties. To do this,
+let $\chi : \bbR \to [0,1]$ denote a smooth ``bump''-function
+such that
+$\chi (t) =1$ for $|t|\le\dfrac{a}{2}$ and
+$\chi (t) =0$ for $|t|\ge a$,  and
+define
+\[
+\Psi(x_3,\ldots,x_n) =  \prod^n_{j=3} \chi (x_j).
+\]
+The required vector field $w$ is given by
+\[
+w(x_1,\ldots,x_n)=\Psi(x_3,\ldots,x_n)W(x_1,x_2).
+\]
+
+The fact that the new vector field $w$ is continuously
+differentiable, agrees with $\|z\|{\partial}/{\partial x_2}$
+in $B_{a,b}$,
+and is  supported in $D_{a,b}$ is clear.
+Also, since the range of $\Psi$ is
+the unit interval, the norm bound on $w_n$
+is the same as the
+norm bound on $w_2$. To complete the proof
+we must show $\div w=0$.
+But, since the vector field $w$ has nonzero components only
+in the first two coordinate directions,
+\[\div w(x_1,\ldots,x_n)=\Psi(x_3,\ldots,x_n)\div W(x_1,x_2)=0,\]
+as required.
+\end{pf}
+
+To estimate the time that trajectories spend in a neighborhood of
+$x^0$, we first need the following observation.
+
+\begin{lem}\label{le1} Suppose $x^0\in X$ is not a periodic point
+for the vector field $v$  with flow $\phi^t$. If  $N$ is a positive
+integer and  $0<s\le N$, then there is a $\delta >0$ such that every
+neighborhood $D$ containing $x^0$, with $\diam {D}\le\delta$, has the
+following property: if $x\in D$, then $\phi^tx\not\in D$ for
+$s\leq |t|\le N$.
+\end{lem}
+\begin{pf}
+Suppose the lemma is false and, for each positive integer $k$,
+let $D_k$ denote the ball centered
+at $x^0$ with radius $1/k$.
+For each $k$, there is some $x_k\in D_k$ and some
+$t_k$ in the set $J:=\{t: 0<s\le|t|\le N\}$ with $\phi^{t_k}(x_k)$
+in $D_k$. Since $J\times \bar D_1$
+for the closure $\bar D_1$ of $D_1$
+is compact, there is a convergent
+subsequence of the pairs $(t_k,x_k)$. But, by the choice of $D_k$, the
+second component of this sequence converges to $x^0$ and,
+by the compactness of $J$,
+the limit $T$ of the first component satisfies $|T|\ge s>0$.
+The continuity of the flow ensures that $\phi^T(x^0)=x^0$,
+in contradiction to the fact that $x^0$ is not periodic.
+\end{pf}
+
+Consider  a vector field $v$ on $X$ tangent to the flow $\phi^t$.
+For each open set $U\subset X$, each non
+negative integer $N$ and each
+point $x\in X$, define
+\begin{eqnarray}\label{defm}
+\Theta_{N,U}(x)&:=&\{t\in\bbR: |t|\leq N, \phi^tx\in U\},\\
+   m_{N,U}(x)&:=&\mes {(\Theta_{N,U}(x))}.\nonumber
+\end{eqnarray}
+\begin{lem}\lb{bddtime}
+Suppose $X$ has dimension $n\ge 3$.
+%%  and $v$ is as in \eqref{defm}.
+If $\epsilon>0$, then
+there is a constant $K>0$ such that for each non periodic point
+$x^0$ and positive integer $N$ there is a pair of  numbers
+$a,b$  such that $\epsilon>b>a>0$ and $a/b \leq\epsilon$ together with
+a pair of open sets $B,D$ at $x^0$ such that
+$B\subset B_{a,b}$ and $D_{a,b}\subset D$, with the following property:
+for each  $x\in X$,
+\begin{equation}\label{bddn}
+\dfrac{m_{N,D}(x)}{m_{N,B}(x^0)} \leq K.
+\end{equation}
+\end{lem}
+\begin{pf}
+By Lemma~\ref{le1},
+there is a neighborhood $\widehat{D}$ at $x^0$ such that
+$\phi^ty\not\in \widehat{D}$ whenever $y\in\widehat{D}$
+and $1/2\le |t|\le 2N$. Suppose $K,a,b,B,D$,
+with $D\subseteq \widehat{D}$,
+are given so that the inequality \eqref{bddn}
+holds for $x\in D$.
+We claim that \eqref{bddn} holds for all $x\in X$.
+To see this, note first that, for $y\in D$, we have
+$\Theta_{N,D}(y) = \Theta_{2N,D}(y)$.
+Thus,
+by our definition,
+$m_{N,D}(y)=m_{2N,D}(y)$.
+If  $x\in X$ and $D\cap \{\phi^tx: |t|\le N\}=\emptyset$, then
+$m_{N,D}(x)=0$ and \eqref{bddn} holds. Otherwise, fix
+$y\in D\cap \{\phi^tx: |t|\le N\}$.
+Since $\Theta_{N,D}(x)\subset \Theta_{2N,D}(y)$,
+we have
+$$
+m_{N,D}(x) \leq \max_{y\in D} m_{2N,D}(y)=
+\max_{y\in D}m_{N,D}(y)\le K\cdot m_{N,D}(x^0),
+$$
+as required.
+
+To complete the proof,
+we will construct $K,a,b,B,D$ so that \eqref{bddn} holds for $x\in D$.
+This will require several steps.
+
+{\bf Step 1.} We will work in an adapted coordinate system at $x^0$ with
+coordinate functions $(x_1,\ldots,x_n)$.
+We will determine the required sets $B,D$ for appropriate $a,b$ in the
+form
+\begin{eqnarray*}
+B= & \left\{x:
+\dfrac{x_1^4}{\left(a/2\right)^4}
++\dfrac{x_2^4}{\left(b/2\right)^4}+
+\sum_{j=3}^4\dfrac{x_j^4}{\left(a/2\right)^4}\leq 1
+\right\}, \\
+D= & \left\{x:
+\dfrac{x_1^4}{\left(4nb\right)^4}
++\dfrac{x_2^4}{\left(4nb\right)^4}+
+\sum_{j=3}^4\dfrac{x_j^4}{\left(na\right)^4}\leq 1
+\right\}.
+\end{eqnarray*}
+If  $a<b$, then, clearly,
+$B\subset B_{a,b}$ and $D_{a,b}\subset D$.
+We will show that there is a constant $K$ such that for some choice of
+$a,b$ and $a/b$ all sufficiently small,
+the inequality \eqref{bddn} is valid  for the corresponding set
+$D$.
+
+We will use the following auxiliary constructions:
+
+For each $\delta>0$, let  $S_\delta$ denote a section for
+$v$ at the origin of the coordinate
+system, that is, at $x^0$, such that the Riemannian diameter
+$\diam S_\delta<\delta$, and define
+$\Sigma_\delta:=\{\phi^t\sigma:\sigma\in S_\delta, |t|\leq\delta\}$.
+Consider the local representation of $v$ given by
+$\sum_{i=1}^n v_i(x)\partial/\partial x_i$. By a rigid rotation, if
+necessary, we can and will arrange the adapted coordinates so that
+$v_1(0)=0$. Also, we define $V$ by
+\[V(x):=\sum_{i=3}^nv^4_i(x), \quad x\in\Sigma_\delta\]
+and the number
+$$
+M_\delta:=\max \left\{
+\max_{x\in\Sigma_\delta} |v_1(x)|,\quad
+\max_{x\in\Sigma_\delta}
+\left(\sum_{i=3}^nv^4_i(x)\right)^{1/4}\right\}.
+$$
+
+If $V(x^0)=0$, then $\lim_{\delta\to 0}M_\delta\to 0$. In case
+$V(x^0)=0$ and
+$M_\delta\neq 0$ for every $\delta$, we will only
+consider $a,b$ such that
+\begin{equation}\label{ab}
+a=b \cdot \left(M_\delta\right)^{1/2}.
+\end{equation}
+Of course,  even under the restriction just imposed, $a,b$,
+$a/b$ can each
+be chosen arbitrary small.
+If $V(x^0)\neq 0$ or if  $V(x^0)= 0$ and
+$M_\delta\equiv 0$ for
+all sufficiently small $\delta$, we ignore this restriction.
+
+{\bf Step 2.} For each $\delta$, Lemma~\ref{le1} and the definition of
+$\Sigma_\delta$ together imply there is
+an open ball $A_\delta \subset\Sigma_\delta$
+at the origin such that,
+for each $x\in A_\delta$ and for each time $t$ with $|t|>\delta$,
+the point $\phi^tx$ is not in $\Sigma_\delta$.
+If $\delta>0$ is given,
+choose $a,b$ as required in \eqref{ab}
+and so small that $D$ is in
+$A_\delta$. If  $x\in D$, let $x'$
+denote the point on $\partial D$
+where the segment of the trajectory
+$\{\phi^tx: |t|\leq N\}$ first enters
+$D$ and let $x''=\phi^{t_D}x'$ denote
+the point of $\partial D$ where the
+segment of the trajectory $\{\phi^tx: |t|\leq N\}$ last exits
+$D$. Clearly, $m_{N,D}(x)\leq t_D$.
+
+We use the Mean Value Theorem for integrals
+on the $j$th component
+of the vector field $v$ to obtain a point $ \xi^j\in\Sigma_\delta$
+such that
+\[ x''_j=x'_j+\int\limits_0^{t_D} v_j(\phi^t x) \,dt=
+x'_j+t_D v_j(\xi^j).\]
+For each $j=1,\dots,n$,  let $ v_j^*=v_j(\xi^j)$.
+Also, as an abbreviation, define $\alpha_j=4nb$ for $j=1,2$ and
+$\alpha_j=na$ for $j=3,\dots, n$.
+
+Since $x'$ and $x''$ both belong to
+$\partial D$, we have
+$$\sum_{i=1}^n\left(\dfrac{x'_i}{\alpha_i}\right)^4=1
+\qquad \text{and}\qquad
+\sum_{i=1}^n\left(\dfrac{x'_i+t_Dv_i^*}{\alpha_i}\right)^4=1.
+$$
+Using a standard inequality for the norm
+$\|(\gamma_i)\|=\left(\sum_i|\gamma_i|^4\right)^{1/4}$, we find
+\begin{eqnarray*}
+& 1=  \sum_{i=1}^n\left(\dfrac{x'_i+t_Dv_i^*}{\alpha_i}\right)^4
+\geq  \left(\sum_{i=1}^n\left(\dfrac{t_Dv_i^*}{\alpha_i}\right)^4
+\right)^{1/4} -
+\left(\sum_{i=1}^n\left(\dfrac{{x'}_i}{\alpha_i}\right)^4
+\right)^{1/4}\\
+& =  \left(\sum_{i=1}^n\left(\dfrac{t_Dv_i^*}{\alpha_i}\right)^4
+\right)^{1/4}-1.
+\end{eqnarray*}
+This computation yields the estimate
+\begin{equation}\label{tD}
+t_D^4\sum_{i=1}^n\left(\dfrac{v^*_i}{\alpha_i}\right)^4\leq 2^4.
+\end{equation}
+
+{\bf Step 3.} Consider the time  $t_B$  when
+the segment of the trajectory $\{\phi^tx^0: |t|\leq N\}$ first
+leaves  $D$. Clearly, $m_{N,B}(x^0)\geq t_B$.
+
+Recall that in our local coordinates, $x^0$ resides
+at the origin and  define $\tilde{x}=\phi^{t_B}(x^0)$.
+As in Step~2,  by the the Mean Value Theorem,
+there is some $\eta^j\in\Sigma_\delta$ such that
+$$
+\tilde{x}_j=\int\limits_0^{t_B}v_j(\phi^t(x^0))\,dt=
+t_Bv_j(\eta^j).
+$$
+Define  $\tilde{v}_j:=v_j(\eta^j)$, the numbers
+$\beta_j=a/2$ for $j=1,3,\dots, n$ and $\beta_2=b/2$.
+Since $\tilde{x}\in\partial B$, we have
+\begin{equation}\label{tB}
+t^4_B \sum_{j=1}^n\left(\dfrac{\tilde{v}_j}{\beta_j}\right)^4=1.
+\end{equation}
+
+{\bf Step 4.}
+In accordance with the previous notation, we define
+$$
+\tilde{V}=\sum_{i=3}^n\tilde{v}^4_i,\quad
+V^*=\sum_{i=3}^n\left(v^*_i\right)^4.
+$$
+We use \eqref{tD}-\eqref{tB} to obtain the estimate
+$(t_D/t_B)^4\leq 2^{16} n^4\cdot d$ where
+$$
+d:=\dfrac{\tilde{v}_1^4+\left(\dfrac{a}{b}\tilde{v}_2\right)^4+
+\tilde{V}}{\left(\dfrac{a}{b}v^*_1\right)^4+
+\left(\dfrac{a}{b}v^*_2\right)^4+4^4 V^*}.
+$$
+
+We will show that for all sufficiently small $\delta>0$,
+there are some choices of  $a,b$ such that $d<2$.
+There are several cases.
+
+Case 1. If $V(x^0)\neq 0$, then $\lim_{\delta\to 0}d= 4^{-4}$.
+
+Case 2. If $V(x^0)= 0$ and
+$M_\delta\equiv 0$ for all sufficiently
+small $\delta$,
+then, since $v_2(x^0)\neq 0$, $\lim_{\delta\to 0}d= 1$.
+
+Case 3. Suppose  $V(x^0)= 0$ and $M_\delta\neq 0$. However, note
+that we still have
+$\lim_{\delta\to 0}M_\delta\to 0$.
+Also, the restriction we imposed in \eqref{ab} provides that
+\[
+\dfrac{b}{a}\tilde{v}_1^{1/2}\leq 1,\quad
+\dfrac{b}{a}\tilde{V}^{1/8}\leq 1.
+\]
+In this case, we have
+\begin{equation*}
+d  = \dfrac{
+\left(\dfrac{b}{a}\tilde{v}_1\right)^4
++\tilde{v}_2^4+\left(\dfrac{b}{a}\right)^4\tilde{V}}
+{\left(v_1^*\right)^4+\left(v_2^*\right)^4+
+4^4\left(\dfrac{b}{a}\right)^4V^* }
+ \leq
+\dfrac{
+\tilde{v}_1^2+\tilde{v}_2^4+\tilde{V}^{1/2} } {({v}_2^*)^4}.
+\end{equation*}
+Passing to the limit as $\delta\to 0$, we see that
+the last expression converges to $1$.
+\end{pf}
+
+We need the following elementary fact.
+\begin{lem}\label{opA}
+Suppose  $A$ denotes an
+invertible bounded operator on a Banach space $E$ and let $N\in \bbZ$.
+If $N\geq 2$ and
+$1\in\sap(A)$, then there is a vector $u\in E$ with
+$\|u\|_E=1$ such that   $\|A^ku\|_E\leq 2$ for each integer $k$ with
+$|k|\leq N$.
+\end{lem}
+\begin{pf} Set
+$\displaystyle{\epsilon=\left(\sum_{k=-N}^N\|A^k\|\right)^{-1}}$.
+Since $1\in\sap(A)$, there is some
+$u\in E$ with $\|u\|_E=1$ such that $\|Au-u\|\leq \epsilon$.
+Also, for $1\leq |k| \leq N$, note that
+$$
+A^k-I=\left(\sum_{j=0}^{k-1}A^j\right)(A-I),\;
+k>0,\quad
+A^k-I=-\left(\sum_{j=-1}^{k}A^j\right)(A-I),\;
+k<0.
+$$
+Hence, for $ |k|\leq N$, we have
+$\displaystyle{ \|A^ku-u\|\leq
+\sum_{j=-N}^N\|A^j\|\cdot \|Au-u\|
+\leq 1}$
+and, as a result,
+$\|A^ku\|\leq
+\|A^ku-u\|+\|u\|\leq 2$.
+\end{pf}
+
+The main result of this section is the following lemma.
+\begin{lem}\label{main}
+Suppose $e^{tM}=T^t$ is the group defined in
+\eqref{defTt}and define $T:=T^1$.
+If $1\in\sap(T;\C)$, then $\sap(M;\CND)$
+contains the imaginary axis
+of the complex plane.
+\end{lem}
+In accordance to \eqref{apprsp} this lemma also shows that
+$1\in\sap(T,\CND)$ implies $0\in\sap(M,\CND)$
+for  both cases:
+\[ \CND=C_{ND}^0(X,\TX) \text{  or  }
+\CND=C_{ND}^1(X,\TX).\]
+
+\begin{pf}
+Let $\xi\in\bbR$ and let $K$ be defined as in Lemma~\ref{le1}. Also,
+for notational convenience,  define
+$\omega:=1/(12K)$.
+
+Since $1\in\sap(T)$,  Lemma~\ref{opA} applied to the bounded
+linear operator $T=T^1$ ensures that, for each integer $N\geq 2$,
+there is some vector field $u\in C(X,\TX)$ such that
+\begin{eqnarray}
+\|u\|_{C(X,\TX)}=1, \label{1a}\\
+\|T^ku\|_{C(X,\TX)}\leq 2 \mbox{ for } |k|\leq N. \label{1b}
+\end{eqnarray}
+
+Since $\{T^t\}$ is a $C_0$-semigroup, $T^tu\to u$ in
+$C(X,\TX)$ as $t\to 0$. Thus, there is a real number $s$ with
+$0<s\le 2N$ such that
+\begin{eqnarray}
+\|T^tu-u\|_{C(X,\TX)}\leq \omega \mbox{ for } |t|\leq s, \label{2}\\
+| e^{-i\xi t} -1|\le\omega
+\mbox{ for } |t|\leq s. \label{5cd}
+\end{eqnarray}
+Also, there is a smooth function $\gamma:\bbR\to [0,1]$ such that:
+\begin{eqnarray}
+\gamma(t)=0  \mbox{ for } |t|\geq N, \label{3a}\\
+|\gamma'(t)|\leq\dfrac{2}{N}, \mbox{ for } t\in\bbR, \label{3b}\\
+\gamma (t)=1  \mbox{ for } |t|\leq s. \label{3c}
+\end{eqnarray}
+
+In view of \eqref{1a},
+and the fact that the non periodic points are dense in $X$, there is a
+non periodic point $x^0\in X$ such that
+\begin{equation}\label{4}
+\|u(x^0)\|\geq \dfrac12 \|u\|_{C(X,\TX)}= \dfrac12.
+\end{equation}
+Use Lemma~\ref{bddtime} to find small $a,b$ with small
+$a/b$, and neighborhoods $D\supset B\ni x^0$,
+such that \eqref{bddn} holds. Moreover, in accordance with
+Lemma~\ref{le1}, we can choose $a,b$ sufficiently small
+so that for $D:=D_{a,b}$, for
+$s$ from \eqref{2}--\eqref{5cd} and with
+$c:=\max_{|t|\le 1}\|T^t\|$
+we have
+\begin{equation}\label{out}
+\phi^ty\not\in D
+\text{ for any } y\in D \text{ provided }
+s\le |t|\le 2N
+\end{equation}
+and, for some constant $C$, the following inequalities:
+\begin{eqnarray}
+C \dfrac{a}{b} \left( \max_{|t|\leq N}\|T^t\|
+\right)\leq
+\omega,\label{5a}\\
+\max_{y\in D,  |t|\leq N} \|\Phi(y,t)u(x^0)\|\leq 4c.
+\label{5c}
+\end{eqnarray}
+For the last inequality, we use \eqref{1b} to show
+that
+\begin{eqnarray*}
+&&\max_{|t|\leq N}\|\Phi(x^0,t)u(x^0)\|\leq
+\max_{|t|\leq N, x\in X}\|\Phi(x,t)u(x)\|   \\
+&& \leq
+\max_{|t|\leq N, x\in X}
+\|\Phi(\phi^{-t}x,t)u(\phi^{-t}x)\|
+=\max_{|k|\leq N-1, |\tau | \leq 1}\|T^{k+\tau}u\|    \\
+&& \leq c \max_{|k|\leq N-1}\|T^k\|\leq 2c.
+\end{eqnarray*}
+Since $\Phi: (x,t)\mapsto \Phi(x,t)$ is uniformly continuous
+on the compact set $X\times [-N,N]$,
+we have \eqref{5c} for a sufficiently
+small neighborhood $D$ of $x^0$.
+
+We use Lemma~\ref{loc} with $z=u(x^0)$. After a
+rigid rotation, if necessary, we can arrange the adapted coordinates
+so that the component of $v(x^0)$ in the direction of the first coordinate
+vanishes.
+Then, for this choice of adapted coordinates,
+there is  a divergence-free
+vector field of the form
+\begin{equation}\label{w}
+w(x)=\alpha (x)u(x^0)+w_n(x)
+\end{equation}
+with $\alpha$ and
+$w_n$ supported in $D$,
+\begin{equation}\label{w0}
+\|w_n\|_{C(X,\TX)} \leq C\dfrac{a}{b},
+\end{equation}
+and $\alpha(x)=1$ for $x\in B_{a,b}$.
+
+Define the  vector field $y$ on $X$ by
+$$
+y(x) = \int^{\infty}_{-\infty} e^{-i\xi t}
+\gamma(t) T^tw(x)\, dt.
+$$
+ We see that $y$ has zero divergence (for
+this remember $T^t$ preserves the divergence-free vector fields).
+By easy computations with $My=\left.\frac{d}{d\tau}T^\tau
+y\right|_{\tau=0}$ one has:
+ $$
+My=\int^{\infty}_{-\infty}\left.\dfrac{d}{d\tau}\big(e^{-i\xi
+(t-\tau)}\gamma (t-\tau)\big)\right|_{\tau=0}T^twdt =i\xi
+y-\int^{\infty}_{-\infty} \gamma '(t)e^{-i\xi t}T^tw\,dt. $$
+To complete the proof, we must show that  $i\xi \in
+\sigma_{ap}(M;\CND)$. This is an immediate consequence of the
+following proposition: There is a number $A>0$  that
+does not depend on the choice of $N$ such that
+$$\left\|
+\int^{\infty}_{-\infty}
+\gamma ' (t)e^{-i\xi t} T^tw \,dt\right\|_{C(X,\TX)} \le
+\dfrac{A}{N} \|y\|_{C(X,\TX)}.
+$$
+
+To prove the proposition, fix $x\in X$ and note that
+\begin{equation*}
+\|My(x) - i\xi y(x)\| =
+  \left\| \int^{\infty}_{-\infty} e^{-i\xi t}
+\gamma'(t)(T^tw)(x)\,dt\right \|\le I_1
++I_2
+\end{equation*}
+where, by \eqref{3a} and \eqref{3b},
+\begin{eqnarray*}
+I_1 & = \dfrac{2}{N} \int\limits^N_{-N}
+\alpha (\phi^{-t}x) \|
+\Phi^t(\phi^{-t}x,t)u(x^0)\| \,dt,\\
+I_2 & = \dfrac{2}{N} \int\limits^N_{-N}
+\|\Phi(\phi^{-t}x,t)\| \;
+\|w_n(\phi^{-t}x) \| \,dt.
+\end{eqnarray*}
+Since $\supp \alpha\subset D$
+and $\supp w_n \subset D$,
+the integrations $I_1$ and $I_2$
+can be restricted to $\Theta_D(x)=\Theta_{N,D}(x)$,
+see the notation
+in \eqref{defm}.
+We use \eqref{5c} to obtain:
+\begin{equation}\label{I1}
+I_1\leq \dfrac{2}{N}\int\limits_{\Theta_D(x)}
+\max_{y\in D,|t|\leq N}\|\Phi(y,t)u(x^0)\|
+\leq \dfrac{2}{N} 4 c \cdot m_{N,D}(x).
+\end{equation}
+We use \eqref{5a} and \eqref{w0} to estimate $I_2$:
+\begin{eqnarray}
+ I_2 &\leq & \dfrac{2}{N}\int\limits_{\Theta_D(x)}
+\max_{y\in D,|y|\leq
+N}\|\Phi(y,t)\|\|w_n\|_{C(X,\TX)}\,dt\label{I2} \\
+&\leq &
+\dfrac{2}{N} \max_{|t|\leq N}\|T^t\| \cdot
+C\dfrac{a}{b}\cdot m_{N,D}(x)
+ \leq\dfrac{2}{N} \omega m_{N,D}(x). \nonumber
+\end{eqnarray}
+We obtain the desired upper estimate from \eqref{I1} and \eqref{I2}, namely,
+\begin{equation}\label{above}
+\|My-i\xi y\|_{C(X,\TX)} \le
+\dfrac{A_1}{N}\max_{x\in X}m_{N,D}(x).
+\end{equation}
+
+To determine  the lower bound, we define
+\begin{eqnarray*}
+J_1 &=& \left\| \int^{\infty}_{-\infty}
+e^{-i\xi t} \gamma (t) \alpha(\phi^{-t}x^0)
+u(x^0) \,dt\right\|, \\
+J_2 &=& \left\| \int^{\infty}_{-\infty}
+e^{-i\xi t} \gamma (t) \alpha(\phi^{-t}x^0)
+\left[ (T^tu)(x^0)-u(x^0)\right] \,dt \right\|, \\
+J_3 &=& \left\|\int^{\infty}_{-\infty} e^{-i\xi t} \gamma (t)
+(T^tw_n)(x_0)\right\|
+\end{eqnarray*}
+and note that
+$$ \|y\|_{C(X,\TX)}\ge \|y(x_0)\|  \geq
+ J_1  - J_2 - J_3.$$
+Again, each integral is equal to its restriction to
+$\Theta_D(x^0)=\Theta_{N,D}(x^0)$.
+
+As in \eqref{I2}, we use \eqref{w0} and \eqref{5a}
+to estimate $J_3$ from above:
+\begin{equation}\label{J3}
+J_3 \leq
+\int\limits_{\Theta_D(x^0)}\|(T^tw_n)(x^0)\| \,dt
+\leq \omega m_{N,D}(x^0).
+\end{equation}
+
+Next, we use \eqref{2} to estimate $J_2$ from above. For this,
+note that from \eqref{out} if $t\in \Theta_D(x^0)$, then $|t|<s$. Thus,
+we have
+\begin{equation}\label{J2}
+J_2\leq
+\int\limits_{\Theta_D(x^0)}\|T^tu-u\|_{C(X,\TX)} \,dt\leq
+\omega m_{N,D}(x^0).
+\end{equation}
+
+Finally, we  estimate $J_1$ from below:
+\begin{equation}\label{J1}
+J_1=  \|u(x^0)\| \Big|
+\int_{\Theta_D(x^0)}
+e^{-i\xi t}\gamma (t)
+\alpha(\phi^{-t}x^0)\,dt \Big|
+\ge J_{11} - J_{12},
+\end{equation}
+where
+\begin{eqnarray*}
+J_{11} &=& \big|
+\int_{\Theta_D(x^0)}
+\gamma (t)\alpha(\phi^{-t}x^0)\,dt
+\big|\cdot \|u(x^0)\|, \\
+J_{12} &=& \big|
+\int_{\Theta_D(x^0)}(e^{-i\xi t}
+-1)\gamma (t)\alpha(\phi^{-t}x^0)\,dt \big|
+\cdot \|u(x^0)\|.
+\end{eqnarray*}
+
+Since, by \eqref{out}, $\phi^tx^0\not\in D$ for $s\le |t|\le 2N$,
+equation \eqref{3c} gives $\gamma(t)=1$ for $t\in \Theta_D(x^0)$.
+As $\alpha (x)=1$ for $x\in B$, we use \eqref{4} to compute
+the estimate:
+\begin{equation}\label{J11}
+J_{11}\ge \dfrac12 \int\limits_{\Theta_B(x^0)}
+\alpha(\phi^{-t}x^0) \,dt \ge
+\dfrac12 m_{N,B}(x^0).
+\end{equation}
+
+Since $\|u(x^0)\|\le 1$ and $|t|\le s$
+for $t\in \Theta_D(x^0)$, the inequality
+\eqref{5cd} implies:
+\begin{equation}\label{J12}
+J_{12}\le
+\int\limits_{\Theta_D(x^0)}\left|e^{-i\xi t}-1\right| \alpha
+(\phi^{-t}x^0)\,dt \le \omega m_{N,D}(x^0).
+\end{equation}
+
+The estimates
+\eqref{J11}, \eqref{J12}, \eqref{J2}, \eqref{J3}, and \eqref{bddn}
+together with
+the our choice of $\omega=1/(12K)$ give the following:
+\begin{eqnarray*}
+ \|y\|_{C(X,\TX)} & \ge & \dfrac12 m_{N,B}(x^0)- 3\omega
+m_{N,D}(x^0)\\
+ & \ge & \dfrac{1}{2K}\max_{x\in X}m_{N,D}(x)
+-3\omega\max_{x\in X}m_{N,D}(x)\\
+& = & \dfrac{1}{4K}\max_{x\in X}m_{N,D}(x).
+\end{eqnarray*}
+By combining this estimate with \eqref{above}, we have the desired result.
+\end{pf}
+
+We are now in the position  to prove Theorem~\ref{SMT}.
+
+\begin{pf}
+It is well-known (see, e.g., \cite{Pazy}) that the Spectral
+Inclusion Theorem
+ \begin{equation}\label{SIT}
+\sigma (e^{tM}) \supset \exp t \sigma
+(M), \quad t\neq 0
+\end{equation}
+ holds for any $C_0$-semigroup.
+Also, the spectral mapping theorem is true for the point and
+residual spectrum. Therefore,
+to prove \eqref{exp} one needs to show
+that,  in $\CND$,
+\[\sap (e^{tM}) \subset \exp t \sap (M), \quad t\neq 0.\]
+
+Fix
+$\mu=|\mu|e^{i\theta}\in\sap(e^{tM};\CND)$. Then $\mu=e^{t\lambda}$
+for $\lambda=\dfrac{1}{t}\ln |\mu|+i\dfrac{\theta}{t}$. Consider
+the cocycle $\tilde{\Phi}(x,t)=e^{-t\lambda}\Phi(x,t)$, and the
+group $\{\tilde{T}^t\}$, $\tilde{T}^t=e^{t\tilde{M}}$,
+defined by $\tilde{\Phi}(x,t)$ as in
+\eqref{defTt}. Then $\mu\in\sap(e^{tM},\CND)$ implies that
+$1\in\sap(e^{t\tilde{M}};\CND)$. By \eqref{apprsp}
+and Lemma~\ref{main}, we have $0\in\sap(\tilde{M};\CND)$. But, since
+$\tilde{M}=M-\lambda$, this implies $\lambda\in\sap(M;\CND)$.
+
+To prove that $\sigma (M)$ is invariant under the translations
+along the imaginary axis, we fix $\lambda\in\sap(M)$ and
+$\xi\in\bbR$. By the Spectral Inclusion Theorem for $t=1$ we have
+$1\in\sap(e^{\tilde{M}})$, also, $\tilde{M}=M-\lambda$. By
+Lemma~\ref{main}, one has $i\xi\in\sap(\tilde{M})$ and, as a result,
+$\lambda+i\xi\in\sap(M)$. \end{pf}
+
+We will use notations
+$$s(A):=\sup\{
+\text{Re} z: z\in\sigma(A)\} \text{ and }
+\omega(A):=\lim_{t\to\infty}t^{-1}\ln\|e^{tA}\|$$
+for the spectral bound of
+a generator $A$ and the growth bound of a $C_0$-semigroup
+$\{e^{tA}\}$, respectively. Note \cite{Pazy}, that for an arbitrary
+$C_0$-semigroup $\{e^{tA}\}$ one has $s(A)\leq \omega(A)$, but,
+generally, $s(A)\neq \omega(A)$. The Spectral Mapping Theorem,
+however, gives for the group of weighted composition operators the
+following fact.
+\begin{cor} \label{somega} In the space of continuous
+divergence free vector fields the spectral bound and the growth bound
+are equal: $s(M)=\omega(M)$.
+\end{cor}
+
+\noindent{\bf Remark~2.9.} Consider the kinematic dynamo operator
+$L_\varepsilon=L+\varepsilon\Delta$ with $\varepsilon>0$ (see
+\eqref{kdeq}). This is an elliptic operator, it generates an
+analytic semigroup, and the spectral mapping theorem is
+valid \cite{Pazy} for this semigroup. Hence,
+$s(L_\varepsilon)=\omega(L_\varepsilon)$ for $\varepsilon>0$. For
+$L_0=L$,  Corollary~\ref{somega} shows that this equality is also
+valid for $\varepsilon=0$.
+
+\noindent{\bf Remark~2.10.} M.~Vishik \cite{Vishik} has shown that
+$\limsup_{\e\to 0}\omega(L_\e)\leq \omega(L_0)$. In view of
+Remark~2.9, this theorem can be reformulated as
+$\limsup_{\e\to 0}s(L_\e)\leq s(L_0)$. We stress that
+the last assertion does not involve the construction of the group
+$\{e^{tL_\e}\}$; it is given in the terms of generators only.
+See Remark~3.9 below for the connection of this assertion
+to the ``fast''-dynamo problem. Our formulation suggests
+that the validity of the assertion
+$\limsup_{\e\to 0}s(L_\e)= s(L_0)$
+can be approached as a problem from the theory
+of singular perturbations for the generators of
+$C_0$-semigroups.
+
+\noindent{\bf Remark~2.11.} The Spectral Mapping Theorem for
+semigroups of weighted composition operators does not hold without
+the assumption that aperiodic trajectories are dense in $X$ (see
+\cite{CS,LS} for examples). However, in the
+space $\C$ (and $L_2$, see  \cite{CS,LS}), this assumption is not
+required to prove the following Annular
+Hull Theorem:
+\begin{equation}\label{AHT}
+\exp t \sigma(M)\subset \sigma(e^{tM}) \subset {\cal H}\left(\exp t
+\sigma(M)\right), \quad t\neq 0,
+\end{equation}
+where ${\cal H}(\cdot )$ is the union of the circles centered at
+origin, that intersect the set $(\cdot )$. We conjecture the
+assertion \eqref{AHT} is valid in $\CND$. Note that the equality
+$s(M)=\omega(M)$ is an immediate consequence of \eqref{AHT}.
+
+\section{Description of the Spectrum}
+In this section we will describe the spectrum $\sigma(e^{tM})$ in
+the space $C_{ND}(X,\TX)$ under the assumptions of the previous
+section:
+$X$ is a compact  Riemannian manifold
+with $\dim X\ge 3$  and the divergence-free
+vector field $v$ on $X$ generates
+the flow $\phi^t$ whose aperiodic points  are
+dense in $X$. However, in fact,
+all the results of this section are valid provided $\dim X\ge 2$.
+
+By Theorem~\ref{SMT} it suffices to determine $\sigma(e^{tM})$ for
+a single value of $t$, say, for $t=1$.
+As a notational convenience, we
+define the bounded operator $T$ in $C(X,\TX)$ by
+$T=e^M$.  For example, if $M=L$ is the Lie derivative in the
+direction $v$, then, for $x\in X$,
+\[ (Tu)(x)=D\phi(\phi^{-1}x)u(\phi^{-1}x).\]
+Also, we let $T_{ND}:=T \left| C_{ND}(X,\TX)\right.$ denote the
+restriction of $T$ to the subspace $C_{ND}(X,\TX)$.
+
+We will prove that $\sigma(T_{ND},\CND)$ is exactly one annulus,
+centered at the origin whose inner and outer boundaries
+are the boundaries of $\sigma(T,\C)$.
+The proof is based on the
+following simple idea.  We will show that
+both spectra are rotationally invariant and the
+approximate point spectra
+of $T$ and $T_{ND}$ coincide. Under the assumption that in the space of
+divergence-free vector fields
+$\sigma(T_{ND},\CND)$ has a gap, we will extend the Riesz
+projection for $T_{ND}$ from $\CND$ to $\C$. To construct this
+extension, we will approximate a continuous vector field by a
+linear combination of locally supported divergence-free vector
+fields. The Riesz projection for $T_{ND}$ can
+be applied to each such divergence-free vector field and
+this extension turns out to be a Riesz
+projection for $T$ in $\C$. By Mather's theory this Riesz projection
+will be an operator of multiplication by a
+continuous matrix-valued function.
+This multiplication must preserve $\CND$, a
+contradiction.
+
+To approximate a continuous vector field by a
+linear combination of locally supported divergence-free vector
+fields, we will need the following restricted
+form of Lemma~\ref{loc}:
+\begin{lem}\label{loc2}
+If  $x^0\in X$ is a non periodic point of $v$ and if
+$z \in {\cal T}_{x^{0}}X$, then, for each
+pair $B,D$ of
+sufficiently small neighborhoods with
+$D\supset B \ni x^0$,  there is a coordinate chart  with
+coordinate functions $(x_1,\ldots,x_n)$ at
+$x^0$ containing $D$ and a
+vector field $f\in C_{ND}(X,\TX)$ with
+$\supp f\subset D$ such that the local representative of $f$
+in $B$ is given by the constant vector field
+$\displaystyle{\sum_{i=1}^nz_i\frac{\partial}{\partial x_i}}$
+whose components, $z_i$,  are the components of the local
+representative of the vector $z$.
+\end{lem}
+
+By a theorem  of Mather \cite{Mather} (see also \cite{CS,LS}),
+the spectrum $\sigma_{ap} (T)$ in $\C$
+is  invariant with respect to rotations about the
+origin  in the complex plane.
+As a corollary of  Theorem~\ref{SMT} we have the following two
+assertions. We note, that these two assertions were also proved in
+\cite{Rafael}.
+\begin{cor}\lb{cor1} $\sigma_{ap} (T_{ND}; \CND)$ is
+rotationally invariant. \end{cor}
+\begin{cor}\lb{cor2}
+$\sigma_{ap} (T; C(X,\TX)) =
+\sigma_{ap}
+(T_{ND}; C_{ND}(X, \TX)).$
+\end{cor}
+\begin{pf}
+In view of \eqref{apprsp} and the fact that the
+spectra $T_{ND}$ and $T$ are rotationally invariant,
+the assertion will be proved as soon as we show
+the following proposition:  If $1\in\sap(T; C(X,\TX))$, then
+$1\in\sap(T_{ND}; C_{ND}(X,\TX))$.
+By the Spectral Inclusion Theorem \eqref{SIT}, to prove this
+proposition it is enough to show that
+$0\in\sap(M_{ND};\CND)$ provided $1\in\sap(T)$ in $ C(X,\TX))$.
+This is done in
+Lemma~\ref{main}.
+\end{pf}
+
+In accordance with \cite{Mather} (see also \cite{CS,LS}),
+the set $\sigma(T;\C)$ generally consists of
+several disjoint annuli centered at the origin.
+Let $r_-$ (resp., $r_+$) denote the radius of the inner most
+(resp., outer most) circle in $\sigma(T; C(X,\TX))$.
+By Corollary~\ref{cor2}, we have
+$\sigma(T_{ND},C_{ND} (X,\TX))\subset \{z: r_-\leq |z|\leq r_+\}$.
+We will show the set $\sigma(T_{ND},C_{ND} (X,\TX))$ is exactly
+this  annulus. This is the content of the  next theorem.
+\begin{thm}\lb{t4}
+The spectrum
+$\sigma(T_{ND}, C_{ND} (X,\TX))$ of $T$ in  $C_{ND} (X,\TX)$ is
+the annulus
+$\{z:r_{-}\le |z| \le r_{+} \}$.
+\end{thm}
+\begin{pf}
+Suppose the theorem is not true, then there is a gap in the spectrum
+$\sigma(T_{ND})$ in $\CND$. Without
+loss of generality,  we can assume
+there is an annulus $\{z:r_1 \le |z| \le r_2\}$ in the resolvent
+set of $T_{ND}$ containing the unit circle $\bbT$
+and $r_- \le r_1 < 1< r_2\le r_{+}$.
+In this case,
+there is a Riesz projection
+$P=P_{ND}$ for the
+operator $T_{ND}$ in $C_{ND} (X,\TX)$ corresponding to the
+part of $\sigma(T_{ND}, C_{ND} (X,\TX))$ that lies
+inside of the unit disc $\bbD$. In addition, there
+are positive constants $C_1, C_2$ such that
+\begin{eqnarray}
+\Im P & = &
+ \{f\in C_{ND}(X,\TX): \nonumber\\
+&& \|T^nf\|_{\C}
+\le C_1 r^n_1\|f\|_{\C},\, n\in\bbN\},\label{imp}\\
+\Im{(I-P)}
+& = & \{ f\in C_{ND}(X,\TX):  \nonumber\\
+&& \| T^{-n}
+f\|_{\C} \le C_2
+r^{-n}_2 \|f\|_{\C},\, n\in \bbN\}.\label{imq}
+\end{eqnarray}
+
+We will construct a projection $\calP$ in $C(X,\TX)$
+that commutes with
+$T$ and has the following additional properties:
+\begin{equation*}
+\sigma (T|\Im \calP, C(X,\TX))\subseteq \bbD,\quad
+\sigma ([T|\Im{(I-\calP)}]^{-1},C(X,\TX))\subset \bbD.
+\end{equation*}
+In other words, the operator $T$ is hyperbolic in $C(X,\TX)$, that is,
+\[\sigma(T,\C)\cap \bbT=\emptyset,\]
+and $\calP$ is the Riesz projection for $T$ in $\C$.
+It follows, see \cite{Mather} and
+\cite{LS}, that the
+projection $\calP$
+has a form
+$\calP f (x) = P_C(x)f(x)$, where $P_C:X\to {\proj}({\cal T}_xX)$
+is a continuous
+projection-valued function.
+
+Note, that $\calP=P_{ND}$ on $C_{ND}(X,\TX)$.   Hence,
+$\calP$ maps $C_{ND}(X,\TX)$ into itself.
+We claim that
+this implies $\calP$ is either the identity or the zero
+operator, in contradiction to the fact that $T$ is hyperbolic.
+To prove the claim, consider local (adapted) coordinates
+$(x_1,\ldots,x_n)$ so that
+the divergence operator is given as in \eqref{divform}.
+The projection $\calP$ is represented by a matrix valued
+function with components $\calP_{ij}(x)$. For each divergence-free
+vector field $u$, we then have
+\begin{equation}
+\label{divfreeeq}
+0=\div( \calP u)=\sum_{i,j}\frac{\partial\calP_{ij}}{\partial
+x_i}u_j +\calP_{ij}\frac{\partial u_{j}}{\partial x_i}.
+\end{equation}
+For each point $x$ in the coordinate chart and each index pair
+${i,j}$ with $i\ne j$, there is a divergence-free
+vector field $u$ such that $u(x)=0$ and
+$\partial u_{j}(x)/{\partial x_i}=\delta_{ij}$ where $\delta_{ij}$
+is Kronecker's delta. With this choice of $u$, \eqref{divfreeeq}
+shows $\calP_{ij}=0$ for $i\neq j$.
+ Using that fact that $\calP$ is a projection, we
+have $\calP(\calP-I)=0$ and it follows that each diagonal element,
+$\calP_{ii}(x)$, is either
+zero or  one. Since $\calP$ preserves all
+divergence-free vector fields, it is easy to see that all diagonal
+elements must then be equal  and $\calP$ is as required in the coordinate
+chart. The desired result follows by continuity and the connectivity
+of $X$.
+
+We will construct the required projection $\calP$ in the space $\C$.
+
+{\bf Step 1.} We introduce ``step-functions'' in $\C$.
+
+Since $X$ is compact, there is a partition of unity
+$\{\displaystyle \rho_k\}^{K}_{k=1}$ with $K<\infty$, that is,
+for each integer  $0<k\le K$, the function $\rho_k:X\to [0,1]$ is
+continuous, and, for each $x\in X$,
+\begin{eqnarray}
+& \sum^{K}_{k=1} \rho_k (x) = 1, \label{summ}\\
+& \supp  \rho_k\setminus
+(\cup\sb{\ell \notin k} \supp \rho_{\ell})
+\neq \emptyset. \label{suppm}
+\end{eqnarray}
+In particular, there is some
+$x_k\in\supp  \rho_k\setminus\cup\sb{\ell \notin k} \supp \rho_{\ell}$
+such that $\rho_k(x_k)=1$.
+
+For each set of  vectors  $u_1,\ldots,u_K$,
+the vector field
+\[g(x)=\sum^{K}_{k=1} \rho_k(x) u_k\]
+is  continuous, and $\|g\|_{C(X,\TX)} =
+\sup_k \| u_k \|$.
+Indeed, if $\| u_{k'}\| = \sup_k \| u_k\|,$
+we can use \eqref{suppm} to choose $x_0$
+such that $\rho_{k'}(x_0) =1$ for some
+$x_0\in \supp \rho_{k'}\bs \cup\sb{k\notin k'} \supp \rho_k$.
+Then,
+$$
+\| g\| \ge \| g(x_0) \|=\| \sum_k \rho_k
+(x_0) u_k\|=\| \rho_{k'} (x_0)
+u_{k'}\|=\|u_{k'}\|.
+$$
+On the other hand, using \eqref{summ},
+\begin{equation*}
+\|g\|  = \max\sb{x\in X} \| \sum_k \rho_k (x)u_k \|
+\le \max\sb{x\in X} \sum_k
+\rho_k (x) \| u_k\| \le \sup_k \| u_k \|.
+\end{equation*}
+
+It is also easy to see that the set $\frak G$ of all
+such ``step-functions'' $g=\sum_k \rho_k u_k$ is dense in
+$C(X,\TX)$.
+
+{\bf Step 2.} We will  define $\calP$ for $g\in\frak G$.
+
+Suppose $g=\sum_k \rho_k u_k\in\frak G$.
+Without loss of generality we can assume the partition
+of unity is so fine that
+ Lemma~\ref{loc2} is applicable for each $k$. By this lemma,
+ for each
+$k$, there is a section $f_k \in C_{ND}(X,\TX)$ such that
+$f_k(x)= u_k$ for $x\in \supp \rho_k$ and $\| f_k \|_C = \|u_k \|$.
+Then, for each $x\in X$,
+\begin{equation}\label{deff}
+g(x) = \sum_k \rho_k (x) f_k(x),\quad f_k\in\CND.
+\end{equation}
+We define $\calP g$ and $\calQ g$ as follows:
+\begin{equation}\label{defpq}
+\calP g(x) = \sum_k \rho_k(x) (Pf_k)(x), \quad \calQ g(x) =
+\sum_k \rho_k (x)[(I-P) f_k](x),
+\end{equation}
+where $P=P_{ND}$ is the Riesz projection for $T_{ND}$ in $\CND$.
+Formally, the decomposition
+$g=\calP g+ \calQ g,$  depends upon
+the choice of $f_k$. However,
+we will show that, in fact, the definition
+\eqref{defpq}
+does not depend on this  choice and that
+$\calP$  is a bounded linear operator on $\frak G$.
+Once this is proved,
+the unique bounded linear
+extension of  $\calP$
+to $\C$ is the desired projection.
+
+{\bf Step 3.} Define
+\begin{eqnarray*}
+F_{+} &: = \{f\in C(X,\TX):\lim\sb{n\to\infty}\| T^n f\| =0\},\\
+F_{-} &: = \{f\in C(X,\TX):\lim\sb{n\to\infty}\| T^{-n}f\| =0\}.
+\end{eqnarray*}
+We will show that $F_{+} \cap F_{-} = \emptyset$.
+
+Clearly, $F_\pm$ are linear (not necessarily closed)
+subspaces in
+$C(X,\TX)$.
+Assume $f\in F_{+} \cap F_{-}$ and $ f\neq 0$.
+We have
+$$
+\lim\sb{n\to\pm\infty}\|T^nf\| =
+\lim\sb{n\to\pm\infty}\max_x \| \Phi(x,n)
+f(x) \| =0.
+$$
+In particular, there is some $x^0 \in X$ such that $f(x^0) \neq 0$
+and
+$$
+\sup\sb{n\in\bbZ} \| \Phi(x^0,n) f(x^0) \| < \infty.
+$$
+This implies (see \cite{CS} or \cite{Mane}) that
+$\bbT \subset \sigma_{ap} (T, C(X,\TX))$. Thus,
+by Corollary~\ref{cor2}, we have
+$\bbT \subset\sigma_{ap} (T_{ND}, C_{ND}(X,\TX))$. But, this
+contradicts our assumption that $T_{ND}$ is hyperbolic in $\CND$.
+
+{\bf Step 4.} We show that $\calP$ and $\calQ$ are
+well-defined on $\frak G$.
+
+Suppose $g=\sum \rho_k u_k\in\frak G$ and, for each $k$, the
+section  $f_k$ is chosen as in \eqref{deff}.
+Also, define $g_{+}:=\calP g$ and $ g_{-}:=\calQ g$.
+We will show $ g_{\pm}\in F_{\pm}$.
+
+Indeed, as $Pf_k\in \Im P$, using the  inequality
+\eqref{imp}, we have
+\begin{eqnarray*}
+&\| T^n g_{+} \| &=  \| \sum_k \rho_k \circ
+\phi^n T^n Pf_k\|_\C \\
+&& \le \sup_k \| T^n Pf_k\|_\C
+\max_x \sum_k \rho_k \circ \phi^n\\
+&& \le  C_1r^n_1\sup_k \| Pf_k\|_\C
+\le C_1r^n_1\| P\|\sup_k\| f_k\|_\C =\\
+&& =  C_1 r^n_1\|P\|\sup_k \|u_k\| =
+C_1 r^n_1\| P\|\cdot\| g\|_\C.
+\end{eqnarray*}
+In particular, $\lim_{n\to \infty}\| T^n g_{+} \|=0$ and
+$g_{+}\in F_{+}$.
+Similarly, using \eqref{imq}, we have
+\begin{eqnarray*}
+&&\|T^{-n}g_{-}\|_\C =  \|\sum_k\rho_k
+\circ\phi^{-n} T^{-n} (I-P)f_k\|_\C  \\
+&& \le \max_x \sum_k \rho_k\circ
+\phi^{-n}(x) \sup_k \|T^{-n} (I-P)f_k\|_\C \\
+&&\le  C_2 r^{-n}_2 \|I-P\| \sup_k \| f_k\|_\C = C_2 \| I-P \|
+r^{-n}_2 \|g\|_\C.
+\end{eqnarray*}
+This implies
+$\|T^{-n} g_{-} \| \to 0$ as
+$n\to\infty$
+and $g_{-}\in F_{-}$.
+
+By Step~3, we have  $F_{+} \cap F_{-} = \{0\}$.
+Hence, $g_{\pm}$, in the decomposition $g=g_++g_-$ with
+$g_{\pm}\in F_{\pm}$, are uniquely defined.
+If particular, the definition of $\calP g$ and $\calQ g$ in
+\eqref{defpq} does not depend on the choice of $f_k$.
+
+{\bf Step 5.} We extend $\calP$ and $\calQ$ from $\frak G$ to
+$\C$.
+
+{}From the  calculations in Step~4 with
+$\tilde C_1:= C_1 \|P\|$ and $\tilde C_2:=C_2\| I-P\|$,
+we have, for  $n\in\bbN$, that
+\begin{equation*}
+ \|T^n g_{+}\| C \le \tilde C_1
+r^n_1 \|g\|,\quad
+ \|T^{-n} g_{-}\|_C \le \tilde C_2
+r^{-n}_2 \|g\|.
+\end{equation*}
+These inequalities, for $n=0$, show that $\calP$ and $\calQ$ are bounded
+on $\frak G$. To complete the proof we will show
+these operators are linear on $\frak G$.
+
+Indeed, for
+\[
+g=\sum_{i=1}^{i_0} \rho_i u_i \text{ and  }
+\ti{g}=\sum_{j=1}^{j_0} \ti{\rho}_j\ti{u}_j
+\]
+there are $f_i,\ti{f}_j\in\CND$ such that $g=\sum \rho_if_i$ and
+$\ti{g}=\sum\ti{\rho}_j\ti{f}_j$. We define $f_{ij}=f_i$
+ and $\ti{f}_{ij}=\ti{f}_j$ for $i=1,\dots,i_0$, $j=1,\dots,j_0$,
+and use \eqref{summ} to obtain:
+\[ g=\sum_{i,j}\rho_i\ti{\rho}_jf_{ij},\quad
+\ti{g}=\sum_{i,j}\rho_i\ti{\rho}_j\ti{f}_{ij}.\]
+Then, \eqref{defpq} gives:
+\[ \calP (g+\ti{g})=\sum_{i,j}\rho_i\ti{\rho}_j(Pf_{ij}+P\ti{f}_{ij})=
+\calP g +\calP\ti{g},\]
+as required.
+\end{pf}
+
+{}From this theorem and Theorem~\ref{SMT} we conclude, that the spectrum
+$\sigma(M)$ in the space $\CND$ of divergence-free vector fields
+ is exactly one vertical strip:
+\begin{cor}
+$\sigma(M;\CND)=\{z: \ln r_{-}
+\le \text{ Re }z\leq \ln r_{+} \}$.
+\end{cor}
+
+Our next goal is to characterize the spectra $\sigma (T_{ND}; \CND)$ and
+$\sigma(M_{ND};\CND)$ via the {\em exact} Lyapunov exponents for the
+cocycle $\Phi(x,t)$ with respect to the set of  $\phi^t$-ergodic
+measures $\nu\in\calE$. Recall that, by the Multiplicative Ergodic
+Theorem \cite{OselMET}, for each ergodic measure
+$\nu\in\calE$, there exists a set $X_\nu\subset X$ with $\nu(X_\nu)=1$
+such that for each $x\in X$ and $u\in {\cal T}_xX$ there exist {\em
+exact} Lyapunov exponents
+\begin{equation}\label{eLE}
+\lambda_\nu(x,u)=
+\lim_{t\to\pm\infty}\dfrac{1}{t}\ln\|\Phi(x,t)u\|.
+\end{equation}
+For each $\nu$, there may exist  $n'=n'(\nu)\le n$
+different Lyapunov exponents; we will denote them by
+$\lambda_\nu^1> \lambda_\nu^2 > \dots > \lambda_\nu^{n'}$.
+\begin{cor} \label{calcul} The boundary circles of the
+spectrum $\sigma (T_{ND};\CND)$ and the spectrum
+$\sigma(M_{ND};\CND)$ are given by
+\begin{equation*}
+ \ln r_{+} = \sup \{\lambda^1_\nu : \nu\in\calE\},\quad
+ \ln r_{-} = \inf \{\lambda^{n'}_\nu :
+\nu\in\calE\}.
+\end{equation*}
+There exist measures $\nu_+$ and $\nu_-$ and exact Lyapunov
+exponents $\lambda_{\nu_+}(x_+,u_+)$ and
+$\lambda_{\nu_-}(x_-,u_-)$, such that the
+$\sup$ and $\inf$ above are attained.
+ \end{cor}
+\begin{pf} For the
+boundaries $r_{\pm}$ of the spectrum
+$\sigma(T;\C)$ in $\C$
+these formulas were obtained in \cite{LS} (see
+also \cite{OselDYN}). \end{pf}
+
+
+
+\noindent{\bf Remark~3.7.}
+The absence of nontrivial
+spectral components of $\sigma (L)$ for the space
+$\CND$ leads to the following  observation.
+ Consider a
+ situation when  $L$ acts
+in the space $\C$.
+After some inessential modifications, we can obtain
+a dichotomic (no spectrum on $i\bbR$) operator $L$.
+For example, starting with an Anosov flow, as usual in Mather's
+theory, such an operator can be obtained by
+``moding out'' the direction of the flow.
+
+We note that
+``moding out'' the direction of the
+flow does not change $\sigma(L)$.
+The reason is that the spectrum
+of $L$ on the direct sum of the quotient space $C_{ND}(X, \TX
+/[v])$ and the space of sections generated by $v$ is the union of the
+respective spectra.
+An element of the second space must be a divergence-free
+vector field of the form $\alpha v$ where $\alpha$ is a function on
+the manifold. This implies $\grad \alpha=0$ so that $\alpha$
+is constant along the trajectories of $v$. But, then $L\alpha v=0$
+and the spectrum of $L$ on this subspace is $\{0\}$.
+Since $\sigma(L_{ND};\CND)$ is
+invariant with respect to
+vertical translations in the complex plane,
+the entire imaginary axis must be in $\sigma(L_{ND},\CND)$.
+All the
+points except the origin must then be in the spectrum of
+$L$ restricted
+to the quotient space.
+But the spectrum of $L$ is closed,
+thus the origin is already in the spectrum
+on the quotient. In particular, the spectrum of the  quotient is
+the same as the spectrum on the original space.
+
+Going back to the  kinematic dynamo equations \eqref{kdeq}, we
+make the following concluding remark.
+
+\noindent{\bf Remark~3.8.} Recall (see,
+e.g., \cite{Arnold,AZRS,BC}) that kinematic dynamo is called
+``fast'' provided $\limsup_{\e\to\infty}\omega(L_\e)$ is positive.
+M.~Vishik \cite{Vishik} gave the following sufficient condition for
+the non-existence of a fast kinematic dynamo:
+Define the Lyapunov numbers
+\[
+\bar{\lambda}(x,u)=\limsup_{t\to\infty}
+\dfrac{1}{t}\ln\|D\phi^t(x)u\|.
+\]
+If
+\begin{equation}\label{vish}
+\sup \{
+\bar{\lambda}(x,u):
+x\in X, u\in \TX
+\}\leq 0,
+\end{equation}
+then there is no fast kinematic dynamo.
+The fact that
+the spectral bound $\omega(L)$ is less than or
+equal to the supremum in
+\eqref{vish}, see Remark~2.10, is used in \cite{Vishik}.
+Therefore, in view of \cite{Vishik},
+our Corollary~\ref{calcul} gives an alternate form of the
+sufficient condition for no fast kinematic dynamo.
+\section{Acknowledgement}
+We thank Misha Vishik for several very helpful conversations.
+\begin{thebibliography}{99}
+
+\bi{Arnold} V.~I.~Arnold,
+{\em Some remarks on the antidynamo theorem,}
+Moscow University Mathem.~Bull., {\bf 6} (1982) 50--57.
+
+\bi{AZRS} V.~I.~Arnold, Ya.~B.~Zel'dovich, A.~A.~Rasumaikin, and
+D.~D.~Sokolov, {\em Magnetic field in a stationary flow with
+stretching in Riemannian space,} Sov.~Phys.~JETP, {\bf 54} (6)
+(1981) 1083--1086.
+
+\bi{BC} B.~J.~Bayly and S.~Childress,
+{\em Fast-dynamo action in unsteady flows and maps in three
+dimensions,}
+Phy.~Rev.~Let. {\bf 59} (14) (1987) 1573--1576.
+
+\bi{CL} C.~Chicone, and Y.~Latushkin,
+{\em Quadratic Lyapunov functions for linear skew-product flows and weighted
+composition operators,}
+J.~Int.~Diff.~Eqns., to appear.
+
+\bibitem{CS} C. Chicone and R. Swanson,
+{\em Spectral theory for linearization of dynamical systems,}
+J.~Diff.~Eqns.,  {\bf 40} (1981) 155--167.
+
+\bi{FV} S.~Friedlander and M.~Vishik,
+{\em Dynamo theory methods for hydrodynamic stability,}
+J.~Math.~Pures Appl. {\bf 72} (1993) 145--180.
+
+\bi{HPS} M.~Hirsch, C.~Pugh, and M.~Shub,
+{\em Invariant Manifolds,}
+Lect. Notes Math. {\bf 583} (1977).
+
+\bi{J} R.~Johnson,
+{\em Analyticity of spectral subbundles},
+J.~Diff.~ Eqns., {\bf 35} (1980) 366--387.
+
+\bi{LMS1} Y.~Latushkin and S.~Montgomery-Smith,
+{\em Evolutionary semigroups and Lyapunov theorems in Banach spaces,}
+J.~Funct.~Anal., to appear.
+
+
+\bi{LMS2} Y.~Latushkin and S.~Montgomery-Smith,
+{\em Lyapunov theorems for Banach spaces,}
+Bull.~AMS {\bf 31} (1) (1994) 44--49.
+
+
+\bi{LMSR} Y.~Latushkin, S.~Montgomery-Smith and T.~Randolph,
+{\em Evolutionary semigroups and dichotomy of linear skew-product
+flows on locally compact spaces with Banach fibres,} in preparation.
+
+\bibitem{LS} Y.~Latushkin and A.~M.~Stepin,
+{\em Weighted composition
+operators and linear extensions of dynamical systems,}
+Russian Math.~Surveys, {\bf 46}, no. 2, (1992) 95--165.
+
+\bi{Mather} J.~Mather,
+{\em Characterization of Anosov diffeomorphisms,}
+Indag.~Math., {\bf 30} (1968) 479--483.
+
+\bi{Mane} R.~Man\~e,
+{\em Quasi-Anosov diffeomorphisms and hyperbolic manifolds,}
+Trans.~Amer.~Math.~Soc., {\bf 229} (1977) 351--370.
+
+\bi{Moffatt} H.~K.~Moffatt,
+{\em Magnetic Field Generation in
+Electrically Conducting Fluids,} Cambridge Univ. Press, Cambridge,
+1978.
+
+\bi{MRS} S.~A.~Molchanov, A.~A.~Ruzmaikin, and D.~D.~Sokolov,
+{\em Kinematic dynamo in random flow,} Sov.~Phys.~Usp. {\bf 28} (4)
+(1985) 307--327.
+
+\bi{OselMET}  V.~I.~Oseledec,
+{\em A multiplicative ergodic
+theorem: Lyapunov characteristic numbers for dynamical systems,}
+Trans.~Moscow Math.~Soc., {\bf 19} (1968) 197--231.
+
+
+\bi{OselDYN} V.~I.~Oseledec, $\Lambda$-entropy and the anti-dynamo
+theorem, In: {\it Proc. 6th Intern. Symp. on Information Theory,}
+Part III, Tashkent, (1984) 162--163.
+
+\bi{Pazy} A.~Pazy,
+{\em Semigroups of Linear Operators and Applications
+to Partial Differential Equations,}
+Springer-Verlag, N.Y./Berlin, 1983.
+
+\bi{Pesin} Ya.~B.~Pesin, {\em Hyperbolic theory}, in: Encyclop. Math. Sci.
+Dynamical Systems {\bf 2} (1988).
+
+\bi{Rafael}  R.~de~la~Llave,
+{\em Hyperbolic dynamical systems and
+generation of magnetic fields by perfectly conducting fluids,}
+Preprint, 1993.
+
+\bi{Rau}  R.~Rau,
+{\em Hyperbolic linear skew-product semiflows,}
+subm. to J.~Diff.~Eqns.
+
+\bibitem{Vishik} M.~M.~Vishik,
+{\em Magnetic field generation by the motion of
+a highly conducting fluid},
+Geophys.~Astrophys.~Fluid Dynamics,
+{\bf 48} (1989) 151--167.
+
+\end{thebibliography}
+\end{document}
+
+
+
+
+

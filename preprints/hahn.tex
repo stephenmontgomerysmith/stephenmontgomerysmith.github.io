@@ -1,0 +1,2221 @@
+%this is version of 30 june 1995
+\documentstyle[12pt]{article}
+\setlength\textwidth{6in}
+\setlength\oddsidemargin{0.25in}
+\topmargin -20mm
+\footskip 12mm
+%\textwidth 38pc
+\textheight 56pc
+\def\Bbb#1{{\mathchoice{\mbox{\bf #1}}{\mbox{\bf #1}}%
+{\mbox{$\scriptstyle \bf #1$}}{\mbox{$\scriptscriptstyle \bf #1$}}}}
+\def\N{\Bbb N}
+\def\R{\Bbb R}
+\def\C{\Bbb C}
+\def\Z{\Bbb Z}
+\def\T{\Bbb T}
+\def\Q{\Bbb Q}
+\def\E{\Bbb E}
+\def\O{\Omega}
+\def\sgn{{\rm sgn}}
+\def\H{{\cal H}_P}
+\def\e{\epsilon}
+\def\A{{\cal A}}
+\def\cT{{\cal T}}
+
+
+
+\begin{document}
+\title{Hahn's Embedding Theorem for orders
+and harmonic analysis on groups with ordered duals}
+\author{Nakhl\'e H. \ Asmar\\
+ and 
+ \\Stephen J.\ Montgomery--Smith\\
+Department of Mathematics\\
+University of
+Missouri--Columbia\\
+Columbia, Missouri 65211  U.\ S.\ A.
+}
+\date{}
+\maketitle
+                             %
+                             %
+                             %
+                             %
+                             %
+                             %
+                             %
+                             %
+\begin{abstract}
+\baselineskip=10 pt
+Let $G$ be a locally compact abelian group whose dual
+group $\Gamma$ contains a Haar measurable order $P$.
+Using the order $P$ we define the conjugate function
+operator on $L^p(G)$, $1\leq p<\infty$,
+ as was done by Helson \cite{hel1}.
+We will show how to use Hahn's Embedding Theorem
+for orders and the ergodic Hilbert transform to study the 
+conjugate function.
+Our approach enables us to 
+define a filtration of the Borel $\sigma$-algebra
+on $G$, which in turn will allow us to introduce 
+tools from martingale theory into the analysis on 
+groups with ordered duals.
+We illustrate our methods by 
+describing a concrete way to construct the conjugate function
+in $L^p(G)$.  
+This construction is
+in terms of an unconditionally convergent 
+conjugate series
+whose individual terms are 
+constructed from specific ergodic Hilbert transforms.
+We also present a study of the square function associated with
+the conjugate series.
+\end{abstract}
+
+\section{Introduction}
+%
+%
+%
+Throughout this paper, $G$ will denote a 
+locally compact abelian group with dual group 
+$\Gamma$.   
+A Haar measure on $G$ will be symbolized by $\mu$.  
+For $1\leq p<\infty$,
+we denote by $L^p(G)$ the 
+Banach space of Haar measurable functions
+$f$ on $G$ such that $|f|^p$
+is integrable.  The space of essentially
+bounded Haar measurable functions
+on $G$ will be denoted by $L^\infty(G)$.
+
+
+An order on $\Gamma$ is a subset 
+$P$ such that 
+$P+P \subseteq P; P\cap (-P)=\{0\}; P\cup (-P)=\Gamma$.  
+Given such a set $P$ we will write $\alpha >\beta$ 
+to mean that $\alpha - \beta \in P\backslash \{0\}$.  
+For $f\in L^2(G)$ we use the Fourier 
+transform to define the conjugate function 
+$\widetilde{f}$ of $f$ with respect to the order 
+$P$ by the Fourier multiplier relation 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%conjugatefunction%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\widehat{\widetilde{f}}(\chi)=- i \ {\rm sgn}_P
+(\chi)\widehat{f}(\chi)
+\label{conjugatefunction}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%conjugatefunction%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+for almost all $\chi\in\Gamma$, where  
+${\rm sgn}_P (\chi)= -1, 0 ,{\rm or}\ 1$, 
+according as $\chi\in(-P)\backslash \{0\}$, 
+$\chi=0, {\rm or}\ \chi\in P\backslash \{0\}$.
+When $G$ is compact, these definitions are due to
+Helson \cite{hel1} and \cite{hel2}.\\
+%
+%
+%
+In \cite{gar}, Garling observed that the conjugate 
+function on $\T^N$,
+ defined using a 
+lexicographic order on $\Z^N$ is 
+connected in a natural way to martingale theory.  
+Using this connection, 
+Garling gave simple proofs of basic properties of 
+the conjugate function in this setting.
+Our goal in this paper is to show how
+certain notions related to 
+Hahn's Embedding Theorem for orders (\cite[Chapter IV]{fu})
+can be used to introduce similar tools from
+probability theory in the study of conjugate functions on groups
+with an arbitrary measurable order on the dual group. 
+We present the material related to Hahn's Theorem 
+in Section 2.  In particular,
+we will state a structure theorem 
+(Theorem (\ref{theorem3}) below),
+which describes an order in terms of a 
+unique chain of convex subgroups of $\Gamma$.
+When $\Gamma$ is not necessarily discrete,
+the chain of subgroups may contain elements that are not
+Haar measurable.  
+In Section 3, we will show how to obtain a structure
+theorem, similar to the one in Section 2,
+while avoiding nonmeasurabele subgroups of 
+$\Gamma$.  This study is based on the work of Hewitt and Koshi 
+\cite{hk} concerning measurable orders.
+In Sections 4,
+we use the structure theorems for orders 
+to define our construction of the conjugate function
+as a martingale difference series whose individual 
+terms are constructed by using different ergodic Hilbert transforms.
+In Section 5, we will show that the conjugate series of 
+$f\in L^p(G)$ is unconditionally
+convergent in $L^p(G)$ when $1<p<\infty$, 
+and is unconditionally convergent in
+$L^{1,\infty}(G)$ when $p=1$.
+These results yield a concrete way for 
+constructing the conjugate function
+on abstract groups.
+We end the paper with a study of the
+square function associated with the conjugate series.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Orders on discrete groups}
+\newtheorem{theorem1}{Theorem}[section]
+\newtheorem{archimedean}[theorem1]{Theorem}
+\newtheorem{theorem2}[theorem1]{Theorem}
+\newtheorem{remarks}[theorem1]{Definitions and Remarks}
+\newtheorem{lemma1}[theorem1]{Lemma}
+\newtheorem{convex-implies-pure}[theorem1]{Lemma}
+\newtheorem{lemma2}[theorem1]{Lemma}
+\newtheorem{theorem3}[theorem1]{Theorem}
+\newtheorem{theorem4}[theorem1]{Theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We start by collecting facts leading to a 
+ structure theorem for orders on discrete groups
+ (Theorem \ref{theorem3} below).  
+ This requisite material is taken
+ from \cite[Chapter IV]{fu} where it is presented 
+ as a background for the proof of Hahn's
+ Embedding Theorem for orders \cite[Theorem 16, p. 59]{fu}.
+ Our presentation is simplified by the fact 
+ that the groups are all abelian.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Definitions and basic Properties} 
+Let $\Gamma$ denote an infinite torsion-free
+abelian group.  The topology on $\Gamma$ will play no role
+in this section.  An order on $\Gamma$ will be denoted by
+$P(\Gamma)$ or simply $P$.  Because sometimes we
+will be dealing with more than one order
+on a given group, it will be convenient
+to write $(\Gamma,P)$ or $(\Gamma,P(\Gamma))$ 
+to denote the group and the given order on it.
+A subset $J\subset \Gamma$ is called convex
+if whenever $a , b  \in J, c \in \Gamma$
+and $a\leq c \leq b$, then $c\in J$.
+As we will see, this notion plays a prominent 
+role in the theory
+of orders. For the reader's convenience, we list
+a few properties of convexity 
+that will be used 
+in the sequel. 
+(See \cite[pp. 18-19, and Chapter IV]{fu}.)\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(a)  A subgroup $C\subset \Gamma$ is convex
+if and only if $P(\Gamma)\cap C$ is convex in $P(\Gamma)$.\\
+(b)  If $B\subset C\subset \Gamma$, and if
+$B$ is convex in $C$ and $C$ is convex in $\Gamma$,
+ then $B$ is convex in $\Gamma$.
+\\
+(c)  The intersection of convex subgroups is again
+a convex subgroup.  Thus, if $A$ is a
+subset of  $\Gamma$, there is a smallest
+convex subgroup containing $A$.  We will denote
+this subgroup by 
+$\{A\}_\Box$.
+If $A$ is a subgroup, then 
+$\{A\}_\Box = (A+P)\cap (A-P)$.\\
+(d)  A subgroup $C\subset \Gamma$ is called
+principal if 
+$C=\{c\}_\Box$ for some $c\in \Gamma$.\\
+(e) Let $\Gamma$ and  
+$\Gamma^\prime$ 
+be two ordered groups.  A homomorphism 
+$\phi \ : (\Gamma, P(\Gamma) ) \longrightarrow
+ 		(\Gamma^\prime, P(\Gamma^\prime) )$,
+is called an order homomorphism if 
+$\phi (P(\Gamma) )\subset P(\Gamma^\prime)$.
+It is clear that if $\phi $ is an order homomorphism,
+then $\ker \phi$ is a convex subgroup of
+$\Gamma$.  Conversely, if $H$ is a 
+convex subgroup of $(\Gamma, P(\Gamma) )$,
+then we can define an order on the quotient group 
+$\Gamma/H$ by:  $a+H\in P(\Gamma/H) \Leftrightarrow
+a\in P$.  To verify this claim, 
+suppose that  $a + H= b+H$, and, say, 
+$a\in P$ and $b\in -P$.  
+Then $0\leq a\leq a-b \in H$.  Since $H$ 
+is convex, it follows that $a \in H$, and so 
+$a+H=b+H=0+H$, which shows that
+$ P(\Gamma/H)$ is indeed an order on  $\Gamma/H$.
+It is also clear that the 
+natural homomorphism 
+$\pi :\ (\Gamma, P(\Gamma) )\longrightarrow 
+(\Gamma/H, P(\Gamma/H) )$
+is an order homomorphism.  We have thus the following 
+useful theorem.  (See \cite[Theorem 7, p.21]{fu}.)
+ 		
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem1}
+Suppose that $\Gamma$ is an ordered group and 
+$H$ is a subgroup of $\Gamma$.  If $H$ is convex 
+then the natural homomorphism $\pi : \ \ 
+(\Gamma,P) \rightarrow (\Gamma/ H,\pi(P))$ is 
+an order homomorphism.  Conversely, suppose that
+$\phi : \ \ 
+(\Gamma,P) \rightarrow (\Gamma^\prime,P^\prime)$ 
+is an order homomorphism with $\ker \phi= H$.  Then $H$ is a
+convex subgroup of $\Gamma$.  
+\label{theorem1}
+\end{theorem1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Definition}  An order $P$ on $\Gamma$ is called 
+Archimedean if
+ given $a,b\in P\setminus \{0\}$, then there is 
+ a positive 
+ integer $n$ such that $na>b$.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ Archimedean orders have a simple characterization
+ in terms of real-valued homomorphisms 
+ due to O.\ H\"{o}lder
+ (\cite[Theorem 1, p. 45]{fu}).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{archimedean}
+An order $P$ on $\Gamma$ is Archimedean 
+if and only if $\Gamma$ is isomorphic to a subgroup of $\R$.
+\label{archimedean}
+\end{archimedean}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+There is another useful characterization of 
+Archimedean orders in terms of convex subgroups 
+(\cite[Corollary 5, p.\ 47]{fu}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{theorem2}
+Suppose that $\Gamma$ is an ordered group, 
+then $\Gamma$ is Archimedean ordered 
+if and only if the only convex subgroups 
+of $\Gamma$ are $\{0\}$ and $\Gamma$.
+\label{theorem2}
+\end{theorem2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Following \cite[Chapter IV, Section 3]{fu}, 
+we let $\Sigma$ denote the system of all 
+convex subgroups in $\Gamma$.  This system 
+is in fact a chain containing $\{0\}$ 
+and $\Gamma$.  Hence if $C$ and $D$ are in $\Sigma$, then
+either $C\subset D$ or $D\subset C$.  Also,
+ whenever 
+$\{C_\lambda\}_{\lambda\in\Lambda}$ 
+is a collection from $\Sigma$, then 
+$\bigcap_{\lambda\in\Lambda}C_\lambda$ 
+and 
+$\bigcup_{\lambda\in\Lambda}C_\lambda$ 
+are again in $\Sigma$.  By a jump in 
+$\Sigma$ we mean a pair of subgroups 
+$C$ and $D$ such that $D\subset C, D\neq C$, 
+and $\Sigma$ contains no subgroups 
+between $C$ and $D$.  A jump will be denoted by 
+$D\prec C$. \\ 
+It is a fact that a 
+subgroup $C\in\Sigma$ is the greater 
+member of a jump (i.\ e.\ $D\prec C$) if and only 
+if $C$ is a principal convex subgroup.  That is,
+$$C= \{a\}_\Box$$
+for some $a\in \Gamma$ (see p. 54 of \cite{fu}).\\
+Let 
+$\Sigma_0$
+denote the system of principal convex 
+subgroups, and let $\Pi$ be an indexing set for 
+$\Sigma_0$.  Order $\Pi$ as follows:  
+for $\rho, \pi\in \Pi$, 
+set 
+$\pi\leq\rho$ if and only if 
+$C_\rho\subset C_\pi$.  
+With this order, $\Pi$ has a 
+maximal element 
+$\alpha_0$ 
+corresponding to $\{0\}\in \Sigma_0$.
+  Thus $C_{\alpha_0}=\{0\}$.
+For notational convenience, let 
+$D_{\alpha_0}=\emptyset$.  
+Let 
+$D_\pi\prec C_\pi$
+denote a jump in $\Sigma$, with $\pi<\alpha_0$.  
+The quotient group $C_\pi/ D_\pi$ has 
+no nontrivial convex subgroups.  
+By Theorem (\ref{theorem2}), $C_\pi/ D_\pi$ is 
+Archimedean ordered.  Let
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\psi_\pi :\ \  C_\pi/ D_\pi \rightarrow \R
+\label{psi-sub-pi}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+denote the order isomorphism mapping $C_\pi/D_\pi$ 
+into a subgroup of $\R$, and let
+%
+%
+%
+\begin{equation}
+L_\pi :\ \  C_\pi \rightarrow \R
+\label{L-sub-pi}
+\end{equation}
+%
+%
+%
+denote the composition of $\psi_\pi$ 
+with the natural homomorphism of 
+$C_\pi$ onto $C_\pi/ D_\pi$.  Then $L_\pi$ 
+is an order homomorphism of $C_\pi$ into 
+$\R$ with $\ker L_\pi=D_\pi$.  
+Since $\R$ is a divisible group,
+the homomorphism $L_\pi$
+can be extended to a homomorphism of the 
+entire group $\Gamma$ into $\R$.
+(See \cite[Theorem A.7, p. 441]{hr1}.)
+We keep the same notation for this extension.
+The next 
+theorem summarizes this discussion.  
+It is a basic result of this section
+and will be used in defining our construction
+of the conjugate function.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%THEOREM3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem3}
+Let $\Gamma$ be an infinite discrete 
+(torsion-free) ordered group with order 
+$P$.  Let $\Sigma$ denote the chain of 
+convex subgroups of $\Gamma$ and $\Sigma_0$ 
+the subcollection of principal convex 
+subgroups indexed by the ordered set $\Pi$.  
+There is a collection of real-valued 
+homomorphisms 
+$\{L_\pi, \pi\in \Pi \}$
+of $\Gamma$ into $\R$ 
+such that, for every jump 
+$D_\pi\prec C_\pi$, 
+we have \\
+(i)  \ \ $ L_\pi\left( D_\pi\right)=\{0\}$; and\\
+(ii) $\sgn (L_\pi(\chi))=\sgn_P(\chi)$\\
+for all $\chi\in C_\pi\setminus D_\pi$.
+\label{theorem3}
+\end{theorem3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+Observe that, in the notation of the previous theorem, we have 
+%
+%
+%
+\begin{equation}
+\Gamma =\bigcup_{\alpha\in\Pi} C_\alpha\backslash D_\alpha.
+\label{slices}
+\end{equation}
+%
+%
+%
+In fact, given $x\in\Gamma$, we have 
+$\{x\}_\Box=C_\alpha$ for some $\alpha\in \Pi$.  
+Since $D_\alpha$ is strictly contained 
+in $C_\alpha$, it follows that $x$ 
+belongs to $C_\alpha\backslash 
+D_\alpha$ which proves (\ref{slices}).\\
+The following example will illustrate many of the results of this section.\\
+
+{\bf  Example}  Suppose that $( T, <)$ is an
+ordered set and that $\gamma$ is a limit 
+ordinal.  Let $\Z^{(T,\gamma)}$ be the group
+of sequences $(z_t)_{t\in T}$ such that the set 
+$\{ t:\ \ z_t\neq 0\}$ is reverse well ordered (i.\ e.,
+every subset has a largest element) with order type less than
+$\gamma$.  Define an order as follows:  If 
+$z=(z_t)_{t\in T}\in \Z^{(T,\gamma)}$ and 
+$t_0=\max \{t:\ \ z_t\neq 0\}$, then $z\in P$
+if and only if $z_{t_0} \ge 0$.\\
+In this example we see that $\Sigma_0$
+is order isomorphic $-T$, that
+$C_\alpha=\{(z_t):\ z_t=0,\ {\rm for}\ t\geq\alpha\}$,
+that 
+$D_\alpha=\{(z_t):\ z_t=0,\ {\rm for}\ t> \alpha\}$,
+and that $L_\alpha ((z_t))=z_\alpha$.\\
+%
+We can also construct $\R^{(T,\gamma)}$ similarly.\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\section{Orders on locally compact abelian groups}
+%
+\newtheorem{theorem3.1}{Theorem}[section]
+\newtheorem{remark3.2}[theorem3.1]{Remark}
+\newtheorem{addedlemma}[theorem3.1]{Lemma}
+\newtheorem{theorem3.3}[theorem3.1]{Theorem}
+\newtheorem{remarks3.4}[theorem3.1]{Remarks}
+\newtheorem{proposition31}[theorem3.1]{Proposition}
+\newtheorem{lemma31}[theorem3.1]{Lemma}
+\newtheorem{theorem32}[theorem3.1]{Theorem}
+\newtheorem{theorem33}[theorem3.1]{Theorem}
+\newtheorem{theorem34}[theorem3.1]{Theorem}
+\newtheorem{theorem35}[theorem3.1]{Theorem}
+\newtheorem{theorem36}[theorem3.1]{Theorem}
+%
+%
+In this section we prove a general version 
+of Theorem (\ref{theorem3}) for measurable orders.  
+%
+The difficulty here is due to 
+the fact that, in general, the chain
+of convex subgroups in Theorem (\ref{theorem3})
+may contain nonmeasurable 
+subgroups, or jumps of the form $D_\alpha\prec C_\alpha$
+with $C_\alpha\setminus D_\alpha$ having measure zero.
+To overcome these measure theoretic problems, we will
+find a smallest open principal convex subgroup
+of $\Gamma$ which will determine when to stop the chain
+while still being able to separate with
+continuous real-valued homomorphisms as in Theorem
+ (\ref{theorem3}).  
+ This section is based on the
+ study of orders of Hewitt and Koshi \cite{hk}.
+ Indeed, Theorem \ref{theorem35} 
+ below, is a combination of results from \cite{hk} and the
+ material from the previous section.
+%
+% 
+%
+Throughout this section $\Gamma$ will 
+denote an infinite locally compact torsion-free 
+abelian group.  
+The following
+basic properties of measurable orders will be needed.
+
+%%
+%%
+%%
+\begin{theorem3.1}
+(a)  If $P$ is a measurable order, then $P$ 
+has a nonvoid interior (\cite[Theorem (3.1)]{hk}.
+Consequently,  if 
+$P$ is a measurable order, then $(-P)$ has nonvoid interior.\\
+(b)  If $\Gamma$ is an infinite compact 
+torsion-free group, then every 
+order on $\Gamma$ is dense and has 
+void interior (\cite[Theorem (3.2)]{hk}.  
+Consequently, every order on a compact 
+infinite group is nonmeasurable.\\
+\label{theorem3.1}
+\end{theorem3.1}
+%
+%
+%
+\begin{remark3.2}
+{\rm Suppose that $\Gamma$ is a locally compact 
+abelian group, and that $P$ is a 
+measurable order on $\Gamma$.  
+%
+Use the structure theorem for locally 
+compact abelian groups to write $\Gamma$ 
+as $\Gamma=\R^a\times\O$ where $a$ is a nonnegative
+integer and $\O$ 
+contains a compact open subgroup $\O_0$
+(\cite[Theorem (24.30)]{hr1}).  
+The fact that $P$ is measurable automatically 
+implies that either $\Gamma$ is 
+discrete or $a>0$. 
+%
+In fact, if $a=0$, then $\Gamma=\O$ and so $\O_0$ 
+is a compact open 
+subgroup of $\Gamma$.  
+%
+The restriction of $P$ to $\O_0$ is 
+a measurable order in $\O_0$.  
+But since $\O_0$ is compact, it 
+follows from Theorem (\ref{theorem3.1})(b) that $\O_0=\{0\}$, 
+and so $\Gamma$ is discrete. }  
+\label{remark3.2}
+\end{remark3.2}
+%
+%
+%
+%
+ Henceforth to avoid the cases 
+ treated in the previous section, 
+ we will assume that $\Gamma=\R^a\times\O$ where $a>0$.
+ For use in the sequel, we need the following result due to 
+ Hewitt and Koshi \cite[Theorem (3.12)]{hk}. %
+ %
+ %
+  %
+  %
+\begin{theorem3.3}
+Let $P$ be an order on $\R^a\times B$\ where 
+$a>0$ and $B$ is an infinite torsion-free
+locally compact abelian group that is 
+the union of its compact open subgroups.  
+Suppose that $P$ has nonempty interior.
+Then there is a continuous real-valued 
+homomorphism $L:\ \R^a\longrightarrow \R$\ such that
+\begin{equation}
+L^{-1}(] 0,\infty [ )\times B\subset {\rm int} (P) \subset P\subset
+L^{-1}([ 0,\infty [ )\times B.
+\label{orders-on-R-a}
+\end{equation}
+The order $P\cap (L^{-1} (\{0\})\times B)$
+is arbitrary.  
+\label{theorem3.3}
+\end{theorem3.3}
+%
+%
+%
+%
+%
+%
+%
+%
+\begin{remarks3.4}
+{\rm (a)  It follows from Theorems (\ref{theorem3.1}) and
+(\ref{theorem3.3}) that an order 
+$P$ on $\R^a$ is measurable if and only if 
+it is not dense in $\R^a$.\\
+(b)  Let $P$ be a measurable order on $\R^a \times \O$, 
+and let $B$ denotes the union of all the compact open
+subgroups of $\O$. 
+The restriction of $P$ to $\R^a \times B$
+is a nondense order, and so by
+Theorem (\ref{theorem3.3}) there is a
+continuous real-valued homomorphism
+$L:\ \R^a \longrightarrow \R$ such that
+$$ L^{-1} (]0,\infty]) \times B \subset P .$$}
+\label{remarks3.4}
+\end{remarks3.4}
+%
+%
+%
+We can now describe our candidate 
+for a smallest open convex 
+principal  subgroup of $\Gamma$.
+Let
+%
+%
+%
+\begin{equation}
+H=\left\{
+y\in\O:\ \ \R^a\times\{y\} \ 
+{\rm \ has\ nonvoid\ intersections\ with}\  P\  
+{\rm \ and\ } \ (-P)
+\right\}.
+\label{candidate}
+\end{equation}
+%
+%
+%
+%
+%
+%
+\begin{proposition31}
+Let $P$ be a measurable order 
+on $\R^a\times \O$, and let $H$ be as in (\ref{candidate}).  
+%
+Then $H$ is a subgroup of $\O$ that contains all the compact
+open subgroups of $\O$;
+and $R^a\times H$ is an open convex 
+subgroup of $\Gamma$.
+\label{proposition31}
+\end{proposition31}
+%
+%
+%
+{\bf Proof.}  The fact that $H$ contains all the 
+compact open subgroups of 
+$\O$ follows from Theorem (\ref{theorem3.3}).
+Also, the fact that $H$ is a subgroup is easily verified.
+Since $\R^a\times H$ is a subgroup with nonvoid interior
+it follows immediately that the subgroup is open.
+%
+%
+%
+To establish the convexity of $\R^a\times H$,
+suppose that 
+%
+%
+%
+$$0< (t,y) < (t^\prime, y^\prime)$$
+% 
+%
+%
+with $y^\prime\in H,\ t,\ t^\prime \in \R^a$. 
+To show that 
+ $(t,y)\in \R^a\times H$, it is enough to 
+ find $x\in \R^a$ with $(x,y)\in -P$.
+ Since $y^\prime \in H$, we can find
+ $x\in \R^a$ such that $(x,y^\prime)\in -P$.
+ Hence 
+ $(t-t^\prime ,y-y^\prime) +(x,y^\prime)\in (-P)$, 
+ or,
+ $(t-t^\prime +x , y)\in (-P)$. \\
+%
+%
+%
+\begin{lemma31}
+Let $P$ be a measurable order in $\Gamma$ 
+and let $H$ be as in (\ref{candidate}).  
+%
+For $y\in H$, let $A_y=(\R^a\times\{y\})\cap P$ and 
+$B_y=(\R^a\times\{y\})\cap (-P)$.  
+%
+Then $A_y$ and $B_y$ are nondense in $\R^a\times\{y\}$. 
+\label{lemma31}
+\end{lemma31}
+%
+%
+%
+{\bf Proof.}  
+It is enough to deal with the set $A_y$
+with $y\neq 0$.  
+%
+Assume that 
+$(\R^a\times\{y\})\cap P$ is dense 
+in $\R^a\times\{y\}$.  
+%
+Let $(s,y)$ be any element of $\R^a\times\{y\}$, and let 
+$(s_0,y)\in (\R^a\times\{y\}) \cap P$ 
+be such that $L(s_0)> L(s)$.  
+%
+We have $L(s_0-s)>0$, and so from Remark (\ref{remarks3.4}) (b)
+we see that $(s_0-s,0)\in P$.  
+%
+Hence $(s_0,y)+(s-s_0,0)=(s,y)\in P$ 
+implying that $\R^a\times\{y\}\subset P$ 
+which contradicts the fact that $y\in H$.  
+%
+Thus $P\cap(\R^a\times\{y\})$ is 
+nondense in $\R^a\times\{y\}$.\\
+%
+%
+%
+%
+
+We can now prove a special separation theorem for orders. 
+(Compare with \cite[Theorem 3.7]{hk}.) 
+%
+%
+%
+\begin{theorem32}
+Let $P$ be a measurable
+order on $\Gamma$, let 
+$H$ be as in (\ref{candidate}), 
+and let $L$ be as in Remarks (\ref{remarks3.4}) (b).  
+For every $y\in H$, there is a real number 
+$\alpha ( y )$ such that \\
+(i)  $L^{-1}\left(]-\infty,\alpha(y)
+[\right) \times \{y\}\subset -P,$\\
+%
+%
+(ii)  $L^{-1}\left(]\alpha(y),\infty[\right) \times \{y\}\subset P.$\\
+Moreover, the mapping $y\mapsto \alpha(y)$ is a continuous real-valued homomorphism from $H$.
+\label{theorem32}
+\end{theorem32}
+%
+{\bf Proof.}  We will write the elements of 
+$\Gamma=\R^a\times \O$ as $(x,y)$ where $x \in \R^a$, 
+and $y\in \O$.  
+%
+Suppose that $(x_1,y) \in P$ and $L(x_2)>L(x_1)$.  
+%
+Then, $L(x_2-x_1)>0$, and so from Remarks (\ref{remarks3.4}) (b)
+we have that $(x_2-x_1,0)\in P\backslash \{0\}$, 
+and consequently, $(x_2,y)\in P\backslash \{0\}$.  
+%
+Similarly, if $(x_1,y)\in (-P)$, and $L(x_2)<L(x_1)$, 
+then $(x_2,y) \in (-P)\backslash \{0\}$.  
+%
+>From these observations and the definition of 
+$H$, we see that the following holds  for every $y\in H$:
+%%
+%%
+%%
+\begin{eqnarray}
+-\infty		&<&	\sup\left\{ 
+			L(x):\ \ x\in \R^a,\ (x,y)\in (-P)\right\}
+			\nonumber\\
+		&=&	\inf\left\{ 
+			L(x):\ \ x\in \R^a,\ (x,y)\in P)\right\}<\infty.
+\label{prfth32,1}
+\end{eqnarray}
+%%
+%%
+%%
+%%
+For $y\in H$, let $\alpha(y)$ be defined 
+by either the inf or the sup in (\ref{prfth32,1}).  
+That $\alpha$
+ is a continuous homomorphism follows exactly as in the 
+ proof of \cite[Theorem 3.7]{hk}.  We omit the details.
+ %
+%
+%
+%
+%
+
+We restate Theorem (\ref{theorem32}) 
+using separating homomorphisms that 
+reflect the 
+order on $\R^a\times H$.
+%
+\begin{theorem33}
+Let $P$ be a measurable order on $\Gamma$, 
+and let $H$, $L$, and $\alpha$ be as 
+Theorem (\ref{theorem32}).  
+%
+Define the homomorphism $\tau$ on $\R^a\times H$ by\\
+$$\tau (x,y) = L(x)- \alpha (y).$$
+Then\\
+%
+(i)  $\tau$ is continuous on $\R^a\times H$;\\
+%
+(ii)
+$\tau^{-1}\left(]-\infty,0[\right) \subset (-P);$\\
+%
+(iii)
+$\tau^{-1}\left(]0,\infty[\right) \subset P.$\\
+%
+(iv)  The kernel of $\tau$ is locally null (i.\ e.\ , if $K$ is any compact subset of $\tau ^{-1}\left(\{0\}\right)$, then $\mu_\Gamma (K)=0$).
+\label{theorem33}
+\end{theorem33}
+%
+%
+%
+{\bf Proof.}  Assertions (i)-(iii) follow from the 
+definitions of the homomorphisms $\tau$ and $\alpha$.  
+%
+Now suppose that 
+$K$ is a compact subset of 
+$\tau ^{-1}\left(\{0\}\right)$ and $\mu_\Gamma (K)>0$,
+where $\mu_\Gamma$ is a Haar measure on $\Gamma$..  
+%
+Then $K-K$ contains an open neighborhood 
+of the identity in $\Gamma$, and hence 
+$\tau ^{-1}\left(\{0\}\right)$ is 
+an open subgroup of $\Gamma$ which 
+implies that 
+$\R^a\times\{0\}\subset \tau ^{-1}\left(\{0\}\right)$.  
+%
+This is plainly a contradiction, and so (iv) holds.\\
+
+  
+
+  
+
+
+
+
+\begin{theorem34}
+Let $H$ be as in (\ref{candidate}).  
+Then $\R^a\times H$ is a principal convex
+ open subgroup of $\Gamma$.
+\label{theorem34}
+\end{theorem34}
+%
+%
+%
+{\bf Proof.}  Because of Proposition (\ref{proposition31}), 
+all we need to show is that $\R^a\times H$ 
+is a principal subgroup.  
+%
+For this purpose, let $z$ be any element 
+in $\R^a\times H$ such that $\tau (z) >0$.  
+%
+We claim that $\R^a\times H=\{z\}_\Box$.  
+%
+Since by definition $\{z\}_\Box$ is the smallest 
+convex subgroup containing $z$, and since 
+$\R^a\times H$ is convex, it is 
+enough to show that 
+$\{z\}_\Box\supset \R^a\times H$.  
+%
+Let $x$ be any element of $P\cap (\R^a\times H)$.  
+%
+>From Theorem (\ref{theorem33}), $\tau (x)\geq 0$.  
+%
+Choose a positive integer 
+$n$ such that $\tau (n z ) > \tau (x) \geq 0$.  
+%
+Again, from Theorem (\ref{theorem33}) 
+we see that $0\leq x\leq n z$, and since 
+$\{z\}_\Box$ is convex, it follows 
+that $x\in \{z\}_\Box$.  
+%
+Hence $\{z\}_\Box\supset P\cap (\R^a\times H)$, 
+and consequently $\{z\}_\Box\supset \R^a\times H$.\\ 
+%
+%
+%
+
+We are now ready to state the main result of this section.  
+%
+We write the group $\Gamma$ as $\R^a\times \O$, 
+where $a>0$.  Let $\Sigma(H)$ denote the 
+chain of convex subgroups of 
+$\Gamma$ containing $\R^a\times H$, and let 
+$\Sigma_0 (H)$
+denote the chain of principal 
+convex subgroups containing $ \R^a\times H$. 
+%
+Let $\Pi(H)$ be an indexing set for 
+$\Sigma_0(H)$.  Order $\Pi(H)$ as 
+we did in the discrete case:  
+%
+for $\rho, \pi\in \Pi(H)$, 
+set 
+$\pi\leq\rho$ if and only 
+if $C_\rho\subset C_\pi$.  
+%
+With this order, $\Pi(H)$ has a maximal 
+element $\alpha_0$ corresponding to 
+$\R^a\times H\in \Sigma_0(H)$.
+%
+Hence $C_{\alpha_0}=\R^a\times H$.  
+%
+As in the discrete case, we denote 
+a jump in $\Sigma(H)$ by 
+$D_\pi\prec C_\pi$, where $C_\pi$ 
+is a principal convex subgroup of $\Gamma$
+containing $\R^a\times H$.  
+%
+Note that for $C_{\alpha_0}=\R^a\times H$ 
+the jump occurs with an element outside 
+of $\Sigma_0(H)$.  
+%
+We set, by definition, 
+$D_{\alpha_0}=\ker \tau$ where 
+$\tau$ is the homomorphism of Theorem (\ref{theorem33}).  
+Hence $D_{\alpha_0}$ is locally null by
+Theorem (\ref{theorem33}).
+%%
+%
+%
+Note that 
+%
+%
+\begin{equation}
+\Gamma=D_{\alpha_0}\cup 
+\bigcup_{\alpha\in\Pi(H)} 
+C_\alpha\backslash D_\alpha.
+\label{slices'}
+\end{equation}
+%
+%
+% 
+With the exception of 
+$D_{\alpha_0}$, each set on the right 
+side of (\ref{slices'}) is open.\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%THEOREM35%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem35}
+With the above notation, for every $\alpha \in \Pi(H), 
+\alpha\neq \alpha_0$, there is a continuous 
+real-valued homomorphism $L_\alpha$ on $\Gamma$ such that \\
+%
+%
+%
+(i)  $ L_\alpha \left(D_\alpha\right)=\{0\}$;\\
+%
+%
+%
+(ii) $\sgn_P (\chi)=\sgn(L_\alpha(\chi))$\\
+for all $\chi\in C_\alpha\setminus D_\alpha$.  
+When $\alpha=\alpha_0$, there is a real-valued 
+homomorphism $L_{\alpha_0}$ on $\Gamma$, such that\\
+%
+%
+%
+%
+%
+%
+(iii)   $ L_{\alpha_0}\left( D_{\alpha_0}\right)=\{0\}$;\\
+%
+%
+%
+(iv) $\sgn_P (\chi)=\sgn(L_{\alpha_0} (\chi))$\\
+for all $\chi\in C_{\alpha_0}\setminus D_{\alpha_0}$.  \\
+(Since $D_{\alpha_0}$ is locally null, (iv) holds for
+locally almost all $\chi\in C_{\alpha_0}$.)
+\label{theorem35}
+\end{theorem35}
+%
+%
+%
+{\bf Proof.}  We treat first the case $\alpha=\alpha_0$.  
+%
+Consider the homomorphism $\tau$ 
+provided by Theorem (\ref{theorem33}).  
+%
+Since $\tau$ maps into $\R$ and $\R$ is a 
+divisible group, then $\tau$ can 
+be extended to a homomorphism on all of 
+$\Gamma$ (\cite[Theorem (A.7)]{hr1}.  
+We denote the extended homomorphism by 
+$L_{\alpha_0}$.  
+%
+By the properties of $\tau$ from Theorem (\ref{theorem33}), 
+it is clear that (iii) and (iv) hold.  
+%
+Now since $L_{\alpha_0}$ is continuous on an open 
+subgroup of $\Gamma$, it follows 
+by linearity that $L_{\alpha_0}$ 
+is continuous on all $\Gamma$.  
+%
+This proves the theorem in this case.  
+%
+We now treat the remaining cases.  
+%
+Since $\R^a\times H$ is convex and open, 
+the group $\Gamma/(\R^a\times H)$ 
+is discrete and can be ordered as in 
+Theorem (\ref{theorem1}).  Let $\Phi$ denote 
+the natural homomorphism of $\Gamma$ onto 
+$\Gamma/(\R^a\times H)$.  
+%
+It is easy to see that $C$ is 
+a convex subgroup of $\Gamma$ 
+if and only if $\Phi (C)$ is a convex 
+subgroup of $\Gamma/(\R^a\times H)$.  
+%
+Consequently, if $D_\alpha\prec C_\alpha$ 
+is a jump in $\Gamma$, with $\alpha\neq \alpha_0$, 
+then 
+$\Phi(D_\alpha)\prec \Phi(C_\alpha)$
+is a jump in $\Gamma/(\R^a\times H)$.  
+%
+The theorem follows now by composing $\Phi$ with
+the homomorphisms provided by Theorem (\ref{theorem3})
+for the discrete ordered group $\Gamma/(\R^a\times H)$.\\
+%
+With Theorem (\ref{theorem35}) in hand we can 
+give a simple proof of a separation 
+theorem for measurable orders \cite[Theorem (5.14)]{ah}.  
+The statement here slightly improves on \cite{ah}.  
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%THEOREM36%%SEPARATION-THEOREM%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem36}
+Let $P$ be a measurable order on $\Gamma$ and let 
+$K$ be an arbitrary compact subset of $\Gamma$.  
+%
+Let $N=\emptyset$ if $\Gamma$ is discrete and 
+$N=D_{\alpha_0}$ if $\Gamma$ is not discrete, 
+where $D_{\alpha_0}$ is as in Theorem (\ref{theorem35}). 
+%
+Then there is a continuous real-valued 
+homomorphism $\psi$ of $\Gamma$ such that\\
+%
+%
+%
+$$\sgn_P(\chi)=\sgn(\psi(\chi))$$
+%
+for all $\chi\in K\setminus D_{\alpha_0}$.
+\label{theorem36}
+\end{theorem36}
+%
+{\bf Proof.}  We treat the discrete case first.  
+%
+Without 
+loss of generality, we may assume that $K$
+is a finite subset of $\Gamma$ not containing $0$.  
+%
+We appeal to Theorem (\ref{theorem3}) 
+and use its notation.  
+%
+Let 
+%
+%
+$$D_{\alpha_1}\subset 
+C_{\alpha_1}\subset D_{\alpha_2}
+\subset C_{\alpha_2}\subset\ldots 
+D_{\alpha_n}\subset C_{\alpha_n}$$
+%
+%
+be a finite collection in $\Sigma$ such 
+that 
+$K\cap (C_{\alpha_j}\backslash D_{\alpha_j})\neq \emptyset$ 
+for all $j=1,2,\ldots , n$, 
+and 
+%
+%
+$$K\subset \bigcup_{j=1}^n\left(C_{\alpha_j}
+\backslash D_{\alpha_j}\right),$$
+%
+%
+and let $L_{\alpha_j}$ be the real-valued 
+homomorphism of $\Gamma$ corresponding to 
+$\alpha_j$.  
+We have from Theorem (\ref{theorem3})
+%
+%
+\begin{equation}
+L_{\alpha_j}(D_{\alpha_j})=\{0\};
+\label{*}
+\end{equation} 
+%
+%
+\begin{equation}
+L_{\alpha_j}\left(
+			K\cap P \cap (C_{\alpha_j}\backslash D_{\alpha_j})\right)\subset ]0,\infty [;
+\label{**}
+\end{equation}
+and 
+\begin{equation}
+L_{\alpha_j}\left(
+			K\cap (-P) \cap (C_{\alpha_j}\backslash D_{\alpha_j})\right)\subset ]- \infty , 0[.
+\label{***}
+\end{equation}
+%
+%
+We construct the homomorphism $\psi$ as a linear combination 
+%
+%
+$$\psi=\sum_{j=1}^n a_j L_{\alpha_j}$$
+%
+%
+where the coefficients $a_j$ are 
+defined inductively as follows.  
+Set $a_1=1$.  If $a_j$ is defined for 
+$j=1, \ldots , k-1$, 
+let
+%
+%
+$$A_k = \max_{x\in K}
+\sum_{j=1}^{k-1} | a_j L_{\alpha_j}(x)|,$$	
+%
+%
+$$B_k = \min_{x\in K \cap (C_{\alpha_k}\backslash D_{\alpha_k})} |L_{\alpha_k}(x)|.$$	
+%
+%
+Note that $B_k$ is positive.  
+%
+Choose $a_k$ so that $a_k B_k >A_k$.  
+%
+Using (\ref{*})--(\ref{***}), 
+it is straightforward to check that 
+the homomorphism $\psi$ has the desired property.\\
+To treat the general case, 
+we appeal to Theorem (\ref{theorem35}), 
+and borrow its notation.  Let $\Phi$ denote 
+the quotient homomorphism of $\Gamma$ 
+onto the discrete group $\Gamma/ (\R^a\times H)$
+(recall that $\R^a\times H$ is open).  
+%
+Since $K$ is compact, $\Phi (K)$
+is a finite subset of  $\Gamma/ (\R^a\times H)$.
+%
+Order $\Gamma/ (\R^a\times H)$ as 
+in Theorem (\ref{theorem1}).  
+%
+By the case we just treated, 
+we can find a homomorphism $\psi^*$ of 
+$\Gamma/ (\R^a\times H)$ separating 
+the set $\Phi (K)$.  
+%
+It is clear that the 
+homomorphism $\psi^*\circ\Phi$ 
+separates the set $K\backslash (\R^a\times H)$.  
+%
+If $K\cap ((\R^a\times H)\backslash 
+D_{\alpha_0})=\emptyset$ then we are done.  
+%
+If not, consider the homomorphism 
+%
+$$\psi = L_{\alpha_0}  + \frac{a}{b} \psi^*\circ\Phi  $$
+%
+%
+where $a=\max_{x\in K}|L_{\alpha_0} (x)|$ and 
+$b=\min_{x\in K\backslash \R^a\times H}|\psi^*\circ\Phi (x) |.$
+%
+%
+A simple argument that we omit shows that 
+$\psi$ has the desired property.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The conjugate function and its basic properties}
+
+\newtheorem{ergodic-hilbert-transform}{Theorem}[section]
+\newtheorem{generalized-m-riesz}[ergodic-hilbert-transform]{Theorem}
+\newtheorem{generalized-kolmogorov}[ergodic-hilbert-transform]{Theorem}
+\newtheorem{conjugate-of-slice}[ergodic-hilbert-transform]{Theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In this section, we use the structure of orders
+that we derived to define the 
+conjugate series of a function in 
+$L^p(G), \ 1\leq p <\infty$.
+For use in the following section, we also recall some basic properties of the 
+conjugate function operator, such as generalized versions
+ of M. Riesz's and Kolmogorov's Theorems.
+
+ Let $\Gamma$ denote a locally
+compact abelian group containing a measurable 
+order $P$, and let $G$ denote the 
+dual group of $\Gamma$.  
+Recall that the conjugate function operator
+$f\mapsto \widetilde{f}$ is defined on 
+$L^2(G)$ by the multiplier relation 
+(\ref{conjugatefunction}).  It is convenient to 
+write $\H (f)$ as  an alternative notation for the
+conjugate function. We appeal to Theorems (\ref{theorem3}) 
+and (\ref{theorem35}) and write the group $\Gamma$ as a 
+disjoint union of open sets
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\Gamma=C_{\alpha_0}\cup \bigcup_{\alpha\neq \alpha_0}
+ C_\alpha\setminus D_\alpha.
+\label{decomposition-of-gamma}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For each $\alpha \neq \alpha_0$,
+let $L_\alpha$ denote the continuous homomorphism
+from $\Gamma$ into $\R$ such that 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\sgn (L_\alpha (\chi))=\sgn_P(\chi)
+\label{separating-L}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+for all $\chi \in C_\alpha\setminus D_\alpha$, and let
+$L_{\alpha_0}$ denote the continuous homomorphism
+from $\Gamma$ into $\R$ such that 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\sgn (L_{\alpha_0} (\chi))=\sgn_P(\chi)
+\label{separating-L0}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+for locally almost all $\chi \in C_{\alpha_0}$.
+To simplify notation, let us write 
+$\Pi$ for the indexing set in both
+cases of Theorems (\ref{theorem3}) and (\ref{theorem35}).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For each $\alpha\in \Pi$, the subgroup $C_\alpha$
+is open, and similarly, $D_\alpha$ is
+ open for $\alpha\neq \alpha_0$.  Hence the annihilators
+in $G$,
+$A(G,C_\alpha)$ and $A(G,D_\alpha)$,
+are compact.  Let $\mu_\alpha$, respectively,
+$\nu_\alpha$, denote the normalized Haar measure on
+$A(G,C_\alpha)$, respectively, $A(G,D_\alpha)$.
+We have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\widehat{\mu_\alpha}=1_{C_\alpha}\ \ {\rm and}\ \ 
+\widehat{\nu_\alpha}=1_{D_\alpha}
+\label{fourier-transform-of-mu-and-nu}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+where, if $A$ is a set, $1_A$ is the indicator of $A$.
+For $f\in L^p(G)$, $1\leq p<\infty$, we have
+$$\|f*\mu_\alpha\|_p\leq \|f\|_p,\ \ {\rm and}\ \ 
+\|f*\nu_\alpha\|_p\leq \|f\|_p,$$
+(\cite[Theorem (20.12)]{hr1}).
+For $\alpha\neq\alpha_0$, we let
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$d_\alpha f=f*\mu_\alpha- f*\nu_\alpha,$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+and
+$$d_{\alpha_0} f =f*\mu_{\alpha_0}.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+It is clear that if $f\in L^2(G)$, then 
+the support of $\widehat{f}$ is $\sigma-$compact.
+Hence it has a nonvoid intersection with only 
+countably many of the sets appearing on the right 
+side of 
+(\ref{decomposition-of-gamma}).  It follows from 
+(\ref{fourier-transform-of-mu-and-nu}) that,
+except for countably many $\alpha$'s,
+$d_\alpha f$ is zero almost everywhere.
+By approximating with functions in $L^2(G)$,
+we see that the same is true for any $f\in L^p(G)$,
+$1\leq p<\infty$.
+As a convention, when $d_\alpha f=0$ a.e., we 
+take it to be identically 0.  With this convention,
+the formal difference series 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%difference-series%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\sum_{\alpha\in \Pi} d_\alpha f
+\label{difference-series}
+\end{equation} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+has only countably many 
+nonzero terms.
+The conjugate function will be defined by a series
+conjugate to (\ref{difference-series}).  
+Central to our construction is the ergodic
+Hilbert transform which we introduce next.
+This transform has been systematically studied
+by Cotlar \cite{cot}, Calder\'on \cite{cal},
+and Coifman and Weiss \cite{cw}. 
+
+Let $L_\alpha$ be as in (\ref{separating-L0}) or 
+(\ref{separating-L}), and let $\phi_\alpha$ denote its
+adjoint homomorphism.  Thus $\phi_\alpha$ is a continuous
+homomorphism mapping $\R$ into $G$ and satisfying
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\chi \circ \phi_\alpha (r)=L_\alpha (\chi)(r)
+\label{adjoint-map}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+for all $r\in \R$ and all $\chi \in \Gamma$ 
+(\cite[Section 24]{hr1}).  The truncated Hilbert 
+transform in the direction of $L_\alpha$ is the
+operator defined on $L^p(G)$, $1\leq p<\infty$, by
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+H_{L_\alpha ,n}f (x)=\frac{1}{\pi} \int_{\frac{1}{n}\leq |t|\leq n}
+			f(x-\phi_\alpha (t))\frac{1}{t}dt.
+\label{truncated-hilbert-transform}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+The (ergodic) Hilbert transform in the direction of $L_\alpha$ 
+is the operator defined on 
+$L^p(G)$, $1\leq p<\infty$,  by
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+H_{L_\alpha}f(x) = \lim_{n\rightarrow\infty} H_{L_\alpha ,n}f (x).
+\label{hilbert-transform}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The fact that this limit exits $\mu-$a.e. on $G$ follows from 
+\cite{cot} (see also \cite{cal} or
+\cite{cw}).  In fact, several other
+properties of this transform follow from those
+of the Hilbert transform on $\R$ and the transference
+methods of \cite{cal} and
+\cite{cw}.  For ease of reference, we state some 
+properties that are needed in the sequel.  
+We let $L$ denote
+an arbitrary continuous nonzero 
+homomorphism from $\Gamma$ into $\R$, and
+let $\phi$ denote its adjoint homomorphism.
+The operator $H_{L,n}$ is defined as in 
+(\ref{truncated-hilbert-transform}).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%ERGODIC_HILBERT_TRANSFORM%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ergodic-hilbert-transform}
+Let $f\in L^p(G)$, where $1\leq p<\infty$. \\
+(i)  The limit
+$$H_L f(x) = \lim_{n\rightarrow\infty} H_{L,n}f (x)$$
+exists $\mu-$a.e.\\
+(ii)  If $1<p<\infty$, then the limit converges in 
+$L^p(G)$, and 
+$$\|H_L f\|_p\leq A_p \|f\|_p$$
+where $A_p$ is the bound of the Hilbert transform
+operator on $L^p(\R)$.\\
+(iii)  For $f\in L^1(G)$, we have
+$$\mu\left(\{x\in G :\ \ | H_L f(x)|>y\}\right)\leq
+		\frac{A}{y} \|f\|_1$$
+for all $y>0$, where $A$ is the weak type $(1,1)$
+norm of the Hilbert transform on $L^1(\R)$.\\
+(iv)  For $f\in L^2(G)$, we have
+$$\widehat{H_L f}(\chi)=- i \sgn (L (\chi))\widehat{f}(\chi)$$
+for almost all $\chi\in \Gamma$.   
+\label{ergodic-hilbert-transform}
+\end{ergodic-hilbert-transform}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%ERGODIC_HILBERT_TRANSFORM%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The usefulness of this theorem
+is due in great part to the fact that all the
+estimates are independent of $L$ or $G$.
+Property (iv) justifies using the terminology
+"the Hilbert transform in the direction of 
+$L$" and shows a clear 
+connection between the ergodic Hilbert transform 
+and the conjugate function on groups.  
+The proof of (iv) is straightforward, 
+using (ii) and (\ref{adjoint-map}).  (See
+\cite[Theorem (6.7)]{ah}.) For use in the sequel,
+we recall the generalizations of M. Riesz's
+Theorem and Kolmogorov's Theorem from \cite{ah}.
+(These results are due to Helson \cite{hel1} and \cite{hel2},
+when $G$ is compact.)  
+Also, having all the necessary ingredients to prove
+these results, we will sketch short proofs
+to make the paper more self contained
+and to illustrate the use of the separation theorems.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%generalized-m-riesz%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{generalized-m-riesz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $G$ be a locally compact abelian group with 
+dual group $\Gamma$, and let $P$ denote an arbitrary
+measurable order on $\Gamma$. For all
+$f\in L^p(G)$, $1<p<\infty$, we have
+$$\|\H f\|_p\leq A_p \| f \|_p   $$
+where $A_p$ is the norm of the Hilbert 
+transform on $L^p(\R)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{generalized-m-riesz}
+\end{generalized-m-riesz} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%generalized-kolmogorov%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{generalized-kolmogorov}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $G$ be a locally compact abelian group with 
+dual group $\Gamma$, and let $P$ denote an arbitrary
+measurable order on $\Gamma$. For all
+$f \in L^2 \cap L^1(G)$ 
+and all $y>0$, we have
+$$\mu\left(\{x\in G :\ \ | \H f(x)|>y\}\right)\leq
+		\frac{A}{y} \|f\|_1$$
+where $A$ is the weak type $(1,1)$ norm of the 
+Hilbert transform on $L^1(\R)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{generalized-kolmogorov}
+\end{generalized-kolmogorov}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Both theorems are proved in a similar way.
+It is enough to consider $f\in L^2(G)$
+with compactly supported Fourier transform.
+Let $K\subset\Gamma$ denote the compact support of 
+$\widehat{f}$.  Apply Theorem (\ref{theorem36})
+and obtain a real-valued homomorphism $L$
+of $\Gamma$ such that 
+$$\sgn_P(\chi)=\sgn(L(\chi))$$
+for almost all $\chi \in K$.  Thus, 
+from Theorem (\ref{ergodic-hilbert-transform})(iv)
+and the fact that $\widehat{f}$ is supported in
+$K$, it follows from the uniqueness 
+of the Fourier transform that
+$$\H f=H_L f$$
+a.e. on $G$.  The inequalities in
+Theorems (\ref{generalized-m-riesz})
+ and (\ref{generalized-kolmogorov}) 
+follow now from the corresponding ones 
+for $H_L$ in
+Theorem (\ref{ergodic-hilbert-transform}).\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Because of Theorem (\ref{generalized-kolmogorov}),
+the operator $\H$ extends from $L^2 \cap L^1 (G)$
+to an operator on $L^1(G)$ satisfying the 
+same weak type
+$(1,1)$ estimate.  We keep the same notation for the 
+extended operator.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The next theorem is our first step toward
+building the conjugate function.  We continue 
+with the notation leading to (\ref{difference-series}).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%conjugate-of-slice%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{conjugate-of-slice}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $f\in L^p(G)$ where $1\leq p<\infty$,
+and let $\alpha\in \Pi$.  Then\\
+(i)\ \ $\H (d_\alpha f)= H_{L_\alpha} (d_\alpha f)$
+$\mu-$a.e.\\
+If $f\in L^2\cap L^p(G)$, then we also have\\
+(ii)\ \ $\H (d_\alpha f)= d_\alpha (\H f)$ and
+$H_{L_\alpha} (d_\alpha f)= d_\alpha (H_{L_\alpha} f)$\ $\mu-$a.e.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%conjugate-of-slice%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{conjugate-of-slice}
+\end{conjugate-of-slice}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}  The equalities in  (ii) 
+are clear since all operators in question are
+multiplier operators and so they commute.  
+To prove (i) we note that
+since $d_\alpha$ is a bounded operator from
+$L^1(G)$ into $L^1(G)$, and since 
+$\H$ and $H_{L_\alpha}$ are bounded from 
+$L^1(G)$ into $L^{1,\infty}(G)$, it is enough
+to consider $f\in L^2(G)$.  Since $\sgn_P$ and
+$\sgn (L_\alpha(\cdot))$ agree a.e. on 
+$C_\alpha\setminus D_\alpha$, and since 
+$d_\alpha$ projects the Fourier transform
+on $C_\alpha\setminus D_\alpha$, it 
+is easy to see that the Fourier 
+transforms of $\H (d_\alpha f)$ and
+$ H_{L_\alpha} (d_\alpha f)$ agree almost everywhere
+on $\Gamma$,
+and so (i) follows.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As we argued for (\ref{difference-series}),
+we will agree that, for $f\in L^p(G)$
+$(1\leq p<\infty)$, the formal
+series
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%conjugate-series%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\sum_{\alpha\in \Pi} H_{L_\alpha}(d_\alpha f)
+\label{conjugate-series}
+\end{equation} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+has only countably many terms.
+We will refer to (\ref{conjugate-series}) as 
+the conjugate (difference) series of $f$.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Unconditional convergence of conjugate difference series}
+\newtheorem{conjugate-projection}{Theorem}[section]
+\newtheorem{finite-conjugate-projection}[conjugate-projection]{Corollary}
+\newtheorem{unconditional-convergence}[conjugate-projection]{Theorem}
+\newtheorem{partial-sum}[conjugate-projection]{Corollary}
+\newtheorem{theorem-square-function}[conjugate-projection]{Theorem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We will show that the conjugate series 
+(\ref{conjugate-series})
+converges unconditionally in $L^p(G)$
+when $1<p<\infty$ and unconditionally in $L^{1,\infty}(G)$
+when $p=1$.  This will further justify our notation
+in (\ref{conjugate-series})
+since the order of summation will become irrelevant
+in (\ref{conjugate-series}).\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%LORENTZ SPACES%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+For use with weak type estimates, we
+recall a few facts about the Lorentz spaces
+$L^{p,\infty}(G)$.  All details can be found
+in \cite[Chapter V, Section 3]{sw}.  Although
+the presentation in the cited reference is confined
+to $\sigma-$finite measure spaces,
+the results that we need on locally
+compact abelian groups follow easily
+by restricting a given function
+to its $\sigma-$compact support.\\
+Given a measurable function $f$ on $G$,
+let $\lambda_f$ denote its
+distribution function, and let $f^*$ denote the
+decreasing rearrangement of $f$.  Define
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\| f\|^*_{p,\infty}=\sup_{y>0}
+y\left( \lambda_f (y)\right)^\frac{1}{p}=
+\sup_{y>0}y^{1/p} f^*(y),
+\label{lorentz-pseudo-norm}
+\end{equation} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+and
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\| f\|_{p,\infty}=\sup_{y>0}
+y^\frac{1}{p}  m_f (y)
+\label{lorentz-norm}
+\end{equation} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+where 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$ m_f(y)=\frac{1}{y} \int_0^y f^*(u)du.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $L^{p,\infty}(G)$ consist of 
+all measurable functions on $G$ such that
+$\| f\|^*_{p,\infty}<\infty$.
+It is well-known that, when $1<p<\infty$,
+(\ref{lorentz-pseudo-norm}) and  (\ref{lorentz-norm})
+are equivalent and define a norm on
+$L^{p,\infty}(G)$.  
+In fact, $\| f\|_{p,\infty}$ is a norm
+for all $1\leq p <\infty$, and when
+$1<p<\infty$, we also have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\| f\|^*_{p,\infty} \leq  \| f\|_{p,\infty} 
+\leq
+\frac{p}{p-1} \| f\|^*_{p,\infty}.
+\label{equivalent-lorentz}
+\end{equation} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(See \cite[Chap. V, Theorem 3.21]{sw}.)\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let 
+$\e\in \{ - 1 , 1\}^\Pi$.
+We will write $\e (P)$ for 
+the subset of $\Gamma$ obtained from $P$
+by changing the sign on $C_\alpha\setminus D_\alpha$
+according to $\e(\alpha)$.  That is,
+if $x\in C_\alpha\setminus D_\alpha$ and 
+$\alpha\neq \alpha_0$, or,
+if $x\in C_{\alpha_0}$, then
+$x\in \e(P)$ if and only if $\e(\alpha) x\in P$.\\
+It is easy to see that $\e(P)$ is an order 
+on $\Gamma$.  \\
+Suppose that $\eta\in \{ 0 , 1\}^\Pi$.
+Define a projection operator 
+${\cal P}_\eta$ 
+on $L^2(G)$ by
+$$\widehat{{\cal P}_\eta (f)}=
+\widehat{f}1_{\bigcup_{\alpha\in \Pi, \ \eta(\alpha)=1}
+C_\alpha\setminus D_\alpha}.$$
+Define the conjugate projection operator
+$\widetilde{{\cal P}_{\eta, P}}$
+by 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%conjugate-projection%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\widetilde{{\cal P}_{\eta, P}}f=
+\H ({\cal P}_\eta f).
+\label{conjugate-projection-operator}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+Thus,
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\widehat{\widetilde{{\cal P}_{\eta, P}}f}(\chi) =
+\left\{
+\begin{array}{ll}
+0 	& 	\mbox{if $\chi\not\in 
+		\bigcup_{\alpha, \eta(\alpha) =1}
+		C_\alpha\setminus D_\alpha$}\\
+- i \sgn_P(\chi ) \widehat {f} (\chi) &	\mbox{otherwise}
+\end{array}
+\right.
+\label{fourier-transform-of-conjugate-slice}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To establish the unconditional 
+convergence of the conjugate series,
+the following result is fundamental.  
+It is a simple consequence of 
+Theorems (\ref{generalized-m-riesz}) and
+(\ref{generalized-kolmogorov}).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{conjugate-projection}
+Let $\eta$ be any element of
+$\{0,1\}^\Pi$, and let $P$ be an arbitrary order
+on $\Gamma$.  
+(i)  The operator 
+$\widetilde{{\cal P}_{\eta, P}}$
+is bounded on $L^p(G)$ for $1<p<\infty$ with
+norm $\leq A_p$ where
+$A_p$ is as in Theorem (\ref{generalized-m-riesz}).\\
+(ii) The operator 
+$\widetilde{{\cal P}_{\eta, P}}$
+is of weak type $(1,1)$ on $L^2\cap L^1(G)$
+with norm $\leq 2A$
+where $A$ is the weak type norm in 
+Theorem (\ref{generalized-kolmogorov}).
+\label{conjugate-projection}
+\end{conjugate-projection}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}  Define $\e \in \{-1,1\}^\Pi$ by 
+$\e (\pi)=1 $ if $\eta (\pi) =1$ and 
+$\e (\pi)=-1 $ if $\eta (\pi) =0$.  It is easy
+to check using the Fourier transform that
+for all $f\in L^2(G)$, we have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$\widetilde{{\cal P}_{\eta, P}}f=
+\frac{1}{2}({\cal H}_P f + {\cal H}_{\e(P)} f).$$
+The theorem follows now from 
+Theorems (\ref{generalized-m-riesz}) and 
+(\ref{generalized-kolmogorov}) applied to the 
+operators $\H$ and ${\cal H}_{\e(P)}$.\\
+
+As a simple corollary, we have the following.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{finite-conjugate-projection}
+Let $\{\alpha_1,\alpha_2,\ldots,\alpha_n\}$
+be a finite subset of $\Pi$.
+Then, the operator
+$$f\mapsto \sum_{j=1}^n H_{L_{\alpha_j}} (d_{\alpha_j} f)$$
+is of weak type $(1,1)$ 
+on $L^1(G)$ with norm $\leq 2 A$ and is bounded from
+$L^p(G)$ into $L^p(G)$ with
+norm $\leq A_p$, where $A$ and $A_p$
+are as in Theorems (\ref{generalized-m-riesz}) and 
+(\ref{generalized-kolmogorov}).
+\label{finite-conjugate-projection}
+\end{finite-conjugate-projection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}  Define $\eta\in \{0,1\}^\Pi$
+by $\eta(\alpha_j)=1$ for $j=1,2,\ldots,n$ and 
+and $\eta (\pi)=0$ otherwise.  Then
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\sum_{j=1}^n H_{L_{\alpha_j}} (d_{\alpha_j} f)=
+\widetilde{{\cal P}_{\eta, P}}f.
+\label{conjugate-eta-projection}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Now apply Theorem (\ref{conjugate-projection}).\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We are now ready to establish the unconditional
+convergence of the conjugate series 
+(\ref{conjugate-series}).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%UNCONDITIONAL-CONVERGENCE%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{unconditional-convergence}
+Let $f\in L^p(G)$, $1\leq p<\infty$, and let
+$\{\alpha_j\}\subset \Pi$ be an arbitrary enumeration
+of the countable set of $\alpha\in \Pi$ such that
+$d_\alpha f\not\equiv 0$.\\
+(i)  If $p=1$, the series 
+$\sum_j H_{L_{\alpha_j}}
+d_{\alpha_j}f$ 
+converges in $L^{1,\infty} (G)$ to $\H f$.\\
+(ii) If $1<p<\infty$, the series 
+$\sum_jH_{L_{\alpha_j}}
+d_{\alpha_j}f$ 
+converges in $L^p (G)$ to $\H f$.
+\label{unconditional-convergence}
+\end{unconditional-convergence}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof.} 
+We will
+deal with the case $p=1$ only.
+The other case is done similarly.
+The assertions of the theorem
+are clear if $\hat{f}$ is compactly supported,
+since in this case only finitely many $d_\alpha f$
+are nonzero.
+Suppose that $f$ is an arbitrary function
+in $L^1 (G)$, and   
+ approximate $f$
+in $L^1(G)$ by
+functions with compactly supported Fourier transforms,
+say $\{g_n\}$.  Then using 
+Corollary (\ref{finite-conjugate-projection}) 
+and Theorem (\ref{generalized-kolmogorov}),
+we get
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray*}
+\| \sum_{j=1}^N H_{L_{\alpha_j}} d_{\alpha_j} f -\H f\|^*_{1,\infty}
+& \leq &
+2 \| \sum_{j=1}^N H_{L_{\alpha_j}} d_{\alpha_j} (f-g_n) -
+\H (f-g_n)\|^*_{1,\infty} \\
+& & + 
+2 \| \sum_{j=1}^N H_{L_{\alpha_j}} d_{\alpha_j} g_n -\H g_n\|^*_{1,\infty}\\
+& \leq&
+12 A \| f-g_n\|^*_{1,\infty} +
+2 \| \sum_{j=1}^N H_{L_{\alpha_j}} d_{\alpha_j} g_n -\H g_n\|^*_{1,\infty}.
+\end{eqnarray*}
+Given $\e >0$, we can make the left side $<\e$
+by first choosing $n$ so that
+$\| f-g_n\|^*_{1,\infty}<\frac{\e}{12 A}$ and
+then choosing $N=N(n)$ so that 
+$\| \sum_{j=1}^N H_{L_{\alpha_j}} d_{\alpha_j} g_n -
+\H g_n\|^*_{1,\infty}=0$.  
+This completes the proof.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf The conjugate square function}  We end this section 
+with a study of the square function
+associated with the conjugate series (\ref{conjugate-series}).
+We start with a definition.  For
+$f\in L^p(G), \ 1\leq p<\infty$, let
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\widetilde{S} f =\left( \sum_{\alpha\in \Pi} 
+| H_{L_\alpha} ( d_\alpha f )|^2
+\right)^\frac{1}{2},
+\label{square-function}
+\end{equation} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ where the index of
+ summation runs over those
+ $\alpha$'s for which $d_\alpha f\not\equiv 0$.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem-square-function}
+(i)  Let $1<p<\infty$.  There is a constant 
+$B_p$, depending only on $p$, such that
+for all $f\in L^p(G)$, we have
+$$\| \widetilde{S} f \|_p\leq B_p \| f \|_p.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(ii)  There is an absolute constant $B$ such 
+that, for all $f\in L^1(G)$, and all $y>0$,
+we have
+$$ \mu \left( \left\{ x\in G: \ \ | \widetilde{S} f (x) |
+> y  \right\} \right) \leq \frac{B}{y} \| f \|_1 .
+$$ 
+\label{theorem-square-function}
+\end{theorem-square-function}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf Proof.}  Part (i) is a well-known consequence
+of Theorem (\ref{unconditional-convergence}) (ii).  
+We will omit the proof.  (In fact one can 
+prove it by reproducing the argument that 
+we present for part (ii)).  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+To prove (ii), let $p$ be an arbitrary but 
+fixed number in $]0,1[$.  We will need Kintchine's 
+Inequality (\cite[Theorem V. 8.4, p.213]{zyg},
+which we will cite here in a notation
+convenient for our proof.  Let 
+$a_1 , a_2,\ldots , a_N$ be arbitrary 
+complex numbers, and write $\E$ for the
+expected value over the probability space
+$\{-1,1\}^N$.  Then,
+Kintchine's Inequality asserts that there are
+constants $\alpha_p$ and $\beta_p$, 
+depending only on $p$, such that
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\alpha_p \left\{ \sum_{j=1}^N |a_j |^2
+\right\}^\frac{1}{2}
+\leq
+\left\{  \E \left| \sum_{j=1}^N a_j \e_j \right|^p
+\right\}^\frac{1}{p}
+\leq
+\beta_p \left\{ \sum_{j=1}^N |a_j |^2
+\right\}^\frac{1}{2}.
+\label{kintchine-inequality}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Returning to the proof of (ii), we note 
+by monotone convergence that it is enough
+to consider a finite sum 
+$$ \left( \sum_{j=1}^N 
+| H_{L_{\alpha_j}} d_{\alpha_j} f|^2
+\right)^\frac{1}{2}. $$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Applying Kintchine's Inequality, we see that,
+pointwise on $G$, we have
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$
+ \left( \sum_{j=1}^N 
+| H_{L_{\alpha_j}} d_{\alpha_j} f|^2
+\right)^\frac{1}{2}
+\leq C_p 
+ \left(  \E | \sum_{j=1}^N 
+ \e_j H_{L_{\alpha_j}} d_{\alpha_j} f|^p
+ \right)^\frac{1}{p}.  
+ $$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We think of each $\e\in \{-1,1\}^N$
+as an element of $\{-1,1 \}^\Pi$ by setting
+$\e(\alpha_j)=\e(j)$ for $j=1,2,\ldots,N$, and
+$\e(\pi)=1$ for $\pi \not\in 
+\{\alpha_1, \alpha_2,\ldots , \alpha_N\}$. 
+Let $\eta=\eta(\e) $
+be defined as in the proof of 
+Corollary (\ref{finite-conjugate-projection}), 
+(see (\ref{conjugate-eta-projection})) so that
+$$\sum_{j=1}^N 
+ \e_j H_{L_{\alpha_j}} d_{\alpha_j} f=
+ \widetilde{{\cal P}}_{\eta (\epsilon), \e(P)}f.$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Then
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+\|  \left( \sum_{j=1}^N 
+| H_{L_{\alpha_j}} d_{\alpha_j} f|^2
+\right)^\frac{1}{2} \|^*_{1,\infty}
+\leq C_p 
+ \| \left(  \E | \widetilde{{\cal P}}_{\eta(\e), \e(P)}f|^p
+ \right)^\frac{1}{p} 
+ \|^*_{1,\infty}.
+\label{kintchine}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+It is easy to prove from definitions that,
+for any $s>0$ and for any
+measurable function $f$ on $G$,
+$\| | f |^s \|^*_{p,\infty}= 
+\| f  \|^{*\ s}_{s p,\infty}.$
+%
+%
+%
+The
+fact that $\| \cdot\|^*_{\frac{1}{p},\infty}$
+is equivalent to a norm (see (\ref{equivalent-lorentz})),
+implies that 
+$$\| \E f \|^*_{\frac{1}{p},\infty}\leq 
+		\frac{1}{1-p}   \E\| f\|^*_{\frac{1}{p},\infty}.$$
+%
+We can now estimate the right side of (\ref{kintchine})
+as follows
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{eqnarray*}
+ C_p 
+ \| \left(  \E | \widetilde{{\cal P}}_{\eta(\e), \e(P)}f|^p
+ \right)^\frac{1}{p} 
+ \|^*_{1,\infty}
+ 		&=&
+C_p \left( \|   \E | \widetilde{{\cal P}}_{\eta (\e), \e (P)}f|^p
+  \|^*_{\frac{1}{p} ,\infty} \right)^\frac{1}{p}\\
+ 		&\leq&
+ C_p \left(
+ \frac{1}{1-p}
+   \E \|   | \widetilde{{\cal P}}_{\eta(\e), \e(P)}f |^p
+  \|^{*}_{\frac{1}{p} ,\infty} \right)^\frac{1}{p}\\
+		&=&
+C_p \left(
+\frac{1}{1-p}
+   \E \|    \widetilde{{\cal P}}_{\eta(\e), \e(P)}f 
+  \|^{*\ p}_{1 ,\infty} \right)^\frac{1}{p}\\
+		&\leq&
+ C_p \left(
+ \frac{2^p A^p}{1-p}
+    \E \| f 
+ \|^p_1 \right)^\frac{1}{p}\\
+		&=&
+  2 A C_p \left( \frac{1}{1-p}\right)^\frac{1}{p}
+  \| f\|_1 .
+\end{eqnarray*}
+%
+%
+%
+The penultimate inequality follows from 
+Corollary (\ref{finite-conjugate-projection}).
+This completes the proof of the theorem.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+{\bf Acknowledgements}  The research of the authors was supported by grants from the National Science Foundation (U.\ S.\ A.) and the Research Board of the University of Missouri.  Both authors are grateful for conversations with Professors Nigel Kalton, and Saleem Watson.
+
+\begin{thebibliography}{Dillo 83}
+
+%\bibitem{asm1}  N.\ Asmar, 
+%{\em The conjugate function on the 
+%finite dimensional torus}, Can. Bull. 
+%Math., {\bf 32}, No.2 (1989), 140--148.
+
+
+%\bibitem{abg3}  N.\ Asmar, E.\ Berkson, and T.\ A.\ Gillespie,
+%{\em Maximal estimates on groups, subgroups, 
+%and the Bohr compactification}, 
+%Journal of Functional Analysis, to appear.
+
+
+\bibitem{ah}  N.\ Asmar, and E.\ Hewitt, 
+{\em Marcel Riesz's Theorem on conjugate 
+Fourier series and its descendants}, in ``Proceedings, 
+Analysis Conference, Singapore, 1986'' 
+(S.\ T.\ Choy {\it et al.}\ Eds.), 
+Elsevier Science, New York, 1988, 1--56.
+
+%\bibitem{bergil}  E.\ Berkson, and T.\ A.\ Gillespie,
+%{\em The generalized M.\ Riesz Theorem and 
+%transference}, Pac.\ J.\ Math., {\bf 120} (1985), 279--288.
+
+%\bibitem{bochner} S.\ Bochner, 
+%{\em Generalized conjugate analytic functions 
+%without expansions}, Proc.\ Nat.\ Acad.\ Sci.\ (U.\ S.\ A.), 
+%{\bf 45} (1959), 855--857.
+
+%\bibitem{bdg}  D.\ L.\ Burkholder, 
+%B.\ Davis, and R.\ F.\ Gundy, 
+%{\em Integral inequalities for convex 
+%functions of operators on martingales},
+%in ``Proceedings of the Sixth Berkeley 
+%Symposium on Mathematical Statistics 
+%and Probability'', Vol II, University 
+%of California Press, Berkeley and Los Angeles, 1970, 223--241.
+
+
+%\bibitem{bg}  D.\ L.\ Burkholder, and R.\ F.\ Gundy,
+%{\em Extrapolation and interpolation of quasi-linear operators on %martingales}, Acta Math.\ {\bf 124}\ (1970), 249--304.
+
+
+%\bibitem{bgs}  D.\ L.\ Burkholder, R.\ F.\ Gundy, and M.\ L.\ Silverstein
+%{\em A maximal characterization of the class $H^p$}, Trans.\ Amer.\ Math.\ %Soc., {\bf 157}\ (1971), 137--153.
+
+
+\bibitem{cal}  A.\ Calder\'{o}n, 
+{\em Ergodic theory and translation-invariant operators}, Proc.\ Nat.\ Acad.\ Sci., {\bf 157}\ (1971), 137--153.
+
+
+\bibitem{cw}  R.\ R.\ Coifman, and G.\ Weiss,
+``Transference methods in analysis'', Regional Conference 
+Series in Math. {\bf 31}, Amer.\ Math.\ Soc., Providence, R.\ I.\, 1977.
+
+\bibitem{cot}  M.\  Cotlar,  
+{\em A unified theory of Hilbert transforms and ergodic theorems}, 
+Rev. Mat. Cuyana, {\bf 1}\ (1955), 105--167.
+
+%\bibitem{doob}  J.\ L.\ Doob,
+%``Stochastic Processes'', Wiley Publications in Statistics, New York 1953. 
+
+%\bibitem{doob2}    J.\ L.\ Doob,
+%{\em Semimartingales and subharmonic functions}, Trans.\ Amer.\ Math.\ Soc., %{\bf 77}\ (1954), 86--121.
+
+%\bibitem{feff}  R.\ Fefferman,  
+%{\em Fourier analysis in several parameters}, 
+%Revista Math. Iberoamericana, {\bf 2}\ (1980), 89--98.
+
+\bibitem{fu}  L. Fuchs,
+`` Partially ordered algebraic systems'', 
+Pergamon Press, Oxford, New York, 1960.
+
+\bibitem{gar} D.\ J.\ H.\ Garling,
+{\em Hardy martingales and the 
+unconditional convergence of martingales},
+Bull. London Math. Soc. {\bf 23}\ (1991), 190--192.
+
+\bibitem{hel1}  H.\ Helson,
+{\em Conjugate series and a theorem of Paley}, 
+Pac.\ J.\ Math., {\bf 8}\ (1958), 437--446.
+
+
+\bibitem{hel2}  H.\ Helson,
+{\em Conjugate series in several variables}, 
+Pac.\ J.\ Math., {\bf 9}\ (1959), 513--523.
+
+%\bibitem{hl}  H.\ Helson, and D.\ Lowdenslager,
+%{\em Prediction theory and Fourier series in 
+%several variables}, 
+%Acta Math.\ {\bf 99}\ (1958), 165--202.
+
+\bibitem{hk} E.\ Hewitt and S.\ Koshi, 
+{\em Orderings in locally compact Abelian 
+groups and the theorem of F.\ and M.\ Riesz}, 
+Math.\ Proc.\ Cam.\ Phil.\ Soc.\ , {\bf 93}\ (1983), 441--457.
+
+\bibitem{hr1} E.\ Hewitt and K.\ A.\ Ross,
+``Abstract Harmonic Analysis I,''  
+$2^{nd}$ Edition, Grundlehren der
+Math.\ Wissenschaften, Band 115, Springer--Verlag, Berlin 1979.
+
+%\bibitem{hr2} E.\ Hewitt and K.\ A.\ Ross,
+%``Abstract Harmonic Analysis II,'' Grundlehren der
+%Math.\ Wissenschaften in Einzeldarstellungen, Band
+%152, Springer--Verlag, New York, 1970.
+
+%\bibitem{hirroch}  I.\ I.\ Hirschmann,  and R.\ Rochberg, 
+%{\em Conjugate function theory in weak * Dirichlet algebras}, 
+%J.\ Functional Anal., {\bf 16}\ (1974), 359-371. 
+
+%\bibitem{peter} K.\ E.\ Petersen, ``Brownian Motion,
+%Hardy Spaces and Bounded Mean Oscillation,'' 
+%London Math. Soc. Lecture Notes Series, No. 28, 
+%Cambridge University Press, 1977.
+
+%\bibitem{rud} W.\ Rudin, ``Fourier Analysis on Groups,''
+%Interscience Tracts in Pure and Applied Mathematics, No. 12, 
+%John Wiely, New York, 1962.
+
+\bibitem{sw} E. \ Stein, and G.\ Weiss, 
+``Introduction to Fourier Analysis 
+on Euclidean Spaces,'' Princeton Math. Series, 
+No. 32, Princeton Univ. Press, Princeton, N.\ J., 1971.
+
+%\bibitem{yud}  V.\ A. \ Yudin, {\em On Fourier sums in}\ $L^p$,
+%Proc. Steklov Inst. Math. {\bf 180} (1989) 279--280. 
+
+\bibitem{zyg}  A.\ Zygmund,
+`` Trigonometric series'', 2nd Edition, 2 vols.\ , 
+Cambridge University Press, 1959.
+\end{thebibliography}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+

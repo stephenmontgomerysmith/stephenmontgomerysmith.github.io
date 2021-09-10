@@ -1,0 +1,1037 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Sup Path Attaining Representations</TITLE>
+<META NAME="description" CONTENT="Sup Path Attaining Representations">
+<META NAME="keywords" CONTENT="trans-measures">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="trans-measures.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="trans-measures.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html30"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html28"
+  HREF="trans-measures.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html22"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html31"
+  HREF="node3.html">Proof of the Main</A>
+<B> Up:</B> <A NAME="tex2html29"
+  HREF="trans-measures.html">Transference in Spaces of</A>
+<B> Previous:</B> <A NAME="tex2html23"
+  HREF="node1.html">Introduction</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000">
+Sup Path Attaining Representations</A>
+</H1>
+
+<P>
+We first note that for a sup path attaining representation <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> we
+have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="ineqhypa_"></A><!-- MATH
+ \begin{equation}
+\| \mu\| \leq C\sup \left\{
+{\rm ess\ sup}_{t\in G} \left|
+\int_\O h d (T_t\mu)
+\right|
+:\ \ h {\rm\ is\ a\ simple\ function\ with\ }\ \|h\|_\infty\leq 1
+\right\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="669" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.png"
+ ALT="$\displaystyle \Vert \mu\Vert \leq C\sup \left\{ {\rm ess\ sup}_{t\in G} \left\v...
+... h {\rm\ is\ a\ simple\ function\ with\ }\ \Vert h\Vert _\infty\leq 1 \right\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(11)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+To see this, note that for any bounded measurable function <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.png"
+ ALT="$ h$">,
+there exist a sequence of simple functions <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.png"
+ ALT="$ s_n$"> that converge uniformly
+to <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img93.png"
+ ALT="$ h$">.  Then it is easy to see that
+<!-- MATH
+ \begin{displaymath}
+{\rm ess\ sup}_{t\in G} \left|
+\int_\O s_n d (T_t\mu)
+\right|
+\to
+{\rm ess\ sup}_{t\in G} \left|
+\int_\O h d (T_t\mu)
+\right| ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="421" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$\displaystyle {\rm ess\ sup}_{t\in G} \left\vert
+\int_\O s_n d (T_t\mu)
+\right\vert
+\to
+{\rm ess\ sup}_{t\in G} \left\vert
+\int_\O h d (T_t\mu)
+\right\vert ,$">
+</DIV><P></P>
+and from this (<A HREF="#ineqhypa_">11</A>) follows easily.
+
+<P>
+ 
+<P>
+Our first example
+is related to the setting of Forelli [<A
+ HREF="node5.html#forelli">9</A>].
+<P>
+<DIV><B>Example  2.1</B> &nbsp; Let <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> be a locally compact abelian group.
+Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ \Omega$"> is a topological
+space and <!-- MATH
+ $\left( T_t\right)_{t\in G}$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.png"
+ ALT="$ \left( T_t\right)_{t\in G}$"> is a
+ group of homeomorphisms of <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ \Omega$"> onto itself
+such that the mapping
+<!-- MATH
+ \begin{displaymath}
+(t,\omega)\mapsto T_t\omega
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="105" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.png"
+ ALT="$\displaystyle (t,\omega)\mapsto T_t\omega$">
+</DIV><P></P>
+is jointly continuous.
+Suppose that <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img98.png"
+ ALT="$ {\cal A}$"> is an algebra of bounded continuous complex valued
+functions
+on <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ \Omega$"> such that if <!-- MATH
+ $h \in {\cal A}$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.png"
+ ALT="$ h \in {\cal A}$">,
+and if <!-- MATH
+ $\varphi:\mathbb{C}\to\mathbb{C}$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.png"
+ ALT="$ \varphi:\mathbb{C}\to\mathbb{C}$"> is any bounded continuous function,
+and if <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ t\in G$">,
+then <!-- MATH
+ $\varphi\circ h\circ T_t\in {\cal A}$
+ -->
+<IMG
+ WIDTH="119" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.png"
+ ALT="$ \varphi\circ h\circ T_t\in {\cal A}$">.  Let <!-- MATH
+ $\sigma({\cal A})$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$ \sigma({\cal A})$"> denote the
+minimal sigma-algebra so that
+functions from <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img98.png"
+ ALT="$ {\cal A}$"> are measurable.
+For any measure <!-- MATH
+ $\mu\in M(\sigma({\cal A}))$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ \mu\in M(\sigma({\cal A}))$">, and <!-- MATH
+ $A\in \sigma({\cal A})$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.png"
+ ALT="$ A\in \sigma({\cal A})$">,
+define
+<!-- MATH
+ $T_t\mu(A)=\mu(T_t(A))$
+ -->
+<IMG
+ WIDTH="157" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$ T_t \mu(A) = \mu(T_t(A))$">, where <!-- MATH
+ $T_t(A)=\{T_t\omega:\ \omega\in A\}$
+ -->
+<IMG
+ WIDTH="195" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.png"
+ ALT="$ T_t(A)=\{T_t\omega:\ \omega\in A\}$">.
+Note that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> satisfies
+(<A HREF="node1.html#uniformlybded">1</A>) and (<A HREF="node1.html#commut">3</A>).
+To discuss the weak measurability of <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$">, and the sup path attaining
+property of <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$">, we need that for each <!-- MATH
+ $h \in {\cal A}$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.png"
+ ALT="$ h \in {\cal A}$"> that the map
+<!-- MATH
+ $t \mapsto \int_\Omega h \, d(T_t\mu)$
+ -->
+<IMG
+ WIDTH="130" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.png"
+ ALT="$ t \mapsto \int_\Omega h \, d(T_t\mu)$"> is continuous.  
+This 
+crucial property follows
+for any measure <!-- MATH
+ $\mu\in M(\sigma({\cal A}))$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ \mu\in M(\sigma({\cal A}))$">, by the dominated convergence theorem, if, for example, <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> is metrizable.  For arbitrary locally compact abelian groups, it is enough to require that <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> has sigma-compact support.
+
+<P>
+Henceforth, we assume that <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> is metrizable, or that <!-- MATH
+ $\mu\in M(\sigma({\cal A}))$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ \mu\in M(\sigma({\cal A}))$"> has sigma-compact support, and proceed to show that
+<IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is
+weakly measurable in the sense of Definition <A HREF="node1.html#weakmble">1.1</A>, and that
+the representation <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> is sup path attaining.
+Let
+<!-- MATH
+ \begin{displaymath}
+{\cal R}=\{A\in \sigma({\cal A}) :\ 1_A=\lim_n f_n,\ f_n \in {\cal A},\
+\|f_n\|_\infty\leq 1\},
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="436" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$\displaystyle {\cal R}=\{A\in \sigma({\cal A}) :\ 1_A=\lim_n f_n,\ f_n \in {\cal A},\
+\Vert f_n\Vert _\infty\leq 1\},$">
+</DIV><P></P>
+and let
+<!-- MATH
+ \begin{displaymath}
+{\cal C}=\{A\in \sigma({\cal A}):  \ t\mapsto T_t\mu(A)\
+{\rm is\ Borel\ measurable}\}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="425" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.png"
+ ALT="$\displaystyle {\cal C}=\{A\in \sigma({\cal A}): \ t\mapsto T_t\mu(A)\
+{\rm is\ Borel\ measurable}\}.$">
+</DIV><P></P>
+Clearly, <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img109.png"
+ ALT="$ {\cal C}$"> is a monotone class, closed under
+nested unions and intersections.  Also, <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img110.png"
+ ALT="$ {\cal R}$">
+is an algebra of sets, closed under finite unions and
+set complementation.  Furthermore, it is clear that <!-- MATH
+ ${\cal R}\subset {\cal C}$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img111.png"
+ ALT="$ {\cal R}\subset {\cal C}$">.
+Hence, by the monotone class theorem,
+it follows that <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img109.png"
+ ALT="$ {\cal C}$"> contains the
+sigma algebra generated by <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img110.png"
+ ALT="$ {\cal R}$">.
+Now, if <!-- MATH
+ $f\in{\cal A}$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$ f\in{\cal A}$"> and <!-- MATH
+ $V \subset \mathbb{C}$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.png"
+ ALT="$ V \subset \mathbb{C}$"> is open, then <!-- MATH
+ $f^{-1}(V) \in {\cal R}$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.png"
+ ALT="$ f^{-1}(V) \in {\cal R}$">, because
+<!-- MATH
+ \begin{displaymath}
+1_{f^{-1}(V)}(\omega)=
+\lim_{n\rightarrow \infty} \min \{ n\ {\rm dist}(f(\omega),\mathbb{C}\setminus V)
+,1\}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="379" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle 1_{f^{-1}(V)}(\omega)=
+\lim_{n\rightarrow \infty} \min \{ n\ {\rm dist}(f(\omega),\mathbb{C}\setminus V)
+,1\}.$">
+</DIV><P></P>
+Consequently, we have that <!-- MATH
+ ${\cal C}= \sigma({\cal A})$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.png"
+ ALT="$ {\cal C}= \sigma({\cal A})$">, that is,
+<IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is weakly measurable.
+
+<P>
+Next, let us show that <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img98.png"
+ ALT="$ {\cal A}$"> is dense in <!-- MATH
+ $L^1(|\mu|)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img117.png"
+ ALT="$ L^1(\vert\mu\vert)$">.  Let
+<!-- MATH
+ $g:\Omega\to\mathbb{C}$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img118.png"
+ ALT="$ g:\Omega\to\mathbb{C}$"> be a bounded <!-- MATH
+ $\sigma({\cal A})$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$ \sigma({\cal A})$">-measurable
+function such that <!-- MATH
+ $\int_\Omega hg\,d\mu = 0$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img119.png"
+ ALT="$ \int_\Omega hg\,d\mu = 0$"> for all
+<!-- MATH
+ $h \in {\cal A}$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.png"
+ ALT="$ h \in {\cal A}$">.  Define <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img110.png"
+ ALT="$ {\cal R}$"> as above, and let
+<!-- MATH
+ \begin{displaymath}
+{\cal C}= \left\{ A \in \sigma({\cal A}): \int_A g \, d\mu = 0 \right\} .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="265" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img120.png"
+ ALT="$\displaystyle {\cal C}= \left\{ A \in \sigma({\cal A}): \int_A g \, d\mu = 0 \right\} .$">
+</DIV><P></P>
+Then <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img109.png"
+ ALT="$ {\cal C}$"> is a monotone class containing <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img110.png"
+ ALT="$ {\cal R}$">, and so arguing as
+before, <!-- MATH
+ ${\cal C}= \sigma({\cal A})$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.png"
+ ALT="$ {\cal C}= \sigma({\cal A})$">, that is, <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.png"
+ ALT="$ g = 0$"> almost everywhere with respect
+to <IMG
+ WIDTH="27" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.png"
+ ALT="$ \vert\mu\vert$">.  Thus it follows by the Hahn-Banach Theorem that
+<IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img98.png"
+ ALT="$ {\cal A}$"> is dense in <!-- MATH
+ $L^1(|\mu|)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img117.png"
+ ALT="$ L^1(\vert\mu\vert)$">.  Hence
+<!-- MATH
+ \begin{displaymath}
+\|\mu\|
+   =
+   \sup\left\{\left|\int_\Omega h \, d\mu \right|: h \in {\cal A},\ \|h\|_\infty \le 1\right\}
+   \leq
+   \sup\left\{{\rm ess\ sup}_{t\in G}
+       \left| \int_\Omega h \, d(T_t\mu)\right| : h \in {\cal A},\ \|h\|_\infty \le 1\right\} ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="790" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$\displaystyle \Vert\mu\Vert
+=
+\sup\left\{\left\vert\int_\Omega h \, d\mu \right...
+...\, d(T_t\mu)\right\vert : h \in {\cal A},\ \Vert h\Vert _\infty \le 1\right\} ,$">
+</DIV><P></P>
+where the last inequality follows from the fact that 
+the map <!-- MATH
+ $t \mapsto \int_\Omega h \, d(T_t\mu)$
+ -->
+<IMG
+ WIDTH="130" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.png"
+ ALT="$ t \mapsto \int_\Omega h \, d(T_t\mu)$"> is continuous.
+Hence, <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> is sup path attaining with <IMG
+ WIDTH="54" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img124.png"
+ ALT="$ C = 1$">.
+<I>
+<A NAME="exhypa1"></A></I></DIV><P></P>
+Taking <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img98.png"
+ ALT="$ {\cal A}$"> to be the uniformly continuous functions on a group,
+we then derive the following useful example.
+<P>
+<DIV><B>Example  2.2</B> &nbsp; Suppose that <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$ G_1$"> and <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$ G_2$"> are locally compact abelian groups and that
+ <!-- MATH
+ $\phi:\ G_2\rightarrow G_1$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.png"
+ ALT="$ \phi:\ G_2\rightarrow G_1$"> is a continuous homomorphism.
+Define an action of <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$ G_2$"> on <IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$ M(G_1)$"> (the regular Borel measures
+on <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$ G_1$">) by translation by <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$ \phi$">.
+Hence, for <!-- MATH
+ $x\in G_2, \mu\in M(G_1)$
+ -->
+<IMG
+ WIDTH="161" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="$ x\in G_2, \mu\in M(G_1)$">, and any
+Borel subset <!-- MATH
+ $A\subset G_1$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.png"
+ ALT="$ A\subset G_1$">, let <!-- MATH
+ $T_x\mu(A)=\mu(A+\phi(x))$
+ -->
+<IMG
+ WIDTH="188" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ T_x\mu(A)=\mu(A+\phi(x))$">.
+Then every <!-- MATH
+ $\mu\in M(G_1)$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="$ \mu\in M(G_1)$"> is weakly measurable, the
+representation
+is sup path attaining with constants <IMG
+ WIDTH="47" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img134.png"
+ ALT="$ c = 1$"> and <IMG
+ WIDTH="54" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img124.png"
+ ALT="$ C = 1$">.
+<I>
+<A NAME="exhypa2"></A></I></DIV><P></P>
+In the following example no topology is required on
+the measure space.
+<P>
+<DIV><B>Example  2.3</B> &nbsp; Let <!-- MATH
+ $(X,\Sigma)$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$ (X,\Sigma)$"> be an abstract Lebesgue 
+space, that is, <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$ \Sigma$"> is countably generated.  
+Then 
+any uniformly bounded representation <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> 
+by isomorphisms of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$"> is sup path attaining.  
+To see this, note that since <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$ \Sigma$"> is countably 
+generated, there is a countable subset <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img98.png"
+ ALT="$ {\cal A}$"> 
+of the unit ball of <!-- MATH
+ ${\cal L}^\infty(\Sigma)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$ {\cal L}^\infty(\Sigma)$"> such that for any 
+<!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ \mu\in M(\Sigma)$"> 
+we have 
+<!-- MATH
+ \begin{displaymath}
+\|\mu\| =\sup\left\{
+\left| \int_X h d \mu\right| :\ \ h\in
+{\cal A}
+\right\} .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="277" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.png"
+ ALT="$\displaystyle \Vert\mu\Vert =\sup\left\{
+\left\vert \int_X h d \mu\right\vert :\ \ h\in
+{\cal A}
+\right\} .
+$">
+</DIV><P></P>
+If <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is weakly measurable, then
+for <!-- MATH
+ $g\in {\cal A}$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.png"
+ ALT="$ g\in {\cal A}$"> and for locally almost all <IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$ u\in G$">, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="want1"></A><!-- MATH
+ \begin{equation}
+\left|
+\int_X g d (T_u \mu)
+\right|
+\leq {\rm ess\ sup}_{t\in G}
+\left|
+\int_X
+g d (T_t \mu)
+\right|.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="330" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$\displaystyle \left\vert \int_X g d (T_u \mu) \right\vert \leq {\rm ess\ sup}_{t\in G} \left\vert \int_X g d (T_t \mu) \right\vert.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(12)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Since <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img98.png"
+ ALT="$ {\cal A}$"> is countable we can find a subset <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img140.png"
+ ALT="$ B$"> 
+of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> such that the complement of <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img140.png"
+ ALT="$ B$"> is locally null, 
+and such that (<A HREF="#want1">12</A>) holds for every <IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$ u\in B$"> 
+and all <!-- MATH
+ $g\in {\cal A}$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.png"
+ ALT="$ g\in {\cal A}$">.  For <IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$ u\in B$">, 
+take the sup in (<A HREF="#want1">12</A>) over all <!-- MATH
+ $g\in {\cal A}$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.png"
+ ALT="$ g\in {\cal A}$">, and get
+<!-- MATH
+ \begin{displaymath}
+\| T_u \mu\| \leq
+\sup_{g\in {\cal A}}
+{\rm ess\ sup}_{t\in G}
+\left|
+\int_X
+g d (T_t \mu)
+\right|.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="307" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.png"
+ ALT="$\displaystyle \Vert T_u \mu\Vert \leq
+\sup_{g\in {\cal A}}
+{\rm ess\ sup}_{t\in G}
+\left\vert
+\int_X
+g d (T_t \mu)
+\right\vert.
+$">
+</DIV><P></P>
+But since <!-- MATH
+ $\|\mu\|\leq c \| T_u \mu\|$
+ -->
+<IMG
+ WIDTH="118" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$ \Vert\mu\Vert\leq c \Vert T_u \mu\Vert$">, it follows that 
+<IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> is sup path attaining with <IMG
+ WIDTH="53" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img144.png"
+ ALT="$ C=c$">.<I>
+<A NAME="exhypa3"></A></I></DIV><P></P>
+
+<P>
+Sup path attaining representations satisfy the
+following property, which was introduced in [<A
+ HREF="node5.html#ams2">1</A>] and was
+called hypothesis <IMG
+ WIDTH="33" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img145.png"
+ ALT="$ (A)$">. 
+<P>
+<DIV><B>Proposition  2.4</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> is sup path attaining 
+and <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is weakly measurable such that for 
+every <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ A\in \Sigma$"> we have
+</I><!-- MATH
+ \begin{displaymath}
+T_t\mu(A)=0
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="96" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.png"
+ ALT="$\displaystyle T_t\mu(A)=0$">
+</DIV><P></P><I>
+for locally almost all <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ t\in G$">.  Then <IMG
+ WIDTH="50" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$ \mu=0$">.
+<A NAME="weakhypa"></A></I></DIV><P></P>
+The proof is immediate and follows from 
+(<A HREF="#ineqhypa_">11</A>).
+<BR>
+<P>
+The key in Proposition <A HREF="#weakhypa">2.4</A>
+is that the set of <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ t\in G$"> 
+for which <!-- MATH
+ $T_t\mu(A)=0$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.png"
+ ALT="$ T_t\mu(A)=0$"> depends on <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ A$">. 
+If this set were the same for all
+<!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ A\in \Sigma$">, then the conclusion of the
+proposition would trivially hold for
+any representation by isomorphisms of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">. 
+
+<P>
+For further motivation, we recall the following 
+example from [<A
+ HREF="node5.html#ams2">1</A>].
+<P>
+<DIV><B>Example  2.5</B> &nbsp; (a) Let <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$ \Sigma$"> denote the sigma algebra of 
+countable and co-countable subsets of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$">.  
+Define <!-- MATH
+ $\nu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.png"
+ ALT="$ \nu\in M(\Sigma)$"> by
+<!-- MATH
+ \begin{displaymath}
+\nu (A)=\left\{
+\begin{array}{ll}
+1 & \mbox{if $A$ is co-countable,}\\
+0 &  \mbox{if $A$ is countable.}
+\end{array}
+\right.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="273" HEIGHT="63" BORDER="0"
+ SRC="img150.png"
+ ALT="\begin{displaymath}
+\nu (A)=\left\{
+\begin{array}{ll}
+1 &amp; \mbox{if $A$ is co-countable,}\\
+0 &amp; \mbox{if $A$ is countable.}
+\end{array}\right.
+\end{displaymath}">
+</DIV><P></P>
+Let <IMG
+ WIDTH="19" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img151.png"
+ ALT="$ \delta_t$"> denote the point mass at <!-- MATH
+ $t\in \mathbb{R}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$ t \in \mathbb{R}$">, 
+and take <!-- MATH
+ $\mu=\nu-\delta_0$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.png"
+ ALT="$ \mu=\nu-\delta_0$">.  Consider the 
+representation <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> given by translation by <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img153.png"
+ ALT="$ t$">.  
+Then:
+<BR><IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is weakly measurable; 
+<BR><IMG
+ WIDTH="69" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="$ \Vert\mu\Vert&gt;0$">;
+<BR><!-- MATH
+ $T_t(\mu)=T_t(\nu-\delta_0)=\nu-\delta_t$
+ -->
+<IMG
+ WIDTH="226" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img155.png"
+ ALT="$ T_t(\mu)=T_t(\nu-\delta_0)=\nu-\delta_t$">;
+<BR>
+for every <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ A\in \Sigma$">,  <!-- MATH
+ $T_t(\mu)(A)=0$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="$ T_t(\mu)(A)=0$"> 
+for almost all <!-- MATH
+ $t\in \mathbb{R}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$ t \in \mathbb{R}$">.
+<BR>
+It now follows from Proposition <A HREF="#weakhypa">2.4</A> that the 
+representation <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> is not sup path attaining.
+<BR>(b)  Let <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img157.png"
+ ALT="$ \alpha$"> be a real number and let 
+<!-- MATH
+ $\Sigma,\ \mu, \nu, \delta_t$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$ \Sigma,\ \mu, \nu, \delta_t$">, and <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$ T_t$"> 
+have the same meanings as in (a).  Define a 
+representation <IMG
+ WIDTH="28" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.png"
+ ALT="$ T^\alpha$"> by
+<!-- MATH
+ \begin{displaymath}
+T_t^\alpha = e^{i\alpha t}T_t.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="102" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$\displaystyle T_t^\alpha = e^{i\alpha t}T_t.$">
+</DIV><P></P>
+Arguing as in (a), it is easy to see that <IMG
+ WIDTH="28" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img159.png"
+ ALT="$ T^\alpha$"> 
+is not sup path attaining.
+<I>
+<A NAME="exnohypa"></A></I></DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html30"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html28"
+  HREF="trans-measures.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html22"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html31"
+  HREF="node3.html">Proof of the Main</A>
+<B> Up:</B> <A NAME="tex2html29"
+  HREF="trans-measures.html">Transference in Spaces of</A>
+<B> Previous:</B> <A NAME="tex2html23"
+  HREF="node1.html">Introduction</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bibliography</TITLE>
+<META NAME="description" CONTENT="Bibliography">
+<META NAME="keywords" CONTENT="trans-measures">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="trans-measures.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="trans-measures.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html60"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html58"
+  HREF="trans-measures.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html52"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html61"
+  HREF="node6.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html59"
+  HREF="trans-measures.html">Transference in Spaces of</A>
+<B> Previous:</B> <A NAME="tex2html53"
+  HREF="node4.html">Transference in Spaces of</A>
+<BR><BR>
+<!--End of Navigation Panel-->
+ 
+<H2><A NAME="SECTION00050000000000000000">
+Bibliography</A>
+</H2><DL COMPACT><DD>
+<P>
+<P></P><DT><A NAME="ams2">1</A>
+<DD>  N. Asmar and S. Montgomery-Smith, 
+<EM>Analytic measures and Bochner measurability</EM>,
+ Bull. Sci. Math. <B>122</B>, (1998), 39-66.
+
+<P>
+<P></P><DT><A NAME="bp">2</A>
+<DD>  C. Bessaga and A. Pe<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img284.png"
+ ALT="\l">czynski, 
+<EM>On bases and unconditional 
+convergence of series in Banach spaces</EM>, 
+Studia Math. <B>17</B> (1958), 151-164.
+
+<P>
+<P></P><DT><A NAME="bs">3</A>
+<DD> S. Bochner, 
+<EM>Boundary values of analytic functions in 
+several variables and almost periodic functions</EM>, 
+Ann. of Math., <B>45</B> (1944), 708-722.
+
+<P>
+<P></P><DT><A NAME="cal">4</A>
+<DD>  A. Calder&#243;n, 
+<EM>Ergodic theory and translation-invariant operators</EM>, 
+Proc. Nat. Acad. Sci. , <B>157</B> (1971), 137-153.
+
+<P>
+<P></P><DT><A NAME="cw">5</A>
+<DD>  R. R. Coifman and G. Weiss,
+``Transference methods in analysis'', Regional 
+Conference Series in Math. <B>31</B>, Amer. Math. Soc., 
+Providence, R. I. 1977.
+
+<P>
+<P></P><DT><A NAME="deleeuwglicksberg">6</A>
+<DD>  K. de Leeuw and I. Glicksberg, 
+<EM>Quasi-invariance and analyticity of measures on compact groups</EM>,
+Acta Math., <B>109</B> (1963), 179-205.
+
+<P>
+<P></P><DT><A NAME="dunford">7</A>
+<DD>  N. Dunford and J. Schwartz,
+``Linear Operators'', Part I,  
+Interscience Publishers, New York 1958. 
+
+<P>
+<P></P><DT><A NAME="eg">8</A>
+<DD>    R. E. Edwards, and G. I. Gaudry,
+``Littlewood-Paley and Multiplier Theory'', 
+Ergebnisse der Mathematik
+und ihrer Grenzgebiete, Springer-Verlag, No. 90,  
+Berlin, 1977.
+
+<P>
+<P></P><DT><A NAME="forelli">9</A>
+<DD>  F. Forelli,
+<EM>Analytic and quasi-invariant measures</EM>, 
+Acta Math., <B>118</B> (1967), 33-59.
+
+<P>
+<P></P><DT><A NAME="hl1">10</A>
+<DD>  H. Helson and D. Lowdenslager,
+<EM>Prediction theory and Fourier series in several variables</EM>, 
+Acta Math. <B>99</B> (1958), 165-202.
+
+<P>
+<P></P><DT><A NAME="hl2">11</A>
+<DD>  H. Helson and D. Lowdenslager,
+<EM>Prediction theory and Fourier series in several variables II</EM>, 
+Acta Math. <B>106</B> (1961), 175-212.
+
+<P>
+<P></P><DT><A NAME="hr1">12</A>
+<DD> E. Hewitt and K. A. Ross,
+``Abstract Harmonic Analysis I,''  <IMG
+ WIDTH="30" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img405.png"
+ ALT="$ 2^{nd}$"> Edition, Grundlehren der
+Math. Wissenschaften, Band 115, Springer-Verlag, Berlin 1979.
+
+<P>
+<P></P><DT><A NAME="hr2">13</A>
+<DD> E. Hewitt and K. A. Ross,
+``Abstract Harmonic Analysis II,'' Grundlehren der
+Math. Wissenschaften in Einzeldarstellungen, Band
+152, Springer-Verlag, New York, 1970.
+
+<P>
+<P></P><DT><A NAME="rudin">14</A>
+<DD> W. Rudin, ``Fourier Analysis on Groups,''
+Interscience Tracts in Pure and Applied Mathematics, No. 12, 
+John Wiely, New York, 1962.
+
+<P>
+<P></P><DT><A NAME="stein">15</A>
+<DD> E.  Stein, ``Harmonic Analysis:
+Real-Variable Methods, Orthogonality, and Oscillatory Integrals,'' 
+Princeton Univ. Press, Princeton, N. J., 1993.
+
+<P>
+</DL><BR><HR>
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

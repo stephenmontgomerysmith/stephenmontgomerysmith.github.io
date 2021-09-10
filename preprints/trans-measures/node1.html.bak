@@ -1,0 +1,1224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introduction</TITLE>
+<META NAME="description" CONTENT="Introduction">
+<META NAME="keywords" CONTENT="trans-measures">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="trans-measures.css">
+
+<LINK REL="next" HREF="node2.html">
+<LINK REL="previous" HREF="trans-measures.html">
+<LINK REL="up" HREF="trans-measures.html">
+<LINK REL="next" HREF="node2.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html20"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html18"
+  HREF="trans-measures.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html12"
+  HREF="trans-measures.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html21"
+  HREF="node2.html">Sup Path Attaining Representations</A>
+<B> Up:</B> <A NAME="tex2html19"
+  HREF="trans-measures.html">Transference in Spaces of</A>
+<B> Previous:</B> <A NAME="tex2html13"
+  HREF="trans-measures.html">Transference in Spaces of</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00010000000000000000">
+Introduction</A>
+</H1>
+
+<P>
+
+<P>
+Transference theory for <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ L^p$"> spaces is a powerful tool with
+many fruitful applications to singular integrals, ergodic
+theory, and spectral theory of operators [<A
+ HREF="node5.html#cal">4</A>,<A
+ HREF="node5.html#cw">5</A>].
+These methods afford a unified approach to many problems
+in diverse areas, which before were proved by a variety of methods.
+
+<P>
+The purpose of this paper is to bring about a similar approach to spaces of measures.  Our main transference result is 
+motivated by the extensions of the classical F.&amp;M.&nbsp;Riesz Theorem 
+due to Bochner
+ [<A
+ HREF="node5.html#bs">3</A>],
+Helson-Lowdenslager [<A
+ HREF="node5.html#hl1">10</A>,<A
+ HREF="node5.html#hl2">11</A>], 
+de Leeuw-Glicksberg [<A
+ HREF="node5.html#deleeuwglicksberg">6</A>], 
+Forelli [<A
+ HREF="node5.html#forelli">9</A>], and others.  It might seem
+that these extensions should all be obtainable 
+via transference methods,
+and indeed, as we will show, these are exemplary 
+illustrations
+of the scope of our main result.
+
+<P>
+It is not straightforward to extend the classical transference methods
+of Calder&#243;n, Coifman and Weiss to spaces of measures.  
+First, their methods make use of 
+averaging techniques and the amenability of the group of representations.
+The averaging techniques simply do not work with
+measures, and do not preserve analyticity.  Secondly, and most importantly,
+their techniques require that the representation is strongly continuous.
+For spaces of measures, this last requirement would be prohibitive, 
+even for the simplest representations such as translations.  Instead, we
+will introduce a much weaker requirement, which we will call `sup path
+attaining'.  By working with sup path attaining representations, we are
+ able to prove a new transference principle with interesting applications.
+For example, we will show how to derive with ease generalizations of Bochner's theorem and Forelli's main result.  The Helson-Lowdenslager theory, concerning representations of groups with ordered dual groups, 
+is also within reach, but it will
+be treated in a separate paper. 
+
+<P>
+Throughout <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> will denote a 
+locally compact abelian group with dual group
+<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \Gamma$">.  
+The symbols <!-- MATH
+ $\mathbb{Z}$
+ -->
+<IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \mathbb{Z}$">, <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$"> and <!-- MATH
+ $\mathbb{C}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="$ \mathbb{C}$"> 
+denote the integers, the real and complex numbers, respectively.  
+If <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ A$"> is a set, we denote the indicator
+function of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ A$"> by <IMG
+ WIDTH="25" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ 1_A$">.
+For <!-- MATH
+ $1\leq p<\infty$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ 1\leq p&lt;\infty$">,
+the space of Haar measurable functions <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ f$"> on <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> with
+<!-- MATH
+ $\int_G|f|^p dx<\infty$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$ \int_G\vert f\vert^p dx&lt;\infty$"> will be denoted by 
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ L^p(G)$">.  The space of essentially
+bounded functions on <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> will be denoted by 
+<!-- MATH
+ $L^\infty(G)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ L^\infty(G)$">.  The expressions ``locally null''
+and ``locally almost everywhere'' will have the same meanings as
+in [<A
+ HREF="node5.html#hr1">12</A>, Definition (11.26)].
+
+<P>
+Our measure theory is borrowed from
+[<A
+ HREF="node5.html#hr1">12</A>].
+In particular, the space of all complex regular Borel measures 
+on <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$">,
+denoted by <IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ M(G)$">, consists of all complex measures  
+arising from bounded linear functionals on <!-- MATH
+ ${\cal C}_0(G)$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$ {\cal C}_0(G)$">,
+the Banach space of continuous functions on
+<IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> vanishing at infinity. 
+
+<P>
+Let <!-- MATH
+ $(\O , \Sigma)$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$ (\O , \Sigma)$"> denote a
+measurable space, 
+where <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.png"
+ ALT="$ \O$"> is a set and <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$ \Sigma$"> is a
+sigma algebra of subsets of <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.png"
+ ALT="$ \O$">.  Let <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$"> denote the 
+Banach space of complex measures on <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$ \Sigma$"> with the
+total variation norm, and let
+<!-- MATH
+ ${\cal L}^\infty(\Sigma)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$ {\cal L}^\infty(\Sigma)$"> denote the space of measurable
+bounded functions on <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ \Omega$">.  
+
+<P>
+Let
+<!-- MATH
+ $T:\ t\mapsto T_t$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T:\ t\mapsto T_t$"> denote a representation of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$">
+by isomorphisms of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$">.  
+We suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> is uniformly bounded,
+i.e., there is a positive constant <IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ c$"> such that
+for all <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ t\in G$">, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="uniformlybded"></A><!-- MATH
+ \begin{equation}
+\|T_t\|\leq c .
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$\displaystyle \Vert T_t\Vert\leq c .$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<P>
+<DIV><B>Definition  1.1</B> &nbsp; 
+<I>A measure <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ \mu\in M(\Sigma)$"> is 
+called weakly measurable (in symbols, <!-- MATH
+ $\mu\in{\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$">)
+if for every <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ A\in \Sigma$"> 
+the mapping <!-- MATH
+ $t\mapsto T_t\mu(A)$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ t\mapsto T_t\mu(A)$"> is 
+Borel measurable on <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$">.  
+<A NAME="weakmble"></A></I></DIV><P></P>
+
+<P>
+Given a measure <!-- MATH
+ $\mu\in {\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$"> and a Borel measure 
+<!-- MATH
+ $\nu \in M(G)$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$ \nu \in M(G)$">, we define the `convolution' 
+<IMG
+ WIDTH="55" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$ \nu*_T\mu$"> on <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$ \Sigma$"> by
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="Tconv"></A><!-- MATH
+ \begin{equation}
+\nu*_T\mu (A)=\int_G T_{-t}\mu(A) d\nu(t)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="242" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$\displaystyle \nu*_T\mu (A)=\int_G T_{-t}\mu(A) d\nu(t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all <!-- MATH
+ $A\in\Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ A\in \Sigma$">. 
+
+<P>
+We will assume throughout this paper
+that the representation <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> commutes with the 
+convolution (<A HREF="#Tconv">2</A>) in the following sense:
+ for each <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ t\in G$">, 
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="commut"></A><!-- MATH
+ \begin{equation}
+T_t(\nu*_T\mu)=\nu*_T(T_t\mu).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="198" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$\displaystyle T_t(\nu*_T\mu)=\nu*_T(T_t\mu).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Condition (<A HREF="#commut">3</A>) holds if, for example,
+for all <IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ t\in G$">, the adjoint of <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$ T_t$"> maps 
+<!-- MATH
+ ${\cal L}^\infty(\Sigma)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$ {\cal L}^\infty(\Sigma)$"> into itself.  In symbols,
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="adjointT"></A><!-- MATH
+ \begin{equation}
+T_t^*: {\cal L}^\infty(\Sigma) \rightarrow {\cal L}^\infty(\Sigma).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="188" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$\displaystyle T_t^*: {\cal L}^\infty(\Sigma) \rightarrow {\cal L}^\infty(\Sigma).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+For proofs we refer the reader to 
+[<A
+ HREF="node5.html#ams2">1</A>].  Using (<A HREF="#uniformlybded">1</A>) and 
+(<A HREF="#commut">3</A>), it can be shown that <IMG
+ WIDTH="55" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$ \nu*_T\mu$"> is a measure in <!-- MATH
+ ${\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$ {\cal M}_T(\Sigma)$">,
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="normofconv"></A><!-- MATH
+ \begin{equation}
+\|\nu*_T\mu\|\leq  c\|\nu\|\|\mu\|,
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="173" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\displaystyle \Vert\nu*_T\mu\Vert\leq c\Vert\nu\Vert\Vert\mu\Vert,$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ c$"> is as in 
+(<A HREF="#uniformlybded">1</A>), and 
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="associative"></A><!-- MATH
+ \begin{equation}
+\sigma*_T(\nu*_T\mu)=(\sigma*\nu)*_T\mu,
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="234" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$\displaystyle \sigma*_T(\nu*_T\mu)=(\sigma*\nu)*_T\mu,$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all <!-- MATH
+ $\sigma , \nu \in M(G)$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$ \sigma , \nu \in M(G)$"> and <!-- MATH
+ $\mu \in {\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$">
+(see [<A
+ HREF="node5.html#ams2">1</A>]).
+
+<P>
+We come now to a definition which is fundamental to our work.
+<P>
+<DIV><B>Definition  1.2</B> &nbsp; 
+<I>A representation <!-- MATH
+ $T=(T_t)_{t\in G}$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$ T=(T_t)_{t\in G}$"> of a locally compact abelian group
+<IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$"> is said to be sup path attaining
+if it is uniformly bounded, satisfies property (<A HREF="#commut">3</A>), and if there 
+is a constant <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img42.png"
+ ALT="$ C$"> such that for every weakly 
+measurable <!-- MATH
+ $\mu\in {\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$"> we have
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="ineqhypa"></A><!-- MATH
+ \begin{equation}
+\| \mu\| \leq C\sup \left\{
+{\rm ess\ sup}_{t\in G} \left|
+\int_\O h d (T_t\mu)
+\right|
+:\ \ h\in {\cal L}^\infty(\Sigma),\ \|h\|_\infty\leq 1
+\right\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="544" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.png"
+ ALT="$\displaystyle \Vert \mu\Vert \leq C\sup \left\{ {\rm ess\ sup}_{t\in G} \left\v...
+...t\vert :\ \ h\in {\cal L}^\infty(\Sigma),\ \Vert h\Vert _\infty\leq 1 \right\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+<A NAME="hypa"></A></I></DIV><P></P>
+
+<P>
+The fact that the mapping <!-- MATH
+ $t\mapsto \int_\O h d (T_t\mu)$
+ -->
+<IMG
+ WIDTH="127" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img44.png"
+ ALT="$ t\mapsto \int_\O h d (T_t\mu)$"> is 
+measurable is a simple consequence of
+the measurability of the mapping <!-- MATH
+ $t\mapsto T_t\mu(A)$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ t\mapsto T_t\mu(A)$"> for every
+<!-- MATH
+ $A\in\Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$ A\in \Sigma$">.  
+
+<P>
+Examples of  sup path attaining representations 
+ will be presented in the following section.  
+Proceeding toward the main result of this paper, we 
+recall some basic definitions from spectral theory.
+
+<P>
+If <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="$ I$"> is an ideal in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="$ L^1(G)$">, let
+<!-- MATH
+ \begin{displaymath}
+Z(I)=\bigcap_{f\in I}
+\left\{
+\chi\in\Gamma:\ \ \widehat{f}(\chi)=0
+\right\}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="276" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="$\displaystyle Z(I)=\bigcap_{f\in I}
+\left\{
+\chi\in\Gamma:\ \ \widehat{f}(\chi)=0
+\right\}.$">
+</DIV><P></P>
+The set <IMG
+ WIDTH="43" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$ Z(I)$"> is called the zero set of <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="$ I$">.
+For a weakly measurable <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ \mu\in M(\Sigma)$">, let
+<!-- MATH
+ \begin{displaymath}
+{\cal I}(\mu)=\{f\in L^1(G):\ \ f*_T\mu =0\}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="290" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.png"
+ ALT="$\displaystyle {\cal I}(\mu)=\{f\in L^1(G):\ \ f*_T\mu =0\}.$">
+</DIV><P></P>
+Using properties of the convolution <IMG
+ WIDTH="25" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ *_T$">,
+it is straightforward to show that <!-- MATH
+ ${\cal I}(\mu)$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$ {\cal I}(\mu)$"> is a closed ideal
+in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="$ L^1(G)$">.
+<P>
+<DIV><B>Definition  1.3</B> &nbsp; 
+<I>The <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$">-spectrum of a 
+weakly measurable <!-- MATH
+ $\mu\in {\cal M}_T(\Sigma)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in{\cal M}_T(\Sigma)$"> is defined by 
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="specsbt"></A><!-- MATH
+ \begin{equation}
+{\rm spec}_T (\mu)= \bigcap_{f\in {\cal I}(\mu)}
+\left\{
+\chi\in\Gamma:\ \ \widehat{f}(\chi)=0
+\right\}=Z({\cal I}(\mu)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="417" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.png"
+ ALT="$\displaystyle {\rm spec}_T (\mu)= \bigcap_{f\in {\cal I}(\mu)} \left\{ \chi\in\Gamma:\ \ \widehat{f}(\chi)=0 \right\}=Z({\cal I}(\mu)).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(8)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+<A NAME="Tspectrum"></A></I></DIV><P></P>
+If <!-- MATH
+ $S\subset \Gamma$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ S\subset \Gamma$">, let
+<!-- MATH
+ \begin{displaymath}
+L_S^1=L_S^1(G)=\left\{f\in L^1(G):\ \widehat{f}=0\ \mbox{outside of}\ S\right\}\,.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="423" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$\displaystyle L_S^1=L_S^1(G)=\left\{f\in L^1(G):\ \widehat{f}=0\ \mbox{outside of}\ S\right\}\,.$">
+</DIV><P></P>
+Our transference result concerns convolution operators on
+<IMG
+ WIDTH="56" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$ L^1_S(G)$"> where <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ S$"> satisfies
+a special property, described as follows.
+<P>
+<DIV><B>Definition  1.4</B> &nbsp; 
+<I>A subset <!-- MATH
+ $S\subset\Gamma$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ S\subset \Gamma$"> is a <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img57.png"
+ ALT="$ {\cal T}$">-set if, given any compact 
+<!-- MATH
+ $K\subset S$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$ K\subset S$">, each neighborhood of <!-- MATH
+ $0\in\Gamma$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$ 0\in\Gamma$"> contains a nonempty open set
+<IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img60.png"
+ ALT="$ W$"> such that <!-- MATH
+ $W+K\subset S$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$ W+K\subset S$">. 
+<A NAME="t-set"></A></I></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Example  1.5</B> &nbsp; (a)  If <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \Gamma$"> is a locally compact abelian group, then any open subset of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \Gamma$"> is a <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img57.png"
+ ALT="$ {\cal T}$">-set.  In particular, if <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \Gamma$"> is discrete then every subset of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \Gamma$"> is a <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img57.png"
+ ALT="$ {\cal T}$">-set.
+<BR>(b)  The set <!-- MATH
+ $\left[ a,\infty\right. )$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$ \left[ a,\infty\right. )$"> is a <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img57.png"
+ ALT="$ {\cal T}$">-subset of <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ \mathbb{R}$">, for all <!-- MATH
+ $a\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.png"
+ ALT="$ a\in\mathbb{R}$">.  
+<BR>(c)  Let <!-- MATH
+ $a\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.png"
+ ALT="$ a\in\mathbb{R}$"> and <!-- MATH
+ $\psi:\ \Gamma \rightarrow \mathbb{R}$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ \psi:\ \Gamma \rightarrow \mathbb{R}$"> be a continuous homomorphism.  Then 
+<!-- MATH
+ $S=\psi^{-1}([a,\infty))$
+ -->
+<IMG
+ WIDTH="138" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.png"
+ ALT="$ S=\psi^{-1}([a,\infty))$"> is a <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img57.png"
+ ALT="$ {\cal T}$">-set.
+<BR>(d)  Let <!-- MATH
+ $\Gamma=\mathbb{R}^2$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img66.png"
+ ALT="$ \Gamma=\mathbb{R}^2$"> and <!-- MATH
+ $S=\{(x,y):\ y^2\leq x\}$
+ -->
+<IMG
+ WIDTH="180" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.png"
+ ALT="$ S=\{(x,y):\ y^2\leq x\}$">.  
+Then <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ S$"> is a <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img57.png"
+ ALT="$ {\cal T}$">-subset of <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<IMG
+ WIDTH="26" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img68.png"
+ ALT="$ \mathbb{R}^2$"> such that there is no nonempty open set <!-- MATH
+ $W\subset \mathbb{R}^2$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$ W\subset \mathbb{R}^2$"> such that <!-- MATH
+ $W+S\subset S$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$ W+S\subset S$">. </DIV><P></P>
+
+<P>
+The main result of this paper is the following transference
+theorem.
+<P>
+<DIV><B>Theorem  1.6</B> &nbsp; 
+<I>Let <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$"> be a sup path attaining representation of a locally compact abelian group
+<IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ G$"> by isomorphisms of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ M(\Sigma)$"> and let <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ S$"> be a <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img57.png"
+ ALT="$ {\cal T}$">-subset of
+<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \Gamma$">.
+Suppose that <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \nu$"> is a measure in <IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ M(G)$"> such that
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="hyptransference2"></A><!-- MATH
+ \begin{equation}
+\|\nu*f\|_1\leq \|f\|_1
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="134" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.png"
+ ALT="$\displaystyle \Vert\nu*f\Vert _1\leq \Vert f\Vert _1$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(9)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+for all <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ f$"> in <IMG
+ WIDTH="56" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$ L_S^1(G)$">.  Then for every 
+weakly measurable <!-- MATH
+ $\mu \in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ \mu\in M(\Sigma)$"> with
+<!-- MATH
+ ${\rm spec}_T ( \mu )\subset S$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.png"
+ ALT="$ {\rm spec}_T ( \mu )\subset S$">
+we have
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="conctransference2"></A><!-- MATH
+ \begin{equation}
+\|\nu*_T\mu\|\leq c^3 C \|\mu\|,
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="165" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.png"
+ ALT="$\displaystyle \Vert\nu*_T\mu\Vert\leq c^3 C \Vert\mu\Vert,$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(10)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+where <IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ c$"> is as in (<A HREF="#uniformlybded">1</A>) and 
+<IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img42.png"
+ ALT="$ C$"> is as in (<A HREF="#ineqhypa">7</A>).
+<A NAME="maintransferenceth"></A></I></DIV><P></P>
+
+<P>
+To state Forelli's main result in [<A
+ HREF="node5.html#forelli">9</A>], let us recall 
+two definitions of Baire sets.  
+Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ \Omega$"> is
+a topological space. 
+Usually,
+the collection of Baire sets, <!-- MATH
+ ${\cal B}_0={\cal B}_0(\O )$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.png"
+ ALT="$ {\cal B}_0={\cal B}_0(\O )$">, is defined 
+as the sigma algebra generated by sets that are compact and also countable
+intersections of open sets.  A second definition is to define <!-- MATH
+ ${\cal B}_0$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$ {\cal B}_0$">
+ as the minimal
+sigma algebra so that compactly supported continuous functions are measurable.
+For locally compact Hausdorff
+topological spaces, these two
+definitions are equivalent.
+
+<P>
+Suppose that <!-- MATH
+ $(T_t)_{t\in \mathbb{R}}$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.png"
+ ALT="$ (T_t)_{t\in \mathbb{R}}$"> is a group of 
+homeomorphisms
+of <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ \Omega$"> onto itself such that the mapping <!-- MATH
+ $(t,\omega) \mapsto T_t
+\omega$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$ (t,\omega) \mapsto T_t
+\omega$">
+is jointly continuous.  The maps <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$ T_t$"> induce isomorphisms <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$ T_t$"> on
+the space of Baire measures via the identity <!-- MATH
+ $T_t \mu(A) = \mu(T_t(A))$
+ -->
+<IMG
+ WIDTH="157" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$ T_t \mu(A) = \mu(T_t(A))$">.
+
+<P>
+If <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \nu$"> is a Baire measure, we will say that it is 
+quasi-invariant if <IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img81.png"
+ ALT="$ T_t\nu$"> and <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \nu$"> are mutually absolutely
+continuous for all <!-- MATH
+ $t \in \mathbb{R}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$ t \in \mathbb{R}$">, that is, for all <!-- MATH
+ $A \in {\cal B}_0$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$ A \in {\cal B}_0$"> we have
+that <!-- MATH
+ $|\nu|(A) = 0$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.png"
+ ALT="$ \vert\nu\vert(A) = 0$"> if and only if <!-- MATH
+ $|T_t\nu|(A) = 0$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.png"
+ ALT="$ \vert T_t\nu\vert(A) = 0$">.  If <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is
+a Baire measure, we will say that <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$">-analytic if
+<!-- MATH
+ \begin{displaymath}
+\int_{\mathbb{R}} T_t\mu(A) h(t) dt = 0,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="173" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.png"
+ ALT="$\displaystyle \int_{\mathbb{R}} T_t\mu(A) h(t) dt = 0, $">
+</DIV><P></P>
+for all <!-- MATH
+ $A \in {\cal B}_0$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$ A \in {\cal B}_0$"> and all <!-- MATH
+ $h \in H^1(\mathbb{R})$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img88.png"
+ ALT="$ h \in H^1(\mathbb{R})$">, where
+<!-- MATH
+ \begin{displaymath}
+H^1(\mathbb{R})=\left\{f\in L^1(\mathbb{R}):\ \widehat{f}(s)=0\ \mbox{for all}\ s\leq 0\right\}\,.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="398" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img89.png"
+ ALT="$\displaystyle H^1(\mathbb{R})=\left\{f\in L^1(\mathbb{R}):\ \widehat{f}(s)=0\ \mbox{for all}\ s\leq 0\right\}\,.$">
+</DIV><P></P>
+The main result of
+Forelli [<A
+ HREF="node5.html#forelli">9</A>] says the following.
+
+<P>
+<P>
+<DIV><A NAME="forelli"><B>Theorem  1.7</B></A> &nbsp; 
+<I>Let <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ \Omega$"> be a locally compact Hausdorff 
+topological space, and let <!-- MATH
+ $(T_t)_{t\in \mathbb{R}}$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.png"
+ ALT="$ (T_t)_{t\in \mathbb{R}}$"> 
+be a group of homeomorphisms of <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ \Omega$"> onto itself such that the maps 
+<!-- MATH
+ $(t,\omega) \mapsto T_t \omega$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$ (t,\omega) \mapsto T_t
+\omega$"> is jointly continuous.  Suppose that
+<IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> is a <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$">-analytic Baire measure, and that <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \nu$"> is a quasi-invariant
+Baire measure.  Then both <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.png"
+ ALT="$ \mu_s$"> and <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \mu_a$"> are <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$ T$">-analytic, where <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.png"
+ ALT="$ \mu_s$">
+and <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \mu_a$"> are the singular and absolutely continuous parts of <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ \mu$"> with respect
+to <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \nu$">.</I></DIV><P></P>
+
+<P>
+The proofs of both this result in [<A
+ HREF="node5.html#forelli">9</A>], and also its predecessor
+[<A
+ HREF="node5.html#deleeuwglicksberg">6</A>],
+are long and difficult.  Furthermore, it is hard to understand
+why one must use Baire measures instead of Borel measures.
+As it turns out, the mystery of why we need to use Baire measures in Forelli's work is reduced to the fact that
+such representations as described above on the Baire measures are sup path attaining.  By working with sup path attaining representations,
+we are able to prove a more general version of Theorem <A HREF="#forelli">1.7</A>.
+We do not need <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$ \Omega$"> to be locally compact Hausdorff.  
+Or
+we might suppose that <!-- MATH
+ $(T_t)_{t\in \mathbb{R}}$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.png"
+ ALT="$ (T_t)_{t\in \mathbb{R}}$"> is any group of uniformly bounded
+isomorphisms satisfying (<A HREF="#commut">3</A>) on any Lebesgue space (that is, a 
+countably generated sigma algebra).  
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html20"
+  HREF="node2.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html18"
+  HREF="trans-measures.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html12"
+  HREF="trans-measures.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html21"
+  HREF="node2.html">Sup Path Attaining Representations</A>
+<B> Up:</B> <A NAME="tex2html19"
+  HREF="trans-measures.html">Transference in Spaces of</A>
+<B> Previous:</B> <A NAME="tex2html13"
+  HREF="trans-measures.html">Transference in Spaces of</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

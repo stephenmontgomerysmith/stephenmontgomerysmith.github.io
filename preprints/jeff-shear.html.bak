@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Non-linear Instability of periodic orbits of suspensions of thin fibers in fluids.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith&#44; Non-linear Instability of periodic orbits of suspensions of thin fibers in fluids.</B>
+<I>Preprint.</I>
+It is known that Jeffery's equation predicts that fibers with Jeffery's parameter less than one will exhibit periodic behavior when subjected to shear flows.  Yet this behavior is not seen in suspensions containing many fibers.  This paper explores the extent to which coupling Jeffery's equation with the viscosity of the suspension causes instability that breaks up this periodic behavior.  A simple one-dimensional model is presented, which suggests that there is at least some non-linear instability, so that this may at least partially account for why periodic behavior is not observed.  One interesting observation is that this instability only grows linearly if only two dimensions are considered, whereas the instability can have exponential growth if the third dimension is considered.
+(<A HREF="jeff-shear3.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Global regularity of the Navier-Stokes equation on thin three dimensional domains with periodic boundary conditions.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith&#44; Global regularity of the Navier-Stokes equation on thin three dimensional domains with periodic boundary conditions.</B>
+<I><a href="http://ejde.math.swt.edu/">Electronic J. Differential Equations</a>, <a href="http://ejde.math.swt.edu/contents.html#1999"><B>1999</b>, (1999)</a>, <a href="http://ejde.math.swt.edu/Volumes/1999/11/abstr.html">no. 11, 1-19</a>.</i>
+This paper gives another version of results due to Raugel and Sell, and similar results due to Moise, Temam and Ziane, that state the following: the solution of the Navier-Stokes equation on a thin 3 dimensional domain with periodic boundary conditions has global regularity, as long as there is some control on the size of the initial data and the forcing term, where the control is larger than that obtainable via "small data" estimates.  The approach taken is to consider the three dimensional equation as a perturbation of the equation when the vector field does not depend upon the coordinate in the thin direction.
+(<A HREF="thin8.tex">tex</A>,
+<A HREF="thin8.dvi">dvi</A>,
+<A HREF="thin8.ps">ps</A>,
+<A HREF="thin8.pdf">pdf</A>).
+
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

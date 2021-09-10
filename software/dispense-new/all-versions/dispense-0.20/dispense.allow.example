@@ -1,0 +1,2 @@
+allow 12.34.56.78
+deny 0.0.0.0/0 # Deny everything

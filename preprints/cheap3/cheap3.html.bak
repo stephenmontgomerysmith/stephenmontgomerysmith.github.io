@@ -1,0 +1,1379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Finite time blow up for a
+Navier-Stokes like equation
+</TITLE>
+<META NAME="description" CONTENT="Finite time blow up for a
+Navier-Stokes like equation
+">
+<META NAME="keywords" CONTENT="cheap3">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cheap3.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev_g.png">   
+<BR>
+<B> Next:</B> <A NAME="tex2html3"
+  HREF="node1.html">Bibliography</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<P>
+
+<P>
+
+<P>
+<H1 ALIGN=CENTER>
+Finite time blow up for a
+<BR>
+Navier-Stokes like equation
+</H1>
+<P ALIGN=CENTER><STRONG>Stephen Montgomery-Smith<A NAME="tex2html1"
+  HREF="footnode.html#foot46"><SUP>1</SUP></A>
+
+<BR>
+Department of Mathematics
+<BR>
+University of Missouri
+<BR>
+Columbia, MO 65211
+<BR>
+stephen@math.missouri.edu
+<BR>
+http://www.math.missouri.edu/~stephen
+</STRONG></P>
+<P ALIGN=LEFT></P>
+
+<P>
+
+<H3>Abstract:</H3>
+<DIV>
+We consider an equation similar to the Navier-Stokes equation.  
+We show that
+there is initial data that exists in every Triebel-Lizorkin or Besov space
+(and hence in every Lebesgue and Sobolev space), such that after a finite
+time, the solution
+is in no Triebel-Lizorkin or Besov space (and hence 
+in no Lebesgue or Sobolev space).  The purpose is to show the
+limitations of the so called semigroup method for the Navier-Stokes
+equation.
+We also consider the possibility of existence of
+solutions with initial data in the Besov space <!-- MATH
+ $\dot B^{-1,\infty}_\infty$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \dot B^{-1,\infty}_\infty$">.
+We give initial data in this space for which there is no reasonable
+solution for the Navier-Stokes like equation.
+
+<BR>
+<BR>
+Keywords:
+Navier-Stokes equation, semigroup, fixed point method,
+Triebel-Lizorkin space, Besov space.
+
+<BR>
+<BR>
+A.M.S. Classification (2000): Primary 35Q30, 46E35; Secondary 34G20, 37L05,
+47D06, 47H10.
+</DIV>
+<P>
+
+<P>
+In this paper, we consider a simplified model for the 
+Navier-Stokes equation -- what we call the cheap Navier-Stokes
+equation.  For this equation, we show that for sufficiently
+large initial data, that we get blow up in finite time.  
+The purpose of this is <EM>not</EM> to indicate the 
+possibility that the Navier-Stokes equation might blow up
+in finite time -- indeed the author strongly believes
+the opposite.  Rather, the purpose of this paper is to show limitations
+in some of the methods used in studying the Navier-Stokes
+equation.
+
+<P>
+Let us consider the following version of the Navier-Stokes equation:
+<!-- MATH
+ \begin{displaymath}
+\frac{\partial u}{\partial t} = \Delta u - P(\div (u \otimes u)),
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="224" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$\displaystyle \frac{\partial u}{\partial t} = \Delta u - P(\div (u \otimes u)),
+$">
+</DIV><P></P>
+where <!-- MATH
+ $t \mapsto u_t$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ t \mapsto u_t$"> is an <!-- MATH
+ ${\mathbb{R}}^n$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ {\mathbb{R}}^n$"> valued function,
+or tempered distribution, on <!-- MATH
+ ${\mathbb{R}}^n$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ {\mathbb{R}}^n$">.  
+Here <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$ P$"> denotes the Leray projection that takes
+a vector field to its divergence free part.
+A tremendous amount of work has been done on
+the very hard problem of determining if the solutions exist, if they
+are unique, and to which spaces they belong.
+One approach, the one we consider in this paper, 
+is to consider mild solutions using what is often
+called the semigroup approach.  
+This is described in [<A
+ HREF="node1.html#Ca1">Ca1</A>], and
+is used in many papers, for example, [<A
+ HREF="node1.html#FK">FK</A>], [<A
+ HREF="node1.html#K">K</A>], [<A
+ HREF="node1.html#GM">GM</A>], [<A
+ HREF="node1.html#KT">KT</A>].
+An example of this kind of result is that due to Kato [<A
+ HREF="node1.html#K">K</A>],
+who showed that if <!-- MATH
+ $u_0 \in L_n({\mathbb{R}}^n)^n$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ u_0 \in L_n({\mathbb{R}}^n)^n$">, 
+then there is a solution <!-- MATH
+ $u \in C([0,T],(L_n({\mathbb{R}}^n))^n)$
+ -->
+<IMG
+ WIDTH="201" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$ u \in C([0,T],(L_n({\mathbb{R}}^n))^n)$">
+if either <IMG
+ WIDTH="90" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ T=T(u_0)$"> is sufficiently 
+small and <!-- MATH
+ ${\mathopen\|u_0\mathclose\|}_{L_n}$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ {\mathopen\Vert u_0\mathclose\Vert}_{L_n}$"> is arbitrary or 
+<!-- MATH
+ ${\mathopen\|u_0\mathclose\|}_{L_n}$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ {\mathopen\Vert u_0\mathclose\Vert}_{L_n}$"> is small and <IMG
+ WIDTH="62" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ T=\infty$">.
+
+<P>
+However, if one studies all these papers, one sees that they 
+do not use all of the properties of the Navier-Stokes equation.  
+Indeed, the methods seem to apply equally well to the the following
+equation, the <EM>cheap Navier-Stokes equation</EM>:
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation*}
+\frac{\partial u}{\partial t} = \Delta u + \sqrt{-\Delta} (u^2) .
+\end{equation*}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="189" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$\displaystyle \frac{\partial u}{\partial t} = \Delta u + \sqrt{-\Delta} (u^2) .$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Here <!-- MATH
+ $t\mapsto u_t$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ t \mapsto u_t$"> is a scalar valued function or tempered distribution
+on <!-- MATH
+ ${\mathbb{R}}^n$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ {\mathbb{R}}^n$">.
+The semigroup approach is to consider
+a mild solution of the cheap Navier-Stokes equation, that is, 
+a solution to the equation 
+<IMG
+ WIDTH="80" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ u = G(u)$">,
+where <!-- MATH
+ $G:C([0,T],X) \to C([0,T],X)$
+ -->
+<IMG
+ WIDTH="258" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ G:C([0,T],X) \to C([0,T],X)$">, 
+with <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$ X$"> being a space of tempered distributions on <!-- MATH
+ ${\mathbb{R}}^n$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ {\mathbb{R}}^n$">:
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation*}
+G(u)_t =
+e^{t \Delta} u_0 + \int_0^t e^{(t-s)\Delta} \sqrt{-\Delta}(u_s^2)) \, ds .
+\end{equation*}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="336" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$\displaystyle G(u)_t = e^{t \Delta} u_0 + \int_0^t e^{(t-s)\Delta} \sqrt{-\Delta}(u_s^2)) \, ds .$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The method used 
+to find a fixed point of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ G$"> is to show that <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ G$"> is a contraction
+mapping on <!-- MATH
+ $C([0,T],X)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$ C([0,T],X)$"> or on some subset of <!-- MATH
+ $C([0,T],X)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$ C([0,T],X)$">.
+(Oftentimes one cannot obtain the result by working directly
+with <!-- MATH
+ $C([0,T],X)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$ C([0,T],X)$">.  For example, in the case <!-- MATH
+ $X = L_n({\mathbb{R}}^n)$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ X = L_n({\mathbb{R}}^n)$"> one
+has to work with some space embedded into <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$ X$">, for as is shown by
+Oru [<A
+ HREF="node1.html#O">O</A>], the map <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ G$"> is not even continuous on <!-- MATH
+ $C([0,T],L_n({\mathbb{R}}^n))$
+ -->
+<IMG
+ WIDTH="143" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ C([0,T],L_n({\mathbb{R}}^n))$">.)
+
+<P>
+The semigroup
+method by itself never seems to be able to obtain global results, that is,
+results valid for both <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$ T$"> and the size of <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ u_0$"> arbitrarily large.  
+To obtain global results, one has to appeal to other
+kinds of estimates for the Navier-Stokes equation, for example, energy
+estimates (see, for example, [<A
+ HREF="node1.html#KF">KF</A>] or [<A
+ HREF="node1.html#Ca2">Ca2</A>]).
+
+<P>
+The purpose of this paper is to show that the semigroup method really is
+limited in this way.  For if we could obtain
+global results for the Navier-Stokes equation using only the semigroup
+method, then the same methods would also
+apply to the cheap Navier-Stokes equation.
+This would then contradict the main result of this paper and its corollary.
+
+<P>
+Thus, if one is going to obtain global results for the Navier-Stokes
+equation, one has to consider properties of the bilinear form
+<!-- MATH
+ $P(\div (u \otimes u))$
+ -->
+<IMG
+ WIDTH="118" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ P(\div (u \otimes u))$"> that are not shared by the bilinear form
+<!-- MATH
+ $\sqrt{-\Delta} (u^2)$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$ \sqrt{-\Delta} (u^2)$">.  Perhaps there is some mysterious cancellation
+property in the first bilinear form that causes global regularity for
+the Navier-Stokes equation.  In any case, the semigroup technique in
+of itself, at least in the manner in which it has been applied to date,
+is not going to solve the problem.
+
+<P>
+Let <IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$ e_1$"> denote the first unit vector in <!-- MATH
+ ${\mathbb{R}}^n$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ {\mathbb{R}}^n$">, and for <!-- MATH
+ $x \in {\mathbb{R}}^n$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ x \in {\mathbb{R}}^n$">,
+<IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ r&gt;0$">, let <IMG
+ WIDTH="51" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ B_r(x)$"> denote <!-- MATH
+ $\{y:{\left|x-y\right|}\le r\}$
+ -->
+<IMG
+ WIDTH="138" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \{y:{\left\vert x-y\right\vert}\le r\}$">.
+Let <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ \hat u$"> denote the Fourier transform of <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.png"
+ ALT="$ u$"> with
+respect to <!-- MATH
+ $x\in{\mathbb{R}}^n$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$ x \in {\mathbb{R}}^n$">.  
+
+<P>
+<P>
+<DIV><A NAME="blow-up"><B>Theorem  1</B></A> &nbsp; 
+<I>Let <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ w$"> be a tempered Schwartz function such that <IMG
+ WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$ \hat w$">
+is non-negative, has <IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$ L_1$"> norm equal to <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.png"
+ ALT="$ 2$">, and has support in 
+<!-- MATH
+ $B_{1/4}(3e_1/4) \cup B_{1/4}(-3e_1/4)$
+ -->
+<IMG
+ WIDTH="229" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$ B_{1/4}(3e_1/4) \cup B_{1/4}(-3e_1/4)$">.  (So <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ w$"> is in every
+Triebel-Lizorkin or Besov space.)
+Then if <!-- MATH
+ $A > 2^{13/3}$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$ A &gt; 2^{13/3}$">, and if <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.png"
+ ALT="$ u$"> is a mild solution
+to the cheap Navier-Stokes equation
+whose Fourier transform is non-negative, with initial data <IMG
+ WIDTH="76" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$ u_0 = A w$">, 
+then <IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$ u_t$">
+is not in any Triebel-Lizorkin or Besov space when <!-- MATH
+ $t = \log(2^{1/3})$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$ t = \log(2^{1/3})$">.</I></DIV><P></P>
+
+<P>
+<P>
+<DIV><A NAME="no-Ln"><B>Corollary  2</B></A> &nbsp; 
+<I>Let <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ w$"> be as in Theorem&nbsp;<A HREF="#blow-up">1</A> (so <!-- MATH
+ $w \in L_n({\mathbb{R}}^n)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$ w \in L_n({\mathbb{R}}^n)$">), and let
+<!-- MATH
+ $A > 2^{13/3}$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$ A &gt; 2^{13/3}$">.  Then there is 
+no mild solution <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.png"
+ ALT="$ u$"> to the cheap 
+Navier-Stokes equation, with <IMG
+ WIDTH="76" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$ u_0 = A w$">,
+in <!-- MATH
+ $C([0,T],L_n({\mathbb{R}}^n))$
+ -->
+<IMG
+ WIDTH="143" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$ C([0,T],L_n({\mathbb{R}}^n))$">, for <!-- MATH
+ $T = \log(2^{1/3})$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$ T = \log(2^{1/3})$">.</I></DIV><P></P>
+
+<P>
+We also present another result about the 
+cheap Navier-Stokes
+equation.  For the Navier-Stokes equation (and hence also for the
+cheap Navier-Stokes equation), it turns out that the natural spaces
+in which to consider solutions are of the form <!-- MATH
+ $C([0,T],X)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$ C([0,T],X)$">, where <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$ X$">
+is <EM>scale invariant</EM>, that is,
+<!-- MATH
+ ${\left\|\lambda f(\lambda \cdot)\right\|}_X = {\left\|f\right\|}_X$
+ -->
+<IMG
+ WIDTH="158" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$ {\left\Vert\lambda f(\lambda \cdot)\right\Vert}_X = {\left\Vert f\right\Vert}_X $">
+for all <!-- MATH
+ $\lambda \in (0,\infty)$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.png"
+ ALT="$ \lambda \in (0,\infty)$">.
+Authors have considered which is the
+largest scale invariant space for which one gets existence
+results.  For example, recently Koch and Tataru [<A
+ HREF="node1.html#KT">KT</A>] showed such
+results when <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$ X$"> is the space of derivatives of functions with
+bounded mean oscillation.
+
+<P>
+In fact, it can be shown (arguing similarly as in Frazier, Jawerth and Weiss 
+in [<A
+ HREF="node1.html#FJW">FJW</A>] for the minimality of <IMG
+ WIDTH="38" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img44.png"
+ ALT="$ B^{0,1}_1$">)
+that all scale invariant spaces of distributions,
+that also contain all Schwartz functions, are
+contained in the Besov space <!-- MATH
+ $\dot B^{-1,\infty}_\infty$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \dot B^{-1,\infty}_\infty$">.
+Cannone [<A
+ HREF="node1.html#Ca1">Ca1</A>] was able to obtain results for the Navier-Stokes
+equation in the space <!-- MATH
+ $\dot B^{n/p-1,\infty}_p$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.png"
+ ALT="$ \dot B^{n/p-1,\infty}_p$">, 
+<!-- MATH
+ $n\leq p<\infty$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="$ n\leq p&lt;\infty$">, but left open the case <IMG
+ WIDTH="58" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="$ p=\infty$"> corresponding
+to the space <!-- MATH
+ $\dot B^{-1,\infty}_\infty$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \dot B^{-1,\infty}_\infty$">.
+
+<P>
+We will respond to this last case negatively for
+the cheap Navier-Stokes equation.  Although this does not answer
+the question for the Navier-Stokes equation, the author believes that
+it is very possible that there is a similar non-existence result
+for the Navier-Stokes equation.  But this would say more about the
+nature of the space <!-- MATH
+ $\dot B^{-1,\infty}_\infty$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \dot B^{-1,\infty}_\infty$"> than about the 
+Navier-Stokes equation itself.
+
+<P>
+<P>
+<DIV><A NAME="no-exist"><B>Theorem  3</B></A> &nbsp; 
+<I>Let <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ w$"> be a tempered Schwartz function whose Fourier transform
+is non-negative, and has support in 
+<!-- MATH
+ $B_{1}(0) \setminus B_{1/2}(0)$
+ -->
+<IMG
+ WIDTH="128" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$ B_{1}(0) \setminus B_{1/2}(0)$">.
+Let <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img49.png"
+ ALT="$ v$"> be the tempered distribution
+</I><!-- MATH
+ \begin{displaymath}
+v(x) = \sum_{k=1}^\infty 2^k \cos((2^k-1) x_1) w(x) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="283" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$\displaystyle v(x) = \sum_{k=1}^\infty 2^k \cos((2^k-1) x_1) w(x) .
+$">
+</DIV><P></P><I>
+Then <!-- MATH
+ $v \in \dot B^{-1,\infty}_\infty$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$ v \in \dot B^{-1,\infty}_\infty$">, but there is
+no mild solution <!-- MATH
+ $u\in C([0,T],{\cal S}')$
+ -->
+<IMG
+ WIDTH="135" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.png"
+ ALT="$ u\in C([0,T],{\cal S}')$"> to the cheap 
+Navier-Stokes equation, with non-negative
+Fourier transform, and with <IMG
+ WIDTH="58" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ u_0=v$">, for any <IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ T&gt;0$">. (Here
+<IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="$ {\cal S}'$"> denotes the space of tempered distributions.)</I></DIV><P></P>
+
+<P>
+The crucial observation for all these results is that the cheap Navier-Stokes
+equation is that
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation*}
+\widehat{G(u)}_t(\xi) =
+e^{-t{\left|\xi\right|}^2} \hat u_0 
++ \int_0^t e^{(s-t){\left|\xi\right|}^2} {\left|\xi\right|} (\hat u_s*\hat u_s)(\xi) \, ds
+\end{equation*}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="409" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$\displaystyle \widehat{G(u)}_t(\xi) = e^{-t{\left\vert\xi\right\vert}^2} \hat u...
+...ert\xi\right\vert}^2} {\left\vert\xi\right\vert} (\hat u_s*\hat u_s)(\xi) \, ds$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(here <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img57.png"
+ ALT="$ *$"> denotes convolution).  Thus we see that if <!-- MATH
+ $\hat u, \hat v \ge 0$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$ \hat u, \hat v \ge 0$">,
+and that <!-- MATH
+ $\hat u \le \hat v$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$ \hat u \le \hat v$">, then <!-- MATH
+ $\widehat{G(u)} \le \widehat{G(v)}$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$ \widehat{G(u)} \le \widehat{G(v)}$">.
+
+<P>
+
+<P>
+<BR>
+<B>Proof of Theorem&nbsp;<A HREF="#blow-up">1</A>:</B>  
+Using the usual embedding theorems, it may be seen that all of the
+Triebel-Lizorkin and Besov spaces
+embed into <!-- MATH
+ $\dot B_\infty^{a,\infty}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$ \dot B_\infty^{a,\infty}$"> for some <!-- MATH
+ $a \in {\mathbb{R}}$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$ a \in {\mathbb{R}}$">.
+Let us recall the definition of the Besov space <!-- MATH
+ $\dot B_\infty^{a,\infty}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$ \dot B_\infty^{a,\infty}$">.
+Let <IMG
+ WIDTH="41" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.png"
+ ALT="$ \phi(x)$"> be some 
+tempered Schwartz function
+whose Fourier transform is non-negative, 
+whose support is ``mostly'' contained
+in a band about <!-- MATH
+ ${\left|\xi\right|}=1$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ {\left\vert\xi\right\vert}=1$">, and such that
+<!-- MATH
+ $\sum_{k=-\infty}^\infty \hat \phi_k$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.png"
+ ALT="$ \sum_{k=-\infty}^\infty \hat \phi_k$"> is uniformly bounded above and below.
+Here <!-- MATH
+ $\phi_k(x) = 2^{nk} \phi(2^k x)$
+ -->
+<IMG
+ WIDTH="154" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.png"
+ ALT="$ \phi_k(x) = 2^{nk} \phi(2^k x)$">.
+Then <!-- MATH
+ $\dot B_\infty^{a,\infty}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$ \dot B_\infty^{a,\infty}$"> is the space of 
+distributions on <!-- MATH
+ ${\mathbb{R}}^n$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ {\mathbb{R}}^n$"> for
+which the norm
+<!-- MATH
+ ${\mathopen\|f\mathclose\|}_{\dot B_\infty^{a,\infty}}
+= \sup_k 2^{a k} {\mathopen\|\phi_k* f\mathclose\|}_{L_\infty} 
+$
+ -->
+<IMG
+ WIDTH="249" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.png"
+ ALT="$ {\mathopen\Vert f\mathclose\Vert}_{\dot B_\infty^{a,\infty}}
+= \sup_k 2^{a k} {\mathopen\Vert\phi_k* f\mathclose\Vert}_{L_\infty}
+$">
+is finite.
+
+<P>
+Write <IMG
+ WIDTH="26" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.png"
+ ALT="$ w_0$"> for the function
+<!-- MATH
+ $\hat w_0 = \hat w I_{B_{1/4}(3e_1/4)}$
+ -->
+<IMG
+ WIDTH="146" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$ \hat w_0 = \hat w I_{B_{1/4}(3e_1/4)}
+$">,
+and set <!-- MATH
+ $w_k = w_0^{2^k}$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$ w_k = w_0^{2^k}$">.  Since <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$ w$"> and <IMG
+ WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$ \hat w$"> are real valued,
+we see that <IMG
+ WIDTH="19" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$ \hat w$"> must be an even function.
+Hence we quickly see that
+<IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.png"
+ ALT="$ \hat w_k$"> has <IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$ L_1$"> norm equal to <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.png"
+ ALT="$ 1$">, and is supported in 
+<!-- MATH
+ $\{\xi:2^{k-1} \le {\left|\xi\right|} \le 2^k\}$
+ -->
+<IMG
+ WIDTH="172" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$ \{\xi:2^{k-1} \le {\left\vert\xi\right\vert} \le 2^k\}$">.
+
+<P>
+We will show by induction
+that
+<!-- MATH
+ $\hat u_t \ge A^{2^k} \alpha_k(t) \hat w_k$
+ -->
+<IMG
+ WIDTH="138" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.png"
+ ALT="$ \hat u_t \ge A^{2^k} \alpha_k(t) \hat w_k
+$">
+for <IMG
+ WIDTH="50" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.png"
+ ALT="$ k&gt;0$">,
+where <!-- MATH
+ $\alpha_k(t) = 2^{k-4(2^k-1)} e^{-2^k t} I_{t \ge t_k}$
+ -->
+<IMG
+ WIDTH="223" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.png"
+ ALT="$ \alpha_k(t) = 2^{k-4(2^k-1)} e^{-2^k t} I_{t \ge t_k}$">,
+<IMG
+ WIDTH="53" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$ t_0=0$">, and <!-- MATH
+ $t_k = \log(2) \sum_{j=1}^k 2^{-2j}$
+ -->
+<IMG
+ WIDTH="177" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.png"
+ ALT="$ t_k = \log(2) \sum_{j=1}^k 2^{-2j}$">.
+The case <IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img79.png"
+ ALT="$ k=0$"> follows since
+<!-- MATH
+ $\hat u_t(\xi) \ge e^{-t {\left|\xi\right|}^2} \hat u_0(\xi)$
+ -->
+<IMG
+ WIDTH="157" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$ \hat u_t(\xi) \ge e^{-t {\left\vert\xi\right\vert}^2} \hat u_0(\xi)$">.
+Suppose that our desired inequality holds for <IMG
+ WIDTH="48" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img81.png"
+ ALT="$ k-1$">.  Then
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\hat u_t(\xi)
+&\ge&
+\int_0^t e^{(s-t){\left|\xi\right|}^2} {\left|\xi\right|} (\hat u_s*\hat u_s)(\xi)) \, ds\\
+&\ge&
+\int_0^t e^{2^{2k}(s-t)} 2^{k-1} (A^{2^{k-1}} \alpha_{k-1}(s))^2
+(\hat w_{k-1}*\hat w_{k-1})(\xi) \, ds\\
+&\ge&
+A^{2^k} 2^{k-4(2^k-1)} 2^{1+2k}
+\int_{t_{k-1}}^t e^{2^{2k}(s-t)} e^{-2^k s} \, ds \,
+\hat w_k(\xi) \\
+&\ge&
+A^{2^k} 2^{k-4(2^k-1)} e^{-2^k t} 2^{1+2k} 
+\int_{t_{k-1}}^t e^{2^{2k}(s-t)} \, ds \, \hat w_k(\xi)\\
+&=&
+A^{2^k} 2^{k-4(2^k-1)} e^{-2^k t}
+2(1-e^{2^{2k}(t_{k-1}-t)}) \hat w_k(\xi)\\
+&\ge&
+A^{2^k} 2^{k-4(2^k-1)} e^{-2^k t} \hat w_k(\xi)
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="45" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$\displaystyle \hat u_t(\xi)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$\displaystyle \ge$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="235" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.png"
+ ALT="$\displaystyle \int_0^t e^{(s-t){\left\vert\xi\right\vert}^2} {\left\vert\xi\right\vert} (\hat u_s*\hat u_s)(\xi)) \, ds$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$\displaystyle \ge$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="411" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.png"
+ ALT="$\displaystyle \int_0^t e^{2^{2k}(s-t)} 2^{k-1} (A^{2^{k-1}} \alpha_{k-1}(s))^2
+(\hat w_{k-1}*\hat w_{k-1})(\xi) \, ds$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$\displaystyle \ge$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="369" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$\displaystyle A^{2^k} 2^{k-4(2^k-1)} 2^{1+2k}
+\int_{t_{k-1}}^t e^{2^{2k}(s-t)} e^{-2^k s} \, ds \,
+\hat w_k(\xi)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$\displaystyle \ge$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="367" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.png"
+ ALT="$\displaystyle A^{2^k} 2^{k-4(2^k-1)} e^{-2^k t} 2^{1+2k}
+\int_{t_{k-1}}^t e^{2^{2k}(s-t)} \, ds \, \hat w_k(\xi)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img88.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="333" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img89.png"
+ ALT="$\displaystyle A^{2^k} 2^{k-4(2^k-1)} e^{-2^k t}
+2(1-e^{2^{2k}(t_{k-1}-t)}) \hat w_k(\xi)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$\displaystyle \ge$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="194" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.png"
+ ALT="$\displaystyle A^{2^k} 2^{k-4(2^k-1)} e^{-2^k t} \hat w_k(\xi)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+whenever <!-- MATH
+ $1-e^{2^{2k}(t_{k-1}-t)} \ge 1/2$
+ -->
+<IMG
+ WIDTH="173" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.png"
+ ALT="$ 1-e^{2^{2k}(t_{k-1}-t)} \ge 1/2$">, that is, <!-- MATH
+ $t_k-t_{k-1} \ge
+2^{-2k} \log(2)$
+ -->
+<IMG
+ WIDTH="187" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.png"
+ ALT="$ t_k-t_{k-1} \ge
+2^{-2k} \log(2)$">.
+
+<P>
+Let <!-- MATH
+ $t_\infty = \lim_{k\to\infty} t_k
+= \log(2^{1/3})$
+ -->
+<IMG
+ WIDTH="224" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.png"
+ ALT="$ t_\infty = \lim_{k\to\infty} t_k
+= \log(2^{1/3})$">.
+Since 
+<!-- MATH
+ $\hat \phi_k \hat u_{t_\infty} \ge A^{2^k} \alpha_k(t_\infty) \hat w_k \ge 0$
+ -->
+<IMG
+ WIDTH="219" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.png"
+ ALT="$ \hat \phi_k \hat u_{t_\infty} \ge A^{2^k} \alpha_k(t_\infty) \hat w_k \ge 0$">,
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+{\mathopen\|u_{t_\infty}\mathclose\|}_{\dot B_{\infty}^{a,\infty}}
+&=& 
+\sup_k 2^{ak} {\mathopen\|\phi_k*u_{t_\infty}\mathclose\|}_{L_\infty}
+=
+\sup_k 2^{ak} {\mathopen\|\hat \phi_k \hat u_{t_\infty}\mathclose\|}_{L_1} 
+\\
+&\ge&
+\sup_k 
+A^{2^k} 2^{ak+k-4(2^k-1)} e^{-2^k t_\infty} .
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$\displaystyle {\mathopen\Vert u_{t_\infty}\mathclose\Vert}_{\dot B_{\infty}^{a,\infty}}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img88.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="333" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.png"
+ ALT="$\displaystyle \sup_k 2^{ak} {\mathopen\Vert\phi_k*u_{t_\infty}\mathclose\Vert}_...
+...sup_k 2^{ak} {\mathopen\Vert\hat \phi_k \hat u_{t_\infty}\mathclose\Vert}_{L_1}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$\displaystyle \ge$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="223" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.png"
+ ALT="$\displaystyle \sup_k
+A^{2^k} 2^{ak+k-4(2^k-1)} e^{-2^k t_\infty} .$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+It is clear that this is infinite if <!-- MATH
+ $A>2^4 e^{t_\infty} = 2^{13/3}$
+ -->
+<IMG
+ WIDTH="150" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.png"
+ ALT="$ A&gt;2^4 e^{t_\infty} = 2^{13/3}$">.
+
+<P>
+
+<P>
+<BR>
+<B>Proof of Corollary&nbsp;<A HREF="#no-Ln">2</A>:</B>  
+Suppose for a contradiction that there is a solution 
+<!-- MATH
+ $u \in C([0,T],L_n({\mathbb{R}}^n))$
+ -->
+<IMG
+ WIDTH="177" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.png"
+ ALT="$ u \in C([0,T],L_n({\mathbb{R}}^n))$">.  By the methods of [<A
+ HREF="node1.html#K">K</A>], 
+we know that there is a 
+number <!-- MATH
+ $\epsilon>0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.png"
+ ALT="$ \epsilon&gt;0$">, depending only upon <!-- MATH
+ ${\left\|u\right\|}$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.png"
+ ALT="$ {\left\Vert u\right\Vert}$">, such that
+for every <!-- MATH
+ $t \in [0,T]$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$ t \in [0,T]$"> that there is a mild solution 
+<!-- MATH
+ $v \in C([t,t+\epsilon],L_n({\mathbb{R}}^n))$
+ -->
+<IMG
+ WIDTH="197" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ v \in C([t,t+\epsilon],L_n({\mathbb{R}}^n))$"> to the cheap Navier-Stokes equation, 
+with <IMG
+ WIDTH="61" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.png"
+ ALT="$ v_t = u_t$">, that is obtained by starting with 
+<!-- MATH
+ $v^{(0)}_s = e^{(s-t)\Delta} u_t$
+ -->
+<IMG
+ WIDTH="127" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.png"
+ ALT="$ v^{(0)}_s = e^{(s-t)\Delta} u_t$">,
+and iterating a function <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ G$"> similar to that defined above.  
+By the uniqueness result of Furioli, Lemari&#233;-Rieusset 
+and Terraneo [<A
+ HREF="node1.html#FLT">FLT</A>],
+we have that <IMG
+ WIDTH="64" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.png"
+ ALT="$ v_s = u_s$"> for <!-- MATH
+ $t\le s \le t+\epsilon$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$ t\le s \le t+\epsilon$">.
+From this it is clear that if <!-- MATH
+ $\hat u_t \ge 0$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.png"
+ ALT="$ \hat u_t \ge 0$">, then
+<!-- MATH
+ $\hat u_s \ge 0$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.png"
+ ALT="$ \hat u_s \ge 0$"> for <!-- MATH
+ $t\le s \le t+\epsilon$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$ t\le s \le t+\epsilon$">.  Applying this argument
+several times, we see that <!-- MATH
+ $\hat u_t \ge 0$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.png"
+ ALT="$ \hat u_t \ge 0$">
+for <!-- MATH
+ $0 \le t \le T$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img110.png"
+ ALT="$ 0 \le t \le T$">.
+Then by Theorem&nbsp;<A HREF="#blow-up">1</A>, <IMG
+ WIDTH="26" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img111.png"
+ ALT="$ u_T$"> is not in any
+Triebel-Lizorkin space, and hence in particular is not in
+<!-- MATH
+ $L_n({\mathbb{R}}^n)$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$ L_n({\mathbb{R}}^n)$">.
+
+<P>
+
+<P>
+<BR>
+<B>Proof of Theorem&nbsp;<A HREF="#no-exist">3</A>:</B>  
+Suppose we have a non-negative solution <!-- MATH
+ $u:[0,T] \to {\cal S}'$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.png"
+ ALT="$ u:[0,T] \to {\cal S}'$"> to 
+the cheap Navier-Stokes equation with <IMG
+ WIDTH="58" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ u_0=v$">.  It is clear that
+<!-- MATH
+ \begin{displaymath}
+\hat u_t(\xi) \ge e^{-t{\left|\xi\right|}^2} \hat v(\xi)
+\ge \sum_{k=1}^\infty 2^k e^{-2^{2k} t}
+{\textstyle\frac12}
+(\hat w(\xi+(2^k-1)e_1)+\hat w(\xi-(2^k-1)e_1)) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="601" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.png"
+ ALT="$\displaystyle \hat u_t(\xi) \ge e^{-t{\left\vert\xi\right\vert}^2} \hat v(\xi)
+...
+...{2k} t}
+{\textstyle\frac12}
+(\hat w(\xi+(2^k-1)e_1)+\hat w(\xi-(2^k-1)e_1)) .
+$">
+</DIV><P></P>
+Thus
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\hat u_t(\xi)
+&\ge&
+\int_0^t e^{(s-t){\left|\xi\right|}^2} {\left|\xi\right|} \hat (u_s*\hat u_s)(\xi) \, ds \\
+&\ge&
+\int_0^t \sum_{k=1}^\infty
+e^{4(s-t)} 2^{2k-1} e^{-2^{2k+1}s} (\hat w * \hat w)(\xi) \, ds \\
+&=&
+\left(\sum_{k=1}^\infty 2^{2k-1} e^{-4t} \int_0^t e^{(4-2^{2k+1})s} \, ds \right)
+(\hat w * \hat w) (\xi)\\
+&=&
+\left(\sum_{k=1}^\infty \frac{2^{2k-1}}{2^{2k+1}-4} e^{-4t} 
+(1-e^{(4-2^{2k+1})t})\right)
+(\hat w * \hat w)(\xi) ,
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="45" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$\displaystyle \hat u_t(\xi)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$\displaystyle \ge$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="228" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle \int_0^t e^{(s-t){\left\vert\xi\right\vert}^2} {\left\vert\xi\right\vert} \hat (u_s*\hat u_s)(\xi) \, ds$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$\displaystyle \ge$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="320" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.png"
+ ALT="$\displaystyle \int_0^t \sum_{k=1}^\infty
+e^{4(s-t)} 2^{2k-1} e^{-2^{2k+1}s} (\hat w * \hat w)(\xi) \, ds$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img88.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="357" HEIGHT="76" ALIGN="MIDDLE" BORDER="0"
+ SRC="img117.png"
+ ALT="$\displaystyle \left(\sum_{k=1}^\infty 2^{2k-1} e^{-4t} \int_0^t e^{(4-2^{2k+1})s} \, ds \right)
+(\hat w * \hat w) (\xi)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img88.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="392" HEIGHT="76" ALIGN="MIDDLE" BORDER="0"
+ SRC="img118.png"
+ ALT="$\displaystyle \left(\sum_{k=1}^\infty \frac{2^{2k-1}}{2^{2k+1}-4} e^{-4t}
+(1-e^{(4-2^{2k+1})t})\right)
+(\hat w * \hat w)(\xi) ,$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+which is infinite on the support of <!-- MATH
+ $\hat w * \hat w$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img119.png"
+ ALT="$ \hat w * \hat w$"> for <IMG
+ WIDTH="46" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img120.png"
+ ALT="$ t&gt;0$">, and hence
+<IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$ u_t$"> cannot be in <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.png"
+ ALT="$ {\cal S}'$">.
+
+<P>
+The author would like to thank Marco Cannone for many useful discussions
+and helpful remarks.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html4"
+  HREF="node1.html">Bibliography</A>
+<LI><A NAME="tex2html5"
+  HREF="node2.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev_g.png">   
+<BR>
+<B> Next:</B> <A NAME="tex2html3"
+  HREF="node1.html">Bibliography</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

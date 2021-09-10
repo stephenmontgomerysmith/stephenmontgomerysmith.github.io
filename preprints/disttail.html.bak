@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE><A HREF="disttail.html">Measuring the magnitude of sums of independent random variables.</A></TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B><A HREF="http://www.mcs.drexel.edu/~phitczen/">Pawel Hitczenko</A> and Stephen Montgomery-Smith&#44; <A HREF="disttail.html">Measuring the magnitude of sums of independent random variables.</A></B>
+<i>Annals of Probability, <b>29</b>, (2001), 447-466.</i>
+This paper considers how to measure the magnitude of the sum of independent random variables in several ways.  We give a formula for the tail distribution for sequences that satisfy the so called L&eacute;vy property.  We then give a connection between the tail distribution and the $p$th moment, and between the $p$th moment and the rearrangement invariant norms.
+(<A HREF="disttail11.tex">tex</A>, 
+<A HREF="disttail11.dvi">dvi</A>, 
+<A HREF="disttail11.ps">ps</A>,
+<A HREF="disttail11.pdf">pdf</A>,
+<A HREF="disttail11">html</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

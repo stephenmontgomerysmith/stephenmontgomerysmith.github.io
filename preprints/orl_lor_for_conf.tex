@@ -1,0 +1,962 @@
+% Typeset this file using plain-TeX
+
+\magnification=\magstep1
+\baselineskip =5mm
+\lineskiplimit =1.0mm
+\lineskip =1.0mm
+
+\def\doublespacing{\baselineskip = 7.5mm}
+
+\long\def\comment#1{}
+
+\long\def\blankout #1\eb{}
+\def\noblankout{\def\blankout{}\def\eb{}}
+
+\let\properlbrack=\lbrack
+\let\properrbrack=\rbrack
+\def\ordcomma{,}
+\def\ordcolon{:}
+\def\ordsemicolon{;}
+\def\ordleftparen{(}
+\def\ordrightparen{)}
+\def\ordleftbrack{\properlbrack}
+\def\ordrightbrack{\properrbrack}
+\def\rmcomma{\ifmmode ,\else \/{\rm ,}\fi}
+\def\rmcolon{\ifmmode :\else \/{\rm :}\fi}
+\def\rmsemicolon{\ifmmode ;\else \/{\rm ;}\fi}
+\def\rmleftparen{\ifmmode (\else \/{\rm (}\fi}
+\def\rmrightparen{\ifmmode )\else \/{\rm )}\fi}
+\def\rmleftbrack{\ifmmode \properlbrack\else \/{\rm \properlbrack}\fi}
+\def\rmrightbrack{\ifmmode \properrbrack\else \/{\rm \properrbrack}\fi}
+\catcode`,=\active 
+\catcode`:=\active 
+\catcode`;=\active 
+\catcode`(=\active 
+\catcode`)=\active 
+\catcode`[=\active 
+\catcode`]=\active 
+\let,=\ordcomma
+\let:=\ordcolon
+\let;=\ordsemicolon
+\let(=\ordleftparen
+\let)=\ordrightparen
+\let[=\ordleftbrack
+\let]=\ordrightbrack
+\let\lbrack=\ordleftbrack
+\let\rbrack=\ordrightbrack
+\def\rmpunctuation{
+\let,=\rmcomma
+\let:=\rmcolon
+\let;=\rmsemicolon
+\let(=\rmleftparen
+\let)=\rmrightparen
+\let[=\rmleftbrack
+\let]=\rmrightbrack
+\let\lbrack=\rmleftbrack
+\let\rbrack=\rmrightbrack}
+
+\def\writemonth#1{\ifcase#1
+\or January\or February\or March\or April\or May\or June\or July%
+\or August\or September\or October\or November\or December\fi}
+
+\newcount\mins
+\newcount\minmodhour
+\newcount\hour
+\newcount\hourinmin
+\newcount\ampm
+\newcount\ampminhour
+\newcount\hourmodampm
+\def\writetime#1{%
+\mins=#1%
+\hour=\mins \divide\hour by 60
+\hourinmin=\hour \multiply\hourinmin by -60
+\minmodhour=\mins \advance\minmodhour by \hourinmin
+\ampm=\hour \divide\ampm by 12
+\ampminhour=\ampm \multiply\ampminhour by -12
+\hourmodampm=\hour \advance\hourmodampm by \ampminhour
+\ifnum\hourmodampm=0 12\else \number\hourmodampm\fi
+:\ifnum\minmodhour<10 0\number\minmodhour\else \number\minmodhour\fi
+\ifodd\ampm p.m.\else a.m.\fi
+}
+
+\font\tenrm=cmr10
+\font\smallcaps=cmcsc10
+\font\eightrm=cmr8
+\font\ninerm=cmr9
+\font\sixrm=cmr6
+\font\eightbf=cmbx8
+\font\sixbf=cmbx6
+\font\eightit=cmti8
+\font\eightsl=cmsl8
+\font\eighti=cmmi8
+\font\eightsy=cmsy8
+\font\eightex=cmex10 at 8pt
+\font\sixi=cmmi6
+\font\sixsy=cmsy6
+\font\ninesy=cmsy9
+\font\seventeenrm=cmr17
+\font\bigseventeenrm=cmr17 scaled \magstep 1
+\font\twelverm=cmr10 scaled \magstep2
+\font\seventeeni=cmmi10 scaled \magstep3
+\font\twelvei=cmmi10 scaled \magstep2
+\font\seventeensy=cmsy10 scaled \magstep3
+\font\twelvesy=cmsy10 at 12pt
+\font\seventeenex=cmex10 scaled \magstep3
+\font\seventeenbf=cmbx10 scaled \magstep3
+\catcode`@=11
+\def\eightbig#1{{\hbox{$\textfont0=\ninerm\textfont2=\ninesy
+\left#1\vbox to6.5pt{}\right.\n@space$}}}
+\catcode`@=12
+\def\eightpoint{\eightrm \normalbaselineskip=4.5 mm%
+\textfont0=\eightrm \scriptfont0=\sixrm \scriptscriptfont0=\fiverm%
+\def\rm{\fam0 \eightrm}%
+\textfont1=\eighti \scriptfont1=\sixi \scriptscriptfont1=\fivei%
+\def\mit{\fam1 } \def\oldstyle{\fam1 \eighti}%
+\textfont2=\eightsy \scriptfont2=\sixsy \scriptscriptfont2=\fivesy%
+\def\cal{\fam2 }%
+\textfont3=\eightex \scriptfont3=\eightex \scriptscriptfont3=\eightex%
+\def\bf{\fam\bffam\eightbf} \textfont\bffam\eightbf
+\scriptfont\bffam=\sixbf \scriptscriptfont\bffam=\fivebf
+\def\it{\fam\itfam\eightit} \textfont\itfam\eightit
+\def\sl{\fam\slfam\eightsl} \textfont\slfam\eightsl
+\let\big=\eightbig \normalbaselines\rm
+\def\caps##1{\nottencaps{##1}}
+}
+\def\seventeenpoint{\seventeenrm \baselineskip=5.5mm%
+\textfont0=\seventeenrm \scriptfont0=\twelverm \scriptscriptfont0=\sevenrm%
+\def\rm{\fam0 \seventeenrm}%
+\textfont1=\seventeeni \scriptfont1=\twelvei \scriptscriptfont1=\seveni%
+\def\mit{\fam1 } \def\oldstyle{\fam1 \seventeeni}%
+\textfont2=\seventeensy \scriptfont2=\twelvesy \scriptscriptfont2=\sevensy%
+\def\cal{\fam2 }%
+\textfont3=\seventeenex \scriptfont3=\seventeenex%
+\scriptscriptfont3=\seventeenex%
+\def\bf{\fam\bffam\seventeenbf} \textfont\bffam\seventeenbf
+}
+
+\def\setheadline #1\\ #2 \par{\headline={\ifnum\pageno=1 
+\hfil
+\else \eightpoint \noindent
+\ifodd\pageno \hfil \caps{#2}\hfil \else
+\hfil \caps{#1}\hfil \fi\fi}}
+
+\def\beginsection{} % So that next def will scan
+\def\datedversion{\footline={\ifnum\pageno=1 \fiverm \hfil
+Typeset using plain-\TeX\ on
+\writemonth\month\ \number\day, \number\year\ at \writetime{\time}\hfil 
+\else \tenrm \hfil \folio \hfil \fi}
+\def\tempsetheadline##1{\headline={\ifnum\pageno=1 
+\hfil
+\else \eightpoint \noindent
+\writemonth\month\ \number\day, \number\year,
+\writetime{\time}\hfil ##1\fi}}
+\def\firstbeginsection##1\par{\bigskip\vskip\parskip
+\message{##1}\centerline{\caps{##1}}\nobreak\smallskip\noindent
+\tempsetheadline{##1}} \def\beginsection##1\par{\vskip0pt
+plus.3\vsize\penalty-250 \vskip0pt plus-.3\vsize\bigskip\vskip\parskip
+\message{##1}\centerline{\caps{##1}}\nobreak\smallskip\noindent
+\tempsetheadline{##1}}}
+
+\def\finalversion{\footline={\ifnum\pageno=1 \eightrm \hfil 
+This paper is in final form.\hfil 
+\else \tenrm \hfil \folio \hfil \fi}}
+
+\def\preliminaryversion{\footline={\ifnum\pageno=1 \eightrm \hfil 
+Preliminary Version.\hfil 
+\else \tenrm \hfil \folio \hfil \fi}}
+
+\footline={\ifnum\pageno=1 \eightrm \hfil 
+\else \tenrm \hfil \folio \hfil \fi}
+
+\def\moreproclaim{\par}
+\def\Head #1: {\medskip\noindent{\it #1}:\enspace}
+\def\Proof: {\Head Proof: }
+\def\Proofof #1: {\Head Proof of #1: }
+\def\endproof{\nobreak\hfill$\sqr$\bigskip\goodbreak}
+\def\itemi{\item{i)}}
+\def\itemii{\item{ii)}}
+\def\itemiii{\item{iii)}}
+\def\itemiv{\item{iv)}}
+\def\itemv{\item{v)}}
+\def\itemvi{\item{vi)}}
+\def\itemvii{\item{vii)}}
+\def\itemviii{\item{viii)}}
+\def\itemix{\item{ix)}}
+\def\itemx{\item{x)}}
+\def\dt{\it}
+\def\ds#1{{\displaystyle{#1}}}
+\def\ts#1{{\textstyle{#1}}}
+
+\def\Abstract\par#1\par{\centerline{\vtop{
+\eightpoint
+\abovedisplayskip=6pt plus 3pt minus 3pt
+\belowdisplayskip=6pt plus 3pt minus 3pt
+\moreabstract\parindent=0 true in% 
+\caps{Abstract}: \ \ #1}}
+\abovedisplayskip=12pt plus 3pt minus 9pt
+\belowdisplayskip=12pt plus 3pt minus 9pt
+\vskip 0.4 true in}
+\def\moreabstract{%
+\par \hsize = 5 true in \hangindent=0 true in \parindent=0.5 true in}
+
+\def\caps#1{\smallcaps #1}
+\def\nottencaps#1{\uppercase{#1}}
+
+\def\firstbeginsection#1\par{\bigskip\vskip\parskip
+\message{#1}\centerline{\caps{#1}}\nobreak\smallskip\noindent}
+
+\def\beginsection#1\par{\vskip0pt plus.3\vsize\penalty-250
+\vskip0pt plus-.3\vsize\bigskip\vskip\parskip
+\message{#1}\centerline{\caps{#1}}\nobreak\smallskip\noindent}
+
+\def\proclaim#1. #2\par{
+\medbreak
+\noindent{\caps{#1}.\enspace}{\it\rmpunctuation#2\par}
+\ifdim\lastskip<\medskipamount \removelastskip
+\penalty55\medskip\fi}
+
+\def\Definition: #1\par{
+\Head Definition: #1\par
+\ifdim\lastskip<\medskipamount \removelastskip
+\penalty55\medskip\fi}
+
+\def\Problem #1: #2\par{
+\Head Problem #1: #2\par
+\ifdim\lastskip<\medskipamount \removelastskip
+\penalty55\medskip\fi}
+
+\def\sqr{\vcenter {\hrule height.3mm
+\hbox {\vrule width.3mm height 2mm \kern2mm
+\vrule width.3mm } \hrule height.3mm }}
+
+\def\references#1{{
+\frenchspacing
+\eightpoint
+\rmpunctuation
+\halign{\bf##\hfil & \quad\vtop{\hsize=5.5 true
+in\parindent=0pt\hangindent=3mm \strut\rm##\strut\smallskip}\cr#1}}}
+
+\def\ref[#1]{{\bf [#1]}}
+
+\catcode`@=11 % See p363 in `The TeXbook'
+\def\vfootnote#1{\insert\footins\bgroup
+\eightpoint
+\interlinepenalty=\interfootnotelinepenalty
+\splittopskip=\ht\strutbox
+\splitmaxdepth=\dp\strutbox \floatingpenalty=20000
+\leftskip=0pt \rightskip=0pt \spaceskip=0pt \xspaceskip=0pt
+\textindent{#1}\footstrut\futurelet\next\fo@t}
+
+\def\footremark{\insert\footins\bgroup
+\eightpoint\it\rmpunctuation
+\interlinepenalty=\interfootnotelinepenalty
+\splittopskip=\ht\strutbox
+\splitmaxdepth=\dp\strutbox \floatingpenalty=20000
+\leftskip=0pt \rightskip=0pt \spaceskip=0pt \xspaceskip=0pt
+\noindent\footstrut\futurelet\next\fo@t}
+\catcode`@=12
+
+\def\Bbb{\bf}
+\def\E{{\Bbb E}}
+\def\R{{\Bbb R}}
+\def\Z{{\Bbb Z}}
+\def\N{{\Bbb N}}
+\def\C{{\Bbb C}}
+\font\specialeightrm=cmr10 at 8pt
+\def\R{\hbox{\rm I\kern-2pt R}}
+\def\Z{\hbox{\rm Z\kern-3pt Z}}
+\def\N{\hbox{\rm I\kern-2pt I\kern-3.1pt N}}
+\def\C{\hbox{\rm \kern0.7pt\raise0.8pt\hbox{\specialeightrm I}\kern-4.2pt C}} 
+\def\E{\hbox{\rm I\kern-2pt E}}
+
+\def\cN{{\cal N}}
+\def\F{{\cal F}}
+
+\def\Id{\hbox{\rm Id}}
+
+\def\invp{{1\over p}}
+\def\invq{{1\over q}}
+\def\invc{{c^{-1}}}
+\def\half{{1\over 2}}
+\def\smallhalf{\ts\half}
+\def\poq{{p\over q}}
+\def\qop{{q\over p}}
+
+\def\list#1,#2{#1_1$, $#1_2,\ldots,$\ $#1_{#2}}
+\def\lists#1{#1_1$, $#1_2,\ldots}
+
+\def\set#1{\{1$, $2,\ldots,$\ $#1\}}
+\def\span#1{\overline{\hbox{\rm span}}\{#1\}}
+
+\def\lnorm{\left\|}
+\def\rnorm{\right\|}
+\def\normo#1{\lnorm #1 \rnorm}
+\def\widedot{\,\cdot\,}
+\def\normdot{\normo{\widedot}}
+\def\trinormo#1{\left|\left|\left| #1 \right|\right|\right|}
+\def\trinormdot{\trinormo{\widedot}}
+
+\def\lmod{\left|}
+\def\rmod{\right|}
+\def\modo#1{\lmod #1 \rmod}
+
+\def\angleo#1{\left\langle #1 \right\rangle}
+
+\def\dom#1{{\vert_{#1}}}
+
+\def\implies{$\Rightarrow$}
+\def\iff{$\Leftrightarrow$}
+
+% document relevant defs
+
+\def\Deltacond{$\Delta_2$-condition}
+\def\phifunction{$\varphi$-function}
+\def\Nfunction{{\it N}-function}
+\def\conditionJ{condition~$(J)$}
+\def\conditionL{condition~$(L)$}
+\def\em{\mathop{\rm em}\nolimits}
+\def\lm{\mathop{\rm lm}\nolimits}
+\def\T{{\cal T}}
+
+% document starts here
+
+%\datedversion
+\noblankout
+%\doublespacing
+%\finalversion
+%\preliminaryversion
+
+\setheadline Comparison of Orlicz--Lorentz Spaces\\
+             Montgomery-Smith
+
+{
+\seventeenpoint
+\centerline{\bigseventeenrm Orlicz--Lorentz Spaces}
+}
+\bigskip\bigskip\medskip
+\centerline{\caps{S.J.~Montgomery-Smith}%
+\footnote{*}%
+{Research supported in part by N.S.F.\ Grant DMS 9001796.}%
+}
+\smallskip
+{
+\eightpoint
+\centerline{\it Department of Mathematics, University of Missouri,}
+\centerline{\it Columbia, MO 65211.}
+}
+\bigskip\bigskip
+
+\footremark{A.M.S.\ (1980) subject classification: 46E30.}
+
+It is a great honor to be asked to write this article for the
+Proceedings of the Conference in honor of W.~Orlicz. I cannot say that I knew
+him personally, but it is obvious from the many people I have met that knew him
+that he had a tremendous influence. Certainly, his ideas have found their way
+into much of my own research.
+
+The purpose of this article is to summerize some recent results of the author
+about Orlicz-Lorentz spaces --- function spaces that provide a common
+generalization of Orlicz spaces and Lorentz spaces.
+
+Let us first introduce the background to these spaces.
+The most well known examples of Banach spaces are the $L_p$\ spaces. Their
+definition is very well known. We will restrict ourselves to function spaces on
+$[0,\infty)$\ with Lebesgue measure $\lambda$. If $1\le p \le
+\infty$, then for any measurable function $f$, the $L_p$-norm is
+defined to be 
+$$ \normo f_p = 
+   \left( \int \modo{f(x)}^p \,dx \right)^{1/p} $$
+for $p<\infty$, and
+$$ \normo f_\infty = \mathop{\hbox{\rm ess sup}}\limits_{0\le x<\infty}
+   \modo{f(x)} $$
+for $p=\infty$.
+The Banach space $L_p$\ is the vector space of
+all measurable functions $f$\ for which $\normo f_p$\ is finite.
+
+Now these spaces can be generalized in two different ways. The first
+generalization is due to Orlicz \ref[O] (see also \ref[Lu]).  If
+$F:[0,\infty)\to[0,\infty)$\ is non-decreasing and convex with $F(0)=0$, we
+define the {\dt Luxemburg norm\/} of a measurable function  $f$\ by 
+$$ \normo{f}_F = \inf\left\{\, c :
+   \int F\bigl(\modo{f(x)}/c\bigr) \,dx \le 1 \,\right\} 
+   .$$
+We define the {\dt Orlicz space\/}
+$L_F$\ to be those measurable functions $f$\ for which $\normo
+f_F$\ is finite. We see that the Orlicz space $L_F$\ really is a true
+generalization of $L_p$, at least for $p<\infty$: if $F(t) = t^p$, then $L_F =
+L_p$\ with equality of norms.
+
+In this article, we will not always require that the Luxemburg norm actually be
+a norm, that is, we will not always require the triangle inequality. For this
+reason, we will allow $F$\ in the above definition to be a {\dt\phifunction},
+namely, that $F$\ be continuous and strictly increasing, and that
+$$ F(0) = 0 , \qquad \lim_{n\to\infty} F(t) = \infty .$$
+However, we will often desire that the function $F$\ has some control on its
+growth, both from above and below. For this reason we will often require that
+$F$\ be {\dt dilatory}, that is, for some $c_1,c_2>1$\ we have $F(c_1 t)\ge c_2
+F(t)$\ for all $0\le t<\infty$, and that $F$\ satisfy the {\dt \Deltacond},
+that is, that $F^{-1}$\ is dilatory.
+
+The second collection of examples are the {\dt Lorentz spaces}. These were
+introduced by Lorentz \ref[Lo1], \ref[Lo2]. If
+$f$\ is a measurable function, we define the {\dt non-increasing
+rearrangement\/} of $f$\ to be  
+$$ f^*(x) = \sup\bigl\{\, t : \lambda(\modo f \ge t) \ge x \,\bigr\} .$$  
+If
+$1\le q < \infty$, and if $w:(0,\infty)\to(0,\infty)$\ is a non-increasing
+function, we define the {\dt Lorentz norm\/} of a measurable function $f$\ to be 
+$$ \normo f_{w,q} = \left(\int_0^\infty w(x) f^*(x)^q \,dx\right)^{1/q} .$$ 
+Then the {\dt Lorentz space\/} $\Lambda_{w,q}$\ is defined to be
+the space of those measurable functions $f$\ for which $\normo f_{w,q}$\ is
+finite. These spaces also represent a generalization of the $L_p$\ spaces: if
+$w(x) = 1$\ for all $0\le x <\infty$, then $\Lambda_{w,p} = L_p$\ with equality
+of norms.
+
+There is one, rather peculiar, choice of the function $w$\ which turns out to
+be rather useful. If $1\le q \le p <\infty$, we define the spaces $L_{p,q}$\ to
+be $\Lambda_{w,q}$\ with $w(x) = \qop x^{q/p-1}$. We can also allow $q>p$, but
+at the loss of the triangle inequality. A good reference for a
+description of these spaces is Hunt \ref[H]. By a
+suitable change of variables, the $L_{p,q}$\ norm may also be defined in the
+following fashion: 
+$$ \normo f_{p,q} = 
+   \left(\int_0^\infty \modo{f^*(x^{p/q})}^q \,dx\right)^{1/q} .$$
+Thus $L_{p,p}
+= L_p$\ with equality of norms. The reason for this definition is
+that for any measurable set $A\in\F$, we have that $\normo{\chi_A}_{p,q} =
+\normo{\chi_A}_p = \lambda(A)^{1/p} $. Thus $L_{p,q}$\ is a space identical to
+$L_p$\ for characteristic functions, but `glued' together in a $L_q$\ fashion.
+
+Now we come to the object of the article, the {\dt Orlicz--Lorentz spaces}.
+These are a common generalization of the Orlicz spaces and the Lorentz spaces.
+They have been studied by Masty\l o (see part~4 of \ref[My]), Maligranda
+\ref[Ma], and Kami\'nska \ref[Ka1], \ref[Ka2], \ref[Ka3]. For instance,
+Kami\'nska calculated many of the isometric properties for these spaces.
+However, this author's work is concerned with isomorphic properties.
+
+If $G$\
+is an Orlicz function, and if $w:[0,\infty)\to[0,\infty)$\ is a non-increasing
+function, we define the {\dt Orlicz--Lorentz norm\/} of a measurable function
+$f$\ to be 
+$$ \normo f_{w,G} = \inf\left\{\, c :
+   \int_0^\infty w(x) G\bigl(f^*(x)/c\bigr) \,dx \le 1 \,\right\} 
+   .$$
+We define the {\dt Orlicz--Lorentz space\/} $\Lambda_{w,G}$\ to be
+the vector space of measurable functions $f$\ for which $\normo f_{w,G}$\ is
+finite. 
+
+We shall not work with this definition of the Orlicz--Lorentz space, however, but
+with a different, equivalent definition that bears more resemblance to the spaces
+$L_{p,q}$. If $F$\ and $G$\ are \phifunction s, we would like to define our
+spaces $L_{F,G}$\ to satisfy the following properties:
+\itemi that $\normo{\chi_A}_{F,G} = \normo{\chi_A}_F$\ whenever $A$\ is a
+measurable subset;
+\itemii that $L_{F,G}$\ be glued together in a $L_G$\ fashion.
+
+\noindent
+It turns out that the required definition is the following. (In the sequel,
+$\tilde F(t)$\ will always denote the function $1/F(1/t)$. Thus
+$\normo{\chi_A}_F = \tilde F^{-1}\bigl(\lambda(A)\bigr)$.)
+
+\Definition: If $F$\ and $G$\ are \phifunction s, then we define the {\dt
+Orlicz--Lorentz functional\/} of a measurable function $f$\ by 
+$$ \normo{f}_{F,G} = \normo{f^*\circ\tilde F\circ\tilde G^{-1}}_G .$$
+We define the {\dt Orlicz--Lorentz space},
+$L_{F,G}$, to be the vector space of measurable functions $f$\ for which $\normo
+f_{F,G} <\infty$, modulo functions that are zero almost everywhere.
+
+We also have the following definition corresponding to the $L_{p,\infty}$\
+spaces.
+
+\Definition: If $F$\ is a \phifunction, then we define the ({\dt weak-}){\dt
+Orlicz--Lorentz functional\/} by 
+$$ \normo{f}_{F,\infty} = \sup_{x\ge0} \tilde F^{-1}(x) f^*(x) .$$
+We define the {\dt Orlicz--Lorentz space},
+$L_{F,\infty}$, to be the vector space of measurable functions $f$\
+for which $\normo f_{F,\infty} <\infty$, modulo functions that are zero almost
+everywhere.
+
+We see that $L_{F,F} = L_F$\ with equality of norms, and that if $F(t) =
+t^p$\ and $G(t) = t^q$, then $L_{F,G} = L_{p,q}$, and $L_{F,\infty} =
+L_{p,\infty}$, also with equality of norms. For this reason, we shall also
+introduce the following notation: if $F(t) = t^p$, we shall write
+$L_{p,G}$\ for $L_{F,G}$, and $L_{G,p}$\ for $L_{G,F}$.
+
+Now let us provide some examples. We define the {\dt modified
+logarithm\/} and the {\dt modified exponential\/} functions by
+$$ \eqalignno{
+   \lm(t) 
+   &=\cases{ 1+\log t                  & if $t\ge1$\cr
+             1/\bigl(1+\log(1/t)\bigr) & if $0<t<1$\cr
+             0                         & if $t=0$;\cr}\cr
+   \em(t) = \lm^{-1}(t)
+   &=\cases{ \exp(t-1)                 & if $t\ge1$\cr
+             \exp\bigl(1-(1/t)\bigr)   & if $0<t<1$\cr
+             0                         & if $t=0$.\cr}\cr}$$
+These functions are designed so that for large $t$\ they behave like
+the logarithm and the exponential functions, so that $\lm 1=1$\ and $\em 1=1$,
+and so that $\widetilde{\lm}=\lm$\ and $\widetilde{\em} = \em$. Then the
+functions $t^p(\lm t)^\alpha$\ and $\em(t^p)$\ are \phifunction s whenever
+$0<p<\infty$\ and $-\infty<\alpha<\infty$. If the measure space is a
+probability space, then the Orlicz spaces created using these functions are also
+known as {\dt Zygmund spaces}, and the Orlicz--Lorentz spaces $L_{t^p(\lm
+t)^\alpha,q}$\ and $L_{\em(t^p),q}$\ are known as {\dt Lorentz--Zygmund
+spaces} (see, for example, \ref[B--S]).
+
+\beginsection Comparison Results
+
+A large part of my research on these spaces has asked the question: what are
+necessary and sufficient conditions on $F_1$, $F_2$, $G_1$\ and $G_2$\ so that
+the spaces $L_{F_1,G_1}$\ and $L_{F_2,G_2}$\ are {\it equivalent}, that is,
+that there is some constant $c<\infty$\ such that
+$$ \invc \normo f_{F_1,G_1} \le \normo f_{F_2,G_2} \le
+   c \, \normo f_{F_1,G_1} .$$
+In answering these questions, it is necessary to assume that $G_1$\ and $G_2$\
+be dilatory, and satisfy the \Deltacond. In all our general discussions, we
+shall take this as given.
+
+First, by considering characteristic functions, it is easy to see that it must
+be that $F_1$\ and $F_2$\ are equivalent as \phifunction s, that is, there is a
+constant $c<\infty$\ such that $F_1(\invc t) \le F_2(t) \le F_1(ct)$\ for all
+$0\le t<\infty$. In this manner, it is easy to see that without loss of
+generality, we may take $F_1 = F_2$. In fact, it is not hard to show that we are
+really asking about the equivalence of $L_1$\ and $L_{1,H}$, where $H = G_1
+\circ G_2^{-1}$\ or $H = G_2 \circ G_1 ^{-1}$.
+
+Results along these lines have already been obtained by G.~Lorentz, and also by
+Y.~Raynaud. I will take the liberty of translating their results into my
+notation. (In so doing, it may not be entirely obvious that their result as they
+state it, and as it is stated here, are actually the same.)
+
+To state these results we will require some more notation. We will say that
+a \phifunction\ $F$\ is an {\dt \Nfunction\/}
+if it is equivalent to a \phifunction\ $F_0$\ such that $F_0(t)/t$\ is
+strictly increasing, $F_0(t)/t \to \infty$\ as $t\to \infty$, and $F_0(t)/t \to
+0$\ as $t\to0$.
+We will say that 
+a \phifunction\ $F$\ is {\dt complementary\/}
+to a \phifunction\ $G$\ if for some $c<\infty$\ we have 
+$$ \invc t \le F^{-1}(t) \cdot G^{-1}(t) \le ct 
+   \qquad (0\le t<\infty) .$$
+If $F$\ is an \Nfunction, we will let $F^*$\ denote the (unique up to
+equivalence) function complementary to $F$.
+
+Our definition of a complementary function differs from the usual definition. If
+$F$\ is an \Nfunction\ that is convex, then the complementary function is
+usually defined by $F^*(t) = \sup_{s\ge0} \bigl(st-F(s)\bigr)$. However, it is
+known that $t\le F^{-1}(t) \cdot {F^{*}}^{-1}(t) \le 2t$\ (see \ref[K--R]). Thus
+our definition is equivalent.
+
+Finally, we will say that an \Nfunction\ $H$\ satisfies {\dt
+\conditionJ\/}\ if 
+$$ \normo{1/\tilde H^*{}^{-1}}_{H^*} < \infty .$$
+(I call it \conditionJ\ for personal reasons.)
+
+Now we are ready to give the result of G.~Lorentz \ref[Lo3]. 
+
+\proclaim Theorem 1. Suppose that $H$\ is an \Nfunction. Then the following are
+equivalent. 
+\itemi $L_1$\ and $L_{1,H}$\ are equivalent.
+\itemii $H$\ satisfies \conditionJ.
+
+What kinds of \Nfunction s satisfy \conditionJ? They are functions
+that satisfy growth conditions that make it `close' to the identity
+function. The reader might like to verify that $t (\lm t)^\alpha$\ satisfies
+this condition when $\alpha > 0$.
+Lorentz gave the following example:
+$$ H(t) = \cases{ t^{1+{1\over 1+\log(1+\log t)}} & if $t\ge1$\cr
+                  t^{1-{1\over 1+\log(1-\log t)}} & if $t\le1$.\cr} $$
+In fact, we will give another characterization that shows
+that this example is, in some sense,  on the ``boundary'' of satisfying
+\conditionJ.
+
+Raynaud's result \ref[R] allows one to drop the assumption that $H$\ is an
+\Nfunction, but at the cost of making the implication go only one way.
+
+\proclaim Theorem 2. Suppose that $H$\ is a \phifunction. Suppose that there
+exist \Nfunction s $K$\ and $L$\ satisfying \conditionJ\ such that $H = K \circ
+L^{-1}$\ (or $H = K^{-1}\circ L$). Then $L_1$\ and $L_{1,H}$\ are
+equivalent.
+
+As applications, one may show that if $0<p<\infty$\ and
+$-\infty<\alpha<\infty$, then $L_{t^p(\lm t)^\alpha}$\ and $L_{t^p(\lm
+t)^\alpha,p}$\ are equivalent, and that if $\beta>0$, then $L_{\em(t^\beta)}$\
+and $L_{\em(t^\beta),\infty}$\ are equivalent. These were shown for probability
+spaces by Bennett and Rudnick \ref[B--R] (see also \ref[B--S]).
+
+The author's contribution was to show that the converse result to
+Theorem~2 holds.
+
+\proclaim Theorem 3. Suppose that $H$\ is a \phifunction\ such that $L_1$\
+and $L_{1,H}$\ are equivalent. Then the following are true.
+\itemi There
+exist \Nfunction s $K$\ and $L$\ satisfying \conditionJ\ such that $H = K \circ
+L^{-1}$
+\itemii There
+exist \Nfunction s $K$\ and $L$\ satisfying \conditionJ\ such that $H =
+K^{-1}\circ L$.
+
+In fact there are many more equivalent conditions, and we will give some more
+later. We will not prove any results here --- the interested reader should
+consult \ref[Mo1]. However, we will explain
+some of the ideas behind them.
+
+First we will describe the simple comparison principles for Orlicz--Lorentz
+spaces. If the reader has studied Lorentz spaces, he will already know
+that $\normo f_{p,q_1} \le \normo f_{p,q_2}$\ whenever $q_1 \ge q_2$\ (see
+\ref[H]). In our more general setting, we have the following result: if $F$\ is
+equivalent to a convex function, then $\normo f_F \le c\, \normo f_{F,1}$\ for
+all measurable $f$. In fact, it is quite easy to show that if $\normdot$\ is any
+{\it norm\/} (the triangle inequality is essential here) such that
+$$ \modo f \le \chi A \Rightarrow \normo f \le c_1 \tilde F^{-1}
+   \bigl(\lambda(A)\bigr) ,$$
+then $\normo f \le c_2 \normo f_{F,1}$. 
+
+From this, we can deduce the following result. Let us say that $G_1$\ is {\dt
+equivalently less convex than\/} $G_2$\ (in symbols $G_1 \prec G_2$) if
+$G_2\circ G_1^{-1}$\ is equivalent to a convex function. Then 
+$$ G_1 \prec G_2 \Rightarrow \normo f_{1,G_1} \ge \invc \normo f_{1,G_2} .$$
+
+However, we can see from Theorems~1 and~2 that this is not the whole story. If
+we desire a converse to this implication, we will have to soften the notion of
+`less convex than' to `almost less convex than.' It turns out that we can
+precisely characterize this notion of `almost convexity.'
+
+Before doing this, let us discuss what it means for a \phifunction\ to be
+equivalent to a convex function. Suppose we are given a fixed number $a>1$. It is
+quite easy to see that a \phifunction\ $G$\ is completely determined, up to
+equivalence, by the values $G(a^n)$\ for $n\in\Z$. In this way, it can be
+easily shown that a \phifunction\ $G$\ is equivalent to a convex function if
+and only there exists numbers $a>1$\ and
+$N\in\N$\ such that for all $m\in\N$, we have that 
+$$ G(a^{n+m}) \ge a^{m-N} G(a^n) $$
+for all $n\in\Z$. (Here $\N = \{1$, $2$,
+$3,\ldots\}$.)
+
+It turns out that the correct definition for `almost convex' is the following.
+
+\Definition: Let $G$\ be a \phifunction. We say that $G$\ is {\dt almost
+convex\/} if there are numbers $a>1$, $b>1$\ and $N\in\N$\ such that for all
+$m\in\N$, the cardinality of the set of $n\in\Z$\ such that we do {\bf not} have
+$$ G(a^{n+m}) \ge a^{m-N} G(a^n) $$
+is less than $b^m$.
+
+In the same way, one can get notions of {\it almost concave}, {\it almost
+linear}, etc. It turns out that an \Nfunction\ $H$\ satisfies \conditionJ\
+if and only if $H^{-1}$\ is almost convex. 
+
+Using these ideas, it is then possible to prove Theorem~3, and indeed to get
+the following result, that gives the desired necessary and sufficient
+conditions for Orlicz--Lorentz spaces to be equivalent.
+
+\proclaim Theorem 4. Suppose that $F_1$, $F_2$, $G_1$\ and $G_2$\ are
+\phifunction s such that at least one of $G_1$\ and $G_2$\ are dilatory, and at
+least one of $G_1$\ and $G_2$\ satisfy the \Deltacond. Then the following are
+equivalent statements.
+\itemi $L_{F_1,G_1}$\ and $L_{F_2,G_2}$\ are equivalent.
+\itemii $F_1$\ and $F_2$\ are equivalent, and there exist \Nfunction s $H$\
+and $K$\ that satisfy \conditionJ\ such that $G_1 \circ G_2^{-1} = H\circ
+K^{-1}$.
+\itemiii $F_1$\ and $F_2$\ are equivalent, and there exist \Nfunction s $H$\
+and $K$\ that satisfy \conditionJ\ such that $G_1 \circ G_2^{-1} = K^{-1}\circ
+H$.
+\itemiv $F_1$\ and $F_2$\ are equivalent, and $G_1 \circ G_2^{-1}$\ is almost
+convex, and $G_2 \circ G_1^{-1}$\ is almost convex.
+\moreproclaim
+
+\beginsection Is Every R.I.\ Space
+Equivalent to an Orlicz--Lorentz Space?
+
+Or more precisely, does there exist a rearrangement invariant space $X$\ such
+that the $\normdot_X$\ is not equivalent to any Orlicz--Lorentz norm on the
+space of simple functions? It turns out that we can find an example to show that
+this can happen. To do this, we use the following result, which is a corollary of
+the proof of Theorem~4. As before, we refer the reader to \ref[Mo1] for
+details. 
+
+\proclaim Theorem 5. Let $F_1$, $F_2$, $G_1$\ and $G_2$\ be \phifunction s.
+Suppose that one of $G_1$\ or $G_2$\ is dilatory, and that one of $G_1$\ or
+$G_2$\ satisfies the \Deltacond. Then the following are equivalent.
+\itemi $L_{F_1,G_1}$\ and $L_{F_2,G_2}$\ are
+equivalent.
+\itemii For some $c<\infty$ we have that
+$\invc \normo f_{F_1,G_1} \le \normo f_{F_2,G_2} \le c\, \normo f_{F_1,G_1}$\
+whenever $f$\ is of the following form:\enspace there exist  
+$0=a_0<a_1<a_2<\ldots<a_n$\ such that
+$$ F\circ f^*(x) = \cases{
+   1/a_i & if $a_{i-1}\le x < a_i$\ and $1\le i\le n$ \cr
+   0     & otherwise. \cr }$$
+\moreproclaim
+
+Thus to compare two Orlicz--Lorentz spaces, we need only
+compare their norms on a certain class of test functions. Now it is easy to
+prove the desired result.
+
+\proclaim Theorem 6. There is a rearrangement invariant Banach space $X$\ such
+that for every Orlicz--Lorentz space $L_{F,G}$, the norms $\normdot_X$\ and
+$\normdot_{F,G}$\ are inequivalent on the vector space of simple functions.
+
+\Proof: We define the
+following norm for measurable functions $f$:
+$$ \normo f_X = \sup \normo{f g}_1/\normo g_2 ,$$
+where the supremum is over all $g$\ of the following form:\enspace there
+exist $0=a_0<a_1<a_2<\ldots<a_n$\ such that
+$$ g^*(x) = \cases{
+   1/\sqrt{a_i} & if $a_{i-1}\le x < a_i$\ and $1\le i\le n$ \cr
+   0            & otherwise. \cr }$$
+Then it is easy to see from Theorem~5 that if $X$\ is equivalent to an
+Orlicz--Lorentz space, then it must be equivalent to $L_2$. That this is not
+the case is easily shown by the following example:
+$$ f(x) = {1\over \sqrt{x \log x}} \qquad \hbox{for $x \ge 2$.} $$
+Then $\normo f_X < \infty$, whereas $\normo f_2 = \infty$.
+\endproof
+
+\beginsection Boyd Indices of Orlicz--Lorentz Spaces
+
+In studying a particular rearrangement invariant space, it is very important to
+know its Boyd indices. Even very obvious questions, like whether it is
+equivalent to a normed space, or whether it is $p$-convex/$q$-concave, cannot be
+answered except with a knowledge of these indices. 
+
+As their name suggests, they
+were first studied by Boyd \ref[Bo]. We will take our
+definition from \ref[L--T]. Their definition differs from that
+usually used: most references reverse the words `upper' and `lower', and use
+the recipricols of the indices used here. 
+
+Essentially, they describe the norms of the
+following operators: for each $a>0$\ we let $d_a f(x) = f(ax)$. The {\dt lower
+Boyd index\/} is defined to be
+$$ p(X) =
+   \sup \left\{\, p :
+   \hbox{for some $c<\infty$\ we have $\normo{d_a}_{X\to X} \le c a^{-1/p}$\
+         for $a<1$} \,\right\} ,$$
+and the {\dt upper Boyd index\/} is
+$$ q(X) =
+   \inf \left\{\, q :
+   \hbox{for some $c<\infty$\ we have $\normo{d_a}_{X\to X} \le c a^{-1/q}$\
+         for $a>1$} \,\right\} .$$
+The reader should appreciate that $p(L_{p,q}) = q(L_{p,q}) = p$.
+
+The hope is that it should be possible to calculate the Boyd indices of
+$L_{F,G}$\ simply from knowledge of some appropriate index of $F$. In fact,
+this was the question posed by Maligranda \ref[Ma]. What are the appropriate
+indices? For a \phifunction\ $F$, we define the {\dt lower Matuszewska--Orlicz
+index\/} to be
+$$ p_m(F) =
+   \sup \left\{\, p :
+   \hbox{for some $c>0$\ we have $F(at) \ge c\, a^p F(t)$\
+         for $0\le t<\infty$\ and $a>1$} \,\right\} ,$$
+and the {\dt upper Matuszewska--Orlicz index\/}
+to be
+$$ q_m(F) =
+   \inf \left\{\, q :
+   \hbox{for some $c<\infty$\ we have $F(at) \le c\, a^q F(t)$\
+         for $0\le t<\infty$\ and $a>1$} \,\right\} .$$
+Thus, for example, $p_m(T^p) = q_m(T^p) = p $. Maligranda's conjecture is the
+following:\enspace is $p(L_{F,G}) = p_m(F)$\ and $q(L_{F,G}) = q_m(F)$?
+
+Without going into details, I was able to show that this is not the case.
+Briefly, the example is $L_{1,G}$, where $G$\ is a \phifunction\ that spends
+some of the time behaving like $T^p$, and some of the time behaving like $T^q$.
+We refer the reader to \ref[Mo2] for more details. (The first example of a
+rearrangement invariant space where this sort of thing happened is due to
+Shimogaki \ref[Sh].)
+
+However, it is possible to obtain the following result without undue stress.
+
+\proclaim Proposition 7. Let $F$\ and $G$\ be \phifunction s. Then
+\itemi
+$ p_m(F) \ge p(L_{F,G}) \ge p_m(F\circ G^{-1}) p_m(G) \ge
+p_m(F) p_m(G)/q_m(G)$; 
+\itemii
+$ q_m(F) \le q(L_{F,G}) \le q_m(F\circ G^{-1}) q_m(G) \le 
+q_m(F) q_m(G)/p_m(G)$.
+
+We are then left with the following question. Given $F$\ and $G$, how exactly
+is one to calculate the Boyd indices of $L_{F,G}$? The author does have some
+idea for how to approach this problem, at least for giving necessary and
+sufficient conditions for the indices of $L_{1,G}$\ to be $1$. The idea is
+simple:\enspace we see that if $0<a<\infty$, then  $ a \normo{d_a f}_{1,G} =
+\normo f_{1,G_a}$, where $G_a(t) = G(at)$. Then the problem of
+determining the Boyd indices becomes a problem of comparing two Orlicz--Lorentz
+spaces, and the methods from the above section should apply. One day, the
+author will get around to checking these ideas out. But if anyone else would
+like to do this, they can, and the author won't
+mind. Then {\it they\/} will have the problem of finding a journal that will
+accept results from this tiny corner of mathematics.
+
+Finally, I would like to mention some very recent work of Bastero and Ruiz
+\ref[Ba--R]. They prove some results about the Hardy transform on
+Orlicz--Lorentz spaces. If one looks hard enough at what they did, and then
+twists the way they state the results, one can obtain fairly sharp estimates for
+Boyd indices in the following manner.  Given \phifunction s $F$\ and $G$, we
+define the {\dt modular lower and upper Boyd indices\/} of $L_{F,G}$\ as follows:
+$$ \eqalignno{
+   p_{\bmod}(L_{F,G}) &=
+   \sup \left\{\vphantom{\int}\right.\, p :
+   \hbox{for some $c<\infty$\ we have } \cr
+   & \qquad \qquad 
+         \int G\bigl(f^*(a \tilde F\circ \tilde G^{-1}(x)\bigr) \, dx
+         \le \int G\bigl(c a^{-1/p}f^*(\tilde F\circ \tilde G^{-1}(x)\bigr) 
+         \hbox{ for $a<1$}\left.\vphantom{\int}\right\} ,\cr
+   q_{\bmod}(L_{F,G}) &=
+   \inf \left\{\vphantom{\int}\right.\, q :
+   \hbox{for some $c<\infty$\ we have } \cr
+   & \qquad \qquad 
+         \int G\bigl(f^*(a \tilde F\circ \tilde G^{-1}(x)\bigr) \, dx
+         \le \int G\bigl(c a^{-1/q}f^*(\tilde F\circ \tilde G^{-1}(x)\bigr) 
+         \hbox{ for $a>1$}\left.\vphantom{\int}\right\} .\cr }$$
+Then we have the following result.
+
+\proclaim Theorem~8. Let $F$\ and $G$\ be \phifunction s. Then
+\itemi
+$ p_{\bmod}(L_{F,G}) = p_m(F\circ G^{-1}) p_m(G) $; 
+\itemii
+$ q_{\bmod}(L_{F,G}) = q_m(F\circ G^{-1}) q_m(G) $.
+\moreproclaim
+
+\beginsection The Definition of Torchinsky and Raynaud
+
+Finally, we mention that there is another possible definition for
+Orlicz--Lorentz spaces, first given by Torchinsky \ref[T], and investigated in
+detail by Raynaud \ref[R]. We define 
+$$ \normo f_{F,G}^T
+   = \normo{\tilde F^{-1}(e^x) f^*(e^x)}_G ,$$
+and call the corresponding space $L_{F,G}^T$\ (my notation).
+Raynaud showed that if $F$\ is
+dilatory and satisfies the \Deltacond, and if $G$\ is dilatory, then
+$$ \normo{\chi_A}_{F,G}^T \approx \tilde F^{-1}\bigl(\lambda(A)\bigr) .$$
+Thus these spaces are really quite a good contender for a possible alternative
+definition. Also, the problems that I considered are very easy to solve for
+these spaces. Raynaud
+showed that if $F_1$\ and $F_2$\ are
+dilatory and satisfy the \Deltacond, and if $G_1$\  and $G_2$\ are dilatory,
+then $L_{F_1,G_1}^T$\ and $L_{F_2,G_2}^T$\ are equivalent if
+$F_1$\ and $F_2$\ are equivalent, and the {\it sequence\/} spaces $l_{G_1}$\ and
+$l_{G_2}$\ are equivalent. The converse result is also easy to show.
+
+Also, the Boyd indices of these spaces are much easier
+to compute. If $F$\ is dilatory and satisfies the \Deltacond, and if $G$\ is 
+dilatory,
+then $p(L_{F,G}) = p_m(F)$, and $q(L_{F,G}) = q_m(G)$.
+
+The only problem with these spaces is that we do not always have
+that $L_{F,F}^T$\ is equivalent to the Orlicz space $L_F$.
+
+\beginsection References
+
+\references{
+Ba--R & J.~Bastero and F.J.~Ruiz,\rm\ Interpolation of operators when
+the extreme spaces are $L_\infty$,\sl\ preprint.\cr
+B--R & C.~Bennett and K.~Rudnick,\rm\ On Lorentz--Zygmund spaces,\sl\
+Dissert.\
+Math.\ {\bf 175} (1980), 1--72.\cr
+B--S & C.~Bennett and R.~Sharpley,\sl\ Interpolation of Operators,\rm\
+Academic Press 1988.\cr
+Bo & D.W.~Boyd,\rm\ Indices of function spaces and their relationship to
+interpolation,\sl\ Canad.\ J.\ Math.\ {\bf 21} (1969), 1245--1254.\cr
+H & R.A.~Hunt,\rm\ On $L(p,q)$\ spaces,\sl\ L'Enseignement Math.\ (2)
+{\bf 12} (1966), 249--275.\cr
+Ka1 & A.~Kami\'nska, \rm\ Some remarks on Orlicz--Lorentz spaces,\sl\ Math.\
+Nachr., to appear.\cr
+Ka2 & A.~Kami\'nska, \rm\ Extreme points in Orlicz--Lorentz spaces,\sl\
+Arch.\ Math., to appear.\cr
+Ka3 & A.~Kami\'nska, \rm\ Uniform convexity of generalized Lorentz spaces,\sl\
+Arch.\ Math., to appear.\cr
+K--R & M.A.~Krasnosel'ski\u\i\ and Ya.B.~Ruticki\u\i,\sl\
+Convex Functions and
+Orlicz Spaces,\rm\ P.~Noodhoof Ltd., 1961.\cr
+L--T & J.~Lindenstrauss and L.~Tzafriri,\sl\ Classical Banach Spaces
+II---Fu\-nc\-t\-ion Spa\-ces,\rm\ Springer-Verlag 1979.\cr
+Lo1 & G.G.~Lorentz,\rm\ Some new function spaces,\sl\ Ann.\ Math.\ {\bf 51}
+(1950), 37--55.\cr
+Lo2 & G.G.~Lorentz,\rm\ On the theory of spaces $\Lambda$,\sl\ Pac.\ J.\ Math.\
+{\bf 1} (1951), 411--429.\cr
+Lo3 & G.G.~Lorentz,\rm\ Relations between function spaces,\sl\ Proc.\ A.M.S.\
+{\bf 12} (1961), 127--132.\cr
+Lu & W.A.J.~Luxemburg,\sl\ Banach Function Spaces,\rm\ Thesis, Delft Technical
+Univ., 1955.\cr
+Ma & L.~Maligranda,\rm\ Indices and interpolation,\sl\ Dissert.\ Math.\ {\bf 234}
+(1984), 1--49.\cr
+My & M.~Masty\l o,\rm\ Interpolation of linear operators in
+Calderon--Lozanovskii spaces,\sl\ Comment.\ Math.\ {\bf 26,2} (1986),
+247--256.\cr
+Mo1 & S.J.~Montgomery-Smith,\rm\ Comparison of Orlicz--Lorentz spaces,\sl\ 
+submitted.\cr
+Mo2 & S.J.~Montgomery-Smith,\rm\ Boyd Indices of Orlicz--Lorentz spaces,\sl\
+in preparation.\cr
+O & W.~Orlicz,\rm\ \"Uber eine gewisse Klasse von R\"aumen vom Typus B, \sl\
+Bull.\ Intern.\ Acad.\ Pol.\ {\bf 8} (1932), 207--220.\cr
+R & Y.~Raynaud,\rm\ On Lorentz--Sharpley spaces,\sl\ Proceedings of the
+Workshop ``Interpolation Spaces and Related Topics'', Haifa, June 1990.\cr
+S & R.~Sharpley,\rm\ Spaces $\Lambda_\alpha(X)$\ and Interpolation,\sl\ J.\
+Funct.\ Anal.\ {\bf 11} (1972), 479--513.\cr
+Sh & T.~Shimogaki,\rm\ A note on norms of compression operators on
+function
+spaces,\sl\ Proc.\ Japan Acad.\ {\bf 46} (1970), 239--242.\cr
+T & A.~Torchinsky,\rm\ Interpolation of operators and Orlicz classes,\sl\
+Studia Math.\ {\bf 59} (1976), 177--207.\cr
+}
+
+\bye
+
+\references{
+B--S & C.~Bennett and R.~Sharpley,\sl\ Interpolation of Operators,\rm\
+Academic Press 1988.\cr
+Bo2 & D.W.~Boyd,\rm\ Indices for the Orlicz spaces,\sl\ Pacific J.\ Math.\ {\bf
+38} (1971), 315--323.\cr
+H--L--P & G.H.~Hardy, J.E.~Littlewood and G.~P\'olya,\sl\ Inequalities,\rm\
+Cambridge University Press, 1952.\cr
+H & R.A.~Hunt,\rm\ On $L(p,q)$\ spaces,\sl\ L'Enseignement Math.\ (2)
+{\bf 12} (1966), 249--275.\cr
+Ka1 & A.~Kami\'nska, \rm\ Some remarks on Orlicz--Lorentz spaces,\sl\ Math.\
+Nachr., to appear.\cr
+Ka2 & A.~Kami\'nska, \rm\ Extreme points in Orlicz--Lorentz spaces,\sl\
+Arch.\ Math., to appear.\cr
+Ka3 & A.~Kami\'nska, \rm\ Uniform convexity of generalized Lorentz spaces,\sl\
+Arch.\ Math., to appear.\cr
+K--R & M.A.~Krasnosel'ski\u\i\ and Ya.B.~Ruticki\u\i,\sl\
+Convex Functions and
+Orlicz Spaces,\rm\ P.~Noordhoof Ltd., 1961.\cr
+Lo & G.G.~Lorentz,\rm\ Some new function spaces,\sl\ Ann.\ Math.\ {\bf 51}
+(1950), 37--55.\cr
+L--T1 & J.~Lindenstrauss and L.~Tzafriri,\sl\ Classical Banach Spaces
+I---Se\-qu\-ence Spa\-ces,\rm\ Springer-Verlag 1977.\cr
+Lu & W.A.J.~Luxemburg,\sl\ Banach Function Spaces,\rm\ Thesis, Delft Technical
+Univ.\ 1955.\cr
+Ma & L.~Maligranda,\rm\ Indices and interpolation,\sl\ Dissert.\ Math.\ {\bf 234}
+(1984), 1--49.\cr
+My & M.~Masty\l o,\rm\ Interpolation of linear operators in
+Calderon--Lozanovskii spaces,\sl\ Comment.\ Math.\ {\bf 26,2} (1986),
+247--256.\cr
+M--O1 & W.~Matuszewska and W.~Orlicz,\rm\ On certain properties of
+$\varphi$-functions,\sl\ Bull.\ Acad.\ Polon.\ Sci., S\'er.\ Sci.\ Math.\
+Astronom.\ Phys.\ {\bf 8} (1960), 439--443.\cr
+M--O2 & W.~Matuszewska and W.~Orlicz,\rm\ On some classes of functions with
+regard to their orders of growth,\sl\ Studia Math.\ {\bf 26} (1965), 11--24.\cr
+Mo1 & S.J.~Montgomery-Smith,\sl\ The Cotype of Operators from
+$C(K)$,\rm\
+Ph.D.\ thesis, Cambridge, August 1988.\cr
+O & W.~Orlicz,\rm\ \"Uber eine gewisse Klasse von R\"aumen vom Typus B, \sl\
+Bull.\ Intern.\ Acad.\ Pol.\ {\bf 8} (1932), 207--220.\cr
+R & Y.~Raynaud,\rm\ On Lorentz--Sharpley spaces,\sl\ submitted to Proceedings of
+the Workshop ``Interpolation Spaces and Related Topics'', Haifa, June 1990.\cr
+T & A.~Torchinsky,\rm\ Interpolation of operators and Orlicz classes,\sl\
+Studia Math.\ {\bf 59} (1976), 177--207.\cr
+Z & M.~Zippin,\rm\ Interpolation of operators of weak type between
+rearrangement invariant spaces,\sl\ J.\ Functional Analysis {\bf 7} (1971),
+267--284.\cr
+}
+
+\bye
+
+L--T1 & J.~Lindenstrauss and L.~Tzafriri,\sl\ Classical Banach Spaces
+I---Se\-qu\-ence Spa\-ces,\rm\ Springer-Verlag 1977.\cr
+L--T2 & J.~Lindenstrauss and L.~Tzafriri,\sl\ Classical Banach Spaces
+II---Fu\-nc\-t\-ion Spa\-ces,\rm\ Springer-Verlag 1979.\cr
+M--O1 & W.~Matuszewska and W.~Orlicz,\rm\ On certain properties of
+$\varphi$-functions,\sl\ Bull.\ Acad.\ Polon.\ Sci., S\'er.\ Sci.\ Math.\
+Astronom.\ Phys.\ {\bf 8} (1960), 439--443.\cr
+M--O2 & W.~Matuszewska and W.~Orlicz,\rm\ On some classes of functions with
+regard to their orders of growth,\sl\ Studia Math.\ {\bf 26} (1965), 11--24.\cr

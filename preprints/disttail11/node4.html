@@ -1,0 +1,785 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The L&#233;vy Property</TITLE>
+<META NAME="description" CONTENT="The L&#233;vy Property">
+<META NAME="keywords" CONTENT="disttail11">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="disttail11.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="disttail11.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html52"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html50"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html44"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html53"
+  HREF="node5.html">Tail distributions</A>
+<B> Up:</B> <A NAME="tex2html51"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html45"
+  HREF="node3.html">The Klass-Nowicki Inequality</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00040000000000000000"></A>
+<A NAME="Levy"></A>
+<BR>
+The L&#233;vy Property
+</H1>
+
+<P>
+Let <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> be a sequence of independent random variables. We will say 
+that <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> satisfies the <EM>L&#233;vy property</EM> with constants <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$"> 
+and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$"> if whenever <!-- MATH
+ $A
+\subseteq B
+\subseteq {\mathbb{N}}$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$ A
+\subseteq B
+\subseteq {\mathbb{N}}$">, with <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ A$"> and <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.png"
+ ALT="$ B$"> finite, then for <IMG
+ WIDTH="46" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.png"
+ ALT="$ t&gt;0$">
+<!-- MATH
+ \begin{displaymath}
+\Pr({\mathopen|S_A\mathclose|} > c_1 t)\le c_2 \Pr({\mathopen|S_B\mathclose|} > t) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="269" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img199.png"
+ ALT="$\displaystyle \Pr({\mathopen\vert S_A\mathclose\vert} &gt; c_1 t)\le c_2 \Pr({\mathopen\vert S_B\mathclose\vert} &gt; t) .$">
+</DIV><P></P>
+The casual reader should beware that this property has nothing to do
+with L&#233;vy processes.
+
+<P>
+The sequence <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> has the <EM>strong L&#233;vy property</EM> with
+constants 
+<IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$"> and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$"> if for all <IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ s&gt;0$"> the sequence <!-- MATH
+ $(X_n^{(\le s)})$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img200.png"
+ ALT="$ (X_n^{(\le s)})$"> has
+the L&#233;vy property with constants <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$"> and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$">.
+
+<P>
+Here are examples of sequences with the strong L&#233;vy property. (It
+may be easily seen that in all these cases it is sufficient to
+show that 
+they have the L&#233;vy property.) 
+
+<OL>
+<LI>Positive sequences,
+with constants <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img201.png"
+ ALT="$ 1$"> and <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img201.png"
+ ALT="$ 1$">. 
+</LI>
+<LI>Sequences of symmetric random variables
+with constants <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img201.png"
+ ALT="$ 1$"> and
+<IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img202.png"
+ ALT="$ 2$">. This ``reflection property'' plays a major role in results
+attributed to L&#233;vy, hence the name of the property. 
+</LI>
+<LI>Sequences of identically distributed random variables. This was shown 
+independently by Montgomery-Smith (1993) with constants <IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img203.png"
+ ALT="$ 10$"> and <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img204.png"
+ ALT="$ 3$">,
+and by Lata<IMG
+ WIDTH="6" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="\l">a (1993) with constants <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img205.png"
+ ALT="$ 5$"> and <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img206.png"
+ ALT="$ 4$">, or <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.png"
+ ALT="$ 7$"> and
+<IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img202.png"
+ ALT="$ 2$">.
+</LI>
+</OL>
+We see that sequences with the L&#233;vy property
+satisfy a maximal inequality.
+
+<P>
+<P>
+<DIV><A NAME="max"><B>Proposition  4.1</B></A> &nbsp; 
+<I>Let
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> be a sequence of independent random satisfying the L&#233;vy
+property with constants <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$"> and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$">. Then for all <IMG
+ WIDTH="46" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.png"
+ ALT="$ t&gt;0$">
+</I><!-- MATH
+ \begin{displaymath}
+\Pr( U > 3 c_1 t) \le3 c_2 \Pr ( {\mathopen|S\mathclose|} > t ) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="259" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.png"
+ ALT="$\displaystyle \Pr( U &gt; 3 c_1 t) \le3 c_2 \Pr ( {\mathopen\vert S\mathclose\vert} &gt; t ) .$">
+</DIV><P></P><I> 
+Thus <!-- MATH
+ $M^*(t) \le 6 c_1
+S^*(t/3c_2)$
+ -->
+<IMG
+ WIDTH="180" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img209.png"
+ ALT="$ M^*(t) \le 6 c_1
+S^*(t/3c_2)$">.</I></DIV><P></P>
+
+<P>
+
+<P>
+<BR>
+<B>Proof:</B>  
+The first statement is an immediate corollary of the
+following result known as L&#233;vy-Ottaviani
+inequality: 
+<!-- MATH
+ \begin{displaymath}
+\Pr(U_N > 3 t)\le3 \sup_{1 \le k \le N} \Pr( {\mathopen|S_k\mathclose|} > t ) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="296" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.png"
+ ALT="$\displaystyle \Pr(U_N &gt; 3 t)\le3 \sup_{1 \le k \le N} \Pr( {\mathopen\vert S_k\mathclose\vert} &gt; t ) .$">
+</DIV><P></P>
+(Billingsley (1995, Theorem 22.5, p. 288) attributes
+this result to Etemadi (1985) who proved it with constants 4 in both
+places, but the same proof gives constants 3; see, for example,
+Billingsley.  
+However the first named author learned this result from
+Kwapien in 1980.)
+
+<P>
+The second statement follows from the first, since <IMG
+ WIDTH="74" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img211.png"
+ ALT="$ M
+\le 2 U$">.
+
+<P>
+We end with a lemma that lists some elementary properties.  
+Part&nbsp;<A HREF="#levy-comparison">(i)</A>
+of the lemma might be thought of as a kind of reduced 
+comparison principle.
+
+<P>
+<P>
+<DIV><A NAME="levy"><B>Lemma  4.2</B></A> &nbsp; 
+<I>Let <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> be a sequence of random variables 
+satisfying the strong L&#233;vy property. 
+</I>
+<OL>
+<LI><A NAME="levy-comparison"></A>There exist  positive constants <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$"> and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$">, depending
+only upon the L&#233;vy constants of <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">, such that if <IMG
+ WIDTH="67" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img212.png"
+ ALT="$ s \le 1/2$">
+and 
+<!-- MATH
+ $0 \le t \le 1$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$ 0 \le t \le
+1$">, then <!-- MATH
+ \begin{displaymath}
+(S^{(\le M^*(s))})^*(t) \le c_1
+S^*(c_2^{-1} t) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="234" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.png"
+ ALT="$\displaystyle (S^{(\le M^*(s))})^*(t) \le c_1
+S^*(c_2^{-1} t) .$">
+</DIV><P></P> 
+</LI>
+<LI><A NAME="levy-incsuper"></A>There exist positive constants <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$">
+and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$">, depending only upon the 
+strong L&#233;vy constants of <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">, such that if <!-- MATH
+ $r \le s \le 1/2$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img214.png"
+ ALT="$ r \le s \le 1/2$">,
+and if <!-- MATH
+ $0 \le t \le 1$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$ 0 \le t \le
+1$">, then
+<!-- MATH
+ $(S^{(\le M^*(s))})^*(t) \le c_1 (S^{(\le M^*(r))})^*(c_2^{-1}t)$
+ -->
+<IMG
+ WIDTH="304" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img215.png"
+ ALT="$ (S^{(\le M^*(s))})^*(t) \le c_1 (S^{(\le M^*(r))})^*(c_2^{-1}t)$">.
+</LI>
+<LI><A NAME="levy-decsuper"></A>If <!-- MATH
+ $0 \le s \le t \le 1$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img216.png"
+ ALT="$ 0 \le s \le t \le 1$">, then <!-- MATH
+ $S^*(t) \le (S^{(\le
+M^*(s))})^*(t-s)$
+ -->
+<IMG
+ WIDTH="220" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.png"
+ ALT="$ S^*(t) \le (S^{(\le
+M^*(s))})^*(t-s)$">, and
+ <!-- MATH
+ $(S^{(\le M^*(s))})^*(t) \le S^
+*(t-s)$
+ -->
+<IMG
+ WIDTH="220" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.png"
+ ALT="$ (S^{(\le M^*(s))})^*(t) \le S^
+*(t-s)$">. In particular, <!-- MATH
+ $S^*(t) \le (S^{(\le
+M^*(t/2))})^*(t/2)$
+ -->
+<IMG
+ WIDTH="218" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img219.png"
+ ALT="$ S^*(t) \le (S^{(\le
+M^*(t/2))})^*(t/2)$">, and <!-- MATH
+ $(S^{(\le
+M^*(t/2))})^*(t) \le S^*(t/2)$
+ -->
+<IMG
+ WIDTH="218" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$ (S^{(\le
+M^*(t/2))})^*(t) \le S^*(t/2)$">. 
+</LI>
+<LI><A NAME="levy-equiv"></A>For <!-- MATH
+ $\alpha,\beta > 0$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.png"
+ ALT="$ \alpha,\beta &gt; 0$">, we have
+that 
+<!-- MATH
+ \begin{displaymath}
+(S^{(\le M^*(t))})^*(t)
+\mathrel{\mathop{\approx}\limits_{t}} (S^{(\le M^*(\alpha t))})^*(\beta t)
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="279" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.png"
+ ALT="$\displaystyle (S^{(\le M^*(t))})^*(t)
+\mathrel{\mathop{\approx}\limits_{t}} (S^{(\le M^*(\alpha t))})^*(\beta t) $">
+</DIV><P></P>
+where the 
+constants of approximation depend only upon <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img223.png"
+ ALT="$ \alpha$">, <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img224.png"
+ ALT="$ \beta$"> and the strong
+L&#233;vy constants of <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">. 
+</LI>
+<LI><A NAME="levy-ellequiv"></A>We have that <!-- MATH
+ \begin{displaymath}
+S^*(t) \mathrel{\mathop{\approx}\limits_{t}} (S^{(\le M^*(t))})^*(t) \mathrel{\mathop{\approx}\limits_{t}}
+(S^{(\le \ell(t))})^*(t) ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="315" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img225.png"
+ ALT="$\displaystyle S^*(t) \mathrel{\mathop{\approx}\limits_{t}} (S^{(\le M^*(t))})^*(t) \mathrel{\mathop{\approx}\limits_{t}}
+(S^{(\le \ell(t))})^*(t) ,$">
+</DIV><P></P>
+where 
+the constants of approximation depend only upon the strong L&#233;vy
+constants of <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">.
+</LI>
+</OL></DIV><P></P>
+
+<P>
+
+<P>
+<BR>
+<B>Proof:</B>  
+Let us start with part&nbsp;<A HREF="#levy-comparison">(i)</A>.
+For each set <!-- MATH
+ $A \subseteq {\mathbb{N}}$
+ -->
+<IMG
+ WIDTH="58" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img226.png"
+ ALT="$ A \subseteq {\mathbb{N}}$">, define the event
+<!-- MATH
+ \begin{displaymath}
+E_A = \{ {\mathopen|X_n\mathclose|} \le M^*(s) \text{ if and only if } n \in A \} .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="176" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img227.png"
+ ALT="$\displaystyle E_A = \{ {\mathopen\vert X_n\mathclose\vert} \le M^*(s)$">&nbsp; &nbsp; if and only if&nbsp;<IMG
+ WIDTH="68" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.png"
+ ALT="$\displaystyle n \in A \} .$">
+</DIV><P></P>
+Note that the whole probability space is the disjoint union of these
+events.  Also
+<!-- MATH
+ \begin{displaymath}
+\{ {\mathopen|S^{(\le M^*(s))}\mathclose|} > x \} \cap E_A
+   =
+   \{ {\mathopen|S_A\mathclose|} > x \} \cap E_A .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="353" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.png"
+ ALT="$\displaystyle \{ {\mathopen\vert S^{(\le M^*(s))}\mathclose\vert} &gt; x \} \cap E_A
+=
+\{ {\mathopen\vert S_A\mathclose\vert} &gt; x \} \cap E_A .$">
+</DIV><P></P>
+Furthermore, by independence, we see that
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+&&\Pr({\mathopen|S_A\mathclose|} > x \text{ and } E_A) \\
+   &&= \Pr({\mathopen|S_A\mathclose|} > x \text{ and } {\mathopen|X_n\mathclose|} \le M^*(s)
+       \text{ for } n \in A)
+       \Pr({\mathopen|X_n\mathclose|} > M^*(s) \text{ for } n \notin A) .
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.png"
+ ALT="$\displaystyle \Pr({\mathopen\vert S_A\mathclose\vert} &gt; x$">&nbsp; &nbsp; and&nbsp;<IMG
+ WIDTH="37" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img231.png"
+ ALT="$\displaystyle E_A)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="121" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img232.png"
+ ALT="$\displaystyle = \Pr({\mathopen\vert S_A\mathclose\vert} &gt; x$">&nbsp; &nbsp; and&nbsp;<IMG
+ WIDTH="116" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.png"
+ ALT="$\displaystyle {\mathopen\vert X_n\mathclose\vert} \le M^*(s)$">&nbsp; &nbsp; for&nbsp;<IMG
+ WIDTH="202" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$\displaystyle n \in A)
+\Pr({\mathopen\vert X_n\mathclose\vert} &gt; M^*(s)$">&nbsp; &nbsp; for&nbsp;<IMG
+ WIDTH="66" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.png"
+ ALT="$\displaystyle n \notin A) .$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+Hence
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+&&\Pr({\mathopen|S^{(\le M^*(s))}\mathclose|} > x) \\
+  &&= \sum_{A \subseteq {\mathbb{N}}}
+      \Pr({\mathopen|S_A\mathclose|} > x \text{ and } {\mathopen|X_n\mathclose|} \le M^*(s)
+      \text{ for } n \in A)
+      \Pr({\mathopen|X_n\mathclose|} > M^*(s) \text{ for } n \notin A) \\
+  &&\le
+      2 \sum_{A \subseteq {\mathbb{N}}}
+     \Pr({\mathopen|S_A\mathclose|} > x)
+     \Pr({\mathopen|X_n\mathclose|} \le M^*(s) \text{ for } n \in A) \Pr({\mathopen|X_n\mathclose|} >
+     M^*(s)
+     \text{ for } n \notin A) \\
+  &&\le c_2 \Pr({\mathopen|S\mathclose|} > c_1^{-1} x), 
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="158" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img236.png"
+ ALT="$\displaystyle \Pr({\mathopen\vert S^{(\le M^*(s))}\mathclose\vert} &gt; x)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="154" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img237.png"
+ ALT="$\displaystyle = \sum_{A \subseteq {\mathbb{N}}}
+\Pr({\mathopen\vert S_A\mathclose\vert} &gt; x$">&nbsp; &nbsp; and&nbsp;<IMG
+ WIDTH="116" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.png"
+ ALT="$\displaystyle {\mathopen\vert X_n\mathclose\vert} \le M^*(s)$">&nbsp; &nbsp; for&nbsp;<IMG
+ WIDTH="202" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$\displaystyle n \in A)
+\Pr({\mathopen\vert X_n\mathclose\vert} &gt; M^*(s)$">&nbsp; &nbsp; for&nbsp;<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img238.png"
+ ALT="$\displaystyle n \notin A)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="316" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img239.png"
+ ALT="$\displaystyle \le
+2 \sum_{A \subseteq {\mathbb{N}}}
+\Pr({\mathopen\vert S_A\mathclose\vert} &gt; x)
+\Pr({\mathopen\vert X_n\mathclose\vert} \le M^*(s)$">&nbsp; &nbsp; for&nbsp;<IMG
+ WIDTH="202" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$\displaystyle n \in A)
+\Pr({\mathopen\vert X_n\mathclose\vert} &gt; M^*(s)$">&nbsp; &nbsp; for&nbsp;<IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img238.png"
+ ALT="$\displaystyle n \notin A)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="168" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img240.png"
+ ALT="$\displaystyle \le c_2 \Pr({\mathopen\vert S\mathclose\vert} &gt; c_1^{-1} x),$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+where in the first inequality we have used the fact that 
+<!-- MATH
+ \begin{displaymath}
+\Pr({\mathopen|X_n\mathclose|} \le M^*(s) \text{ for } n \in A) \ge \Pr(M \le M^*(s))
+\ge 1-s \ge 1/2 .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="143" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img241.png"
+ ALT="$\displaystyle \Pr({\mathopen\vert X_n\mathclose\vert} \le M^*(s)$">&nbsp; &nbsp; for&nbsp;<IMG
+ WIDTH="343" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img242.png"
+ ALT="$\displaystyle n \in A) \ge \Pr(M \le M^*(s))
+\ge 1-s \ge 1/2 .$">
+</DIV><P></P>
+Part&nbsp;<A HREF="#levy-incsuper">(ii)</A> follows by applying 
+part&nbsp;<A HREF="#levy-comparison">(i)</A> to <!-- MATH
+ $S^{(\le M^*(r))}$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img243.png"
+ ALT="$ S^{(\le M^*(r))}$">.
+
+<P>
+Part&nbsp;<A HREF="#levy-decsuper">(iii)</A> follows from the observation that <!-- MATH
+ \begin{displaymath}
+\Pr(S \ne S^{(\le M^*(s))})\le\Pr(M > M^*(s)) \le s .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="345" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img244.png"
+ ALT="$\displaystyle \Pr(S \ne S^{(\le M^*(s))})\le\Pr(M &gt; M^*(s)) \le s .$">
+</DIV><P></P>
+Hence, if <!-- MATH
+ $\Pr(S > \alpha) \ge t$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$ \Pr(S &gt; \alpha) \ge t$">, then <!-- MATH
+ $\Pr(S^{(\le M^*(s))} >
+\alpha)
+\ge t-s$
+ -->
+<IMG
+ WIDTH="213" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.png"
+ ALT="$ \Pr(S^{(\le M^*(s))} &gt;
+\alpha)
+\ge t-s$">, and conversely, if <!-- MATH
+ $\Pr(S^{(\le M^*(s))} > \alpha) > t$
+ -->
+<IMG
+ WIDTH="181" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.png"
+ ALT="$ \Pr(S^{(\le M^*(s))} &gt; \alpha) &gt; t$"> then
+<!-- MATH
+ $\Pr(S >\alpha) \ge t-s$
+ -->
+<IMG
+ WIDTH="153" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img248.png"
+ ALT="$ \Pr(S &gt;\alpha) \ge t-s$">.
+
+<P>
+To show 
+part&nbsp;<A HREF="#levy-equiv">(iv)</A>,
+we may suppose without loss of generality that <IMG
+ WIDTH="51" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img249.png"
+ ALT="$ \alpha=1$"> and <IMG
+ WIDTH="51" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$ \beta &gt; 1$">.
+Clearly <!-- MATH
+ $S^{(\le M^*(t))}(t) \ge S^{(\le M^*(t))}(\beta t)$
+ -->
+<IMG
+ WIDTH="226" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.png"
+ ALT="$ S^{(\le M^*(t))}(t) \ge S^{(\le M^*(t))}(\beta t)$">, so we need
+only show an opposite inequality.  From part&nbsp;<A HREF="#levy-incsuper">(ii)</A>, there are
+positive
+constants <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$"> and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$">, depending only upon the strong L&#233;vy constants of
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">, such that for <!-- MATH
+ $0\le t \le 1/2$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.png"
+ ALT="$ 0\le t \le 1/2$">
+<!-- MATH
+ \begin{displaymath}
+S^{(\le M^*(t))}(t)
+    \le c_1 S^{(\le M^*(c_2^{-1}\beta^{-1})t)}(c_2^{-1} t) 
+    \le c_1 S^{(\le M^*(c_3^{-1}t)}(c_3^{-1} \beta t) ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="495" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$\displaystyle S^{(\le M^*(t))}(t)
+\le c_1 S^{(\le M^*(c_2^{-1}\beta^{-1})t)}(c_2^{-1} t)
+\le c_1 S^{(\le M^*(c_3^{-1}t)}(c_3^{-1} \beta t) ,$">
+</DIV><P></P>
+where <!-- MATH
+ $c_3 = c_2 \beta$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img254.png"
+ ALT="$ c_3 = c_2 \beta$">.
+
+<P>
+Part&nbsp;<A HREF="#levy-ellequiv">(v)</A> follows easily by combining
+part&nbsp;<A HREF="#levy-decsuper">(iii)</A>, part&nbsp;<A HREF="#levy-equiv">(iv)</A>,
+and Proposition&nbsp;<A HREF="node2.html#ell-max">2.1</A>. 
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html52"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html50"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html44"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html53"
+  HREF="node5.html">Tail distributions</A>
+<B> Up:</B> <A NAME="tex2html51"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html45"
+  HREF="node3.html">The Klass-Nowicki Inequality</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,82 @@
+--- polyomino.h-orig	2010-12-27 15:02:53.000000000 -0600
++++ polyomino.h	2010-12-27 15:17:21.000000000 -0600
+@@ -780,6 +780,7 @@
+   int blank_found;
+   signed char blank, smallest_blank = -1;
+   signed char *p;
++  int filled_count;
+ 
+   if (nr_attached == nr_polyominoes) {
+     nr_found++;
+@@ -831,23 +832,21 @@
+ #endif
+       for (index=0;index<transform_len_lu[poly_no];index++) {
+         current_displ = displ_lu[poly_no][index];
+-        for (i=0;i<LEN(poly_no);i++) {
+-          if (place_to_attach[current_displ[i]] != -1)
+-            goto label1;
+-        }
+-
++        filled_count = 0;
+         for (i=0;i<LEN(poly_no);i++)
+-          place_to_attach[current_displ[i]] = poly_no;
+-        attached[poly_no] = 1;
++          filled_count |= place_to_attach[current_displ[i]] != -1;
++        if (filled_count == 0) {
++          for (i=0;i<LEN(poly_no);i++)
++            place_to_attach[current_displ[i]] = poly_no;
++          attached[poly_no] = 1;
+ #ifdef CHECK_PROGRESS
+-        list[nr_attached].poly_no=poly_no;
++          list[nr_attached].poly_no=poly_no;
+ #endif
+-        recursive_search(place_to_attach,nr_attached+1);
+-        for (i=0;i<LEN(poly_no);i++)
+-          place_to_attach[current_displ[i]] = -1;
+-        attached[poly_no] = 0;
+-
+-        label1:;
++          recursive_search(place_to_attach,nr_attached+1);
++          for (i=0;i<LEN(poly_no);i++)
++            place_to_attach[current_displ[i]] = -1;
++          attached[poly_no] = 0;
++        }
+       }
+ #ifdef IDENTICAL
+ #undef poly_no nr_attached
+@@ -863,23 +862,21 @@
+ #endif
+       for (index=0;index<transform_len_ws[bitmap][poly_no];index++) {
+         current_displ = displ_ws[bitmap][poly_no][index];
+-        for (i=0;i<LEN(poly_no);i++) {
+-          if (place_to_attach[current_displ[i]] != -1)
+-            goto label2;
+-        }
+-
++        filled_count = 0;
+         for (i=0;i<LEN(poly_no);i++)
+-          place_to_attach[current_displ[i]] = poly_no;
+-        attached[poly_no] = 1;
++          filled_count |= place_to_attach[current_displ[i]] != -1;
++        if (filled_count == 0) {
++          for (i=0;i<LEN(poly_no);i++)
++            place_to_attach[current_displ[i]] = poly_no;
++          attached[poly_no] = 1;
+ #ifdef CHECK_PROGRESS
+-        list[nr_attached].poly_no=poly_no;
++          list[nr_attached].poly_no=poly_no;
+ #endif
+-        recursive_search(place_to_attach,nr_attached+1);
+-        for (i=0;i<LEN(poly_no);i++)
+-          place_to_attach[current_displ[i]] = -1;
+-        attached[poly_no] = 0;
+-
+-        label2:;
++          recursive_search(place_to_attach,nr_attached+1);
++          for (i=0;i<LEN(poly_no);i++)
++            place_to_attach[current_displ[i]] = -1;
++          attached[poly_no] = 0;
++        }
+       }
+ #ifdef IDENTICAL
+ #undef poly_no nr_attached

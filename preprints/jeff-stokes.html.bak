@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Perturbations of the coupled Jeffery-Stokes equations.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B>Stephen Montgomery-Smith&#44; Perturbations of the coupled Jeffery-Stokes equations.</B>
+<I>Journal of Fluid Mechanics, volume 681, (2011), pp. 622-638.</I>
+This paper seeks to provide clues as to why experimental evidence for the alignment of slender fibers in semi-dilute suspensions under shear flows does not match theoretical predictions.  This paper posits that the hydrodynamic interactions between the different fibers that might be responsible for the deviation from theory, can at least partially be modeled by the coupling between Jeffery's equation and Stokes' equation.  It is proposed that if the initial data is slightly non-uniform, in that the probability distribution of the orientation has small spacial variations, then there is feedback via Stokes' equation that causes these non-uniformities to grow significantly in short amounts of time, so that the standard uncoupled Jeffery's equation becomes a poor predictor when the volume ratio of fibers to fluid is not extremely low.  This paper provides numerical evidence, involving spectral analysis of the linearization of the perturbation equation, to support this theory.
+(<A HREF="jeff-stokes-4.pdf">pdf</A>, <A HREF="http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=8333220&fulltextType=RA&fileId=S0022112011002370">actual article</A>.)
+Since the paper was published, a mistake was found.  The correction is <A HREF="jeff-stokes-corrigendum.pdf">here</A>.
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

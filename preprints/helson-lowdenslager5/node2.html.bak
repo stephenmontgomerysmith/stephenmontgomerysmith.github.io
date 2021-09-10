@@ -1,0 +1,762 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Orders on locally compact abelian groups</TITLE>
+<META NAME="description" CONTENT="Orders on locally compact abelian groups">
+<META NAME="keywords" CONTENT="helson-lowdenslager5">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="helson-lowdenslager5.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="helson-lowdenslager5.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html29"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html27"
+  HREF="helson-lowdenslager5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html21"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html30"
+  HREF="node3.html">Analyticity</A>
+<B> Up:</B> <A NAME="tex2html28"
+  HREF="helson-lowdenslager5.html">Decomposition of analytic measures</A>
+<B> Previous:</B> <A NAME="tex2html22"
+  HREF="node1.html">Introduction</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000">
+Orders on locally compact abelian groups</A>
+</H1>
+
+<P>
+An order <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.png"
+ ALT="$ P$"> on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is a subset
+that satisfies the three axioms:
+<!-- MATH
+ $P+P\subset P$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$ P+P\subset P$">; <!-- MATH
+ $P\cup (-P)=\Gamma$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.png"
+ ALT="$ P\cup (-P)=\Gamma$">; and <!-- MATH
+ $P\cap (-P)-\{0\}$
+ -->
+<IMG
+ WIDTH="136" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.png"
+ ALT="$ P\cap (-P)-\{0\}$">.
+We recall from [<A
+ HREF="node7.html#ams">1</A>] the following property of orders. 
+
+<P>
+<P>
+<DIV><B>Theorem  2.1</B> &nbsp; 
+<I>Let <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.png"
+ ALT="$ P$"> be a measurable order on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">.  There 
+are a totally ordered set <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img98.png"
+ ALT="$ \Pi$"> with largest element 
+<IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.png"
+ ALT="$ \alpha_0$">; a chain of subgroups <!-- MATH
+ $\{C_\alpha\}_{\alpha\in\Pi}$
+ -->
+<IMG
+ WIDTH="75" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.png"
+ ALT="$ \{C_\alpha\}_{\alpha\in\Pi}$">
+of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">; 
+and a collection of continuous real-valued homomorphisms 
+<!-- MATH
+ $\{\psi_\alpha\}_{\alpha\in\Pi}$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.png"
+ ALT="$ \{\psi_\alpha\}_{\alpha\in\Pi}$"> on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> such that:
+<BR>(i)  for each <!-- MATH
+ $\alpha\in\Pi$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$ \alpha\in\Pi$">, <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ C_\alpha$"> is an 
+open subgroup of <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">;
+<BR>(ii)  <!-- MATH
+ $C_\alpha\subset C_\beta$
+ -->
+<IMG
+ WIDTH="75" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.png"
+ ALT="$ C_\alpha\subset C_\beta$"> if <!-- MATH
+ $\alpha > \beta$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.png"
+ ALT="$ \alpha &gt; \beta$">.
+<BR>
+Let <!-- MATH
+ $D_\alpha=\{\chi\in C_\alpha:\ \psi_\alpha(\chi)=0\}$
+ -->
+<IMG
+ WIDTH="236" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.png"
+ ALT="$ D_\alpha=\{\chi\in C_\alpha:\ \psi_\alpha(\chi)=0\}$">.  Then,
+ for every <!-- MATH
+ $\alpha\in \Pi$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$ \alpha\in\Pi$">,
+<BR>(iii) <!-- MATH
+ $\psi_\alpha(\chi)>0$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$ \psi_\alpha(\chi)&gt;0$"> for every 
+	<!-- MATH
+ $\chi\in P\cap (C_\alpha\setminus D_\alpha)$
+ -->
+<IMG
+ WIDTH="156" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.png"
+ ALT="$ \chi\in P\cap (C_\alpha\setminus D_\alpha)$">,
+<BR>(iv)    <!-- MATH
+ $\psi_\alpha(\chi)<0$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.png"
+ ALT="$ \psi_\alpha(\chi)&lt;0$"> for every <!-- MATH
+ $\chi\in
+(-P)\cap (C_\alpha\setminus D_\alpha).$
+ -->
+<IMG
+ WIDTH="191" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img110.png"
+ ALT="$ \chi\in
+(-P)\cap (C_\alpha\setminus D_\alpha).$">
+<BR>(v)  When <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is discrete, <!-- MATH
+ $C_{\alpha_0}=\{0\}$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img111.png"
+ ALT="$ C_{\alpha_0}=\{0\}$">; and 
+when <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is not discrete, <!-- MATH
+ $D_{\alpha_0}$
+ -->
+<IMG
+ WIDTH="36" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.png"
+ ALT="$ D_{\alpha_0}$"> 
+has empty interior and is locally null.
+<A NAME="structureorder"></A></I></DIV><P></P>
+
+<P>
+When <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is discrete, Theorem <A HREF="#structureorder">2.1</A> 
+can be deduced from
+the proof of Hahn's Embedding Theorem for
+orders (see [<A
+ HREF="node7.html#fu">13</A>, Theorem 16, p.59]). 
+The general case treated in Theorem <A HREF="#structureorder">2.1</A>
+accounts for the measure theoretic aspect of orders.
+The proof is
+based on the study of orders of Hewitt and Koshi [<A
+ HREF="node7.html#hk">18</A>].
+
+<P>
+For <!-- MATH
+ $\alpha\in \Pi$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$ \alpha\in\Pi$"> with <!-- MATH
+ $\alpha\neq\alpha_0$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.png"
+ ALT="$ \alpha\neq\alpha_0$">, let
+<BR>
+<DIV ALIGN="CENTER"><A NAME="alphaslice"></A><A NAME="alphaslice2"></A><!-- MATH
+ \begin{eqnarray}
+S_\alpha\equiv P\cap (C_\alpha \setminus D_\alpha)
+&=& \left\{
+\chi\in C_\alpha\setminus D_\alpha:\ \ \psi_\alpha(\chi)\geq 0\right\}
+\\
+&=&\left\{
+\chi\in C_\alpha :\ \ \psi_\alpha(\chi)> 0\right\}.
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+(11)</TD>
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="167" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.png"
+ ALT="$\displaystyle S_\alpha\equiv P\cap (C_\alpha \setminus D_\alpha)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="236" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.png"
+ ALT="$\displaystyle \left\{
+\chi\in C_\alpha\setminus D_\alpha:\ \ \psi_\alpha(\chi)\geq 0\right\}$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+(12)</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="201" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img117.png"
+ ALT="$\displaystyle \left\{
+\chi\in C_\alpha :\ \ \psi_\alpha(\chi)&gt; 0\right\}.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+For <!-- MATH
+ $\alpha=\alpha_0$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img118.png"
+ ALT="$ \alpha=\alpha_0$">, set
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="alpha0slice"></A><!-- MATH
+ \begin{equation}
+S_{\alpha_0}=\left\{
+\chi\in C_{\alpha_0}:\ \ \psi_{\alpha_0}(\chi)\geq 0\right\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(13)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="267" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img119.png"
+ ALT="$\displaystyle S_{\alpha_0}=\left\{ \chi\in C_{\alpha_0}:\ \ \psi_{\alpha_0}(\chi)\geq 0\right\}.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note that when <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is discrete, <!-- MATH
+ $C_{\alpha_0}=\{0\}$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img111.png"
+ ALT="$ C_{\alpha_0}=\{0\}$">, and so <!-- MATH
+ $S_{\alpha_0}=\{0\}$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img120.png"
+ ALT="$ S_{\alpha_0}=\{0\}$"> in this case. 
+
+<P>
+If <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ A$"> is
+a subset of a topological space, we will use <!-- MATH
+ $\overline{A}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img121.png"
+ ALT="$ \overline{A}$"> and
+<IMG
+ WIDTH="26" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img122.png"
+ ALT="$ A^\circ$"> to denote the closure, respectively, the interior
+of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ A$">. 
+
+<P>
+<P>
+<DIV><B>Remarks  2.2</B> &nbsp; (a)  It is a classical fact that a group <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> can be ordered if
+and only if it is torsion-free.
+Also, an order on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is 
+any maximal positively linearly independent set.  
+Thus, orders abound in torsion-free abelian groups, as
+they can be constructed using Zorn's Lemma to obtain a maximal positively
+linearly independent set.  
+(See [<A
+ HREF="node7.html#hk">18</A>, Section 2].)  
+However, if we ask for 
+measurable orders, then we are 
+restricted in many ways in the choices 
+of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.png"
+ ALT="$ P$"> and also the topology on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">.  As shown in [<A
+ HREF="node7.html#hk">18</A>], 
+any measurable order on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> has nonempty interior.
+Thus, for example, while there are infinitely many orders
+on <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \Bbb R$">, only two are Lebesgue measurable:  
+<!-- MATH
+ $P=[0,\infty [$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.png"
+ ALT="$ P=[0,\infty [$">, and
+<!-- MATH
+ $P=]-\infty,0]$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$ P=]-\infty,0]$">.  
+It is also shown in [<A
+ HREF="node7.html#hk">18</A>, Theorem (3.2)] that any
+order on an infinite compact torsion-free abelian group
+is non-Haar measurable.  This effectively shows
+that if <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> contains a Haar-measurable order <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.png"
+ ALT="$ P$">,
+and we use the structure theorem for locally compact abelian
+groups to write <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> as <!-- MATH
+ $\Bbb R^a\times \Delta$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$ \Bbb R^a\times \Delta$">, where 
+<IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img126.png"
+ ALT="$ \Delta$"> contains a compact open subgroup
+[<A
+ HREF="node7.html#hr1">20</A>, Theorem (24.30)], then
+either <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img127.png"
+ ALT="$ a$"> is a positive integer, or <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is
+discrete.  (See [<A
+ HREF="node7.html#ams">1</A>].)  
+<BR>(b)  The subgroups <!-- MATH
+ $(C_\alpha)$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$ (C_\alpha)$"> are characterized as being the principal
+convex subgroups in <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> and for each <!-- MATH
+ $\alpha\in \Pi$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$ \alpha\in\Pi$">,
+we have 
+<!-- MATH
+ \begin{displaymath}
+D_\alpha=\bigcup_{\beta>\alpha}C_\beta.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="113" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$\displaystyle D_\alpha=\bigcup_{\beta&gt;\alpha}C_\beta.$">
+</DIV><P></P>
+Consequently, we have <!-- MATH
+ $C_\alpha\subset D_\beta$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="$ C_\alpha\subset D_\beta$"> if 
+<!-- MATH
+ $\beta <\alpha$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.png"
+ ALT="$ \beta &lt;\alpha$">.   
+By construction, the sets <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ C_\alpha$"> are open.  For <!-- MATH
+ $\alpha< \alpha_0$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ \alpha&lt; \alpha_0$">, the subgroup <IMG
+ WIDTH="30" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="$ D_\alpha$"> has
+ nonempty interior, since it contains <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$ C_\beta$">, with
+<!-- MATH
+ $\alpha<\beta$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$ \alpha&lt;\beta$">.  Hence for <!-- MATH
+ $\alpha\neq \alpha_0$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.png"
+ ALT="$ \alpha\neq\alpha_0$">,
+<IMG
+ WIDTH="30" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="$ D_\alpha$"> is open and closed.  Consequently, for 
+<!-- MATH
+ $\alpha\neq \alpha_0$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img113.png"
+ ALT="$ \alpha\neq\alpha_0$">,
+<!-- MATH
+ $C_\alpha\setminus D_\alpha$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.png"
+ ALT="$ C_\alpha\setminus D_\alpha$"> is open and closed.
+
+<P>
+(c)  Let <!-- MATH
+ $\psi:\ \Gamma_1\rightarrow \Gamma_2$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.png"
+ ALT="$ \psi:\ \Gamma_1\rightarrow \Gamma_2$"> be a continuous 
+homomorphism between two ordered groups.  We say that
+<IMG
+ WIDTH="17" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$ \psi$"> is order-preserving if <!-- MATH
+ $\psi(P_1)\subset P_2$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$ \psi(P_1)\subset P_2$">.  
+Consequently, if 
+<IMG
+ WIDTH="17" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$ \psi$"> is continuous and order preserving, then
+<!-- MATH
+ $\psi(\overline{P_1})\subset \overline{P_2}$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.png"
+ ALT="$ \psi(\overline{P_1})\subset \overline{P_2}$">.
+
+<P>
+For each <!-- MATH
+ $\alpha\in \Pi$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$ \alpha\in\Pi$">, let <!-- MATH
+ $\pi_\alpha$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$ \pi_\alpha$"> denote the
+quotient homomorphism <!-- MATH
+ $\Gamma\rightarrow \Gamma/C_\alpha$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.png"
+ ALT="$ \Gamma\rightarrow \Gamma/C_\alpha$">. 
+Because <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ C_\alpha$"> is a principal subgroup, we can define an order
+on <!-- MATH
+ $\Gamma/C_\alpha$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$ \Gamma/C_\alpha$"> by setting <!-- MATH
+ $\psi_\alpha(\chi)\geq 0\Longleftrightarrow
+\chi\geq 0$
+ -->
+<IMG
+ WIDTH="179" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.png"
+ ALT="$ \psi_\alpha(\chi)\geq 0\Longleftrightarrow
+\chi\geq 0$">.  Moreover, the principal convex subgroups
+in <!-- MATH
+ $\Gamma/C_\alpha$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$ \Gamma/C_\alpha$"> are precisely the images by 
+<!-- MATH
+ $\pi_\alpha$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$ \pi_\alpha$"> of the principal convex subgroups of 
+<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> containing <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ C_\alpha$">.  (See [<A
+ HREF="node7.html#ams">1</A>, Section 2].)
+
+<P>
+<I>
+<A NAME="remarkstructureorder"></A></I></DIV><P></P>
+
+<P>
+We end this section with a useful property of orders.
+
+<P>
+<P>
+<DIV><B>Proposition  2.3</B> &nbsp; 
+<I>Let <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.png"
+ ALT="$ P$"> be a measurable order on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">.
+Then
+<!-- MATH
+ $\overline{P}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img145.png"
+ ALT="$ \overline{P}$"> is a 
+<IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img74.png"
+ ALT="$ {\cal T}$">-set.
+<A NAME="ptset"></A></I></DIV><P></P>
+
+<P>
+
+<B>Proof.</B>&nbsp;&nbsp;&nbsp;&nbsp;If <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is discrete, there is nothing to prove.  If <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> is not discrete, the subgroup
+<!-- MATH
+ $C_{\alpha_0}$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.png"
+ ALT="$ C_{\alpha_0}$"> is open and nonempty.  Hence the set
+<!-- MATH
+ $C_{\alpha_0}\cap \{\chi\in \Gamma:\psi_{\alpha_0}
+(\chi)>0\}$
+ -->
+<IMG
+ WIDTH="226" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$ C_{\alpha_0}\cap \{\chi\in \Gamma:\psi_{\alpha_0}
+(\chi)&gt;0\}$"> is nonempty, with 0 as a limit
+point.  Given an open nonempty neighborhood <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img148.png"
+ ALT="$ U$"> of 0,
+let 
+<!-- MATH
+ \begin{displaymath}
+W=U\cap C_{\alpha_0}\cap \{\chi\in \Gamma:\psi_{\alpha_0}
+(\chi)>0\}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="313" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.png"
+ ALT="$\displaystyle W=U\cap C_{\alpha_0}\cap \{\chi\in \Gamma:\psi_{\alpha_0}
+(\chi)&gt;0\}.$">
+</DIV><P></P>
+Then <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$ W$"> is a nonempty subset of <IMG
+ WIDTH="55" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img150.png"
+ ALT="$ U\cap P$">.
+Moreover, it is easy to see that 
+<!-- MATH
+ $W+\overline{P}\subset P\subset \overline{P}$
+ -->
+<IMG
+ WIDTH="143" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img151.png"
+ ALT="$ W+\overline{P}\subset P\subset \overline{P}$">,
+and hence 
+<!-- MATH
+ $\overline{P}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img145.png"
+ ALT="$ \overline{P}$"> is a 
+<IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img74.png"
+ ALT="$ {\cal T}$">-set.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html29"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html27"
+  HREF="helson-lowdenslager5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html21"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html30"
+  HREF="node3.html">Analyticity</A>
+<B> Up:</B> <A NAME="tex2html28"
+  HREF="helson-lowdenslager5.html">Decomposition of analytic measures</A>
+<B> Previous:</B> <A NAME="tex2html22"
+  HREF="node1.html">Introduction</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

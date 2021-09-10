@@ -1,0 +1,1807 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homomorphism theorems</TITLE>
+<META NAME="description" CONTENT="Homomorphism theorems">
+<META NAME="keywords" CONTENT="helson-lowdenslager5">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="helson-lowdenslager5.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="helson-lowdenslager5.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html49"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html47"
+  HREF="helson-lowdenslager5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html41"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html50"
+  HREF="node5.html">Decomposition of Analytic Measures</A>
+<B> Up:</B> <A NAME="tex2html48"
+  HREF="helson-lowdenslager5.html">Decomposition of analytic measures</A>
+<B> Previous:</B> <A NAME="tex2html42"
+  HREF="node3.html">Analyticity</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00040000000000000000">
+Homomorphism theorems</A>
+</H1>
+
+<P>
+We continue with the notation of the previous section:
+<IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> is a locally compact abelian group,
+<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$"> the dual group of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$">, <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.png"
+ ALT="$ P$"> is a measurable
+order on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">, <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> is a sup path 
+attaining representation of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> acting on <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$">.
+Associated with <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.png"
+ ALT="$ P$"> is a collection of homomorphisms
+<!-- MATH
+ $\psi_\alpha$
+ -->
+<IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.png"
+ ALT="$ \psi_\alpha$">, as described by Theorem <A HREF="node2.html#structureorder">2.1</A>.  Let <!-- MATH
+ $\phi_\alpha$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$ \phi_\alpha$"> denote the 
+adjoint of <!-- MATH
+ $\psi_\alpha$
+ -->
+<IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.png"
+ ALT="$ \psi_\alpha$">.  Thus, <!-- MATH
+ $\phi_\alpha$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$ \phi_\alpha$"> is a continuous
+homomorphism of <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \Bbb R$"> into <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$">.
+By composing the representation <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> with the <!-- MATH
+ $\phi_\alpha$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$ \phi_\alpha$">, we define a new representation <!-- MATH
+ $T_{\phi_\alpha}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$ T_{\phi_\alpha}$"> of <IMG
+ WIDTH="18" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \Bbb R$"> acting on <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$"> by:
+<!-- MATH
+ $t\in \Bbb R\mapsto T_{\phi_\alpha(t)}$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.png"
+ ALT="$ t\in \Bbb R\mapsto T_{\phi_\alpha(t)}$">.  If <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mu$"> in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$"> is weakly measurable with respect to <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$">
+then <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mu$"> is also weakly measurable with respect
+to <!-- MATH
+ $T_{\phi_\alpha}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$ T_{\phi_\alpha}$">.  We will further suppose that
+<!-- MATH
+ $T_{\phi_\alpha}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$ T_{\phi_\alpha}$"> is sup path attaining for each <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img210.png"
+ ALT="$ \alpha$">.  This is the case with the representations
+of Example <A HREF="node1.html#s-set">1.7</A>.
+
+<P>
+Our goal in this section is to relate the notion of
+analyticity with respect to <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> to the
+notion of analyticity with respect to <!-- MATH
+ $T_{\phi_\alpha}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$ T_{\phi_\alpha}$">.
+More generally, 
+suppose that <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ G_1$"> and <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$ G_2$"> are two
+locally compact abelian groups with dual groups <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="$ \Gamma_1$"> and
+<IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$ \Gamma_2$">, respectively.  Let 
+<!-- MATH
+ \begin{displaymath}
+\psi: \Gamma_1\rightarrow \Gamma_2
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="101" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.png"
+ ALT="$\displaystyle \psi: \Gamma_1\rightarrow \Gamma_2$">
+</DIV><P></P>
+be a continuous homomorphism, and
+let <!-- MATH
+ $\phi:G_2\rightarrow G_1$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.png"
+ ALT="$ \phi:\ G_2\rightarrow G_1$"> denote its adjoint homomorphism.
+Suppose
+<IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$ \nu$"> is in <IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img289.png"
+ ALT="$ M(G_2)$">.  We define a Borel
+measure <IMG
+ WIDTH="43" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img290.png"
+ ALT="$ \Phi(\nu)$"> in <IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ M(G_1)$"> on the 
+Borel subsets <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ A$"> of <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ G_1$"> by:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="continuous-image1"></A><!-- MATH
+ \begin{equation}
+\Phi(\nu)(A)=\int_{G_2} 1_A\circ \phi(t)\,d\nu(t)=
+\int_{G_1} 1_A d\Phi(\nu),
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(21)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="374" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img291.png"
+ ALT="$\displaystyle \Phi(\nu)(A)=\int_{G_2} 1_A\circ \phi(t)\,d\nu(t)= \int_{G_1} 1_A d\Phi(\nu),$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="25" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$ 1_A$"> is the indicator function of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ A$">.
+We have
+<!-- MATH
+ $\|\Phi(g)\|_{M(G_1)}=\|\nu\|_{M(G_2)}$
+ -->
+<IMG
+ WIDTH="202" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.png"
+ ALT="$ \Vert\Phi(g)\Vert _{M(G_1)}=\Vert\nu\Vert _{M(G_2)}$"> and, for every Borel measurable
+bounded function <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ f$"> on <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ G_1$">, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="continuous-image2"></A><!-- MATH
+ \begin{equation}
+\int_{G_1} f d\Phi(\nu)=
+\int_{G_2} f\circ \phi(t)\,d \nu (t).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(22)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="264" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.png"
+ ALT="$\displaystyle \int_{G_1} f d\Phi(\nu)= \int_{G_2} f\circ \phi(t)\,d \nu (t).$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In particular, if <IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img294.png"
+ ALT="$ f=\chi$">, a character in
+<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">, then
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="continuous-image3"></A><!-- MATH
+ \begin{equation}
+\widehat{\Phi(\nu)}(\chi)=\int_{G_1} \overline{\chi} d\Phi(\nu)=\int_{G_2} \overline{\chi}\circ \phi(t)\,d\nu(t)
+=\int_{G_2}
+\overline{\psi(\chi)}(t)\, d\nu(t)=\widehat{\nu}(\psi(\chi)),
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(23)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="603" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.png"
+ ALT="$\displaystyle \widehat{\Phi(\nu)}(\chi)=\int_{G_1} \overline{\chi} d\Phi(\nu)=\...
+...nu(t) =\int_{G_2} \overline{\psi(\chi)}(t)\, d\nu(t)=\widehat{\nu}(\psi(\chi)),$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="17" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$ \psi$"> is the adjoint homomorphism of <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \phi$">.
+So, 
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="continuous-image4"></A><!-- MATH
+ \begin{equation}
+\widehat{\Phi(\nu)}=\widehat{\nu}\circ \psi.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(24)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="115" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img296.png"
+ ALT="$\displaystyle \widehat{\Phi(\nu)}=\widehat{\nu}\circ \psi.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Our first result is a very useful fact
+from spectral synthesis of bounded functions.
+The proof uses in a crucial way the fact that the representation is sup path attaining, or, more precisely, satisfies the property in Proposition <A HREF="node1.html#prop_hypa">1.4</A>.
+
+<P>
+<P>
+<DIV><B>Lemma  4.1</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> is a sup path attaining representation of <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ G_1$"> acting on <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$">, <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ \phi$"> is a continuous homomorphism of <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$ G_2$"> into <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ G_1$"> 
+such that <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.png"
+ ALT="$ T_\phi$"> is a sup path 
+attaining representation
+of <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$ G_2$">.  Suppose that <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.png"
+ ALT="$ B$"> is a nonempty closed <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-subset of
+<IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="$ \Gamma_1$"> and that <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mu$"> is in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$"> with
+<!-- MATH
+ ${\rm spec}_T\mu\subset B$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.png"
+ ALT="$ {\rm spec}_T\mu\subset B$">.  Suppose that
+<IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$"> is an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-subset of <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$ \Gamma_2$"> and
+<!-- MATH
+ $\psi(B)\subset C$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.png"
+ ALT="$ \psi(B)\subset C$">.
+Then <!-- MATH
+ ${\rm spec}_{T_\phi}\mu\subset C$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$ {\rm spec}_{T_\phi}\mu\subset C$">.
+<A NAME="lem3.1"></A></I></DIV><P></P>
+
+<P>
+<B>Proof.</B>&nbsp;&nbsp;&nbsp;&nbsp;Since <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$"> is an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-subset of <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$ \Gamma_2$">, it is enough to show that for every 
+`<!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">, <!-- MATH
+ ${\rm spec}_{T_\phi}(x\mapsto T_{\phi(x)}\mu(A))\subset C$
+ -->
+<IMG
+ WIDTH="229" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img300.png"
+ ALT="$ {\rm spec}_{T_\phi}(x\mapsto T_{\phi(x)}\mu(A))\subset C$">, by 
+Proposition <A HREF="node3.html#prop5.5">3.7</A>.
+For this purpose, it is enough by 
+ [<A
+ HREF="node7.html#hr2">21</A>, Theorem (40.8)], to show that 
+<!-- MATH
+ \begin{displaymath}
+g*T_{\phi(\cdot)}\mu(A)=0
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="141" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img301.png"
+ ALT="$\displaystyle g*T_{\phi(\cdot)}\mu(A)=0$">
+</DIV><P></P>
+for every <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.png"
+ ALT="$ g$"> in <IMG
+ WIDTH="62" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$ L^1(G_2)$"> with
+<!-- MATH
+ $\widehat{g}=0$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.png"
+ ALT="$ \widehat{g}= 0$"> on <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$">.  
+For <IMG
+ WIDTH="59" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img303.png"
+ ALT="$ r\in G_2$"> and <IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ x\in G_1$">, consider the measure
+<!-- MATH
+ \begin{displaymath}
+T_x(g*_{T_\phi}T_{\phi(r)}\mu)=
+g*_{T_\phi}T_{x+\phi(r)}\mu.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="272" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img305.png"
+ ALT="$\displaystyle T_x(g*_{T_\phi}T_{\phi(r)}\mu)=
+g*_{T_\phi}T_{x+\phi(r)}\mu.$">
+</DIV><P></P>
+For <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">, we have
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+g*_{T_\phi} T_{x+\phi(r)}\mu(A)&=&
+\int_GT_{-t+x}(T_{\phi(r)}\mu)(A)\,d\Phi(g)(t)\\
+&=&\Phi(g)*[t\mapsto T_t(T_{\phi(r)}\mu)(A)](x)\\
+&=&0
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="144" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img306.png"
+ ALT="$\displaystyle g*_{T_\phi} T_{x+\phi(r)}\mu(A)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="238" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img307.png"
+ ALT="$\displaystyle \int_GT_{-t+x}(T_{\phi(r)}\mu)(A)\,d\Phi(g)(t)$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="240" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img308.png"
+ ALT="$\displaystyle \Phi(g)*[t\mapsto T_t(T_{\phi(r)}\mu)(A)](x)$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP>0</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+for almost all <IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ x\in G_1$">.  
+To justify the last equality,
+we appeal to Proposition <A HREF="node3.html#annihilate">3.3</A> and
+note that
+<!-- MATH
+ $\widehat{\Phi(g)}=\widehat{g}\circ \psi$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$ \widehat{\Phi(g)}=\widehat{g}\circ \psi$"> and so <!-- MATH
+ $\widehat{\Phi(g)}=0$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.png"
+ ALT="$ \widehat{\Phi(g)}=0$"> on <!-- MATH
+ $B\subset \psi^{-1}(C)$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img311.png"
+ ALT="$ B\subset \psi^{-1}(C)$">.
+Moreover, <!-- MATH
+ $\sigma[t\mapsto T_t(T_{\phi(r)}\mu)(A)]
+\subset {\rm spec}_T(\mu)\subset B$
+ -->
+<IMG
+ WIDTH="308" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img312.png"
+ ALT="$ \sigma[t\mapsto T_t(T_{\phi(r)}\mu)(A)]
+\subset {\rm spec}_T(\mu)\subset B$">.
+Now, using Proposition <A HREF="node1.html#prop_hypa">1.4</A> and the fact that,
+for every <!-- MATH
+ $A\in \Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">,
+<!-- MATH
+ \begin{displaymath}
+T_x[g*_{T_\phi}
+T_{\phi(r)}]\mu(A) =g*_{T_\phi}T_{x+\phi(r)}\mu(A)=0,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="359" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img313.png"
+ ALT="$\displaystyle T_x[g*_{T_\phi}
+T_{\phi(r)}]\mu(A) =g*_{T_\phi}T_{x+\phi(r)}\mu(A)=0,$">
+</DIV><P></P>
+for almost all <IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ x\in G_1$">, we conclude that the 
+measure <!-- MATH
+ $g*_{T_\phi}
+T_{\phi(r)}\mu$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.png"
+ ALT="$ g*_{T_\phi}
+T_{\phi(r)}\mu$"> is the zero measure, which completes the proof.
+
+<P>
+Given <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img315.png"
+ ALT="$ {\cal C}$">, a collection of elements in
+<IMG
+ WIDTH="62" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.png"
+ ALT="$ L^1(G_1)$"> or <IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ M(G_1)$">, let 
+<!-- MATH
+ \begin{displaymath}
+Z({\cal C})=\bigcap_{\delta\in {\cal C}}
+\left\{
+\chi:\ \widehat{\delta}(\chi)=0\right\}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="234" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img317.png"
+ ALT="$\displaystyle Z({\cal C})=\bigcap_{\delta\in {\cal C}}
+\left\{
+\chi:\ \widehat{\delta}(\chi)=0\right\}.$">
+</DIV><P></P>
+This is the same notation for the zero set of an ideal
+in <IMG
+ WIDTH="54" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ L^1(G)$"> that we introduced in Section 1.  
+Given a set of measures <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img318.png"
+ ALT="$ {\cal S}$"> in <IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img289.png"
+ ALT="$ M(G_2)$">,
+let 
+<!-- MATH
+ \begin{displaymath}
+\Phi({\cal S})=\left\{
+\Phi(\nu):\ \nu \in {\cal S}\right\}\subset M(G_1).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="285" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img319.png"
+ ALT="$\displaystyle \Phi({\cal S})=\left\{
+\Phi(\nu):\ \nu \in {\cal S}\right\}\subset M(G_1).$">
+</DIV><P></P> 
+
+<P>
+<P>
+<DIV><B>Lemma  4.2</B> &nbsp; 
+<I>In the above notation, if 
+ <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in M(\Sigma)$"> is weakly measurable,
+then
+</I><!-- MATH
+ \begin{displaymath}
+Z\left( \Phi({\cal I}_{T_\phi}\mu)\right)=
+\psi^{-1}\left(
+Z ({\cal I}_{T_\phi}\mu)\right)=
+\psi^{-1}\left(    
+{\rm spec}_{T_\phi}\mu\right).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="403" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.png"
+ ALT="$\displaystyle Z\left( \Phi({\cal I}_{T_\phi}\mu)\right)=
+\psi^{-1}\left(
+Z ({\cal I}_{T_\phi}\mu)\right)=
+\psi^{-1}\left(
+{\rm spec}_{T_\phi}\mu\right).
+$">
+</DIV><P></P><I>
+<A NAME="lem3.2"></A></I></DIV><P></P>
+
+<P>
+<B>Proof.</B>  It is enough to establish the first equality; the second one follows from definitions.
+We have
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+Z\left( \Phi({\cal I}_{T_\phi}\mu)\right)
+&=&
+\bigcap_{\delta\in    \Phi({\cal I}_{T_\phi}(\mu))   }
+\left\{
+\chi\in \Gamma:\ \widehat{\delta}(\chi)=0\right\}\\
+&=&
+\bigcap_{g \in    {\cal I}_{T_\phi}(\mu)   }
+\left\{
+\chi\in \Gamma:\ \widehat{\Phi(g)}(\chi)=0\right\}\\
+&=&
+\bigcap_{g \in    {\cal I}_{T_\phi}(\mu)   }
+\left\{
+\chi\in \Gamma:\
+\widehat{g }(\psi(\chi))=0\right\}\\
+&=&
+\bigcap_{g \in    {\cal I}_{T_\phi}(\mu)   }
+\psi^{-1}\left(  Z(g)  \right)\\
+&=&
+\psi^{-1}\left(
+\bigcap_{g \in    {\cal I}_{T_\phi}(\mu)   }
+\left(  Z(g)  \right)\right)\\
+&=&
+\psi^{-1}\left(
+Z \left(   {\cal I}_{T_\phi}(\mu)   
+  \right)\right)
+=\psi^{-1}\left({\rm spec}_{T_\phi}\mu\right).
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="106" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img321.png"
+ ALT="$\displaystyle Z\left( \Phi({\cal I}_{T_\phi}\mu)\right)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="249" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img322.png"
+ ALT="$\displaystyle \bigcap_{\delta\in \Phi({\cal I}_{T_\phi}(\mu)) }
+\left\{
+\chi\in \Gamma:\ \widehat{\delta}(\chi)=0\right\}$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="258" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.png"
+ ALT="$\displaystyle \bigcap_{g \in {\cal I}_{T_\phi}(\mu) }
+\left\{
+\chi\in \Gamma:\ \widehat{\Phi(g)}(\chi)=0\right\}$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="251" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img324.png"
+ ALT="$\displaystyle \bigcap_{g \in {\cal I}_{T_\phi}(\mu) }
+\left\{
+\chi\in \Gamma:\
+\widehat{g }(\psi(\chi))=0\right\}$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="153" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img325.png"
+ ALT="$\displaystyle \bigcap_{g \in {\cal I}_{T_\phi}(\mu) }
+\psi^{-1}\left( Z(g) \right)$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="186" HEIGHT="87" ALIGN="MIDDLE" BORDER="0"
+ SRC="img326.png"
+ ALT="$\displaystyle \psi^{-1}\left(
+\bigcap_{g \in {\cal I}_{T_\phi}(\mu) }
+\left( Z(g) \right)\right)$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="297" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.png"
+ ALT="$\displaystyle \psi^{-1}\left(
+Z \left( {\cal I}_{T_\phi}(\mu)
+\right)\right)
+=\psi^{-1}\left({\rm spec}_{T_\phi}\mu\right).$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+<P>
+<DIV><B>Lemma  4.3</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$ C$"> is a nonempty closed <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-subset of
+<IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$ \Gamma_2$"> and that <!-- MATH
+ $\psi^{-1}(C)$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.png"
+ ALT="$ \psi^{-1}(C)$"> is an 
+<IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-subset of <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="$ \Gamma_1$">.  Suppose that <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mu$"> is in <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$"> and 
+<!-- MATH
+ ${\rm spec}_{T_\phi}(\mu)\subset C$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.png"
+ ALT="$ {\rm spec}_{T_\phi}(\mu)\subset C$">.  
+Then <!-- MATH
+ ${\rm spec}_T\mu\subset \psi^{-1}(C)$
+ -->
+<IMG
+ WIDTH="147" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.png"
+ ALT="$ {\rm spec}_T\mu\subset \psi^{-1}(C)$">.
+<A NAME="lem3.3"></A></I></DIV><P></P>
+
+<P>
+<B>Proof.</B>&nbsp;&nbsp;&nbsp;&nbsp;
+We will use the notation of Lemma <A HREF="#lem3.2">4.2</A>.
+If <!-- MATH
+ $f\in {\cal I}_{T_\phi}(\mu)$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img331.png"
+ ALT="$ f\in {\cal I}_{T_\phi}(\mu)$"> and <IMG
+ WIDTH="57" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img332.png"
+ ALT="$ t\in G_1$">, 
+then <!-- MATH
+ $f\in {\cal I}_{T_\phi}(T_t \mu)$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img333.png"
+ ALT="$ f\in {\cal I}_{T_\phi}(T_t \mu)$">.  So,
+ for <!-- MATH
+ $A\in\Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">, we have
+<!-- MATH
+ $f*_{T_\phi}(T_t\mu)(A)=0$
+ -->
+<IMG
+ WIDTH="156" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.png"
+ ALT="$ f*_{T_\phi}(T_t\mu)(A)=0$">.  
+But
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+f*_{T_\phi}(T_t\mu)(A)&=&
+\int_\Bbb RT_{t-\phi(x)}\mu(A)f(x)\, dx\\
+&=&
+\int_G T_{t- x }\mu(A)\, d\Phi(f),
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="121" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.png"
+ ALT="$\displaystyle f*_{T_\phi}(T_t\mu)(A)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="182" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.png"
+ ALT="$\displaystyle \int_\Bbb RT_{t-\phi(x)}\mu(A)f(x)\, dx$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="162" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.png"
+ ALT="$\displaystyle \int_G T_{t- x }\mu(A)\, d\Phi(f),$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+where <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.png"
+ ALT="$ \Phi(f)$"> is the homomorphic image
+of the measure <IMG
+ WIDTH="65" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.png"
+ ALT="$ f(x)\,dx$">.
+Hence,
+<!-- MATH
+ $\Phi(f) \in {\cal I}_T ([t\mapsto T_t\mu(A)])$
+ -->
+<IMG
+ WIDTH="206" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img340.png"
+ ALT="$ \Phi(f) \in {\cal I}_T ([t\mapsto T_t\mu(A)])$">,
+and so <!-- MATH
+ $\Phi({\cal I}_{T_\phi}(\mu))\subset
+{\cal I}_T([t\mapsto T_t\mu(A)])$
+ -->
+<IMG
+ WIDTH="250" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img341.png"
+ ALT="$ \Phi({\cal I}_{T_\phi}(\mu))\subset
+{\cal I}_T([t\mapsto T_t\mu(A)])$">, which implies that
+  <!-- MATH
+ \begin{displaymath}
+Z\left(\Phi({\cal I}_{T_\phi}(\mu))\right)\supset
+Z\left({\cal I}_T([t\mapsto T_t\mu(A)])\right)
+={\rm spec}_T(t\mapsto T_t\mu(A)).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="500" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.png"
+ ALT="$\displaystyle Z\left(\Phi({\cal I}_{T_\phi}(\mu))\right)\supset
+Z\left({\cal I}_T([t\mapsto T_t\mu(A)])\right)
+={\rm spec}_T(t\mapsto T_t\mu(A)).$">
+</DIV><P></P>
+By Lemma <A HREF="#lem3.2">4.2</A>, 
+<!-- MATH
+ \begin{displaymath}
+Z\left(\Phi({\cal I}_{T_\phi}(\mu))\right)=
+\psi^{-1}\left(
+{\rm spec}_{T_\phi}\mu
+\right)\subset \psi^{-1}(C).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="356" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.png"
+ ALT="$\displaystyle Z\left(\Phi({\cal I}_{T_\phi}(\mu))\right)=
+\psi^{-1}\left(
+{\rm spec}_{T_\phi}\mu
+\right)\subset \psi^{-1}(C).$">
+</DIV><P></P>
+Hence, <!-- MATH
+ ${\rm spec}_T(t\mapsto T_t\mu(A))\subset \psi^{-1}(C)$
+ -->
+<IMG
+ WIDTH="243" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img344.png"
+ ALT="$ {\rm spec}_T(t\mapsto T_t\mu(A))\subset \psi^{-1}(C)$">
+for all <!-- MATH
+ $A\in\Sigma$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$ A\in \Sigma$">, which by Proposition <A HREF="node3.html#prop5.5">3.7</A>  implies that
+<!-- MATH
+ ${\rm spec}_T(\mu)\subset  \psi^{-1}(C)$
+ -->
+<IMG
+ WIDTH="162" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img345.png"
+ ALT="$ {\rm spec}_T(\mu)\subset \psi^{-1}(C)$">.
+
+<P>
+Taking <!-- MATH
+ $G_1=G,\ G_2=\Bbb R$
+ -->
+<IMG
+ WIDTH="143" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img346.png"
+ ALT="$ G_1=G,\ G_2=\Bbb R$"> and <!-- MATH
+ $\psi=\psi_\alpha$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img347.png"
+ ALT="$ \psi=\psi_\alpha$"> to be one of the 
+homomorphisms in Theorem <A HREF="node2.html#structureorder">2.1</A>, 
+and using the fact that <!-- MATH
+ $[0,\infty[$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.png"
+ ALT="$ [0,\infty[$">, <IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.png"
+ ALT="$ S_\alpha$">,
+<!-- MATH
+ $C_\alpha\setminus D_\alpha$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.png"
+ ALT="$ C_\alpha\setminus D_\alpha$"> are all <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-sets,
+we obtain  useful relationships between different 
+types of analyticity.
+
+<P>
+<P>
+<DIV><A NAME="equiv-def"><B>Theorem  4.4</B></A> &nbsp; 
+<I>Let <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> be a locally compact abelian group with ordered dual group
+<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">, and let <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img94.png"
+ ALT="$ P$"> denote a measurable order on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">.  
+Suppose that <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> is a sup path attaining representation
+of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> by isomorphisms of <IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ M(\Sigma)$">, such that <!-- MATH
+ $T_{\phi_\alpha}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$ T_{\phi_\alpha}$"> is sup path attaining, where 
+<!-- MATH
+ $\phi_\alpha$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$ \phi_\alpha$"> is the adjoint of <!-- MATH
+ $\psi_\alpha$
+ -->
+<IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.png"
+ ALT="$ \psi_\alpha$"> in Theorem <A HREF="node2.html#structureorder">2.1</A>.
+<BR>(i)  If <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in M(\Sigma)$"> and 
+<!-- MATH
+ ${\rm spec}_T(\mu)\subset C_\alpha\setminus D_\alpha$
+ -->
+<IMG
+ WIDTH="167" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.png"
+ ALT="$ {\rm spec}_T(\mu)\subset C_\alpha\setminus D_\alpha$">.
+Then
+</I><!-- MATH
+ \begin{displaymath}
+{\rm spec}_T(\mu)\subset S_\alpha\Leftrightarrow
+{\rm spec}_{T_{\phi_\alpha}}(\mu)\subset [0,\infty[.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="316" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img350.png"
+ ALT="$\displaystyle {\rm spec}_T(\mu)\subset S_\alpha\Leftrightarrow
+{\rm spec}_{T_{\phi_\alpha}}(\mu)\subset [0,\infty[.$">
+</DIV><P></P><I>
+(ii)  
+If <!-- MATH
+ $\mu\in M(\Sigma)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \mu\in M(\Sigma)$"> and 
+<!-- MATH
+ ${\rm spec}_T(\mu)\subset C_{\alpha_0}$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.png"
+ ALT="$ {\rm spec}_T(\mu)\subset C_{\alpha_0}$">.
+Then
+</I><!-- MATH
+ \begin{displaymath}
+{\rm spec}_T(\mu)\subset S_{\alpha_0}\Leftrightarrow
+{\rm spec}_{T_{\phi_{\alpha_0}}}(\mu)\subset [0,\infty[.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="329" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.png"
+ ALT="$\displaystyle {\rm spec}_T(\mu)\subset S_{\alpha_0}\Leftrightarrow
+{\rm spec}_{T_{\phi_{\alpha_0}}}(\mu)\subset [0,\infty[.$">
+</DIV><P></P></DIV><P></P>
+
+<P>
+We can use the representation <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.png"
+ ALT="$ T_\phi$">
+to convolve a measure <!-- MATH
+ $\nu\in M(G_2)$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.png"
+ ALT="$ \nu\in M(G_2)$">
+with <!-- MATH
+ $\mu\in M(G_1)$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$ \mu\in M(G_1)$">:
+<!-- MATH
+ \begin{displaymath}
+\nu*_{T_\phi}\mu(A)=\int_{G_2}T_{-\phi(x)}\mu(A)d\nu(x)=\int_{G_2}\mu(A-\phi(x))\,d\nu(x) ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="490" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.png"
+ ALT="$\displaystyle \nu*_{T_\phi}\mu(A)=\int_{G_2}T_{-\phi(x)}\mu(A)d\nu(x)=\int_{G_2}\mu(A-\phi(x))\,d\nu(x) ,$">
+</DIV><P></P>
+for all Borel <!-- MATH
+ $A\subset G_1$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$ A\subset G_1$">.  
+
+<P>
+Alternatively, we can convolve
+<IMG
+ WIDTH="43" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img290.png"
+ ALT="$ \Phi(\nu)$"> 
+ in the usual sense of [<A
+ HREF="node7.html#hr1">20</A>, Definition 19.8] 
+with <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \mu$"> to yield
+another measure in <IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ M(G_1)$">, defined on the Borel subsets of <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ G_1$"> by
+<!-- MATH
+ \begin{displaymath}
+\Phi(\nu)*\mu(A)=\int_{G_1}\int_{G_1}1_A(x+y)d\Phi(\nu)(x)d\mu(y).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="392" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img355.png"
+ ALT="$\displaystyle \Phi(\nu)*\mu(A)=\int_{G_1}\int_{G_1}1_A(x+y)d\Phi(\nu)(x)d\mu(y).$">
+</DIV><P></P>
+Using (<A HREF="#continuous-image2">22</A>), we find that
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+\Phi(\nu)*\mu(A)        &=&
+\int_{G_1}\int_{G_2}1_A(\phi(t)+y)d\nu(t)d\mu(y)\\
+			&=&
+\int_{G_2}\mu(A-\phi(t))d\nu(t)
+=\nu *_{T_\phi}\mu(A).
+\end{eqnarray*}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img356.png"
+ ALT="$\displaystyle \Phi(\nu)*\mu(A)$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="255" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.png"
+ ALT="$\displaystyle \int_{G_1}\int_{G_2}1_A(\phi(t)+y)d\nu(t)d\mu(y)$"></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD WIDTH=10 ALIGN="LEFT">
+&nbsp;</TD>
+<TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="289" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img358.png"
+ ALT="$\displaystyle \int_{G_2}\mu(A-\phi(t))d\nu(t)
+=\nu *_{T_\phi}\mu(A).$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+Thus, 
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="7.feb.95.2"></A><!-- MATH
+ \begin{equation}
+\Phi(\nu)*\mu=\nu*_{T_\phi}\mu.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(25)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="159" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img359.png"
+ ALT="$\displaystyle \Phi(\nu)*\mu=\nu*_{T_\phi}\mu.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We end the section 
+with homomorphism theorems, which complement the well-known
+homomorphism theorems for <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img360.png"
+ ALT="$ L^p$">-multipliers 
+(see Edwards and Gaudry [<A
+ HREF="node7.html#eg">11</A>, Appendix B]).
+In these theorems, we let <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ G_1$"> act on <IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ M(G_1)$"> by translation.  That is, if <!-- MATH
+ $\mu\in M(G_1)$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$ \mu\in M(G_1)$">, <IMG
+ WIDTH="61" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$ x\in G_1$">,
+and <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ A$"> is a Borel subset of <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ G_1$">, then
+<!-- MATH
+ \begin{displaymath}
+T_x\mu(A)=\mu(A+x).
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="168" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img361.png"
+ ALT="$\displaystyle T_x\mu(A)=\mu(A+x).$">
+</DIV><P></P>
+Let <!-- MATH
+ $\phi:\ G_2\rightarrow G_1$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.png"
+ ALT="$ \phi:\ G_2\rightarrow G_1$"> be a continuous homomorphism.
+By Example <A HREF="node1.html#exhypa">1.3</A>, <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$ T$"> and <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.png"
+ ALT="$ T_\phi$"> are sup path attaining.
+(Recall that if <IMG
+ WIDTH="57" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img362.png"
+ ALT="$ t\in G_2$">, <!-- MATH
+ $\mu\in M(G_1)$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$ \mu\in M(G_1)$">,
+then <!-- MATH
+ $T_{\phi(t)}\mu(A)=\mu(A+\phi(t))$
+ -->
+<IMG
+ WIDTH="200" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img363.png"
+ ALT="$ T_{\phi(t)}\mu(A)=\mu(A+\phi(t))$">.)
+A simple exercise with definitions shows that
+for <!-- MATH
+ $\mu\in M(G_1)$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$ \mu\in M(G_1)$"> 
+<!-- MATH
+ \begin{displaymath}
+{\rm spec}_T\mu={\rm supp}\widehat{\mu}.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="141" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img364.png"
+ ALT="$\displaystyle {\rm spec}_T\mu={\rm supp}\widehat{\mu}.$">
+</DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Theorem  4.5</B> &nbsp; 
+<I>Suppose that <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="$ \Gamma_1$"> and <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$ \Gamma_2$"> contain 
+measurable orders <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img365.png"
+ ALT="$ P_1$"> and <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.png"
+ ALT="$ P_2$">, respectively, and
+<!-- MATH
+ $\psi:\ \Gamma_1\rightarrow \Gamma_2$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.png"
+ ALT="$ \psi:\ \Gamma_1\rightarrow \Gamma_2$"> is a continuous,
+order-preserving homomorphism (that is, <!-- MATH
+ $\psi(\overline{P_1})\subset
+\overline{P_2}$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.png"
+ ALT="$ \psi(\overline{P_1})\subset \overline{P_2}$">).  
+Suppose that there is a positive 
+constant <IMG
+ WIDTH="47" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img367.png"
+ ALT="$ N(\nu)$"> such that for all <!-- MATH
+ $f\in H^1(G_2)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img368.png"
+ ALT="$ f\in H^1(G_2)$">
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="hom1eq"></A><!-- MATH
+ \begin{equation}
+\|\nu*f\|_1\leq N(\nu)\|f\|_1.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(26)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="182" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img369.png"
+ ALT="$\displaystyle \Vert\nu*f\Vert _1\leq N(\nu)\Vert f\Vert _1.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+Then
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="hom2eq1"></A><!-- MATH
+ \begin{equation}
+\|\Phi(\nu)*\mu\|\leq N(\nu)\|\mu\|
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(27)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="189" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img370.png"
+ ALT="$\displaystyle \Vert\Phi(\nu)*\mu\Vert\leq N(\nu)\Vert\mu\Vert$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+for all Borel measures in <IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ M(G_1)$"> such that
+<!-- MATH
+ $\widehat{\mu}$
+ -->
+<IMG
+ WIDTH="16" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img371.png"
+ ALT="$ \widehat{\mu}$"> is supported in <!-- MATH
+ $\overline{P_1}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img372.png"
+ ALT="$ \overline{P_1}$">.
+<A NAME="homth2"></A></I></DIV><P></P>
+
+<P>
+<B>Proof.</B>&nbsp;&nbsp;&nbsp;&nbsp;We have <!-- MATH
+ $\Phi(\nu)*\mu=\nu*_{T_\phi}\mu$
+ -->
+<IMG
+ WIDTH="154" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img373.png"
+ ALT="$ \Phi(\nu)*\mu=\nu*_{T_\phi}\mu$">.
+Also <!-- MATH
+ $\overline{P_2}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.png"
+ ALT="$ \overline{P_2}$"> is a <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img74.png"
+ ALT="$ {\cal T}$">-set.
+So (<A HREF="#hom2eq1">27</A>) will follow from Theorem 
+<A HREF="node1.html#trans-thm">1.8</A>
+once we show that <!-- MATH
+ ${\rm spec}_{T_\phi}\mu\subset \overline{P_2}$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.png"
+ ALT="$ {\rm spec}_{T_\phi}\mu\subset \overline{P_2}$">.  For that purpose, we use Lemma <A HREF="#lem3.1">4.1</A>.
+We have 
+<!-- MATH
+ \begin{displaymath}
+{\rm spec}_T\mu ={\rm supp}\widehat{\mu}\subset \overline{P_1},
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="187" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img376.png"
+ ALT="$\displaystyle {\rm spec}_T\mu ={\rm supp}\widehat{\mu}\subset \overline{P_1},$">
+</DIV><P></P>
+and <!-- MATH
+ $\psi(\overline{P_1})\subset \overline{P_2}$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.png"
+ ALT="$ \psi(\overline{P_1})\subset \overline{P_2}$"> is an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-set.  Hence 
+<!-- MATH
+ ${\rm spec}_{T_\phi}\mu\subset \overline{P_2}$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.png"
+ ALT="$ {\rm spec}_{T_\phi}\mu\subset \overline{P_2}$">
+by Lemma <A HREF="#lem3.1">4.1</A>.
+
+<P>
+The following special case of Theorem <A HREF="#homth2">4.5</A> deserves a separate 
+statement.
+
+<P>
+<P>
+<DIV><B>Theorem  4.6</B> &nbsp; 
+<I>With the above notation, suppose that there is a positive 
+constant <IMG
+ WIDTH="47" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img367.png"
+ ALT="$ N(\nu)$"> such that for all <!-- MATH
+ $f\in H^1(G_2)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img368.png"
+ ALT="$ f\in H^1(G_2)$">
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="hom1eq1"></A><!-- MATH
+ \begin{equation}
+\|\nu*f\|_1\leq N(\nu)\|f\|_1.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(28)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="182" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img369.png"
+ ALT="$\displaystyle \Vert\nu*f\Vert _1\leq N(\nu)\Vert f\Vert _1.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+Then for all <!-- MATH
+ $f\in H^1(G_1)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img377.png"
+ ALT="$ f\in H^1(G_1)$"> we have
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="hom1eq2"></A><!-- MATH
+ \begin{equation}
+\|\Phi(\nu)*f\|_1\leq N(\nu)\|f\|_1.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(29)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="210" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img378.png"
+ ALT="$\displaystyle \Vert\Phi(\nu)*f\Vert _1\leq N(\nu)\Vert f\Vert _1.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+<A NAME="homth1"></A></I></DIV><P></P>
+
+<P>
+<P>
+<DIV><B>Theorem  4.7</B> &nbsp; 
+<I>Suppose that there is a positive 
+constant <IMG
+ WIDTH="47" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img367.png"
+ ALT="$ N(\nu)$"> such that for all <!-- MATH
+ $f\in H^1(\Bbb R)$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img379.png"
+ ALT="$ f\in H^1(\Bbb R)$">
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="hom2eq11"></A><!-- MATH
+ \begin{equation}
+\|\nu*f\|_1\leq N(\nu)\|f\|_1.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(30)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="182" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img369.png"
+ ALT="$\displaystyle \Vert\nu*f\Vert _1\leq N(\nu)\Vert f\Vert _1.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+Then for all <!-- MATH
+ $\mu\in M(G)$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.png"
+ ALT="$ \mu\in M(G)$">
+with support of <!-- MATH
+ $\widehat{\mu}$
+ -->
+<IMG
+ WIDTH="16" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img371.png"
+ ALT="$ \widehat{\mu}$"> contained in
+<!-- MATH
+ $C_\alpha\setminus D_\alpha$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.png"
+ ALT="$ C_\alpha\setminus D_\alpha$">, where <!-- MATH
+ $\alpha<\alpha_0$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$ \alpha&lt; \alpha_0$">, 
+we have
+</I><P></P>
+<DIV ALIGN="CENTER"><A NAME="hom2eq2"></A><!-- MATH
+ \begin{equation}
+\|\Phi_\alpha(\nu)*\mu\|_1\leq N(\nu)\|\mu\|.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD WIDTH="10" ALIGN="LEFT">
+(31)</TD>
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="211" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img380.png"
+ ALT="$\displaystyle \Vert\Phi_\alpha(\nu)*\mu\Vert _1\leq N(\nu)\Vert\mu\Vert.$"></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P><I>
+<A NAME="varianthomth2"></A></I></DIV><P></P>
+
+<P>
+<B>Proof.</B>&nbsp;&nbsp;&nbsp;&nbsp;The proof is very much like the 
+proof of Theorem <A HREF="#homth2">4.5</A>.  
+We have <!-- MATH
+ $\Phi_\alpha (\nu)*\mu=\nu*_{T_\phi}\mu$
+ -->
+<IMG
+ WIDTH="163" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img381.png"
+ ALT="$ \Phi_\alpha (\nu)*\mu=\nu*_{T_\phi}\mu$">.
+Apply Theorem <A HREF="node1.html#trans-thm">1.8</A>, taking into consideration that
+<!-- MATH
+ \begin{displaymath}
+{\rm spec}_T\mu={\rm supp}\widehat{\mu}\subset C_\alpha\setminus D_\alpha
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="228" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img382.png"
+ ALT="$\displaystyle {\rm spec}_T\mu={\rm supp}\widehat{\mu}\subset C_\alpha\setminus D_\alpha$">
+</DIV><P></P>
+is an <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S$">-set and so 
+<!-- MATH
+ \begin{displaymath}
+{\rm spec}_{T_{\phi_\alpha}}\mu\subset \psi_\alpha(C_\alpha\setminus D_\alpha)\subset [0,\infty[.
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="281" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.png"
+ ALT="$\displaystyle {\rm spec}_{T_{\phi_\alpha}}\mu\subset \psi_\alpha(C_\alpha\setminus D_\alpha)\subset [0,\infty[.$">
+</DIV><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html49"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html47"
+  HREF="helson-lowdenslager5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html41"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html50"
+  HREF="node5.html">Decomposition of Analytic Measures</A>
+<B> Up:</B> <A NAME="tex2html48"
+  HREF="helson-lowdenslager5.html">Decomposition of analytic measures</A>
+<B> Previous:</B> <A NAME="tex2html42"
+  HREF="node3.html">Analyticity</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

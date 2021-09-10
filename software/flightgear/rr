@@ -1,0 +1,4 @@
+#!/bin/sh
+FG_ROOT=/usr/home/stephen/flightgear/lib/FlightGear
+export FG_ROOT
+./fgfs --geometry=1024x768 --start-date-gmt=1999:01:01:12:00:00

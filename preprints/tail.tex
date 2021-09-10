@@ -1,0 +1,334 @@
+\magnification=\magstep1
+\baselineskip =5.5mm
+\lineskiplimit =1.0mm
+\lineskip =1.0mm
+
+\def\sqr{\vcenter {\hrule height.3mm
+\hbox {\vrule width.3mm height 2mm \kern2mm
+\vrule width.3mm } \hrule height.3mm }}
+
+\def\Proof:{\medskip\noindent{\bf Proof:}\ \ \ }
+\def\endproof{\hfill$\sqr$\medskip}
+
+\def\Bbb{\bf}
+\def\N{{\Bbb N}}
+
+\def\ds#1{{\displaystyle{#1}}}
+\def\ts#1{{\textstyle{#1}}}
+
+\def\list#1{#1_1$, $#1_2,\ldots}
+\def\lists#1,#2{#1_1$, $#1_2,\ldots,$\ $#1_{#2}}
+\def\xlist{\list x}
+\def\epsilonlist{\list\varepsilon}
+\def\gammalist{\list\gamma}
+
+\def\seqo#1{(#1_n)_{n=1}^\infty}
+\def\seqx{\seqo x}
+
+\def\recipo#1{{1\over #1}}
+\def\smallrecipo#1{\ts{\recipo{#1}}}
+\def\half{{\recipo2}}
+\def\smallhalf{\smallrecipo2}
+\def\smallthird{\smallrecipo3}
+
+\def\invo#1{#1^{-1}}
+\def\invc{\invo c}
+
+\def\modo#1{\left| #1 \right|}
+\def\modxn{\modo{x_n}}
+
+\def\normo#1{\left\| #1 \right\|}
+\def\normx{\normo x}
+
+\def\sumt{\sum_{m=1}^t}
+\def\sumtt{\sum_{m=1}^{t^2}}
+\def\sumBm{\sum_{n\in B_m}}
+\def\sumnm{\sum_{n=n_m+1}^{n_{m+1}}}
+
+\def\rmss_#1^#2#3{\left(\sum_{#1}^{#2} #3^2\right)^\half}
+\def\rms#1{\rmss_{}^{}{#1}}
+\def\rmsBm#1{\rmss_{n\in B_m}^{}{#1}}
+\def\rmsnm#1{\rmss_{n=n_{m-1}+1}^{n_m}{#1}}
+
+\def\Kotto#1{K_{1,2}(#1,t)}
+\def\Jitto#1{J_{\infty,2}(#1,t)}
+\def\Jitinvto#1{J_{\infty,2}(#1,\invo t)}
+\def\Kottx{\Kotto x}
+\def\Jittx{\Jitto x}
+\def\Jitinvtx{\Jitinvto x}
+
+
+\def\Pt{{P(t)}}
+\def\Ptt{{P(t^2)}}
+
+\def\Prepsilon#1{\Pr\left(\sum \varepsilon_n x_n > #1 \right)}
+\def\Prgamma#1{\Pr\left(\sum \gamma_n x_n > #1 \right)}
+
+\centerline{\bf The Distribution of Rademacher Sums}
+
+\bigskip
+\centerline{\vbox{\halign{\hfil#\hfil\cr
+S.J.~Montgomery-Smith,\cr
+Department of Mathematics,\cr
+University of Missouri at Columbia,\cr
+Columbia, MO 65211, U.S.A.\cr}}}
+\bigskip
+
+\beginsection Abstract
+
+We find upper and lower bounds for $\Pr\left(\sum \pm x_n \ge t\right)$,
+where $\xlist$\ are real numbers. We express the answer in terms of the
+$K$-interpolation norm from the theory of interpolation of Banach spaces.
+
+\beginsection Acknowledgements
+
+All the work in this paper appears in my Ph.D.\ thesis [6], taken at
+Cambridge University under the supervision of Dr.~D.J.H.~Garling, to
+whom I would like to express my thanks. I would also like to express my
+gratitude to the Science and Engineering Research Council, who financed
+my studies in Cambridge.
+
+\beginsection Primary A.M.S.\ Classification
+
+60C05
+
+\beginsection Secondary A.M.S.\ Classification
+
+60G50, 60J15
+
+\beginsection Key Words and Phrases
+
+Rademacher Sum, Holmstedt's formula.
+
+\bigskip\bigskip
+
+\centerline{Revised August 30, 1989}
+
+\vfill
+\eject
+
+\beginsection Introduction
+
+Throughout this paper, we let $\epsilonlist$\ be independent Bernoulli
+random variables (that is, $\Pr(\varepsilon_n=1) =
+\Pr(\varepsilon_n=-1) = 1/2$).
+We are going to look for upper and lower bounds for
+$\Prepsilon t$, where $\xlist$\ is a sequence of real numbers such
+that $x = \seqx \in l_2$.
+
+Our first upper bound is well known (see, for
+example, Chapter~II, \S59 of [5]):
+$$ \Prepsilon{t\normx_2} \le e^{-\half t^2} . \eqno(1)$$
+However, if $\normx_1 < \infty$, this cannot also provide a good
+lower bound, because then we have another upper bound:
+$$ \Prepsilon{\normx_1} = 0 . \eqno(2)$$
+To look for lower bounds, we might first consider using some version of
+the central limit theorem. For example, using Theorem~7.1.4 of [2], it
+can be shown that for some constant $c$\ we have
+$$ \modo{ \Prepsilon{t\normx_2}
+          - \ts{\recipo{\sqrt{2\pi}}} \int_t^\infty e^{-\half s^2} \,ds }
+   \le c \, \ts{\left({\normx_3\over\normx_2}\right)^3} .$$
+Thus, for some constant $c$\ we have that if
+$t\le \invc \bigl(\log\normx_3/\normx_2\bigr)^\half$, then
+$$ \Prepsilon{t\normx_2}
+   \ge \invc \int_t^\infty e^{-\half s^2} \,ds
+   \ge {c^{-2} e^{-\half t^2}\over t} .$$
+However, we should hope for far more. From $(1)$\ and $(2)$, we could
+conjecture something like
+$$ \Prepsilon{\invc \inf\{\normx_1,t\normx_2\}} \ge \invc e^{-ct^2} .$$
+Actually such a conjecture is unreasonable---one should not take infimums
+of norms, but instead one should consider the following quantity:
+$$ K(x,t;l_1,l_2) =
+   \Kottx = \inf \{\, \normo{x'}_1 + t \normo{x''}_2 : x',x''\in
+                      l_2, \, x'+x''=x \} . $$
+This norm is well known to the theory of interpolation of Banach spaces
+(see, for example [1] or [3]). For small $t$, this norm looks a
+lot like $t\normx_2$, but as $t$\ gets much larger, it starts to look
+more like $\normx_1$. In fact, there is a rather nice approximate
+formula due to T.~Holmstedt (Theorem~4.1 of [3]):
+\def\ttaa_#1{\modo{x_#1}}%
+if we write $\seqo{x^*}$\ for the sequence $\seqo{\ttaa}$\
+rearranged into decreasing order, then
+$$ \invc \Kottx
+   \le \sum_{n=1}^{\lfloor t^2 \rfloor} x_n^* + t \rmss_{n=\lfloor
+   t^2 \rfloor + 1}^\infty {(x_n^*)}
+   \le \Kottx ,$$
+where $c$\ is a universal constant.
+
+\bigskip
+
+In this paper, we will prove the following result.
+
+\proclaim Theorem. There is a constant $c$\ such that for all
+$x\in l_2$\ and $t>0$\ we have
+$$ \Prepsilon{\Kottx} \le e^{-\half t^2} $$
+and
+$$ \Prepsilon{\invc\Kottx} \ge \invc e^{-c t^2} .$$
+
+An interesting example is
+$x=(n^{-1})_{n=1}^\infty$. Then $\invc \log t \le \Kottx \le c \, \log
+t$, and hence
+$$ \invc \exp(-\exp(ct))
+   \le \Pr\left(\sum\varepsilon_n n^{-1} > t \right)
+   \le c \, \exp(-\exp(\invc t)) .$$
+This is quite different behaviour then that which we might have expected
+from the central limit theorem.
+
+We might also consider $x=(n^{-{1\over p}})_{n=1}^\infty$, where $1 < p <
+2$. This example leads us to deduce Proposition~2.1 of [7]. More
+involved methods allow us to rederive the results of [8] (which include
+the above mentioned result from [7]). We do not go into details.
+
+We also deduce the following
+corollary.
+
+\proclaim Corollary. There is a constant $c$\ such that for all
+$x\in l_2$\ and $0<t\le{\normx_2/\normx_\infty}$\ we have
+$$ \Prepsilon{\invc t \normx_2} \ge \invc e^{-c t^2} .$$
+
+\Proof: It is sufficient to show that there is a constant $c$\ such
+that if $0 < t \le {\normx_2/\normx_\infty}$, then
+$$ \Kottx \le t \normx_2 \le c \, \Kottx .$$
+The left hand inequality follows straight away from the definition of
+$\Kottx$. The right hand side
+follows easily from Holmstedt's formula; obviously if $t<1$, and
+otherwise because
+$$ \sum_{n=1}^{\lfloor t^2 \rfloor} x_n^* \ge
+   \lfloor t^2 \rfloor {\normx_2 \over t} \ge \ts{t\over2} \normx_2
+   .$$
+\endproof
+
+\beginsection Proof of Theorem
+
+In order to prove the theorem, we will need some new norms on $l_2$, and
+a few lemmas.
+
+\proclaim Definition. For $x\in l_2$\ and $t>0$, define the norm
+$$ J(x,t;l_\infty,l_2) =
+   \Jittx = \max \{ \normx_\infty ,\, t \normx_2 \} .$$
+
+\proclaim Lemma 1. For $t>0$, the spaces
+$\bigl(l_2,\Kotto{\,\cdot\,}\bigr)$\ and
+$\bigl(l_2,\Jitinvto{\,\cdot\,}\bigr)$\ are dual to one another,
+that is, for $x\in l_2$\ we have
+$$ \Kottx = \sup \left\{\, \sum x_n y_n : y\in l_2 ,\,
+   \Jitinvto y \le 1 \right\} .$$
+
+\Proof: This is elementary (see, for example Chapter~3, Exercise
+1--6 of [1]).
+\endproof
+
+\proclaim Definition. For $x\in l_2$\ and $t\in\N$, define the norm
+$$ \normx_\Pt = \sup \left\{ \sumt \rmsBm \modxn \right\} ,$$
+where the supremum is taken over all disjoint subsets, $\lists B,t
+\subseteq \N$.
+
+\proclaim Lemma 2. If $x\in l_2$\ and $t^2\in\N$, then
+$$ \normx_\Ptt \le \Kottx \le \sqrt2 \, \normx_\Ptt .$$
+
+\Proof: To show the first inequality, note that we have
+$$ \normx_\Ptt \le \normx_1 \quad\hbox{and}\quad
+   \normx_\Ptt \le t \normx_2 .$$
+Hence
+$$ \eqalignno{
+   \Kottx
+   &= \inf \{\, \normo{x'}_1 + t \normo{x''}_2 : x'+x'' = x \} \cr
+   &\ge \inf \{\, \normo{x'}_\Ptt + \normo{x''}_\Ptt : x'+x''=x \} \cr
+   &\ge \normx_\Ptt ,\cr}$$
+where the last step follows by the triangle inequality.
+
+For the second inequality, we start by using Lemma~1. For any
+$\delta>0$, let $y\in l_2$\ be such that
+$$ (1-\delta) \Kottx \le \sum x_n y_n
+   \hbox{\quad and\quad}
+   \Jitinvto y = 1 .$$
+Now pick numbers $n_0$, $\lists n,{t^2} \in \{0$, $1$, $2,\ldots,$\
+$\infty\}$ by induction as follows: given $0=n_0<n_1<\ldots<n_m$, let
+$$ n_{m+1} = 1 + \sup \left\{\, \nu :
+   \sum_{n=n_m+1}^\nu \modo{y_n}^2 \le 1 \right\} .$$
+Since $\normo y_\infty \le 1$, we have that $\sumnm \modo{y_n}^2 \le 2$.
+Also, as $\normo y_2 \le t$, it follows that $n_{t^2} = \infty$.
+Therefore
+$$ \eqalignno{
+   (1-\delta) \Kottx
+   &\le \sum x_n y_n \cr
+   &\le \sumtt \rmsnm{\modo{y_n}} \rmsnm \modxn \cr
+   &\le \sqrt2 \, \normx_\Ptt .\cr}$$
+Since this is true for all $\delta>0$, the result follows.
+\endproof
+
+The following lemma is due to Paley and Zygmund.
+
+\proclaim Lemma 3. If $x\in l_2$, then given $0<\lambda<1$\ we have
+$$ \Prepsilon{\lambda\normx_2} \ge \smallthird (1-\lambda^2)^2 .$$
+
+\Proof: See Chapter~3, Theorem~3 of [4].
+\endproof
+
+\bigskip
+
+Now we proceed with the proof of the theorem. First we will show that
+$$ \Prepsilon{\Kottx} \le e^{-\half t^2} .$$
+Given $\delta>0$, let $x'$, $x''\in l_2$\ be such that $x'+x''=x$, and
+$$ (1+\delta) \Kottx > \normo{x'}_1 + t\normo{x''}_2 .$$
+Then
+$$ \eqalignno{
+   \Prepsilon{(1+\delta) \Kottx}
+   &\le \Pr\left(\sum \varepsilon_n x'_n > \normo{x'}_1 \right) \cr
+   &\quad
+   + \Pr\left(\sum \varepsilon_n x''_n > t\normo{x''}_2 \right) \cr
+   &\le 0+e^{-\half t^2} ,\cr}$$
+where the last inequality follows from equations $(1)$\ and $(2)$\ above.
+Letting $\delta \to 0$, the result follows.
+
+Now we show that for some constant $c$\ we have
+$$ \Prepsilon{\invc \Kottx} \ge \invc e^{-c t^2} .$$
+First, let us assume that $t^2\in\N$.
+Given $\delta>0$, let $\lists B,{t^2} \subseteq \N$\ be disjoint subsets
+such that $\bigcup_{m=1}^{t^2} B_m = \N$\ and
+$$ \normx_\Ptt \le (1+\delta) \sumtt \rmsBm \modxn .$$
+Then
+$$ \Prepsilon{\smallhalf\Kottx}
+   \ge \Prepsilon{\smallrecipo{\sqrt2} \normx_\Ptt} $$
+$$ \ge \Pr \left( \sumtt \sumBm \epsilon_n x_n
+   \ge \smallrecipo{\sqrt2} (1+\delta) \sumtt \rmsBm \modxn \right) $$
+$$ \ge \prod_{m=1}^{t^2} \Pr \left( \sumBm \varepsilon_n x_n \ge
+       \smallrecipo{\sqrt2} (1+\delta) \rmsBm \modxn \right) $$
+$$ \ge \left( \smallthird \left( 1 - \smallhalf (1+\delta)^2
+   \right)^2 \right)^{t^2} ,$$
+where the last step is from Lemma~3. If we let $\delta\to0$, then we see
+that
+$$ \Prepsilon{\smallhalf\Kottx} \ge \exp\bigl(-(\log 12) \,
+   t^2\bigr) .$$
+This proves the result for $t^2 \in \N$. For $t\ge1$, note that
+$$ \Kottx \le K_{1,2}(x,\lceil t \rceil)
+\hbox{\qquad and \qquad}
+\lceil t \rceil^2 \le 4t^2 ,$$
+and hence the result follows (with $c=4\,\log 12$). For $t<1$, the
+result may be deduced straightaway from Holmstedt's formula and Lemma~3.
+\endproof
+
+\beginsection References
+
+\halign{#\hfil & \quad\vtop{\hsize=5.5 truein%
+\parindent=0pt\hangindent=1em \strut#\strut\smallskip}\cr
+[1] & C.~Bennett and R.~Sharpley,\sl\ Interpolation of Operators,\rm\
+Academic Press.\cr
+[2] & K.L.~Chung,\sl\ A Course in Probability Theory (2nd.\ Ed.),\rm\
+Academic Press.\cr
+[3] & T.~Holmstedt,\rm\ Interpolation of quasi-normed spaces,\sl\ Math.\
+Scand.\ {\bf 26} (1970), 177--199.\cr
+[4] & J-P.~Kahane,\sl\ Some Random Series of Functions,\rm\ Cambridge
+studies in advanced mathematics 5.\cr
+[5] & P-A.~Meyer,\sl\ Martingales and Stochastic Integrals~I,\rm\
+Springer-Verlag 284.\cr
+[6] & S.J.~Montgomery-Smith,\sl\ The Cotype of Operators from $C(K)$,\rm\
+Ph.D.\ thesis, Cambridge, August 1988.\cr
+[7] & G.~Pisier,\sl\ De nouvelles caract\'erisations des ensembles de
+Sidon,\rm\ Mathematical Analysis and Applications, Advances in Math.\
+Suppl.\ Stud., 7B (1981), 686--725.\cr
+[8] & V.A.~Rodin and E.M.~Semyonov,\rm\ Rademacher series in symmetric
+spaces,\rm\ Analyse Math.\ {\bf 1} (1975), 207--222.\cr
+}
+
+\bye

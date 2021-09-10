@@ -1,0 +1,252 @@
+%%% ====================================================================
+%%% @AMSTeX-style-file{
+%%%   filename  = "ams-p.sty",
+%%%   version   = "2.1f",
+%%%   date      = "1997/10/02",
+%%%   time      = "16:54:44",
+%%%   checksum  = "60656 253 743 8387",
+%%%   author    = "American Mathematical Society",
+%%%   address   = "PO Box 6248, Providence, RI 02940, USA",
+%%%   email     = "tech-support@ams.org (Internet)",
+%%%   supported = "yes",
+%%%   keywords  = "",
+%%%   abstract  = "This is an AMSTeX documentstyle. It uses the amsppt
+%%%                documentstyle as a base and adds a few refinements
+%%%                to give printed documents the visual form used for
+%%%                final publication of AMS proceedings articles. There
+%%%                are also documentstyles for individual AMS series
+%%%                that input this documentstyle and add series-specific
+%%%                information (ISSN, series name, etc).",
+%%%   docstring = "The checksum field above contains: CRC-16 checksum,
+%%%                number of lines, number of words, and number of
+%%%                characters, as produced by Robert Solovay's checksum
+%%%                utility.",
+%%% }
+%%% ====================================================================
+
+%    Input the AMS preprint style (checking first to see if
+%    it's preloaded).
+\def\next{AMSPPT}
+\ifx\styname\next \else\input amsppt.sty \relax\fi
+
+%    Then load specs that are shared between ams-m and ams-p.
+\input ams-spec.sty \relax
+
+\catcode`\@=11
+
+\def\pretitle{\null\vskip74pt}
+
+\def\addressfont@{\eightpoint}
+
+
+%    Issue publication info; the same as for journals, for consistency
+
+%    \issueinfo{330}% volume number
+%    {2}% issue number
+%    {July}% month
+%    {1995}% year
+%
+%    \copyrightinfo{1995}{American Mathematical Society}
+%
+%    \pagespan{START}{END} % not needed for all journals
+
+\define\issueinfo#1#2#3#4{%
+  \def\issuevol@{#1}\def\issueno@{#2}%
+  \def\issuemonth@{#3}\def\issueyear@{#4}}
+
+%    For a translation, give the information for the original language
+%    publication:
+\define\originfo#1#2#3#4{\def\origvol@{#1}\def\origno@{#2}%
+  \def\origmonth@{#3}\def\origyear@{#4}}
+
+%    Copyright year is presumably always the same as issue year? But
+%    just to be safe, let's allow it to be specified separately. It is
+%    probably more natural anyway, from the user's perspective, to give
+%    the copyright year in the same command when giving the name of the
+%    copyright holder.
+\define\copyrightinfo#1#2{\def\copyrightyear{#1}\def\crholder@{#2}}
+
+\define\pagespan#1#2{\pageno=#1\def\start@page{#1}\def\end@page{#2}}
+
+%    Set default values:
+\issueinfo{00}{0}{}{1997}
+\originfo{00}{0}{}{1997}
+\copyrightinfo{\issueyear@}{American Mathematical Society}
+\pagespan{000}{000}
+\pageno=1 % reset the actual counter to a more sensible value
+
+%    Define a logo for the top of the first page.
+
+\def\nojourlogo{\let\jourlogo\empty@}
+
+\def\journame{AMS Proceedings Style}
+\def\volinfo{Volume {\sixbf\issuevol@}, \issueyear@}
+\let\jourlogoextra@\empty@
+\let\jourlogoright@\empty@
+
+\def\jourlogofont@{\sixrm\baselineskip7\p@\relax}
+\def\jourlogo{%
+  \vbox to\headlineheight{%
+%    Cancel odd parameter settings that might be in effect if the output
+%    routine is invoked in the middle of a roster or whatnot.
+    \parshape\z@ \leftskip\z@ \rightskip\z@
+    \parfillskip\z@ plus1fil\relax
+    \jourlogofont@ \frenchspacing
+    \line{\vtop{\parindent\z@ \hsize=.5\hsize
+%    Leave a hook for something extra at the bottom of the series logo;
+%    for book reviews, the copyright line may be inserted here.
+      \journame\newline\volinfo\jourlogoextra@\endgraf\vss}%
+      \hfil
+%    If there is a right-hand side for the series logo (e.g., in
+%    translation journals), put it as another \vtop here.
+      \jourlogoright@
+    }%
+    \vss}%
+}
+
+\def\flheadline{\jourlogo} \let\frheadline\flheadline
+
+\def\issn#1{\gdef\theissn{#1}}
+\issn{0000-0000}
+
+%  The copyright block takes the place of the AMS-TeX logo; otherwise the
+%  AMSPPT.STY output routine does what we want.
+
+\def\copyrightline@{%
+  \rightline{\sixrm \textfont2=\sixsy \copyright\copyrightyear\ \crholder@}}
+
+\def\logo@{\copyrightline@}
+
+%    \titlefont is 12/14; \twelvepoint defined in ams-spec.sty.
+\def\titlefont{%
+ \ifsyntax@\else \twelvepoint\bf \fi }
+
+%    \authorfont is 11/13; \elevenpoint defined in ams-spec.sty.
+\def\authorfont{%
+  \ifsyntax@
+  \else \elevenpoint
+  \fi}
+
+%    Differences from amsppt.sty:
+%    - font is larger size; no need to adjust baselines
+%    - not automatically uppercase
+\def\title{\let\savedef@\title
+  \def\title##1\endtitle{\let\title\savedef@
+    \global\setbox\titlebox@\vtop{\titlefont\bf
+      \raggedcenter@\frills@{##1}\endgraf}%
+    \ifmonograph@
+      \edef\next{\the\leftheadtoks}\ifx\next\empty \leftheadtext{##1}\fi
+    \fi
+    \edef\next{\the\rightheadtoks}\ifx\next\empty \rightheadtext{##1}\fi
+  }%
+  \nofrillscheck\title}
+
+%    Differences from amsppt.sty:
+%    - font specified indirectly as \authorfont
+%    - running head text uppercased
+\def\author#1\endauthor{\global\setbox\authorbox@
+  \vbox{\authorfont\raggedcenter@
+    {\ignorespaces#1\endgraf}}\relaxnext@
+  \edef\next{\the\leftheadtoks}%
+  \ifx\next\empty\expandafter\uppercase{\leftheadtext{#1}}\fi}
+
+%    Differences from amsppt.sty:
+%    - \indenti reset to larger value
+%    - \abstractfont@ specified indirectly
+\def\abstract{\let\savedef@\abstract
+  \def\abstract{\let\abstract\savedef@
+    \setbox\abstractbox@\vbox\bgroup\indenti=3pc\noindent$$\vbox\bgroup
+      \def\envir@end{\endabstract}\advance\hsize-2\indenti
+      \def\usualspace{\enspace}\eightpoint \noindent
+      \frills@{{\abstractfont@ Abstract.\enspace}}}%
+  \nofrillscheck\abstract}
+
+%    Differences from amsppt.sty:
+%    - preceding skip is larger
+\def\dedicatory #1\enddedicatory{\def\preabstract{{\vskip 20\p@
+  \eightpoint\it \raggedcenter@#1\endgraf}}}
+
+%    Differences from amsppt.sty:
+%    - no test for monograph
+%    - different spacing around author, date, etc.
+\outer\def\endtopmatter{\add@missing\endabstract
+  \edef\next{\the\leftheadtoks}%
+  \ifx\next\empty@
+    \expandafter\leftheadtext\expandafter{\the\rightheadtoks}%
+  \fi
+  \ifx\thesubjclass@\empty@\else \makefootnote@{}{\thesubjclass@}\fi
+  \ifx\thekeywords@\empty@\else \makefootnote@{}{\thekeywords@}\fi
+  \ifx\thethanks@\empty@\else \makefootnote@{}{\thethanks@}\fi
+  \inslogo@
+  \pretitle
+  \box\titlebox@
+  \topskip10pt% reset to normal value
+  \preauthor
+  \ifvoid\authorbox@\else \vskip16\p@ plus6\p@ minus0\p@\unvbox\authorbox@\fi
+  \predate
+  \ifx\thedate@\empty\else \vskip6\p@ plus2\p@ minus0\p@
+    \line{\hfil\thedate@\hfil}\fi
+  \setabstract@
+  \nobreak
+  \ifvoid\tocbox@\else\vskip1.5pc plus.5pc \unvbox\tocbox@\fi
+  \prepaper
+  \vskip36\p@\tenpoint
+}
+
+\def\setabstract@{%
+  \preabstract
+  \ifvoid\abstractbox@\else \vskip20\p@ \unvbox\abstractbox@ \fi
+}
+
+%  Some patches are needed, to make \yr appear in translation information,
+%  and to avoid the spurious unboxing of some empty boxes.
+
+
+%%%% table of contents
+
+\begingroup
+\let\specialhead\relax
+\let\head\relax
+\let\subhead\relax
+\let\subsubhead\relax
+\let\title\relax
+\let\chapter\relax
+
+%    Differences from amsppt.sty:
+%    -  style of roster items; additional item levels
+\gdef\setwidest@#1#2{%
+   \ifx#1\head\setbox\tocheadbox@\hbox{#2.\enspace}%
+   \else\ifx#1\subhead\setbox\tocsubheadbox@\hbox{#2.\enspace}%
+   \else\ifx#1\subsubhead\setbox\tocsubheadbox@\hbox{#2.\enspace}%
+   \else\ifx#1\key
+       \if C\refstyle@ \else\refstyle A\fi
+       \setboxz@h{\refsfont@\keyformat{#2}}%
+       \refindentwd\wd\z@
+   \else\ifx#1\no\refstyle C%
+       \setboxz@h{\refsfont@\keyformat{#2}}%
+       \refindentwd\wd\z@
+   \else\ifx#1\page\setbox\z@\hbox{\quad\bf#2}%
+       \pagenumwd\wd\z@
+   \else\ifx#1\item
+       \setboxz@h{#2}\rosteritemwd=\wd\z@
+   \else\ifx#1\itemitem
+       \setboxz@h{#2}\rosteritemitemwd=\wd\z@
+	\advance\rosteritemitemwd by .5pc
+	\advance\rosteritemitemwd by \rosteritemwd
+   \else\ifx#1\itemitemitem
+       \setboxz@h{#2}\rosteritemitemitemwd=\wd\z@
+	\advance\rosteritemitemitemwd by .5pc
+	\advance\rosteritemitemitemwd by \rosteritemitemwd
+   \else\message{\string\widestnumber\space not defined for this
+      option (\string#1)}%
+\fi\fi\fi\fi\fi\fi\fi\fi\fi}
+
+\refstyle{A}
+\widestnumber\key{M}
+
+\endgroup
+
+\catcode`\@=13
+
+\def\amsversion{2.1f}
+\endinput

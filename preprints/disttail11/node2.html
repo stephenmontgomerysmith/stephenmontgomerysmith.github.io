@@ -1,0 +1,697 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Notation and definitions</TITLE>
+<META NAME="description" CONTENT="Notation and definitions">
+<META NAME="keywords" CONTENT="disttail11">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="disttail11.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="disttail11.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html32"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html30"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html24"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html33"
+  HREF="node3.html">The Klass-Nowicki Inequality</A>
+<B> Up:</B> <A NAME="tex2html31"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html25"
+  HREF="node1.html">Introduction</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000"></A>
+<A NAME="Defins"></A>
+<BR>
+Notation and definitions
+</H1>
+
+<P>
+Throughout this paper, a random variable will be a measurable function
+from a probability space to some Banach space (often the real
+line). The norm in the implicit Banach space will always be denoted by
+<!-- MATH
+ ${\mathopen|\ \cdot\ \mathclose|}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$ {\mathopen\vert\ \cdot\ \mathclose\vert}$">.
+
+<P>
+Suppose that <!-- MATH
+ $f:[0,\infty) \to [0,\infty]$
+ -->
+<IMG
+ WIDTH="158" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$ f:[0,\infty) \to [0,\infty]$"> is a non-increasing
+function.  Define the
+<EM>left continuous inverse</EM> to be
+<!-- MATH
+ \begin{displaymath}
+f^{-1}(x-) = \sup\{ y: f(y) \ge x \} ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="249" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\displaystyle f^{-1}(x-) = \sup\{ y: f(y) \ge x \} ,$">
+</DIV><P></P>
+and the <EM>right continuous inverse</EM> to be
+<!-- MATH
+ \begin{displaymath}
+f^{-1}(x+) = \sup\{ y: f(y) > x \} .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="248" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$\displaystyle f^{-1}(x+) = \sup\{ y: f(y) &gt; x \} .$">
+</DIV><P></P>
+
+<P>
+In describing the tail distribution of a random variable <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img42.png"
+ ALT="$ X$">, instead
+of considering 
+the function <!-- MATH
+ $t \mapsto \Pr({\mathopen|X\mathclose|} > t)$
+ -->
+<IMG
+ WIDTH="135" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.png"
+ ALT="$ t \mapsto \Pr({\mathopen\vert X\mathclose\vert} &gt; t)$">, we will 
+consider its right continuous inverse, which we will denote by <IMG
+ WIDTH="51" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img44.png"
+ ALT="$ X^*(t)$">. 
+In fact, this
+quantity appears very much in the literature, and is more commonly
+referred to as the <EM>decreasing rearrangement</EM> 
+(or more correctly the <EM>non-increasing rearrangement</EM>)
+of <!-- MATH
+ ${\mathopen|X\mathclose|}$
+ -->
+<IMG
+ WIDTH="32" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.png"
+ ALT="$ {\mathopen\vert X\mathclose\vert}$">. Notice that if one considers <IMG
+ WIDTH="29" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$ X^*$"> to be a random variable on the
+probability space <IMG
+ WIDTH="42" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="$ [0,1]$"> (with Lebesgue measure), 
+then <IMG
+ WIDTH="29" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$ X^*$"> has exactly the same law as
+<!-- MATH
+ ${\mathopen|X\mathclose|}$
+ -->
+<IMG
+ WIDTH="32" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.png"
+ ALT="$ {\mathopen\vert X\mathclose\vert}$">.
+We might also consider the left continuous inverse <!-- MATH
+ $t \mapsto
+X^*(t-)$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$ t \mapsto
+X^*(t-)$">. Notice that <!-- MATH
+ $X^*(t) \le x \le X^*(t-)$
+ -->
+<IMG
+ WIDTH="173" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.png"
+ ALT="$ X^*(t) \le x \le X^*(t-)$"> if and only if <!-- MATH
+ $\Pr({\mathopen|X\mathclose|} > x) \le t \le \Pr({\mathopen|X\mathclose|} \ge x)$
+ -->
+<IMG
+ WIDTH="259" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$ \Pr({\mathopen\vert X\mathclose\vert} &gt; x) \le t \le \Pr({\mathopen\vert X\mathclose\vert} \ge x)$">.
+
+<P>
+If <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ A$"> and <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img51.png"
+ ALT="$ B$"> are two quantities (that may depend upon certain 
+parameters),  we will write <!-- MATH
+ $A \approx B$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img52.png"
+ ALT="$ A \approx B$"> to mean that there exist
+positive constants <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$"> and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$"> such that <!-- MATH
+ $c_1^{-1} A \le B \le c_2
+A$
+ -->
+<IMG
+ WIDTH="140" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$ c_1^{-1} A \le B \le c_2
+A$">. We will call <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$"> and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$"> the constants of approximation. If
+<IMG
+ WIDTH="37" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ f(t)$"> and <IMG
+ WIDTH="36" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$ g(t)$"> are two (usually non-increasing) functions on
+<!-- MATH
+ $[0,\infty)$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$ [0,\infty)$">, we will write <!-- MATH
+ $f(t) \mathrel{\mathop{\approx}\limits_{t}} g(t)$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$ f(t) \mathrel{\mathop{\approx}\limits_{t}} g(t)$"> if there exist
+positive constants <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$">, <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$">, <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$ c_3$"> and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$ c_4$"> such that <!-- MATH
+ $c_1^{-1}
+f(c_2 t) \le g(t) \le c_3 f(c_4^{-1} t)$
+ -->
+<IMG
+ WIDTH="235" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$ c_1^{-1}
+f(c_2 t) \le g(t) \le c_3 f(c_4^{-1} t)$"> for all <IMG
+ WIDTH="46" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$ t \ge 0$">. Again, we
+will call <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$">, <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$">, <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$ c_3$"> and <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$ c_4$"> the constants of
+approximation.
+
+<P>
+Suppose that <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img42.png"
+ ALT="$ X$"> and <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img63.png"
+ ALT="$ Y$"> are random variables. Then the statement 
+<!-- MATH
+ $\Pr({\mathopen|X\mathclose|} > t) \mathrel{\mathop{\approx}\limits_{t}} \Pr({\mathopen|Y\mathclose|} > t)$
+ -->
+<IMG
+ WIDTH="216" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$ \Pr({\mathopen\vert X\mathclose\vert} &gt; t) \mathrel{\mathop{\approx}\limits_{t}} \Pr({\mathopen\vert Y\mathclose\vert} &gt; t)$"> is the same as the
+statement <!-- MATH
+ $X^*(t) \mathrel{\mathop{\approx}\limits_{t}} Y^*(t)$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.png"
+ ALT="$ X^*(t) \mathrel{\mathop{\approx}\limits_{t}} Y^*(t)$">.  Since <!-- MATH
+ $X^*(t) = 0$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.png"
+ ALT="$ X^*(t) = 0$"> for <IMG
+ WIDTH="46" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.png"
+ ALT="$ t \ge 1$">
+the latter statement is equivalent to
+the existence of positive constants <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$ c_1$">, <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$ c_2$">, <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$ c_3$">, <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$ c_4$"> and
+<IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.png"
+ ALT="$ c_5$"> such that <!-- MATH
+ $c_1^{-1} X^*(c_2 t) \le Y^*(t) \le c_3 X^*(c_4^{-1}
+t)$
+ -->
+<IMG
+ WIDTH="275" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.png"
+ ALT="$ c_1^{-1} X^*(c_2 t) \le Y^*(t) \le c_3 X^*(c_4^{-1}
+t)$"> 
+for <!-- MATH
+ $t \le c_5^{-1}$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$ t \le c_5^{-1}$">. 
+
+<P>
+To avoid bothersome convergence problems, we will always suppose that
+our sequence of independent random variables <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> is of finite
+length. Given a sequence of independent random variables <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">, when
+no 
+confusion will arise, we will use the following notations. If <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ A$"> is a
+finite 
+subset of <!-- MATH
+ ${\mathbb{N}}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ {\mathbb{N}}$">, we will let <!-- MATH
+ $S_A = \sum_{n \in A} X_n$
+ -->
+<IMG
+ WIDTH="128" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img72.png"
+ ALT="$ S_A = \sum_{n \in A} X_n$">,  and <!-- MATH
+ $M_A =
+\sup_{n \in A} {\mathopen|X_n\mathclose|}$
+ -->
+<IMG
+ WIDTH="153" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$ M_A =
+\sup_{n \in A} {\mathopen\vert X_n\mathclose\vert}$">. If <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img74.png"
+ ALT="$ k$"> is a positive integer, then 
+<!-- MATH
+ $S_k = S_{\{1,\dots,k\}}$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.png"
+ ALT="$ S_k = S_{\{1,\dots,k\}}$"> and <!-- MATH
+ $M_k = M_{\{1,\dots,k\}}$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.png"
+ ALT="$ M_k = M_{\{1,\dots,k\}}$">. We will 
+define the maximal function
+<!-- MATH
+ $U_k = \sup_{1 \le n \le k}{\left|S_n\right|}$
+ -->
+<IMG
+ WIDTH="157" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$ U_k = \sup_{1 \le n \le k}{\left\vert S_n\right\vert}$">. Furthermore, <IMG
+ WIDTH="67" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.png"
+ ALT="$ S = S_N$">, <IMG
+ WIDTH="81" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$ M =
+M_N$">, and <IMG
+ WIDTH="70" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.png"
+ ALT="$ U = U_N$">, where <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img81.png"
+ ALT="$ N$"> is the length of the sequence <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$">.
+
+<P>
+If <IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img37.png"
+ ALT="$ s$"> is a real number, we will write 
+<!-- MATH
+ $X_n^{(>s)} = X_n I_{{\mathopen|X_n\mathclose|} > s}$
+ -->
+<IMG
+ WIDTH="152" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$ X_n^{(&gt;s)} = X_n I_{{\mathopen\vert X_n\mathclose\vert} &gt; s} $"> 
+and <!-- MATH
+ $X_n^{(\le s)} = X_n I_{{\mathopen|X_n\mathclose|} \le s} = X_n - X_n^{(>s)}$
+ -->
+<IMG
+ WIDTH="270" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$ X_n^{(\le s)} = X_n I_{{\mathopen\vert X_n\mathclose\vert} \le s} = X_n - X_n^{(&gt;s)}$">.
+For <!-- MATH
+ $A \subset{\mathbb{N}}$
+ -->
+<IMG
+ WIDTH="58" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.png"
+ ALT="$ A \subset{\mathbb{N}}$">, we will write <!-- MATH
+ $S^{(\le s)}_A = \sum_{n
+\in A} X^{(\le s)}_n$
+ -->
+<IMG
+ WIDTH="167" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.png"
+ ALT="$ S^{(\le s)}_A = \sum_{n
+\in A} X^{(\le s)}_n$">. 
+Similarly we define <!-- MATH
+ $S^{(>s)}_A$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$ S^{(&gt;s)}_A$">, 
+ <!-- MATH
+ $S^{(\le s)}_k$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.png"
+ ALT="$ S^{(\le s)}_k$">, etc.
+
+<P>
+Another quantity that we shall care about is the decreasing
+rearrangement of the disjoint sum of random variables.  
+This notion was used by Johnson, Maurey,
+Schechtman  and Tzafriri (1979), Carothers and Dilworth (1988),
+and Johnson and Schechtman (1989), all in the context of sums of
+independent random variables.
+The disjoint
+sum of the sequence <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ (X_n)$"> is the measurable function on the measure
+space <!-- MATH
+ $\Omega \times {\mathbb{N}}$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img88.png"
+ ALT="$ \Omega \times {\mathbb{N}}$"> that takes <!-- MATH
+ $(\omega,n)$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img89.png"
+ ALT="$ (\omega,n)$"> to
+<!-- MATH
+ $X_n(\omega)$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.png"
+ ALT="$ X_n(\omega)$">.  We shall denote the decreasing rearrangement of
+the disjoint sum by <!-- MATH
+ $\tilde \ell:[0,\infty) \to [0,\infty]$
+ -->
+<IMG
+ WIDTH="154" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.png"
+ ALT="$ \tilde \ell:[0,\infty) \to [0,\infty]$">, that is,
+<!-- MATH
+ $\tilde \ell(t)$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.png"
+ ALT="$ \tilde \ell(t)$"> is the least number such that 
+<!-- MATH
+ \begin{displaymath}
+\sum_n \Pr({\mathopen|X_n\mathclose|} > \tilde \ell(t)) \le t .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="197" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.png"
+ ALT="$\displaystyle \sum_n \Pr({\mathopen\vert X_n\mathclose\vert} &gt; \tilde \ell(t)) \le t .$">
+</DIV><P></P>
+Define <IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.png"
+ ALT="$ \ell(t)$"> to be <!-- MATH
+ $\tilde \ell(t)$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.png"
+ ALT="$ \tilde \ell(t)$"> if <!-- MATH
+ $0 \le t \le
+1$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$ 0 \le t \le
+1$">, and 0 otherwise. Since <IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.png"
+ ALT="$ \ell(t)$"> is only non-zero when <!-- MATH
+ $0 \le t
+\le 1$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$ 0 \le t \le
+1$">, we will think of <IMG
+ WIDTH="12" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img96.png"
+ ALT="$ \ell$">
+as being a random variable on the 
+probability space <IMG
+ WIDTH="42" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="$ [0,1]$"> with Lebesgue measure.
+The quantity <IMG
+ WIDTH="12" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img96.png"
+ ALT="$ \ell$"> is effectively <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img97.png"
+ ALT="$ M$"> in disguise.  This next result 
+(and its proof)
+essentially appears in Gin&#233; and Zinn (1983).
+
+<P>
+<P>
+<DIV><A NAME="ell-max"><B>Proposition  2.1</B></A> &nbsp; 
+<I>If <IMG
+ WIDTH="80" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.png"
+ ALT="$ 0&lt;t &lt; 1$">, then 
+</I><!-- MATH
+ \begin{displaymath}
+\ell(2t) \le \ell(t/(1-t)) \le M^*(t) \le\ell(t) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="295" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.png"
+ ALT="$\displaystyle \ell(2t) \le \ell(t/(1-t)) \le M^*(t) \le\ell(t) .$">
+</DIV><P></P></DIV><P></P>
+
+<P>
+
+<P>
+<BR>
+<B>Proof:</B>  The first inequality follows easily
+once one notices that both sides of this inequality are zero if <IMG
+ WIDTH="65" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.png"
+ ALT="$ t &gt;
+1/2$">. 
+
+<P>
+To get the second inequality, note that, by an easy argument, if <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.png"
+ ALT="$ \alpha_1$">, 
+<!-- MATH
+ $\alpha_2,\dots \ge 0$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$ \alpha_2,\dots \ge 0$"> with <!-- MATH
+ $\sum_n \alpha_n \le 1$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$ \sum_n \alpha_n \le 1$">, then 
+<!-- MATH
+ \begin{displaymath}
+1-\sum_n \alpha_n \le \prod_n (1-\alpha_n)\le 1 - {\frac{\sum_n \alpha_n
+}{ 1
++ \sum_n \alpha_n}} .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="360" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.png"
+ ALT="$\displaystyle 1-\sum_n \alpha_n \le \prod_n (1-\alpha_n)\le 1 - {\frac{\sum_n \alpha_n
+}{ 1
++ \sum_n \alpha_n}} .$">
+</DIV><P></P>
+So, if <!-- MATH
+ $\Pr(\ell > x) = \sum_n \Pr({\mathopen|X_n\mathclose|}
+> x)
+\le 1$
+ -->
+<IMG
+ WIDTH="281" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.png"
+ ALT="$ \Pr(\ell &gt; x) = \sum_n \Pr({\mathopen\vert X_n\mathclose\vert}
+&gt; x)
+\le 1$">, then <!-- MATH
+ \begin{displaymath}
+\Pr(M > x) = 1-\prod_n (1-\Pr({\mathopen|X_n\mathclose|} > x)) ,
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="335" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.png"
+ ALT="$\displaystyle \Pr(M &gt; x) = 1-\prod_n (1-\Pr({\mathopen\vert X_n\mathclose\vert} &gt; x)) ,$">
+</DIV><P></P>
+and hence <!-- MATH
+ \begin{displaymath}
+{\frac{\Pr(\ell > x) }{ 1+\Pr(\ell>x)}} \le \Pr(M>x) \le
+\Pr(\ell > x) .
+\end{displaymath}
+ -->
+<P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="344" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$\displaystyle {\frac{\Pr(\ell &gt; x) }{ 1+\Pr(\ell&gt;x)}} \le \Pr(M&gt;x) \le
+\Pr(\ell &gt; x) .$">
+</DIV><P></P>
+Taking inverses, the result follows.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html32"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html30"
+  HREF="disttail11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html24"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html33"
+  HREF="node3.html">The Klass-Nowicki Inequality</A>
+<B> Up:</B> <A NAME="tex2html31"
+  HREF="disttail11.html">Measuring the magnitude of</A>
+<B> Previous:</B> <A NAME="tex2html25"
+  HREF="node1.html">Introduction</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>

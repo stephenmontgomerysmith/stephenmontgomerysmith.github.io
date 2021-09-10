@@ -1,0 +1,5 @@
+#!/usr/bin/perl -w
+
+for ($i=0;$i<100000;$i++) {
+  print "$i\n";
+}

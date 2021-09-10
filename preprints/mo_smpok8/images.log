@@ -1,0 +1,1488 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 2002.10.25)  25 OCT 2002 23:36
+**./images.tex
+(./images.tex
+LaTeX2e <1999/12/01> patch level 1
+Babel <v3.6Z> and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+
+(/usr/local/share/texmf/tex/latex/base/article.cls
+Document Class: article 1999/09/10 v1.4a Standard LaTeX document class
+(/usr/local/share/texmf/tex/latex/base/size12.clo
+File: size12.clo 1999/09/10 v1.4a Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/usr/local/share/texmf/tex/latex/base/ifthen.sty
+Package: ifthen 1999/09/10 v1.1b Standard LaTeX ifthen package (DPC)
+) (/usr/local/share/texmf/tex/latex/ntgclass/a4.sty
+Package: a4 1999/03/03 v1.2f A4 based page layout
+) (/usr/local/share/texmf/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 42.
+)
+\c@defi=\count87
+\c@theo=\count88
+\c@corr=\count89
+\c@lema=\count90
+\c@rema=\count91
+(/usr/local/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+(/usr/local/share/texmf/tex/latex/config/color.cfg)
+Package color Info: Driver file: dvips.def on input line 125.
+(/usr/local/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+) (/usr/local/share/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)) (/usr/local/share/texmf/tex/latex/base/inputenc.sty
+Package: inputenc 1999/09/17 v0.992 Input encoding file 
+(/usr/local/share/texmf/tex/latex/base/latin1.def
+File: latin1.def 1999/09/17 v0.992 Input encoding file 
+))
+\sizebox=\box26
+\lthtmlwrite=\write3
+(images.aux)
+\openout1 = `images.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 197.
+LaTeX Font Info:    ... okay on input line 197.
+
+latex2htmlLength hsize=349.0pt
+
+latex2htmlLength vsize=688.0pt
+
+latex2htmlLength hoffset=0.0pt
+
+latex2htmlLength voffset=0.0pt
+
+latex2htmlLength topmargin=0.0pt
+
+latex2htmlLength topskip=0.00003pt
+
+latex2htmlLength headheight=0.0pt
+
+latex2htmlLength headsep=0.0pt
+
+latex2htmlLength parskip=0.0pt plus 1.0pt
+
+latex2htmlLength oddsidemargin=14.45377pt
+
+latex2htmlLength evensidemargin=28.90755pt
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 221.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 221.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 221.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 221.
+(/usr/local/share/texmf/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2eLaTeX symbol font definitions
+)
+l2hSize :tex2html_wrap_inline3071:8.2pt::0.0pt::7.92912pt.
+[1
+
+
+
+]
+! You can't use `\spacefactor' in math mode.
+\@->\spacefactor 
+                 \@m 
+l.227 $\nabla \@
+                mathbf {A}^N-{\@mathbf {I}}$%
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `\spacefactor' in math mode.
+\@->\spacefactor 
+                 \@m 
+l.227 $\nabla \@mathbf {A}^N-{\@
+                                mathbf {I}}$%
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+Missing character: There is no ^^e8 in font cmex10!
+Missing character: There is no ^^e8 in font cmex10!
+l2hSize :tex2html_wrap_inline3074:10.32137pt::10.32137pt::127.32896pt.
+[2
+
+
+]
+l2hSize :displaymath179:57.60602pt::0.0pt::349.0pt.
+[3
+
+
+]
+l2hSize :tex2html_wrap_inline1752:7.75pt::0.0pt::8.08752pt.
+[4
+
+
+]
+l2hSize :tex2html_wrap_inline1754:8.25pt::8.25pt::6.4847pt.
+[5
+
+
+]
+l2hSize :tex2html_wrap_inline1756:10.75555pt::10.75555pt::106.98087pt.
+[6
+
+
+]
+l2hSize :tex2html_wrap_inline1758:10.75555pt::10.75555pt::100.62798pt.
+[7
+
+
+]
+l2hSize :tex2html_wrap_inline1760:8.7pt::8.7pt::58.78644pt.
+[8
+
+
+]
+l2hSize :displaymath196:77.407pt::0.0pt::349.0pt.
+[9
+
+
+]
+l2hSize :tex2html_wrap_inline1762:10.75555pt::10.75555pt::110.73087pt.
+[10
+
+
+]
+l2hSize :tex2html_wrap_inline1764:7.75pt::0.0pt::11.83752pt.
+[11
+
+
+]
+l2hSize :displaymath209:33.42212pt::0.0pt::349.0pt.
+[12
+
+
+]
+l2hSize :tex2html_wrap_inline1766:7.75pt::0.0pt::8.13745pt.
+[13
+
+
+]
+l2hSize :tex2html_wrap_inline1768:8.83331pt::8.83331pt::7.88606pt.
+[14
+
+
+]
+l2hSize :displaymath1770:61.77911pt::0.0pt::349.0pt.
+[15
+
+
+]
+l2hSize :tex2html_wrap_inline1772:9.5pt::9.5pt::54.63025pt.
+[16
+
+
+]
+l2hSize :tex2html_wrap_inline1774:10.87517pt::10.87517pt::16.63976pt.
+[17
+
+
+]
+l2hSize :tex2html_wrap_inline1776:8.2pt::0.0pt::31.31012pt.
+[18
+
+
+]
+l2hSize :tex2html_wrap_inline1778:8.33331pt::0.0pt::27.622pt.
+[19
+
+
+]
+l2hSize :displaymath1780:33.42212pt::0.0pt::349.0pt.
+[20
+
+
+]
+l2hSize :tex2html_wrap_inline1790:9.5pt::9.5pt::38.85756pt.
+[21
+
+
+]
+l2hSize :tex2html_wrap_inline1792:7.86708pt::0.0pt::4.59593pt.
+[22
+
+
+]
+l2hSize :tex2html_wrap_inline1794:9.5pt::9.5pt::91.3066pt.
+[23
+
+
+]
+l2hSize :tex2html_wrap_inline1796:8.7pt::8.7pt::73.19331pt.
+[24
+
+
+]
+l2hSize :tex2html_wrap_inline1798:10.32137pt::10.32137pt::94.78772pt.
+[25
+
+
+]
+l2hSize :tex2html_wrap_inline1800:9.5pt::9.5pt::87.0358pt.
+[26
+
+
+]
+l2hSize :tex2html_wrap_inline1802:10.32137pt::10.32137pt::43.73045pt.
+[27
+
+
+]
+l2hSize :tex2html_wrap_inline1804:7.75pt::0.0pt::7.71252pt.
+[28
+
+
+]
+l2hSize :tex2html_wrap_inline1806:7.75pt::0.0pt::4.83054pt.
+[29
+
+
+]
+l2hSize :tex2html_wrap_inline1810:10.32137pt::10.32137pt::104.50096pt.
+[30
+
+
+]
+l2hSize :tex2html_wrap_inline1814:10.32137pt::10.32137pt::39.9388pt.
+[31
+
+
+]
+l2hSize :tex2html_wrap_inline1816:9.82137pt::0.0pt::17.95982pt.
+[32
+
+
+]
+l2hSize :tex2html_wrap_inline1818:7.75pt::0.0pt::6.46246pt.
+[33
+
+
+]
+l2hSize :tex2html_wrap_inline1820:8.33331pt::0.0pt::47.92387pt.
+[34
+
+
+]
+l2hSize :tex2html_wrap_inline1822:8.73334pt::8.73334pt::10.7264pt.
+[35
+
+
+]
+l2hSize :displaymath229:28.97086pt::0.0pt::349.0pt.
+[36
+
+
+]
+l2hSize :displaymath234:57.60602pt::0.0pt::349.0pt.
+[37
+
+
+]
+l2hSize :displaymath249:77.407pt::0.0pt::349.0pt.
+[38
+
+
+]
+l2hSize :tex2html_wrap_inline1826:8.2pt::0.0pt::28.19153pt.
+[39
+
+
+]
+l2hSize :tex2html_wrap_inline1828:9.82137pt::0.0pt::18.88066pt.
+[40
+
+
+]
+l2hSize :tex2html_wrap_inline1830:9.82137pt::0.0pt::15.99872pt.
+[41
+
+
+]
+l2hSize :displaymath1834:28.97086pt::0.0pt::349.0pt.
+[42
+
+
+]
+l2hSize :displaymath269:36.21118pt::0.0pt::349.0pt.
+[43
+
+
+]
+l2hSize :displaymath1836:25.68282pt::0.0pt::349.0pt.
+[44
+
+
+]
+l2hSize :displaymath1840:27.4828pt::0.0pt::349.0pt.
+[45
+
+
+]
+l2hSize :tex2html_wrap_inline1844:9.82137pt::0.0pt::28.88069pt.
+[46
+
+
+]
+l2hSize :tex2html_wrap_inline1846:8.7pt::8.7pt::92.10648pt.
+[47
+
+
+]
+l2hSize :tex2html_wrap_inline1848:7.75pt::0.0pt::7.90002pt.
+[48
+
+
+]
+l2hSize :displaymath286:36.21118pt::0.0pt::349.0pt.
+[49
+
+
+]
+l2hSize :tex2html_wrap_inline1856:10.75555pt::10.75555pt::109.21666pt.
+[50
+
+
+]
+l2hSize :tex2html_wrap_inline1860:8.25pt::8.25pt::26.51083pt.
+[51
+
+
+]
+l2hSize :tex2html_wrap_inline1862:10.32137pt::10.32137pt::44.27629pt.
+[52
+
+
+]
+l2hSize :tex2html_wrap_inline1864:9.5pt::9.5pt::136.16628pt.
+[53
+
+
+]
+l2hSize :tex2html_wrap_inline1872:8.25pt::8.25pt::12.51813pt.
+[54
+
+
+]
+l2hSize :tex2html_wrap_inline1874:9.5pt::9.5pt::51.42598pt.
+[55
+
+
+]
+l2hSize :tex2html_wrap_inline1876:9.5pt::9.5pt::56.17604pt.
+[56
+
+
+]
+l2hSize :tex2html_wrap_inline1878:8.25pt::8.25pt::15.87216pt.
+[57
+
+
+]
+l2hSize :tex2html_wrap_inline1880:9.5pt::9.5pt::105.99982pt.
+[58
+
+
+]
+l2hSize :tex2html_wrap_inline1884:8.25pt::8.25pt::31.2609pt.
+[59
+
+
+]
+l2hSize :tex2html_wrap_inline1886:10.32137pt::10.32137pt::58.64984pt.
+[60
+
+
+]
+l2hSize :tex2html_wrap_inline1890:10.32137pt::10.32137pt::54.27632pt.
+[61
+
+
+]
+l2hSize :displaymath1892:44.49995pt::0.0pt::349.0pt.
+[62
+
+
+]
+l2hSize :tex2html_wrap_inline1894:10.43336pt::10.43336pt::55.01239pt.
+[63
+
+
+]
+l2hSize :tex2html_wrap_inline1896:9.5pt::9.5pt::70.005pt.
+[64
+
+
+]
+l2hSize :tex2html_wrap_inline1906:9.5pt::9.5pt::55.16489pt.
+[65
+
+
+]
+l2hSize :tex2html_wrap_inline1908:10.75555pt::10.75555pt::115.15651pt.
+[66
+
+
+]
+l2hSize :tex2html_wrap_inline1910:7.75pt::0.0pt::6.46246pt.
+[67
+
+
+]
+l2hSize :tex2html_wrap_inline1912:7.75pt::0.0pt::12.58755pt.
+[68
+
+
+]
+l2hSize :tex2html_wrap_inline1914:9.5pt::9.5pt::26.74002pt.
+[69
+
+
+]
+l2hSize :tex2html_wrap_inline1916:8.83331pt::8.83331pt::7.66039pt.
+[70
+
+
+]
+l2hSize :tex2html_wrap_inline1918:8.25pt::8.25pt::6.64441pt.
+[71
+
+
+]
+l2hSize :tex2html_wrap_inline1922:10.75555pt::10.75555pt::179.62886pt.
+[72
+
+
+]
+l2hSize :tex2html_wrap_inline1924:9.5pt::9.5pt::56.31477pt.
+[73
+
+
+]
+l2hSize :tex2html_wrap_inline1926:9.5pt::9.5pt::62.39458pt.
+[74
+
+
+]
+l2hSize :tex2html_wrap_inline1928:9.5pt::9.5pt::130.17389pt.
+[75
+
+
+]
+l2hSize :tex2html_wrap_inline1930:8.2pt::0.0pt::9.82565pt.
+[76
+
+
+]
+l2hSize :tex2html_wrap_inline1932:9.5pt::9.5pt::63.00005pt.
+[77
+
+
+]
+l2hSize :tex2html_wrap_inline1934:9.5pt::9.5pt::212.30472pt.
+[78
+
+
+]
+l2hSize :tex2html_wrap_inline1936:10.75555pt::10.75555pt::66.82341pt.
+[79
+
+
+]
+l2hSize :displaymath1940:17.5pt::0.0pt::349.0pt.
+[80
+
+
+]
+l2hSize :tex2html_wrap_inline1950:9.5pt::9.5pt::76.86337pt.
+[81
+
+
+]
+l2hSize :tex2html_wrap_inline1952:10.75555pt::10.75555pt::105.73529pt.
+[82
+
+
+]
+l2hSize :tex2html_wrap_inline1954:8.7pt::8.7pt::30.78648pt.
+[83
+
+
+]
+l2hSize :tex2html_wrap_inline1956:10.78033pt::10.78033pt::458.20822pt.
+
+Overfull \hbox (112.5932pt too wide) in paragraph at lines 808--809
+[]|[] 
+ []
+
+[84
+
+
+]
+l2hSize :tex2html_wrap_inline1958:8.83331pt::8.83331pt::28.97623pt.
+[85
+
+
+]
+l2hSize :tex2html_wrap_inline1960:10.75555pt::10.75555pt::169.5775pt.
+[86
+
+
+]
+l2hSize :tex2html_wrap_inline1962:10.75555pt::10.75555pt::158.31268pt.
+[87
+
+
+]
+l2hSize :tex2html_wrap_inline1964:8.83331pt::8.83331pt::28.97623pt.
+[88
+
+
+]
+l2hSize :tex2html_wrap_inline1970:10.75555pt::10.75555pt::96.08083pt.
+[89
+
+
+]
+l2hSize :tex2html_wrap_inline1972:10.75555pt::10.75555pt::111.17249pt.
+[90
+
+
+]
+l2hSize :tex2html_wrap_inline1974:10.75555pt::10.75555pt::104.08084pt.
+[91
+
+
+]
+l2hSize :tex2html_wrap_inline1976:10.75555pt::10.75555pt::391.1687pt.
+
+Overfull \hbox (45.55368pt too wide) in paragraph at lines 863--864
+[]|[] 
+ []
+
+[92
+
+
+]
+l2hSize :tex2html_wrap_inline1978:12.14812pt::12.14812pt::128.1752pt.
+[93
+
+
+]
+l2hSize :tex2html_wrap_inline1980:9.5pt::9.5pt::25.1081pt.
+[94
+
+
+]
+l2hSize :displaymath1988:17.5pt::0.0pt::349.0pt.
+[95
+
+
+]
+l2hSize :displaymath367:17.5pt::0.0pt::349.0pt.
+[96
+
+
+]
+l2hSize :tex2html_wrap_inline1990:10.75555pt::10.75555pt::57.4671pt.
+[97
+
+
+]
+l2hSize :tex2html_wrap_inline1992:9.5pt::9.5pt::58.79544pt.
+[98
+
+
+]
+l2hSize :tex2html_wrap_inline1994:9.82137pt::0.0pt::33.63075pt.
+[99
+
+
+]
+l2hSize :tex2html_wrap_inline1996:8.73334pt::8.73334pt::20.72643pt.
+[100
+
+
+]
+l2hSize :tex2html_wrap_inline1998:8.23334pt::0.0pt::31.58745pt.
+[101
+
+
+]
+l2hSize :tex2html_wrap_inline2000:10.32137pt::10.32137pt::75.32498pt.
+[102
+
+
+]
+l2hSize :tex2html_wrap_inline2002:10.25555pt::0.0pt::64.50415pt.
+[103
+
+
+]
+l2hSize :tex2html_wrap_inline2004:9.51027pt::0.0pt::14.60582pt.
+[104
+
+
+]
+l2hSize :tex2html_wrap_inline2006:8.7pt::8.7pt::12.76553pt.
+[105
+
+
+]
+l2hSize :tex2html_wrap_inline2008:8.7pt::8.7pt::13.75027pt.
+[106
+
+
+]
+l2hSize :tex2html_wrap_inline2010:8.33331pt::0.0pt::7.51244pt.
+[107
+
+
+]
+l2hSize :displaymath2012:28.68282pt::0.0pt::349.0pt.
+[108
+
+
+]
+l2hSize :tex2html_wrap_inline2014:9.5pt::9.5pt::50.40402pt.
+[109
+
+
+]
+l2hSize :tex2html_wrap_inline2016:9.5pt::9.5pt::50.37279pt.
+[110
+
+
+]
+l2hSize :displaymath2018:25.68282pt::0.0pt::349.0pt.
+[111
+
+
+]
+l2hSize :tex2html_wrap_inline2020:10.78033pt::10.78033pt::53.64552pt.
+[112
+
+
+]
+l2hSize :displaymath2022:26.3495pt::0.0pt::349.0pt.
+[113
+
+
+]
+l2hSize :tex2html_wrap_inline2024:12.09998pt::12.09998pt::70.21304pt.
+[114
+
+
+]
+l2hSize :displaymath2026:28.01613pt::0.0pt::349.0pt.
+[115
+
+
+]
+l2hSize :tex2html_wrap_inline2028:12.26665pt::12.26665pt::70.03943pt.
+[116
+
+
+]
+l2hSize :tex2html_wrap_inline2030:12.09998pt::12.09998pt::78.53043pt.
+[117
+
+
+]
+l2hSize :tex2html_wrap_inline2032:12.26665pt::12.26665pt::69.02345pt.
+[118
+
+
+]
+l2hSize :displaymath418:17.5pt::0.0pt::349.0pt.
+[119
+
+
+]
+l2hSize :tex2html_wrap_inline2034:9.5pt::9.5pt::143.58865pt.
+[120
+
+
+]
+Overfull \hbox (54.63112pt too wide) detected at line 1071
+[]
+ []
+
+l2hSize :displaymath2036:80.97638pt::0.0pt::349.0pt.
+[121
+
+
+]
+l2hSize :tex2html_wrap_inline2040:9.5pt::9.5pt::39.08365pt.
+[122
+
+
+]
+l2hSize :tex2html_wrap_inline2042:9.82137pt::0.0pt::13.11955pt.
+[123
+
+
+]
+l2hSize :tex2html_wrap_inline2044:9.82137pt::0.0pt::14.04039pt.
+[124
+
+
+]
+l2hSize :tex2html_wrap_inline2048:9.5pt::9.5pt::40.68338pt.
+[125
+
+
+]
+l2hSize :tex2html_wrap_inline2050:8.7pt::8.7pt::34.54639pt.
+[126
+
+
+]
+l2hSize :tex2html_wrap_inline2052:7.75pt::0.0pt::6.12221pt.
+[127
+
+
+]
+l2hSize :tex2html_wrap_inline2054:9.5pt::9.5pt::27.24707pt.
+[128
+
+
+]
+l2hSize :tex2html_wrap_inline2056:9.5pt::9.5pt::42.75961pt.
+[129
+
+
+]
+l2hSize :tex2html_wrap_inline2058:8.7pt::8.7pt::35.85962pt.
+[130
+
+
+]
+l2hSize :displaymath2062:20.50009pt::0.0pt::349.0pt.
+[131
+
+
+]
+Overfull \hbox (38.87106pt too wide) detected at line 1147
+[]
+ []
+
+l2hSize :displaymath2064:39.35028pt::0.0pt::349.0pt.
+[132
+
+
+]
+l2hSize :displaymath2066:44.49995pt::0.0pt::349.0pt.
+[133
+
+
+]
+l2hSize :displaymath2068:44.49995pt::0.0pt::349.0pt.
+[134
+
+
+]
+l2hSize :tex2html_wrap_inline2072:8.7pt::8.7pt::64.197pt.
+[135
+
+
+]
+l2hSize :displaymath2074:44.49995pt::0.0pt::349.0pt.
+[136
+
+
+]
+l2hSize :displaymath2076:92.50041pt::0.0pt::349.0pt.
+[137
+
+
+]
+l2hSize :tex2html_wrap_inline2078:9.5pt::9.5pt::70.19579pt.
+[138
+
+
+]
+Overfull \hbox (50.27286pt too wide) detected at line 1233
+\OMS/cmsy/m/n/12 r\OT1/cmr/bx/n/12 A[] \OT1/cmr/m/n/12 = []  ;
+ []
+
+l2hSize :displaymath2082:44.49995pt::0.0pt::349.0pt.
+[139
+
+
+]
+l2hSize :tex2html_wrap_inline2088:9.82137pt::0.0pt::27.95985pt.
+[140
+
+
+]
+l2hSize :displaymath2094:42.30142pt::0.0pt::349.0pt.
+[141
+
+
+]
+Overfull \hbox (1.62746pt too wide) detected at line 1260
+[]\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12 r\OT1/cmr/m/n/12 (\OT1/cmr/bx/n/12 A[] \OMS
+/cmsy/m/n/12 ^^@ \OT1/cmr/bx/n/12 A[]\OT1/cmr/m/n/12 )] + \OT1/cmr/bx/n/12 u \O
+MS/cmsy/m/n/12 ^^A r\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12 r\OT1/cmr/m/n/12 (\OT1/cm
+r/bx/n/12 A[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/bx/n/12 A[]\OT1/cmr/m/n/12 )] = \OM
+L/cmm/m/it/12 ^^W\OT1/cmr/m/n/12 ^^A\OMS/cmsy/m/n/12 r\OT1/cmr/bx/n/12 A[] \OMS
+/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 r\OT1/cmr/m/n/12 (\OT1/cmr/b
+x/n/12 A[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/bx/n/12 A[]\OT1/cmr/m/n/12 ))\OMS/cmsy
+/m/n/12 r\OT1/cmr/bx/n/12 u \OML/cmm/m/it/12 :
+ []
+
+l2hSize :displaymath485:25.68282pt::0.0pt::349.0pt.
+[142
+
+
+]
+l2hSize :displaymath2096:27.49997pt::0.0pt::349.0pt.
+[143
+
+
+]
+l2hSize :tex2html_wrap_inline2098:8.33331pt::0.0pt::7.10136pt.
+[144
+
+
+]
+l2hSize :tex2html_wrap_inline2100:10.32137pt::10.32137pt::161.83598pt.
+[145
+
+
+]
+l2hSize :displaymath2102:25.68282pt::0.0pt::349.0pt.
+[146
+
+
+]
+l2hSize :tex2html_wrap_inline2104:10.32137pt::10.32137pt::120.01631pt.
+[147
+
+
+]
+l2hSize :displaymath496:27.49997pt::0.0pt::349.0pt.
+[148
+
+
+]
+l2hSize :tex2html_wrap_inline2106:9.5pt::9.5pt::52.12332pt.
+[149
+
+
+]
+l2hSize :tex2html_wrap_inline2108:10.32137pt::10.32137pt::48.57509pt.
+[150
+
+
+]
+l2hSize :tex2html_wrap_inline2112:8.25pt::8.25pt::29.62897pt.
+[151
+
+
+]
+l2hSize :displaymath2116:40.1828pt::0.0pt::349.0pt.
+[152
+
+
+]
+l2hSize :displaymath2118:25.68282pt::0.0pt::349.0pt.
+[153
+
+
+]
+l2hSize :tex2html_wrap_inline2120:7.75pt::0.0pt::30.26788pt.
+[154
+
+
+]
+l2hSize :displaymath514:30.67966pt::0.0pt::349.0pt.
+[155
+
+
+]
+l2hSize :tex2html_wrap_inline2124:9.5pt::9.5pt::78.82506pt.
+[156
+
+
+]
+l2hSize :tex2html_wrap_inline2126:7.75pt::0.0pt::35.49716pt.
+[157
+
+
+]
+l2hSize :tex2html_wrap_inline2132:9.5pt::9.5pt::75.55783pt.
+[158
+
+
+]
+l2hSize :tex2html_wrap_inline2134:9.5pt::9.5pt::83.72084pt.
+[159
+
+
+]
+l2hSize :tex2html_wrap_inline2138:10.32137pt::10.32137pt::214.52892pt.
+[160
+
+
+]
+l2hSize :tex2html_wrap_inline2140:10.32137pt::10.32137pt::78.54994pt.
+[161
+
+
+]
+l2hSize :tex2html_wrap_inline2142:10.32137pt::10.32137pt::130.23721pt.
+[162
+
+
+]
+l2hSize :displaymath2144:28.5495pt::0.0pt::349.0pt.
+[163
+
+
+]
+l2hSize :tex2html_wrap_inline2146:7.75pt::0.0pt::6.75551pt.
+[164
+
+
+]
+l2hSize :tex2html_wrap_inline2148:8.2pt::0.0pt::9.85576pt.
+[165
+
+
+]
+l2hSize :tex2html_wrap_inline2150:9.5pt::9.5pt::33.43655pt.
+[166
+
+
+]
+l2hSize :tex2html_wrap_inline2152:9.5pt::9.5pt::40.53233pt.
+[167
+
+
+]
+l2hSize :tex2html_wrap_inline2156:7.75pt::0.0pt::7.14996pt.
+[168
+
+
+]
+l2hSize :tex2html_wrap_inline2158:8.7pt::8.7pt::41.2423pt.
+[169
+
+
+]
+l2hSize :tex2html_wrap_inline2160:8.7pt::8.7pt::40.20287pt.
+[170
+
+
+]
+l2hSize :tex2html_wrap_inline2162:10.32137pt::10.32137pt::54.31108pt.
+[171
+
+
+]
+l2hSize :tex2html_wrap_inline2164:7.75pt::0.0pt::34.89828pt.
+[172
+
+
+]
+l2hSize :tex2html_wrap_inline2166:10.32137pt::10.32137pt::122.70125pt.
+[173
+
+
+]
+l2hSize :tex2html_wrap_inline2168:10.32137pt::10.32137pt::44.31105pt.
+[174
+
+
+]
+l2hSize :tex2html_wrap_inline2172:9.5pt::9.5pt::26.74002pt.
+[175
+
+
+]
+l2hSize :tex2html_wrap_inline2174:8.25pt::8.25pt::29.82353pt.
+[176
+
+
+]
+l2hSize :tex2html_wrap_inline2178:8.25pt::8.25pt::10.83615pt.
+[177
+
+
+]
+l2hSize :tex2html_wrap_inline2180:8.25pt::8.25pt::32.51645pt.
+[178
+
+
+]
+l2hSize :tex2html_wrap_inline2182:9.5pt::9.5pt::146.23787pt.
+[179
+
+
+]
+l2hSize :tex2html_wrap_inline2184:9.5pt::9.5pt::52.78593pt.
+[180
+
+
+]
+l2hSize :tex2html_wrap_inline2188:10.38034pt::10.38034pt::104.5651pt.
+[181
+
+
+]
+l2hSize :tex2html_wrap_inline2190:8.25pt::8.25pt::29.82353pt.
+[182
+
+
+]
+l2hSize :tex2html_wrap_inline2192:8.7pt::8.7pt::10.51984pt.
+[183
+
+
+]
+l2hSize :tex2html_wrap_inline2194:10.32137pt::10.32137pt::88.60957pt.
+[184
+
+
+]
+l2hSize :tex2html_wrap_inline2196:10.32137pt::10.32137pt::110.95412pt.
+[185
+
+
+]
+l2hSize :tex2html_wrap_inline2198:8.7pt::8.7pt::10.51984pt.
+[186
+
+
+]
+l2hSize :tex2html_wrap_inline2200:8.7pt::8.7pt::10.51984pt.
+[187
+
+
+]
+l2hSize :tex2html_wrap_inline2204:10.32137pt::10.32137pt::87.68874pt.
+[188
+
+
+]
+l2hSize :tex2html_wrap_inline2208:8.7pt::8.7pt::10.51984pt.
+[189
+
+
+]
+l2hSize :tex2html_wrap_inline2210:9.5pt::9.5pt::49.34532pt.
+[190
+
+
+]
+l2hSize :tex2html_wrap_inline2212:8.7pt::8.7pt::10.51984pt.
+[191
+
+
+]
+l2hSize :tex2html_wrap_inline2214:9.5pt::9.5pt::51.42155pt.
+[192
+
+
+]
+l2hSize :tex2html_wrap_inline2220:8.7pt::8.7pt::57.9378pt.
+[193
+
+
+]
+l2hSize :tex2html_wrap_inline2226:10.32137pt::10.32137pt::76.41374pt.
+[194
+
+
+]
+l2hSize :tex2html_wrap_inline2228:8.73334pt::8.73334pt::82.19852pt.
+[195
+
+
+]
+Overfull \hbox (57.40073pt too wide) detected at line 1641
+[]
+ []
+
+l2hSize :displaymath2230:131.49986pt::0.0pt::349.0pt.
+[196
+
+
+]
+l2hSize :tex2html_wrap_inline2234:8.73334pt::8.73334pt::18.14316pt.
+[197
+
+
+]
+l2hSize :tex2html_wrap_inline2236:8.73334pt::8.73334pt::18.14316pt.
+[198
+
+
+]
+l2hSize :displaymath2238:30.28432pt::0.0pt::349.0pt.
+[199
+
+
+]
+l2hSize :tex2html_wrap_inline2240:7.96431pt::0.0pt::15.01376pt.
+[200
+
+
+]
+l2hSize :tex2html_wrap_inline2242:7.75pt::0.0pt::16.3193pt.
+[201
+
+
+]
+l2hSize :tex2html_wrap_inline2244:7.75pt::0.0pt::6.58052pt.
+[202
+
+
+]
+Overfull \hbox (13.52538pt too wide) detected at line 1690
+\OML/cmm/m/it/12 C [][] \OT1/cmr/m/n/12 e []\OML/cmm/m/it/12 u[] [] []\OT1/cmr/
+m/n/12 2\OML/cmm/m/it/12 ^^Y^^K\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]\OT1/cmr/m/
+n/12 )[]\OML/cmm/m/it/12 ^^K[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 u[]\OT1/cmr/m/n
+/12 )\OML/cmm/m/it/12 du :
+ []
+
+l2hSize :displaymath2246:31.18103pt::0.0pt::349.0pt.
+[203
+
+
+]
+l2hSize :tex2html_wrap_inline2248:14.0841pt::0.0pt::37.34856pt.
+[204
+
+
+]
+l2hSize :displaymath2250:36.0708pt::0.0pt::349.0pt.
+[205
+
+
+]
+l2hSize :tex2html_wrap_inline2252:10.78627pt::10.78627pt::116.62744pt.
+[206
+
+
+]
+l2hSize :displaymath2254:30.07121pt::0.0pt::349.0pt.
+[207
+
+
+]
+l2hSize :tex2html_wrap_inline2256:8.73334pt::8.73334pt::18.14316pt.
+[208
+
+
+]
+Overfull \hbox (59.60576pt too wide) detected at line 1748
+[]
+ []
+
+l2hSize :displaymath2258:74.16559pt::0.0pt::349.0pt.
+[209
+
+
+]
+l2hSize :tex2html_wrap_inline2260:9.5pt::9.5pt::22.89772pt.
+[210
+
+
+]
+l2hSize :tex2html_wrap_inline2262:10.69144pt::10.69144pt::70.91628pt.
+[211
+
+
+]
+l2hSize :displaymath2264:25.27081pt::0.0pt::349.0pt.
+[212
+
+
+]
+l2hSize :tex2html_wrap_inline2266:8.76666pt::8.76666pt::30.08878pt.
+[213
+
+
+]
+l2hSize :displaymath2268:17.5pt::0.0pt::349.0pt.
+[214
+
+
+]
+l2hSize :tex2html_wrap_inline2276:11.47757pt::11.47757pt::88.86076pt.
+[215
+
+
+]
+l2hSize :tex2html_wrap_inline2282:8.36708pt::8.36708pt::15.39594pt.
+[216
+
+
+]
+l2hSize :tex2html_wrap_inline2284:8.36708pt::8.36708pt::48.215pt.
+[217
+
+
+]
+Overfull \hbox (30.9399pt too wide) detected at line 1811
+[][] \OT1/cmr/m/n/12 e []\OML/cmm/m/it/12 u[] [] []\OT1/cmr/m/n/12 2\OML/cmm/m/
+it/12 ^^Y^^K[]u[][]^^L[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 v\OMS/cmsy/m/n/12 j[
+][]\OML/cmm/m/it/12 ^^K[][]u[][]dudv
+ []
+
+l2hSize :displaymath2286:31.00029pt::0.0pt::349.0pt.
+[218
+
+
+]
+l2hSize :tex2html_wrap_inline2288:10.78627pt::10.78627pt::320.5904pt.
+[219
+
+
+]
+l2hSize :tex2html_wrap_inline2290:8.83333pt::8.83333pt::29.56636pt.
+[220
+
+
+]
+l2hSize :displaymath2292:22.27072pt::0.0pt::349.0pt.
+[221
+
+
+]
+l2hSize :displaymath2302:52.58415pt::0.0pt::349.0pt.
+[222
+
+
+]
+l2hSize :tex2html_wrap_inline2308:10.32137pt::10.32137pt::58.10555pt.
+[223
+
+
+]
+l2hSize :tex2html_wrap_inline2310:10.32137pt::10.32137pt::62.8556pt.
+[224
+
+
+]
+l2hSize :tex2html_wrap_inline2312:7.75pt::0.0pt::7.26456pt.
+[225
+
+
+]
+l2hSize :tex2html_wrap_inline2314:8.25pt::8.25pt::6.74718pt.
+[226
+
+
+]
+l2hSize :tex2html_wrap_inline2316:10.32137pt::10.32137pt::63.77644pt.
+[227
+
+
+]
+l2hSize :tex2html_wrap_inline2318:10.32137pt::10.32137pt::81.58174pt.
+[228
+
+
+]
+l2hSize :tex2html_wrap_inline2330:8.83331pt::8.83331pt::11.65701pt.
+[229
+
+
+]
+l2hSize :tex2html_wrap_inline2332:9.5pt::9.5pt::120.91306pt.
+[230
+
+
+]
+l2hSize :tex2html_wrap_inline2334:8.52777pt::0.0pt::11.83752pt.
+[231
+
+
+]
+l2hSize :displaymath652:46.60149pt::0.0pt::349.0pt.
+[232
+
+
+]
+l2hSize :tex2html_wrap_inline2336:9.5pt::9.5pt::128.15965pt.
+[233
+
+
+]
+l2hSize :tex2html_wrap_inline2338:9.5pt::9.5pt::108.97424pt.
+[234
+
+
+]
+l2hSize :tex2html_wrap_inline2340:9.5pt::9.5pt::22.46097pt.
+[235
+
+
+]
+l2hSize :displaymath2342:25.68282pt::0.0pt::349.0pt.
+[236
+
+
+]
+l2hSize :displaymath2346:66.98424pt::0.0pt::349.0pt.
+[237
+
+
+]
+l2hSize :displaymath2348:33.42212pt::0.0pt::349.0pt.
+[238
+
+
+]
+l2hSize :tex2html_wrap_inline2350:11.53098pt::11.53098pt::120.1411pt.
+[239
+
+
+]
+l2hSize :tex2html_wrap_inline2352:11.53098pt::11.53098pt::118.46059pt.
+[240
+
+
+]
+l2hSize :tex2html_wrap_inline2354:11.03098pt::0.0pt::10.78197pt.
+[241
+
+
+]
+l2hSize :tex2html_wrap_inline2356:8.13095pt::0.0pt::8.08752pt.
+[242
+
+
+]
+l2hSize :tex2html_wrap_inline2358:9.82137pt::0.0pt::49.54146pt.
+[243
+
+
+]
+l2hSize :tex2html_wrap_inline2360:10.25555pt::0.0pt::14.00427pt.
+[244
+
+
+]
+l2hSize :tex2html_wrap_inline2362:10.32137pt::10.32137pt::87.06422pt.
+[245
+
+
+]
+l2hSize :tex2html_wrap_inline2366:9.82137pt::0.0pt::59.58882pt.
+[246
+
+
+]
+l2hSize :tex2html_wrap_inline2368:8.25pt::8.25pt::27.01222pt.
+[247
+
+
+]
+l2hSize :tex2html_wrap_inline2372:8.2pt::0.0pt::9.62982pt.
+[248
+
+
+]
+l2hSize :tex2html_wrap_inline2374:8.25pt::8.25pt::11.455pt.
+[249
+
+
+]
+l2hSize :tex2html_wrap_inline2376:8.83331pt::8.83331pt::10.61475pt.
+[250
+
+
+]
+l2hSize :tex2html_wrap_inline2382:8.2pt::0.0pt::17.58202pt.
+[251
+
+
+]
+l2hSize :tex2html_wrap_inline2384:8.69998pt::8.69998pt::21.45503pt.
+[252
+
+
+]
+l2hSize :tex2html_wrap_inline2396:8.13095pt::0.0pt::11.83752pt.
+[253
+
+
+]
+l2hSize :tex2html_wrap_inline2406:8.25pt::8.25pt::5.33759pt.
+[254
+
+
+]
+l2hSize :tex2html_wrap_inline2408:8.2pt::0.0pt::17.87909pt.
+[255
+
+
+]
+l2hSize :displaymath2412:31.0003pt::0.0pt::349.0pt.
+[256
+
+
+]
+l2hSize :displaymath2414:25.68282pt::0.0pt::349.0pt.
+[257
+
+
+]
+l2hSize :displaymath2416:18.98882pt::0.0pt::349.0pt.
+[258
+
+
+]
+l2hSize :displaymath699:25.68282pt::0.0pt::349.0pt.
+[259
+
+
+]
+l2hSize :tex2html_wrap_inline2418:9.5pt::9.5pt::56.31662pt.
+[260
+
+
+] (images.aux) ) 
+Here is how much of TeX's memory you used:
+ 781 strings out of 10901
+ 8904 string characters out of 72379
+ 54227 words of memory out of 263001
+ 3748 multiletter control sequences out of 10000+0
+ 9059 words of font info for 36 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 22i,16n,19p,194b,308s stack positions out of 300i,100n,500p,50000b,4000s
+
+Output written on images.dvi (260 pages, 80896 bytes).

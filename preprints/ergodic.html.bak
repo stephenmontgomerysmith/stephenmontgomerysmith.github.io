@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+   <META NAME="GENERATOR" CONTENT="A little perl program">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>A transference theorem for ergodic <i>H</i><sup>1</sup>.</TITLE>
+   <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   </script>
+   <script type="text/javascript"
+     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
+MLorMML">
+   </script>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
+
+<B><A HREF="http://www.math.missouri.edu/people/nasmar.html">Nakhl&eacute; Asmar</A> and Stephen Montgomery-Smith&#44; A transference theorem for ergodic <i>H</i><sup>1</sup>.</B>
+<I>Quarterly J. of Math. <B>48</B>, (1997), 417-430.</I>
+We extend the basic transference theorem for convolution operators on $L^p$ spaces of Coifman and Weiss to $H^1$ spaces.
+(<A HREF="ergodic.tex">tex</A>,
+<A HREF="ergodic.dvi">dvi</A>,
+<A HREF="ergodic.ps">ps</A>,
+<A HREF="ergodic.pdf">pdf</A>.)
+
+<P>&nbsp;
+<CENTER>&nbsp;<A HREF="index.html">List of all preprints</A></CENTER>
+&nbsp;
+</BODY>   
+</HTML>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Decomposition of analytic measures on groups and measure spaces</TITLE>
+<META NAME="description" CONTENT="Decomposition of analytic measures on groups and measure spaces">
+<META NAME="keywords" CONTENT="helson-lowdenslager5">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="helson-lowdenslager5.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev_g.png">   
+<BR>
+<B> Next:</B> <A NAME="tex2html2"
+  HREF="node1.html">Introduction</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<P>
+<H1 ALIGN=CENTER>Decomposition of analytic measures on groups and measure spaces</H1>
+<P ALIGN=CENTER><STRONG>Nakhl&#233; Asmar and Stephen Montgomery-Smith
+<BR>
+Department of Mathematics
+<BR>
+University of Missouri
+<BR>
+Columbia, MO 65211
+<BR><TT>nakhle@math.missouri.edu</TT>
+<BR><TT>stephen@math.missouri.edu</TT></STRONG></P>
+<P ALIGN=LEFT></P>
+
+<P>
+<DIV ALIGN="CENTER">
+<EM>Dedicated to the memory of Edwin Hewitt</EM>
+
+</DIV>
+
+<P>
+        
+<P>
+
+<H3>Abstract:</H3>
+<DIV>
+In this paper, we consider an arbitrary locally compact
+abelian group <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$">, with an ordered dual group <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">,
+acting on a space of measures.  
+Under suitable conditions, we define the notion of 
+analytic measures using the representation of <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ G$"> and the order on <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ \Gamma$">.  
+Our goal is to study analytic measures by applying a new  transference principle for subspaces of measures, along with  results from probability and Littlewood-Paley theory.  As a consequence,  
+we will derive new properties of analytic measures 
+ as well as extensions of previous work of Helson and Lowdenslager, de Leeuw and Glicksberg, and Forelli.
+
+<P>
+A.M.S. Subject Classification:  43A17, 43A32,  
+
+<P>
+Keywords: orders, transference, measure space, sup path attaining, 
+F.&amp;M. Riesz Theorem
+</DIV>
+<P>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">Introduction</A>
+<LI><A NAME="tex2html4"
+  HREF="node2.html">Orders on locally compact abelian groups</A>
+<LI><A NAME="tex2html5"
+  HREF="node3.html">Analyticity</A>
+<LI><A NAME="tex2html6"
+  HREF="node4.html">Homomorphism theorems</A>
+<LI><A NAME="tex2html7"
+  HREF="node5.html">Decomposition of Analytic Measures</A>
+<LI><A NAME="tex2html8"
+  HREF="node6.html">Generalized F. and M. Riesz Theorems</A>
+<LI><A NAME="tex2html9"
+  HREF="node7.html">Bibliography</A>
+<LI><A NAME="tex2html10"
+  HREF="node8.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Stephen Montgomery-Smith
+2002-10-30
+</ADDRESS>
+</BODY>
+</HTML>
