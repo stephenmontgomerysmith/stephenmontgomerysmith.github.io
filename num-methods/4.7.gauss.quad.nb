@@ -1,0 +1,294 @@
+(***********************************************************************
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used on any computer system with Mathematica 3.0,
+MathReader 3.0, or any compatible application. The data for the notebook 
+starts with the line of stars above.
+
+To get the notebook into a Mathematica-compatible application, do one of 
+the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing the 
+word CacheID, otherwise Mathematica-compatible applications may try to 
+use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+***********************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      6979,        226]*)
+(*NotebookOutlinePosition[      7892,        258]*)
+(*  CellTagsIndexPosition[      7848,        254]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData["Gaussian Quadrature"], "Title",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+
+Cell[TextData[{
+  "We are trying to approximate the integral using the following formula:\n\n \
+ Integrate[ f[x], {x,-1,1} ]\n  \n     =  ",
+  Cell[BoxData[
+      \(TraditionalForm\`c\_1\)]],
+  " f[",
+  Cell[BoxData[
+      \(TraditionalForm\`x\_1\)]],
+  "]  +  ",
+  Cell[BoxData[
+      \(TraditionalForm\`c\_2\)]],
+  " f[",
+  Cell[BoxData[
+      \(TraditionalForm\`x\_2\)]],
+  "]  +  . . .  +  ",
+  Cell[BoxData[
+      \(TraditionalForm\`c\_n\)]],
+  " f[",
+  Cell[BoxData[
+      \(TraditionalForm\`x\_n\)]],
+  "].\n \n \n What we will do is pick these numbers xi and ci so that the \
+formula is exactly true when f[x] is a polynomial of highest degree.  Since \
+there are 2n unknowns, we may suppose that it is true for polynomials of \
+degree 2n-1.  Thus we need only check it for f[x] = ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^k\)]],
+  " for k between 1 and 2n-1.\n \n Lets try this out for n = 2."
+}], "Text",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+
+Cell[BoxData[{
+    \(\(n = 2; \)\), 
+    \(eqn = 
+      Table[\[Integral]\_\(-1\)\%1\( x\^k\) \[DifferentialD]x == 
+          \[Sum]\+\(i = 1\)\%n c[i]\ x[i]\^k, {k, 0, 2\ n - 1}]\)}], "Input",
+  AspectRatioFixed->True],
+
+Cell[BoxData[
+    \(solutions = Solve[eqn]\)], "Input",
+  AspectRatioFixed->True],
+
+Cell[TextData[{
+  "Lets compare with ",
+  StyleBox["NIntegrate",
+    FontFamily->"Courier",
+    FontWeight->"Bold"],
+  "."
+}], "Text",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+
+Cell[BoxData[{
+    \(Clear[f]\), 
+    \(GIntegrate[f_] = 
+      \[Sum]\+\(i = 1\)\%n c[i]\ f[x[i]] /. 
+        solutions\[LeftDoubleBracket]1\[RightDoubleBracket]\)}], "Input",
+  AspectRatioFixed->True],
+
+Cell[BoxData[{
+    \(\(f[x_] = Exp[\(-x\^2\)]; \)\), 
+    \(NIntegrate[f[x], {x, \(-1\), 1}]\), 
+    \(N[GIntegrate[f]]\)}], "Input",
+  AspectRatioFixed->True],
+
+Cell[TextData[
+"Lets try this out for larger n.  Compare this with the table on page 209."], 
+  "Text",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+
+Cell[BoxData[{
+    \(\(n = 3; \)\), 
+    \(\(eqn = 
+      Table[\[Integral]\_\(-1\)\%1\( x\^k\) \[DifferentialD]x == 
+          \[Sum]\+\(i = 1\)\%n c[i]\ x[i]\^k, {k, 0, 2\ n - 1}]; \)\), 
+    \(\(solutions = NSolve[eqn]; \)\), 
+    \(TableForm[
+      Chop[Table[{k, x[k], c[k]} /. 
+            solutions\[LeftDoubleBracket]1\[RightDoubleBracket], {k, 1, n}]]]
+      \)}], "Input",
+  AspectRatioFixed->True],
+
+Cell[BoxData[{
+    \(Clear[f]\), 
+    \(\(GIntegrate[f_] = 
+      \[Sum]\+\(i = 1\)\%n c[i]\ f[x[i]] /. 
+        solutions\[LeftDoubleBracket]1\[RightDoubleBracket]; \)\), 
+    \(\(f[x_] = Exp[\(-x\^2\)]; \)\), 
+    \(NIntegrate[f[x], {x, \(-1\), 1}]\), 
+    \(N[GIntegrate[f]]\)}], "Input",
+  AspectRatioFixed->True],
+
+Cell[TextData[{
+  "If you try this for larger n, the computer takes a very long time.  \
+However, it is possible to figure out the values of ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\_i\)]],
+  " differently, as they are the zeroes of the so called Legendre \
+Polynomials.  These have the property that LegP[n,x] is of degree n, and\n  \n\
+  ",
+  Cell[BoxData[
+      \(TraditionalForm
+      \`\[Integral]\_\(-1\)\%1\ \ 
+        LegP[n, x]\ \ \(x\^m\) \[DifferentialD]x\)]],
+  "      =     0\n\nwhenever m<n.\n\nActually these polynomials are built in \
+to Mathematica.  (They differ from the ones in the book by a constant.)"
+}], "Text",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+
+Cell[BoxData[
+    \(Information["\<LegendreP\>", LongForm -> False]\)], "Input",
+  AspectRatioFixed->True],
+
+Cell[BoxData[{
+    \(Clear[n]\), 
+    \(TableForm[Table[{n, LegendreP[n, x]}, {n, 0, 10}]]\)}], "Input",
+  AspectRatioFixed->True],
+
+Cell[TextData[
+"This table illustrates the defining property of the Legendre Polynomials."], 
+  "Text",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+
+Cell[BoxData[
+    \(MatrixForm[
+      Table[\[Integral]\_\(-1\)\%1\( x\^i\ LegendreP[j, x]\) 
+            \[DifferentialD]x, {i, 0, 5}, {j, 0, 5}]]\)], "Input",
+  AspectRatioFixed->True],
+
+Cell[TextData[
+"Let's calculate the values of xi and ci.  The values of ci are given by a \
+formula that is also in the book."], "Text",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+
+Cell[BoxData[{
+    \(\(n = 10; \)\), 
+    \(\(sss = NSolve[LegendreP[n, x] == 0, x]; \)\), 
+    \(TableForm[
+      Table[x[i] = x /. sss\[LeftDoubleBracket]i\[RightDoubleBracket], {i, 1, 
+          n}]]\)}], "Input",
+  AspectRatioFixed->True],
+
+Cell[BoxData[
+    \(Table[
+      c[i] = \[Integral]\_\(-1\)\%1
+            \((\[Product]\+\(j = 1\)\%\(i - 1\)\(x - x[j]\)\/\(x[i] - x[j]\))
+              \)\ \((\[Product]\+\(j = i + 1\)\%n
+                  \( x - x[j]\)\/\(x[i] - x[j]\))\) \[DifferentialD]x, {i, 1, 
+        n}]\)], "Input",
+  AspectRatioFixed->True],
+
+Cell[TextData["And let's try it out:"], "Text",
+  Evaluatable->False,
+  AspectRatioFixed->True],
+
+Cell[BoxData[{
+    \(Clear[f]\), 
+    \(GIntegrate[f_] = \[Sum]\+\(i = 1\)\%n c[i]\ f[x[i]]\)}], "Input",
+  AspectRatioFixed->True],
+
+Cell[BoxData[{
+    \(\(f[x_] = Exp[\(-x\^2\)]; \)\), 
+    \(NIntegrate[f[x], {x, \(-1\), 1}]\), 
+    \(N[GIntegrate[f]]\)}], "Input",
+  AspectRatioFixed->True]
+}, Open  ]]
+},
+FrontEndVersion->"X 3.0",
+ScreenRectangle->{{0, 1280}, {0, 1024}},
+WindowToolbars->{},
+CellGrouping->Automatic,
+WindowSize->{884, 600},
+WindowMargins->{{Automatic, 79}, {116, Automatic}},
+PrivateNotebookOptions->{"ColorPalette"->{RGBColor, 128}},
+ShowCellLabel->True,
+ShowCellTags->False,
+RenderingOptions->{"ObjectDithering"->True,
+"RasterDithering"->False},
+CharacterEncoding->"XAutomaticEncoding",
+Magnification->2
+]
+
+
+(***********************************************************************
+Cached data follows.  If you edit this Notebook file directly, not using
+Mathematica, you must remove the line containing CacheID at the top of 
+the file.  The cache data will then be recreated when you save this file 
+from within Mathematica.
+***********************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1731, 51, 94, 2, 211, "Title"],
+Cell[1828, 55, 967, 29, 419, "Text"],
+Cell[2798, 86, 219, 5, 134, "Input"],
+Cell[3020, 93, 81, 2, 51, "Input"],
+Cell[3104, 97, 182, 8, 58, "Text"],
+Cell[3289, 107, 202, 5, 134, "Input"],
+Cell[3494, 114, 159, 4, 113, "Input"],
+Cell[3656, 120, 151, 4, 58, "Text"],
+Cell[3810, 126, 408, 10, 226, "Input"],
+Cell[4221, 138, 317, 8, 230, "Input"],
+Cell[4541, 148, 688, 16, 363, "Text"],
+Cell[5232, 166, 106, 2, 51, "Input"],
+Cell[5341, 170, 130, 3, 80, "Input"],
+Cell[5474, 175, 151, 4, 58, "Text"],
+Cell[5628, 181, 186, 4, 127, "Input"],
+Cell[5817, 187, 184, 4, 88, "Text"],
+Cell[6004, 193, 242, 6, 109, "Input"],
+Cell[6249, 201, 320, 7, 151, "Input"],
+Cell[6572, 210, 95, 2, 58, "Text"],
+Cell[6670, 214, 131, 3, 134, "Input"],
+Cell[6804, 219, 159, 4, 113, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+
+(***********************************************************************
+End of Mathematica Notebook file.
+***********************************************************************)
+

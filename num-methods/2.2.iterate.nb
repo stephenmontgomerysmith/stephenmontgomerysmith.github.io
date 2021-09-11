@@ -1,0 +1,616 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21839,        608]
+NotebookOptionsPosition[     19426,        557]
+NotebookOutlinePosition[     20298,        586]
+CellTagsIndexPosition[     20255,        583]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Fixed Point Iteration", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"8df75c8a-7cf6-415f-bfc6-1bd8797e53f6"],
+
+Cell[TextData[{
+ "Here we are going to illustrate fixed point iteration using mathematica.  \
+Let us set up a function\n\n  g(x) = cos(x).  \n\nWe will work in the \
+interval a<=x<=b, where a = 0, and b = 1.  Our starting value is ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "0"], TraditionalForm]],ExpressionUUID->
+  "5cb468b4-e803-4d62-81ef-5b8aaff5c640"],
+ " = 0."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.744363452557748*^9, 3.744363454933123*^9}},
+ AspectRatioFixed->
+  True,ExpressionUUID->"7d790cc5-f4d7-40b7-abf2-ec9250b57b60"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"g", ",", "a", ",", "b"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_", "]"}], "=", 
+   RowBox[{"Cos", "[", "x", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"a", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"b", "=", "1"}], ";"}], "\n", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"g", "[", "x", "]"}], ",", "x"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "a", ",", "b"}], "}"}], ",", 
+   RowBox[{"AspectRatio", "\[Rule]", "Automatic"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.7443627186351557`*^9, {3.744362998835712*^9, 3.744362999180882*^9}, {
+   3.744363077954391*^9, 3.744363078489369*^9}},
+ AspectRatioFixed->
+  True,ExpressionUUID->"2c782e1b-64a4-4534-8d02-9959904d3d15"],
+
+Cell["Now let us do the iteration. ", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"1b5a64f8-0e2a-41eb-8180-5a7ed079347f"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"p", ",", "k"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "0."}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "k", "]"}], "=", 
+    RowBox[{"N", "[", 
+     RowBox[{"g", "[", 
+      RowBox[{"p", "[", 
+       RowBox[{"k", "-", "1"}], "]"}], "]"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "1", ",", "100"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.744363014030629*^9, 3.744363016291935*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[21]:=",ExpressionUUID->"956b2b4c-b115-47f0-89f9-53d95f9119bf"],
+
+Cell["Lets write out the values:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"e2dbceae-1f57-4360-b75f-6dc7cfded9f0"],
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"k", ",", 
+      RowBox[{"p", "[", "k", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "11"}], "}"}]}], "]"}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[24]:=",ExpressionUUID->"aac8c958-48dc-4e61-856a-d6eb013e8f19"],
+
+Cell["\<\
+Now lets do a nice plot.  First of all, we will plot the function.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"aa39a1e2-2fb8-4308-bdcb-7e2ceebeafb2"],
+
+Cell[BoxData[
+ RowBox[{"ppp", "=", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"g", "[", "x", "]"}], ",", "x"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "a", ",", "b"}], "}"}], ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "Automatic"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{3.74436275466928*^9},
+ AspectRatioFixed->True,
+ CellLabel->"In[11]:=",ExpressionUUID->"40dcff5f-5410-4260-b2c5-185741313f00"],
+
+Cell["\<\
+Now lets do a bunch of plots, and then make a movie.  What do you think the \
+mathematica code is doing here?\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"21720af0-84f5-4568-a34d-948c7d4c83aa"],
+
+Cell[BoxData[
+ RowBox[{"ListAnimate", "[", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"Show", "[", "\n", "\t\t\t", 
+        RowBox[{"ppp", ",", "\n", "\t\t\t", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", "\n", "\t\t\t\t\t", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", "k", "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", 
+            "          \t", "\n", "\t\t\t\t\t", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "}"}]}]}], "]"}],
+        ",", "\n", "\t\t", 
+       RowBox[{"Show", "[", "\n", "\t\t\t", 
+        RowBox[{"ppp", ",", "\n", "\t\t\t", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", "\n", "\t\t\t\t\t", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", "k", "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", "\n", 
+            "\t\t\t\t\t", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "}"}]}]}], 
+        "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "10"}], "}"}]}], "]"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.744362780083048*^9, 3.744362794816626*^9}, {
+  3.7443628876321774`*^9, 3.744362943879241*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[15]:=",ExpressionUUID->"c5e784fb-f4ab-47b4-a152-e006fd3db2f6"],
+
+Cell["\<\
+Now lets try other functions.  When does the sequence p[k] converge?\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"863b3e8d-0e0a-46d9-8f60-4a2a1657e909"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"p", ",", "g", ",", "a", ",", "b"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_", "]"}], "=", 
+   RowBox[{
+    FractionBox["1", "2"], "+", 
+    FractionBox[
+     RowBox[{"Sin", "[", "x", "]"}], "2"]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"a", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"b", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "0."}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "k", "]"}], "=", 
+    RowBox[{"N", "[", 
+     RowBox[{"g", "[", 
+      RowBox[{"p", "[", 
+       RowBox[{"k", "-", "1"}], "]"}], "]"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "1", ",", "100"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"k", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"p", "[", "k", "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "11"}], "}"}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.744363055539867*^9, 3.7443630648577023`*^9}, {
+  3.74436312651329*^9, 3.744363127094755*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[25]:=",ExpressionUUID->"3399e185-b80c-476e-be14-b57827d2b3e1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ppp", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"g", "[", "x", "]"}], ",", "x"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "a", ",", "b"}], "}"}], ",", 
+     RowBox[{"AspectRatio", "\[Rule]", "Automatic"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"ListAnimate", "[", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"Show", "[", 
+        RowBox[{"ppp", ",", "\n", "\t\t\t  ", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", "k", "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", "\n", 
+            "\t\t\t                      \t", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "}"}]}]}], "]"}],
+        ",", "\n", "\t\t ", 
+       RowBox[{"Show", "[", 
+        RowBox[{"ppp", ",", "\n", "\t\t\t  ", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", "k", "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", "\n", 
+            "\t                      \t\t  ", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "}"}]}]}], 
+        "]"}]}], "}"}], ",", "\n", "\t   ", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "10"}], "}"}]}], "]"}], "]"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.744363150268485*^9, 3.74436317103694*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[32]:=",ExpressionUUID->"a485a35a-a641-49fa-9a1e-591ebb8ece68"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"p", ",", "g", ",", "a", ",", "b"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_", "]"}], "=", 
+   RowBox[{"1", "-", 
+    SuperscriptBox["x", "2"]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"a", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"b", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "0.6"}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "k", "]"}], "=", 
+    RowBox[{"N", "[", 
+     RowBox[{"g", "[", 
+      RowBox[{"p", "[", 
+       RowBox[{"k", "-", "1"}], "]"}], "]"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "1", ",", "100"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"k", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"p", "[", "k", "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "11"}], "}"}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7443631839751263`*^9, 3.7443632003011627`*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[36]:=",ExpressionUUID->"24710905-4e8d-4389-bb45-8c868ec90a2d"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ppp", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"g", "[", "x", "]"}], ",", "x"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "a", ",", "b"}], "}"}], ",", 
+     RowBox[{"AspectRatio", "\[Rule]", "Automatic"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"ListAnimate", "[", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"Show", "[", 
+        RowBox[{"ppp", ",", "\n", "\t\t\t  ", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", "k", "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", "\n", 
+            "\t\t\t                      \t", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "}"}]}]}], "]"}],
+        ",", "\n", "\t\t ", 
+       RowBox[{"Show", "[", 
+        RowBox[{"ppp", ",", "\n", "\t\t\t  ", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", "k", "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", "\n", 
+            "\t                      \t\t  ", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}], ",", 
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}]}], "}"}]}], "}"}], "]"}], 
+              ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "}"}]}]}], 
+        "]"}]}], "}"}], ",", "\n", "\t   ", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "10"}], "}"}]}], "]"}], "]"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.7443632057864017`*^9, 3.74436323075662*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[43]:=",ExpressionUUID->"945c7af0-08ea-43c2-8c02-ae85e8469f8e"]
+}, Open  ]]
+},
+WindowToolbars->{},
+CellGrouping->Automatic,
+WindowSize->{1364, 737},
+WindowMargins->{{1, Automatic}, {1, Automatic}},
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"Magnification"->1,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 142, 3, 147, "Title",ExpressionUUID->"8df75c8a-7cf6-415f-bfc6-1bd8797e53f6",
+ Evaluatable->False],
+Cell[725, 27, 555, 13, 196, "Text",ExpressionUUID->"7d790cc5-f4d7-40b7-abf2-ec9250b57b60",
+ Evaluatable->False],
+Cell[1283, 42, 794, 23, 184, "Input",ExpressionUUID->"2c782e1b-64a4-4534-8d02-9959904d3d15"],
+Cell[2080, 67, 149, 3, 54, "Text",ExpressionUUID->"1b5a64f8-0e2a-41eb-8180-5a7ed079347f",
+ Evaluatable->False],
+Cell[2232, 72, 632, 18, 116, "Input",ExpressionUUID->"956b2b4c-b115-47f0-89f9-53d95f9119bf"],
+Cell[2867, 92, 146, 3, 54, "Text",ExpressionUUID->"e2dbceae-1f57-4360-b75f-6dc7cfded9f0",
+ Evaluatable->False],
+Cell[3016, 97, 367, 10, 47, "Input",ExpressionUUID->"aac8c958-48dc-4e61-856a-d6eb013e8f19"],
+Cell[3386, 109, 194, 5, 54, "Text",ExpressionUUID->"aa39a1e2-2fb8-4308-bdcb-7e2ceebeafb2",
+ Evaluatable->False],
+Cell[3583, 116, 454, 12, 47, "Input",ExpressionUUID->"40dcff5f-5410-4260-b2c5-185741313f00"],
+Cell[4040, 130, 237, 6, 54, "Text",ExpressionUUID->"21720af0-84f5-4568-a34d-948c7d4c83aa",
+ Evaluatable->False],
+Cell[4280, 138, 3997, 102, 422, "Input",ExpressionUUID->"c5e784fb-f4ab-47b4-a152-e006fd3db2f6"],
+Cell[8280, 242, 196, 5, 54, "Text",ExpressionUUID->"863b3e8d-0e0a-46d9-8f60-4a2a1657e909",
+ Evaluatable->False],
+Cell[8479, 249, 1268, 39, 292, "Input",ExpressionUUID->"3399e185-b80c-476e-be14-b57827d2b3e1"],
+Cell[9750, 290, 4241, 112, 320, "Input",ExpressionUUID->"a485a35a-a641-49fa-9a1e-591ebb8ece68"],
+Cell[13994, 404, 1170, 36, 252, "Input",ExpressionUUID->"24710905-4e8d-4389-bb45-8c868ec90a2d"],
+Cell[15167, 442, 4243, 112, 320, "Input",ExpressionUUID->"945c7af0-08ea-43c2-8c02-ae85e8469f8e"]
+}, Open  ]]
+}
+]
+*)
+

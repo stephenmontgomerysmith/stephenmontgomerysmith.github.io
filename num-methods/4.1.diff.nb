@@ -1,0 +1,416 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13331,        408]
+NotebookOptionsPosition[     10425,        351]
+NotebookOutlinePosition[     11165,        376]
+CellTagsIndexPosition[     11122,        373]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Differentiation Formulae", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"67137c61-00f7-4e86-8bc7-0b47162af1b7"],
+
+Cell[TextData[{
+ "Let us use ",
+ StyleBox["mathematica",
+  FontSlant->"Italic"],
+ " to find rules for differenting.  \n\nWe are going to be working with an \
+undefined function, f[x].  Lets first make sure that it is not defined:"
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"b7254807-ad67-40a1-8747-d5759b465a1a"],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "f", "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[17]:=",ExpressionUUID->"978db5f0-a484-467e-a628-a217ee11e6dc"],
+
+Cell[TextData[{
+ "Lets try differentiating first.  We are going to interpolate this function \
+at ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "1932e7b4-2125-4481-8178-c1d73bc497f8"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "adadbfcb-071a-446a-9be3-68275ce1b1e4"],
+ "+h and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "af4bfa3b-2161-4953-a47b-6c855c05b2b4"],
+ "+2h."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"ab077715-4adb-4cc2-8f46-237693693943"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p", "[", "x_", "]"}], "=", 
+  RowBox[{"Expand", "[", 
+   RowBox[{"InterpolatingPolynomial", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x0", ",", 
+         RowBox[{"f", "[", "x0", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"x0", "+", "h"}], ",", 
+         RowBox[{"f", "[", 
+          RowBox[{"x0", "+", "h"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"x0", "+", 
+          RowBox[{"2", " ", "h"}]}], ",", 
+         RowBox[{"f", "[", 
+          RowBox[{"x0", "+", 
+           RowBox[{"2", " ", "h"}]}], "]"}]}], "}"}]}], "}"}], ",", "x"}], 
+    "]"}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[18]:=",ExpressionUUID->"dc95673e-2063-4b1c-9798-518b3e584f74"],
+
+Cell["Lets differentiate this.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"7770c7e6-33de-4693-a58e-fc512489134b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Dp", "[", "x_", "]"}], "=", 
+  RowBox[{
+   SubscriptBox["\[PartialD]", "x"], 
+   RowBox[{"p", "[", "x", "]"}]}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[19]:=",ExpressionUUID->"846984cc-8617-4983-9478-5b8a4a28ec5c"],
+
+Cell[TextData[{
+ "\nWe can get a three point formulae by setting x = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "5a416380-178e-4d20-898b-7aefcb2cc052"],
+ "."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"98440432-8c93-4c60-8056-54fca6b830cc"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"Dp", "[", "x0", "]"}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[20]:=",ExpressionUUID->"88eaf04c-2669-4f17-8395-e21fb29c252e"],
+
+Cell["\<\
+Now, lets try to work out the error term.  We have a formula for the error \
+term of the interpolating polynomial. z(x) is the unknown point.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"60f6d415-a679-4c80-b89c-2c986b035ba2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"error", "[", "x_", "]"}], "=", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      UnderoverscriptBox["\[Product]", 
+       RowBox[{"n", "=", "0"}], "2"], 
+      RowBox[{"(", 
+       RowBox[{"x", "-", 
+        RowBox[{"(", 
+         RowBox[{"x0", "+", 
+          RowBox[{"n", " ", "h"}]}], ")"}]}], ")"}]}], ")"}], " ", 
+    RowBox[{
+     SuperscriptBox["f", 
+      TagBox[
+       RowBox[{"(", "3", ")"}],
+       Derivative],
+      MultilineFunction->None], "[", 
+     RowBox[{"\[Xi]", "[", "x", "]"}], "]"}]}], 
+   RowBox[{"3", "!"}]]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[21]:=",ExpressionUUID->"8733d60b-a73b-493c-8735-f531bcf4b87c"],
+
+Cell["Lets differentiate it.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"1c327a7b-fce8-4511-8b4e-d401fbe56c07"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Differror", "[", "x_", "]"}], "=", 
+  RowBox[{
+   SubscriptBox["\[PartialD]", "x"], 
+   RowBox[{"error", "[", "x", "]"}]}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[22]:=",ExpressionUUID->"e6b01014-3d27-4946-9b0b-9ba50419acad"],
+
+Cell[TextData[{
+ "Notice that the expression includes \[Xi]'[x], whose value we don't know.\n\
+\nNow lets substitute x for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "2000dc16-cec9-4fb3-9af7-a86a4c524b71"],
+ ", to get our error term:"
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"872673ad-e23e-482b-9f47-597b59203a5e"],
+
+Cell[BoxData[
+ RowBox[{"Differror", "[", "x0", "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[23]:=",ExpressionUUID->"46ab6c8e-2919-49d7-ac8d-95ae0357e5ed"],
+
+Cell[TextData[{
+ "Lets try a five point formula.  Lets interpolate at ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "3d55d3a0-8771-41b7-a6aa-d9dadcc52ee0"],
+ "-2h, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "81e62fa1-d4f8-47bd-a633-1f14e7806ec7"],
+ "-h, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "793d3636-9dc3-49c1-a2ed-f512aa571a3d"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "31b28252-a228-4d43-966d-fdf5d27e47cf"],
+ "+h, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "3e6ce314-dce3-4c22-ac39-c46cf384d61d"],
+ "+2h."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"cb962664-5462-4d71-951b-b0e043ef9555"],
+
+Cell[BoxData[
+ RowBox[{"list", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x0", "+", 
+       RowBox[{"n", " ", "h"}]}], ",", 
+      RowBox[{"f", "[", 
+       RowBox[{"x0", "+", 
+        RowBox[{"n", " ", "h"}]}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"-", "2"}], ",", "2"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{3.747094640102499*^9},
+ AspectRatioFixed->True,
+ CellLabel->"In[24]:=",ExpressionUUID->"311ca78b-1acf-4ab4-b4e0-8c12c9c2ef96"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Dp", "[", "x_", "]"}], "=", 
+   RowBox[{
+    SubscriptBox["\[PartialD]", "x"], 
+    RowBox[{"Expand", "[", 
+     RowBox[{"InterpolatingPolynomial", "[", 
+      RowBox[{"list", ",", "x"}], "]"}], "]"}]}]}], ";"}], "\n", 
+ RowBox[{"Simplify", "[", 
+  RowBox[{"Dp", "[", "x0", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{3.747094638973112*^9},
+ AspectRatioFixed->True,
+ CellLabel->"In[25]:=",ExpressionUUID->"d7526216-0d20-4646-9ad8-2f7042dc307e"],
+
+Cell["The error term:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"ca89f954-6261-4122-9e73-00c8d3454fd2"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Differror", "[", "x_", "]"}], "=", 
+   RowBox[{
+    SubscriptBox["\[PartialD]", "x"], 
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"n", "=", 
+          RowBox[{"-", "2"}]}], "2"], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", 
+          RowBox[{"(", 
+           RowBox[{"x0", "+", 
+            RowBox[{"n", " ", "h"}]}], ")"}]}], ")"}]}], ")"}], " ", 
+      RowBox[{
+       SuperscriptBox["f", 
+        TagBox[
+         RowBox[{"(", "5", ")"}],
+         Derivative],
+        MultilineFunction->None], "[", 
+       RowBox[{"\[Xi]", "[", "x", "]"}], "]"}]}], 
+     RowBox[{"5", "!"}]]}]}], ";"}], "\n", 
+ RowBox[{"Differror", "[", "x0", "]"}]}], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[27]:=",ExpressionUUID->"33072785-8813-4681-b857-8c16f0e864e8"],
+
+Cell["How about a 9 point formula?", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"20fa8b2c-d2b1-46f1-844a-ede19310f76b"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"x0", "+", 
+        RowBox[{"n", " ", "h"}]}], ",", 
+       RowBox[{"f", "[", 
+        RowBox[{"x0", "+", 
+         RowBox[{"n", " ", "h"}]}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", 
+       RowBox[{"-", "4"}], ",", "4"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Dp", "[", "x_", "]"}], "=", 
+   RowBox[{
+    SubscriptBox["\[PartialD]", "x"], 
+    RowBox[{"Expand", "[", 
+     RowBox[{"InterpolatingPolynomial", "[", 
+      RowBox[{"list", ",", "x"}], "]"}], "]"}]}]}], ";"}], "\n", 
+ RowBox[{"Simplify", "[", 
+  RowBox[{"Dp", "[", "x0", "]"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Differror", "[", "x_", "]"}], "=", 
+   RowBox[{
+    SubscriptBox["\[PartialD]", "x"], 
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"n", "=", 
+          RowBox[{"-", "4"}]}], "4"], 
+        RowBox[{"(", 
+         RowBox[{"x", "-", 
+          RowBox[{"(", 
+           RowBox[{"x0", "+", 
+            RowBox[{"n", " ", "h"}]}], ")"}]}], ")"}]}], ")"}], " ", 
+      RowBox[{
+       SuperscriptBox["f", 
+        TagBox[
+         RowBox[{"(", "9", ")"}],
+         Derivative],
+        MultilineFunction->None], "[", 
+       RowBox[{"\[Xi]", "[", "x", "]"}], "]"}]}], 
+     RowBox[{"5", "!"}]]}]}], ";"}], "\n", 
+ RowBox[{"Differror", "[", "x0", "]"}]}], "Input",
+ CellChangeTimes->{{3.7470946389828033`*^9, 3.747094638985869*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[29]:=",ExpressionUUID->"98fc126a-2fde-4e4c-91f8-86bb6c592807"]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+CellGrouping->Automatic,
+WindowSize->{1366, 737},
+WindowMargins->{{0, Automatic}, {1, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 145, 3, 147, "Title",ExpressionUUID->"67137c61-00f7-4e86-8bc7-0b47162af1b7",
+ Evaluatable->False],
+Cell[728, 27, 346, 9, 125, "Text",ExpressionUUID->"b7254807-ad67-40a1-8747-d5759b465a1a",
+ Evaluatable->False],
+Cell[1077, 38, 162, 3, 47, "Input",ExpressionUUID->"978db5f0-a484-467e-a628-a217ee11e6dc"],
+Cell[1242, 43, 636, 21, 54, "Text",ExpressionUUID->"ab077715-4adb-4cc2-8f46-237693693943",
+ Evaluatable->False],
+Cell[1881, 66, 826, 25, 47, "Input",ExpressionUUID->"dc95673e-2063-4b1c-9798-518b3e584f74"],
+Cell[2710, 93, 144, 3, 54, "Text",ExpressionUUID->"7770c7e6-33de-4693-a58e-fc512489134b",
+ Evaluatable->False],
+Cell[2857, 98, 263, 7, 47, "Input",ExpressionUUID->"846984cc-8617-4983-9478-5b8a4a28ec5c"],
+Cell[3123, 107, 323, 10, 90, "Text",ExpressionUUID->"98440432-8c93-4c60-8056-54fca6b830cc",
+ Evaluatable->False],
+Cell[3449, 119, 195, 4, 47, "Input",ExpressionUUID->"88eaf04c-2669-4f17-8395-e21fb29c252e"],
+Cell[3647, 125, 269, 6, 90, "Text",ExpressionUUID->"60f6d415-a679-4c80-b89c-2c986b035ba2",
+ Evaluatable->False],
+Cell[3919, 133, 701, 23, 89, "Input",ExpressionUUID->"8733d60b-a73b-493c-8735-f531bcf4b87c"],
+Cell[4623, 158, 142, 3, 54, "Text",ExpressionUUID->"1c327a7b-fce8-4511-8b4e-d401fbe56c07",
+ Evaluatable->False],
+Cell[4768, 163, 274, 7, 47, "Input",ExpressionUUID->"e6b01014-3d27-4946-9b0b-9ba50419acad"],
+Cell[5045, 172, 400, 11, 125, "Text",ExpressionUUID->"872673ad-e23e-482b-9f47-597b59203a5e",
+ Evaluatable->False],
+Cell[5448, 185, 167, 3, 47, "Input",ExpressionUUID->"46ab6c8e-2919-49d7-ac8d-95ae0357e5ed"],
+Cell[5618, 190, 886, 30, 54, "Text",ExpressionUUID->"cb962664-5462-4d71-951b-b0e043ef9555",
+ Evaluatable->False],
+Cell[6507, 222, 534, 16, 47, "Input",ExpressionUUID->"311ca78b-1acf-4ab4-b4e0-8c12c9c2ef96"],
+Cell[7044, 240, 492, 13, 82, "Input",ExpressionUUID->"d7526216-0d20-4646-9ad8-2f7042dc307e"],
+Cell[7539, 255, 135, 3, 54, "Text",ExpressionUUID->"ca89f954-6261-4122-9e73-00c8d3454fd2",
+ Evaluatable->False],
+Cell[7677, 260, 890, 28, 127, "Input",ExpressionUUID->"33072785-8813-4681-b857-8c16f0e864e8"],
+Cell[8570, 290, 148, 3, 54, "Text",ExpressionUUID->"20fa8b2c-d2b1-46f1-844a-ede19310f76b",
+ Evaluatable->False],
+Cell[8721, 295, 1688, 53, 233, "Input",ExpressionUUID->"98fc126a-2fde-4e4c-91f8-86bb6c592807"]
+}, Open  ]]
+}
+]
+*)
+

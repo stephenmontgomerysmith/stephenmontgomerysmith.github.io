@@ -1,0 +1,274 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8246,        264]
+NotebookOptionsPosition[      6467,        223]
+NotebookOutlinePosition[      7200,        248]
+CellTagsIndexPosition[      7157,        245]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Handling Sequences", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"06d85b3e-b4f1-4653-9217-2d83180f56d8"],
+
+Cell["\<\
+This is based on Chapter 1.3.
+
+We will illustrate rounding errors, and at the same time, look at ways to get \
+Mathematica to compute sequences.
+
+We will focus on the following sequence:
+
+  p[n] = 10/3 p[n-1] - p[n-2],
+  p[0] = 1
+  p[1] = 1/3.
+  
+Let us first figure out the theoretical approach.  One guesses a solution:
+
+  p[n] = A r^n
+
+and we solve for r.  We end up with the equation:\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"0c885c4f-924c-4a8b-aceb-2d65e44c3a12"],
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["r", "2"], "==", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"10", " ", "r"}], "3"], "-", "1"}]}], ",", "r"}], 
+  "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[1]:=",ExpressionUUID->"d54d6964-873b-4ba9-8825-57ff67adc291"],
+
+Cell["\<\
+which has roots r = 1/3 and r = 3.  Thus the general solution is
+
+  p[n] = A (1/3)^n + B 3^n.
+
+We use the conditions p[0] = 1, p[1] = 1/3 :\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"f3724f48-beed-4c13-9341-46ec1df93aa4"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "n_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"A", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       FractionBox["1", "3"], ")"}], "n"]}], "+", 
+    RowBox[{"B", " ", 
+     SuperscriptBox["3", "n"]}]}]}], ";"}], "\n", 
+ RowBox[{"Solve", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"p", "[", "0", "]"}], "==", "1"}], ",", 
+    RowBox[{
+     RowBox[{"p", "[", "1", "]"}], "==", 
+     FractionBox["1", "3"]}]}], "}"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[2]:=",ExpressionUUID->"f513e9e4-58df-4135-b13e-322eea904165"],
+
+Cell["\<\
+to conclude that
+
+  p[n] = 1/3^n.
+
+Now, after having done this theoretically, let us have Mathematica check it \
+out for us.
+
+There are two ways to compute these sequences.  The first way is the \
+recursive method.  This method seems mathematically slicker, but is actually \
+fraught with troubles.  First, if one forgets to put := instead of =, the \
+computer locks up.  Secondly, it is computationally very inefficient.  In \
+fact, the computation time is exponential in n.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"4e79e9c5-4edb-448d-8707-aa507415743c"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "p", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"p", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    FractionBox["10", "3"], " ", 
+    RowBox[{"p", "[", 
+     RowBox[{"n", "-", "1"}], "]"}]}], "-", 
+   RowBox[{"p", "[", 
+    RowBox[{"n", "-", "2"}], "]"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "1", "]"}], "=", 
+   FractionBox["1", "3"]}], ";"}], "\n", 
+ RowBox[{"p", "[", "30", "]"}]}], "Input",
+ CellChangeTimes->{{3.7470956683747387`*^9, 3.74709570503763*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[40]:=",ExpressionUUID->"cf1da076-28ef-4fac-87b1-c50a753992bd"],
+
+Cell["\<\
+The second way is the iterative method.  This is much more effective.  We \
+will use this method from now on.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"2fb19255-a9c8-48fc-bbc7-1a1f5be90a01"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "p", "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "1", "]"}], "=", 
+   FractionBox["1", "3"]}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "n", "]"}], "=", 
+    RowBox[{
+     RowBox[{
+      FractionBox["10", "3"], " ", 
+      RowBox[{"p", "[", 
+       RowBox[{"n", "-", "1"}], "]"}]}], "-", 
+     RowBox[{"p", "[", 
+      RowBox[{"n", "-", "2"}], "]"}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "2", ",", "100"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"p", "[", "30", "]"}], "\n", 
+ RowBox[{"p", "[", "100", "]"}]}], "Input",
+ CellChangeTimes->{{3.747095717754483*^9, 3.747095718077099*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[45]:=",ExpressionUUID->"f9e1da4a-dda5-4680-bd63-12b3721e6b05"],
+
+Cell["\<\
+This is all well and good, but most computers cannot handle the infinite \
+precision we have here.  Let us look at what happens if we do the same \
+computation using floating point arithmetic.  Let us compare the answer with \
+the theoretical answer.
+
+As you can see, the answers are very inaccurate for large enough n.  Why is \
+this?\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"45e4ed77-ff38-439e-8bae-4c94ab73b6e9"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "p", "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "1."}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "1", "]"}], "=", 
+   RowBox[{"N", "[", 
+    FractionBox["1", "3"], "]"}]}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "n", "]"}], "=", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{
+       FractionBox["10", "3"], " ", 
+       RowBox[{"p", "[", 
+        RowBox[{"n", "-", "1"}], "]"}]}], "-", 
+      RowBox[{"p", "[", 
+       RowBox[{"n", "-", "2"}], "]"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "2", ",", "100"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"N", "[", 
+       FractionBox["1", 
+        SuperscriptBox["3", "n"]], "]"}], ",", 
+      RowBox[{"p", "[", "n", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "100"}], "}"}]}], "]"}], "]"}]}], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[15]:=",ExpressionUUID->"8f940a17-0433-4501-b5fd-c0337fc7c2bd"]
+}, Open  ]]
+},
+WindowToolbars->{},
+CellGrouping->Automatic,
+WindowSize->{1366, 737},
+WindowMargins->{{0, Automatic}, {1, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 139, 3, 147, "Title",ExpressionUUID->"06d85b3e-b4f1-4653-9217-2d83180f56d8",
+ Evaluatable->False],
+Cell[722, 27, 516, 20, 551, "Text",ExpressionUUID->"0c885c4f-924c-4a8b-aceb-2d65e44c3a12",
+ Evaluatable->False],
+Cell[1241, 49, 315, 10, 79, "Input",ExpressionUUID->"d54d6964-873b-4ba9-8825-57ff67adc291"],
+Cell[1559, 61, 267, 9, 196, "Text",ExpressionUUID->"f3724f48-beed-4c13-9341-46ec1df93aa4",
+ Evaluatable->False],
+Cell[1829, 72, 610, 20, 154, "Input",ExpressionUUID->"f513e9e4-58df-4135-b13e-322eea904165"],
+Cell[2442, 94, 603, 16, 338, "Text",ExpressionUUID->"4e79e9c5-4edb-448d-8707-aa507415743c",
+ Evaluatable->False],
+Cell[3048, 112, 696, 21, 260, "Input",ExpressionUUID->"cf1da076-28ef-4fac-87b1-c50a753992bd"],
+Cell[3747, 135, 237, 6, 54, "Text",ExpressionUUID->"2fb19255-a9c8-48fc-bbc7-1a1f5be90a01",
+ Evaluatable->False],
+Cell[3987, 143, 863, 26, 294, "Input",ExpressionUUID->"f9e1da4a-dda5-4680-bd63-12b3721e6b05"],
+Cell[4853, 171, 463, 11, 196, "Text",ExpressionUUID->"45e4ed77-ff38-439e-8bae-4c94ab73b6e9",
+ Evaluatable->False],
+Cell[5319, 184, 1132, 36, 295, "Input",ExpressionUUID->"8f940a17-0433-4501-b5fd-c0337fc7c2bd"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

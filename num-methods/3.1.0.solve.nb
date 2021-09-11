@@ -1,0 +1,516 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17045,        506]
+NotebookOptionsPosition[     11902,        409]
+NotebookOutlinePosition[     12635,        434]
+CellTagsIndexPosition[     12592,        431]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Solving Equations", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"156022aa-7cc8-4d1e-84cd-3f93fa7e770a"],
+
+Cell["\<\
+This section is meant to serve as an introduction to how to solve systems of \
+equations in mathematica.  \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"23b77b39-df53-473d-990d-5455469cae3c"],
+
+Cell[CellGroupData[{
+
+Cell["Lists", "Subtitle",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"e1e0fb6f-5dee-4ddb-8533-c20fb06ffea7"],
+
+Cell["Let us start with understanding lists.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"629f1432-ee29-4408-a2f0-b8dc87d595c5"],
+
+Cell[BoxData[
+ RowBox[{"list", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "4"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{3.7459230344494467`*^9},
+ AspectRatioFixed->
+  True,ExpressionUUID->"a725994c-50d5-444c-82fe-d5a7cdd03aec"],
+
+Cell["What is are the first, second and third items of this list?", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"551ab7dc-d4ef-4f20-a06b-20f69688fcf7"],
+
+Cell[BoxData[{
+ RowBox[{"list", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "\n", 
+ RowBox[{"list", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], "\n", 
+ RowBox[{"list", "\[LeftDoubleBracket]", "3", 
+  "\[RightDoubleBracket]"}]}], "Input",
+ CellChangeTimes->{{3.745923034452529*^9, 3.745923034456976*^9}},
+ AspectRatioFixed->
+  True,ExpressionUUID->"b29d2c23-5c81-4b58-b1d8-0f5404626d64"],
+
+Cell[TextData[{
+ StyleBox["list[[3]]",
+  FontFamily->"Courier",
+  FontWeight->"Bold"],
+ " is itself a list, with 2 items.  Lets find the first and second item of \
+list",
+ StyleBox["[[3]]",
+  FontFamily->"Courier",
+  FontWeight->"Bold"],
+ "."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.74592303447929*^9, 3.74592303453545*^9}},
+ AspectRatioFixed->
+  True,ExpressionUUID->"899d1b4e-3c60-4478-9212-3fec68b8d309"],
+
+Cell[BoxData[{
+ RowBox[{"list", "\[LeftDoubleBracket]", 
+  RowBox[{"3", ",", "1"}], "\[RightDoubleBracket]"}], "\n", 
+ RowBox[{"list", "\[LeftDoubleBracket]", 
+  RowBox[{"3", ",", "2"}], "\[RightDoubleBracket]"}]}], "Input",
+ CellChangeTimes->{{3.745923034547881*^9, 3.7459230345503387`*^9}},
+ AspectRatioFixed->
+  True,ExpressionUUID->"2677b129-7274-4c2a-bda1-3a8d62899bab"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Substitution", "Subtitle",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"e6283729-1e16-47c2-9519-b48c32539c60"],
+
+Cell["Here is an expression:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"88960ed4-621d-4ea5-b436-cc20711dc0e2"],
+
+Cell[BoxData[
+ RowBox[{"e", "=", 
+  RowBox[{
+   SuperscriptBox["x", "2"], "+", 
+   RowBox[{"4", " ", "y"}], "-", 
+   RowBox[{"Cos", "[", "x", "]"}]}]}]], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"b0b36658-1d1d-46b2-b1af-ed0101a81442"],
+
+Cell["\<\
+How do we substitute for x, say, letting x become 3?  Or substitute for both \
+x and y?\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"801c4fa9-93de-4de8-8476-b8df89485c99"],
+
+Cell[BoxData[
+ RowBox[{"e", "/.", 
+  RowBox[{"x", "\[Rule]", "3"}]}]], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"295cba09-259b-46e6-b790-c1c4d9b0e9e8"],
+
+Cell[BoxData[
+ RowBox[{"e", "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "\[Rule]", "3"}], ",", 
+    RowBox[{"y", "\[Rule]", "4"}]}], "}"}]}]], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"104efd9f-3063-4eda-b530-2ab6e34fff5e"],
+
+Cell[BoxData[
+ RowBox[{"e", "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "\[Rule]", 
+     RowBox[{"x", "+", "y", "+", "z", "-", "11"}]}], ",", 
+    RowBox[{"y", "\[Rule]", 
+     RowBox[{"dog", "[", "cat", "]"}]}]}], "}"}]}]], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"8b2f8cf0-e845-4041-a2f8-e79c37fb0404"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solving Equations", "Subtitle",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"7a3c4a5b-9ff8-4183-848f-a39511c81377"],
+
+Cell["Let's solve a quadratic equation:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"e5f501a7-4696-4be9-b3e8-c6b4d1675858"],
+
+Cell[BoxData[
+ RowBox[{"sol", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["x", "2"], "-", 
+     RowBox[{"4", " ", "x"}], "+", "2"}], "==", "0"}], "]"}]}]], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"67814b46-82fe-443b-aa1b-ff43f634f72b"],
+
+Cell["\<\
+The answer is a list.  The list constains two items, each corresponding to \
+one of the solutions.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"fd6414a2-e004-4fa2-a83e-7089bd39f7d3"],
+
+Cell[BoxData[{
+ RowBox[{"sol", "\[LeftDoubleBracket]", "1", 
+  "\[RightDoubleBracket]"}], "\n", 
+ RowBox[{"sol", "\[LeftDoubleBracket]", "2", 
+  "\[RightDoubleBracket]"}]}], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"e2659d5a-da81-486c-9530-7e2fd381cc9f"],
+
+Cell["\<\
+Each of these items is a list of substitutions.  So to extract the values of \
+x, we do it as follows:\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"a368080d-6edb-47e9-9216-9b09336f0a5f"],
+
+Cell[BoxData[{
+ RowBox[{"x", "/.", 
+  RowBox[{
+  "sol", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], "\n", 
+ RowBox[{"x", "/.", 
+  RowBox[{
+  "sol", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}]}], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"250eb5ca-b265-4f25-991d-30e49396ffb4"],
+
+Cell["How about systems of equations:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"68a468a0-a6ce-43af-9108-14b36ccac683"],
+
+Cell[BoxData[
+ RowBox[{"sol2", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"3", " ", "x"}], "+", 
+       RowBox[{"4", " ", "y"}]}], "==", "4"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"5", " ", "x"}], "-", 
+       RowBox[{"8", " ", "y"}]}], "==", "9"}]}], "}"}], "]"}]}]], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"2e082f79-e7f5-4d86-9607-d4455b4e05c4"],
+
+Cell["\<\
+This is a list of one item, because there is only one solution.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"3c1e3bc0-e9e1-4193-a14d-6bf2b954d796"],
+
+Cell[BoxData[
+ RowBox[{"sol2", "\[LeftDoubleBracket]", "1", 
+  "\[RightDoubleBracket]"}]], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"789f9459-18cc-40d5-a9b4-4e416a46cc7c"],
+
+Cell["\<\
+This contains a substitution for x, and a substitution for y.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"f75e53b1-8b49-42b3-80f1-e9019a7a6e13"],
+
+Cell[BoxData[{
+ RowBox[{"x", "/.", 
+  RowBox[{
+  "sol2", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], "\n", 
+ RowBox[{"y", "/.", 
+  RowBox[{
+  "sol2", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}], "Input",\
+
+ AspectRatioFixed->
+  True,ExpressionUUID->"b8a54e51-e516-4f8f-b6ce-161458956c06"],
+
+Cell["These substitutions can be used in any formula.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"a4dab50e-ce70-4c0d-894b-267f167f071d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Cos", "[", 
+   RowBox[{"x", "+", 
+    RowBox[{"2", " ", "y"}]}], "]"}], "/.", 
+  RowBox[{
+  "sol2", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"92ff35d4-3652-4ae5-8a92-8243f3d19045"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Systems of Equations", "Subtitle",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"4d0a918c-d918-49b8-bb61-41468e775d98"],
+
+Cell[TextData[{
+ "To illustrate sets of solutions, let's consider Taylor's series.  Of \
+course, what we are going to do can be done with the built in ",
+ StyleBox["Series",
+  FontFamily->"Courier",
+  FontWeight->"Bold"],
+ " command.  We do it this way merely to illustrate the syntax of the \
+mathematica commands.\n\nSo let's find the Taylor's series for f(x) = sqrt(x) \
+about x=1 of order 5.  That is, we are going to find a polynomial p(x) of \
+degree 5 so that the kth derivative of p evaluated at 1 is the same as that \
+for f.\n\nFirst, let's make up the polynomial p."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"0299db74-bef4-49db-8bae-a31d1982a8a5"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "5"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"p", "[", "x_", "]"}], "=", 
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"k", "=", "0"}], "n"], 
+   RowBox[{
+    RowBox[{"a", "[", "k", "]"}], " ", 
+    SuperscriptBox["x", "k"]}]}]}]}], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"e48d9b28-ff0f-4a86-87c7-f6492b48b698"],
+
+Cell[TextData[{
+ "Now let's create the equations.  We use the ",
+ StyleBox["Table",
+  FontFamily->"Courier",
+  FontWeight->"Bold"],
+ " command to make the list of them."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"f7b1b5bf-f723-46b7-a577-09a469be2321"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], "=", 
+   SqrtBox["x"]}], ";"}], "\n", 
+ RowBox[{"equs", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["p", 
+       TagBox[
+        RowBox[{"(", "k", ")"}],
+        Derivative],
+       MultilineFunction->None], "[", "1", "]"}], "==", 
+     RowBox[{
+      SuperscriptBox["f", 
+       TagBox[
+        RowBox[{"(", "k", ")"}],
+        Derivative],
+       MultilineFunction->None], "[", "1", "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}]}], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"e1f28ceb-4b74-40b3-bcc4-5dca08f235b0"],
+
+Cell["Solve these equations:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"c61d6921-f8b7-45ec-bd65-c09569113dac"],
+
+Cell[BoxData[
+ RowBox[{"sols", "=", 
+  RowBox[{"Solve", "[", "equs", "]"}]}]], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"d063c3db-b4e5-4447-8b73-417c5e10f8d2"],
+
+Cell["And substitute back to get the polynomial:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"6b19fcf5-e53e-46fa-afd2-5fedb0cf1ae3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p0", "[", "x_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"p", "[", "x", "]"}], "/.", 
+   RowBox[{
+   "sols", "\[LeftDoubleBracket]", "1", 
+    "\[RightDoubleBracket]"}]}]}]], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"51130595-861c-4efa-9ee2-92aab54a5fc5"],
+
+Cell[TextData[{
+ "Check this against the polynomial produced by the ",
+ StyleBox["Series",
+  FontFamily->"Courier",
+  FontWeight->"Bold"],
+ " command."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"6aff6e50-e5b0-4a99-8bef-4130b2124ce5"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"p1", "[", "x_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "x", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "1", ",", "n"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Expand", "[", 
+  RowBox[{
+   RowBox[{"p0", "[", "x", "]"}], "-", 
+   RowBox[{"p1", "[", "x", "]"}]}], "]"}]}], "Input",
+ AspectRatioFixed->
+  True,ExpressionUUID->"e9dcb42f-9ba5-448c-863d-715473a5cdc8"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->{},
+CellGrouping->Automatic,
+WindowSize->{1366, 737},
+WindowMargins->{{0, Automatic}, {1, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 138, 3, 147, "Title",ExpressionUUID->"156022aa-7cc8-4d1e-84cd-3f93fa7e770a",
+ Evaluatable->False],
+Cell[721, 27, 234, 6, 54, "Text",ExpressionUUID->"23b77b39-df53-473d-990d-5455469cae3c",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[980, 37, 129, 3, 79, "Subtitle",ExpressionUUID->"e1e0fb6f-5dee-4ddb-8533-c20fb06ffea7",
+ Evaluatable->False],
+Cell[1112, 42, 158, 3, 54, "Text",ExpressionUUID->"629f1432-ee29-4408-a2f0-b8dc87d595c5",
+ Evaluatable->False],
+Cell[1273, 47, 287, 8, 47, "Input",ExpressionUUID->"a725994c-50d5-444c-82fe-d5a7cdd03aec"],
+Cell[1563, 57, 179, 3, 54, "Text",ExpressionUUID->"551ab7dc-d4ef-4f20-a06b-20f69688fcf7",
+ Evaluatable->False],
+Cell[1745, 62, 410, 7, 116, "Input",ExpressionUUID->"b29d2c23-5c81-4b58-b1d8-0f5404626d64"],
+Cell[2158, 71, 422, 14, 54, "Text",ExpressionUUID->"899d1b4e-3c60-4478-9212-3fec68b8d309",
+ Evaluatable->False],
+Cell[2583, 87, 375, 7, 82, "Input",ExpressionUUID->"2677b129-7274-4c2a-bda1-3a8d62899bab"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2995, 99, 136, 3, 79, "Subtitle",ExpressionUUID->"e6283729-1e16-47c2-9519-b48c32539c60",
+ Evaluatable->False],
+Cell[3134, 104, 142, 3, 54, "Text",ExpressionUUID->"88960ed4-621d-4ea5-b436-cc20711dc0e2",
+ Evaluatable->False],
+Cell[3279, 109, 245, 7, 47, "Input",ExpressionUUID->"b0b36658-1d1d-46b2-b1af-ed0101a81442"],
+Cell[3527, 118, 215, 6, 54, "Text",ExpressionUUID->"801c4fa9-93de-4de8-8476-b8df89485c99",
+ Evaluatable->False],
+Cell[3745, 126, 162, 4, 47, "Input",ExpressionUUID->"295cba09-259b-46e6-b790-c1c4d9b0e9e8"],
+Cell[3910, 132, 242, 7, 47, "Input",ExpressionUUID->"104efd9f-3063-4eda-b530-2ab6e34fff5e"],
+Cell[4155, 141, 324, 9, 47, "Input",ExpressionUUID->"8b2f8cf0-e845-4041-a2f8-e79c37fb0404"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4516, 155, 141, 3, 79, "Subtitle",ExpressionUUID->"7a3c4a5b-9ff8-4183-848f-a39511c81377",
+ Evaluatable->False],
+Cell[4660, 160, 153, 3, 54, "Text",ExpressionUUID->"e5f501a7-4696-4be9-b3e8-c6b4d1675858",
+ Evaluatable->False],
+Cell[4816, 165, 279, 8, 51, "Input",ExpressionUUID->"67814b46-82fe-443b-aa1b-ff43f634f72b"],
+Cell[5098, 175, 226, 6, 54, "Text",ExpressionUUID->"fd6414a2-e004-4fa2-a83e-7089bd39f7d3",
+ Evaluatable->False],
+Cell[5327, 183, 265, 6, 82, "Input",ExpressionUUID->"e2659d5a-da81-486c-9530-7e2fd381cc9f"],
+Cell[5595, 191, 230, 6, 54, "Text",ExpressionUUID->"a368080d-6edb-47e9-9216-9b09336f0a5f",
+ Evaluatable->False],
+Cell[5828, 199, 313, 8, 82, "Input",ExpressionUUID->"250eb5ca-b265-4f25-991d-30e49396ffb4"],
+Cell[6144, 209, 151, 3, 54, "Text",ExpressionUUID->"68a468a0-a6ce-43af-9108-14b36ccac683",
+ Evaluatable->False],
+Cell[6298, 214, 436, 14, 47, "Input",ExpressionUUID->"2e082f79-e7f5-4d86-9607-d4455b4e05c4"],
+Cell[6737, 230, 191, 5, 54, "Text",ExpressionUUID->"3c1e3bc0-e9e1-4193-a14d-6bf2b954d796",
+ Evaluatable->False],
+Cell[6931, 237, 182, 4, 47, "Input",ExpressionUUID->"789f9459-18cc-40d5-a9b4-4e416a46cc7c"],
+Cell[7116, 243, 189, 5, 54, "Text",ExpressionUUID->"f75e53b1-8b49-42b3-80f1-e9019a7a6e13",
+ Evaluatable->False],
+Cell[7308, 250, 317, 9, 82, "Input",ExpressionUUID->"b8a54e51-e516-4f8f-b6ce-161458956c06"],
+Cell[7628, 261, 167, 3, 54, "Text",ExpressionUUID->"a4dab50e-ce70-4c0d-894b-267f167f071d",
+ Evaluatable->False],
+Cell[7798, 266, 285, 8, 47, "Input",ExpressionUUID->"92ff35d4-3652-4ae5-8a92-8243f3d19045"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8120, 279, 144, 3, 79, "Subtitle",ExpressionUUID->"4d0a918c-d918-49b8-bb61-41468e775d98",
+ Evaluatable->False],
+Cell[8267, 284, 693, 14, 267, "Text",ExpressionUUID->"0299db74-bef4-49db-8bae-a31d1982a8a5",
+ Evaluatable->False],
+Cell[8963, 300, 376, 12, 125, "Input",ExpressionUUID->"e48d9b28-ff0f-4a86-87c7-f6492b48b698"],
+Cell[9342, 314, 285, 9, 54, "Text",ExpressionUUID->"f7b1b5bf-f723-46b7-a577-09a469be2321",
+ Evaluatable->False],
+Cell[9630, 325, 686, 24, 93, "Input",ExpressionUUID->"e1f28ceb-4b74-40b3-bcc4-5dca08f235b0"],
+Cell[10319, 351, 142, 3, 54, "Text",ExpressionUUID->"c61d6921-f8b7-45ec-bd65-c09569113dac",
+ Evaluatable->False],
+Cell[10464, 356, 170, 4, 47, "Input",ExpressionUUID->"d063c3db-b4e5-4447-8b73-417c5e10f8d2"],
+Cell[10637, 362, 162, 3, 54, "Text",ExpressionUUID->"6b19fcf5-e53e-46fa-afd2-5fedb0cf1ae3",
+ Evaluatable->False],
+Cell[10802, 367, 295, 9, 47, "Input",ExpressionUUID->"51130595-861c-4efa-9ee2-92aab54a5fc5"],
+Cell[11100, 378, 267, 9, 54, "Text",ExpressionUUID->"6aff6e50-e5b0-4a99-8bef-4130b2124ce5",
+ Evaluatable->False],
+Cell[11370, 389, 504, 16, 82, "Input",ExpressionUUID->"e9dcb42f-9ba5-448c-863d-715473a5cdc8"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

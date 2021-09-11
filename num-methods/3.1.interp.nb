@@ -1,0 +1,707 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23038,        699]
+NotebookOptionsPosition[     19460,        633]
+NotebookOutlinePosition[     20225,        659]
+CellTagsIndexPosition[     20182,        656]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Interpolating Polynomials", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"828a6824-773d-46ba-8b08-20911915c299"],
+
+Cell[TextData[{
+ "Suppose we are given ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]],ExpressionUUID->
+  "f32bff34-2fb3-46cb-9c4a-07be8dbe6fcd"],
+ "+1 points:\n\n  (",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "d9120539-26e6-416d-a505-1b325fa9c742"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "0"], TraditionalForm]],ExpressionUUID->
+  "025f4444-7ce3-4d2f-8758-1e0ee6507384"],
+ "),  (",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "1"], TraditionalForm]],ExpressionUUID->
+  "0335407c-f838-41d7-a5ff-acc5c061daae"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "1"], TraditionalForm]],ExpressionUUID->
+  "e5c0579b-2132-4036-a486-e03bb8ac0569"],
+ "),  (",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]],ExpressionUUID->
+  "12a3fd9a-6d87-4384-a3e4-ad4d5b5bd23d"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "2"], TraditionalForm]],ExpressionUUID->
+  "b9a46291-e9de-42f8-9fd4-c1322f2bcaf1"],
+ "), . . . ,  (",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "n"], TraditionalForm]],ExpressionUUID->
+  "bf61f63e-c2c0-4a3a-b085-d219d1b0cc0b"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "n"], TraditionalForm]],ExpressionUUID->
+  "06badc53-065c-4ba1-84d9-f260c846a4fd"],
+ ").\n\nThe idea is to find the unique polynomial of degree ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]],ExpressionUUID->
+  "3504d34d-66b7-4c6e-9b70-fbb23a7c68f8"],
+ ":\n\n  ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p", "(", "x", ")"}], TraditionalForm]],ExpressionUUID->
+  "0e2d7936-7850-4b8e-b384-5378be03ab81"],
+ "  =  ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "0"], TraditionalForm]],ExpressionUUID->
+  "376d00a9-9e2b-4370-9527-a6537854c080"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "1"], TraditionalForm]],ExpressionUUID->
+  "7cfd62d9-b8a2-488e-b302-6c5270fc444d"],
+ " ",
+ Cell[BoxData[
+  FormBox["x", TraditionalForm]],ExpressionUUID->
+  "42a32b1b-02b7-412d-b936-6be4ced29f09"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "2"], TraditionalForm]],ExpressionUUID->
+  "0fcdde65-b822-4eba-b098-5e221210dd44"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "2"], TraditionalForm]],ExpressionUUID->
+  "39aeb2a8-55a9-4a57-a806-b34bcd21ad26"],
+ " + ... + ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["a", "n"], TraditionalForm]],ExpressionUUID->
+  "a7584995-303f-492e-97a8-0d0c07a581c2"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["x", "n"], TraditionalForm]],ExpressionUUID->
+  "0818e47e-86a3-4c42-a02b-b1afab35caaa"],
+ "\n\nsuch that ",
+ Cell[BoxData[
+  FormBox["p", TraditionalForm]],ExpressionUUID->
+  "d8480462-34cb-4181-b497-20ee22e40c01"],
+ "(",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "i"], TraditionalForm]],ExpressionUUID->
+  "ba8d56c6-80e3-489a-85b6-4c97661d2cc9"],
+ ") = ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "i"], TraditionalForm]],ExpressionUUID->
+  "abde4996-880a-48de-9d74-5f524cd8e82c"],
+ " for all ",
+ Cell[BoxData[
+  FormBox["i", TraditionalForm]],ExpressionUUID->
+  "1596777f-372b-4c05-b179-34ac843dec62"],
+ ".\n\nLet us consider such a list."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"00d6751b-431a-4100-81a3-4ce60cec2133"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "7"}], "}"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{"plot1", "=", 
+  RowBox[{"ListPlot", "[", 
+   RowBox[{"list", ",", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Red", ",", 
+       RowBox[{"PointSize", "[", "0.05", "]"}]}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.7459225106641617`*^9, 3.7459225544622173`*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[1]:=",ExpressionUUID->"4bdd0926-2d5e-4b1b-bb9e-7ad17684bb37"],
+
+Cell["Method 1 - Brute Force", "Subtitle",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"ebb53e19-159d-4d35-ae0f-c8daf6195942"],
+
+Cell["The first method is to solve for the coefficients.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"875bca51-83d8-4eb4-9d6b-450d406bff0c"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"p", ",", "a"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{
+    RowBox[{"Length", "[", "list", "]"}], "-", "1"}]}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "k", "]"}], "=", 
+     RowBox[{"list", "\[LeftDoubleBracket]", 
+      RowBox[{
+       RowBox[{"k", "+", "1"}], ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+    
+    RowBox[{
+     RowBox[{"y", "[", "k", "]"}], "=", 
+     RowBox[{"list", "\[LeftDoubleBracket]", 
+      RowBox[{
+       RowBox[{"k", "+", "1"}], ",", "2"}], "\[RightDoubleBracket]"}]}]}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"p", "[", "x_", "]"}], "=", 
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"k", "=", "0"}], "n"], 
+   RowBox[{
+    RowBox[{"a", "[", "k", "]"}], " ", 
+    SuperscriptBox["x", "k"]}]}]}]}], "Input",
+ CellChangeTimes->{{3.745922538246018*^9, 3.7459225382523623`*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[3]:=",ExpressionUUID->"d6156a5d-ad70-4e5e-84c8-bf9872a09c78"],
+
+Cell[BoxData[
+ RowBox[{"equations", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"p", "[", 
+      RowBox[{"x", "[", "k", "]"}], "]"}], "==", 
+     RowBox[{"y", "[", "k", "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[9]:=",ExpressionUUID->"bf191101-775e-417f-9ae2-60b964815cf4"],
+
+Cell[BoxData[
+ RowBox[{"solutions", "=", 
+  RowBox[{"Solve", "[", "equations", "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[10]:=",ExpressionUUID->"2bbe46d7-dc9b-49ae-acee-81a1fa522e75"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p1", "[", "x_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"p", "[", "x", "]"}], "/.", 
+   RowBox[{
+   "solutions", "\[LeftDoubleBracket]", "1", 
+    "\[RightDoubleBracket]"}]}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[11]:=",ExpressionUUID->"461d5930-a1de-469d-8498-a1c394f4ce41"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"plot2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"p1", "[", "xx", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"xx", ",", 
+       RowBox[{
+        RowBox[{"x", "[", "0", "]"}], "-", "1"}], ",", 
+       RowBox[{
+        RowBox[{"x", "[", "n", "]"}], "+", "1"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{"plot1", ",", "plot2"}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.7459226589630833`*^9, {3.745922771420724*^9, 3.745922773023672*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[15]:=",ExpressionUUID->"1b4497c1-2547-4f21-816d-320d4259b7d3"],
+
+Cell["Method 2 - Lagrange Polynomials", "Subtitle",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"d89575f8-32bb-4bb2-a52d-fc458970c5e2"],
+
+Cell["Here we use Lagrange Polynomials.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"f3f24498-8ebb-441d-82e0-0a0a903c02c1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{
+    RowBox[{"Length", "[", "list", "]"}], "-", "1"}]}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "k", "]"}], "=", 
+     RowBox[{"list", "\[LeftDoubleBracket]", 
+      RowBox[{
+       RowBox[{"k", "+", "1"}], ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+    
+    RowBox[{
+     RowBox[{"y", "[", "k", "]"}], "=", 
+     RowBox[{"list", "\[LeftDoubleBracket]", 
+      RowBox[{
+       RowBox[{"k", "+", "1"}], ",", "2"}], "\[RightDoubleBracket]"}]}]}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Lag", "[", 
+     RowBox[{"k", ",", "xx_"}], "]"}], "=", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", "0"}], 
+         RowBox[{"k", "-", "1"}]], 
+        RowBox[{"(", 
+         RowBox[{"xx", "-", 
+          RowBox[{"x", "[", "j", "]"}]}], ")"}]}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", 
+          RowBox[{"k", "+", "1"}]}], "n"], 
+        RowBox[{"(", 
+         RowBox[{"xx", "-", 
+          RowBox[{"x", "[", "j", "]"}]}], ")"}]}], ")"}]}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", "0"}], 
+         RowBox[{"k", "-", "1"}]], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "[", "k", "]"}], "-", 
+          RowBox[{"x", "[", "j", "]"}]}], ")"}]}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", 
+          RowBox[{"k", "+", "1"}]}], "n"], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"x", "[", "k", "]"}], "-", 
+          RowBox[{"x", "[", "j", "]"}]}], ")"}]}], ")"}]}]]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Evaluate", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Lag", "[", 
+       RowBox[{"k", ",", "xx"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"xx", ",", 
+     RowBox[{
+      RowBox[{"x", "[", "0", "]"}], "-", "1"}], ",", 
+     RowBox[{
+      RowBox[{"x", "[", "n", "]"}], "+", "1"}]}], "}"}], ",", "\n", 
+   "\t          ", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"RGBColor", "[", 
+       RowBox[{
+        FractionBox["k", "n"], ",", "0", ",", 
+        RowBox[{"1", "-", 
+         FractionBox["k", "n"]}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}]}], "]"}]}], "Input",\
+
+ CellChangeTimes->{{3.7459225382679996`*^9, 3.745922538282588*^9}, {
+  3.745922803215823*^9, 3.7459228284762917`*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[29]:=",ExpressionUUID->"1b7be441-de25-4c25-bde2-feaec626798e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p2", "[", "x_", "]"}], "=", 
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"k", "=", "0"}], "n"], 
+   RowBox[{
+    RowBox[{"y", "[", "k", "]"}], " ", 
+    RowBox[{"Lag", "[", 
+     RowBox[{"k", ",", "x"}], "]"}]}]}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[33]:=",ExpressionUUID->"f48e4eae-0f9b-42b2-a0ea-75496002b97b"],
+
+Cell["Let's check that the two methods agree:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"7acb7b38-0554-49df-b409-e54cecc3eeac"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"p1", "[", "x", "]"}], "-", 
+   RowBox[{"p2", "[", "x", "]"}]}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[34]:=",ExpressionUUID->"18a5a09b-1cd8-4861-9f10-f74e22160124"],
+
+Cell["Method 3 - Use Mathematica", "Subtitle",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"885f4fda-59d1-466a-8f06-660516479484"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p3", "[", "x_", "]"}], "=", 
+  RowBox[{"InterpolatingPolynomial", "[", 
+   RowBox[{"list", ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{3.745922538292605*^9},
+ AspectRatioFixed->True,
+ CellLabel->"In[35]:=",ExpressionUUID->"f855db52-7ddb-4c36-a180-222655a6c099"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"p3", "[", "x", "]"}], "-", 
+   RowBox[{"p1", "[", "x", "]"}]}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[36]:=",ExpressionUUID->"9537ad51-db83-4c0b-9d9d-21a1cf20404e"],
+
+Cell["How good are interpolating polynomials?", "Subtitle",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"8496d0d4-0e80-4822-b3e2-753a2e66693e"],
+
+Cell["\<\
+Just how good are interpolating polynomials at \"joining the dots\"?  Let us \
+illustrate this with two examples.  In the first one, we will try to match
+
+    f(x) = sin(x).\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"8594a01e-e968-4b29-bf71-55d8e0766ff4"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"Sin", "[", "x", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3.0"}], ",", "3.0", ",", "0.5"}], "}"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"plot1", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"list", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"PointSize", "[", "0.02", "]"}], "}"}]}], ",", 
+     RowBox[{"DisplayFunction", "\[Rule]", "Identity"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "x_", "]"}], "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"InterpolatingPolynomial", "[", 
+     RowBox[{"list", ",", "x"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"plot2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Sin", "[", "x", "]"}], ",", 
+       RowBox[{"p", "[", "x", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", "Blue"}], "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{"plot1", ",", "plot2"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.745922538304878*^9, 3.7459225383107567`*^9}, {
+  3.745922891859109*^9, 3.7459229047073727`*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[37]:=",ExpressionUUID->"65e48884-1955-40e1-b541-1cb0ae870c20"],
+
+Cell["\<\
+
+Not bad, eh?  The function seemed to fit even outside the range -3 to 3 !!!
+
+Now lets suppose that the data is a bit \"noisy\", that is, let's add a small \
+random componant to the data.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"af1cbf28-7c37-4434-942e-37d5356dff4a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{
+        RowBox[{"Sin", "[", "x", "]"}], "+", 
+        RowBox[{"Random", "[", 
+         RowBox[{"Real", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "0.1"}], ",", "0.1"}], "}"}]}], "]"}]}]}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3.0"}], ",", "3.0", ",", "0.5"}], "}"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"plot1", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"list", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"PointSize", "[", "0.02", "]"}], "}"}]}], ",", 
+     RowBox[{"DisplayFunction", "\[Rule]", "Identity"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "x_", "]"}], "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"InterpolatingPolynomial", "[", 
+     RowBox[{"list", ",", "x"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"plot2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Sin", "[", "x", "]"}], ",", 
+       RowBox[{"p", "[", "x", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3.03"}], ",", "3.03"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", "Blue"}], "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{"plot1", ",", "plot2"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.745922538321436*^9, 3.745922538328897*^9}, {
+  3.745922919575653*^9, 3.74592293204592*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[42]:=",ExpressionUUID->"f8619697-aece-4c0f-bd23-aa0503ce88bb"],
+
+Cell[TextData[{
+ "\nNot very good!!!\n\nNow lets see how splines do.  To be honest, I don't \
+really\nknow how ",
+ StyleBox["mathematica",
+  FontSlant->"Italic"],
+ " does these splines.  But they make \na valuable comparison.\n"
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"bb76640e-f667-476b-a5a6-d8680ddab574"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"p2", "[", "x_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Interpolation", "[", "list", "]"}], "[", "x", "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"plot2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Sin", "[", "x", "]"}], ",", 
+       RowBox[{"p", "[", "x", "]"}], ",", 
+       RowBox[{"p2", "[", "x", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", "Blue", ",", "Green"}], "}"}]}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{"plot1", ",", "plot2"}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.745922538339353*^9, {3.7459229490959787`*^9, 3.745922959307887*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[47]:=",ExpressionUUID->"14661eaa-9094-4b1a-a181-071a10353bab"]
+}, Open  ]],
+
+Cell["\<\
+In the following example, the `noise' is created by floating point errors.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"7c8ef353-55cb-43ec-9b79-6e39a822c8b0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"Sin", "[", "x", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3.0"}], ",", "3.0", ",", "0.07"}], "}"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "x_", "]"}], "=", 
+   RowBox[{"Expand", "[", 
+    RowBox[{"InterpolatingPolynomial", "[", 
+     RowBox[{"list", ",", "x"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Sin", "[", "x", "]"}], ",", 
+     RowBox[{"p", "[", "x", "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "3.03"}], ",", "3.03"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Red", ",", "Blue"}], "}"}]}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "4"}], ",", "4"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.745922538348381*^9, 3.7459225383520727`*^9}, 
+   3.7459229762480392`*^9},
+ AspectRatioFixed->True,
+ CellLabel->"In[50]:=",ExpressionUUID->"6ff93a4e-f0f9-41f5-9479-322f52f8d29d"]
+},
+AutoGeneratedPackage->None,
+WindowToolbars->"EditBar",
+CellGrouping->Manual,
+WindowSize->{1366, 737},
+WindowMargins->{{0, Automatic}, {1, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 146, 3, 147, "Title",ExpressionUUID->"828a6824-773d-46ba-8b08-20911915c299",
+ Evaluatable->False],
+Cell[729, 27, 3236, 110, 409, "Text",ExpressionUUID->"00d6751b-431a-4100-81a3-4ce60cec2133",
+ Evaluatable->False],
+Cell[3968, 139, 814, 23, 82, "Input",ExpressionUUID->"4bdd0926-2d5e-4b1b-bb9e-7ad17684bb37"],
+Cell[4785, 164, 146, 3, 79, "Subtitle",ExpressionUUID->"ebb53e19-159d-4d35-ae0f-c8daf6195942",
+ Evaluatable->False],
+Cell[4934, 169, 170, 3, 54, "Text",ExpressionUUID->"875bca51-83d8-4eb4-9d6b-450d406bff0c",
+ Evaluatable->False],
+Cell[5107, 174, 1113, 34, 193, "Input",ExpressionUUID->"d6156a5d-ad70-4e5e-84c8-bf9872a09c78"],
+Cell[6223, 210, 397, 11, 47, "Input",ExpressionUUID->"bf191101-775e-417f-9ae2-60b964815cf4"],
+Cell[6623, 223, 201, 4, 47, "Input",ExpressionUUID->"2bbe46d7-dc9b-49ae-acee-81a1fa522e75"],
+Cell[6827, 229, 321, 9, 47, "Input",ExpressionUUID->"461d5930-a1de-469d-8498-a1c394f4ce41"],
+Cell[7151, 240, 623, 18, 82, "Input",ExpressionUUID->"1b4497c1-2547-4f21-816d-320d4259b7d3"],
+Cell[7777, 260, 155, 3, 79, "Subtitle",ExpressionUUID->"d89575f8-32bb-4bb2-a52d-fc458970c5e2",
+ Evaluatable->False],
+Cell[7935, 265, 153, 3, 54, "Text",ExpressionUUID->"f3f24498-8ebb-441d-82e0-0a0a903c02c1",
+ Evaluatable->False],
+Cell[8091, 270, 3070, 96, 300, "Input",ExpressionUUID->"1b7be441-de25-4c25-bde2-feaec626798e"],
+Cell[11164, 368, 377, 11, 87, "Input",ExpressionUUID->"f48e4eae-0f9b-42b2-a0ea-75496002b97b"],
+Cell[11544, 381, 159, 3, 54, "Text",ExpressionUUID->"7acb7b38-0554-49df-b409-e54cecc3eeac",
+ Evaluatable->False],
+Cell[11706, 386, 248, 6, 47, "Input",ExpressionUUID->"18a5a09b-1cd8-4861-9f10-f74e22160124"],
+Cell[11957, 394, 150, 3, 79, "Subtitle",ExpressionUUID->"885f4fda-59d1-466a-8f06-660516479484",
+ Evaluatable->False],
+Cell[12110, 399, 302, 7, 47, "Input",ExpressionUUID->"f855db52-7ddb-4c36-a180-222655a6c099"],
+Cell[12415, 408, 248, 6, 47, "Input",ExpressionUUID->"9537ad51-db83-4c0b-9d9d-21a1cf20404e"],
+Cell[12666, 416, 163, 3, 79, "Subtitle",ExpressionUUID->"8496d0d4-0e80-4822-b3e2-753a2e66693e",
+ Evaluatable->False],
+Cell[12832, 421, 301, 8, 161, "Text",ExpressionUUID->"8594a01e-e968-4b29-bf71-55d8e0766ff4",
+ Evaluatable->False],
+Cell[13136, 431, 1541, 46, 184, "Input",ExpressionUUID->"65e48884-1955-40e1-b541-1cb0ae870c20"],
+Cell[14680, 479, 315, 9, 161, "Text",ExpressionUUID->"af1cbf28-7c37-4434-942e-37d5356dff4a",
+ Evaluatable->False],
+Cell[14998, 490, 1744, 53, 184, "Input",ExpressionUUID->"f8619697-aece-4c0f-bd23-aa0503ce88bb"],
+Cell[16745, 545, 344, 9, 267, "Text",ExpressionUUID->"bb76640e-f667-476b-a5a6-d8680ddab574",
+ Evaluatable->False],
+Cell[17092, 556, 936, 28, 116, "Input",ExpressionUUID->"14661eaa-9094-4b1a-a181-071a10353bab"]
+}, Open  ]],
+Cell[18043, 587, 202, 5, 54, "Text",ExpressionUUID->"7c8ef353-55cb-43ec-9b79-6e39a822c8b0",
+ Evaluatable->False],
+Cell[18248, 594, 1208, 37, 116, "Input",ExpressionUUID->"6ff93a4e-f0f9-41f5-9479-322f52f8d29d"]
+}
+]
+*)
+

@@ -1,0 +1,314 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10185,        304]
+NotebookOptionsPosition[      8822,        274]
+NotebookOutlinePosition[      9544,        297]
+CellTagsIndexPosition[      9501,        294]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["An Unstable Method of Solving Differential Equations", "Title",ExpressionUUID->"6a4c38b2-d44f-4178-a74f-ba0fdc2d0e3e"],
+
+Cell[TextData[{
+ "Here we are going to develop a method of solving differential equations \
+which at the outset looks very good, but actually is very bad.  Let us \
+develop an order 4 method to solve the equation\n        ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["dy", "dt"], TraditionalForm]],ExpressionUUID->
+  "037d66ef-e46c-4152-b4ef-04c014cb281f"],
+ "=f(t,y)\nTo do this, we will use an approximate formula for y(t[i]) from \
+Chapter 4.1.  We don't calculate it, but the error is O(h^4)."
+}], "Text",ExpressionUUID->"1a45d1ed-bca9-4be0-b9a7-965416a7d380"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ti", "+", "h"}], ",", 
+       RowBox[{"y", "[", 
+        RowBox[{"ti", "+", "h"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"ti", ",", 
+       RowBox[{"y", "[", "ti", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ti", "-", "h"}], ",", 
+       RowBox[{"y", "[", 
+        RowBox[{"ti", "-", "h"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ti", "-", 
+        RowBox[{"2", "h"}]}], ",", 
+       RowBox[{"y", "[", 
+        RowBox[{"ti", "-", 
+         RowBox[{"2", "h"}]}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ti", "-", 
+        RowBox[{"3", "h"}]}], ",", 
+       RowBox[{"y", "[", 
+        RowBox[{"ti", "-", 
+         RowBox[{"3", "h"}]}], "]"}]}], "}"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "t_", "]"}], "=", 
+   RowBox[{"Expand", "[", 
+    RowBox[{"InterpolatingPolynomial", "[", 
+     RowBox[{"list", ",", "t"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Together", "[", 
+  RowBox[{
+   RowBox[{"p", "'"}], "[", "ti", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.747096302058971*^9, 3.747096331040107*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"89a5ba24-d941-46fa-8426-2c72a8bde0cd"],
+
+Cell[TextData[{
+ "So we can substutite ti+h,ti, etc with w[i+1], w[i], etc, and we get the \
+method:\n        ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     RowBox[{"3", 
+      SubscriptBox["w", 
+       RowBox[{"i", "+", "1"}]]}], "+", 
+     RowBox[{"10", 
+      SubscriptBox["w", "i"]}], "-", 
+     RowBox[{"18", 
+      SubscriptBox["w", 
+       RowBox[{"i", "-", "1"}]]}], "+", 
+     RowBox[{"6", 
+      SubscriptBox["w", 
+       RowBox[{"i", "-", "2"}]]}], "-", 
+     SubscriptBox["w", 
+      RowBox[{"i", "-", "3"}]]}], 
+    RowBox[{"12", "h"}]], TraditionalForm]],ExpressionUUID->
+  "974487af-0d8c-4843-9442-d10bb27d78ff"],
+ "=f(",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "i"], TraditionalForm]],ExpressionUUID->
+  "9c2b5883-749d-49d9-ad5a-148e3e4bb3ba"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", "i"], TraditionalForm]],ExpressionUUID->
+  "69da4455-3d57-4ca7-a2d4-9f3cd85fd80f"],
+ ")\nthat is\n        ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", 
+    RowBox[{"i", "+", "1"}]], TraditionalForm]],ExpressionUUID->
+  "706930b6-2de8-4b6f-bbb1-1f811075d4a4"],
+ "=-",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["10", "3"], TraditionalForm]],ExpressionUUID->
+  "9cbb312d-2dea-4c13-8c06-6bca1890270a"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", "i"], TraditionalForm]],ExpressionUUID->
+  "9710e07b-ef40-4577-a6eb-efc74d9113e9"],
+ "+6",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", 
+    RowBox[{"i", "-", "1"}]], TraditionalForm]],ExpressionUUID->
+  "8ca25cd6-27a2-4f7d-ad37-b4d374752234"],
+ "-2",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", 
+    RowBox[{"i", "-", "2"}]], TraditionalForm]],ExpressionUUID->
+  "62e6fa94-d9b0-45ae-9d81-282c44b542d6"],
+ "+",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "3"], TraditionalForm]],ExpressionUUID->
+  "906d9da5-2fb8-4b28-b39b-e7d188a88665"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", 
+    RowBox[{"i", "-", "3"}]], TraditionalForm]],ExpressionUUID->
+  "d22ab06d-c9e7-4d9f-a0c9-a1739a448dbd"],
+ "+4h f(",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "i"], TraditionalForm]],ExpressionUUID->
+  "a5a93d8e-2187-432e-bd1b-22cd32c25323"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", "i"], TraditionalForm]],ExpressionUUID->
+  "37efa9d5-31c9-4f35-8725-c96c735d332b"],
+ ")\n\nIt is not so hard to see that this is a method of order 4, but let us \
+not dwell on that.  To illustrate how poor this method is, we will consider \
+the differential equation\n        ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["dy", "dt"], TraditionalForm]],ExpressionUUID->
+  "19364129-dc94-4022-95a6-648dc5ab8f9d"],
+ "=0\n        y(0)=1\nSo ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", "0"], TraditionalForm]],ExpressionUUID->
+  "0b1318ed-995b-42c8-aa5b-7866c6f97a77"],
+ "=1.  To apply this method we need to also calculate ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", "1"], TraditionalForm]],ExpressionUUID->
+  "f65b12b4-30d9-4f41-a929-232be3a43b50"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", "2"], TraditionalForm]],ExpressionUUID->
+  "45b11651-0702-4e67-9d4b-d68ed77691db"],
+ ", and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["w", "3"], TraditionalForm]],ExpressionUUID->
+  "9d93bbb3-7135-478f-8a06-132cc4161caa"],
+ ".  We might use say a Runge-Kutta method to do this.  We will suppose that \
+a little bit of numerical error sets in.  We will set h=0.0001."
+}], "Text",ExpressionUUID->"b344b2dd-fc6f-44bf-95d5-e4e90cf0f6f8"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", "[", "0", "]"}], "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", "[", "1", "]"}], "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", "[", "2", "]"}], "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", "[", "3", "]"}], "=", "1.0000000000001"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"w", "[", 
+     RowBox[{"i", "+", "1"}], "]"}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "10"}], "/", "3"}], 
+      RowBox[{"w", "[", "i", "]"}]}], "+", 
+     RowBox[{"6", 
+      RowBox[{"w", "[", 
+       RowBox[{"i", "-", "1"}], "]"}]}], "-", 
+     RowBox[{"2", 
+      RowBox[{"w", "[", 
+       RowBox[{"i", "-", "2"}], "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"1", "/", "3"}], 
+      RowBox[{"w", "[", 
+       RowBox[{"i", "-", "3"}], "]"}]}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "3", ",", "30"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"0.0001", "i"}], ",", 
+      RowBox[{"w", "[", "i", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "0", ",", "30"}], "}"}]}], "]"}], "]"}]}], "Input",
+ CellLabel->"In[10]:=",ExpressionUUID->"c5d1aea3-a37f-4ded-86c5-fc4edb4ec9cf"],
+
+Cell["\<\
+As we can see, the answer becomes useless at about the 22nd step.  This is \
+irespective of the value of h.  Why is this?  Well one way to solve this \
+recurrence relation is by considering the roots of the polynomial:\
+\>", "Text",
+ CellChangeTimes->{
+  3.7470963686277227`*^9},ExpressionUUID->"08fc1488-a20b-4399-8421-\
+25f565679844"],
+
+Cell[BoxData[
+ RowBox[{"NSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"s", "^", "4"}], "==", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "10"}], "/", "3"}], 
+      RowBox[{"s", "^", "3"}]}], "+", 
+     RowBox[{"6", 
+      RowBox[{"s", "^", "2"}]}], "-", 
+     RowBox[{"2", "s"}], "+", 
+     RowBox[{"1", "/", "3"}]}]}], ",", "s"}], "]"}]], "Input",
+ CellLabel->"In[16]:=",ExpressionUUID->"f7224c2d-3d74-4750-be5e-2e299fe66475"],
+
+Cell["\<\
+So the solution to the recurence relation will include a term of the form \
+A(-4.7028)^i where A is some very small constant.  Ideally we should have \
+A=0, but small numerical errors will obtain that A is a small number.  But no \
+matter how small A is, after a few steps, this term will begin to dominate \
+the answer.
+
+Hence the upshot of all this is the the numerical method we have developed is \
+unstable, and as such, is completely useless.\
+\>", "Text",ExpressionUUID->"cf4df32e-444d-40d3-955c-340ac25caa1c"]
+}, Open  ]]
+},
+WindowSize->{1366, 737},
+WindowMargins->{{0, Automatic}, {1, Automatic}},
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"Magnification"->1,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792},
+"PostScriptOutputFile":>FrontEnd`FileName[{$RootDirectory, "usr", "home", 
+   "stephen"}, "Untitled-1.ps", CharacterEncoding -> "ISO8859-1"]},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 124, 0, 240, "Title",ExpressionUUID->"6a4c38b2-d44f-4178-a74f-ba0fdc2d0e3e"],
+Cell[707, 24, 563, 10, 175, "Text",ExpressionUUID->"1a45d1ed-bca9-4be0-b9a7-965416a7d380"],
+Cell[1273, 36, 1350, 42, 150, "Input",ExpressionUUID->"89a5ba24-d941-46fa-8426-2c72a8bde0cd"],
+Cell[2626, 80, 3432, 108, 448, "Text",ExpressionUUID->"b344b2dd-fc6f-44bf-95d5-e4e90cf0f6f8"],
+Cell[6061, 190, 1414, 45, 218, "Input",ExpressionUUID->"c5d1aea3-a37f-4ded-86c5-fc4edb4ec9cf"],
+Cell[7478, 237, 346, 7, 90, "Text",ExpressionUUID->"08fc1488-a20b-4399-8421-25f565679844"],
+Cell[7827, 246, 450, 14, 47, "Input",ExpressionUUID->"f7224c2d-3d74-4750-be5e-2e299fe66475"],
+Cell[8280, 262, 526, 9, 232, "Text",ExpressionUUID->"cf4df32e-444d-40d3-955c-340ac25caa1c"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

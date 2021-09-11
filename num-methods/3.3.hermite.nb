@@ -1,0 +1,407 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12959,        399]
+NotebookOptionsPosition[     11167,        358]
+NotebookOutlinePosition[     11928,        384]
+CellTagsIndexPosition[     11885,        381]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Hermite Interpolation", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"f38ed835-0135-46bb-8a1e-72ee85be1139"],
+
+Cell[TextData[{
+ "Here we do Hermite Interpolation.  We start with a list of points,\n\n  {  \
+{",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],ExpressionUUID->
+  "f74c6db1-bd1d-4a2e-acbe-aafc01af125b"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "0"], TraditionalForm]],ExpressionUUID->
+  "cdb92246-a754-42e6-9578-1f0ae691d83f"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["z", "0"], TraditionalForm]],ExpressionUUID->
+  "352baaea-f15b-44bd-9a67-0194d86f93f1"],
+ "}, {",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "1"], TraditionalForm]],ExpressionUUID->
+  "e52e5609-1209-4526-a180-ab05a5b34342"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "1"], TraditionalForm]],ExpressionUUID->
+  "dbbfe89a-954f-4244-baa0-b8eb26210489"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["z", "1"], TraditionalForm]],ExpressionUUID->
+  "ca68ca31-4d39-4b73-b5d1-23d47f2e4c97"],
+ "}, . . . , {",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "n"], TraditionalForm]],ExpressionUUID->
+  "8e4896bd-6742-4895-9db4-ca1c0e181644"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "n"], TraditionalForm]],ExpressionUUID->
+  "bcdc00c0-0a4f-4222-b144-ef11da817775"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["z", "n"], TraditionalForm]],ExpressionUUID->
+  "3490bb61-252d-4241-bdc3-ca2c80e8b440"],
+ "}  }.\n\nHere ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "i"], TraditionalForm]],ExpressionUUID->
+  "6ddf1a3d-d3f7-4ec9-9273-a60ba3651b24"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["y", "i"], TraditionalForm]],ExpressionUUID->
+  "397fa8b1-a8e7-46fb-ac85-c7ac00ec1093"],
+ " represent the coordinates of the point, and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["z", "i"], TraditionalForm]],ExpressionUUID->
+  "b2ba12a8-778e-4792-a4d0-782ea529bf27"],
+ " represents\ndy/dx, that is, the slope at that point."
+}], "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.747094283202696*^9, 3.747094305138287*^9}},
+ AspectRatioFixed->
+  True,ExpressionUUID->"8401f106-84ce-480b-a5c6-321fc370953f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "3", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "4", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "5", ",", "0"}], "}"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{
+    RowBox[{"Length", "[", "list", "]"}], "-", "1"}]}], ";"}], "\n", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"x", ",", "y", ",", "z"}], "]"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "k", "]"}], "=", 
+     RowBox[{"list", "\[LeftDoubleBracket]", 
+      RowBox[{
+       RowBox[{"k", "+", "1"}], ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+    
+    RowBox[{
+     RowBox[{"y", "[", "k", "]"}], "=", 
+     RowBox[{"list", "\[LeftDoubleBracket]", 
+      RowBox[{
+       RowBox[{"k", "+", "1"}], ",", "2"}], "\[RightDoubleBracket]"}]}], ";", 
+    
+    RowBox[{
+     RowBox[{"z", "[", "k", "]"}], "=", 
+     RowBox[{"list", "\[LeftDoubleBracket]", 
+      RowBox[{
+       RowBox[{"k", "+", "1"}], ",", "3"}], "\[RightDoubleBracket]"}]}]}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.747094314857332*^9, 3.747094327994474*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[2]:=",ExpressionUUID->"03eaa749-39be-4673-9282-f86b09977f5d"],
+
+Cell["\<\
+Let's show these points on a plot, with little lines showing the slope.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"ef77c0b5-3ad2-405c-8738-232393033a58"],
+
+Cell[BoxData[
+ RowBox[{"plot1", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{
+    RowBox[{"ListPlot", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "k", "]"}], ",", 
+          RowBox[{"y", "[", "k", "]"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", "\n", 
+      "\t\t\t               ", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"PointSize", "[", "0.02", "]"}]}], "}"}]}]}], "]"}], ",", 
+    "\n", "\t\t", 
+    RowBox[{"Table", "[", "\n", "\t\t\t  ", 
+     RowBox[{
+      RowBox[{"Plot", "[", 
+       RowBox[{
+        RowBox[{"Evaluate", "[", 
+         RowBox[{
+          RowBox[{"y", "[", "k", "]"}], "+", 
+          RowBox[{
+           RowBox[{"z", "[", "k", "]"}], " ", 
+           RowBox[{"(", 
+            RowBox[{"xx", "-", 
+             RowBox[{"x", "[", "k", "]"}]}], ")"}]}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"xx", ",", 
+          RowBox[{
+           RowBox[{"x", "[", "k", "]"}], "-", "0.5"}], ",", 
+          RowBox[{
+           RowBox[{"x", "[", "k", "]"}], "+", "0.5"}]}], "}"}], ",", "\n", 
+        "\t\t\t\t            ", 
+        RowBox[{"PlotStyle", "\[Rule]", 
+         RowBox[{"{", "Blue", "}"}]}]}], "]"}], ",", "\n", "\t\t\t ", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}], "]"}]}]], "Input",\
+
+ CellChangeTimes->{{3.7470943394476423`*^9, 3.74709442068554*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[8]:=",ExpressionUUID->"4d30f02e-5740-4abd-bda1-35b164b0307b"],
+
+Cell["\<\
+Now let us do Hermite Interpolation.  These are the formulae from the text \
+book.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"375aca61-4df2-4570-a68a-317ee6dc528c"],
+
+Cell[BoxData[
+ RowBox[{"Do", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"L", "[", 
+      RowBox[{"i", ",", "xx_"}], "]"}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", "0"}], 
+         RowBox[{"i", "-", "1"}]], 
+        FractionBox[
+         RowBox[{"xx", "-", 
+          RowBox[{"x", "[", "j", "]"}]}], 
+         RowBox[{
+          RowBox[{"x", "[", "i", "]"}], "-", 
+          RowBox[{"x", "[", "j", "]"}]}]]}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        UnderoverscriptBox["\[Product]", 
+         RowBox[{"j", "=", 
+          RowBox[{"i", "+", "1"}]}], "n"], 
+        FractionBox[
+         RowBox[{"xx", "-", 
+          RowBox[{"x", "[", "j", "]"}]}], 
+         RowBox[{
+          RowBox[{"x", "[", "i", "]"}], "-", 
+          RowBox[{"x", "[", "j", "]"}]}]]}], ")"}]}]}], ";", "\n", "\t", 
+    RowBox[{
+     RowBox[{"H", "[", 
+      RowBox[{"i", ",", "xx_"}], "]"}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{"2", " ", 
+         RowBox[{"(", 
+          RowBox[{"xx", "-", 
+           RowBox[{"x", "[", "i", "]"}]}], ")"}], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SubscriptBox["\[PartialD]", "z"], 
+            RowBox[{"L", "[", 
+             RowBox[{"i", ",", "z"}], "]"}]}], "/.", 
+           RowBox[{"z", "\[Rule]", 
+            RowBox[{"x", "[", "i", "]"}]}]}], ")"}]}]}], ")"}], " ", 
+      SuperscriptBox[
+       RowBox[{"L", "[", 
+        RowBox[{"i", ",", "xx"}], "]"}], "2"]}]}], ";", "\n", "\t", 
+    RowBox[{
+     RowBox[{"Hh", "[", 
+      RowBox[{"i", ",", "xx_"}], "]"}], "=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"xx", "-", 
+        RowBox[{"x", "[", "i", "]"}]}], ")"}], " ", 
+      SuperscriptBox[
+       RowBox[{"L", "[", 
+        RowBox[{"i", ",", "xx"}], "]"}], "2"]}]}]}], ",", "\n", "\t", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0", ",", "n"}], "}"}]}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[9]:=",ExpressionUUID->"e51d027b-893f-4d47-8950-b94dcc79d5ac"],
+
+Cell[BoxData[{
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"H", "[", 
+      RowBox[{"k", ",", "xx"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"xx", ",", 
+       RowBox[{
+        RowBox[{"x", "[", "0", "]"}], "-", "1"}], ",", 
+       RowBox[{
+        RowBox[{"x", "[", "n", "]"}], "+", "1"}]}], "}"}], ",", 
+     RowBox[{"PlotRange", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"Table", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Hh", "[", 
+      RowBox[{"k", ",", "xx"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"xx", ",", 
+       RowBox[{
+        RowBox[{"x", "[", "0", "]"}], "-", "1"}], ",", 
+       RowBox[{
+        RowBox[{"x", "[", "n", "]"}], "+", "1"}]}], "}"}], ",", 
+     RowBox[{"PlotRange", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7470944429526253`*^9, 3.7470944643466463`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"7fdcbb77-150e-4ce9-a5f6-5ed843d4f238"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p", "[", "x_", "]"}], "=", 
+  RowBox[{"Expand", "[", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"k", "=", "0"}], "n"], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "[", "k", "]"}], " ", 
+       RowBox[{"H", "[", 
+        RowBox[{"k", ",", "x"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"z", "[", "k", "]"}], " ", 
+       RowBox[{"Hh", "[", 
+        RowBox[{"k", ",", "x"}], "]"}]}]}], ")"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7470944743485107`*^9, 3.747094474818081*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[18]:=",ExpressionUUID->"ca8d1a36-02bd-42b8-8c9b-fde4678dc679"],
+
+Cell["And let's plot it:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"97bced03-b467-44d2-aa7f-b03f3fcb8311"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"plot2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"p", "[", "xx", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"xx", ",", 
+       RowBox[{
+        RowBox[{"x", "[", "0", "]"}], "-", "0.25"}], ",", 
+       RowBox[{
+        RowBox[{"x", "[", "n", "]"}], "+", "0.25"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{"plot1", ",", "plot2"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.747094483499391*^9, 3.7470944957741632`*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[23]:=",ExpressionUUID->"012b7007-071f-4125-bac5-b46d09622343"]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowToolbars->{},
+CellGrouping->Automatic,
+WindowSize->{1366, 737},
+WindowMargins->{{0, Automatic}, {1, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 142, 3, 147, "Title",ExpressionUUID->"f38ed835-0135-46bb-8a1e-72ee85be1139",
+ Evaluatable->False],
+Cell[725, 27, 2050, 67, 232, "Text",ExpressionUUID->"8401f106-84ce-480b-a5c6-321fc370953f",
+ Evaluatable->False],
+Cell[2778, 96, 1494, 45, 218, "Input",ExpressionUUID->"03eaa749-39be-4673-9282-f86b09977f5d"],
+Cell[4275, 143, 199, 5, 54, "Text",ExpressionUUID->"ef77c0b5-3ad2-405c-8738-232393033a58",
+ Evaluatable->False],
+Cell[4477, 150, 1648, 46, 218, "Input",ExpressionUUID->"4d30f02e-5740-4abd-bda1-35b164b0307b"],
+Cell[6128, 198, 210, 6, 54, "Text",ExpressionUUID->"375aca61-4df2-4570-a68a-317ee6dc528c",
+ Evaluatable->False],
+Cell[6341, 206, 2109, 64, 264, "Input",ExpressionUUID->"e51d027b-893f-4d47-8950-b94dcc79d5ac"],
+Cell[8453, 272, 1284, 38, 116, "Input",ExpressionUUID->"7fdcbb77-150e-4ce9-a5f6-5ed843d4f238"],
+Cell[9740, 312, 664, 19, 87, "Input",ExpressionUUID->"ca8d1a36-02bd-42b8-8c9b-fde4678dc679"],
+Cell[10407, 333, 138, 3, 54, "Text",ExpressionUUID->"97bced03-b467-44d2-aa7f-b03f3fcb8311",
+ Evaluatable->False],
+Cell[10548, 338, 603, 17, 82, "Input",ExpressionUUID->"012b7007-071f-4125-bac5-b46d09622343"]
+}, Open  ]]
+}
+]
+*)
+

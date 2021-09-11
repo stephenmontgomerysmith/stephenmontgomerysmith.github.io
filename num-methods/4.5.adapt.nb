@@ -1,0 +1,292 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9288,        282]
+NotebookOptionsPosition[      7322,        239]
+NotebookOutlinePosition[      8083,        265]
+CellTagsIndexPosition[      8040,        262]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Adaptive Quadrature", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"2b17c16c-db80-4fb9-8800-a43ad83912f3"],
+
+Cell["\<\
+Here is a function we wish to integrate.  Notice from its plot that it has a \
+lot of wiggles near the origin.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"119f3d44-b37b-4363-920d-9241efa68b74"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], "=", 
+   RowBox[{"Sin", "[", 
+    FractionBox["1", "x"], "]"}]}], ";"}], "\n", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0.05", ",", "1"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{3.747094717703883*^9},
+ AspectRatioFixed->True,
+ CellLabel->"In[1]:=",ExpressionUUID->"acd552e8-7f0b-40ea-be9e-d7ef4bd1d2ec"],
+
+Cell["\<\
+Here we set up the recursive procedure that computes the integral using the \
+adaptive quadrature technique.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"abccb4f9-548c-4b69-8749-b77ee6e33891"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"S", "[", 
+    RowBox[{"a_", ",", "b_"}], "]"}], "=", 
+   RowBox[{
+    FractionBox["1", "6"], " ", 
+    RowBox[{"(", 
+     RowBox[{"b", "-", "a"}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"f", "[", "a", "]"}], "+", 
+      RowBox[{"4", " ", 
+       RowBox[{"f", "[", 
+        FractionBox[
+         RowBox[{"a", "+", "b"}], "2"], "]"}]}], "+", 
+      RowBox[{"f", "[", "b", "]"}]}], ")"}]}]}], ";"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[3]:=",ExpressionUUID->"fe032908-ecfa-4bc9-b6c1-f379f4e4579c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"integ", "[", 
+   RowBox[{"a_", ",", "b_", ",", "tol_"}], "]"}], ":=", "\n", "\t", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"S", "[", 
+         RowBox[{"a", ",", "b"}], "]"}], "-", 
+        RowBox[{"S", "[", 
+         RowBox[{"a", ",", 
+          FractionBox[
+           RowBox[{"a", "+", "b"}], "2"]}], "]"}], "-", 
+        RowBox[{"S", "[", 
+         RowBox[{
+          FractionBox[
+           RowBox[{"a", "+", "b"}], "2"], ",", "b"}], "]"}]}], "]"}], "<", 
+      RowBox[{"10", " ", "tol"}]}], "]"}], ",", "\n", "\t\t", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"S", "[", 
+       RowBox[{"a", ",", 
+        FractionBox[
+         RowBox[{"a", "+", "b"}], "2"]}], "]"}], "+", 
+      RowBox[{"S", "[", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"a", "+", "b"}], "2"], ",", "b"}], "]"}]}], "]"}], ",", "\n",
+     "\t\t", 
+    RowBox[{
+     RowBox[{"integ", "[", 
+      RowBox[{"a", ",", 
+       FractionBox[
+        RowBox[{"a", "+", "b"}], "2"], ",", 
+       FractionBox["tol", "2"]}], "]"}], "+", 
+     RowBox[{"integ", "[", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"a", "+", "b"}], "2"], ",", "b", ",", 
+       FractionBox["tol", "2"]}], "]"}]}]}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[4]:=",ExpressionUUID->"08fd525d-2952-47a8-bcda-839c39265de9"],
+
+Cell[TextData[{
+ "Let's compare the answer with the built in ",
+ StyleBox["NIntegrate",
+  FontFamily->"Courier",
+  FontWeight->"Bold"],
+ " command."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"8d60e2f8-905d-4255-8485-60ff17ff8835"],
+
+Cell[BoxData[
+ RowBox[{"integ", "[", 
+  RowBox[{"0.05", ",", "1", ",", "0.005"}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[5]:=",ExpressionUUID->"c124131d-55f0-4764-a0c9-0ebb454cff58"],
+
+Cell[BoxData[
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0.05", ",", "1"}], "}"}]}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[6]:=",ExpressionUUID->"72ac40b2-4bd2-46f9-a9e3-7a674d853d8d"],
+
+Cell["\<\
+The following algorithm determines the list of points that describe where the \
+ adaptive quadrature method evaluates the function.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"6de5e7ff-bea1-4288-b14e-47bb75482f92"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"integlist", "[", 
+   RowBox[{"a_", ",", "b_", ",", "tol_"}], "]"}], ":=", "\n", "\t", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"S", "[", 
+         RowBox[{"a", ",", "b"}], "]"}], "-", 
+        RowBox[{"S", "[", 
+         RowBox[{"a", ",", 
+          FractionBox[
+           RowBox[{"a", "+", "b"}], "2"]}], "]"}], "-", 
+        RowBox[{"S", "[", 
+         RowBox[{
+          FractionBox[
+           RowBox[{"a", "+", "b"}], "2"], ",", "b"}], "]"}]}], "]"}], "<", 
+      RowBox[{"10", " ", "tol"}]}], "]"}], ",", "\n", "\t\t", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", 
+      FractionBox[
+       RowBox[{"a", "+", "b"}], "2"], ",", "b"}], "}"}], ",", "\n", "\t\t", 
+    RowBox[{
+     RowBox[{"integlist", "[", 
+      RowBox[{"a", ",", 
+       FractionBox[
+        RowBox[{"a", "+", "b"}], "2"], ",", 
+       FractionBox["tol", "2"]}], "]"}], "\[Union]", 
+     RowBox[{"integlist", "[", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"a", "+", "b"}], "2"], ",", "b", ",", 
+       FractionBox["tol", "2"]}], "]"}]}]}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[7]:=",ExpressionUUID->"0b2df7db-b63d-4365-af04-0bc94c1d106e"],
+
+Cell[BoxData[
+ RowBox[{"ep", "=", 
+  RowBox[{"integlist", "[", 
+   RowBox[{"0.05", ",", "1", ",", "0.005"}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[8]:=",ExpressionUUID->"8d12cc7e-e198-48d4-baf9-117785a026f6"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0.05", ",", "1"}], "}"}], ",", 
+   RowBox[{"Epilog", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Red", ",", 
+      RowBox[{"Thickness", "[", "0.001", "]"}], ",", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+             "ep", "\[LeftDoubleBracket]", "k", "\[RightDoubleBracket]"}], 
+             ",", 
+             RowBox[{"-", "1"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+             "ep", "\[LeftDoubleBracket]", "k", "\[RightDoubleBracket]"}], 
+             ",", "1"}], "}"}]}], "}"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"k", ",", "1", ",", 
+          RowBox[{"Length", "[", "ep", "]"}]}], "}"}]}], "]"}]}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{3.747094749851708*^9},
+ AspectRatioFixed->True,
+ CellLabel->"In[9]:=",ExpressionUUID->"67255358-0ada-4b64-a595-7537f49d5fc9"]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowToolbars->{},
+CellGrouping->Automatic,
+WindowSize->{1366, 737},
+WindowMargins->{{0, Automatic}, {1, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 140, 3, 147, "Title",ExpressionUUID->"2b17c16c-db80-4fb9-8800-a43ad83912f3",
+ Evaluatable->False],
+Cell[723, 27, 238, 6, 54, "Text",ExpressionUUID->"119f3d44-b37b-4363-920d-9241efa68b74",
+ Evaluatable->False],
+Cell[964, 35, 453, 13, 118, "Input",ExpressionUUID->"acd552e8-7f0b-40ea-be9e-d7ef4bd1d2ec"],
+Cell[1420, 50, 236, 6, 54, "Text",ExpressionUUID->"abccb4f9-548c-4b69-8749-b77ee6e33891",
+ Evaluatable->False],
+Cell[1659, 58, 576, 18, 83, "Input",ExpressionUUID->"fe032908-ecfa-4bc9-b6c1-f379f4e4579c"],
+Cell[2238, 78, 1429, 44, 264, "Input",ExpressionUUID->"08fd525d-2952-47a8-bcda-839c39265de9"],
+Cell[3670, 124, 264, 9, 54, "Text",ExpressionUUID->"8d60e2f8-905d-4255-8485-60ff17ff8835",
+ Evaluatable->False],
+Cell[3937, 135, 201, 4, 47, "Input",ExpressionUUID->"c124131d-55f0-4764-a0c9-0ebb454cff58"],
+Cell[4141, 141, 280, 7, 47, "Input",ExpressionUUID->"72ac40b2-4bd2-46f9-a9e3-7a674d853d8d"],
+Cell[4424, 150, 259, 6, 90, "Text",ExpressionUUID->"6de5e7ff-bea1-4288-b14e-47bb75482f92",
+ Evaluatable->False],
+Cell[4686, 158, 1267, 37, 264, "Input",ExpressionUUID->"0b2df7db-b63d-4365-af04-0bc94c1d106e"],
+Cell[5956, 197, 230, 5, 47, "Input",ExpressionUUID->"8d12cc7e-e198-48d4-baf9-117785a026f6"],
+Cell[6189, 204, 1117, 32, 82, "Input",ExpressionUUID->"67255358-0ada-4b64-a595-7537f49d5fc9"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

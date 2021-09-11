@@ -1,0 +1,648 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20270,        640]
+NotebookOptionsPosition[     17564,        587]
+NotebookOutlinePosition[     18332,        613]
+CellTagsIndexPosition[     18289,        610]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Splines", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"53a9e289-5050-43af-a1cd-aded6f525dcb"],
+
+Cell["\<\
+Here we are going to construct Splines by solving the appropriate equations.
+
+Lets get a list of points to work with.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"838b6a43-0864-48f3-8c01-6c8b1d49fb21"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"7", ",", "3"}], "}"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"plot1", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"list", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"PointSize", "[", "0.05", "]"}]}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{
+    RowBox[{"Length", "[", "list", "]"}], "-", "1"}]}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "k", "]"}], "=", 
+     RowBox[{"list", "\[LeftDoubleBracket]", 
+      RowBox[{
+       RowBox[{"k", "+", "1"}], ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+    
+    RowBox[{
+     RowBox[{"y", "[", "k", "]"}], "=", 
+     RowBox[{"list", "\[LeftDoubleBracket]", 
+      RowBox[{
+       RowBox[{"k", "+", "1"}], ",", "2"}], "\[RightDoubleBracket]"}]}]}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.74709394920918*^9, 3.747093985263835*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[5]:=",ExpressionUUID->"021dfe59-f257-4d1a-b2de-8c2c65cb233c"],
+
+Cell["Now we construct the cubic polynomials to find.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"ace5423b-7663-4a56-bb21-a3877b4ebb57"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"S", "[", 
+   RowBox[{"i_", ",", "xx_"}], "]"}], "=", 
+  RowBox[{
+   RowBox[{"a", "[", "i", "]"}], "+", 
+   RowBox[{
+    RowBox[{"b", "[", "i", "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"xx", "-", 
+      RowBox[{"x", "[", "i", "]"}]}], ")"}]}], "+", 
+   RowBox[{
+    RowBox[{"c", "[", "i", "]"}], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"xx", "-", 
+       RowBox[{"x", "[", "i", "]"}]}], ")"}], "2"]}], "+", 
+   RowBox[{
+    RowBox[{"d", "[", "i", "]"}], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"xx", "-", 
+       RowBox[{"x", "[", "i", "]"}]}], ")"}], "3"]}]}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[9]:=",ExpressionUUID->"719fcc7a-4698-49fb-8221-0fb873df46ba"],
+
+Cell["\<\
+Now, lets set up the equations.  The first two sets are for the values of S.  \
+The third and fourth equate the first and second derivatives where the \
+polynomials meet.  The last set of equations give the two addition restraints \
+required (in our case, the free splines).\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"ab144e5d-4e22-46af-8257-4e1486c4a860"],
+
+Cell[BoxData[
+ RowBox[{"equ1", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"S", "[", 
+      RowBox[{"j", ",", 
+       RowBox[{"x", "[", "j", "]"}]}], "]"}], "==", 
+     RowBox[{"y", "[", "j", "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "0", ",", 
+      RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[16]:=",ExpressionUUID->"545979d5-8325-4fe5-a967-2a3e5c6a2fcf"],
+
+Cell[BoxData[
+ RowBox[{"equ2", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"S", "[", 
+      RowBox[{"j", ",", 
+       RowBox[{"x", "[", 
+        RowBox[{"j", "+", "1"}], "]"}]}], "]"}], "==", 
+     RowBox[{"y", "[", 
+      RowBox[{"j", "+", "1"}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "0", ",", 
+      RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[11]:=",ExpressionUUID->"10e84155-99e6-47af-a3d3-4594468affcf"],
+
+Cell[BoxData[
+ RowBox[{"equ3", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["S", 
+       TagBox[
+        RowBox[{"(", 
+         RowBox[{"0", ",", "1"}], ")"}],
+        Derivative],
+       MultilineFunction->None], "[", 
+      RowBox[{"j", ",", 
+       RowBox[{"x", "[", 
+        RowBox[{"j", "+", "1"}], "]"}]}], "]"}], "==", 
+     RowBox[{
+      SuperscriptBox["S", 
+       TagBox[
+        RowBox[{"(", 
+         RowBox[{"0", ",", "1"}], ")"}],
+        Derivative],
+       MultilineFunction->None], "[", 
+      RowBox[{
+       RowBox[{"j", "+", "1"}], ",", 
+       RowBox[{"x", "[", 
+        RowBox[{"j", "+", "1"}], "]"}]}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "0", ",", 
+      RowBox[{"n", "-", "2"}]}], "}"}]}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[12]:=",ExpressionUUID->"9917f34c-2c81-40fa-bc8d-179bce9e35ca"],
+
+Cell[BoxData[
+ RowBox[{"equ4", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["S", 
+       TagBox[
+        RowBox[{"(", 
+         RowBox[{"0", ",", "2"}], ")"}],
+        Derivative],
+       MultilineFunction->None], "[", 
+      RowBox[{"j", ",", 
+       RowBox[{"x", "[", 
+        RowBox[{"j", "+", "1"}], "]"}]}], "]"}], "==", 
+     RowBox[{
+      SuperscriptBox["S", 
+       TagBox[
+        RowBox[{"(", 
+         RowBox[{"0", ",", "2"}], ")"}],
+        Derivative],
+       MultilineFunction->None], "[", 
+      RowBox[{
+       RowBox[{"j", "+", "1"}], ",", 
+       RowBox[{"x", "[", 
+        RowBox[{"j", "+", "1"}], "]"}]}], "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "0", ",", 
+      RowBox[{"n", "-", "2"}]}], "}"}]}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[13]:=",ExpressionUUID->"3f387553-f78d-4600-92ad-b1c5d77af54f"],
+
+Cell[BoxData[
+ RowBox[{"equ5", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["S", 
+       TagBox[
+        RowBox[{"(", 
+         RowBox[{"0", ",", "2"}], ")"}],
+        Derivative],
+       MultilineFunction->None], "[", 
+      RowBox[{"0", ",", 
+       RowBox[{"x", "[", "0", "]"}]}], "]"}], "==", "0"}], ",", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["S", 
+       TagBox[
+        RowBox[{"(", 
+         RowBox[{"0", ",", "2"}], ")"}],
+        Derivative],
+       MultilineFunction->None], "[", 
+      RowBox[{
+       RowBox[{"n", "-", "1"}], ",", 
+       RowBox[{"x", "[", "n", "]"}]}], "]"}], "==", "0"}]}], "}"}]}]], "Input",\
+
+ AspectRatioFixed->True,
+ CellLabel->"In[14]:=",ExpressionUUID->"1ab3b280-39c8-45df-8436-306dd299a674"],
+
+Cell[BoxData[
+ RowBox[{"equs", "=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"{", 
+     RowBox[{"equ1", ",", "equ2", ",", "equ3", ",", "equ4", ",", "equ5"}], 
+     "}"}], "]"}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[15]:=",ExpressionUUID->"0f27e431-f08d-4dd9-8545-fa697fdb1afc"],
+
+Cell["Now lets solve the equations.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"88bf208e-bda9-4b66-816e-bf34a7d9d70e"],
+
+Cell[BoxData[
+ RowBox[{"solution", "=", 
+  RowBox[{"Solve", "[", "equs", "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[17]:=",ExpressionUUID->"211626c5-41b3-4c0f-a859-43f246b9ae26"],
+
+Cell[BoxData[{
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"S1", "[", 
+     RowBox[{"j", ",", "x_"}], "]"}], "=", 
+    RowBox[{
+     RowBox[{"S", "[", 
+      RowBox[{"j", ",", "x"}], "]"}], "/.", 
+     RowBox[{
+     "solution", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"j", ",", "0", ",", 
+     RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], "\n", 
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"N", "[", 
+    RowBox[{"S1", "[", 
+     RowBox[{"i", ",", "x"}], "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0", ",", 
+     RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.747094053640484*^9, 3.747094057255835*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[20]:=",ExpressionUUID->"4d648cae-6557-40d5-af81-7c886b08c9ab"],
+
+Cell["Lets plot the solution and the points it goes through.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"437e3530-7202-49b0-9801-83ebb9ff357c"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"curve", "[", "j_", "]"}], ":=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"S1", "[", 
+      RowBox[{"j", ",", "xx"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"xx", ",", 
+       RowBox[{"x", "[", "j", "]"}], ",", 
+       RowBox[{"x", "[", 
+        RowBox[{"j", "+", "1"}], "]"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{"plot1", ",", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"curve", "[", "j", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "0", ",", 
+       RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.747094117900528*^9, 3.7470941499007397`*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[28]:=",ExpressionUUID->"ed214919-3b41-4f64-a869-c10bb26b420a"],
+
+Cell["\<\
+Let us do the same with a longer list of points, and do it all in one go.  \
+These points are generated from sin(x), with a bit of noise.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"a6d89f0e-0c1d-4d5b-9a54-6947e4e1a060"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{
+        RowBox[{"Sin", "[", "x", "]"}], "+", 
+        RowBox[{"Random", "[", 
+         RowBox[{"Real", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "0.1"}], ",", "0.1"}], "}"}]}], "]"}]}]}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3.0"}], ",", "3.0", ",", "0.5"}], "}"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"plot1", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"list", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Red", ",", 
+        RowBox[{"PointSize", "[", "0.02", "]"}]}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"plot2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "3"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Green"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{
+    RowBox[{"Length", "[", "list", "]"}], "-", "1"}]}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "k", "]"}], "=", 
+     RowBox[{"list", "\[LeftDoubleBracket]", 
+      RowBox[{
+       RowBox[{"k", "+", "1"}], ",", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+    
+    RowBox[{
+     RowBox[{"y", "[", "k", "]"}], "=", 
+     RowBox[{"list", "\[LeftDoubleBracket]", 
+      RowBox[{
+       RowBox[{"k", "+", "1"}], ",", "2"}], "\[RightDoubleBracket]"}]}]}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"S", "[", 
+    RowBox[{"i_", ",", "xx_"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{"a", "[", "i", "]"}], "+", 
+    RowBox[{
+     RowBox[{"b", "[", "i", "]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{"xx", "-", 
+       RowBox[{"x", "[", "i", "]"}]}], ")"}]}], "+", 
+    RowBox[{
+     RowBox[{"c", "[", "i", "]"}], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"xx", "-", 
+        RowBox[{"x", "[", "i", "]"}]}], ")"}], "2"]}], "+", 
+    RowBox[{
+     RowBox[{"d", "[", "i", "]"}], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"xx", "-", 
+        RowBox[{"x", "[", "i", "]"}]}], ")"}], "3"]}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"equ1", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"S", "[", 
+       RowBox[{"j", ",", 
+        RowBox[{"x", "[", "j", "]"}]}], "]"}], "==", 
+      RowBox[{"y", "[", "j", "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "0", ",", 
+       RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"equ2", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"S", "[", 
+       RowBox[{"j", ",", 
+        RowBox[{"x", "[", 
+         RowBox[{"j", "+", "1"}], "]"}]}], "]"}], "==", 
+      RowBox[{"y", "[", 
+       RowBox[{"j", "+", "1"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "0", ",", 
+       RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"equ3", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["S", 
+        TagBox[
+         RowBox[{"(", 
+          RowBox[{"0", ",", "1"}], ")"}],
+         Derivative],
+        MultilineFunction->None], "[", 
+       RowBox[{"j", ",", 
+        RowBox[{"x", "[", 
+         RowBox[{"j", "+", "1"}], "]"}]}], "]"}], "==", 
+      RowBox[{
+       SuperscriptBox["S", 
+        TagBox[
+         RowBox[{"(", 
+          RowBox[{"0", ",", "1"}], ")"}],
+         Derivative],
+        MultilineFunction->None], "[", 
+       RowBox[{
+        RowBox[{"j", "+", "1"}], ",", 
+        RowBox[{"x", "[", 
+         RowBox[{"j", "+", "1"}], "]"}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "0", ",", 
+       RowBox[{"n", "-", "2"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"equ4", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["S", 
+        TagBox[
+         RowBox[{"(", 
+          RowBox[{"0", ",", "2"}], ")"}],
+         Derivative],
+        MultilineFunction->None], "[", 
+       RowBox[{"j", ",", 
+        RowBox[{"x", "[", 
+         RowBox[{"j", "+", "1"}], "]"}]}], "]"}], "==", 
+      RowBox[{
+       SuperscriptBox["S", 
+        TagBox[
+         RowBox[{"(", 
+          RowBox[{"0", ",", "2"}], ")"}],
+         Derivative],
+        MultilineFunction->None], "[", 
+       RowBox[{
+        RowBox[{"j", "+", "1"}], ",", 
+        RowBox[{"x", "[", 
+         RowBox[{"j", "+", "1"}], "]"}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "0", ",", 
+       RowBox[{"n", "-", "2"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"equ5", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["S", 
+        TagBox[
+         RowBox[{"(", 
+          RowBox[{"0", ",", "2"}], ")"}],
+         Derivative],
+        MultilineFunction->None], "[", 
+       RowBox[{"0", ",", 
+        RowBox[{"x", "[", "0", "]"}]}], "]"}], "==", "0"}], ",", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["S", 
+        TagBox[
+         RowBox[{"(", 
+          RowBox[{"0", ",", "2"}], ")"}],
+         Derivative],
+        MultilineFunction->None], "[", 
+       RowBox[{
+        RowBox[{"n", "-", "1"}], ",", 
+        RowBox[{"x", "[", "n", "]"}]}], "]"}], "==", "0"}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"equs", "=", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{"{", 
+      RowBox[{"equ1", ",", "equ2", ",", "equ3", ",", "equ4", ",", "equ5"}], 
+      "}"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"solution", "=", 
+   RowBox[{"Solve", "[", "equs", "]"}]}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"S1", "[", 
+     RowBox[{"j", ",", "x_"}], "]"}], "=", 
+    RowBox[{
+     RowBox[{"S", "[", 
+      RowBox[{"j", ",", "x"}], "]"}], "/.", 
+     RowBox[{
+     "solution", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"j", ",", "0", ",", 
+     RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"curve", "[", "j_", "]"}], ":=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"S1", "[", 
+      RowBox[{"j", ",", "xx"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"xx", ",", 
+       RowBox[{"x", "[", "j", "]"}], ",", 
+       RowBox[{"x", "[", 
+        RowBox[{"j", "+", "1"}], "]"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{"plot1", ",", "plot2", ",", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"curve", "[", "j", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "0", ",", 
+       RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.747094170029765*^9, 3.747094233940168*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[30]:=",ExpressionUUID->"0329a029-ba8b-4bd9-8bc1-4522b21b0252"],
+
+Cell[TextData[{
+ "By the way, the algorithm in the text book is much faster than the \
+computations done here.  This is because they solve the equations more \
+intelligently than ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " does.  They use techniques from Chapter 6."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"cb96edec-ecab-43fa-9b5c-7cfe249532e2"]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowToolbars->"EditBar",
+CellGrouping->Automatic,
+WindowSize->{1364, 737},
+WindowMargins->{{1, Automatic}, {1, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 128, 3, 147, "Title",ExpressionUUID->"53a9e289-5050-43af-a1cd-aded6f525dcb",
+ Evaluatable->False],
+Cell[711, 27, 245, 7, 125, "Text",ExpressionUUID->"838b6a43-0864-48f3-8c01-6c8b1d49fb21",
+ Evaluatable->False],
+Cell[959, 36, 1470, 45, 218, "Input",ExpressionUUID->"021dfe59-f257-4d1a-b2de-8c2c65cb233c"],
+Cell[2432, 83, 167, 3, 54, "Text",ExpressionUUID->"ace5423b-7663-4a56-bb21-a3877b4ebb57",
+ Evaluatable->False],
+Cell[2602, 88, 751, 24, 47, "Input",ExpressionUUID->"719fcc7a-4698-49fb-8221-0fb873df46ba"],
+Cell[3356, 114, 402, 8, 125, "Text",ExpressionUUID->"ab144e5d-4e22-46af-8257-4e1486c4a860",
+ Evaluatable->False],
+Cell[3761, 124, 448, 13, 47, "Input",ExpressionUUID->"545979d5-8325-4fe5-a967-2a3e5c6a2fcf"],
+Cell[4212, 139, 504, 15, 47, "Input",ExpressionUUID->"10e84155-99e6-47af-a3d3-4594468affcf"],
+Cell[4719, 156, 904, 30, 198, "Input",ExpressionUUID->"9917f34c-2c81-40fa-bc8d-179bce9e35ca"],
+Cell[5626, 188, 904, 30, 198, "Input",ExpressionUUID->"3f387553-f78d-4600-92ad-b1c5d77af54f"],
+Cell[6533, 220, 777, 27, 198, "Input",ExpressionUUID->"1ab3b280-39c8-45df-8436-306dd299a674"],
+Cell[7313, 249, 328, 8, 180, "Input",ExpressionUUID->"0f27e431-f08d-4dd9-8545-fa697fdb1afc"],
+Cell[7644, 259, 149, 3, 207, "Text",ExpressionUUID->"88bf208e-bda9-4b66-816e-bf34a7d9d70e",
+ Evaluatable->False],
+Cell[7796, 264, 195, 4, 180, "Input",ExpressionUUID->"211626c5-41b3-4c0f-a859-43f246b9ae26"],
+Cell[7994, 270, 824, 25, 312, "Input",ExpressionUUID->"4d648cae-6557-40d5-af81-7c886b08c9ab"],
+Cell[8821, 297, 174, 3, 207, "Text",ExpressionUUID->"437e3530-7202-49b0-9801-83ebb9ff357c",
+ Evaluatable->False],
+Cell[8998, 302, 804, 23, 312, "Input",ExpressionUUID->"ed214919-3b41-4f64-a869-c10bb26b420a"],
+Cell[9805, 327, 265, 6, 342, "Text",ExpressionUUID->"a6d89f0e-0c1d-4d5b-9a54-6947e4e1a060",
+ Evaluatable->False],
+Cell[10073, 335, 7079, 237, 2304, "Input",ExpressionUUID->"0329a029-ba8b-4bd9-8bc1-4522b21b0252"],
+Cell[17155, 574, 393, 10, 477, "Text",ExpressionUUID->"cb96edec-ecab-43fa-9b5c-7cfe249532e2",
+ Evaluatable->False]
+}, Open  ]]
+}
+]
+*)
+

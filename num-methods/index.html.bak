@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.03 [en] (X11; U; IRIX 5.3 IP22) [Netscape]">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Numerical Methods</TITLE>
+</HEAD>
+<BODY>
+
+<CENTER>
+<H1>
+Numerical Methods (307)</H1></CENTER>
+&nbsp;
+
+<P>Here is a list of Mathematica files that I use in my course.&nbsp; These
+are designed to complement the text book <I>Numerical Methods 5th Ed.,
+Burden and Faires, ITP</I>.&nbsp; In this manner, the names of the Mathematica
+notebooks are exactly in line with the Chapter numbers from this book.
+
+<P>However, these notebooks present the material quite differently from
+the book.&nbsp; They are designed to illustrate only certain aspects, particularly
+those that Mathematica is well able to deal with.
+<BR>&nbsp;
+<UL>
+<LI>
+<A HREF="1.3.sequence.nb">1.3.sequence.nb</A>:&nbsp; This considers
+the sequence given in Example 3 of Chapter 1.3, showing that floating point
+errors can be very bad.&nbsp; This also provides an opportunity to consider
+the difference between evaluating sequences recursively and iteratively
+in Mathematica.</LI>
+
+<LI>
+<A HREF="2.1.bisect.nb">2.1.bisect.nb</A>:&nbsp; A rough and
+ready implementation of the bisection method.</LI>
+
+<LI>
+<A HREF="2.2.iterate.nb">2.2.iterate.nb</A>:&nbsp; Illustrates
+the fixed point algorithm, including some rather pretty graphics.</LI>
+
+<LI>
+<A HREF="2.3.newton.nb">2.3.newton.nb</A>:&nbsp; Illustrates
+the Newton-Raphson method, including the modified method of Chapter 2.4.</LI>
+
+<LI>
+<A HREF="2.3.1.cube.newt.nb">2.3.1.cube.newt.nb</A>:&nbsp;
+Nothing to do with the book, shows the fractal produced by applying Newton's
+Method to x<SUP>3</SUP>-1 = 0.</LI>
+
+<LI>
+<A HREF="3.0.taylor.nb">3.0.taylor.nb</A>:&nbsp; Plots
+of Taylor's series.</LI>
+
+<LI>
+<A HREF="3.1.0.solve.nb">3.1.0.solve.nb</A>:&nbsp; An introduction
+to solving equations in Mathematica.</LI>
+
+<LI>
+<A HREF="3.1.interp.nb">3.1.interp.nb</A>:&nbsp; Shows how
+to calculate interpolating polynomials.&nbsp; Includes graphs illustrating
+how badly interpolating polynomials actually interpolate.</LI>
+
+<LI>
+<A HREF="3.3.hermite.nb">3.3.hermite.nb</A>:&nbsp; Hermite
+interpolation.</LI>
+
+<LI>
+<A HREF="3.4.splines.nb">3.4.splines.nb</A>:&nbsp; Calculates
+splines from their definition.</LI>
+
+<LI>
+<A HREF="4.1.diff.nb">4.1.diff.nb</A>:&nbsp; Derive formulae
+for numerically evaluating derivatives, including the error term.&nbsp;
+I think that this notebook really shows beautiful Mathematica can be.&nbsp;
+It includes the derivation of a nine point formula.</LI>
+
+<LI>
+<A HREF="4.5.adapt.nb">4.5.adapt.nb</A>:&nbsp; An implementation
+of the adaptive quadrature method.&nbsp; It is implemented as a recursive
+routine, and as such is much easier to understand, and much shorter than
+the algorithm given in the text book.</LI>
+
+<LI>
+<A HREF="4.7.gauss.quad.nb">4.7.gauss.quad.nb</A>:&nbsp; Implement
+Gaussian Quadrature.</LI>
+
+<LI>
+<A HREF="5.2.euler.nb">5.2.euler.nb</A>:&nbsp; Implement Euler's
+method with y<FONT FACE="Courier New,Courier">'</FONT> = y (mainly to demonstrate
+errors).</LI>
+
+<LI>
+<A HREF="5.4.runge.kutta.nb">5.4.runge.kutta.nb</A>:&nbsp;
+Prove that the Runge-Kutta Method given in the book is 4th order.</LI>
+
+<LI>
+<A HREF="5.5.fehl.nb">5.5.fehl.nb</A>:&nbsp; Implement the
+Runge-Kutta-Fehlberg Method.</LI>
+
+<LI>
+<A HREF="5.6.adams.bash.nb">5.6.adams.bash.nb</A>:&nbsp; Derive
+the Adams-Bashforth and Adams-Moulton Methods, including error terms.</LI>
+
+<LI>
+<A HREF="5.9.euler.nb">5.9.euler.nb</A>:&nbsp; Implement Euler's
+method for systems of equations (mainly to demonstrate errors).</LI>
+
+<LI>
+<A HREF="5.9.pred.prey.nb">5.9.pred.prey.nb</A>:&nbsp; Exercise
+7 from Chapter 5.9.</LI>
+
+<LI>
+<A HREF="5.10.stability.nb">5.10.stability.nb</A>:&nbsp; Illustration of a 
+highly unstable numerical method for solving differential equations.</LI>
+</UL>
+
+<CENTER>&nbsp;<A HREF="../index.html">Back to home page</A></CENTER>
+
+</BODY>
+</HTML>

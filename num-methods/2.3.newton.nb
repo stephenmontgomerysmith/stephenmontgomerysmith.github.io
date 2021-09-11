@@ -1,0 +1,705 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24245,        697]
+NotebookOptionsPosition[     21273,        637]
+NotebookOutlinePosition[     22152,        666]
+CellTagsIndexPosition[     22109,        663]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Newton Raphson", "Title",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"7831c728-1246-4b9a-acd7-cbec834a50bd"],
+
+Cell["\<\
+The Newton Raphson method is fixed point iteration designed so as to make \
+convergence as quick as possible.  Here is the first example.  We will figure \
+the answer to 50 significant figures to illustrate the speed of convergence.\
+\>", "Text",
+ CellMargins->{{19, 88}, {Inherited, Inherited}},
+ Evaluatable->False,
+ CellLabelMargins->{{17, Inherited}, {Inherited, Inherited}},
+ AspectRatioFixed->
+  True,ExpressionUUID->"3f3252e0-dfe2-4af9-9295-25951b6c3c51"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], "=", 
+   RowBox[{
+    SuperscriptBox["x", "2"], "-", "2"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"a", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"b", "=", "3"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"g", "[", "x_", "]"}], "=", 
+  RowBox[{"x", "-", 
+   FractionBox[
+    RowBox[{"f", "[", "x", "]"}], 
+    RowBox[{
+     SuperscriptBox["f", "\[Prime]",
+      MultilineFunction->None], "[", "x", "]"}]]}]}]}], "Input",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ CellChangeTimes->{{3.7443688315335093`*^9, 3.744368876448635*^9}, {
+  3.744368942836299*^9, 3.7443689485511503`*^9}},
+ AspectRatioFixed->
+  True,ExpressionUUID->"c5c8acc4-96cf-4313-af2d-c21f2ae54e43"],
+
+Cell[BoxData[
+ RowBox[{"x", "-", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"-", "2"}], "+", 
+    SuperscriptBox["x", "2"]}], 
+   RowBox[{"2", " ", "x"}]]}]], "Output",
+ CellChangeTimes->{{3.7443688595191402`*^9, 3.744368877291636*^9}},
+ CellLabel->"Out[12]=",ExpressionUUID->"1e2af156-0d65-46b2-ac83-7d3899c20628"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "p", "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "n", "]"}], "=", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"g", "[", 
+       RowBox[{"p", "[", 
+        RowBox[{"n", "-", "1"}], "]"}], "]"}], ",", "50"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "100"}], "}"}]}], "]"}]}], "Input",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ CellChangeTimes->{{3.7443688517226057`*^9, 3.7443688524985943`*^9}, {
+  3.7443689510026712`*^9, 3.7443689739544783`*^9}, {3.744369057503909*^9, 
+  3.744369057897903*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[25]:=",ExpressionUUID->"cb558397-b09f-4a22-8393-9fb43228e6d3"],
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"p", "[", "n", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "10"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ AspectRatioFixed->True,
+ CellLabel->"In[28]:=",ExpressionUUID->"97f2f048-ea86-428c-b0eb-e18c197f3493"],
+
+Cell["\<\
+Here is a nice plot to illustrate what the Newton Raphson method is doing.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"8ba797bd-db3d-4be0-8465-5e44956a9ed5"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ppp", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"f", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "a", ",", "b"}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"ListAnimate", "[", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"Show", "[", 
+        RowBox[{"ppp", ",", "\n", "\t\t\t", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"f", "[", 
+                    RowBox[{"p", "[", "k", "]"}], "]"}]}], "}"}]}], "}"}], 
+               "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", " ", "\n", 
+            "\t\t\t\t\t                 ", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"f", "[", 
+                    RowBox[{"p", "[", "k", "]"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}], ",", "0"}], "}"}]}], 
+                "}"}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "}"}]}]}], "]"}],
+        ",", "\n", "\t\t", 
+       RowBox[{"Show", "[", 
+        RowBox[{"ppp", ",", "\n", "\t\t\t", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"f", "[", 
+                    RowBox[{"p", "[", "k", "]"}], "]"}]}], "}"}]}], "}"}], 
+               "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", "\n", 
+            "\t\t\t\t\t                 ", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"f", "[", 
+                    RowBox[{"p", "[", "k", "]"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "1"}], "]"}], ",", "0"}], "}"}]}], 
+                "}"}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "}"}]}]}], 
+        "]"}]}], "}"}], ",", "\n", "\t", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "6"}], "}"}]}], "]"}], "]"}], 
+  "]"}]}], "Input",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ CellChangeTimes->{3.744369036656147*^9},
+ AspectRatioFixed->True,
+ CellLabel->"In[29]:=",ExpressionUUID->"429ab961-289f-4e7f-b406-3da04b17e3f5"],
+
+Cell["\<\
+
+Now lets look at the Secant Method.\
+\>", "Text",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"5066c195-2867-471b-be57-ac3d07bc0d56"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "p", "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "3"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "1", "]"}], "=", "2"}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "n", "]"}], "=", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"p", "[", 
+        RowBox[{"n", "-", "1"}], "]"}], "-", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"p", "[", 
+           RowBox[{"n", "-", "1"}], "]"}], "]"}], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"p", "[", 
+            RowBox[{"n", "-", "1"}], "]"}], "-", 
+           RowBox[{"p", "[", 
+            RowBox[{"n", "-", "2"}], "]"}]}], ")"}]}], 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{"p", "[", 
+           RowBox[{"n", "-", "1"}], "]"}], "]"}], "-", 
+         RowBox[{"f", "[", 
+          RowBox[{"p", "[", 
+           RowBox[{"n", "-", "2"}], "]"}], "]"}]}]]}], ",", "50"}], "]"}]}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "2", ",", "100"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"p", "[", "n", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "14"}], "}"}]}], "]"}], "]"}]}], "Input",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ CellChangeTimes->{3.744369105749969*^9},
+ AspectRatioFixed->True,
+ CellLabel->"In[31]:=",ExpressionUUID->"21b75200-2a37-4855-8b94-9549650e1ca2"],
+
+Cell[BoxData[
+ RowBox[{"ListAnimate", "[", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", "\n", "\t\t", 
+      RowBox[{
+       RowBox[{"Show", "[", 
+        RowBox[{"ppp", ",", "\n", "\t\t\t\t", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"f", "[", 
+                    RowBox[{"p", "[", "k", "]"}], "]"}]}], "}"}]}], "}"}], 
+               "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], ",", "\n", 
+            "\t\t\t\t\t                   ", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"f", "[", 
+                    RowBox[{"p", "[", "k", "]"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "2"}], "]"}], ",", "0"}], "}"}]}], 
+                "}"}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "}"}]}]}], "]"}],
+        ",", "\n", "\t\t", 
+       RowBox[{"Show", "[", 
+        RowBox[{"ppp", ",", "\n", "\t\t  \t", 
+         RowBox[{"Epilog", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"f", "[", 
+                    RowBox[{"p", "[", "k", "]"}], "]"}]}], "}"}]}], "}"}], 
+               "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", "\n", 
+            "\t\t\t\t\t                   ", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", "k", "]"}], ",", 
+                   RowBox[{"f", "[", 
+                    RowBox[{"p", "[", "k", "]"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"p", "[", 
+                    RowBox[{"k", "+", "2"}], "]"}], ",", "0"}], "}"}]}], 
+                "}"}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"k", ",", "0", ",", 
+                RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], "}"}]}]}], 
+        "]"}]}], "}"}], ",", "\n", "\t", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "6"}], "}"}]}], "]"}], "]"}], 
+  "]"}]], "Input",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ CellChangeTimes->{{3.744369119976841*^9, 3.744369147132452*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[36]:=",ExpressionUUID->"2485028f-16bc-444b-a585-7f98eb901d11"],
+
+Cell["\<\
+Now let us illustrate a situation when the Newton Raphson method does not \
+work so well.\
+\>", "Text",
+ CellMargins->{{Inherited, 51}, {Inherited, Inherited}},
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"03cca357-3c04-4423-bf01-aa89365e2aaa"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"2", " ", "x"}], "]"}], "-", 
+    RowBox[{"2", " ", 
+     RowBox[{"Exp", "[", 
+      RowBox[{"2", "+", "x"}], "]"}]}], "+", 
+    RowBox[{"Exp", "[", "4", "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_", "]"}], "=", 
+   RowBox[{"x", "-", 
+    FractionBox[
+     RowBox[{"f", "[", "x", "]"}], 
+     RowBox[{
+      SuperscriptBox["f", "\[Prime]",
+       MultilineFunction->None], "[", "x", "]"}]]}]}], ";"}], "\n", 
+ RowBox[{"Clear", "[", "p", "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "3"}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "n", "]"}], "=", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"g", "[", 
+       RowBox[{"p", "[", 
+        RowBox[{"n", "-", "1"}], "]"}], "]"}], ",", "50"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "100"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"p", "[", "n", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "20"}], "}"}]}], "]"}], "]"}]}], "Input",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ CellChangeTimes->{{3.744369174460205*^9, 3.744369200271044*^9}, 
+   3.74436938191402*^9},
+ AspectRatioFixed->
+  True,ExpressionUUID->"6b1b79f8-42a3-4f6e-9d84-d58525cb422a"],
+
+Cell[TextData[{
+ "If we want to get rid of the divide by zero errors, try using the ",
+ StyleBox["Simplify",
+  FontFamily->"Courier",
+  FontWeight->"Bold"],
+ " command to simplify some of the expressions:"
+}], "Text",
+ CellMargins->{{Inherited, 92}, {Inherited, Inherited}},
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"f3e1c33e-a895-4cad-824c-098e59f4e186"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_", "]"}], "=", 
+   RowBox[{"x", "-", 
+    RowBox[{"Simplify", "[", 
+     FractionBox[
+      RowBox[{"f", "[", "x", "]"}], 
+      RowBox[{
+       SuperscriptBox["f", "\[Prime]",
+        MultilineFunction->None], "[", "x", "]"}]], "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "n", "]"}], "=", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"g", "[", 
+       RowBox[{"p", "[", 
+        RowBox[{"n", "-", "1"}], "]"}], "]"}], ",", "50"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "100"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"p", "[", "n", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "50"}], "}"}]}], "]"}], "]"}]}], "Input",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ CellChangeTimes->{{3.744369255199092*^9, 3.744369279775889*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[45]:=",ExpressionUUID->"fcbaa52f-bed4-4830-9d18-675316c80057"],
+
+Cell[TextData[{
+ "The reason for the slow convergence is that f[x] has a ",
+ StyleBox["double",
+  FontSlant->"Italic"],
+ " root at x=2, that is, a root of order 2:"
+}], "Text",
+ CellMargins->{{Inherited, 90}, {Inherited, Inherited}},
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"f86bdeb5-d584-44bf-ba7b-c1b118f16001"],
+
+Cell[BoxData[{
+ RowBox[{"f", "[", "2", "]"}], "\n", 
+ RowBox[{
+  SuperscriptBox["f", "\[Prime]",
+   MultilineFunction->None], "[", "2", "]"}], "\n", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "3"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.744369299213544*^9, {3.744369390126227*^9, 3.744369391750476*^9}},
+ AspectRatioFixed->
+  True,ExpressionUUID->"656fcfd5-a301-4dff-b642-1664b82ba612"],
+
+Cell["The method used here is the Modified Newton Raphson Method:", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"b7ecfe98-b62b-4e18-83a7-7bc75e7448cd"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     RowBox[{"2", " ", "x"}], "]"}], "-", 
+    RowBox[{"2", " ", 
+     RowBox[{"Exp", "[", 
+      RowBox[{"2", "+", "x"}], "]"}]}], "+", 
+    RowBox[{"Exp", "[", "4", "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"mu", "[", "x_", "]"}], "=", 
+   FractionBox[
+    RowBox[{"f", "[", "x", "]"}], 
+    RowBox[{
+     SuperscriptBox["f", "\[Prime]",
+      MultilineFunction->None], "[", "x", "]"}]]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_", "]"}], "=", 
+   RowBox[{"x", "-", 
+    FractionBox[
+     RowBox[{"mu", "[", "x", "]"}], 
+     RowBox[{
+      SuperscriptBox["mu", "\[Prime]",
+       MultilineFunction->None], "[", "x", "]"}]]}]}], ";"}], "\n", 
+ RowBox[{"Clear", "[", "p", "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "3"}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "n", "]"}], "=", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"g", "[", 
+       RowBox[{"p", "[", 
+        RowBox[{"n", "-", "1"}], "]"}], "]"}], ",", "50"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "100"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"p", "[", "n", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "10"}], "}"}]}], "]"}], "]"}]}], "Input",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ CellChangeTimes->{{3.7443693161160107`*^9, 3.744369348108199*^9}, 
+   3.744369396119258*^9},
+ AspectRatioFixed->
+  True,ExpressionUUID->"2e8066c2-a5d8-413b-8aa0-8d71c16ca8c1"],
+
+Cell["\<\
+If you want to remove the problem caused by the divide by zero, try some \
+simplification of the expressions.  (This won't always work!)\
+\>", "Text",
+ CellMargins->{{Inherited, 90}, {Inherited, Inherited}},
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"11da44e3-92a7-445d-82b6-e51c305e781d"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"mu", "[", "x_", "]"}], "=", 
+   RowBox[{"Simplify", "[", 
+    FractionBox[
+     RowBox[{"f", "[", "x", "]"}], 
+     RowBox[{
+      SuperscriptBox["f", "\[Prime]",
+       MultilineFunction->None], "[", "x", "]"}]], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_", "]"}], "=", 
+   RowBox[{"x", "-", 
+    RowBox[{"Simplify", "[", 
+     FractionBox[
+      RowBox[{"mu", "[", "x", "]"}], 
+      RowBox[{
+       SuperscriptBox["mu", "\[Prime]",
+        MultilineFunction->None], "[", "x", "]"}]], "]"}]}]}], ";"}], "\n", 
+ RowBox[{"Clear", "[", "p", "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "0", "]"}], "=", "3"}], ";"}], "\n", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"p", "[", "n", "]"}], "=", 
+    RowBox[{"N", "[", 
+     RowBox[{
+      RowBox[{"g", "[", 
+       RowBox[{"p", "[", 
+        RowBox[{"n", "-", "1"}], "]"}], "]"}], ",", "50"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "100"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"p", "[", "n", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "10"}], "}"}]}], "]"}], "]"}]}], "Input",
+ CellMargins->{{Inherited, 88}, {Inherited, Inherited}},
+ CellChangeTimes->{{3.7443693611837873`*^9, 3.7443693662595*^9}, {
+  3.744369401238791*^9, 3.744369424527212*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[64]:=",ExpressionUUID->"53eeb286-4412-4840-a6d5-a36b61c701a5"]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+CellGrouping->Automatic,
+WindowSize->{1366, 737},
+WindowMargins->{{0, Automatic}, {1, Automatic}},
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"Magnification"->1,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{612, 792}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 192, 4, 147, "Title",ExpressionUUID->"7831c728-1246-4b9a-acd7-cbec834a50bd",
+ Evaluatable->False],
+Cell[775, 28, 472, 9, 90, "Text",ExpressionUUID->"3f3252e0-dfe2-4af9-9295-25951b6c3c51",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[1272, 41, 742, 22, 190, "Input",ExpressionUUID->"c5c8acc4-96cf-4313-af2d-c21f2ae54e43"],
+Cell[2017, 65, 312, 8, 79, "Output",ExpressionUUID->"1e2af156-0d65-46b2-ac83-7d3899c20628"]
+}, Open  ]],
+Cell[2344, 76, 818, 21, 116, "Input",ExpressionUUID->"cb558397-b09f-4a22-8393-9fb43228e6d3"],
+Cell[3165, 99, 424, 11, 47, "Input",ExpressionUUID->"97f2f048-ea86-428c-b0eb-e18c197f3493"],
+Cell[3592, 112, 202, 5, 54, "Text",ExpressionUUID->"8ba797bd-db3d-4be0-8465-5e44956a9ed5",
+ Evaluatable->False],
+Cell[3797, 119, 3911, 103, 388, "Input",ExpressionUUID->"429ab961-289f-4e7f-b406-3da04b17e3f5"],
+Cell[7711, 224, 221, 7, 90, "Text",ExpressionUUID->"5066c195-2867-471b-be57-ac3d07bc0d56",
+ Evaluatable->False],
+Cell[7935, 233, 1591, 49, 228, "Input",ExpressionUUID->"21b75200-2a37-4855-8b94-9549650e1ca2"],
+Cell[9529, 284, 3732, 96, 354, "Input",ExpressionUUID->"2485028f-16bc-444b-a585-7f98eb901d11"],
+Cell[13264, 382, 274, 7, 54, "Text",ExpressionUUID->"03cca357-3c04-4423-bf01-aa89365e2aaa",
+ Evaluatable->False],
+Cell[13541, 391, 1493, 47, 262, "Input",ExpressionUUID->"6b1b79f8-42a3-4f6e-9d84-d58525cb422a"],
+Cell[15037, 440, 378, 10, 90, "Text",ExpressionUUID->"f3e1c33e-a895-4cad-824c-098e59f4e186",
+ Evaluatable->False],
+Cell[15418, 452, 1216, 36, 192, "Input",ExpressionUUID->"fcbaa52f-bed4-4830-9d18-675316c80057"],
+Cell[16637, 490, 337, 9, 54, "Text",ExpressionUUID->"f86bdeb5-d584-44bf-ba7b-c1b118f16001",
+ Evaluatable->False],
+Cell[16977, 501, 479, 13, 116, "Input",ExpressionUUID->"656fcfd5-a301-4dff-b642-1664b82ba612"],
+Cell[17459, 516, 179, 3, 54, "Text",ExpressionUUID->"b7ecfe98-b62b-4e18-83a7-7bc75e7448cd",
+ Evaluatable->False],
+Cell[17641, 521, 1727, 55, 337, "Input",ExpressionUUID->"2e8066c2-a5d8-413b-8aa0-8d71c16ca8c1"],
+Cell[19371, 578, 321, 7, 90, "Text",ExpressionUUID->"11da44e3-92a7-445d-82b6-e51c305e781d",
+ Evaluatable->False],
+Cell[19695, 587, 1562, 47, 301, "Input",ExpressionUUID->"53eeb286-4412-4840-a6d5-a36b61c701a5"]
+}, Open  ]]
+}
+]
+*)
+

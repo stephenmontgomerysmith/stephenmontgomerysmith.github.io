@@ -1,0 +1,246 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7169,        236]
+NotebookOptionsPosition[      5902,        202]
+NotebookOutlinePosition[      6635,        227]
+CellTagsIndexPosition[      6592,        224]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Adams-Basforth m-Step Method", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"a115bd8d-d6a0-4208-8cd9-6bcaa6a53689"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", "4"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"llist", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", "+", 
+        RowBox[{"j", " ", "h"}]}], ",", 
+       RowBox[{"f", "[", 
+        RowBox[{
+         RowBox[{"t", "[", "j", "]"}], ",", 
+         RowBox[{"w", "[", "j", "]"}]}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", 
+       RowBox[{"i", "-", "m", "+", "1"}], ",", "i"}], "}"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "tt_", "]"}], "=", 
+   RowBox[{"Expand", "[", 
+    RowBox[{"InterpolatingPolynomial", "[", 
+     RowBox[{"llist", ",", "tt"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"w", "[", "i", "]"}], "+", 
+  RowBox[{"Factor", "[", 
+   RowBox[{"Expand", "[", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"a", "+", 
+       RowBox[{"i", " ", "h"}]}], 
+      RowBox[{"a", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"i", "+", "1"}], ")"}], " ", "h"}]}]], 
+     RowBox[{
+      RowBox[{"p", "[", "tt", "]"}], 
+      RowBox[{"\[DifferentialD]", "tt"}]}]}], "]"}], "]"}]}]}], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[1]:=",ExpressionUUID->"09936dda-9741-41e8-bbd6-3d32c79804c3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"error", "=", 
+   FractionBox[
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["y", 
+       TagBox[
+        RowBox[{"(", 
+         RowBox[{"m", "+", "1"}], ")"}],
+        Derivative],
+       MultilineFunction->None], "[", "mu", "]"}], " ", 
+     RowBox[{
+      UnderoverscriptBox["\[Product]", 
+       RowBox[{"j", "=", 
+        RowBox[{"i", "-", "m", "+", "1"}]}], "i"], 
+      RowBox[{"(", 
+       RowBox[{"tt", "-", 
+        RowBox[{"(", 
+         RowBox[{"a", "+", 
+          RowBox[{"j", " ", "h"}]}], ")"}]}], ")"}]}]}], 
+    RowBox[{"m", "!"}]]}], ";"}], "\n", 
+ RowBox[{"localtruncerror", "=", 
+  FractionBox[
+   RowBox[{"Expand", "[", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"a", "+", 
+       RowBox[{"i", " ", "h"}]}], 
+      RowBox[{"a", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"i", "+", "1"}], ")"}], " ", "h"}]}]], 
+     RowBox[{"error", 
+      RowBox[{"\[DifferentialD]", "tt"}]}]}], "]"}], "h"]}]}], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[5]:=",ExpressionUUID->"903153ff-34cc-4fb8-b8fd-707d80c7cf8a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Adams-Moulton m-Step Method", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"57b0a7ae-eb0f-47f4-ab46-1a941c5710ce"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", "4"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"llist", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", "+", 
+        RowBox[{"j", " ", "h"}]}], ",", 
+       RowBox[{"f", "[", 
+        RowBox[{
+         RowBox[{"t", "[", "j", "]"}], ",", 
+         RowBox[{"w", "[", "j", "]"}]}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", 
+       RowBox[{"i", "-", "m", "+", "1"}], ",", 
+       RowBox[{"i", "+", "1"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "tt_", "]"}], "=", 
+   RowBox[{"Expand", "[", 
+    RowBox[{"InterpolatingPolynomial", "[", 
+     RowBox[{"llist", ",", "tt"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"w", "[", "i", "]"}], "+", 
+  RowBox[{"Factor", "[", 
+   RowBox[{"Expand", "[", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"a", "+", 
+       RowBox[{"i", " ", "h"}]}], 
+      RowBox[{"a", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"i", "+", "1"}], ")"}], " ", "h"}]}]], 
+     RowBox[{
+      RowBox[{"p", "[", "tt", "]"}], 
+      RowBox[{"\[DifferentialD]", "tt"}]}]}], "]"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.7470953940961323`*^9, 3.74709539429875*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[7]:=",ExpressionUUID->"67002e66-878f-4a3e-9104-260c3a3e87cc"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"error", "=", 
+   FractionBox[
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["y", 
+       TagBox[
+        RowBox[{"(", 
+         RowBox[{"m", "+", "2"}], ")"}],
+        Derivative],
+       MultilineFunction->None], "[", "mu", "]"}], " ", 
+     RowBox[{
+      UnderoverscriptBox["\[Product]", 
+       RowBox[{"j", "=", 
+        RowBox[{"i", "-", "m", "+", "1"}]}], 
+       RowBox[{"i", "+", "1"}]], 
+      RowBox[{"(", 
+       RowBox[{"tt", "-", 
+        RowBox[{"(", 
+         RowBox[{"a", "+", 
+          RowBox[{"j", " ", "h"}]}], ")"}]}], ")"}]}]}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"m", "+", "1"}], ")"}], "!"}]]}], ";"}], "\n", 
+ RowBox[{"localtruncerror", "=", 
+  FractionBox[
+   RowBox[{"Expand", "[", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"a", "+", 
+       RowBox[{"i", " ", "h"}]}], 
+      RowBox[{"a", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"i", "+", "1"}], ")"}], " ", "h"}]}]], 
+     RowBox[{"error", 
+      RowBox[{"\[DifferentialD]", "tt"}]}]}], "]"}], "h"]}]}], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[11]:=",ExpressionUUID->"5b418e7e-d655-4d4b-b004-62aa40a4688d"]
+}, Open  ]]
+},
+WindowToolbars->{},
+CellGrouping->Automatic,
+WindowSize->{1366, 737},
+WindowMargins->{{0, Automatic}, {1, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 149, 3, 147, "Title",ExpressionUUID->"a115bd8d-d6a0-4208-8cd9-6bcaa6a53689",
+ Evaluatable->False],
+Cell[732, 27, 1284, 41, 176, "Input",ExpressionUUID->"09936dda-9741-41e8-bbd6-3d32c79804c3"],
+Cell[2019, 70, 1109, 36, 178, "Input",ExpressionUUID->"903153ff-34cc-4fb8-b8fd-707d80c7cf8a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3165, 111, 148, 3, 147, "Title",ExpressionUUID->"57b0a7ae-eb0f-47f4-ab46-1a941c5710ce",
+ Evaluatable->False],
+Cell[3316, 116, 1376, 42, 176, "Input",ExpressionUUID->"67002e66-878f-4a3e-9104-260c3a3e87cc"],
+Cell[4695, 160, 1191, 39, 182, "Input",ExpressionUUID->"5b418e7e-d655-4d4b-b004-62aa40a4688d"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

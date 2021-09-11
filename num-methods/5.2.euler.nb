@@ -1,0 +1,243 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7466,        235]
+NotebookOptionsPosition[      5794,        196]
+NotebookOutlinePosition[      6562,        222]
+CellTagsIndexPosition[      6519,        219]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Euler's Method", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"f9759720-9dd3-4e84-a9d0-dce067558e49"],
+
+Cell[TextData[{
+ "We consider the differential equation:\n\n    ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["dy", "dt"], TraditionalForm]],ExpressionUUID->
+  "b3619dfa-3ebd-4d51-8d47-37c509789f47"],
+ " = f[t,y] = y\n    \n    y[a] = \[Alpha] = 1.\n    \nWe will look at this \
+over the range [a,b] = [0,5]."
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"c526c3b4-a9bb-4f2d-91b4-406b64bae9ea"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"f", ",", "t", ",", "y", ",", "\[Alpha]", ",", "a", ",", "b"}], 
+   "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"t_", ",", "y_"}], "]"}], "=", "y"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"\[Alpha]", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"a", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"b", "=", "5"}], ";"}]}], "Input",
+ CellChangeTimes->{3.747094854627666*^9},
+ AspectRatioFixed->True,
+ CellLabel->"In[19]:=",ExpressionUUID->"781a363e-5e31-432a-80a3-b12b20c29bae"],
+
+Cell["Let's solve it analytically", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"be5fbe4b-2df9-495f-81e1-8df2b24163cc"],
+
+Cell[BoxData[
+ RowBox[{"solveit", "=", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["y", "\[Prime]",
+         MultilineFunction->None], "[", "t", "]"}], "==", 
+       RowBox[{"f", "[", 
+        RowBox[{"t", ",", 
+         RowBox[{"y", "[", "t", "]"}]}], "]"}]}], ",", 
+      RowBox[{
+       RowBox[{"y", "[", "a", "]"}], "==", "\[Alpha]"}]}], "}"}], ",", 
+    RowBox[{"y", "[", "t", "]"}], ",", "t"}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[4]:=",ExpressionUUID->"becce452-0029-4c5c-b197-b87f6602176d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"y", "[", "t_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"y", "[", "t", "]"}], "/.", 
+   RowBox[{
+   "solveit", "\[LeftDoubleBracket]", "1", 
+    "\[RightDoubleBracket]"}]}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[5]:=",ExpressionUUID->"de1f4047-93ef-44d3-a554-b68d171f18d0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"y", "[", "t", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "a", ",", "b"}], "}"}]}], "]"}], ";"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[6]:=",ExpressionUUID->"7e627d14-06d0-40b0-bb43-c0ffc997aa4a"],
+
+Cell["Now let's try Euler's method.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"8467c181-c674-41c6-a499-353d66dbf629"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"w", ",", "i", ",", "h", ",", "t", ",", "plotw", ",", "n"}], "]"}],
+   "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"h", "=", "0.1"}], ";"}], "\n", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"t", "[", "i_", "]"}], "=", 
+    RowBox[{"a", "+", 
+     RowBox[{"i", " ", "h"}]}]}], ";"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"n", "=", 
+    RowBox[{"Ceiling", "[", 
+     FractionBox[
+      RowBox[{"b", "-", "a"}], "h"], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", "[", "0", "]"}], "=", "\[Alpha]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"w", "[", 
+      RowBox[{"i", "+", "1"}], "]"}], "=", 
+     RowBox[{
+      RowBox[{"w", "[", "i", "]"}], "+", 
+      RowBox[{"h", " ", 
+       RowBox[{"f", "[", 
+        RowBox[{
+         RowBox[{"t", "[", "i", "]"}], ",", 
+         RowBox[{"w", "[", "i", "]"}]}], "]"}]}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "0", ",", 
+      RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"list", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"t", "[", "i", "]"}], ",", 
+        RowBox[{"w", "[", "i", "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "0", ",", "n"}], "}"}]}], "]"}]}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"plotw", "[", "t_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Interpolation", "[", "list", "]"}], "[", "t", "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"y", "[", "t", "]"}], ",", 
+     RowBox[{"plotw", "[", "t", "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "a", ",", "b"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Red", ",", "Blue"}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.747094806118601*^9, 3.747094814186384*^9}},
+ AspectRatioFixed->True,
+ CellLabel->"In[7]:=",ExpressionUUID->"8aa4775e-4366-4b2d-99e1-df7d55c0e811"],
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"t", "[", "i", "]"}], ",", 
+      RowBox[{"y", "[", 
+       RowBox[{"t", "[", "i", "]"}], "]"}], ",", 
+      RowBox[{"w", "[", "i", "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "0", ",", "n"}], "}"}]}], "]"}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[15]:=",ExpressionUUID->"64149862-13d6-4de1-80a0-290e9e9adee4"]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowToolbars->"EditBar",
+CellGrouping->Automatic,
+WindowSize->{1366, 737},
+WindowMargins->{{0, Automatic}, {1, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 135, 3, 147, "Title",ExpressionUUID->"f9759720-9dd3-4e84-a9d0-dce067558e49",
+ Evaluatable->False],
+Cell[718, 27, 423, 11, 281, "Text",ExpressionUUID->"c526c3b4-a9bb-4f2d-91b4-406b64bae9ea",
+ Evaluatable->False],
+Cell[1144, 40, 566, 17, 184, "Input",ExpressionUUID->"781a363e-5e31-432a-80a3-b12b20c29bae"],
+Cell[1713, 59, 147, 3, 54, "Text",ExpressionUUID->"be5fbe4b-2df9-495f-81e1-8df2b24163cc",
+ Evaluatable->False],
+Cell[1863, 64, 603, 17, 47, "Input",ExpressionUUID->"becce452-0029-4c5c-b197-b87f6602176d"],
+Cell[2469, 83, 317, 9, 47, "Input",ExpressionUUID->"de1f4047-93ef-44d3-a554-b68d171f18d0"],
+Cell[2789, 94, 293, 8, 47, "Input",ExpressionUUID->"7e627d14-06d0-40b0-bb43-c0ffc997aa4a"],
+Cell[3085, 104, 149, 3, 54, "Text",ExpressionUUID->"8467c181-c674-41c6-a499-353d66dbf629",
+ Evaluatable->False],
+Cell[3237, 109, 2065, 69, 495, "Input",ExpressionUUID->"8aa4775e-4366-4b2d-99e1-df7d55c0e811"],
+Cell[5305, 180, 473, 13, 47, "Input",ExpressionUUID->"64149862-13d6-4de1-80a0-290e9e9adee4"]
+}, Open  ]]
+}
+]
+*)
+

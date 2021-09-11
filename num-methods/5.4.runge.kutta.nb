@@ -1,0 +1,390 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12900,        380]
+NotebookOptionsPosition[      9853,        323]
+NotebookOutlinePosition[     10593,        348]
+CellTagsIndexPosition[     10550,        345]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Runge Kutta", "Title",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"e9c4299d-fac8-42d7-991d-089667336db7"],
+
+Cell[TextData[{
+ "We are solving the equation \n\n       ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["dy", "dt"], TraditionalForm]],ExpressionUUID->
+  "68ced63a-db5e-433f-83ca-6433597f65a7"],
+ "  =  f(t,y).\n       \nThis means that differentiation becomes the \
+following:first differentiate, and then substitute ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["dy", "dt"], TraditionalForm]],ExpressionUUID->
+  "597ce4fa-e662-42cd-a087-111438ef1884"],
+ " to f(t,y).  \n\nLet's first consider the special case\n\n    ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["dy", "dx"], TraditionalForm]],ExpressionUUID->
+  "b7a7891a-b582-4441-a36b-79c002fb5d38"],
+ " = 1+cos(y t)"
+}], "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"542bdcef-b8bd-4f32-a42e-082a70f2161c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"t_", ",", "y_"}], "]"}], "=", 
+  RowBox[{"1", "+", 
+   RowBox[{"Cos", "[", 
+    RowBox[{"y", " ", "t"}], "]"}]}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[1]:=",ExpressionUUID->"05086f6b-1402-477c-9c9c-0ed148328d21"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DD", "[", "a_", "]"}], ":=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[PartialD]", "t"], "a"}], "/.", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["y", "\[Prime]",
+       MultilineFunction->None], "[", "t", "]"}], "\[Rule]", 
+     RowBox[{"f", "[", 
+      RowBox[{"t", ",", 
+       RowBox[{"y", "[", "t", "]"}]}], "]"}]}]}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[2]:=",ExpressionUUID->"29c3b4b3-6dd4-40a0-821a-744abf84ed5a"],
+
+Cell["So let's try differentiating a few functions.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"2f1b836f-ed33-4c49-8077-529d8dd67556"],
+
+Cell[BoxData[
+ RowBox[{"DD", "[", 
+  RowBox[{"y", "[", "t", "]"}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[3]:=",ExpressionUUID->"13c08a9d-af9d-435c-836f-2903fbc81fa4"],
+
+Cell[BoxData[
+ RowBox[{"DD", "[", 
+  RowBox[{"DD", "[", 
+   RowBox[{"y", "[", "t", "]"}], "]"}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[4]:=",ExpressionUUID->"8224a655-04bf-4053-b534-e16d15233e93"],
+
+Cell[BoxData[
+ RowBox[{"DD", "[", 
+  RowBox[{"DD", "[", 
+   RowBox[{"DD", "[", 
+    RowBox[{"y", "[", "t", "]"}], "]"}], "]"}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[5]:=",ExpressionUUID->"0c031b5b-07d4-4ada-93d7-94b48a7be118"],
+
+Cell["\<\
+Let's work out Taylor's series.  Let's do the first three terms.  This will \
+give us a taylor method of order 3.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"3cf574d1-be30-41c2-8ee1-499ffed4035d"],
+
+Cell[BoxData[
+ RowBox[{"taylor", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"y", "[", "t", "]"}], "+", 
+    RowBox[{"h", " ", 
+     RowBox[{"DD", "[", 
+      RowBox[{"y", "[", "t", "]"}], "]"}]}], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     SuperscriptBox["h", "2"], " ", 
+     RowBox[{"DD", "[", 
+      RowBox[{"DD", "[", 
+       RowBox[{"y", "[", "t", "]"}], "]"}], "]"}]}], "+", 
+    RowBox[{
+     FractionBox["1", "6"], 
+     SuperscriptBox["h", "3"], 
+     RowBox[{"DD", "[", 
+      RowBox[{"DD", "[", 
+       RowBox[{"DD", "[", 
+        RowBox[{"y", "[", "t", "]"}], "]"}], "]"}], "]"}]}]}], " ", "/.", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"t", "[", "i", "]"}]}], ",", 
+     RowBox[{
+      RowBox[{"y", "[", "t", "]"}], "\[Rule]", 
+      RowBox[{"w", "[", "i", "]"}]}]}], "}"}]}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[6]:=",ExpressionUUID->"b586970b-7539-4801-b94f-df34cdde0f68"],
+
+Cell["Now let's do the same thing with an indeterminate f(t,y):", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"4611488d-d1ff-4251-930d-3f9ec24636a1"],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "f", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"DD", "[", "a_", "]"}], ":=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[PartialD]", "t"], "a"}], "/.", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["y", "\[Prime]",
+       MultilineFunction->None], "[", "t", "]"}], "\[Rule]", 
+     RowBox[{"f", "[", 
+      RowBox[{"t", ",", 
+       RowBox[{"y", "[", "t", "]"}]}], "]"}]}]}], "]"}]}]}], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[7]:=",ExpressionUUID->"34a17237-7cce-4a5e-8597-d11700512562"],
+
+Cell[BoxData[
+ RowBox[{"DD", "[", 
+  RowBox[{"y", "[", "t", "]"}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[9]:=",ExpressionUUID->"e53c0fad-6fc3-4cc5-93a0-bfbb2efa1fe5"],
+
+Cell[BoxData[
+ RowBox[{"DD", "[", 
+  RowBox[{"DD", "[", 
+   RowBox[{"y", "[", "t", "]"}], "]"}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[10]:=",ExpressionUUID->"1b22a04e-be4c-4c59-8e27-eee15ca5b486"],
+
+Cell[BoxData[
+ RowBox[{"DD", "[", 
+  RowBox[{"DD", "[", 
+   RowBox[{"DD", "[", 
+    RowBox[{"y", "[", "t", "]"}], "]"}], "]"}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[11]:=",ExpressionUUID->"839cf797-e0fa-4ca8-99fe-9fe89841340c"],
+
+Cell[BoxData[
+ RowBox[{"DD", "[", 
+  RowBox[{"DD", "[", 
+   RowBox[{"DD", "[", 
+    RowBox[{"DD", "[", 
+     RowBox[{"y", "[", "t", "]"}], "]"}], "]"}], "]"}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[12]:=",ExpressionUUID->"4b2f8fcc-0dd9-4805-b444-04dc3f52bd5c"],
+
+Cell["\<\
+Let's work out the Taylor's series.  Let's do the first four terms.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"fcf12c17-fff8-44af-8ef3-65aed4d4fb23"],
+
+Cell[BoxData[
+ RowBox[{"taylor", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"y", "[", "t", "]"}], "+", 
+    RowBox[{"h", " ", 
+     RowBox[{"DD", "[", 
+      RowBox[{"y", "[", "t", "]"}], "]"}]}], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     SuperscriptBox["h", "2"], " ", 
+     RowBox[{"DD", "[", 
+      RowBox[{"DD", "[", 
+       RowBox[{"y", "[", "t", "]"}], "]"}], "]"}]}], "+", 
+    RowBox[{
+     FractionBox["1", "6"], " ", 
+     SuperscriptBox["h", "3"], " ", 
+     RowBox[{"DD", "[", 
+      RowBox[{"DD", "[", 
+       RowBox[{"DD", "[", 
+        RowBox[{"y", "[", "t", "]"}], "]"}], "]"}], "]"}]}], "+", 
+    RowBox[{
+     FractionBox["1", "24"], " ", 
+     SuperscriptBox["h", "4"], " ", 
+     RowBox[{"DD", "[", 
+      RowBox[{"DD", "[", 
+       RowBox[{"DD", "[", 
+        RowBox[{"DD", "[", 
+         RowBox[{"y", "[", "t", "]"}], "]"}], "]"}], "]"}], "]"}]}]}], " ", "/.",
+    " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"t", "[", "i", "]"}]}], ",", 
+     RowBox[{
+      RowBox[{"y", "[", "t", "]"}], "\[Rule]", 
+      RowBox[{"w", "[", "i", "]"}]}]}], "}"}]}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[13]:=",ExpressionUUID->"b47b9443-b971-4a55-aa55-c08c04e1ae98"],
+
+Cell["Now we are going to try the Runge-Kutta method.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"55cc6b50-92c5-4405-95b8-141ff9ec060d"],
+
+Cell[BoxData[{
+ RowBox[{"k1", "=", 
+  RowBox[{"h", " ", 
+   RowBox[{"f", "[", 
+    RowBox[{
+     RowBox[{"t", "[", "i", "]"}], ",", 
+     RowBox[{"w", "[", "i", "]"}]}], "]"}]}]}], "\n", 
+ RowBox[{"k2", "=", 
+  RowBox[{"h", " ", 
+   RowBox[{"f", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"t", "[", "i", "]"}], "+", 
+      FractionBox["h", "2"]}], ",", 
+     RowBox[{
+      RowBox[{"w", "[", "i", "]"}], "+", 
+      FractionBox["k1", "2"]}]}], "]"}]}]}], "\n", 
+ RowBox[{"k3", "=", 
+  RowBox[{"h", " ", 
+   RowBox[{"f", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"t", "[", "i", "]"}], "+", 
+      FractionBox["h", "2"]}], ",", 
+     RowBox[{
+      RowBox[{"w", "[", "i", "]"}], "+", 
+      FractionBox["k2", "2"]}]}], "]"}]}]}], "\n", 
+ RowBox[{"k4", "=", 
+  RowBox[{"h", " ", 
+   RowBox[{"f", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"t", "[", "i", "]"}], "+", "h"}], ",", 
+     RowBox[{
+      RowBox[{"w", "[", "i", "]"}], "+", "k3"}]}], "]"}]}]}], "\n", 
+ RowBox[{"nextw", "=", 
+  RowBox[{
+   RowBox[{"w", "[", "i", "]"}], "+", 
+   RowBox[{
+    FractionBox["1", "6"], " ", 
+    RowBox[{"(", 
+     RowBox[{"k1", "+", 
+      RowBox[{"2", " ", "k2"}], "+", 
+      RowBox[{"2", " ", "k3"}], "+", "k4"}], ")"}]}]}]}]}], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[14]:=",ExpressionUUID->"19276a82-4ff6-4de6-8079-22b5733ac6d1"],
+
+Cell["Let's expand it as a series.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"0d26f6a3-e24c-4cb0-b8f4-ce7792f5768b"],
+
+Cell[BoxData[
+ RowBox[{"seriesnextw", "=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{"Series", "[", 
+    RowBox[{"nextw", ",", 
+     RowBox[{"{", 
+      RowBox[{"h", ",", "0", ",", "4"}], "}"}]}], "]"}], "]"}]}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[19]:=",ExpressionUUID->"65ee5f27-d84f-4f2a-a2df-2f4b36821ae2"],
+
+Cell["\<\
+This should be the same as the fourth order Taylor method.  Let's check it \
+out.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->
+  True,ExpressionUUID->"5cfac7d8-c5f5-48bc-86ff-cac12ddb3054"],
+
+Cell[BoxData[
+ RowBox[{"taylor", "-", "seriesnextw"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[20]:=",ExpressionUUID->"ebf82116-ce58-437a-9ff9-34f30cba3acb"]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+CellGrouping->Automatic,
+WindowSize->{1366, 737},
+WindowMargins->{{0, Automatic}, {1, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "XAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 132, 3, 146, "Title",ExpressionUUID->"e9c4299d-fac8-42d7-991d-089667336db7",
+ Evaluatable->False],
+Cell[715, 27, 780, 21, 380, "Text",ExpressionUUID->"542bdcef-b8bd-4f32-a42e-082a70f2161c",
+ Evaluatable->False],
+Cell[1498, 50, 285, 8, 47, "Input",ExpressionUUID->"05086f6b-1402-477c-9c9c-0ed148328d21"],
+Cell[1786, 60, 518, 15, 45, "Input",ExpressionUUID->"29c3b4b3-6dd4-40a0-821a-744abf84ed5a"],
+Cell[2307, 77, 165, 3, 54, "Text",ExpressionUUID->"2f1b836f-ed33-4c49-8077-529d8dd67556",
+ Evaluatable->False],
+Cell[2475, 82, 186, 4, 47, "Input",ExpressionUUID->"13c08a9d-af9d-435c-836f-2903fbc81fa4"],
+Cell[2664, 88, 216, 5, 47, "Input",ExpressionUUID->"8224a655-04bf-4053-b534-e16d15233e93"],
+Cell[2883, 95, 247, 6, 47, "Input",ExpressionUUID->"0c031b5b-07d4-4ada-93d7-94b48a7be118"],
+Cell[3133, 103, 241, 6, 54, "Text",ExpressionUUID->"3cf574d1-be30-41c2-8ee1-499ffed4035d",
+ Evaluatable->False],
+Cell[3377, 111, 956, 29, 79, "Input",ExpressionUUID->"b586970b-7539-4801-b94f-df34cdde0f68"],
+Cell[4336, 142, 177, 3, 51, "Text",ExpressionUUID->"4611488d-d1ff-4251-930d-3f9ec24636a1",
+ Evaluatable->False],
+Cell[4516, 147, 562, 16, 82, "Input",ExpressionUUID->"34a17237-7cce-4a5e-8597-d11700512562"],
+Cell[5081, 165, 186, 4, 47, "Input",ExpressionUUID->"e53c0fad-6fc3-4cc5-93a0-bfbb2efa1fe5"],
+Cell[5270, 171, 217, 5, 47, "Input",ExpressionUUID->"1b22a04e-be4c-4c59-8e27-eee15ca5b486"],
+Cell[5490, 178, 248, 6, 47, "Input",ExpressionUUID->"839cf797-e0fa-4ca8-99fe-9fe89841340c"],
+Cell[5741, 186, 280, 7, 47, "Input",ExpressionUUID->"4b2f8fcc-0dd9-4805-b444-04dc3f52bd5c"],
+Cell[6024, 195, 195, 5, 54, "Text",ExpressionUUID->"fcf12c17-fff8-44af-8ef3-65aed4d4fb23",
+ Evaluatable->False],
+Cell[6222, 202, 1237, 38, 154, "Input",ExpressionUUID->"b47b9443-b971-4a55-aa55-c08c04e1ae98"],
+Cell[7462, 242, 167, 3, 54, "Text",ExpressionUUID->"55cc6b50-92c5-4405-95b8-141ff9ec060d",
+ Evaluatable->False],
+Cell[7632, 247, 1344, 45, 297, "Input",ExpressionUUID->"19276a82-4ff6-4de6-8079-22b5733ac6d1"],
+Cell[8979, 294, 148, 3, 54, "Text",ExpressionUUID->"0d26f6a3-e24c-4cb0-b8f4-ce7792f5768b",
+ Evaluatable->False],
+Cell[9130, 299, 324, 8, 47, "Input",ExpressionUUID->"65ee5f27-d84f-4f2a-a2df-2f4b36821ae2"],
+Cell[9457, 309, 209, 6, 54, "Text",ExpressionUUID->"5cfac7d8-c5f5-48bc-86ff-cac12ddb3054",
+ Evaluatable->False],
+Cell[9669, 317, 168, 3, 47, "Input",ExpressionUUID->"ebf82116-ce58-437a-9ff9-34f30cba3acb"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
