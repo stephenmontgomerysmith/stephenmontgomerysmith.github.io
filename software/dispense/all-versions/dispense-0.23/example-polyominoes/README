@@ -1,8 +1,0 @@
-This is a suite of programs designed to count the number of ways to solve
-various polyomino puzzles.  The *-create-input programs are designed to
-be inputs to the dispense program, and the *-client programs are designed
-to be executed by the enact program.  The program analyse-output will give
-the grand total.
-
-These programs were derived from the polyomino-0.4 package available at
-http://www.math.missouri.edu/~stephen/software/#polyominoes

@@ -1,8 +1,0 @@
-#!/usr/bin/perl -w
-
-die "Need an argument." if !defined($ARGV[0]);
-$N = $ARGV[0];
-
-for ($m=2;$m<=$N;$m+=2) {
-  print "$m\n";
-}
