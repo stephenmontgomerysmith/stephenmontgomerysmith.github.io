@@ -1,0 +1,86 @@
+% File example.tex created from example.nat
+% by the program Natural Math version 0.4
+
+\documentclass[12pt]{article}
+
+\begin{document}
+
+\noindent Chapter 8.6 Question 25
+
+\noindent Evaluate the following sum
+
+\[
+\sum _ {n = 2} ^ {\infty} \frac {1} {{n} ^ {2} - 1}
+\]
+
+\noindent Answer: use partial fractions
+
+\[
+{n} ^ {2} - 1 = \left( n - 1 \right) \left( n + 1 \right)
+\]
+
+\[
+\frac {1} {{n} ^ {2} - 1} = \frac {A} {n - 1} + \frac {B} {n + 1}
+\]
+
+\[
+ = \frac {A \left( n + 1 \right) + B \left( n - 1 \right)} {\left( n - 1 \right) \left( n + 1 \right)}
+\]
+
+\[
+1 = A n + A + B n - B
+\]
+
+\noindent Equate coefficients
+
+\[
+0 = A - B
+\]
+
+\[
+1 = A + B
+\]
+
+\noindent add equations
+
+\[
+1 = 2 A
+\]
+
+\[
+A = \frac {1} {2}
+\]
+
+\[
+B =  - \frac {1} {2}
+\]
+
+\[
+\frac {1} {{n} ^ 2 - 1} = \frac {1} {2 \left( n - 1 \right)} - \frac {1} {2 \left( n + 1 \right)}
+\]
+
+\[
+{S} _ {N} = \sum _ {n = 2} ^ {N} \frac {1} {{n} ^ {2} - 1}
+\]
+
+\[
+ = \left( \frac {1} {2} - \frac {1} {6} \right) + \left( \frac {1} {4} - \frac {1} {8} \right) + \left( \frac {1} {6} - \frac {1} {10} \right) + \left( \frac {1} {8} - \frac {1} {12} \right) + \dots + 
+\]
+
+\[
+ + \left( \frac {1} {2 \left( N - 3 \right)} - \frac {1} {2 \left( N - 1 \right)} \right) + \left( \frac {1} {2 \left( N - 2 \right)} - \frac {1} {2 N} \right)
+\]
+
+\[
+ + \left( \frac {1} {2 \left( N - 1 \right)} - \frac {1} {2 \left( N + 1 \right)} \right)
+\]
+
+\[
+ = \frac {1} {2} + \frac {1} {4} - \frac {1} {2 N} - \frac {1} {2 \left( N + 1 \right)}
+\]
+
+\[
+\lim _ {N \to \infty} {S} _ {N} = \frac {3} {4}
+\]
+
+\end{document}

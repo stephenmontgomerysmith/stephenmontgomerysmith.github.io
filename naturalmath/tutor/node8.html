@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Integrals, Sums and Limits</TITLE>
+<META NAME="description" CONTENT="Integrals, Sums and Limits">
+<META NAME="keywords" CONTENT="tutor">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tutor.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html102"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html100"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html94"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html103"
+  HREF="node9.html">Inserting Text</A>
+<B> Up:</B> <A NAME="tex2html101"
+  HREF="node3.html">The basic commands</A>
+<B> Previous:</B> <A NAME="tex2html95"
+  HREF="node7.html">Functions</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00035000000000000000">
+Integrals, Sums and Limits</A>
+</H2>
+
+<P>
+Here is the integral symbol
+
+<P>
+<PRE>
+integral
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\int
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="10" HEIGHT="41" BORDER="0"
+ SRC="img49.png"
+ ALT="\begin{displaymath}
+\int
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Here is the integral sign used: note the optional use of `of'.  Also
+`dx' is a single symbol.  It can be expressed as two separate symbols,
+but the use of the single symbol slightly improves the typesetting.
+
+<P>
+<PRE>
+integral x^3 dx,
+integral of x^3 dx,
+integral of x^3 d x
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\int {x} ^ {3} \,d x , \ \int {x} ^ {3} \,d x , \ \int {x} ^ {3} d x
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="206" HEIGHT="41" BORDER="0"
+ SRC="img50.png"
+ ALT="\begin{displaymath}
+\int {x} ^ {3} \,d x , \ \int {x} ^ {3} \,d x , \ \int {x} ^ {3} d x
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Definite integrals are a little trickier, because Natural Math has to
+figure out what should be in the limits.  It will make an intelligent
+guess, but
+sometimes it needs help.  This can be provided, either with brackets,
+or with `of'.
+
+<P>
+<PRE>
+integral from 1 to a + b x^3 dx,
+integral from 1 to a b x^3 dx,
+integral from 1 to (a b) x^3 dx,
+integral from 1 to a b of x^3 dx
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\int _ {1} ^ {a + b} {x} ^ {3} \,d x , \ \int _ {1} ^ {a} b {x} ^ {3} \,d x , \ \int _ {1} ^ {a b} {x} ^ {3} \,d x , \ \int _ {1} ^ {a b} {x} ^ {3} \,d x
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="354" HEIGHT="47" BORDER="0"
+ SRC="img51.png"
+ ALT="\begin{displaymath}
+\int _ {1} ^ {a + b} {x} ^ {3} \,d x , \ \int _ {1} ^ {a} b ...
+...^ {a b} {x} ^ {3} \,d x , \ \int _ {1} ^ {a b} {x} ^ {3} \,d x
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Sums are exactly the same.  The following example shows that you
+don't need to use both of the `from' and `to' quantifiers.
+
+<P>
+<PRE>
+sum from n &lt;= 20 of a_n
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sum _ {n \le 20} {a} _ {n}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="53" HEIGHT="51" BORDER="0"
+ SRC="img52.png"
+ ALT="\begin{displaymath}
+\sum _ {n \le 20} {a} _ {n}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Limits are similar: we have the `as' quanitifier:
+
+<P>
+<PRE>
+rho = lim as n to infinity | a_(n+1) over a_n | ,
+rho = lim as n to infinity of | a_(n+1) over a_n | ,
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\rho = \lim _ {n \to \infty} \left| \frac {{a} _ {n + 1}} {{a} _ {n}} \right| , \ \rho = \lim _ {n \to \infty} \left| \frac {{a} _ {n + 1}} {{a} _ {n}} \right| , \
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="272" HEIGHT="47" BORDER="0"
+ SRC="img53.png"
+ ALT="\begin{displaymath}
+\rho = \lim _ {n \to \infty} \left\vert \frac {{a} _ {n + 1}...
+... \left\vert \frac {{a} _ {n + 1}} {{a} _ {n}} \right\vert , \
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+`From' and `to' may also be used with brackets 
+(both round and square), although
+instead of `of' you can use `end'.
+
+<P>
+<PRE>
+[ x^3 ] from 0 to 6 / a end ,
+[ x^3 ] from 0 to 6 / a ,
+[ x^3 ] from 0 to (6 / a)
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left[ {x} ^ {3} \right] _ {0} ^ {6 / a} , \ \left[ {x} ^ {3} \right] _ {0} ^ {6} / a , \ \left[ {x} ^ {3} \right] _ {0} ^ {6 / a}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="201" HEIGHT="41" BORDER="0"
+ SRC="img54.png"
+ ALT="\begin{displaymath}
+\left[ {x} ^ {3} \right] _ {0} ^ {6 / a} , \ \left[ {x} ^ {3...
+...] _ {0} ^ {6} / a , \ \left[ {x} ^ {3} \right] _ {0} ^ {6 / a}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+More examples:
+
+<P>
+<PRE>
+integral u dv over dx dx = u v - integral v du over dx dx
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\int u \frac {\,d v} {\,d x} \,d x = u v - \int v \frac {\,d u} {\,d x} \,d x
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="228" HEIGHT="46" BORDER="0"
+ SRC="img55.png"
+ ALT="\begin{displaymath}
+\int u \frac {\,d v} {\,d x} \,d x = u v - \int v \frac {\,d u} {\,d x} \,d x
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<PRE>
+integral from 0 to 10 of theta^3 dtheta
+=
+[x^4 over 4] from 0 to 10
+=
+10^4 over 4 - 0^4 over 4
+=
+1000 over 4
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\int _ {0} ^ {10} {\theta} ^ {3} \,d \theta = \left[ \frac {{x} ^ {4}} {4} \right] _ {0} ^ {10} = \frac {{10} ^ {4}} {4} - \frac {{0} ^ {4}} {4} = \frac {1000} {4}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="316" HEIGHT="58" BORDER="0"
+ SRC="img56.png"
+ ALT="\begin{displaymath}
+\int _ {0} ^ {10} {\theta} ^ {3} \,d \theta = \left[ \frac {...
+...ac {{10} ^ {4}} {4} - \frac {{0} ^ {4}} {4} = \frac {1000} {4}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<PRE>
+integral from -1 to 1 1 over x^(2/3) dx
+=
+limit as a to 0^- of
+integral from -1 to a 1 over x^(2/3) dx
++ 
+limit as b to 0^+ of
+integral from b to 1 1 over x^(2/3) dx
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\int _ { - 1} ^ {1} \frac {1} {{x} ^ {2 / 3}} \,d x = \lim _ {a \to {0} ^ {-}} \int _ { - 1} ^ {a} \frac {1} {{x} ^ {2 / 3}} \,d x + \lim _ {b \to {0} ^ {+}} \int _ {b} ^ {1} \frac {1} {{x} ^ {2 / 3}} \,d x
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="390" HEIGHT="47" BORDER="0"
+ SRC="img57.png"
+ ALT="\begin{displaymath}
+\int _ { - 1} ^ {1} \frac {1} {{x} ^ {2 / 3}} \,d x = \lim _...
+...to {0} ^ {+}} \int _ {b} ^ {1} \frac {1} {{x} ^ {2 / 3}} \,d x
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<PRE>
+= 
+limit as a to 0^- of
+[3 x^(1/3) ] from -1 to a
++ 
+limit as b to 0^+ of
+[3 x^(1/3) ] from b to 1
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+= \lim _ {a \to {0} ^ {-}} \left[ 3 {x} ^ {1 / 3} \right] _ { - 1} ^ {a} + \lim _ {b \to {0} ^ {+}} \left[ 3 {x} ^ {1 / 3} \right] _ {b} ^ {1}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="257" HEIGHT="42" BORDER="0"
+ SRC="img58.png"
+ ALT="\begin{displaymath}
+= \lim _ {a \to {0} ^ {-}} \left[ 3 {x} ^ {1 / 3} \right] _...
+..._ {b \to {0} ^ {+}} \left[ 3 {x} ^ {1 / 3} \right] _ {b} ^ {1}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Note that in the last example, the use of the `of's is rather crucial.  See
+what happens if we don't use them:
+
+<P>
+<PRE>
+= 
+limit as a to 0^-
+[3 x^(1/3) ] from -1 to a
++ 
+limit as b to 0^+
+[3 x^(1/3) ] from b to 1
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+= \lim _ {a \to {0} ^ { - \left[ 3 {x} ^ {1 / 3} \right] _ { - 1} ^ {a}} + \lim _ {b \to {0} ^ { + \left[ 3 {x} ^ {1 / 3} \right] _ {b} ^ {1}}}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="221" HEIGHT="74" BORDER="0"
+ SRC="img59.png"
+ ALT="\begin{displaymath}
+= \lim _ {a \to {0} ^ { - \left[ 3 {x} ^ {1 / 3} \right] _ ...
+...{b \to {0} ^ { + \left[ 3 {x} ^ {1 / 3} \right] _ {b} ^ {1}}}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html102"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html100"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html94"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html103"
+  HREF="node9.html">Inserting Text</A>
+<B> Up:</B> <A NAME="tex2html101"
+  HREF="node3.html">The basic commands</A>
+<B> Previous:</B> <A NAME="tex2html95"
+  HREF="node7.html">Functions</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2003-05-26
+</ADDRESS>
+</BODY>
+</HTML>

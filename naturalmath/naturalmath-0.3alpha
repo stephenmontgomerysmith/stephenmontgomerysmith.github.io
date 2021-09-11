@@ -1,0 +1,897 @@
+#!/usr/bin/perl -w
+
+my $programname = 
+
+'Natural Math version 0.3alpha, last modified April 27, 1999';
+
+# Copyright 1999 Stephen J Montgomery-Smith.  All rights reserved.
+#
+# This package is free software; you can redistribute it and/or modify
+# it under the terms of either:
+#
+#     a) the GNU General Public License as published by the Free
+#     Software Foundation; either version 2, or (at your option) any
+#     later version, or
+#
+#     b) "Stephen's Artistic License" which comes with this Kit.
+#
+# For the next few weeks, I reserve the right to make changes to these
+# licensing terms - until I get it right.
+#
+# This package is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See either
+# the GNU General Public License or Stephen's Artistic License for more 
+# details.
+#
+# You should have received a copy of Stephen's Artistic License with this
+# package, in the file named "Stephens-Artistic.txt".  If not, I'll be glad 
+# to provide one.
+#
+# You should also have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+use strict;
+
+my $atom;
+my $previousatom;
+my $nextatom;
+my @atomlist;
+my $atomcount;
+
+sub splitatoms
+{
+  my $inline = $_[0];
+  my @tempatomlist;
+  my $lastwastext;
+  my $lotsoftext;
+  my $collecttext;
+  my $textcount;
+  my $count = 0;
+
+  while ($inline)
+  {
+    if ($inline =~ s/^(\s+)//)
+    {
+      $count += length($1)
+    }
+    elsif ($inline =~ s/^(\-\>)// ||
+           $inline =~ s/^(\.\.\.)// ||
+           $inline =~ s/^(\<\=)// ||
+           $inline =~ s/^(\>\=)// ||
+           $inline =~ s/^(\<\>)// ||
+           $inline =~ s/^([A-Za-z]+)// ||
+           $inline =~ s/^([\d\.]+)// ||
+           $inline =~ s/^(.)//)
+    {
+      push(@tempatomlist,"$count: $1");
+      $count += length($1);
+    }
+  }
+
+  @atomlist = ();
+
+  foreach (@tempatomlist)
+  {
+    if ($lastwastext)
+    {
+      if (/^\d+: \($/)
+      {
+        $lotsoftext = 1;
+        $collecttext = '';
+        $lastwastext = 0;
+      }
+      else
+      {
+        if (!/^\d+: ([A-Za-z]+)$/) 
+          {push(@atomlist,"$textcount: Error: improper text")}
+        else
+          {push(@atomlist,"$textcount: text $1")}
+        $lastwastext = 0;
+      }
+    }
+    elsif ($lotsoftext)
+    {
+      if (/^\d+: ([A-Za-z]+)$/)
+      {
+        $collecttext = "$collecttext $1"
+      }
+      elsif (/^\d+: \)$/)
+      {
+        push(@atomlist,"$textcount: text ( $collecttext )");
+        $lotsoftext = 0;
+        $collecttext = '';
+      }
+      else
+      {
+        push(@atomlist,"$textcount: Error: improper text");
+        $lotsoftext = 0;
+        $collecttext = '';
+      }
+    }
+    elsif (/^(\d+): text$/)
+    {
+      $lastwastext = 1;
+      $textcount = $1;
+    }
+    else
+    {
+      push(@atomlist,$_);
+    }
+  }
+
+  $atomcount = -1;
+
+}
+
+sub setatom
+{
+  $atom = $atomlist[$atomcount];
+  $previousatom = $atomlist[$atomcount-1];
+  $nextatom = $atomlist[$atomcount+1];
+  $atom =~ s/^\d+: // if defined $atom;
+  $previousatom =~ s/^\d+: // if defined $previousatom;
+  $nextatom =~ s/^\d+: // if defined $nextatom;
+}
+
+sub getatom
+{
+  $atomcount++;
+  setatom;
+}
+
+sub pushatom
+{
+  $atomcount--;
+  setatom;
+}
+
+# <binding><codes>:<tex>
+# codes:
+#   f: strip brackets off $1 and $2
+#   p: strip brackets off $2
+#   r: bind from right to left
+#   u: allow $2 to begin with unary +/-
+#   i: operator is implicit multiplication
+
+my %operlist = (
+  '=',         '5:$1 = $2',
+  'eq',        '5:$1 = $2',
+  '<',         '5:$1 < $2',
+  'lt',        '5:$1 < $2',
+  '>',         '5:$1 > $2',
+  'gt',        '5:$1 > $2',
+  '<=',        '5:$1 \le $2',
+  'le',        '5:$1 \le $2',
+  '>=',        '5:$1 \ge $2',
+  'ge',        '5:$1 \ge $2',
+  '<>',        '5:$1 \ne $2',
+  'ne',        '5:$1 \ne $2',
+  ',',         '6:$1 , \ $2',
+  'comma',     '6:$1 , \ $2',
+  '->',        '7:$1 \to $2',
+  'to',        '7:$1 \to $2',
+  'tendsto',   '7:$1 \to $2',
+  '+',         '10:$1 + $2',
+  'plus',      '10:$1 + $2',
+  '-',         '10:$1 - $2',
+  'minus',     '10:$1 - $2',
+  '*',         '15:$1 \times $2',
+  'times',     '15:$1 \times $2',
+  '.',         '15:$1 \cdot $2',
+  'dot',       '15:$1 \cdot $2',
+  '/',         '15:$1 / $2',
+  'divide',    '15:$1 / $2',
+  'over',      '15f:\frac {$1} {$2}',
+  '^',         '20rpu:{$1} ^ {$2}',
+  'power',     '20rpu:{$1} ^ {$2}',
+  '_',         '20rpu:{$1} _ {$2}',
+  'sub',       '20rpu:{$1} _ {$2}',
+  'subst',     '20rfu:\left.$1\right|_{$2}',
+  ')',         'Error: too many right brackets',
+  'close',     'Error: too many right brackets',
+  ']',         'Error: too many right brackets');
+
+my %rightunaryoperlist = (
+  'factorial', '19:$1 !',
+  '!',         '19:$1 !',
+  'squared',   '25:{$1} ^ 2');
+
+# codes:
+#   u: unary +/-
+#   s: only allowed at beginning of expression
+#   b: strip bracket from $1
+
+my %unaryoperlist = (
+  '=',         '5s: = $1',
+  'eq',        '5s: = $1',
+  '<',         '5s: < $1',
+  'lt',        '5s: < $1',
+  '>',         '5s: > $1',
+  'gt',        '5s: > $1',
+  'le',        '5s: \le $1',
+  'ge',        '5s: \ge $1',
+  ',',         '5s: , \ $1',
+  'comma',     '6s: , \ $1',
+  '+',         '10u: + $1',
+  'plus',      '10u: + $1',
+  '-',         '10u: - $1',
+  'minus',     '10u: - $1',
+  'abs',       '40b:\left| $1 \right|',
+  'sqrt',      '40b:\sqrt{$1}');
+
+my %greekletter = (
+  'alpha',     '\alpha',
+  'beta',      '\beta',
+  'gamma',     '\gamma',
+  'delta',     '\delta',
+  'epsilon',   '\epsilon',
+  'zeta',      '\zeta',
+  'eta',       '\eta',
+  'theta',     '\theta',
+  'iota',      '\iota',
+  'kappa',     '\kappa',
+  'lambda',    '\lambda',
+  'mu',        '\mu',
+  'nu',        '\nu',
+  'xi',        '\xi',
+  'pi',        '\pi',
+  'rho',       '\rho',
+  'sigma',     '\sigma',
+  'tau',       '\tau',
+  'upsilon',   '\upsilon',
+  'phi',       '\phi',
+  'chi',       '\chi',
+  'psi',       '\psi',
+  'omega',     '\omega',
+  'Gamma',     '\Gamma',
+  'Delta',     '\Delta',
+  'Theta',     '\Theta',
+  'Lambda',    '\Lambda',
+  'Xi',        '\Xi',
+  'Pi',        '\Pi',
+  'Sigma',     '\Sigma',
+  'Upsilon',   '\Upsilon',
+  'Phi',       '\Phi',
+  'Psi',       '\Psi',
+  'Omega',     '\Omega');
+
+my %objectlist = (
+  'infinity',  '\infty',
+  '...',       '\dots',
+  'dots',      '\dots',
+  'sin',       '\sin',
+  'cos',       '\cos',
+  'tan',       '\tan',
+  'sec',       '\sec',
+  'csc',       '\csc',
+  'cot',       '\cot',
+  'arcsin',    '\arcsin',
+  'arccos',    '\arccos',
+  'arctan',    '\arctan',
+  'sinh',      '\sinh',
+  'cosh',      '\cosh',
+  'tanh',      '\tanh',
+  %greekletter);
+
+sub dooper
+{
+  my $oper;
+  my $endcondition = $_[0];
+
+  return $atom if defined $atom && $atom =~ /^Error:/;
+
+  if (!defined($atom) || $atom =~ /^($endcondition)$/)
+  {
+    $oper = '';
+    pushatom;
+  }
+  elsif (defined($oper = $operlist{$atom}))
+  {
+  }
+  else
+  {
+    $oper = '15i:$1 $2';
+    $oper = '13iu:$1 $2' if $previousatom eq 'of';
+    $oper = '' 
+      if 'implicitmultiplication' =~ /^($endcondition)$/;
+    pushatom;
+  }
+
+  return $1,$2,$3 if $oper =~ /^(\d+)([a-z]*):(.+)$/;
+}
+
+sub dorightunaryoper
+{
+  my $oper;
+
+  return $atom if defined $atom && $atom =~ /^Error:/;
+
+  if (defined $atom && defined($oper = $rightunaryoperlist{$atom}))
+  {
+  }
+  else
+  {
+    $oper = '';
+  }
+  return $1,$2,$3 if $oper =~ /^(\d+)([a-z]*):(.+)$/;
+}
+
+
+sub dounaryop
+{
+  my $oper;
+
+  if (defined($oper = $unaryoperlist{$atom}))
+  {
+  }
+  else
+  {
+    $oper = '';
+  }
+  return $1,$2,$3 if $oper =~ /^(\d+)([a-z]*):(.+)$/;
+}
+
+sub stripbracket
+{
+  my $expr = $_[0];
+  my $workexpr = $_[0];
+  my @bracketlist;
+  while ($workexpr =~ s/(\\left\(|\\right\))//)
+  {
+    push(@bracketlist,$1);
+  }
+  $_ = shift(@bracketlist);
+  if (defined $_ && $_ eq '\left(')
+  {
+    my $count = 1;
+    while (($_ = shift(@bracketlist)) && $count > 0)
+    {
+      $count++ if $_ eq '\left(';
+      $count-- if $_ eq '\right)';
+    }
+    if ($#bracketlist == -1)
+    {
+      $expr = $1 if $expr =~ /^\\left\( (.*) \\right\)$/;
+    }
+  }
+  return $expr;
+}
+
+sub doexpr
+{
+  my $expr;
+  my $oper;
+  my $nextexpr;
+  my $binding = $_[0];
+  my $endcondition = $_[1];
+  my $properties = $_[2];
+  my $thisbinding;
+
+  $expr = dounaryexpr($binding,$endcondition,$properties);
+  return $expr if $expr =~ /^Error:/;
+
+  while(1)
+  {
+    getatom;
+    if ((($thisbinding,$properties,$oper) = dorightunaryoper) && $oper)
+    {
+      last if !($thisbinding > $binding);
+      $oper =~ s/\$1/$expr/;
+      $expr = $oper;
+    }
+    elsif ((($thisbinding,$properties,$oper) = dooper($endcondition)) && $oper)
+    {
+      last if !($thisbinding > $binding || 
+                  $properties =~ /r/ && $thisbinding >= $binding);
+      $nextexpr = doexpr($thisbinding,$endcondition,$properties);
+      $nextexpr = '' if $nextexpr eq 'Error: I was expecting something here';
+      return $nextexpr if $nextexpr =~ /^Error:/;
+      if ($properties =~ /p/)
+      {
+        $nextexpr = stripbracket($nextexpr);
+      }
+      if ($properties =~ /f/)
+      {
+        $expr = stripbracket($expr);
+        $nextexpr = stripbracket($nextexpr);
+      }
+      $oper =~ s/\$1/$expr/;
+      $oper =~ s/\$2/$nextexpr/;
+      $expr = $oper;
+    }
+    else
+    {
+      last;
+    }
+  }
+  if (defined($oper) && $properties !~ /i/)
+    {pushatom if defined($atom);}
+  return $oper if defined $oper && $oper =~ /^Error:/;
+  return $expr;
+}
+
+sub collectto
+{
+  my $binding = $_[0];
+  my $endcondition = $_[1];
+  my $saveatomcount;
+  my $expr;
+
+  $saveatomcount = $atomcount;
+  $expr = doexpr(0,$endcondition,'');
+  if (!defined $nextatom || $expr =~ /^Error:/)
+  {
+    $atomcount = $saveatomcount;
+    setatom;
+    $expr = doexpr($binding,'implicitmultiplication','');
+    $expr = stripbracket($expr);
+  }
+  if ($expr =~ /^Error:/ && defined $nextatom && 
+        (grep $_ eq $nextatom, '|',')','close',']'))
+  {
+    $endcondition = $nextatom;
+    $atomcount = $saveatomcount;
+    setatom;
+    $expr = doexpr($binding,$endcondition,'');
+    $expr = stripbracket($expr);
+  }
+  return $expr;
+}
+
+sub dosumintegral
+{
+  my $expr = $_[0];
+  my $nextexpr;
+  my $fromdone;
+  my $todone;
+
+  getatom;
+  return $atom if defined $atom && $atom =~ /^Error:/;
+
+  while (1)
+  {
+    if (!defined ($atom) || $atom eq 'of')
+    {
+      last;
+    }
+    elsif ($atom eq 'from')
+    {
+      if ($fromdone)
+      {
+        $expr = 'Error: too many froms';
+        last;
+      }
+      $nextexpr = collectto(0,'of|from|to');
+      return $nextexpr if $nextexpr =~ /^Error:/;
+      $expr = "$expr \_ \{$nextexpr\}";
+      getatom;
+      return $atom if defined $atom && $atom =~ /^Error:/;
+      $fromdone = 1;
+    }
+    elsif ($atom eq 'to')
+    {
+      if ($todone)
+      {
+        $expr = 'Error: too many to\'s';
+        last;
+      }
+      $nextexpr = collectto(0,'of|from|to');
+      return $nextexpr if $nextexpr =~ /^Error:/;
+      $expr = "$expr \^ \{$nextexpr\}";
+      getatom;
+      return $atom if defined $atom && $atom =~ /^Error:/;
+      $todone = 1;
+    }
+    else
+    {
+      pushatom;
+      last;
+    }
+  }
+  return $expr;
+}
+
+sub dorightbracket
+{
+  my $expr = $_[0];
+  my $nextexpr;
+  my $fromdone;
+  my $todone;
+
+  getatom;
+  return $atom if defined $atom && $atom =~ /^Error:/;
+
+  while (1)
+  {
+    if (!defined ($atom) || $atom eq 'end')
+    {
+      last;
+    }
+    elsif ($atom eq 'from')
+    {
+      if ($fromdone)
+      {
+        $expr = 'Error: too many froms';
+        last;
+      }
+      $nextexpr = collectto(16,'from|to|end');
+      return $nextexpr if $nextexpr =~ /^Error:/;
+      $expr = "$expr \_ \{$nextexpr\}";
+      getatom;
+      return $atom if defined $atom && $atom =~ /^Error:/;
+      $fromdone = 1;
+    }
+    elsif ($atom eq 'to')
+    {
+      if ($todone)
+      {
+        $expr = 'Error: too many to\'s';
+        last;
+      }
+      $nextexpr = collectto(16,'from|to|end');
+      return $nextexpr if $nextexpr =~ /^Error:/;
+      $expr = "$expr \^ \{$nextexpr\}";
+      getatom;
+      return $atom if defined $atom && $atom =~ /^Error:/;
+      $todone = 1;
+    }
+    else
+    {
+      pushatom;
+      last;
+    }
+  }
+  return $expr;
+}
+
+sub dolimit
+{
+  my $expr = '\lim';
+  my $nextexpr;
+  my $asdone;
+
+  getatom;
+  return $atom if defined $atom && $atom =~ /^Error:/;
+
+  while (1)
+  {
+    if (!defined ($atom) || $atom eq 'of')
+    {
+      last;
+    }
+    elsif ($atom eq 'as')
+    {
+      if ($asdone)
+      {
+        $expr = 'Error: too many as\'s';
+        last;
+      }
+      $nextexpr = collectto(0,'of|as');
+      return $nextexpr if $nextexpr =~ /^Error:/;
+      $expr = "$expr \_ \{$nextexpr\}";
+      getatom;
+      return $atom if defined $atom && $atom =~ /^Error:/;
+      $asdone = 1;
+    }
+    else
+    {
+      pushatom;
+      last;
+    }
+  }
+  return $expr;
+}
+
+sub max
+{
+  return (sort {$b <=> $a} @_)[0];
+}
+
+sub dounaryexpr
+{
+  my $binding = $_[0];
+  my $endcondition = $_[1];
+  my $properties = $_[2];
+  my $thisbinding;
+  my $thisproperties;
+  my $expr;
+  my $oper;
+  my $saveatom;
+  my $saveatomcount;
+
+  getatom;
+  return $atom if defined $atom && $atom =~ /^Error:/;
+
+  if (!defined($atom))
+  {
+    return 'Error: I was expecting something here';
+  }
+  
+  if ($atom eq '(' || $atom eq 'open')
+  {
+    $expr = doexpr(0,'\)|close','');
+    return $expr if $expr =~ /^Error:/;
+    getatom;
+    return $atom if defined $atom && $atom =~ /^Error:/;
+    return 'Error: right bracket missing'
+      if (!defined($atom) || $atom ne ')' && $atom ne 'close');
+    $expr = "\\left( $expr \\right)";# if ! testfraction($expr);
+    $expr = dorightbracket($expr);
+  }
+  elsif ($atom eq '[')
+  {
+    $expr = doexpr(0,']','');
+    return $expr if $expr =~ /^Error:/;
+    getatom;
+    return $atom if defined $atom && $atom =~ /^Error:/;
+    return 'Error: right square bracket missing'
+      if (!defined($atom) || $atom ne ']');
+    $expr = "\\left[ $expr \\right]";# if ! testfraction($expr);
+    $expr = dorightbracket($expr);
+  }
+  elsif ($atom eq '|')
+  {
+    $expr = doexpr(0,'\|','');
+    return $expr if $expr =~ /^Error:/;
+    getatom;
+    return $atom if defined $atom && $atom =~ /^Error:/;
+    return 'Error: right bar missing'
+      if (!defined($atom) || $atom ne '|');
+    $expr = stripbracket($expr);
+    $expr = "\\left| $expr \\right|";
+  }
+  elsif ($atom eq 'integral' || $atom eq 'int' || $atom eq 'integrate')
+  {
+    $expr = dosumintegral('\int');
+    return $expr if $expr =~ /^Error:/;
+  }
+  elsif ($atom eq 'sum')
+  {
+    $expr = dosumintegral('\sum');
+    return $expr if $expr =~ /^Error:/;
+  }
+  elsif ($atom eq 'limit' || $atom eq 'lim')
+  {
+    $expr = dolimit;
+    return $expr if $expr =~ /^Error:/;
+  }
+  elsif ((($thisbinding,$thisproperties,$oper) = dounaryop) && $oper &&
+	 (
+           ($thisbinding > $binding  && $properties =~ /s/ ) || 
+           ($thisproperties =~ /u/) && 
+              ($thisbinding > $binding || $properties =~ /u/) ||
+	   ($thisproperties !~ /u|s/) ) )
+  {
+    $saveatomcount = $atomcount;
+    setatom;
+
+    $expr = doexpr(max($thisbinding,$binding),$endcondition,'');
+    if ($expr =~ /^Error:/)
+    {
+      return $expr if $thisproperties !~ /u/;
+      $atomcount = $saveatomcount;
+      setatom;
+      $expr = $atom;
+    }
+    else
+    {
+      $expr = stripbracket($expr) if $thisproperties =~ /b/;
+      $oper =~ s/\$1/$expr/;
+      $expr = $oper;
+    }
+  }
+  elsif (defined ($expr = $objectlist{$atom}))
+  {
+  }
+  elsif ($atom =~ /^[A-Za-z]$/)
+  {
+    $expr = $atom;
+  }
+  elsif ($atom =~ /^d([A-Za-z])$/ && ($expr = $1) ||
+           $atom =~ /^d([A-Za-z]+)$/ && ($expr = $greekletter{$1}))
+  {
+    $expr = "\\,d $expr";
+  }
+  elsif ($atom =~ /^[\d.]+$/)
+  {
+    $expr = $atom;
+  }
+  elsif ($atom =~ /^text \((.*)\)$/ || $atom =~ /^text (.*)$/)
+  {
+    $expr = "\\hbox\{ $1 \}";
+  }
+  else
+  {
+    return "Error: what's this: `$atom'";
+  }
+
+  return $expr;
+}
+
+sub dotheexpr
+{
+  my $expr;
+  my $mathin = $_[0];
+  splitatoms($mathin);
+  $expr = doexpr(0,'\n','s');
+  return $expr;
+}
+
+sub shortjoin
+{
+  my @list = @_;
+  my $lines = '';
+  my $line = '';
+  my $item;
+
+  $line = shift(@list);
+  foreach $item (@list)
+  {
+    if (length("$line $item") > 50)
+    {
+      $lines = "$lines\n$line";
+      $line = $item;
+    }
+    else
+    {
+      $line = "$line $item";
+    }
+  }
+  return "$lines\n$line";
+}
+
+my $expr;
+my $linesin;
+my $tag;
+my $switches;
+my $errorplace;
+my $errorline;
+my $spacestoerror;
+my $dos_batch = 0;
+
+print "This is $programname.\n";
+
+$dos_batch = $ARGV[0] eq '-DOS-BATCH-';
+if ($dos_batch)
+{
+  shift(@ARGV);
+  $ARGV[0] =~ /^\w+(\/.*)$/;
+  $switches = $1 || '';
+  shift(@ARGV);
+  while (defined $ARGV[0] && $ARGV[0] =~ /^(\/[\/\w]+)$/)
+  {
+    $switches = "$switches$1";
+    shift(@ARGV);
+  }
+  $switches =~ s/\///g;
+  if ($#ARGV != 0 || $switches =~ /[^lpLP]/)
+  {
+    die "Usage: naturalmath [/l] [/p] <filename.nat>\n",
+        "  /l run LaTeX after processing\n",
+        "  /p run LaTeX and dvips after processing\n";
+  }
+}
+else
+{
+  $switches = '';
+  while (defined $ARGV[0] && $ARGV[0] =~ /^-(\w+)$/)
+  {
+    $switches = "$switches$1";
+    shift(@ARGV);
+  }
+
+  if ($#ARGV != 0 || $switches =~ /[^lps]/)
+  {
+    die "Usage: naturalmath [-lps] <filename.nat>\n",
+        "  -l run LaTeX after processing\n",
+        "  -p run LaTeX and dvips after processing\n",
+        "  -s safe - disables text\n";
+  }
+}
+
+my $filename = $ARGV[0];
+chomp $filename;
+$filename =~ s/.nat$//;
+open(NAT,"$filename.nat") || die "Cannot find file $filename.nat\n";
+my $linenumber = 0;
+
+open(TEX,"> $filename.tex") || die "Cannot open file $filename.tex\n";
+print TEX 
+  "% File $filename.tex created from $filename.nat\n",
+  "% by the program $programname\n\n",
+  "\\documentclass[12pt]\{article\}\n\n",
+  "\\begin\{document\}\n\n";
+
+while (<NAT>)
+{
+  $linenumber++;
+  next if /^\s+$/ || /^\#/;
+
+  if (s/^(text|debug|math|newpage)\s//) {$tag = $1}
+  else                          {$tag = 'math'}
+  $linesin = $_;
+
+  while (<NAT>)
+  {
+    $linenumber++;
+    last if /^\s+$/;
+    $linesin = "$linesin$_" if !/^\#/;
+  }
+
+  chomp($linesin);
+
+  if ($tag eq 'newpage')
+  {
+    print TEX "\\newpage\n\n"
+  }
+  elsif ($tag eq 'text')
+  {
+    if ($switches =~ /s/ && !$dos_batch)
+    {
+      print TEX "\\begin\{verbatim\}\n",
+                "text not allowed in safe mode\n",
+                "\\end\{verbatim\}\n\n";
+      print "text not allowed in safe mode\n";
+    }
+    else
+    {
+      print TEX "\\noindent $linesin\n\n";
+    }
+  }
+  elsif ($tag eq 'math' || $tag eq 'debug')
+  {
+    if ($tag eq 'debug')
+    {
+      print TEX "\\begin\{verbatim\}\n";
+      print TEX $linesin;
+      print TEX "\n\\end\{verbatim\}\n\n";
+    }
+    $expr = dotheexpr($linesin);
+    if ($expr !~ /^Error:/)
+    {
+      print TEX "\\[\n$expr\n\\]\n\n";
+    }
+    else
+    {
+      print TEX "\\begin\{verbatim\}\n";
+      if (!defined $atomlist[$atomcount])
+      {
+        $errorplace = length($linesin);
+      }
+      else
+      {
+        $atomlist[$atomcount] =~ /^(\d+):/;
+        $errorplace = $1;
+      }
+      substr($linesin,0,$errorplace) =~ /([^\n]*)$/;
+      $errorline = $1;
+      $spacestoerror = $1;
+      $spacestoerror =~ s/./ /g;
+      substr($linesin,$errorplace) =~ /^([^\n]*)/;
+      $errorline = "$errorline$1";
+      print TEX "$errorline\n$spacestoerror^\n";
+      print TEX "$expr just before line $linenumber\n\\end\{verbatim\}\n\n";
+      print "$errorline\n$spacestoerror^\n";
+      print "$expr just before line $linenumber\n";
+    }
+  }
+}
+
+print TEX
+  "\\end\{document\}\n";
+close TEX;
+
+print "Created $filename.tex from $filename.nat.\n";
+
+if ($dos_batch)
+{
+  system "latex $filename" if $switches =~ /[lpLP]/;
+  system "dvips $filename" if $switches =~ /[pP]/;
+}
+else
+{
+  system "echo latex $filename ;latex $filename" if $switches =~ /[lp]/;
+  system "echo dvips $filename -o ; dvips $filename -o" if $switches =~ /p/;
+}

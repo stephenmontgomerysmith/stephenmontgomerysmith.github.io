@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Inserting Text</TITLE>
+<META NAME="description" CONTENT="Inserting Text">
+<META NAME="keywords" CONTENT="tutor">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tutor.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html112"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html110"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html104"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html113"
+  HREF="node10.html">Error Messages</A>
+<B> Up:</B> <A NAME="tex2html111"
+  HREF="node3.html">The basic commands</A>
+<B> Previous:</B> <A NAME="tex2html105"
+  HREF="node8.html">Integrals, Sums and Limits</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00036000000000000000">
+Inserting Text</A>
+</H2>
+
+<P>
+To put a paragraph of text in your output, start the line with the
+word <TT>text</TT>.  The text following, and the following non-blank
+lines will be inserted directly into the LaT<SMALL>E</SMALL>X file.  Indeed, if you
+know LaT<SMALL>E</SMALL>X, you can even use LaT<SMALL>E</SMALL>X commands.  (We won't illustrate
+that here, but that is how this document was created.)
+
+<P>
+<PRE>
+text Here are some lines
+of text.  How do they look?
+</PRE>
+
+<P>
+Here are some lines
+of text.  How do they look?
+
+<P>
+ 
+<P>
+You can also insert single words into formulae as follows:
+
+<P>
+<PRE>
+1 over x to 0 text as x to infinity
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac {1} {x} \to 0 \hbox{ as } x \to \infty
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="139" HEIGHT="45" BORDER="0"
+ SRC="img60.png"
+ ALT="\begin{displaymath}
+\frac {1} {x} \to 0 \hbox{ as } x \to \infty
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+or several words
+
+<P>
+<PRE>
+x over (x^2 + 1) text (grows at the same rate as) 1 over x
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac {x} {{x} ^ {2} + 1} \hbox{   grows at the same rate as  } \frac {1} {x}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="288" HEIGHT="47" BORDER="0"
+ SRC="img61.png"
+ ALT="\begin{displaymath}
+\frac {x} {{x} ^ {2} + 1} \hbox{ grows at the same rate as } \frac {1} {x}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+You can also do this using quotes (note the spaces between the quotes and
+the words -- it will look different if they are not there):
+
+<P>
+<PRE>
+x over (x^2 + 1) " grows at the same rate as " 1 over x
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac {x} {{x} ^ {2} + 1} \hbox{ grows at the same rate as } \frac {1} {x}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="288" HEIGHT="47" BORDER="0"
+ SRC="img61.png"
+ ALT="\begin{displaymath}
+\frac {x} {{x} ^ {2} + 1} \hbox{ grows at the same rate as } \frac {1} {x}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+These commands are very fussy - they must have <EM>only</EM> letter based
+text in them.  Otherwise you get an error message, which brings us to the
+next topic.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Stephen Montgomery-Smith
+2003-05-26
+</ADDRESS>
+</BODY>
+</HTML>

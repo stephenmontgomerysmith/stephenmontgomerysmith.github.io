@@ -1,0 +1,344 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Order of Operations and Brackets</TITLE>
+<META NAME="description" CONTENT="Order of Operations and Brackets">
+<META NAME="keywords" CONTENT="tutor">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tutor.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html82"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html80"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html74"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html83"
+  HREF="node7.html">Functions</A>
+<B> Up:</B> <A NAME="tex2html81"
+  HREF="node3.html">The basic commands</A>
+<B> Previous:</B> <A NAME="tex2html75"
+  HREF="node5.html">Operations</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00033000000000000000">
+Order of Operations and Brackets</A>
+</H2>
+
+<P>
+Natural Math does a careful analysis, pulling apart the expressions
+so as to figure out what comes first.  So in the following example,
+the division is done before the addition.
+
+<P>
+<PRE>
+a + b over c
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+a + \frac {b} {c}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="42" HEIGHT="46" BORDER="0"
+ SRC="img31.png"
+ ALT="\begin{displaymath}
+a + \frac {b} {c}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+You can change the order of operations: in this example the addition is
+done before the division.
+
+<P>
+<PRE>
+(a + b) over c
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac {a + b} {c}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="41" HEIGHT="46" BORDER="0"
+ SRC="img32.png"
+ ALT="\begin{displaymath}
+\frac {a + b} {c}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Here is another example.
+
+<P>
+<PRE>
+(a+b) times c
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left( a + b \right) \times c
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="85" HEIGHT="33" BORDER="0"
+ SRC="img33.png"
+ ALT="\begin{displaymath}
+\left( a + b \right) \times c
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+In this last example, the brackets appeared when typeset.  Usually, brackets
+written in will appear as you wrote them: 
+
+<P>
+<PRE>
+(a b)c
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left( a b \right) c
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="42" HEIGHT="33" BORDER="0"
+ SRC="img34.png"
+ ALT="\begin{displaymath}
+\left( a b \right) c
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+In a few cases, brackets are needed to change the natural order of doing
+operations, but it would not be right to typeset them.  This happens
+with fractions (as above), and also with powers and subscripts.  
+(It also happens with the square root and absolute value, and with
+limits of integration, and with the substitution operator -- see below.)
+However,
+you can always force the brackets to appear in this situation by adding an
+extra pair of unneccesary brackets:
+
+<P>
+<PRE>
+a^(b+c), a_(b+c)
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{a} ^ {b + c} , \ {a} _ {b + c}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="78" HEIGHT="32" BORDER="0"
+ SRC="img35.png"
+ ALT="\begin{displaymath}
+{a} ^ {b + c} , \ {a} _ {b + c}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<PRE>
+((x+y)) over ((x^2 - y^2)) , f^((2))(x)
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac {\left( x + y \right)} {\left( {x} ^ {2} - {y} ^ {2} \right)} , \ {f} ^ {\left( 2 \right)} \left( x \right)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="145" HEIGHT="52" BORDER="0"
+ SRC="img36.png"
+ ALT="\begin{displaymath}
+\frac {\left( x + y \right)} {\left( {x} ^ {2} - {y} ^ {2} \right)} , \ {f} ^ {\left( 2 \right)} \left( x \right)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+There are also square brackets:
+
+<P>
+<PRE>
+[ x over y ]
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left[ \frac {x} {y} \right]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="25" HEIGHT="54" BORDER="0"
+ SRC="img37.png"
+ ALT="\begin{displaymath}
+\left[ \frac {x} {y} \right]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+What is the order in which natural math would evaluate the operations without
+brackets?  First powers and subscripts.  Then fractions.  Then multiplication
+and division.  Then addition and subtraction.  Then the `tends to'.  Then
+the `comma'.  Finally the relational operators.  Otherwise the operations
+are performed left to right, except that the power and subscript operators
+are performed from right to left.
+
+<P>
+<PRE>
+a^b^c^d , a_b_c_d
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{a} ^ {{b} ^ {{c} ^ {d}}} , \ {a} _ {{b} _ {{c} _ {d}}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="70" HEIGHT="36" BORDER="0"
+ SRC="img38.png"
+ ALT="\begin{displaymath}
+{a} ^ {{b} ^ {{c} ^ {d}}} , \ {a} _ {{b} _ {{c} _ {d}}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Here is an example with the substitution operator.  Notice that in this case,
+a rather large number of brackets is needed.  Natural Math has its limitations!
+
+<P>
+<PRE>
+((df^-1(x)) over dx) subst (x=f(a))
+=
+1 over (((df(x)) over dx) subst (x = a))
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left.\frac {{\,d f} ^ { - 1} \left( x \right)} {\,d x}\right|_{x = f \left( a \right)} = \frac {1} {\left.\frac {\,d f \left( x \right)} {\,d x}\right|_{x = a}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="216" HEIGHT="63" BORDER="0"
+ SRC="img39.png"
+ ALT="\begin{displaymath}
+\left.\frac {{\,d f} ^ { - 1} \left( x \right)} {\,d x}\righ...
+...ft.\frac {\,d f \left( x \right)} {\,d x}\right\vert _{x = a}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html82"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html80"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html74"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html83"
+  HREF="node7.html">Functions</A>
+<B> Up:</B> <A NAME="tex2html81"
+  HREF="node3.html">The basic commands</A>
+<B> Previous:</B> <A NAME="tex2html75"
+  HREF="node5.html">Operations</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2003-05-26
+</ADDRESS>
+</BODY>
+</HTML>

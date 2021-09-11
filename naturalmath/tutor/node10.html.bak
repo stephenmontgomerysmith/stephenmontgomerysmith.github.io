@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Error Messages</TITLE>
+<META NAME="description" CONTENT="Error Messages">
+<META NAME="keywords" CONTENT="tutor">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tutor.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html122"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html120"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html114"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html123"
+  HREF="node11.html">Debug and Newpage and</A>
+<B> Up:</B> <A NAME="tex2html121"
+  HREF="node3.html">The basic commands</A>
+<B> Previous:</B> <A NAME="tex2html115"
+  HREF="node9.html">Inserting Text</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00037000000000000000">
+Error Messages</A>
+</H2>
+
+<P>
+If Natural Math finds an error, it will spit out the part of the lines
+it was able to process, and then follow it with a kind of descriptive
+error message, including a rough idea of which line number it was
+in the <TT>.nat</TT> file where the error happened.  This same
+error will also be written on the command line at which you ran
+naturalmath.
+
+<P>
+Here are examples:
+
+<P>
+<PRE>
+These errors were inserted deliberately.
+</PRE>
+
+<P>
+<PRE>
+These errors were inserted deliberately.
+^
+Error: what's this: `These' just before line 614
+</PRE>
+
+<P>
+<PRE>
+16 * x -
+1 + 2 over (x + yy) - 11.2235 +
+24 / 13
+</PRE>
+
+<P>
+<PRE>
+1 + 2 over (x + yy) - 11.2235 +
+                ^
+Error: what's this: `yy' just before line 619
+</PRE>
+
+<P>
+<PRE>
+(1+2
+</PRE>
+
+<P>
+<PRE>
+(1+2
+    ^
+Error: right bracket missing just before line 622
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Stephen Montgomery-Smith
+2003-05-26
+</ADDRESS>
+</BODY>
+</HTML>

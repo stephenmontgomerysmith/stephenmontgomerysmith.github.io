@@ -1,0 +1,13 @@
+May 25 2001: version 0.4
+
+Changed bind of "over" from 15 to 17.
+
+July 25 2001: version 0.5
+
+Added "coth"
+Added "textsym" and quotes
+Added -n option (no page numbers)
+
+May 26 2003: version 0.6
+
+Changed gif to png (for patent reasons).

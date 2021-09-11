@@ -1,0 +1,883 @@
+% File tutor.tex created from tutor.nat
+% by the program Natural Math version 0.5
+
+\documentclass[12pt]{article}
+
+\begin{document}
+
+\noindent \def\titleblock
+{
+Tutor for Natural Math version 0.5\\
+last modified July 21, 2001\\
+Copyright 1999 Stephen J Montgomery-Smith.  All rights reserved.
+}
+% This package is free software; you can redistribute it and/or modify
+% it under the terms of either:
+%
+%     a) the GNU General Public License as published by the Free
+%     Software Foundation; either version 2, or (at your option) any
+%     later version, or
+%
+%     b) "Stephen's Artistic License" which comes with this Kit.
+%
+% This package is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See either
+% the GNU General Public License or Stephen's Artistic License for more 
+% details.
+%
+% You should have received a copy of Stephen's Artistic License with this
+% package, in the file named "Stephens-Artistic.txt".  If not, I'll be glad
+% to provide one.
+%
+% You should also have received a copy of the GNU General Public License
+% along with this program; if not, write to the Free Software
+% Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+\noindent \begin{center}
+\Large \bf The Natural Math Program
+\end{center}
+\begin{center}
+\large \bf Stephen Montgomery-Smith
+\end{center}
+\begin{center}\small\titleblock\end{center}
+
+\noindent \section{Introduction}
+
+\noindent \indent
+Here we describe the Natural Math program.  It is easy to use.
+Start with a file whose extension is {\tt .nat}, for example,
+{\tt test.nat}.  This tutorial was created by the file
+{\tt tutor.nat}.
+
+\noindent \indent
+Each line of your file {\tt xxx.nat} is written in what we call ``natural
+math,'' that is, math written as you might naturally express it if you
+only had a simple typewriter.
+You will use numbers, letters, and symbols, although anything that
+can be expressed in symbols can also almost always be expressed in letters.
+
+\noindent \indent
+What the program will do is to convert the natural math file into a La\TeX\
+file.  You run it like this:
+\begin{center} {\tt naturalmath xxx.nat} \end{center}
+This will create a file {\tt xxx.tex}.  
+%Indeed, as it stands right now,
+%it will also run La\TeX, creating the file {\tt xxx.dvi}, and then go on
+%to run {\tt dvips} to create the postscript file {\tt xxx.ps}.
+
+\noindent \indent
+Here is an example of lines of input, followed by the output that would
+be created.
+
+\begin{verbatim}
+integral from 0 to infinity of e ^ (-x^2/2) dx 
+= sqrt (pi over 2)
+\end{verbatim}
+
+\[
+\int _ {0} ^ {\infty} {e} ^ { - {x} ^ {2} / 2} \,d x = \sqrt{\frac {\pi} {2}}
+\]
+
+\noindent Each formula is created by a sequence of such lines, terminated by a 
+a blank line.  Let us first give an example, where we attempt to solve
+a homework problem.  First we give the input, then the output.
+
+\newpage
+
+\noindent \section{Example} \label{example}
+
+\noindent \begin{verbatim}# Start the question
+\end{verbatim}
+
+\noindent \begin{verbatim}
+text Chapter 8.6 Question 25
+\end{verbatim}
+
+\noindent \begin{verbatim}
+text Evaluate the following sum
+\end{verbatim}
+
+\noindent \begin{verbatim}
+sum from n = 2 to infinity of 1 over (n^2 - 1)
+\end{verbatim}
+
+\noindent \begin{verbatim}
+text Answer: use partial fractions
+\end{verbatim}
+
+\noindent \begin{verbatim}
+n^2 - 1 = (n-1)(n+1)
+\end{verbatim}
+
+\noindent \begin{verbatim}
+1 over (n^2 - 1) = A over (n-1) + B over (n + 1)
+\end{verbatim}
+
+\noindent \begin{verbatim}
+= (A(n+1) + B (n-1)) over ((n-1)(n+1))
+\end{verbatim}
+
+\noindent \begin{verbatim}
+1 = A n + A + B n - B
+\end{verbatim}
+
+\noindent \begin{verbatim}
+text Equate coefficients
+\end{verbatim}
+
+\noindent \begin{verbatim}
+0 = A - B
+\end{verbatim}
+
+\noindent \begin{verbatim}
+1 = A + B
+\end{verbatim}
+
+\noindent \begin{verbatim}
+text add equations
+\end{verbatim}
+
+\noindent \begin{verbatim}
+1 = 2A
+\end{verbatim}
+
+\noindent \begin{verbatim}
+A = 1 over 2
+\end{verbatim}
+
+\noindent \begin{verbatim}
+B = - 1 over 2
+\end{verbatim}
+
+\noindent \begin{verbatim}
+1 over (n squared - 1) = 1 over (2(n-1)) - 1 over (2(n+1))
+\end{verbatim}
+
+\noindent \begin{verbatim}
+S _ N = sum from n = 2 to N of 1 over (n^2 - 1)
+\end{verbatim}
+
+\noindent \begin{verbatim}
+=
+(1 over 2 - 1 over 6) + (1 over 4 - 1 over 8) + (1 over 6 - 1 over 10)
++ (1 over 8 - 1 over 12)
++ ... +
+\end{verbatim}
+
+\noindent \begin{verbatim}
++ (1 over (2(N-3)) - 1 over (2(N-1)) )
++ (1 over (2(N-2)) - 1 over (2N) )
+\end{verbatim}
+
+\noindent \begin{verbatim}
++ (1 over (2(N-1)) - 1 over (2(N+1)) )
+\end{verbatim}
+
+\noindent \begin{verbatim}
+=
+1 over 2 + 1 over 4 - 1 over (2N) - 1 over (2(N+1))
+\end{verbatim}
+
+\noindent \begin{verbatim}
+limit as N to infinity of S_N = 3 over 4
+\end{verbatim}
+
+\newpage
+
+\noindent Chapter 8.6 Question 25
+
+\noindent Evaluate the following sum
+
+\[
+\sum _ {n = 2} ^ {\infty} \frac {1} {{n} ^ {2} - 1}
+\]
+
+\noindent Answer: use partial fractions
+
+\[
+{n} ^ {2} - 1 = \left( n - 1 \right) \left( n + 1 \right)
+\]
+
+\[
+\frac {1} {{n} ^ {2} - 1} = \frac {A} {n - 1} + \frac {B} {n + 1}
+\]
+
+\[
+ = \frac {A \left( n + 1 \right) + B \left( n - 1 \right)} {\left( n - 1 \right) \left( n + 1 \right)}
+\]
+
+\[
+1 = A n + A + B n - B
+\]
+
+\noindent Equate coefficients
+
+\[
+0 = A - B
+\]
+
+\[
+1 = A + B
+\]
+
+\noindent add equations
+
+\[
+1 = 2 A
+\]
+
+\[
+A = \frac {1} {2}
+\]
+
+\[
+B =  - \frac {1} {2}
+\]
+
+\[
+\frac {1} {{n} ^ 2 - 1} = \frac {1} {2 \left( n - 1 \right)} - \frac {1} {2 \left( n + 1 \right)}
+\]
+
+\[
+{S} _ {N} = \sum _ {n = 2} ^ {N} \frac {1} {{n} ^ {2} - 1}
+\]
+
+\[
+ = \left( \frac {1} {2} - \frac {1} {6} \right) + \left( \frac {1} {4} - \frac {1} {8} \right) + \left( \frac {1} {6} - \frac {1} {10} \right) + \left( \frac {1} {8} - \frac {1} {12} \right) + \dots + 
+\]
+
+\[
+ + \left( \frac {1} {2 \left( N - 3 \right)} - \frac {1} {2 \left( N - 1 \right)} \right) + \left( \frac {1} {2 \left( N - 2 \right)} - \frac {1} {2 N} \right)
+\]
+
+\[
+ + \left( \frac {1} {2 \left( N - 1 \right)} - \frac {1} {2 \left( N + 1 \right)} \right)
+\]
+
+\[
+ = \frac {1} {2} + \frac {1} {4} - \frac {1} {2 N} - \frac {1} {2 \left( N + 1 \right)}
+\]
+
+\[
+\lim _ {N \to \infty} {S} _ {N} = \frac {3} {4}
+\]
+
+\newpage
+
+\noindent \section{The basic commands}
+
+\noindent \subsection{Numbers and Variables}
+
+\noindent \indent
+Natural Math allows numbers and one letter variables written in the usual
+way.  There is also the complete collection of greek letters, both
+lower and upper case, and infinity.  There are also
+the dots.
+
+\begin{verbatim}
+30.45 , x , pi, Pi, Phi, phi, infinity, ...,dots
+\end{verbatim}
+
+\[
+30.45 , \ x , \ \pi , \ \Pi , \ \Phi , \ \phi , \ \infty , \ \dots , \ \dots
+\]
+
+\noindent \subsection{Operations}
+Natural Math supports a large set of operations from mathematics. 
+The arithmetic operators:
+
+\begin{verbatim}
+a + b, a plus b, a - b, a minus b,
+\end{verbatim}
+
+\[
+a + b , \ a + b , \ a - b , \ a - b , \ 
+\]
+
+\begin{verbatim}
+a * b, a times b, a / b, a divide b,
+\end{verbatim}
+
+\[
+a \times b , \ a \times b , \ a / b , \ a \div b , \ 
+\]
+
+\begin{verbatim}
+a ^ b, a power b, a . b, a dot b
+\end{verbatim}
+
+\[
+{a} ^ {b} , \ {a} ^ {b} , \ a \cdot b , \ a \cdot b
+\]
+
+\noindent The fraction operator, and the implicit multiplication operator:
+(in the case of the implicit multiplication operator, the space between
+the two quantities can be crucual if they are both letter variables or 
+numbers):
+
+\begin{verbatim}
+
+a over b, a b
+\end{verbatim}
+
+\[
+\frac {a} {b} , \ a b
+\]
+
+\noindent The relational operators:
+
+\begin{verbatim}
+a = b, a eq b, a <= b, a le b, a >= b, a > b,
+\end{verbatim}
+
+\[
+a = b , \ a = b , \ a \le b , \ a \le b , \ a \ge b , \ a > b , \ 
+\]
+
+\begin{verbatim}
+a <> b, a ne b, a < b, a lt b, a > b, a gt b
+\end{verbatim}
+
+\[
+a \ne b , \ a \ne b , \ a < b , \ a < b , \ a > b , \ a > b
+\]
+
+\noindent Other operators (the last one tells you that the comma is considered
+as an operator):
+
+\begin{verbatim}
+a _ b, a sub b, a subst b, a -> b, a to b, a tendsto b, 
+a , b, a comma b
+\end{verbatim}
+
+\[
+{a} _ {b} , \ {a} _ {b} , \ \left.a\right|_{b} , \ a \to b , \ a \to b , \ a \to b , \ a , \ b , \ a , \ b
+\]
+
+\noindent The plus and minus can also appear at the beginning of some expressions:
+
+\begin{verbatim}
+a * (-b) , a^+b
+\end{verbatim}
+
+\[
+a \times \left(  - b \right) , \ {a} ^ { + b}
+\]
+
+\noindent Operations can appear right at the beginning of the formula, like
+comma, the relational operators, and plus/minus.
+
+\begin{verbatim}
+= a + b
+\end{verbatim}
+
+\[
+ = a + b
+\]
+
+\noindent Also, an operation can be left `dangling' at the end of input:
+
+\begin{verbatim}
+a+
+\end{verbatim}
+
+\[
+a + 
+\]
+
+\noindent The value of these last two allowable activities is to let long formulae
+range over several lines.  This is illustrated in the long example given
+is Section~\ref{example}.
+
+\noindent \indent
+Finally, the operations plus and minus may be used in a contex where they
+are treated as quantities.  This allows expressions like
+
+\begin{verbatim}
+a to 4^+ , b = 3_-
+\end{verbatim}
+
+\[
+a \to {4} ^ {+} , \ b = {3} _ {-}
+\]
+
+\noindent \subsection{Order of Operations and Brackets}
+
+\noindent \indent
+Natural Math does a careful analysis, pulling apart the expressions
+so as to figure out what comes first.  So in the following example,
+the division is done before the addition.
+
+\begin{verbatim}
+a + b over c
+\end{verbatim}
+
+\[
+a + \frac {b} {c}
+\]
+
+\noindent You can change the order of operations: in this example the addition is
+done before the division.
+
+\begin{verbatim}
+(a + b) over c
+\end{verbatim}
+
+\[
+\frac {a + b} {c}
+\]
+
+\noindent Here is another example.
+
+\begin{verbatim}
+(a+b) times c
+\end{verbatim}
+
+\[
+\left( a + b \right) \times c
+\]
+
+\noindent In this last example, the brackets appeared when typeset.  Usually, brackets
+written in will appear as you wrote them: 
+
+\begin{verbatim}
+(a b)c
+\end{verbatim}
+
+\[
+\left( a b \right) c
+\]
+
+\noindent In a few cases, brackets are needed to change the natural order of doing
+operations, but it would not be right to typeset them.  This happens
+with fractions (as above), and also with powers and subscripts.  
+(It also happens with the square root and absolute value, and with
+limits of integration, and with the substitution operator --- see below.)
+However,
+you can always force the brackets to appear in this situation by adding an
+extra pair of unneccesary brackets:
+
+\begin{verbatim}
+a^(b+c), a_(b+c)
+\end{verbatim}
+
+\[
+{a} ^ {b + c} , \ {a} _ {b + c}
+\]
+
+\begin{verbatim}
+((x+y)) over ((x^2 - y^2)) , f^((2))(x)
+\end{verbatim}
+
+\[
+\frac {\left( x + y \right)} {\left( {x} ^ {2} - {y} ^ {2} \right)} , \ {f} ^ {\left( 2 \right)} \left( x \right)
+\]
+
+\noindent There are also square brackets:
+
+\begin{verbatim}
+[ x over y ]
+\end{verbatim}
+
+\[
+\left[ \frac {x} {y} \right]
+\]
+
+\noindent What is the order in which natural math would evaluate the operations without
+brackets?  First powers and subscripts.  Then fractions.  Then multiplication
+and division.  Then addition and subtraction.  Then the `tends to'.  Then
+the `comma'.  Finally the relational operators.  Otherwise the operations
+are performed left to right, except that the power and subscript operators
+are performed from right to left.
+
+\begin{verbatim}
+a^b^c^d , a_b_c_d
+\end{verbatim}
+
+\[
+{a} ^ {{b} ^ {{c} ^ {d}}} , \ {a} _ {{b} _ {{c} _ {d}}}
+\]
+
+\noindent Here is an example with the substitution operator.  Notice that in this case,
+a rather large number of brackets is needed.  Natural Math has its limitations!
+
+\begin{verbatim}
+((df^-1(x)) over dx) subst (x=f(a))
+=
+1 over (((df(x)) over dx) subst (x = a))
+\end{verbatim}
+
+\[
+\left.\frac {{\,d f} ^ { - 1} \left( x \right)} {\,d x}\right|_{x = f \left( a \right)} = \frac {1} {\left.\frac {\,d f \left( x \right)} {\,d x}\right|_{x = a}}
+\]
+
+\noindent \subsection{Functions}
+
+\noindent \indent
+Natural Math supports a range of functions
+
+\begin{verbatim}
+sqrt a, abs a, |a|, a squared, a !, a factorial
+\end{verbatim}
+
+\[
+\sqrt{a} , \ \left| a \right| , \ \left| a \right| , \ {a} ^ 2 , \ a ! , \ a !
+\]
+
+\noindent and the trig and hyperbolic functions:
+
+\begin{verbatim}
+sin, cos, tan, sec, csc, cot, 
+arcsin, arccos, arctan, 
+sinh, cosh, tanh, coth
+\end{verbatim}
+
+\[
+\sin , \ \cos , \ \tan , \ \sec , \ \csc , \ \cot , \ \arcsin , \ \arccos , \ \arctan , \ \sinh , \ \cosh , \ \tanh , \ \coth
+\]
+
+\noindent and functions that you can create yourself, either by using quotes, or by
+using the ``textsymb'' command:
+
+\begin{verbatim}
+"sech"(x) = textsym sech(x) = 2 over (e^x + e^-x)
+\end{verbatim}
+
+\[
+\hbox{sech} \left( x \right) = \hbox{sech} \left( x \right) = \frac {2} {{e} ^ {x} + {e} ^ { - x}}
+\]
+
+\noindent Some of
+these functions interact with brackets in interesting ways:
+
+\begin{verbatim}
+sqrt(a+b) , sqrt((a+b)) , abs(a+b) , abs((a+b))
+\end{verbatim}
+
+\[
+\sqrt{a + b} , \ \sqrt{\left( a + b \right)} , \ \left| a + b \right| , \ \left| \left( a + b \right) \right|
+\]
+
+\noindent \def\abs{\hbox{abs}}
+The absolute value construction is even more interesting, and
+there is a potential for ambiguity: does $|a|b|c|$ represent
+$\abs(a\,\abs(b)\,c)$, or $\abs(a)\,b\,\abs(c)$?
+Natural Math will use the second interpretation, but this can be
+changed using brackets:
+
+\begin{verbatim}
+|x over y| 5 |x over y|,
+|(x over y| 5 |x over y)|
+\end{verbatim}
+
+\[
+\left| \frac {x} {y} \right| 5 \left| \frac {x} {y} \right| , \ \left| \frac {x} {y} \left| 5 \right| \frac {x} {y} \right|
+\]
+
+\noindent Finally, the trig functions can be raised to powers:
+
+\begin{verbatim}
+sin^2 x + cos^2 x = 1,
+sin^-1 (sqrt3 over 2) = pi over 3
+\end{verbatim}
+
+\[
+{\sin} ^ {2} x + {\cos} ^ {2} x = 1 , \ {\sin} ^ { - 1} \left( \frac {\sqrt{3}} {2} \right) = \frac {\pi} {3}
+\]
+
+\noindent \subsection{Integrals, Sums and Limits}
+
+\noindent \indent
+Here is the integral symbol
+
+\begin{verbatim}
+integral
+\end{verbatim}
+
+\[
+\int
+\]
+
+\noindent Here is the integral sign used: note the optional use of `of'.  Also
+`dx' is a single symbol.  It can be expressed as two separate symbols,
+but the use of the single symbol slightly improves the typesetting.
+
+\begin{verbatim}
+integral x^3 dx,
+integral of x^3 dx,
+integral of x^3 d x
+\end{verbatim}
+
+\[
+\int {x} ^ {3} \,d x , \ \int {x} ^ {3} \,d x , \ \int {x} ^ {3} d x
+\]
+
+\noindent Definite integrals are a little trickier, because Natural Math has to
+figure out what should be in the limits.  It will make an intelligent
+guess, but
+sometimes it needs help.  This can be provided, either with brackets,
+or with `of'.
+
+\begin{verbatim}
+integral from 1 to a + b x^3 dx,
+integral from 1 to a b x^3 dx,
+integral from 1 to (a b) x^3 dx,
+integral from 1 to a b of x^3 dx
+\end{verbatim}
+
+\[
+\int _ {1} ^ {a + b} {x} ^ {3} \,d x , \ \int _ {1} ^ {a} b {x} ^ {3} \,d x , \ \int _ {1} ^ {a b} {x} ^ {3} \,d x , \ \int _ {1} ^ {a b} {x} ^ {3} \,d x
+\]
+
+\noindent Sums are exactly the same.  The following example shows that you
+don't need to use both of the `from' and `to' quantifiers.
+
+\begin{verbatim}
+sum from n <= 20 of a_n
+\end{verbatim}
+
+\[
+\sum _ {n \le 20} {a} _ {n}
+\]
+
+\noindent Limits are similar: we have the `as' quanitifier:
+
+\begin{verbatim}
+rho = lim as n to infinity | a_(n+1) over a_n | ,
+rho = lim as n to infinity of | a_(n+1) over a_n | ,
+\end{verbatim}
+
+\[
+\rho = \lim _ {n \to \infty} \left| \frac {{a} _ {n + 1}} {{a} _ {n}} \right| , \ \rho = \lim _ {n \to \infty} \left| \frac {{a} _ {n + 1}} {{a} _ {n}} \right| , \ 
+\]
+
+\noindent `From' and `to' may also be used with brackets 
+(both round and square), although
+instead of `of' you can use `end'.
+
+\begin{verbatim}
+[ x^3 ] from 0 to 6 / a end ,
+[ x^3 ] from 0 to 6 / a ,
+[ x^3 ] from 0 to (6 / a)
+\end{verbatim}
+
+\[
+\left[ {x} ^ {3} \right] _ {0} ^ {6 / a} , \ \left[ {x} ^ {3} \right] _ {0} ^ {6} / a , \ \left[ {x} ^ {3} \right] _ {0} ^ {6 / a}
+\]
+
+\noindent More examples:
+
+\begin{verbatim}
+integral u dv over dx dx = u v - integral v du over dx dx
+\end{verbatim}
+
+\[
+\int u \frac {\,d v} {\,d x} \,d x = u v - \int v \frac {\,d u} {\,d x} \,d x
+\]
+
+\begin{verbatim}
+integral from 0 to 10 of theta^3 dtheta
+=
+[x^4 over 4] from 0 to 10
+=
+10^4 over 4 - 0^4 over 4
+=
+1000 over 4
+\end{verbatim}
+
+\[
+\int _ {0} ^ {10} {\theta} ^ {3} \,d \theta = \left[ \frac {{x} ^ {4}} {4} \right] _ {0} ^ {10} = \frac {{10} ^ {4}} {4} - \frac {{0} ^ {4}} {4} = \frac {1000} {4}
+\]
+
+\begin{verbatim}
+integral from -1 to 1 1 over x^(2/3) dx
+=
+limit as a to 0^- of
+integral from -1 to a 1 over x^(2/3) dx
++ 
+limit as b to 0^+ of
+integral from b to 1 1 over x^(2/3) dx
+\end{verbatim}
+
+\[
+\int _ { - 1} ^ {1} \frac {1} {{x} ^ {2 / 3}} \,d x = \lim _ {a \to {0} ^ {-}} \int _ { - 1} ^ {a} \frac {1} {{x} ^ {2 / 3}} \,d x + \lim _ {b \to {0} ^ {+}} \int _ {b} ^ {1} \frac {1} {{x} ^ {2 / 3}} \,d x
+\]
+
+\begin{verbatim}
+= 
+limit as a to 0^- of
+[3 x^(1/3) ] from -1 to a
++ 
+limit as b to 0^+ of
+[3 x^(1/3) ] from b to 1
+\end{verbatim}
+
+\[
+ = \lim _ {a \to {0} ^ {-}} \left[ 3 {x} ^ {1 / 3} \right] _ { - 1} ^ {a} + \lim _ {b \to {0} ^ {+}} \left[ 3 {x} ^ {1 / 3} \right] _ {b} ^ {1}
+\]
+
+\noindent Note that in the last example, the use of the `of's is rather crucial.  See
+what happens if we don't use them:
+
+\begin{verbatim}
+= 
+limit as a to 0^-
+[3 x^(1/3) ] from -1 to a
++ 
+limit as b to 0^+
+[3 x^(1/3) ] from b to 1
+\end{verbatim}
+
+\[
+ = \lim _ {a \to {0} ^ { - \left[ 3 {x} ^ {1 / 3} \right] _ { - 1} ^ {a}} + \lim _ {b \to {0} ^ { + \left[ 3 {x} ^ {1 / 3} \right] _ {b} ^ {1}}}}
+\]
+
+\noindent \subsection{Inserting Text}
+
+\noindent To put a paragraph of text in your output, start the line with the
+word {\tt text}.  The text following, and the following non-blank
+lines will be inserted directly into the La\TeX\ file.  Indeed, if you
+know La\TeX, you can even use La\TeX\ commands.  (We won't illustrate
+that here, but that is how this document was created.)
+
+\noindent \begin{verbatim}
+text Here are some lines
+of text.  How do they look?
+\end{verbatim}
+
+\noindent Here are some lines
+of text.  How do they look?
+
+\noindent \
+
+\noindent You can also insert single words into formulae as follows:
+
+\begin{verbatim}
+1 over x to 0 text as x to infinity
+\end{verbatim}
+
+\[
+\frac {1} {x} \to 0 \hbox{ as } x \to \infty
+\]
+
+\noindent or several words
+
+\begin{verbatim}
+x over (x^2 + 1) text (grows at the same rate as) 1 over x
+\end{verbatim}
+
+\[
+\frac {x} {{x} ^ {2} + 1} \hbox{   grows at the same rate as  } \frac {1} {x}
+\]
+
+\noindent You can also do this using quotes (note the spaces between the quotes and
+the words --- it will look different if they are not there):
+
+\begin{verbatim}
+x over (x^2 + 1) " grows at the same rate as " 1 over x
+\end{verbatim}
+
+\[
+\frac {x} {{x} ^ {2} + 1} \hbox{ grows at the same rate as } \frac {1} {x}
+\]
+
+\noindent These commands are very fussy - they must have {\em only\/} letter based
+text in them.  Otherwise you get an error message, which brings us to the
+next topic.
+
+\noindent \subsection{Error Messages}
+
+\noindent \indent
+If Natural Math finds an error, it will spit out the part of the lines
+it was able to process, and then follow it with a kind of descriptive
+error message, including a rough idea of which line number it was
+in the {\tt .nat} file where the error happened.  This same
+error will also be written on the command line at which you ran
+naturalmath.
+
+\noindent \indent
+Here are examples:
+
+\begin{verbatim}
+These errors were inserted deliberately.
+\end{verbatim}
+
+\begin{verbatim}
+These errors were inserted deliberately.
+^
+Error: what's this: `These' just before line 614
+\end{verbatim}
+
+\begin{verbatim}
+16 * x -
+1 + 2 over (x + yy) - 11.2235 +
+24 / 13
+\end{verbatim}
+
+\begin{verbatim}
+1 + 2 over (x + yy) - 11.2235 +
+                ^
+Error: what's this: `yy' just before line 619
+\end{verbatim}
+
+\begin{verbatim}
+(1+2
+\end{verbatim}
+
+\begin{verbatim}
+(1+2
+    ^
+Error: right bracket missing just before line 622
+\end{verbatim}
+
+\noindent \subsection{Debug and Newpage and Comments}
+
+\noindent \indent
+Finally, if you want to see how you wrote the command along with
+the typeset version, put the word {\tt debug} at the beginning of
+your math.  That is how this tutorial was created.
+
+\noindent \begin{verbatim}
+debug x + y
+\end{verbatim}
+
+\noindent will produce
+
+\begin{verbatim}
+x + y
+\end{verbatim}
+
+\[
+x + y
+\]
+
+\noindent To put comments in the {\tt .nat} file, note that any line beginning with
+{\tt \#} will not be processed by Natural Math.
+
+\noindent \indent
+To start a new page, issue the one line command (followed by a blank line)
+
+\noindent \begin{verbatim}
+newpage
+\end{verbatim}
+
+\newpage
+
+\noindent \section{Want More Features?  Bugs to report?}
+
+\noindent \indent
+Obviously, if you want to make really complicated math formulae, or have more
+control over how it looks, you should learn the \TeX, AMS\TeX\ or
+La\TeX\ programs.  
+
+\noindent \indent
+Otherwise
+email Stephen Montgomery-Smith at
+\par
+\begin{center}{\tt stephen@math.missouri.edu}.\end{center}
+Same if you have bug reports.  Also, if you solve bugs,
+or made improvements, please, please
+tell me about it.
+
+\end{document}

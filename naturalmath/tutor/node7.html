@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Functions</TITLE>
+<META NAME="description" CONTENT="Functions">
+<META NAME="keywords" CONTENT="tutor">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tutor.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html92"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html90"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html84"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html93"
+  HREF="node8.html">Integrals, Sums and Limits</A>
+<B> Up:</B> <A NAME="tex2html91"
+  HREF="node3.html">The basic commands</A>
+<B> Previous:</B> <A NAME="tex2html85"
+  HREF="node6.html">Order of Operations and</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00034000000000000000">
+Functions</A>
+</H2>
+
+<P>
+Natural Math supports a range of functions
+
+<P>
+<PRE>
+sqrt a, abs a, |a|, a squared, a !, a factorial
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sqrt{a} , \ \left| a \right| , \ \left| a \right| , \ {a} ^ 2 , \ a ! , \ a !
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="191" HEIGHT="33" BORDER="0"
+ SRC="img40.png"
+ ALT="\begin{displaymath}
+\sqrt{a} , \ \left\vert a \right\vert , \ \left\vert a \right\vert , \ {a} ^ 2 , \ a ! , \ a !
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+and the trig and hyperbolic functions:
+
+<P>
+<PRE>
+sin, cos, tan, sec, csc, cot, 
+arcsin, arccos, arctan, 
+sinh, cosh, tanh, coth
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sin , \ \cos , \ \tan , \ \sec , \ \csc , \ \cot , \ \arcsin , \ \arccos , \ \arctan , \ \sinh , \ \cosh , \ \tanh , \ \coth
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="588" HEIGHT="32" BORDER="0"
+ SRC="img41.png"
+ ALT="\begin{displaymath}
+\sin , \ \cos , \ \tan , \ \sec , \ \csc , \ \cot , \ \arcsin , \ \arccos , \ \arctan , \ \sinh , \ \cosh , \ \tanh , \ \coth
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+and functions that you can create yourself, either by using quotes, or by
+using the ``textsymb'' command:
+
+<P>
+<PRE>
+"sech"(x) = textsym sech(x) = 2 over (e^x + e^-x)
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\hbox{sech} \left( x \right) = \hbox{sech} \left( x \right) = \frac {2} {{e} ^ {x} + {e} ^ { - x}}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="243" HEIGHT="47" BORDER="0"
+ SRC="img42.png"
+ ALT="\begin{displaymath}
+\hbox{sech} \left( x \right) = \hbox{sech} \left( x \right) = \frac {2} {{e} ^ {x} + {e} ^ { - x}}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Some of
+these functions interact with brackets in interesting ways:
+
+<P>
+<PRE>
+sqrt(a+b) , sqrt((a+b)) , abs(a+b) , abs((a+b))
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sqrt{a + b} , \ \sqrt{\left( a + b \right)} , \ \left| a + b \right| , \ \left| \left( a + b \right) \right|
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="289" HEIGHT="36" BORDER="0"
+ SRC="img43.png"
+ ALT="\begin{displaymath}
+\sqrt{a + b} , \ \sqrt{\left( a + b \right)} , \ \left\vert a + b \right\vert , \ \left\vert \left( a + b \right) \right\vert
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+The absolute value construction is even more interesting, and
+there is a potential for ambiguity: does <IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img44.png"
+ ALT="$\vert a\vert b\vert c\vert$"> represent
+<!-- MATH
+ $\hbox{abs}(a\,\hbox{abs}(b)\,c)$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.png"
+ ALT="$\hbox{abs}(a\,\hbox{abs}(b)\,c)$">, or <!-- MATH
+ $\hbox{abs}(a)\,b\,\hbox{abs}(c)$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="$\hbox{abs}(a)\,b\,\hbox{abs}(c)$">?
+Natural Math will use the second interpretation, but this can be
+changed using brackets:
+
+<P>
+<PRE>
+|x over y| 5 |x over y|,
+|(x over y| 5 |x over y)|
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left| \frac {x} {y} \right| 5 \left| \frac {x} {y} \right| , \ \left| \frac {x} {y} \left| 5 \right| \frac {x} {y} \right|
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="145" HEIGHT="54" BORDER="0"
+ SRC="img47.png"
+ ALT="\begin{displaymath}
+\left\vert \frac {x} {y} \right\vert 5 \left\vert \frac {x} ...
+...rac {x} {y} \left\vert 5 \right\vert \frac {x} {y} \right\vert
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Finally, the trig functions can be raised to powers:
+
+<P>
+<PRE>
+sin^2 x + cos^2 x = 1,
+sin^-1 (sqrt3 over 2) = pi over 3
+</PRE>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{\sin} ^ {2} x + {\cos} ^ {2} x = 1 , \ {\sin} ^ { - 1} \left( \frac {\sqrt{3}} {2} \right) = \frac {\pi} {3}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="293" HEIGHT="56" BORDER="0"
+ SRC="img48.png"
+ ALT="\begin{displaymath}
+{\sin} ^ {2} x + {\cos} ^ {2} x = 1 , \ {\sin} ^ { - 1} \left( \frac {\sqrt{3}} {2} \right) = \frac {\pi} {3}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Stephen Montgomery-Smith
+2003-05-26
+</ADDRESS>
+</BODY>
+</HTML>

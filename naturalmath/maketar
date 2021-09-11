@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+
+$name = `ls -l naturalmath-latest`;
+chomp $name;
+$name =~ s/\s+^//;
+$name =~ s/^.*\s+//;
+
+print "tar cvfz $name.tar.gz $name\n";
+system "tar cvfz $name.tar.gz $name\n";
+print "zip -r $name.zip $name\n";
+system "zip -r $name.zip $name\n";

@@ -1,0 +1,654 @@
+text \def\titleblock
+{
+Tutor for Natural Math version 0.4\\
+last modified May 25, 2001\\
+Copyright 1999 Stephen J Montgomery-Smith.  All rights reserved.
+}
+% This package is free software; you can redistribute it and/or modify
+% it under the terms of either:
+%
+%     a) the GNU General Public License as published by the Free
+%     Software Foundation; either version 2, or (at your option) any
+%     later version, or
+%
+%     b) "Stephen's Artistic License" which comes with this Kit.
+%
+% This package is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See either
+% the GNU General Public License or Stephen's Artistic License for more 
+% details.
+%
+% You should have received a copy of Stephen's Artistic License with this
+% package, in the file named "Stephens-Artistic.txt".  If not, I'll be glad
+% to provide one.
+%
+% You should also have received a copy of the GNU General Public License
+% along with this program; if not, write to the Free Software
+% Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+text
+\begin{center}
+\Large \bf The Natural Math Program
+\end{center}
+\begin{center}
+\large \bf Stephen Montgomery-Smith
+\end{center}
+\begin{center}\small\titleblock\end{center}
+
+text \section{Introduction}
+
+text \indent
+Here we describe the Natural Math program.  It is easy to use.
+Start with a file whose extension is {\tt .nat}, for example,
+{\tt test.nat}.  This tutorial was created by the file
+{\tt tutor.nat}.
+
+text \indent
+Each line of your file {\tt xxx.nat} is written in what we call ``natural
+math,'' that is, math written as you might naturally express it if you
+only had a simple typewriter.
+You will use numbers, letters, and symbols, although anything that
+can be expressed in symbols can also almost always be expressed in letters.
+
+text \indent
+What the program will do is to convert the natural math file into a La\TeX\
+file.  You run it like this:
+\begin{center} {\tt naturalmath xxx.nat} \end{center}
+This will create a file {\tt xxx.tex}.  
+%Indeed, as it stands right now,
+%it will also run La\TeX, creating the file {\tt xxx.dvi}, and then go on
+%to run {\tt dvips} to create the postscript file {\tt xxx.ps}.
+
+text \indent
+Here is an example of lines of input, followed by the output that would
+be created.
+
+debug
+integral from 0 to infinity of e ^ (-x^2/2) dx 
+= sqrt (pi over 2)
+
+text
+Each formula is created by a sequence of such lines, terminated by a 
+a blank line.  Let us first give an example, where we attempt to solve
+a homework problem.  First we give the input, then the output.
+
+newpage
+
+text
+\section{Example} \label{example}
+
+text
+\begin{verbatim}# Start the question
+\end{verbatim}
+
+text
+\begin{verbatim}
+text Chapter 8.6 Question 25
+\end{verbatim}
+
+text
+\begin{verbatim}
+text Evaluate the following sum
+\end{verbatim}
+
+text
+\begin{verbatim}
+sum from n = 2 to infinity of 1 over (n^2 - 1)
+\end{verbatim}
+
+text
+\begin{verbatim}
+text Answer: use partial fractions
+\end{verbatim}
+
+text
+\begin{verbatim}
+n^2 - 1 = (n-1)(n+1)
+\end{verbatim}
+
+text
+\begin{verbatim}
+1 over (n^2 - 1) = A over (n-1) + B over (n + 1)
+\end{verbatim}
+
+text
+\begin{verbatim}
+= (A(n+1) + B (n-1)) over ((n-1)(n+1))
+\end{verbatim}
+
+text
+\begin{verbatim}
+1 = A n + A + B n - B
+\end{verbatim}
+
+text
+\begin{verbatim}
+text Equate coefficients
+\end{verbatim}
+
+text
+\begin{verbatim}
+0 = A - B
+\end{verbatim}
+
+text
+\begin{verbatim}
+1 = A + B
+\end{verbatim}
+
+text
+\begin{verbatim}
+text add equations
+\end{verbatim}
+
+text
+\begin{verbatim}
+1 = 2A
+\end{verbatim}
+
+text
+\begin{verbatim}
+A = 1 over 2
+\end{verbatim}
+
+text
+\begin{verbatim}
+B = - 1 over 2
+\end{verbatim}
+
+text
+\begin{verbatim}
+1 over (n squared - 1) = 1 over (2(n-1)) - 1 over (2(n+1))
+\end{verbatim}
+
+text
+\begin{verbatim}
+S _ N = sum from n = 2 to N of 1 over (n^2 - 1)
+\end{verbatim}
+
+text
+\begin{verbatim}
+=
+(1 over 2 - 1 over 6) + (1 over 4 - 1 over 8) + (1 over 6 - 1 over 10)
++ (1 over 8 - 1 over 12)
++ ... +
+\end{verbatim}
+
+text
+\begin{verbatim}
++ (1 over (2(N-3)) - 1 over (2(N-1)) )
++ (1 over (2(N-2)) - 1 over (2N) )
+\end{verbatim}
+
+
+text
+\begin{verbatim}
++ (1 over (2(N-1)) - 1 over (2(N+1)) )
+\end{verbatim}
+
+text
+\begin{verbatim}
+=
+1 over 2 + 1 over 4 - 1 over (2N) - 1 over (2(N+1))
+\end{verbatim}
+
+text
+\begin{verbatim}
+limit as N to infinity of S_N = 3 over 4
+\end{verbatim}
+
+newpage
+
+# Start the question
+
+text Chapter 8.6 Question 25
+
+text Evaluate the following sum
+
+sum from n = 2 to infinity of 1 over (n^2 - 1)
+
+text Answer: use partial fractions
+
+n^2 - 1 = (n-1)(n+1)
+
+1 over (n^2 - 1) = A over (n-1) + B over (n + 1)
+
+= (A(n+1) + B (n-1)) over ((n-1)(n+1))
+
+1 = A n + A + B n - B
+
+text Equate coefficients
+
+0 = A - B
+
+1 = A + B
+
+text add equations
+
+1 = 2A
+
+A = 1 over 2
+
+B = - 1 over 2
+
+1 over (n squared - 1) = 1 over (2(n-1)) - 1 over (2(n+1))
+
+S _ N = sum from n = 2 to N of 1 over (n^2 - 1)
+
+=
+(1 over 2 - 1 over 6) + (1 over 4 - 1 over 8) + (1 over 6 - 1 over 10)
++ (1 over 8 - 1 over 12)
++ ... +
+
++ (1 over (2(N-3)) - 1 over (2(N-1)) )
++ (1 over (2(N-2)) - 1 over (2N) )
+
++ (1 over (2(N-1)) - 1 over (2(N+1)) )
+
+=
+1 over 2 + 1 over 4 - 1 over (2N) - 1 over (2(N+1))
+
+limit as N to infinity of S_N = 3 over 4
+
+newpage
+
+text \section{The basic commands}
+
+text \subsection{Numbers and Variables}
+
+text \indent
+Natural Math allows numbers and one letter variables written in the usual
+way.  There is also the complete collection of greek letters, both
+lower and upper case, and infinity.  There are also
+the dots.
+
+debug
+30.45 , x , pi, Pi, Phi, phi, infinity, ...,dots
+
+text \subsection{Operations}
+Natural Math supports a large set of operations from mathematics. 
+The arithmetic operators:
+
+debug
+a + b, a plus b, a - b, a minus b,
+
+debug
+a * b, a times b, a / b, a divide b,
+
+debug
+a ^ b, a power b, a . b, a dot b
+
+text The fraction operator, and the implicit multiplication operator:
+(in the case of the implicit multiplication operator, the space between
+the two quantities can be crucual if they are both letter variables or 
+numbers):
+
+debug 
+a over b, a b
+
+text The relational operators:
+
+debug
+a = b, a eq b, a <= b, a le b, a >= b, a > b,
+
+debug
+a <> b, a ne b, a < b, a lt b, a > b, a gt b
+
+text
+Other operators (the last one tells you that the comma is considered
+as an operator):
+
+debug
+a _ b, a sub b, a subst b, a -> b, a to b, a tendsto b, 
+a , b, a comma b
+
+text
+The plus and minus can also appear at the beginning of some expressions:
+
+debug
+a * (-b) , a^+b
+
+text
+Operations can appear right at the beginning of the formula, like
+comma, the relational operators, and plus/minus.
+
+debug
+= a + b
+
+text
+Also, an operation can be left `dangling' at the end of input:
+
+debug
+a+
+
+text
+The value of these last two allowable activities is to let long formulae
+range over several lines.  This is illustrated in the long example given
+is Section~\ref{example}.
+
+text \indent
+Finally, the operations plus and minus may be used in a contex where they
+are treated as quantities.  This allows expressions like
+
+debug
+a to 4^+ , b = 3_-
+
+text \subsection{Order of Operations and Brackets}
+
+text \indent
+Natural Math does a careful analysis, pulling apart the expressions
+so as to figure out what comes first.  So in the following example,
+the division is done before the addition.
+
+debug
+a + b over c
+
+text
+You can change the order of operations: in this example the addition is
+done before the division.
+
+debug
+(a + b) over c
+
+text
+Here is another example.
+
+debug
+(a+b) times c
+
+text
+In this last example, the brackets appeared when typeset.  Usually, brackets
+written in will appear as you wrote them: 
+
+debug
+(a b)c
+
+text
+In a few cases, brackets are needed to change the natural order of doing
+operations, but it would not be right to typeset them.  This happens
+with fractions (as above), and also with powers and subscripts.  
+(It also happens with the square root and absolute value, and with
+limits of integration, and with the substitution operator --- see below.)
+However,
+you can always force the brackets to appear in this situation by adding an
+extra pair of unneccesary brackets:
+
+debug
+a^(b+c), a_(b+c)
+
+debug
+((x+y)) over ((x^2 - y^2)) , f^((2))(x)
+
+text
+There are also square brackets:
+
+debug
+[ x over y ]
+
+text
+What is the order in which natural math would evaluate the operations without
+brackets?  First powers and subscripts.  Then fractions.  Then multiplication
+and division.  Then addition and subtraction.  Then the `tends to'.  Then
+the `comma'.  Finally the relational operators.  Otherwise the operations
+are performed left to right, except that the power and subscript operators
+are performed from right to left.
+
+debug
+a^b^c^d , a_b_c_d
+
+text
+Here is an example with the substitution operator.  Notice that in this case,
+a rather large number of brackets is needed.  Natural Math has its limitations!
+
+debug
+((df^-1(x)) over dx) subst (x=f(a))
+=
+1 over (((df(x)) over dx) subst (x = a))
+
+text \subsection{Functions}
+
+text \indent
+Natural Math supports a range of functions
+
+debug
+sqrt a, abs a, |a|, a squared, a !, a factorial
+
+text
+and the trig and hyperbolic functions:
+
+debug
+sin, cos, tan, sec, csc, cot, 
+arcsin, arccos, arctan, 
+sinh, cosh, tanh
+
+text
+Some of
+these functions interact with brackets in interesting ways:
+
+debug
+sqrt(a+b) , sqrt((a+b)) , abs(a+b) , abs((a+b))
+
+text
+\def\abs{\hbox{abs}}
+The absolute value construction is even more interesting, and
+there is a potential for ambiguity: does $|a|b|c|$ represent
+$\abs(a\,\abs(b)\,c)$, or $\abs(a)\,b\,\abs(c)$?
+Natural Math will use the second interpretation, but this can be
+changed using brackets:
+
+debug
+|x over y| 5 |x over y|,
+|(x over y| 5 |x over y)|
+
+text
+Finally, the trig functions can be raised to powers:
+
+debug
+sin^2 x + cos^2 x = 1,
+sin^-1 (sqrt3 over 2) = pi over 3
+
+text \subsection{Integrals, Sums and Limits}
+
+text \indent
+Here is the integral symbol
+
+debug
+integral
+
+text
+Here is the integral sign used: note the optional use of `of'.  Also
+`dx' is a single symbol.  It can be expressed as two separate symbols,
+but the use of the single symbol slightly improves the typesetting.
+
+debug
+integral x^3 dx,
+integral of x^3 dx,
+integral of x^3 d x
+
+text
+Definite integrals are a little trickier, because Natural Math has to
+figure out what should be in the limits.  It will make an intelligent
+guess, but
+sometimes it needs help.  This can be provided, either with brackets,
+or with `of'.
+
+debug
+integral from 1 to a + b x^3 dx,
+integral from 1 to a b x^3 dx,
+integral from 1 to (a b) x^3 dx,
+integral from 1 to a b of x^3 dx
+
+text Sums are exactly the same.  The following example shows that you
+don't need to use both of the `from' and `to' quantifiers.
+
+debug
+sum from n <= 20 of a_n
+
+text
+Limits are similar: we have the `as' quanitifier:
+
+debug
+rho = lim as n to infinity | a_(n+1) over a_n | ,
+rho = lim as n to infinity of | a_(n+1) over a_n | ,
+
+text
+`From' and `to' may also be used with brackets 
+(both round and square), although
+instead of `of' you can use `end'.
+
+debug
+[ x^3 ] from 0 to 6 / a end ,
+[ x^3 ] from 0 to 6 / a ,
+[ x^3 ] from 0 to (6 / a)
+
+text
+More examples:
+
+debug
+integral u dv over dx dx = u v - integral v du over dx dx
+
+debug
+integral from 0 to 10 of theta^3 dtheta
+=
+[x^4 over 4] from 0 to 10
+=
+10^4 over 4 - 0^4 over 4
+=
+1000 over 4
+
+debug
+integral from -1 to 1 1 over x^(2/3) dx
+=
+limit as a to 0^- of
+integral from -1 to a 1 over x^(2/3) dx
++ 
+limit as b to 0^+ of
+integral from b to 1 1 over x^(2/3) dx
+
+debug
+= 
+limit as a to 0^- of
+[3 x^(1/3) ] from -1 to a
++ 
+limit as b to 0^+ of
+[3 x^(1/3) ] from b to 1
+
+text
+Note that in the last example, the use of the `of's is rather crucial.  See
+what happens if we don't use them:
+
+debug
+= 
+limit as a to 0^-
+[3 x^(1/3) ] from -1 to a
++ 
+limit as b to 0^+
+[3 x^(1/3) ] from b to 1
+
+text \subsection{Inserting Text}
+
+text
+To put a paragraph of text in your output, start the line with the
+word {\tt text}.  The text following, and the following non-blank
+lines will be inserted directly into the La\TeX\ file.  Indeed, if you
+know La\TeX, you can even use La\TeX\ commands.  (We won't illustrate
+that here, but that is how this document was created.)
+
+text
+\begin{verbatim}
+text Here are some lines
+of text.  How do they look?
+\end{verbatim}
+
+text Here are some lines
+of text.  How do they look?
+
+text \
+
+text You can also insert single words into formulae as follows:
+
+debug
+1 over x to 0 text as x to infinity
+
+text
+or several words
+
+debug
+x over (x^2 + 1) text (grows at the same rate as) 1 over x
+
+text
+These commands are very fussy - they must have {\em only\/} letter based
+text in them.  Otherwise you get an error message, which brings us to the
+next topic.
+
+text \subsection{Error Messages}
+
+text \indent
+If Natural Math finds an error, it will spit out the part of the lines
+it was able to process, and then follow it with a kind of descriptive
+error message, including a rough idea of which line number it was
+in the {\tt .nat} file where the error happened.  This same
+error will also be written on the command line at which you ran
+naturalmath.
+
+text \indent
+Here are examples:
+
+debug
+These errors were inserted deliberately.
+
+debug
+16 * x -
+1 + 2 over (x + yy) - 11.2235 +
+24 / 13
+
+debug
+(1+2
+
+text \subsection{Debug and Newpage and Comments}
+
+text \indent
+Finally, if you want to see how you wrote the command along with
+the typeset version, put the word {\tt debug} at the beginning of
+your math.  That is how this tutorial was created.
+
+text
+\begin{verbatim}
+debug x + y
+\end{verbatim}
+
+text
+will produce
+
+debug x + y
+
+text
+To put comments in the {\tt .nat} file, note that any line beginning with
+{\tt \#} will not be processed by Natural Math.
+
+text \indent
+To start a new page, issue the one line command (followed by a blank line)
+
+text
+\begin{verbatim}
+newpage
+\end{verbatim}
+
+newpage
+
+text \section{Want More Features?  Bugs to report?}
+
+text \indent
+Obviously, if you want to make really complicated math formulae, or have more
+control over how it looks, you should learn the \TeX, AMS\TeX\ or
+La\TeX\ programs.  
+
+text \indent
+Otherwise
+email Stephen Montgomery-Smith at
+\par
+\begin{center}{\tt stephen@math.missouri.edu}.\end{center}
+Same if you have bug reports.  Also, if you solve bugs,
+or made improvements, please, please
+tell me about it.

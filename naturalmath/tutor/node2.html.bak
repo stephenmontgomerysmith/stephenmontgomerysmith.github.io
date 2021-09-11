@@ -1,0 +1,548 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Example</TITLE>
+<META NAME="description" CONTENT="Example">
+<META NAME="keywords" CONTENT="tutor">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="tutor.css">
+
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="tutor.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html34"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html32"
+  HREF="tutor.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html26"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html35"
+  HREF="node3.html">The basic commands</A>
+<B> Up:</B> <A NAME="tex2html33"
+  HREF="tutor.html">tutor</A>
+<B> Previous:</B> <A NAME="tex2html27"
+  HREF="node1.html">Introduction</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000"></A> <A NAME="example"></A>
+<BR>
+Example
+</H1>
+
+<P>
+<PRE># Start the question
+</PRE>
+
+<P>
+<PRE>
+text Chapter 8.6 Question 25
+</PRE>
+
+<P>
+<PRE>
+text Evaluate the following sum
+</PRE>
+
+<P>
+<PRE>
+sum from n = 2 to infinity of 1 over (n^2 - 1)
+</PRE>
+
+<P>
+<PRE>
+text Answer: use partial fractions
+</PRE>
+
+<P>
+<PRE>
+n^2 - 1 = (n-1)(n+1)
+</PRE>
+
+<P>
+<PRE>
+1 over (n^2 - 1) = A over (n-1) + B over (n + 1)
+</PRE>
+
+<P>
+<PRE>
+= (A(n+1) + B (n-1)) over ((n-1)(n+1))
+</PRE>
+
+<P>
+<PRE>
+1 = A n + A + B n - B
+</PRE>
+
+<P>
+<PRE>
+text Equate coefficients
+</PRE>
+
+<P>
+<PRE>
+0 = A - B
+</PRE>
+
+<P>
+<PRE>
+1 = A + B
+</PRE>
+
+<P>
+<PRE>
+text add equations
+</PRE>
+
+<P>
+<PRE>
+1 = 2A
+</PRE>
+
+<P>
+<PRE>
+A = 1 over 2
+</PRE>
+
+<P>
+<PRE>
+B = - 1 over 2
+</PRE>
+
+<P>
+<PRE>
+1 over (n squared - 1) = 1 over (2(n-1)) - 1 over (2(n+1))
+</PRE>
+
+<P>
+<PRE>
+S _ N = sum from n = 2 to N of 1 over (n^2 - 1)
+</PRE>
+
+<P>
+<PRE>
+=
+(1 over 2 - 1 over 6) + (1 over 4 - 1 over 8) + (1 over 6 - 1 over 10)
++ (1 over 8 - 1 over 12)
++ ... +
+</PRE>
+
+<P>
+<PRE>
++ (1 over (2(N-3)) - 1 over (2(N-1)) )
++ (1 over (2(N-2)) - 1 over (2N) )
+</PRE>
+
+<P>
+<PRE>
++ (1 over (2(N-1)) - 1 over (2(N+1)) )
+</PRE>
+
+<P>
+<PRE>
+=
+1 over 2 + 1 over 4 - 1 over (2N) - 1 over (2(N+1))
+</PRE>
+
+<P>
+<PRE>
+limit as N to infinity of S_N = 3 over 4
+</PRE>
+
+<P>
+
+<P>
+Chapter 8.6 Question 25
+
+<P>
+Evaluate the following sum
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sum _ {n = 2} ^ {\infty} \frac {1} {{n} ^ {2} - 1}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="82" HEIGHT="55" BORDER="0"
+ SRC="img2.png"
+ ALT="\begin{displaymath}
+\sum _ {n = 2} ^ {\infty} \frac {1} {{n} ^ {2} - 1}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Answer: use partial fractions
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{n} ^ {2} - 1 = \left( n - 1 \right) \left( n + 1 \right)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="194" HEIGHT="33" BORDER="0"
+ SRC="img3.png"
+ ALT="\begin{displaymath}
+{n} ^ {2} - 1 = \left( n - 1 \right) \left( n + 1 \right)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac {1} {{n} ^ {2} - 1} = \frac {A} {n - 1} + \frac {B} {n + 1}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="195" HEIGHT="47" BORDER="0"
+ SRC="img4.png"
+ ALT="\begin{displaymath}
+\frac {1} {{n} ^ {2} - 1} = \frac {A} {n - 1} + \frac {B} {n + 1}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+= \frac {A \left( n + 1 \right) + B \left( n - 1 \right)} {\left( n - 1 \right) \left( n + 1 \right)}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="196" HEIGHT="52" BORDER="0"
+ SRC="img5.png"
+ ALT="\begin{displaymath}
+= \frac {A \left( n + 1 \right) + B \left( n - 1 \right)} {\left( n - 1 \right) \left( n + 1 \right)}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+1 = A n + A + B n - B
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="182" HEIGHT="30" BORDER="0"
+ SRC="img6.png"
+ ALT="\begin{displaymath}
+1 = A n + A + B n - B
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Equate coefficients
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+0 = A - B
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="85" HEIGHT="30" BORDER="0"
+ SRC="img7.png"
+ ALT="\begin{displaymath}
+0 = A - B
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+1 = A + B
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="85" HEIGHT="30" BORDER="0"
+ SRC="img8.png"
+ ALT="\begin{displaymath}
+1 = A + B
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+add equations
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+1 = 2 A
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="57" HEIGHT="28" BORDER="0"
+ SRC="img9.png"
+ ALT="\begin{displaymath}
+1 = 2 A
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+A = \frac {1} {2}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="50" HEIGHT="45" BORDER="0"
+ SRC="img10.png"
+ ALT="\begin{displaymath}
+A = \frac {1} {2}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+B =  - \frac {1} {2}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="66" HEIGHT="45" BORDER="0"
+ SRC="img11.png"
+ ALT="\begin{displaymath}
+B = - \frac {1} {2}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac {1} {{n} ^ 2 - 1} = \frac {1} {2 \left( n - 1 \right)} - \frac {1} {2 \left( n + 1 \right)}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="250" HEIGHT="50" BORDER="0"
+ SRC="img12.png"
+ ALT="\begin{displaymath}
+\frac {1} {{n} ^ 2 - 1} = \frac {1} {2 \left( n - 1 \right)} - \frac {1} {2 \left( n + 1 \right)}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+{S} _ {N} = \sum _ {n = 2} ^ {N} \frac {1} {{n} ^ {2} - 1}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="131" HEIGHT="58" BORDER="0"
+ SRC="img13.png"
+ ALT="\begin{displaymath}
+{S} _ {N} = \sum _ {n = 2} ^ {N} \frac {1} {{n} ^ {2} - 1}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+= \left( \frac {1} {2} - \frac {1} {6} \right) + \left( \frac {1} {4} - \frac {1} {8} \right) + \left( \frac {1} {6} - \frac {1} {10} \right) + \left( \frac {1} {8} - \frac {1} {12} \right) + \dots +
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="462" HEIGHT="46" BORDER="0"
+ SRC="img14.png"
+ ALT="\begin{displaymath}
+= \left( \frac {1} {2} - \frac {1} {6} \right) + \left( \fr...
+...ht) + \left( \frac {1} {8} - \frac {1} {12} \right) + \dots +
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
++ \left( \frac {1} {2 \left( N - 3 \right)} - \frac {1} {2 \left( N - 1 \right)} \right) + \left( \frac {1} {2 \left( N - 2 \right)} - \frac {1} {2 N} \right)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="405" HEIGHT="54" BORDER="0"
+ SRC="img15.png"
+ ALT="\begin{displaymath}
++ \left( \frac {1} {2 \left( N - 3 \right)} - \frac {1} {2 ...
+...( \frac {1} {2 \left( N - 2 \right)} - \frac {1} {2 N} \right)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
++ \left( \frac {1} {2 \left( N - 1 \right)} - \frac {1} {2 \left( N + 1 \right)} \right)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="223" HEIGHT="54" BORDER="0"
+ SRC="img16.png"
+ ALT="\begin{displaymath}
++ \left( \frac {1} {2 \left( N - 1 \right)} - \frac {1} {2 \left( N + 1 \right)} \right)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+= \frac {1} {2} + \frac {1} {4} - \frac {1} {2 N} - \frac {1} {2 \left( N + 1 \right)}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="224" HEIGHT="50" BORDER="0"
+ SRC="img17.png"
+ ALT="\begin{displaymath}
+= \frac {1} {2} + \frac {1} {4} - \frac {1} {2 N} - \frac {1} {2 \left( N + 1 \right)}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\lim _ {N \to \infty} {S} _ {N} = \frac {3} {4}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="104" HEIGHT="45" BORDER="0"
+ SRC="img18.png"
+ ALT="\begin{displaymath}
+\lim _ {N \to \infty} {S} _ {N} = \frac {3} {4}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html34"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/local/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html32"
+  HREF="tutor.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html26"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html35"
+  HREF="node3.html">The basic commands</A>
+<B> Up:</B> <A NAME="tex2html33"
+  HREF="tutor.html">tutor</A>
+<B> Previous:</B> <A NAME="tex2html27"
+  HREF="node1.html">Introduction</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Stephen Montgomery-Smith
+2003-05-26
+</ADDRESS>
+</BODY>
+</HTML>

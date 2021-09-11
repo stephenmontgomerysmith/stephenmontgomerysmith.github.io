@@ -1,0 +1,326 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (X11; I; FreeBSD 3.1-STABLE i386) [Netscape]">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Natural Math</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFF99" LINK="#0000EF" VLINK="#55188A" ALINK="#FF0000">
+
+<CENTER>
+<H1>
+Natural Math</H1>
+<H3>by</H3>
+<H3>Stephen Montgomery-Smith</H3>
+<a href="http://www.math.missouri.edu">Mathematics Department</a>
+<br>
+<a href="http://www.missouri.edu">University of Missouri</a>
+<br>
+<a href="http://www.onlinecolumbia.com/">Columbia</a>, 
+<a href="http://www.state.mo.us/">Missouri</a>
+65211
+<p>
+<a href="mailto: stephen@math.missouri.edu">stephen@math.missouri.edu</a>
+<br>
+<a href="http://math.missouri.edu/~stephen/">http://math.missouri.edu/~stephen/</a>
+<p>
+July 21 2001
+<P>&nbsp;
+</CENTER>
+
+Natural Math is a program that takes mathematics written in a natural way
+and typesets it (using LaTeX). For example, you could create a file test.nat
+with the lines
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; integral from 0 to infinity of e ^ (-x^2/2) dx
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = sqrt (pi over 2)</TT></PRE>
+Then you type
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; naturalmath test</TT></PRE>
+which will produce a file test.tex ready for LaTeX to typeset it into a
+beautiful equation:
+<p>
+<center><img WIDTH="160" HEIGHT="46" src="img1.gif"
+alt="This is an image of the above equation when it is typeset"></center>
+<p>
+How to use it is described in more detail in the <a href="tutor">tutorial</a>.
+<p>
+You can try it out from your web browser by connecting to this
+<a href="http://cauchy.math.missouri.edu/~stephen/cgi-bin/naturalmath.cgi">site</a>.
+
+<P>This program was originally written to help disabled students
+write mathematics. The advantage
+of Natural Math over TeX/LaTeX/AMSTeX is that it is easy to learn Natural Math, and
+easy to type Natural Math with one hand or with a voice dictation system.
+(The advantage of TeX/LaTeX/AMSTeX is that one has many more options available - Natural
+Math is not recommended for writing math/science papers.)  (Recently it has been
+pointed out to me that groff has a similar looking interface.)
+
+<P>Natural Math is free software.  You may use it under Stephen's version of the
+<a href="Stephens-Artistic.txt">Artistic License</a>,
+or under the
+<a href="GNU-GPL.txt">GNU General Public License</a>.
+(See the web page
+<a href="http://www.opensource.org/licenses/artistic-license.html">http://www.opensource.org/licenses/artistic-license.html</a>
+for the original "Artistic License".)
+I would like to thank the
+<a href="http://www.nsf.gov">NSF</a> for providing support whilst this sofware
+was being developed.
+
+<P>The current version of Natural Math is about 0.5.
+Please email bug reports to me
+at 
+<a href="mailto: stephen@math.missouri.edu">stephen@math.missouri.edu</a>.
+Please also tell me about any bug fixes or enhancements you make.
+
+<P>Here are the files required, and the tutor.
+To run it, you will need Perl version 5
+installed on your system. You will also need LaTeX version 2e in order
+to make use of the output from the program Natural Math.  I give some 
+suggestions as to where to get these packages in the instructions below.
+
+<p>
+The Windows/DOS package consists of the files
+<br><A HREF="naturalmath.pl">naturalmath.pl</A>
+(the perl script),
+<br><A HREF="naturalmath.bat">naturalmath.bat</A>
+(the batch file),
+<br><A HREF="tutor.nat">tutor.nat</A>
+(the tutorial),
+<br><a href="example.nat">example.nat</a>
+(an example .nat file, described in the tutorial),
+<br><a href="install.html">install.html</a>
+(installation instructions in html - what you are reading now),
+<br><a href="Stephens-Artistic.txt">Stephens-Artistic.txt</a>
+(my version of the Artistic License)
+<br><a href="GNU-GPL.txt">GNU-GPL.txt</a>
+(the GNU General Public License).
+
+<p>
+The UNIX package consists of
+<br><A HREF="naturalmath">naturalmath</A>
+(the perl script),
+<br><A HREF="tutor.nat">tutor.nat</A>
+(the tutorial),
+<br><a href="example.nat">example.nat</a>
+(an example .nat file, described in the tutorial),
+<br><a href="install.html">install.html</a>
+(installation instructions in html - what you are reading now),
+<br><a href="Stephens-Artistic.txt">Stephens-Artistic.txt</a>
+(my version of the Artistic License)
+<br><a href="GNU-GPL.txt">GNU-GPL.txt</a>
+(the GNU General Public License).
+
+<p>(Note that naturalmath and naturalmath.pl are exactly the same.)
+
+<p>Also available is the CGI script <a href="naturalmath-cgi.txt">naturalmath.cgi</a>
+that is used at this 
+<a href="http://cauchy.math.missouri.edu/~stephen/cgi-bin/naturalmath.cgi">site</a>.
+
+<p>You can get all of these in compressed format in
+<a href="naturalmath-0.5.tar.gz">naturalmath-0.5.tar.gz</a>
+or
+<a href="naturalmath-0.5.zip">naturalmath-0.5.zip</a>.
+
+<p>
+Optional extras (derived files/directories that
+need not be distributed with the above files, but still
+covered by the copyright):
+<br><A HREF="tutor.tex">tutor.tex</A>
+(the tutorial as a LaTeX file),
+<br><A HREF="tutor.dvi">tutor.dvi</A>
+(the tutorial as a dvi file),
+<br><A HREF="tutor.ps">tutor.ps</A>
+(the tutorial as a postscript file),
+<br><A HREF="tutor.pdf">tutor.pdf</A>
+(the tutorial as a pdf file),
+<br><a href="tutor">tutor</a>
+(the tutoral in html).
+
+
+<P>
+<H3>
+How to install Natural Math in Windows 9x</H3>
+
+The program Natural Math requires two things: Perl version 5, and LaTeX
+version 2e. If you have these already installed, you are doing great, and
+you can skip the next few steps.
+
+<P>One place to install Perl from is the web site <A HREF="http://www.ActiveState.com/ActivePerl/">http://www.ActiveState.com/ActivePerl/</A>.
+At the time of this writing, it has a version 509, and a trial version
+513. I guess that version 509 is the way to go for now. If you are running
+Windows 95, you should follow the link provided in the above web site to
+the Microsoft web site <A HREF="http://www.microsoft.com/com/dcom/dcom1_2/default.asp">http://www.microsoft.com/com/dcom/dcom1_2/default.asp</A>
+This will provide you with a patch to Windows 95 that is required for ActivePerl.
+
+<P>Installing these programs is a breeze - just click on the executables
+(do the DCOM1_2 program first), answer a few simple questions (like where
+you want it installed - if you can't figure out the questions about Explorer
+don't worry about it), and don't forget to reboot your machine after installing
+each piece of software.
+
+<P>Next, you need to install TeX. I like miktex, which is available from
+a large number of ftp sites, the so called CTAN sites. You can get a list
+of them by searching for CTAN in any search engine. The one I used was
+<A HREF="ftp://ftp.duke.edu/tex-archive/">ftp://ftp.duke.edu/tex-archive/</A>.
+After getting to whichever ftp site you want, look in <A HREF="ftp://ftp.duke.edu/tex-archive/systems/win32/miktex/1.11/">systems/win32/miktex/1.11/</A>
+Personally, I would get the basic system, so download the file <A HREF="ftp://ftp.duke.edu/tex-archive/systems/win32/miktex/1.11/basic.exe">basic.exe</A>.
+Also get the file <A HREF="ftp://ftp.duke.edu/tex-archive/systems/win32/miktex/1.11/INSTALL.TXT">INSTALL.TXT</A>.
+Probably you should get <A HREF="ftp://ftp.duke.edu/tex-archive/systems/win32/miktex/1.11/update.exe">update.exe</A>
+also, although I did not mess with it myself. Again installation is a breeze.
+Double click on the executable. The only trickyish bit is the question
+about the local TeX repository - I would go for it, perhaps only changing
+the disk drive name if you are going to install on a different disk than
+the default. Again, remember to reboot your machine after installing the
+system. The file <A HREF="ftp://ftp.duke.edu/tex-archive/systems/win32/miktex/1.11/INSTALL.TXT">INSTALL.TXT</A>.
+also has some additional instructions which probably are not necessary,
+but better to be safe than sorry.
+
+<P>Now you are ready to install Natural Math. This is not quite so easy,
+because I am not a Windows programmer, so I couldn't make a nice slick
+package. First decide which directory to store the program in. These instructions
+assume that you chose D:\NATURAL. Put the three files <A HREF="naturalmath.pl">naturalmath.pl</A>,
+<A HREF="naturalmath.bat">naturalmath.bat</A> and <A HREF="tutor.nat">tutor.nat</A>
+into that directory, as well as the files
+<a href="Stephens-Artistic.txt">Stephens-Artistic.txt</a>
+and
+<a href="GNU-GPL.txt">GNU-GPL.txt</a>.
+(To download these files, press the shift key whilst
+clicking on the link.) 
+If necessary, edit the file <A HREF="naturalmath.bat">naturalmath.bat</A>
+to reflect the choice of this directory (currently it is set to work for
+D:\NATURAL).
+
+<P>Next, you need to edit C:\AUTOEXEC.BAT on your computer. It will have
+some lines in it that look something like:
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path c:\pk204g
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PATH=%PATH%;C:\WSMU\dl;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SET PATH=D:\TEXMF\MIKTEX\BIN;D:\PERL\BIN;%PATH%</TT></PRE>
+To one of these lines, you should add D:\NATURAL (upper or lower case -
+it does not matter), for example, to the first line:
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path c:\pk204g;d:\natural</TT></PRE>
+You need to reboot again for these changes to take effect. Now start a
+DOS command line window. Go to the directory you put Natural Math into
+by, say, typing
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cd \natural</TT></PRE>
+Now test Natural Math by typing
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; naturalmath tutor</TT></PRE>
+You should get an output something like
+<PRE><TT>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is Natural Math version 0.2alpha, last modified March 19, 1999.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; These errors were inserted deliberately.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Error: what's this: `These' just before line 604
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 + 2 over (x + yy) - 11.2235 +
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Error: what's this: `yy' just before line 580
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1+2
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Error: right bracket missing just before line 583
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Created tutor.tex from tutor.nat.</TT></PRE>
+(Don't worry about the error messages - they are deliberately in the
+tutorial to illustrate errors.)
+
+<p>
+If you want to run LaTeX, you can do it with the command
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; latex tutor</TT></PRE>
+or by the command which will run natural Math and LaTeX in one go:
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; naturalmath /l tutor</TT></PRE>
+To view the typeset file, start your previewer program. In the case of
+miktex you do this by typing
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; yap tutor</TT></PRE>
+From here you can print out the tutorial by pressing the print buttons.
+You may get some error messages indicating that you need to set up the
+printer in YAP correctly - if so press the appropriate buttons (sorry I
+cannot help you much more here, but a local computer boffin should be able
+to help).
+
+<P>In general, you can create any file of type .nat and Natural Math will
+process it for you. If you think that it is too much to type all of naturalmath,
+you can change the name of naturalmath.bat to, for example, nm.bat, and
+now the command to invoke the program will be
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nm filename</TT></PRE>
+
+<H3>
+How to install Natural Math in Unix</H3>
+
+You need to have Perl version 5 and LaTeX version 2e installed on your
+system. If you don't have these already installed, it will be a little
+hard for me to give complete instructions, as the different versions of
+Unix are so, well, different. I use FreeBSD 3.x where this installation
+is a breeze via the ports collection.
+
+<P>First you need to install Perl version 5. It is very likely that this
+is already installed. To find out, type
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; perl -v</TT></PRE>
+and hopefully it will report that you have a version number something like
+5.005_02. If you get an earlier version, or a "Command not found" error,
+you will need to install Perl version 5. Look in <A HREF="http://www.perl.com/pace/pub/perldocs/latest.html">http://www.perl.com/pace/pub/perldocs/latest.html</A>
+to find information. (On FreeBSD 2.x install from /usr/ports/lang/perl5.)
+
+<P>Again, it is very likely you have LaTeX installed. Otherwise, it is
+available from a a large number of ftp sites, the so called CTAN sites.
+You can get a list of them by searching for CTAN in any search engine.
+The one I used was <A HREF="ftp://ftp.duke.edu/tex-archive/">ftp://ftp.duke.edu/tex-archive/</A>.
+
+<P>The distribution I used was teTeX, which has <I>everything</I>. After
+getting to whichever ftp site you want, look in <A HREF="ftp://ftp.duke.edu/tex-archive/systems/unix/teTeX/">systems/unix/teTeX/</A>.
+(On FreeBSD install from /usr/ports/print/teTeX.)
+
+<P>Now you are ready to install Natural Math. Put the file <A HREF="naturalmath">naturalmath</A>
+anywhere where you put executables (for example /usr/local/bin, or $HOME/bin,
+$HOME is your home directory). Find out where your perl is installed with
+the command
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; which perl</TT></PRE>
+and edit the top line of <A HREF="naturalmath">naturalmath</A> appropriately
+(now it assumes that perl is in /usr/bin/perl).  You also need to make
+sure that the file naturalmath is set to be executable:
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; chmod +x /whereeveritis/naturalmath</TT></PRE>
+where <TT>/whereeveritis</TT> is the location where you have put the file
+naturalmath.
+
+
+<P>Next, get the file <A HREF="tutor.nat">tutor.nat</A>. You may want to
+put this in some place where you put other document files.
+You should also get the files
+<a href="Stephens-Artistic.txt">Stephens-Artistic.txt</a>
+and
+<a href="GNU-GPL.txt">GNU-GPL.txt</a>,
+and put them somewhere easy to find.
+
+<P>Now test Natural Math by typing
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; naturalmath tutor</TT></PRE>
+You should get an output something like
+<PRE><TT>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is Natural Math version 0.2alpha, last modified March 19, 1999.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; These errors were inserted deliberately.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Error: what's this: `These' just before line 604
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 + 2 over (x + yy) - 11.2235 +
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Error: what's this: `yy' just before line 580
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1+2
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Error: right bracket missing just before line 583
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Created tutor.tex from tutor.nat.</TT></PRE>
+(Don't worry about the error messages - they are deliberately in the
+tutorial to illustrate errors.)
+
+<p>
+If you want to run LaTeX, you can do it with the command
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; latex tutor</TT></PRE>
+or by the command which will run natural Math and LaTeX in one go:
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; naturalmath -l tutor</TT></PRE>
+To view the typeset file, start your previewer program. For example
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xdvi tutor</TT></PRE>
+To print the file, use your local dvi printer program, which might be
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dvips tutor</TT></PRE>
+or
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dvips tutor -o!lpr</TT></PRE>
+In general, you can create any file of type .nat and Natural Math will
+process it for you. If you think that it is too much to type all of naturalmath,
+you can change (or link) the name of naturalmath to, for example, nm, and
+now the command to invoke the program will be
+<PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nm filename</TT></PRE>
+
+</BODY>
+</HTML>
