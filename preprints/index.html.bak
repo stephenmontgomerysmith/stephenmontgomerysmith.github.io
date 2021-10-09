@@ -4,12 +4,8 @@
    <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; U; IRIX 5.3 IP22) [Netscape]">
    <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
    <TITLE>Preprints</TITLE>
-   <script type="text/x-mathjax-config">
-     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-   </script>
-   <script type="text/javascript"
-     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-   </script>
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </HEAD>
 <BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
 
@@ -17,24 +13,78 @@
 <H1>
 Preprints for Stephen Montgomery-Smith</H1></CENTER>
 
-These are most of my preprints. If you want other preprints, please email me at <A HREF="mailto: stephen@missouri.edu">stephen@missouri.edu</A>, but chances are I don't have it in electronic form. Some of the tex files are plain tex, some are latex, some are amstex. I would like to thank the <a href="http://www.nsf.gov">NSF</a> for their support of the research that is contained in these papers.
+These are most of my preprints. If you want other preprints, please email me at <A HREF="mailto: stephen@missouri.edu">stephen@missouri.edu</A>, but chances are I don't have it in electronic form. Some of the tex files are plain tex, some are latex, some are amstex. I would like to thank the <a href="http://www.nsf.gov">NSF</a> for their support of some of the research that is contained in these papers.  I would like to thank God for being being with me during this whole process.
 
 <p>
 <UL>
 <LI>
 <B>List of Publications on 
-<A HREF="http://www.ams.org/mathscinet/search/publications.html?arg3=&co4=AND&co5=AND&co6=AND&co7=AND&dr=all&pg4=AUCN&pg5=TI&pg6=PC&pg7=ALLF&pg8=ET&review_format=html&s4=Montgomery-Smith&s5=&s6=&s7=&s8=All&vfpref=html&yearRangeFirst=&yearRangeSecond=&yrop=eq&r=1&extend=1">AMS Server</A></B>
-(you need access to MathSciNet to use this).</LI>
+<A HREF="http://www.ams.org/mathscinet/search/author.html?mrauthid=289344">AMS Server</A></B>
+(you need access to MathSciNet to see this).</LI>
 
 <LI>
-<B>Preprints on <a href="http://arxiv.org/a/montgomerysmith_s_1">arxiv.org</A>.</B></LI>
+<B>List of Publications on 
+<A HREF="https://www.scopus.com/authid/detail.uri?authorId=6701819192">Scopus</A></B>
+(you need access to Scopus to see this).</LI>
+
+<LI>
+<B>List of Publications on 
+<A HREF="https://scholar.google.com/citations?user=hfAYnY4AAAAJ&hl=en">Google Scholar</A></B>.</LI>
+
+<LI>
+<B>Preprints on <a href="https://arxiv.org/a/montgomerysmith_s_1.html">arxiv.org</A>.</B></LI>
+
+<LI>
+<B>Jacob Clark and Stephen Montgomery-Smith&#44; <A HREF="shapley.html">Shapley-like values without symmetry.</A></B>
+<I>Preprint.</I>
+Following the work of Lloyd Shapley on the Shapley value, and tangentially the work of Guillermo Owen, we offer an alternative non-probabilistic formulation of part of the work of Robert J. Weber in his 1978 paper "Probabilistic values for games."  Specifically, we focus upon efficient but not symmetric allocations of value for cooperative games. We retain standard efficiency and linearity, and offer an alternative condition, "reasonableness," to replace the other usual axioms. In the pursuit of the result, we discover properties of the linear maps that describe the allocations. This culminates in a special class of games for which any other map that is "reasonable, efficient" can be written as a convex combination of members of this special class of allocations, via an application of the Krein-Milman theorem.
+(<A HREF="shapley-2.tex">tex</A>, <A HREF="shapley-2.tex">bbl</A>, <A HREF="shapley-2.pdf">pdf</A>.)</LI>
+
+<LI>
+<B>Zheng Li, Mo Yang, Yuwen Zhang and Stephen Montgomery-Smith&#44; <A HREF="heat_pipes_journal.html">Investigation on Oscillatory Flow in an Oscillating Heat Pipe with Random Initial Conditions.</A></B>
+<I>Journal of Enhanced Heat Transfer, 22 (6): 485–502 (2015).</I>
+Effects of initial conditions on the oscillatory flow in oscillating heat pipes (OHPs) are investigated numerically. Initial vapor temperature, pressure and liquid displacement are in consideration. Three test cases are solved with different initial condition settings. Liquid displacement and vapor temperature tendencies are compared to find which initial condition lead to the best heat transfer performance in all test cases. Fast Fourier transform is employed to calculate the frequency based on liquid displacement. The results show that initial condition has significant effect on oscillating heat pipe performance and keeping initial condition uniform is an effective way for heat transfer enhancement of the system.
+(<A HREF="http://www.dl.begellhouse.com/journals/4c8f5faa331b09ea,31ae76120c8e1edd,23fc06a5305153b0.html">actual article</A>.  This is a slightly modified version of <A HREF="heat_pipes.html">this article</A>.)</LI>
+
+<LI>
+<B>Stephen Montgomery-Smith and Hesam Oveys&#44; <A HREF="branching.html">Age-dependent Branching Processes and Applications to the Luria-Delbr&uuml;ck Experiment.</A></B> <I><a href="https://ejde.math.txstate.edu/">Electron. J. Differential Equations</a>, Vol. 2021 (2021), No. 56, pp. 1-22.</I>
+Microbial populations adapt to their environment by acquiring advantageous mutations, but in the early twentieth century, questions about how these organisms acquire mutations arose. The experiment of Salvador Luria and Max Delbr&uuml;ck that won them a Nobel Prize in 1969 confirmed that mutations don't occur out of necessity, but instead can occur many generations before there is a selective advantage, and thus organisms follow Darwinian evolution instead of Lamarckian. Since then, new areas of research involving microbial evolution have spawned as a result of their experiment. Determining the mutation rate of a cell is one such area. Probability distributions that determine the number of mutants in a large population have been derived by D. E. Lea, C. A. Coulson, and J. B. S. Haldane. However, not much work has been done when time of cell division is dependent on the cell age, and even less so when cell division is asymmetric, which is the case in most microbial populations. Using probability generating function methods, we rigorously construct a probability distribution for the cell population size given a life-span distribution for both mother and daughter cells, and then determine its asymptotic growth rate. We use this to construct a probability distribution for the number of mutants in a large cell population, which can be used with likelihood methods to estimate the cell mutation rate.
+(<A HREF="branching.tex">tex</A>, <A HREF="references.bib">references.bib</A>, <A HREF="branching.pdf">pdf</A>, <A HREF="https://ejde.math.txstate.edu/Volumes/2021/56/abstr.html">actual article</A>.)</LI>
+
+<LI>
+<B>Stephen Montgomery-Smith, Anh Le, George Smith, Sidney Billstein, Hesam Oveys, Dylan Pisechko and Austin Yates&#44; <A HREF="luria-delbruck.html">Estimation of Mutation Rates from Fluctuation Experiments via Probability Generating Functions.</A></B> <I>Unpublished.</I>
+This paper calculates probability distributions modeling the Luria-Delbr&uuml;ck experiment.  We show that by thinking purely in terms of generating functions, and using a 'backwards in time' paradigm, that formulas describing various situations can be easily obtained.  This includes a generating function for Haldane's probability distribution due to Ycart.  We apply our formulas to both simulated and real data created by looking at yeast cells acquiring an immunization to the antibiotic canavanine.
+This paper is somewhat incomplete, having been last significantly modified in March 29, 2014.  However the first author feels that this paper has some worthwhile ideas, and so is going to make this paper publicly available.
+(<A HREF="luria-delbruck2.pdf">pdf</A>.)</LI>
+
+<LI>
+<B>Zheng Li, Mo Yang, Yuwen Zhang and Stephen Montgomery-Smith&#44; <A HREF="heat_pipes.html">Effects of Initial Conditions on Oscillatory Flow in an Oscillating Heat Pipe.</A></B>
+<I>Proceedings of the 1st Thermal and Fluid Engineering Summer Conference, TFESC
+August 9-12, 2015, New York City, USA.</I>
+Effects of initial conditions on the oscillatory flow in oscillating heat pipes (OHPs) are investigated numerically. Initial vapor temperature, pressure and liquid displacement are in consideration. Three test cases are solved with different initial condition settings. Liquid displacement and vapor temperature tendencies are compared to find which initial condition lead to the best heat transfer performance in all test cases. Fast Fourier transform is employed to calculate the frequency based on liquid displacement. The results show that initial condition has significant effect on oscillating heat pipe performance and keeping initial condition uniform is an effective way for heat transfer enhancement of the system.
+(<A HREF="heat_pipes.pdf">pdf</A>.)</LI>
+
+<LI>
+<B>George P. Smith, Miriam Golomb, Sidney K. Billstein and Stephen Montgomery-Smith&#44; <A HREF="RevisedLuriaDelbruckPaperSubmitted.html">An Enduring Legacy: The Luria-Delbrück Fluctuation Test as a
+Classroom Investigation in Darwinian Evolution.</A></B>
+<I>American Biology Teacher, Volume 77 (8), October 2015.</I>
+Microbial cultures swiftly adapt to lethal agents such as antibiotics or viruses by acquiring resistance
+mutations. Does this remarkable adaptability require a Lamarckian explanation, whereby the agent
+specifically directs resistance mutations? Soon after the question arose, Luria and Delbrück devised a
+clever experiment, the <I>fluctuation test</I>, that answered this question in the negative: microbial adaptation,
+they showed, is entirely consistent with a Darwinian explanation. Their 1943 article is a classic of biology
+literature, with practical and theoretical implications that continue to expand today. Implementing an
+updated fluctuation test in a college teaching lab provides a simple experimental setting in which
+beginning students learn to apply basic principles of evolutionary biology and scientific reasoning, while
+gaining hands-on experience in core technical advances of contemporary life science.
+(<A HREF="RevisedLuriaDelbruckPaperSubmitted.pdf">pdf</A>, <A HREF="https://mls.missouri.edu/yeast-fluctuation-test-lab-american-biology-teacher-article/">actual article and supplementary material</a>.)</LI>
 
 <LI>
 <B>Stephen Montgomery-Smith&#44; <A HREF="hamiltonian-friction.html">Hamiltonians representing equations of motion with damping due to friction.</A></B>
 <I>Electron. J. Diff. Equ., Vol. 2014 (2014), No. 89, pp. 1-10.</I>
-Suppose that $H(q,p)$ is a Hamiltonian on a manifold $M$, and $\tilde L(q,\dot q)$, the Rayleigh dissipation function, satisfies the same hypotheses as a Lagrangian on the manifold $M$.  We provide a Hamiltonian framework that gives the equations
-$\dot p  = \frac{\partial H}{\partial p}$,
-$\dot q = - \frac{\partial H}{\partial q} - \frac{\partial \tilde L}{\partial \dot q}$.
+Suppose that \(H(q,p)\) is a Hamiltonian on a manifold $M$, and $\tilde L(q,\dot q)$, the Rayleigh dissipation function, satisfies the same hypotheses as a Lagrangian on the manifold $M$.  We provide a Hamiltonian framework that gives the equations
+$\dot q  = \frac{\partial H}{\partial p}$,
+$\dot p = - \frac{\partial H}{\partial q} - \frac{\partial \tilde L}{\partial \dot q}$.
 The method is to embed $M$ into a larger framework where the motion drives a wave equation on the negative half line, where the energy in the wave represents heat being carried away from the motion.  We obtain a version of N&ouml;ther's Theorem that is valid for dissipative systems.  We also show that this framework fits the widely held view of how Hamiltonian dynamics can lead to the "arrow of time."
 (<A HREF="hamiltonian-friction4.pdf">pdf</A>, <A HREF="http://ejde.math.txstate.edu/Volumes/2014/89/abstr.html">actual article</A>.)</LI>
 
