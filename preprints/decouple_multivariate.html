@@ -4,26 +4,21 @@
    <META NAME="GENERATOR" CONTENT="A little perl program">
    <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
    <TITLE>Decoupling Inequalities for the Tail Probabilities of Multivariate U-statistics.</TITLE>
-   <script type="text/x-mathjax-config">
-     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-   </script>
-   <script type="text/javascript"
-     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HT
-MLorMML">
-   </script>
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.js"></script>
 </HEAD>
 <BODY TEXT="#000000" BGCOLOR="#66FF99" LINK="#0000EE" VLINK="#551A8B" ALINK="#FF0000">
 
 <B>Stephen Montgomery-Smith and <A HREF="http://www.stat.columbia.edu/pg_pena.html">Victor de la Pe&ntilde;a</A>&#44; Decoupling Inequalities for the Tail Probabilities of Multivariate U-statistics.</B>
 <I>Annals Prob. <B>23</B>, (1995), 806-816.</I>
 In this paper the following result, which allows one to decouple U-Statistics in tail probability, is proved in full generality.
-Theorem 1. Let $X_i$ be a sequence of independent random variables taking values in a measure space $\mathcal S$, and let $f_{i_1,\dots,i_k}$ be measurable functions from $\mathcal S^k$ to a Banach space $B$. Let $(X_i^{(j)})$ be independent copies of $(X_i)$. The following inequality holds for all $t \ge 0$ and all $n \ge 2$ 
-$$ P\left(\left\|\sum_{1 \le i_1 \ne \cdots \ne i_k \le n} f_{i_1,\dots,i_k}(X_{i_1},\dots,X_{i_k})\right\| \ge t\right)
+Theorem 1. Let \(X_i\) be a sequence of independent random variables taking values in a measure space \(\mathcal S\), and let \(f_{i_1,\dots,i_k}\) be measurable functions from \(\mathcal S^k\) to a Banach space \(B\). Let \((X_i^{(j)})\) be independent copies of \((X_i)\). The following inequality holds for all \(t \ge 0\) and all \(n \ge 2\) 
+\[ P\left(\left\|\sum_{1 \le i_1 \ne \cdots \ne i_k \le n} f_{i_1,\dots,i_k}(X_{i_1},\dots,X_{i_k})\right\| \ge t\right)
 \le C_k
-P\left(\left\|C_k \sum_{1 \le i_1 \ne \cdots \ne i_k \le n} f_{i_1,\dots,i_k}(X_{i_1}^{(1)},\dots,X_{i_k}^{(k)})\right\| \ge t\right) .$$
-Furthermore, the reverse inequality also holds in the case that the functions $\{f_{i_1,\dots,i_k}\}$ satisfy the symmetry condition
-$$ f_{i_1,\dots,i_k}(X_{i_1},\dots,X_{i_k}) = f_{i_{\pi(1)},\dots,i_{\pi(k)}}(X_{i_{\pi(1)}},\dots,X_{i_{\pi(k)}}) $$
-for all permutations $\pi$ of $\{1,\dots,k\}$. Note that the expression $i_1 \ne \cdots \ne i_k$ means that $i_r \ne i_s$ for $r \ne s$. Also, $C_k$ is a constant that depends only on $k$.
+P\left(\left\|C_k \sum_{1 \le i_1 \ne \cdots \ne i_k \le n} f_{i_1,\dots,i_k}(X_{i_1}^{(1)},\dots,X_{i_k}^{(k)})\right\| \ge t\right) .\]
+Furthermore, the reverse inequality also holds in the case that the functions \(\{f_{i_1,\dots,i_k}\}\) satisfy the symmetry condition
+\[ f_{i_1,\dots,i_k}(X_{i_1},\dots,X_{i_k}) = f_{i_{\pi(1)},\dots,i_{\pi(k)}}(X_{i_{\pi(1)}},\dots,X_{i_{\pi(k)}}) \]
+for all permutations \(\pi\) of \(\{1,\dots,k\}\). Note that the expression \(i_1 \ne \cdots \ne i_k\) means that \(i_r \ne i_s\) for \(r \ne s\). Also, \(C_k\) is a constant that depends only on \(k\).
 (<A HREF="decouple_multivariate.tex">tex</A>,
 <A HREF="decouple_multivariate.dvi">dvi</A>,
 <A HREF="decouple_multivariate.ps">ps</A>,
