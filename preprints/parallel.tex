@@ -62,7 +62,7 @@ In this paper, we describe a system whose state, which we will call the \emph{en
 \end{equation}
 We write $\mathsf L:\mathcal M \to \mathbb R^n$ for the function which maps the end effector position to the actuator values.  Note that we can allow the problem to be over-constrained, that is, $n$ can be bigger or equal to the dimension of $\mathcal M$.  Note that the elements of $\mathcal M$ are generalized positions in the sense of the Euler-Lagrange formalism \cite{arnold}.
 
-Examples of these are cable-driven parallel robots, consisting of a fixed rigid frame, and a floating rigid body called the end effector.  The end effector is manipulated via eight cables attached to actuators.  Each actuator is clamped to the fixed frame.  The value, $\ell_k$, of the $k$th actuator is the length of cable issued by the actuator.  The manifold $\mathcal M$ is the six dimensional space of poses, that is, positions with orientations.  See \cite{taghirad} for an introduction to parallel robots.  See \cite{pott,qian-et-al} for information about cable-driven parallel robots.  The algorithm described in this paper was tested upon a cable-driven parallel robot built by the NASA Johnson Space Center, which we describe in another paper \cite{montgomery-smith}.
+Examples of these are cable-driven parallel robots, consisting of a fixed rigid frame, and a floating rigid body called the end effector.  The end effector is manipulated via eight cables attached to actuators.  Each actuator is clamped to the fixed frame.  The value, $\ell_k$, of the $k$th actuator is the length of cable issued by the actuator.  The manifold $\mathcal M$ is the six dimensional space of poses, that is, positions with orientations.  See \cite{gallardo-alvarado,gogu,taghirad} for an introduction to parallel robots.  See \cite{pott,qian-et-al} for information about cable-driven parallel robots.  The algorithm described in this paper was tested upon a cable-driven parallel robot built by the NASA Johnson Space Center, which we describe in another paper \cite{montgomery-smith}.
 
 We assume that the only measurements we can take are the values of the actuators, and that the only method of control is to command a force at each actuator, which converts into a force on the end effector.  We assume that once the end effector force is known, one can determine the trajectory of the end effector via a frictionless, quadratic Hamiltonian system.  The force is a generalized force obeying the principle of virtual work, and we will call it the \emph{end effector force}.
 
@@ -566,6 +566,10 @@ Then it follows by equation~\eqref{mu nu} that $\theta$ is well controlled by $\
 \begin{thebibliography}{99}
 
 \bibitem{arnold} V.I. Arnold, Mathematical Methods of Classical Mechanics, 2nd Ed, Springer-Verlag, 1989.
+
+\bibitem{gallardo-alvarado} Jaime Gallardo-Alvarado, Kinematic Analysis of Parallel Manipulators by Algebraic Screw Theory, Springer, Switzerland, 2016.
+
+\bibitem{gogu} Grigore Gogu, Structural Synthesis of Parallel Robots, Springer, The Netherlands, 2008.
 
 \bibitem{gould-toint} Nicholas I. M. Gould, Philippe L. Toint, (2000). A Quadratic Programming Bibliography (PDF). RAL Numerical Analysis Group Internal Report 2000-1.
 
