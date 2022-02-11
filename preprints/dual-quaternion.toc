@@ -1,0 +1,18 @@
+\contentsline {section}{\tocsection {}{1}{Introduction}}{1}%
+\contentsline {section}{\tocsection {}{2}{Notation}}{2}%
+\contentsline {section}{\tocsection {}{3}{Motivation}}{3}%
+\contentsline {section}{\tocsection {}{4}{Dual quaternions to represent poses}}{4}%
+\contentsline {section}{\tocsection {}{5}{Kinematics: dual quaternions to represent twists}}{5}%
+\contentsline {section}{\tocsection {}{6}{Dual quaternions to represent wrenches}}{6}%
+\contentsline {section}{\tocsection {}{7}{Interpolation of poses}}{6}%
+\contentsline {section}{\tocsection {}{8}{Perturbations of poses}}{7}%
+\contentsline {section}{\tocsection {}{9}{Dual quaternions as vectors}}{7}%
+\contentsline {section}{\tocsection {}{10}{Lie derivatives}}{7}%
+\contentsline {section}{\tocsection {}{11}{Applications to parallel robots}}{8}%
+\contentsline {section}{\tocsection {}{12}{Second lie derivatives}}{9}%
+\contentsline {section}{\tocsection {}{13}{Forward kinematics for parallel robots}}{9}%
+\contentsline {section}{\tocsection {}{14}{Dynamics of the end effector}}{10}%
+\contentsline {section}{\tocsection {}{15}{Spherical linear interpolation of dual quaternions}}{10}%
+\contentsline {section}{\tocsection {}{16}{Proofs}}{11}%
+\contentsline {section}{\tocsection {}{17}{Projection from matrices to orthogonal matrices}}{13}%
+\contentsline {section}{\tocsection {}{}{References}}{13}%
