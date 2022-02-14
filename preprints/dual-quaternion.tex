@@ -1,16 +1,7 @@
-\documentclass[oneside,twocolumn,reqno]{amsart}
+\documentclass[reqno,12pt]{amsart}
 
-\usepackage{fullpage}
 \usepackage{url}
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
-\usetikzlibrary{calc}
-\usetikzlibrary{positioning}
-\usepackage{minibox}
-\usepackage{graphicx}
 \usepackage{bm}
-\usepackage{flushend}
-\usepackage{yhmath}
 \usepackage{amssymb}
 
 \makeatletter
@@ -53,7 +44,7 @@
 \email{cecil.shy-1@nasa.gov}
 
 \blfootnote{This is a preprint of a paper intended for submission to a journal.  Because changes may made before formal publication, this preprint is made available with the understanding that it is not to be cited or reproduced without permission of the author.}
-\date{Feb 5, 2022}
+\date{Feb 14, 2022}
 
 \begin{abstract}
 We advocate for the use of dual quaternions to represent poses and twists for robotics.  We show how to represent torques and forces using dual quaternions.  We introduce the notion of the Lie derivative, and explain how it can be used to calculate the behavior of actuators.  We show how to combine dual quaternions with the Newton-Raphson method to compute forward kinematics for parallel robots.  We derive the equations of motion in dual quaternion form.
@@ -251,11 +242,11 @@ The norm preserves multiplication, that is, if $\eta_1$ and $\eta_2$ are two dua
 \end{equation}
 
 If $\eta = Q + \epsilon B$ is any dual quaternion with $Q \ne 0$, then we define its \emph{normalization} to be the unit dual quaternion
-\begin{multline}
+\begin{equation}
 \label{normalize}
-\widehat \eta = |\eta|^{-1}\eta = \eta|\eta|^{-1} \\
+\widehat \eta = |\eta|^{-1}\eta = \eta|\eta|^{-1}
 = Q/|Q| + \epsilon (B - (B\cdot Q) Q/|Q|^2) .
-\end{multline}
+\end{equation}
 (We remark that the normalization of a dual quaternion is used in the computer graphics industry \cite{kavan-et-al, kavan-et-al-2}.)  While this normalization formula might seem initially quite complicated, after thinking about it one can see that it is the simplest projection that enforces $|Q| = 1$ and $B\cdot Q = 0$.
 
 The normalization also satisfies the following properties.
@@ -474,9 +465,9 @@ We make the identifications
 \setdualquat \cong \mathbb R^8,
 \end{equation}
 using the basis
-\begin{multline}
-\{\beta_1, \beta_2, \beta_3, \beta_4, \beta_5, \beta_6, \beta_7, \beta_8\} \\ = \{\bi, \bj, \bk, \epsilon\bi, \epsilon\bj, \epsilon\bk, 1, \epsilon\},
-\end{multline}  
+\begin{equation}
+\{\beta_1, \beta_2, \beta_3, \beta_4, \beta_5, \beta_6, \beta_7, \beta_8\} = \{\bi, \bj, \bk, \epsilon\bi, \epsilon\bj, \epsilon\bk, 1, \epsilon\},
+\end{equation}
 and similarly, we make the identification
 \begin{equation}
 \setpuredualquat \cong \mathbb R^6,
@@ -565,10 +556,10 @@ The Lie derivative satisfies various rules, which are also useful for explicitly
 \liederiv_\theta (g_1 \times g_2) = g_1 \times (\liederiv_\theta g_2) + (\liederiv_\theta g_1) \times g_2.
 \end{equation}
 \item The chain rule:
-\begin{multline}
+\begin{equation}
 \liederiv_\theta (h(g_1, g_2,\dots,g_m)) \\ = \sum_{i=1}^m
 \frac\partial{\partial g_i} h(g_1, g_2,\dots,g_m) \liederiv_\theta g_i .
-\end{multline}
+\end{equation}
 \end{itemize}
 
 \section{Applications to parallel robots}
@@ -643,11 +634,10 @@ Another way one might try to define the second derivative is to use the formula 
 \tilde g(\eta) = g(\hat\eta) .
 \end{equation}
 We have the following formula for the Hessian of $\tilde g$:
-\begin{multline}
+\begin{equation}
 \label{hessian}
-\left.\frac{\partial^2}{\partial\theta^2} \tilde g(\eta(1+\theta)) \right|_{\theta = 0} \\
-= \left[\tfrac12 (\liederiv_i \liederiv_j g(\eta) + \liederiv_j \liederiv_i g(\eta)) \right]_{1\le i,j\le 6}.
-\end{multline}
+\left.\frac{\partial^2}{\partial\theta^2} \tilde g(\eta(1+\theta)) \right|_{\theta = 0} = \left[\tfrac12 (\liederiv_i \liederiv_j g(\eta) + \liederiv_j \liederiv_i g(\eta)) \right]_{1\le i,j\le 6}.
+\end{equation}
 This equation is proved in Section~\ref{sec proofs}.
 
 \section{Forward kinematics for parallel robots}
@@ -860,12 +850,11 @@ Suppose the position $\bm s$ is the image of the constant position $\bm r$ under
 \dot{\bm s} = \mathsf R \starop{\bm w} \bm r + \mathsf R \bm v = \mathsf R(\bm w \times \bm r + \bm v ).
 \end{equation}
 Differentiating equation~\eqref{defn of pose on 3-vector} we obtain
-\begin{multline}
+\begin{equation}
 \epsilon \dot{\bm s}
 = \frac d{dt}\bigl(\eta(1+\epsilon \bm r)\overline \eta^*\bigr)
-\\
 = \eta\bigl(\varphi(1+\epsilon \bm r) + (1+\epsilon\bm r)\overline{\varphi}^*\bigr)\overline \eta^* .
-\end{multline}
+\end{equation}
 After some manipulation, and setting $\varphi = \tfrac12\bm a + \tfrac12\epsilon \bm b$, we obtain
 \begin{equation}
 \label{dot s 2}
@@ -1118,11 +1107,9 @@ from which it follows by equation~\eqref{rule linear} that
 Since $\overline{\bm a} = -\bm a$, and $\overline{\bm b} = - \bm b$, we have
 \begin{equation}
 \begin{aligned}
-&\liederiv_\psi \bm h \\
-&= 
+\liederiv_\psi \bm h &= 
 \tfrac12(
-Q \bm a \bm r_0 \overline Q - Q \bm r_0 \bm a \overline Q \\
-&\phantom{{}={}(Q} + 2 B \bm a \overline Q + 2 Q \bm b \overline Q - 2 B \bm a \overline Q ) \\
+Q \bm a \bm r_0 \overline Q - Q \bm r_0 \bm a \overline Q + 2 B \bm a \overline Q + 2 Q \bm b \overline Q - 2 B \bm a \overline Q ) \\
 &= Q(\bm a \times \bm r_0)\overline Q + Q \bm b \overline Q .
 \end{aligned}
 \end{equation}
@@ -1132,10 +1119,7 @@ Noting that for any three quaternions $A$, $B$, and $C$, we have
 \end{equation}
 we obtain that
 \begin{equation}
-\begin{aligned}
-\liederiv_\psi (\bm g \cdot \bm h) &= \tilde{\bm g} \cdot (\bm a \times \bm r_0 + \bm b) \\
-&= 2 \psi \cdot (\bm r_0 \times \tilde{\bm g} + \epsilon \tilde{\bm g}) .
-\end{aligned}
+\liederiv_\psi (\bm g \cdot \bm h) = \tilde{\bm g} \cdot (\bm a \times \bm r_0 + \bm b) = 2 \psi \cdot (\bm r_0 \times \tilde{\bm g} + \epsilon \tilde{\bm g}) .
 \end{equation}
 \end{proof}
 
@@ -1149,8 +1133,7 @@ So we only need to prove the kinetic energy portion in the case $\mathsf M = \ma
 &= \liederiv_\varphi ((\mathsf \Lambda \psi) \cdot \mathsf M_0 (\mathsf \Lambda \varphi))
 - \tfrac12 \liederiv_\psi  ((\mathsf \Lambda \varphi) \cdot \mathsf M_0(\mathsf \Lambda \varphi)) \\
 &= \liederiv_\varphi \liederiv_\varphi \mathsf L \cdot \mathsf M_0 \liederiv_\psi \mathsf L
-+ \liederiv_\varphi \liederiv_\psi \mathsf L \cdot \mathsf M_0\liederiv_\varphi \mathsf L \\
-& \phantom{{}={}} - \liederiv_\psi \liederiv_\varphi \mathsf L \cdot \mathsf M_0\liederiv_\varphi \mathsf L \\
++ \liederiv_\varphi \liederiv_\psi \mathsf L \cdot \mathsf M_0\liederiv_\varphi \mathsf L - \liederiv_\psi \liederiv_\varphi \mathsf L \cdot \mathsf M_0\liederiv_\varphi \mathsf L \\
 &= \liederiv_\varphi (\mathsf\Lambda \varphi) \cdot \mathsf M_0\mathsf\Lambda \psi
 + \liederiv_{(\varphi \psi - \psi \varphi)} \mathsf L \cdot \mathsf M_0\mathsf\Lambda \varphi \\
 &= \psi \cdot \mathsf\Lambda^T \mathsf M_0 \liederiv_\varphi (\mathsf \Lambda \varphi)
