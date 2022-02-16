@@ -44,10 +44,10 @@
 \email{cecil.shy-1@nasa.gov}
 
 \blfootnote{This is a preprint of a paper intended for submission to a journal.  Because changes may made before formal publication, this preprint is made available with the understanding that it is not to be cited or reproduced without permission of the author.}
-\date{Feb 14, 2022}
+\date{Feb 16, 2022}
 
 \begin{abstract}
-We advocate for the use of dual quaternions to represent poses and twists for robotics.  We show how to represent torques and forces using dual quaternions.  We introduce the notion of the Lie derivative, and explain how it can be used to calculate the behavior of actuators.  We show how to combine dual quaternions with the Newton-Raphson method to compute forward kinematics for parallel robots.  We derive the equations of motion in dual quaternion form.
+We advocate for the use of dual quaternions to represent poses and twists for robotics.  We show how to represent torques and forces using dual quaternions.  We introduce the notion of the Lie derivative, and explain how it can be used to calculate the behavior of actuators.  We show how to combine dual quaternions with the Newton-Raphson method to compute forward kinematics for parallel robots.  We derive the equations of motion in dual quaternion form.  This paper contains results we have not seen before, which are listed in the conclusion.
 \end{abstract}
 
 \maketitle
@@ -82,9 +82,6 @@ This makes it very useful if one is using the Newton-Raphson Method to find a po
 Finally we consider the dynamics of poses, that is, the equations of motion of a rigid spinning body.  In any representation this can be quite difficult, because of both centripetal and precessional effects.  But from a theoretical perspective, using the dual quaternion representation is quite slick.
 
 In summary, while the usual representation using Euler angles and translations is conceptually easy to understand, performing calculations can be difficult.  Whereas with dual quaternions, while the are initially conceptually hard to understand, when it comes to calculations they are much easier to work with.
-
-Other papers advocating for the use of dual quaternions in robotics are \cite{adorno,han-et-al,wang-et-al}.  But this paper contains formulas we have not seen elsewhere, namely equation~\eqref{inverse unit} which simplifies the comuptation of the inverse of a unit dual quaternion, equation~\eqref{approx normalize} which gives a second order expansion of the normalization of dual quaternions close to $1$, Theorem~\ref{euler-lagrange} which gives dynamics of the end effector in the language of dual quaternions as well as including the effects of driving the actuators, and Theorems~\ref{exp dq} and ~\ref{log dq} which show how to evaluate a exponential and logarithm of a dual quaternion.  We also haven't seen Lie derivatives discussed in the context of dual quaternions and robotics, nor the Newton-Raphson Method to solve for unit dual quaternions.  We also feel that the use of dual quaternions to represent twists, as in equations~\eqref{ode dual quaternion} and~\eqref{twist as dual quaternion}, hasn't received enough emphasis.
-
 
 \section{Notation}
 
@@ -759,10 +756,7 @@ is the wrench required to move the actuators, where the no-load forces may be co
 \section{Spherical linear interpolation of dual quaternions}
 \label{sec fun dq}
 
-Suppose we are given two unit dual quaternions, $\eta_1$ and $\eta_2$?  
-
-
-The problem is to find the dual quaternion valued function of time, denoted $\text{slerp}(\eta_1, \eta_2, t)$, such that at $t = 0$, it takes the value $\eta_1$, that at $t = 1$, it takes the value $\eta_2$, and such that its twist, $\theta$, is a constant pure dual quaternion.  The name of the function, `slerp', comes from the equivalent problem for orientations \cite{shoemake}.
+Suppose we are given two unit dual quaternions, $\eta_1$ and $\eta_2$?  The problem is to find the dual quaternion valued function of time, denoted $\text{slerp}(\eta_1, \eta_2, t)$, such that at $t = 0$, it takes the value $\eta_1$, that at $t = 1$, it takes the value $\eta_2$, and such that its twist, $\theta$, is a constant pure dual quaternion.  The name of the function, `slerp', comes from the equivalent problem for orientations \cite{shoemake}.
 
 This requires two functions.  The first is the exponential function, defined in equation~\eqref{exponential}.  The function $\exp(t \theta)$ as function of time $t$ is the pose traveled if it is the identity pose at $t = 0$, and maintains a constant twist $\theta$.  The second is a logarithm function, which given a unit dual quaternion $\eta$, finds $\theta$ such that $\exp(\theta) = \eta$.  There are infinitely many possibilities for $\theta$, so we will just describe the principal value, that is, the one for which the norm of the angular velocity is minimized.  Then
 \begin{equation}
@@ -773,7 +767,7 @@ This requires two functions.  The first is the exponential function, defined in 
 \end{equation}
 If one is merely interested in interpolating between the poses represented by these unit dual quaternions, multiply one of them by $\pm 1$ so that non-dual part of $\eta_1 \eta_2^{-1}$ has non-negative real part.
 
-The results of this section may be found in \cite{montgomery-smith}.  We have seen similar results in other places, but the ones we have found seem to have errors.
+The results of this section may be found in \cite{montgomery-smith}.  We have seen similar results in \cite{wang-et-al}, but we believe our formulas to be more explicit.
 
 Given any dual quaternion
 \begin{equation}
@@ -1150,6 +1144,10 @@ where we used equation~\eqref{lie bracket diff = diff lie bracket}.  Then it is 
 \label{sec final note}
 
 What would be a good projection of $(3 \times 3)$ matrices onto rotation matrices?  One suggestion is $\mathsf A \mapsto \widehat{\mathsf A} = (\mathsf A\mathsf A^T)^{-1/2} \mathsf A = \mathsf A (\mathsf A^T \mathsf A)^{-1/2}$, which works if we have $\det(\mathsf A) > 0$.  One way to compute it is via the singular value decomposition $\mathsf A = \mathsf U \mathsf \Sigma \mathsf V^T$, when $\widehat{\mathsf A} = \mathsf U\mathsf V^T$.  However this is computationally expensive.  See \cite{higham}.
+
+\section{Conclusion}
+
+There are many papers advocating for the use of dual quaternions in robotics \cite{adorno,han-et-al,wang-et-al}.  But this paper contains formulas we have not seen elsewhere, namely equation~\eqref{inverse unit} which simplifies the comuptation of the inverse of a unit dual quaternion, equation~\eqref{approx normalize} which gives a second order expansion of the normalization of dual quaternions close to $1$, Theorem~\ref{euler-lagrange} which gives dynamics of the end effector in the language of dual quaternions as well as including the effects of driving the actuators, and Theorems~\ref{exp dq} and ~\ref{log dq} which show how to evaluate a exponential and logarithm of a dual quaternion.  We also haven't seen Lie derivatives discussed in the context of dual quaternions and robotics, nor the Newton-Raphson Method to solve for unit dual quaternions.  We also feel that the use of dual quaternions to represent twists, as in equations~\eqref{ode dual quaternion} and~\eqref{twist as dual quaternion}, hasn't received enough emphasis.
 
 \begin{thebibliography}{99}
 
