@@ -52,7 +52,7 @@ We advocate for the use of dual quaternions to represent poses and twists for ro
 
 \maketitle
 
-\tableofcontents
+%\tableofcontents
 
 \section{Introduction}
 
@@ -82,72 +82,6 @@ This makes it very useful if one is using the Newton-Raphson Method to find a po
 Finally we consider the dynamics of poses, that is, the equations of motion of a rigid spinning body.  In any representation this can be quite difficult, because of both centripetal and precessional effects.  But from a theoretical perspective, using the dual quaternion representation is quite slick.
 
 In summary, while the usual representation using Euler angles and translations is conceptually easy to understand, performing calculations can be difficult.  Whereas with dual quaternions, while the are initially conceptually hard to understand, when it comes to calculations they are much easier to work with.
-
-\section{Notation}
-
-Scalars (or scalar valued functions) are generally represented by lower case Roman letters, the exception being $\ell$ for actuator values.  3-vectors are represented by bold face Roman letters.  Dual quaternions and 6-vectors are represented by lower case Greek letters.  Quaternions are generally represented by upper case Roman letters, except since pure quaternions can be identified with 3-vectors, they are often instead denoted by bold face lower case Roman letters.
-
-Matrices are represented by san-serif capital letters, either Roman or Greek.  Functions taking vectors to vectors are represented by san-serif capital Roman letters, or by the font corresponding to the type of the output of the function.
-
-The following list gives examples of notation that is commonly used in this paper.  We try to restrict ourselves to notation that is used in several places throughout the paper.
-
-\begin{itemize}
-\item $t$: time.
-\item $\dot g$: time derivative of $g$.
-\item $\ddot g$: second time derivative of $g$.
-\item $\bi$, $\bj$, $\bk$: standard unit 3-vectors/quaternions.
-\item $\overline A$: conjugate of the quaternion $A$.
-\item $|A| = \sqrt{A\overline A}$: norm of the quaternion $A$ (scalar).
-\item $\realpart(A) = \tfrac12(A + \overline A)$: real part of the quaternion $A$ (scalar).
-\item $\imagpart(A) = \tfrac12(A - \overline A)$: imaginary part of the quaternion $A$ (3-vector/quaternion).
-\item $\widehat{A} = A/|A|$: normalization of the quaternion $A$ (unit quaternion).
-\item $A \cdot B = \realpart(A \overline B)$: dot product of quaternions $A$ and $B$ (scalar).
-\item $\mathsf R$: orthogonal matrix representing rotation ($(3 \times 3)$ matrix).
-\item $Q = \cos(\tfrac12 a) + \bm s \sin(\tfrac12 a)$: quaternion representing rotation about axis $\bm s$ by angle $a$ (unit quaternion).
-\item $\bm t$: translation (3-vector).
-\item $\epsilon$: dual quaternion such that $\epsilon^2 = 0$.
-\item $l$: characteristic length scale (scalar).
-\item $\|A + \epsilon B\| = \sqrt{|A|^2 + l^{-2} |B|^2}$: size of the dual quaternion $A + \epsilon B$ (scalar).
-\item $\overline\eta$: conjugate of the dual quaternion $\eta$.
-\item $|\eta| = \sqrt{\eta\overline\eta}$: norm of the dual quaternion $\eta$ (dual number).
-\item $\widehat\eta = |\eta|^{-1} \eta$: normalization of the dual quaternion $\eta$.
-\item $\setdualquat$: the set of dual quaternions.
-\item $\setunitdualquat$: the set of unit dual quaternions.
-\item $\setpuredualquat$: the set of pure dual quaternions.
-\item $\eta = Q + \frac12 \epsilon \bm t Q$: pose (unit dual quaternion).
-\item $\|\eta\|$: size of the dual quaternion $\eta$ (scalar).
-\item $\bm w$: angular velocity (3-vector).
-\item $\starop{\bm w}$: Hodge star operator of $\bm w$ ($(3\times3)$-matrix).
-\item $\bm v$: translational velocity (3-vector).
-\item $\varphi = \frac12\bm w + \frac12\epsilon \bm v$: twist (pure dual quaternion).
-\item $\alpha = \dot\varphi$: acceleration (pure dual quaternion).
-\item $\bm q$: torque (3-vector).
-\item $\bm p$: force (3-vector).
-\item $\tau = 2\bm q + 2 \epsilon \bm p$: wrench (pure) dual quaternion.
-\item $\bm r_0$: center of mass of end effector (3-vector).
-\item $\theta$: perturbation of pose (pure dual quaternion).
-\item $\eta_1 \liediff \eta_2 = \tfrac12(\overline\eta_2\eta_1 - \overline\eta_1 \eta_2)$: Lie difference of $\eta_1$ and $\eta_2$ (pure dual quaternion).
-\item $\beta_i$: basis element dual quaternion.
-\item $\eta_1 \cdot \eta_2$: dot product of dual quaternions as vectors (scalar).
-\item $\liederiv_\theta g$: directional Lie derivative of $g$ (same type as $g$).
-\item $\liederiv_i g$: partial Lie derivative of $g$ (same type as $g$).
-\item $\liederiv g$: full Lie derivative of $g$ (pure dual quaternion).
-\item $\bm \ell$: actuator values ($n$-vector).
-\item $\bm f$: actuator forces ($n$-vector).
-\item $\mathsf L$: function that converts $\eta$ to $\bm \ell$.
-\item $\mathsf \Lambda = \liederiv\mathsf L$: matrix that converts $\varphi$ to $\dot{\bm \ell}$.
-\item $\mathsf T = \mathsf\Lambda^T$: matrix that converts $\bm f$ to $\tau$.
-\item $\left[\frac{\partial^2g}{\partial\eta^2}\right]$: Hessian matrix of $g$ ($(8 \times 8)$ matrix).
-\item $\mathsf Y$: function that converts $\bm\ell$ to $\eta$.
-\item $\bm f_0$: no-load actuator forces ($n$-vector).
-\item $\mathsf M_0$: effective no-load moment of inertia of actuators ($(n\times n)$ matrix).
-\item $m_e$: mass of the end effector (scalar).
-\item $\mathsf M_e$: moment of inertia of end effector ($(3\times3)$ matrix).
-\item $\bm g$: acceleration due to gravity (3-vector).
-\item $\tilde{\bm g} = \overline Q \bm g Q$: acceleration due to gravity in moving frame of reference (3-vector).
-\item $\mathsf M$: effective mass of the parallel robot ($(6\times6)$ matrix).
-\item $\mu$: additive term used in converting acceleration $\alpha$ to wrench $\tau$ (pure dual quaternion).
-\end{itemize}
 
 \section{Motivation}
 \label{sec motivation}
@@ -932,13 +866,13 @@ Define the \emph{cross product} of two pure dual quaternions $\alpha = \bm a + \
 \end{equation}
 Define the \emph{adjoint products} of pure dual quaternions by
 \begin{align}
-\label{rtimes}
-\alpha \rtimes \beta &= \bm c \times \bm a + \bm d \times \bm b + \epsilon (\bm c \times \bm b) ,\\
-\alpha \ltimes \beta &= - \beta \rtimes \alpha ,
+\label{ltimes}
+\alpha \ltimes \beta &= \bm c \times \bm a + \bm d \times \bm b + \epsilon (\bm c \times \bm b) ,\\
+\alpha \rtimes \beta &= - \beta \ltimes \alpha ,
 \end{align}
 which can also be defined by the property that for all pure dual quaternions $\alpha$, $\beta$, and $\gamma$ we have
 \begin{equation}
-(\alpha \times \beta) \cdot \gamma = \alpha \cdot (\gamma \rtimes \beta) = \beta \cdot (\alpha \ltimes \gamma ).
+(\alpha \times \beta) \cdot \gamma = \alpha \cdot (\gamma \ltimes \beta) = \beta \cdot (\alpha \rtimes \gamma ).
 \end{equation}
 
 %Note that if $f$ is a linear function from the pure dual quaternions to the scalars, then there is a unique pure dual quaternion $\mu$ such that for every pure dual quaternion $\psi$ we have
@@ -969,7 +903,7 @@ and for any constant pure dual quaternion $\psi$ we have
 that is,
 \begin{equation}
 \label{formula mu_2}
-\mu_2 = 2 (\mathsf M \varphi) \rtimes \varphi .
+\mu_2 = 2 (\mathsf M \varphi) \ltimes \varphi .
 \end{equation}
 \end{theorem}
 
@@ -1039,13 +973,13 @@ Thus taking the dot product of equation~\eqref{de/dtheta} with any constant pure
 %\psi \cdot \mu_2
 %&= \varphi \cdot \mathsf M (\psi\varphi - \varphi\psi) \\
 %&= (\mathsf M\varphi) \cdot (\psi\varphi - \varphi\psi) \\
-%&= \psi \cdot ((\mathsf M\varphi) \rtimes \varphi - \varphi \ltimes (\mathsf M\varphi)) \\
-%&= 2 \psi \cdot ((\mathsf M\varphi) \rtimes \varphi)) .
+%&= \psi \cdot ((\mathsf M\varphi) \ltimes \varphi - \varphi \rtimes (\mathsf M\varphi)) \\
+%&= 2 \psi \cdot ((\mathsf M\varphi) \ltimes \varphi)) .
 %\end{aligned}
 %\end{equation}
 \end{proof}
 
-%From equation~\eqref{rtimes} we immediately obtain the following.
+%From equation~\eqref{ltimes} we immediately obtain the following.
 
 %\begin{lemma}
 %\label{post euler-lagrange}
@@ -1215,5 +1149,71 @@ There are many papers advocating for the use of dual quaternions in robotics \ci
 \bibitem{yang-et-al} XiaoLong Yang, HongTao Wu, Yao Li, Bai Chen, A dual quaternion solution to the forward kinematics of a class of six-DOF parallel robots with full or reductant actuation, Mechanism and Machine Theory 107 (2017) 27-36, \url{http://dx.doi.org/10.1016/j.mechmachtheory.2016.08.003}.
 
 \end{thebibliography}
+
+\section*{Appendix: summary of notation}
+
+Scalars (or scalar valued functions) are generally represented by lower case Roman letters, the exception being $\ell$ for actuator values.  3-vectors are represented by bold face Roman letters.  Dual quaternions and 6-vectors are represented by lower case Greek letters.  Quaternions are generally represented by upper case Roman letters, except since pure quaternions can be identified with 3-vectors, they are often instead denoted by bold face lower case Roman letters.
+
+Matrices are represented by san-serif capital letters, either Roman or Greek.  Functions taking vectors to vectors are represented by san-serif capital Roman letters, or by the font corresponding to the type of the output of the function.
+
+The following list gives examples of notation that is commonly used in this paper.  We try to restrict ourselves to notation that is used in several places throughout the paper.
+
+\begin{itemize}
+\item $t$: time.
+\item $\dot g$: time derivative of $g$.
+\item $\ddot g$: second time derivative of $g$.
+\item $\bi$, $\bj$, $\bk$: standard unit 3-vectors/quaternions.
+\item $\overline A$: conjugate of the quaternion $A$.
+\item $|A| = \sqrt{A\overline A}$: norm of the quaternion $A$ (scalar).
+\item $\realpart(A) = \tfrac12(A + \overline A)$: real part of the quaternion $A$ (scalar).
+\item $\imagpart(A) = \tfrac12(A - \overline A)$: imaginary part of the quaternion $A$ (3-vector/quaternion).
+\item $\widehat{A} = A/|A|$: normalization of the quaternion $A$ (unit quaternion).
+\item $A \cdot B = \realpart(A \overline B)$: dot product of quaternions $A$ and $B$ (scalar).
+\item $\mathsf R$: orthogonal matrix representing rotation ($(3 \times 3)$ matrix).
+\item $Q = \cos(\tfrac12 a) + \bm s \sin(\tfrac12 a)$: quaternion representing rotation about axis $\bm s$ by angle $a$ (unit quaternion).
+\item $\bm t$: translation (3-vector).
+\item $\epsilon$: dual quaternion such that $\epsilon^2 = 0$.
+\item $l$: characteristic length scale (scalar).
+\item $\|A + \epsilon B\| = \sqrt{|A|^2 + l^{-2} |B|^2}$: size of the dual quaternion $A + \epsilon B$ (scalar).
+\item $\overline\eta$: conjugate of the dual quaternion $\eta$.
+\item $|\eta| = \sqrt{\eta\overline\eta}$: norm of the dual quaternion $\eta$ (dual number).
+\item $\widehat\eta = |\eta|^{-1} \eta$: normalization of the dual quaternion $\eta$.
+\item $\setdualquat$: the set of dual quaternions.
+\item $\setunitdualquat$: the set of unit dual quaternions.
+\item $\setpuredualquat$: the set of pure dual quaternions.
+\item $\eta = Q + \frac12 \epsilon \bm t Q$: pose (unit dual quaternion).
+\item $\|\eta\|$: size of the dual quaternion $\eta$ (scalar).
+\item $\bm w$: angular velocity (3-vector).
+\item $\starop{\bm w}$: Hodge star operator of $\bm w$ ($(3\times3)$-matrix).
+\item $\bm v$: translational velocity (3-vector).
+\item $\varphi = \frac12\bm w + \frac12\epsilon \bm v$: twist (pure dual quaternion).
+\item $\alpha = \dot\varphi$: acceleration (pure dual quaternion).
+\item $\bm q$: torque (3-vector).
+\item $\bm p$: force (3-vector).
+\item $\tau = 2\bm q + 2 \epsilon \bm p$: wrench (pure) dual quaternion.
+\item $\bm r_0$: center of mass of end effector (3-vector).
+\item $\theta$: perturbation of pose (pure dual quaternion).
+\item $\eta_1 \liediff \eta_2 = \tfrac12(\overline\eta_2\eta_1 - \overline\eta_1 \eta_2)$: Lie difference of $\eta_1$ and $\eta_2$ (pure dual quaternion).
+\item $\beta_i$: basis element dual quaternion.
+\item $\eta_1 \cdot \eta_2$: dot product of dual quaternions as vectors (scalar).
+\item $\liederiv_\theta g$: directional Lie derivative of $g$ (same type as $g$).
+\item $\liederiv_i g$: partial Lie derivative of $g$ (same type as $g$).
+\item $\liederiv g$: full Lie derivative of $g$ (pure dual quaternion).
+\item $\bm \ell$: actuator values ($n$-vector).
+\item $\bm f$: actuator forces ($n$-vector).
+\item $\mathsf L$: function that converts $\eta$ to $\bm \ell$.
+\item $\mathsf \Lambda = \liederiv\mathsf L$: matrix that converts $\varphi$ to $\dot{\bm \ell}$.
+\item $\mathsf T = \mathsf\Lambda^T$: matrix that converts $\bm f$ to $\tau$.
+\item $\left[\frac{\partial^2g}{\partial\eta^2}\right]$: Hessian matrix of $g$ ($(8 \times 8)$ matrix).
+\item $\mathsf Y$: function that converts $\bm\ell$ to $\eta$.
+\item $\bm f_0$: no-load actuator forces ($n$-vector).
+\item $\mathsf M_0$: effective no-load moment of inertia of actuators ($(n\times n)$ matrix).
+\item $m_e$: mass of the end effector (scalar).
+\item $\mathsf M_e$: moment of inertia of end effector ($(3\times3)$ matrix).
+\item $\bm g$: acceleration due to gravity (3-vector).
+\item $\tilde{\bm g} = \overline Q \bm g Q$: acceleration due to gravity in moving frame of reference (3-vector).
+\item $\mathsf M$: effective mass of the parallel robot ($(6\times6)$ matrix).
+\item $\mu$: additive term used in converting acceleration $\alpha$ to wrench $\tau$ (pure dual quaternion).
+\end{itemize}
 
 \end{document}
