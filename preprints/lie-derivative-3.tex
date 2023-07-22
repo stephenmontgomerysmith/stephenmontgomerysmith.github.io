@@ -1,0 +1,1143 @@
+\documentclass[reqno,12pt]{amsart}
+
+\usepackage{amsaddr}
+\usepackage{url}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{minibox}
+\usepackage{tikz}
+%\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{calc}
+%\usetikzlibrary{positioning}
+
+\makeatletter
+\def\blfootnote{\gdef\@thefnmark{}\@footnotetext}
+\makeatother
+
+\newcommand\bi{\bm i}
+\newcommand\bj{\bm j}
+\newcommand\bk{\bm k}
+\newcommand\tint{{\textstyle\int\!}}
+
+\newcommand\starop[1]{\mathsf S(#1)}
+
+\newcommand\setinvertibledualquat{\mathbb D\mathbb H}
+\newcommand\setdualquat{\mathfrak d \mathfrak h}
+\newcommand\setunitdualquat{\mathbb S\mathbb D\mathbb H}
+\newcommand\setvectordualquat{\mathfrak{s}\mathfrak d \mathfrak h}
+
+\DeclareMathOperator\realpart{Re}
+\DeclareMathOperator\imagpart{Im}
+\DeclareMathOperator\size{{size}}
+\newcommand{\liediff}{\mathbin{\triangle}}
+\newcommand{\liederiv}{\mathcal L}
+
+\newtheorem{assertion}{Assertion}
+\newtheorem{assumption}{Assumption}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+
+\title[Lie derivatives with dual quaternions for parallel robots]{Using Lie derivatives with dual quaternions for parallel robots}
+
+\author{Stephen Montgomery-Smith}
+\address{Department of Mathematics, University of Missouri, Columbia, MO 65211.\\
+\rm\url{stephen@missouri.edu}\\
+\rm\url{https://stephenmontgomerysmith.github.io}}
+%\email{stephen.j.montgomery-smith@nasa.gov}
+
+\author{Cecil Shy}
+\address{Johnson Space Center, 2101 E.~NASA Pkwy, Houston, TX 77058.\\
+\rm\url{cecil.shy-1@nasa.gov}}
+
+%\blfootnote{This is a preprint of a paper intended for submission to a journal.  Because changes may made before formal publication, this preprint is made available with the understanding that it is not to be cited or reproduced without permission of the author.}
+\date{July 22, 2023}
+
+\begin{abstract}
+We introduce the notion of the Lie derivative in the context of dual quaternions that represent rigid motions and twists.  First we define the wrench in terms of dual quaternions.  Then we show how the Lie derivative helps understand how actuators affect an end effector in parallel robots, and make it explicit in the case of robot-driven parallel robots.  We also show how to use Lie derivatives with the Newton-Raphson Method to solve the forward kinematic problem for over constrained parallel actuators.  Finally, we derive the equations of motion of the end effector in dual quaternion form, which include the effect of inertia in the actuators.  A large part of our methods is an approximation of the normalization of a vector dual quaternion perturbation of the identity, which shows that it is equal up to the second order to the exponential of the vector dual quaternion.
+\end{abstract}
+
+\maketitle
+
+%\tableofcontents
+
+\section{Introduction and notation}
+
+We assume that the reader is familiar with the notion of \emph{pose} and \emph{rigid motion}, and the use of dual quaternions to represent \emph{pose} and \emph{twist}.  We use the terms pose and rigid motion interchangeably, since a pose can be considered as a rigid motion relative to a fixed reference frame, and the mathematical operations to manipulate them are identical.  Thus we also use the terms rotation and orientation interchangeably, and similarly with translation and position (but see \cite{chirikjian-et-al} for a different point of view).  We refer the reader to \cite{adorno,agrawal,bottema-et-al,clifford,dooley-et-al,gallardo-alvarado,han-et-al,kavan-et-al,kavan-et-al-2,kenwright,kussaba-et-al,montgomery-smith-et-al,perez-et-al,schilling1,schilling2,selig-book,silva-et-al,spong-et-al,wang-et-al}.  We recall that a \emph{pose} or \emph{rigid motion} is a rotation $\mathsf R$ followed by a translation $\bm t$.
+
+Rotations can be represented unit quaternions \cite{quaternions1,quaternions2}, which we briefly describe here.  A \emph{quaternion} is a quadruple of real numbers, written as $A = w + x \bi + y \bj + z \bk$, with the algebraic operations $\bi^2 = \bj^2 = \bk^2 = \bi \bj \bk = -1$.  Its \emph{conjugate} is $A^* = w - x \bi - y \bj - y \bk$, its \emph{norm} is $|A| = (w^2+x^2+y^2+z^2)^{1/2} = \sqrt{A A^*} = \sqrt{A^* A}$, its \emph{normalization} is $\widehat A = A/|A|$, its \emph{real part} is $\realpart(A) = w = \tfrac12(A + A^*)$, and its \emph{imaginary part} is $\imagpart(A) = \bi x + \bj y + \bk z = \tfrac12(A - A^*)$.  It is called a \emph{unit} quaternion if $|A| = 1$, a \emph{real} quaternion if $\imagpart(A) = 0$, and a \emph{vector} quaternion if $\realpart(A) = 0$.  Note the multiplicative inverse is given by $A^{-1} = A^*/|A|^2$.  (Note that many sources use the word ``pure'' instead of ``vector'' in this context.)
+
+We identify three dimensional vectors with vector quaternions, by identifying $\bi$, $\bj$, and $\bk$ with the three standard unit vectors.  A unit quaternion $Q$ represents the rotation $\bm r \mapsto Q \bm r Q^*$.  A rotation by angle $a$ about an axis $\bm s$, where $|\bm s| = 1$, has two unit quaternion representations: $\pm(\cos(\tfrac12 a) + \bm s \sin(\tfrac12 a)) = \pm \exp(\tfrac12 a \bm s)$.  Composition of rotations corresponds to multiplication of unit quaternions.
+
+We can represent quaternions as four dimensional vectors, and give it the inner product
+\begin{equation}
+A \cdot B = \realpart(A B^*) = \realpart(A^* B) .
+\end{equation}
+
+A \emph{dual quaternion} is a pair of quaternions, written as $\eta = A + \epsilon B$, with the extra algebraic operation $\epsilon^2 = 0$.  We call $A = \mathcal P(\eta)$ as the \emph{primary part} of $\eta$, and $B = \mathcal D(\eta)$ as the \emph{dual part} of $\eta$.
+
+The \emph{conjugate} dual quaternion of $\eta = \eta = A + \epsilon B$ is $\eta^* = A^* + \epsilon B^*$.  Conjugation reverses the order of multiplication:
+\begin{equation}
+(\eta_1\eta_2)^* = \eta_2^* \eta_1^* .
+\end{equation}
+There is another conjugation for dual quaternions: $\overline{A + \epsilon B} = A - \epsilon B$, but we have no cause to use it in this paper, except in equation~\eqref{defn of rigid motion on 3-vector} below.
+
+A \emph{unit} dual quaternion $\eta = Q + \epsilon B$ is a dual quaternion such that $\eta^*\eta = 1$, equivalently, that $Q$ is a unit quaternion and $B \cdot Q = 0$.  A \emph{vector} dual quaternion $A + \epsilon B$ is a dual quaternion such that both $A$ and $B$ are vector quaternions.
+
+If $\eta = A + \epsilon B$ is a dual quaternion with $A \ne 0$, then its multiplicative inverse can be calculated using the formula
+\begin{equation}
+\eta^{-1} = A^{-1} - \epsilon A^{-1} B A^{-1}.
+\end{equation}
+If $\eta$ is a unit dual quaternion, then there is a computationally much faster formula (see \cite{adorno}:
+\begin{equation}
+\label{inverse unit}
+\eta^{-1} = \eta^*.
+\end{equation}
+
+We set $\setinvertibledualquat$ for the set of invertible dual quaternions (that is, $A +\epsilon B$ where $A \ne 0$), $\setdualquat$ for the set of dual quaternions, $\setunitdualquat$ for the set of unit dual quaternions, and $\setvectordualquat$ for the set of vector dual quaternions.
+
+A rigid motion of the form
+\begin{equation}
+\label{rigid motion action}
+\bm r \mapsto Q \bm r Q^* + \bm t,
+\end{equation}
+can be represented by the unit dual quaternion
+\begin{equation}
+\label{rigid motion as dual quaternion}
+\eta = Q + \tfrac12 \epsilon \bm t Q.
+\end{equation}
+Composition of rigid motions corresponds to multiplication of unit dual quaternions, where the notation $\eta_1 \eta_2$ means to apply first the rigid motion represented by $\eta_2$, and then by $\eta_1$, that is, the dual quaternion acts by left multiplication.  If $\bm r$ is a 3-vector, and $\bm s$ is the image of $\bm r$ under the action of the rigid motion $\eta = Q + \epsilon B$, then
+\begin{equation}
+\label{defn of rigid motion on 3-vector}
+1 + \epsilon \bm s = \eta (1 + \epsilon \bm r) \overline\eta^* ,
+\end{equation}
+but generally it is easier to use the formula
+\begin{equation}
+\label{rigid motion on 3-vector}
+\bm s = Q \bm r Q^* + 2 B Q^* = (Q \bm r + 2 B) Q^* .
+\end{equation}
+
+For a dual quaternion , it is not really possible to mix their primary and dual parts additively.  For example, for a unit dual quaternion that represents a rigid motion, the primary part is unitless, whereas the dual has units of length.  For this reason, when measuring how large such a dual quaternion is, everything must be with respect to $l$, the characteristic length scale.  The \emph{size} of a dual quaternion is defined to be
+\begin{equation}
+\label{size}
+\size_{l}(\eta) = \left(|\mathcal P(\eta)|^2 + l^{-2}|\mathcal D(B)|^2\right)^{1/2}.
+\end{equation}
+
+A \emph{twist} is the pair of vectors $(\bm w, \bm v)$ that describes the rate of change of pose or rigid motion, where where $\bm w$ is the angular velocity, and $\bm v$ is the translational velocity.  One can think of the twist $(\bm w, \bm v)$ as a rigid motion function of time:
+\begin{equation}
+\bm r \mapsto \bm r + t (\bm w \times \bm r + \bm v) + O(t^2) \quad \text{as $t \to 0$} .
+\end{equation}
+It has two possible meanings, depending upon whether the twist is understood to be with respect to the fixed frame, or with respect to the moving frame.  If it is understood to be with respect to the moving frame, we have the formula
+\begin{equation}
+\label{ode twist}
+\frac d{dt} (Q \bm r Q^* + \bm t) = Q (\bm w \times \bm r + \bm v) Q^* ,
+\end{equation}
+and if it is understood to be with respect to the fixed frame
+\begin{equation}
+\label{ode twist fixed}
+\frac d{dt} (Q \bm r Q^* + \bm t) = \bm w \times (Q \bm r Q^*) + \bm v .
+\end{equation}
+Then this twist can be represented by a vector dual quaternion \cite{adorno, agrawal}
+\begin{equation}
+\label{twist as dual quaternion}
+\varphi = \tfrac12 \bm w + \tfrac12 \epsilon \bm v .
+\end{equation}
+where if we understand it to be with respect to the moving frame, we have the formula
+\begin{equation}
+\label{ode dual quaternion fixed}
+\varphi = \eta^{-1} \dot \eta, \quad\text{or}\quad\dot \eta = \eta \varphi ,
+\end{equation}
+and if we understand it to be with respect to the fixed frame
+\begin{equation}
+\label{ode dual quaternion}
+\varphi = \dot \eta \eta^{-1}, \quad\text{or}\quad\dot \eta = \varphi \eta ,
+\end{equation}
+In this paper, we will always understand the twist to be with respect to the moving frame.
+
+We make the identification
+\begin{equation}
+\setdualquat \cong \mathbb R^8,
+\end{equation}
+using the basis
+\begin{equation}
+\label{dual quaternion basis}
+(\beta_1, \beta_2, \beta_3, \beta_4, \beta_5, \beta_6, \beta_7, \beta_8) = (\bi, \bj, \bk, \epsilon\bi, \epsilon\bj, \epsilon\bk, 1, \epsilon),
+\end{equation}
+and similarly, we make the identification
+\begin{equation}
+\setvectordualquat \cong \mathbb R^6,
+\end{equation}
+using the basis $(\beta_1$, $\beta_2$, $\beta_3$, $\beta_4$, $\beta_5$, $\beta_6)$.  With these identifications, we can define the dot product between two dual quaternions by transferring the usual definition of dot product on $\mathbb R^8$, that is
+\begin{equation}
+(A + \epsilon B) \cdot (C + \epsilon D) = A \cdot C + B \cdot D.
+\end{equation}
+In this way, every dual quaternion $\eta$ can be written in component form as
+\begin{equation}
+\eta = \sum_{i=1}^8 \eta_i \beta_i ,
+\end{equation}
+and every vector dual quaternion $\theta$ as
+\begin{equation}
+\theta = \sum_{i=1}^6 \theta_i \beta_i .
+\end{equation}
+
+\section{Dual quaternions to represent wrenches}
+
+Let the pose $\eta$ represent the reference frame that moves with the end effector.  It is not necessary (although it can simplify things) that the center of mass of the end effector coincides with the origin of the moving frame.
+
+The \emph{wrench dual quaternion} is defined to be
+\begin{equation}
+\label{wrench as quaternion}
+\tau = 2 \bm q + 2 \epsilon \bm p,
+\end{equation}
+where $\bm q$ and $\bm p$ are the torque and force, respectively, applied to the end effector at the origin of the moving frame, measured with respect to the moving frame.
+
+If $\bm r_0$ is the center of mass of the end effector in the moving frame, then the twist about the center of mass is given by
+\begin{equation}
+\label{twist correction}
+\varphi_0 = 
+\varphi + \tfrac12\epsilon\bm w \times \bm r_0,
+\end{equation}
+where $\varphi = \eta^{-1} \dot \eta$, and the wrench applied about the center of mass is
+\begin{equation}
+\label{torque correction}
+\tau_0 = 
+\tau + 2 \bm p \times \bm r_0.
+\end{equation}
+
+The reason for introducing the factor $2$ in definition~\eqref{wrench as quaternion} is so that the rate of change of work done to the end effector is given by
+\begin{equation}
+\label{dot h tau varphi}
+\frac{d}{dt} \text{(work done)} = \tau \cdot \varphi = \tau_0 \cdot \varphi_0 .
+\end{equation}
+(The second equality follows from vector identities.)
+
+See \cite{ball} for the origins of the term twist and wrench as pairs of 3-vectors, which are examples of \emph{screws}.  The `work done' formulas are also known as \emph{reciprocal screw relationships}.
+
+\section{The normalization of a dual quaternion}
+
+A \emph{dual number} is anything of the form $a + \epsilon b$, where $a$ and $b$ are real numbers.
+
+The \emph{norm} of a dual quaternion $\eta = A + \epsilon B$ is the dual number defined by the two steps:
+\begin{gather}
+|\eta|^2 = \eta^* \eta = \eta \eta^* = |A|^2 + 2 \epsilon (A \cdot B) ,\\
+\label{norm}
+|\eta| = \sqrt{|\eta|^2} = |A| + \epsilon (A \cdot B) / |A| .
+\end{gather}
+The norm preserves multiplication, that is, if $\eta_1$ and $\eta_2$ are two dual quaternions, then
+\begin{equation}
+|\eta_1 \eta_2| = |\eta_1| |\eta_2| .
+\end{equation}
+
+If $\eta = Q + \epsilon B$ is an invertible dual quaternion, then we define its \emph{normalization} to be the unit dual quaternion
+\begin{equation}
+\label{normalize}
+\widehat \eta = |\eta|^{-1}\eta = \eta|\eta|^{-1}
+= Q/|Q| + \epsilon (B - (B\cdot Q) Q/|Q|^2) .
+\end{equation}
+(We remark that the normalization of an invertible dual quaternion is used in the computer graphics industry \cite{kavan-et-al, kavan-et-al-2}.)  While this normalization formula might seem initially quite complicated, after thinking about it one can see that it is the simplest projection that enforces $|Q| = 1$ and $B\cdot Q = 0$.
+
+The normalization also satisfies the following properties.
+\begin{itemize}
+\item If $\eta$ is a unit dual quaternion, then $\widehat\eta = \eta$.
+\item Normalization preserves multiplication, that is, if $\eta_1$ and $\eta_2$ are two dual quaternions, then
+\begin{equation}
+\widehat{\eta_1 \eta_2} = \widehat \eta_1 \widehat \eta_2 .
+\end{equation}
+\item If $\theta$ is a vector dual quaternion, then
+\begin{equation}
+\label{approx normalize}
+\widehat {(1+\theta)} = 1 + \theta + \tfrac12 \theta^2 + O(\theta^3).
+\end{equation}
+(See Section~\ref{sec proofs} for the proof of this.)
+\end{itemize}
+Equation~\eqref{approx normalize} plays a large role in the methods in this paper.
+
+Let us clarify the big-Oh notation.  We say that
+\begin{equation}
+\eta(\theta) = O(\gamma(\theta))
+\end{equation}
+if there exists a constant $c>0$ such that if $\size_l(\theta)$ is sufficiently small, then
+\begin{equation}
+\size_l( \eta(\theta)) \le c \size_l ( \gamma(\theta)) .
+\end{equation}
+We show at the beginning of Section~\ref{sec proofs} that this definition does not depend upon the characteristic length $l$.
+
+We remark that since the exponential of a unit dual quaternion $\theta$ \cite{wang-et-al} satisfies
+\begin{equation}
+\label{exponential}
+\exp(\theta) = \sum_{k=0}^\infty \frac{\theta^k}{k!},
+\end{equation}
+then by equation~\eqref{approx normalize} we have
+\begin{equation}
+\label{exp-normal}
+\exp(\theta) = \widehat{(1+\theta)} + O(\theta^3) .
+\end{equation}
+
+\section{Lie derivatives}
+\label{sec lie derivatives}
+
+The notion of the Lie derivative, sometimes in our context called the directional derivative, is a combination of two ideas that may be found in the literature.  First is the concept of a Lie derivative with respect to a vector field \cite{yano}.  Secondly, the definition of the Lie algebra is that it is the vector space of vector fields that are invariant under left multiplication by elements of the Lie group \cite{lee}.  In this way, we can define the Lie derivative of a function with respect to an element of the Lie algebra.  One place in the literature where they are combined is in \cite[equation~(5), Chapter~II]{helgason}.
+
+These standard abstract definitions can be made more concrete in our special case where the Lie group is the set of unit dual quaternions, and the Lie algebra is the set of vector dual quaternions.
+
+Suppose one has a quantity that is a function of pose $g(\eta)$, and whose range is any vector space.  (But for intuition, consider the case when the range is the real numbers, and think of the vector valued case as the formulas below simply being applied component wise.)
+
+Then we usually think of the derivative of $g(\eta)$ as the Jacobian with respect to the components of $\eta$.  But it really makes more sense to compute the derivative with respect to the components of the perturbation of $\eta$.  The latter is the Lie derivative.
+
+The definition is this.  Given a differentiable function $g$ whose domain is the unit dual quaternions, $\setunitdualquat$, and whose codomain is any vector space over the real numbers, we can extend it arbitrarily to a differentiable function whose domain is an open neighborhood of $\setunitdualquat$ in $\setdualquat$.  Given a unit dual quaternion $\eta$ and a vector dual quaternion $\theta$, we define the \emph{Lie derivative} of $g(\eta)$ in the direction of $\theta$ to be
+\begin{equation}
+\label{lie diff defn}
+\liederiv_\theta g = 
+\lim_{r\to 0} \frac{g(\eta(1+r \theta)) - g(\eta)} r = 
+\left. \frac{d}{d r} g(\eta(1+r\theta)) \right |_{r = 0}.
+\end{equation}
+Since $\eta(1+r\theta)$ isn't necessarily a unit dual quaternion, it is not obvious that the definition of the directional Lie derivative doesn't depend upon how the domain of $g$ was extended from $\setunitdualquat$, but it is, as is shown in Lemma~\ref{not depend} below.
+
+Given a generic function $g$ whose domain is the invertible dual quaternions, $\setinvertibledualquat$, and whose codomain is any vector space over the real numbers, we define its Jacobian to be the dual quaternion
+\begin{equation}
+\label{jacobian defn}
+\frac{\partial g}{\partial \eta} = \sum_{i=1}^8 \left[\frac{\partial}{\partial \eta_i} g(\eta) \right] \beta_i,
+\end{equation}
+where the partial derivative $\dfrac{\partial}{\partial \eta_i}$ is interpreted using the identification of $\eta_i$ with the $\beta_i$ components of $\eta$ as described in \eqref{dual quaternion basis}.
+
+If the domain of $g$ is the vector dual quaternions, $\setvectordualquat$, we have equation~\eqref{jacobian defn} except with $8$ replaced by $6$.
+
+In Section~\ref{sec proofs}, we obtain the following formula, which is useful for explicitly calculating the Lie derivative if an extension of $g$ to an open neighborhood of $\setunitdualquat$ in $\setdualquat$ is known:
+\begin{equation}
+\label{lie diff defn 2}
+\liederiv_\theta g = \frac{\partial g}{\partial \eta} \cdot (\eta \theta) := \sum_{i=1}^8 \left(\frac{\partial g}{\partial \eta_i}\right) (\eta \theta)_i ,
+\end{equation}
+where the notation $(\eta\theta)_i$ means the $\beta_i$ component of $\eta\theta$, as described in \eqref{dual quaternion basis}.
+
+We define the \emph{partial Lie derivatives} to be
+\begin{equation}
+\liederiv_i g = \liederiv_{\beta_i} g , \quad (1 \le i \le 6),
+\end{equation}
+and its \emph{full Lie derivative} to be the vector dual quaternion (or if the range of $g$ is a vector space, the tensor product of a vector dual quaternion with a vector)
+\begin{equation}
+\liederiv g = \sum_{i=1}^6 \liederiv_i g \beta_i,
+\end{equation}
+so that for all vector dual quaternions $\theta$ it satisfies:
+\begin{equation}
+\theta \cdot \liederiv g = \liederiv_\theta g.
+\end{equation}
+
+To gain some intuition, write
+\begin{equation}
+\label{decomp theta}
+\theta = \tfrac12\bm a + \tfrac12\epsilon \bm b.
+\end{equation}
+Since we have that
+\begin{equation}
+\label{decomp partial theta}
+\frac{\partial}{\partial \theta} = 2\frac{\partial}{\partial \bm a} + 2\epsilon \frac{\partial}{\partial \bm b},
+\end{equation}
+(see Section~\ref{sec proofs}), we see that $\theta$ represents a change in pose by an infinitesimal translation $\bm b$ and an infinitesimal rotation $\bm a$, measured in the moving frame of reference.  Thus $\liederiv g$ is a vector dual quaternion giving twice the change in $g$ with respect to an infinitesimal rotation, plus $\epsilon$ times twice the change of $g$ with respect to an infinitesimal translation.
+
+One important property of the Lie derivative is that if $\eta$ represents a pose, with twist $\varphi$, then by equation~\eqref{lie diff defn}, with $r$ replaced by $t$, we see that
+\begin{equation}
+\label{dot f Lie phi}
+\frac d{dt} [g(\eta)] = \liederiv_\varphi g .
+\end{equation}
+
+The Lie derivative satisfies various rules, which easily follow from either equations~\eqref{lie diff defn} or ~\eqref{lie diff defn 2}, which are also useful for explicitly calculating the Lie derivative when $g$ is known.
+\begin{itemize}
+\item If $g(\eta)$ is linear in $\eta$, then
+\begin{equation}
+\label{rule linear}
+\liederiv_\theta g(\eta) = g(\eta \theta).
+\end{equation}
+\item The product rule: if $*$ is any binary operator which is bilinear over the real numbers, such as inner product or dual quaternion product, then
+\begin{equation}
+\liederiv_\theta (g_1 * g_2) = g_1 * (\liederiv_\theta g_2) + (\liederiv_\theta g_1) * g_2.
+\end{equation}
+\item The chain rule:
+\begin{equation}
+\liederiv_\theta (h(g_1, g_2,\dots,g_m)) \\ = \sum_{i=1}^m
+\frac\partial{\partial g_i} h(g_1, g_2,\dots,g_m) \liederiv_\theta g_i .
+\end{equation}
+\end{itemize}
+
+\section{Applications to parallel robots}
+
+Suppose that the position of the end effector of a parallel robot is given by $n$ actuators, described by quantities
+\begin{equation}
+\bm \ell = (\ell_j)_{1 \le j \le n} .
+\end{equation}
+For example, for a cable-driven parallel robot, these represent the lengths of the cables, and typically $n = 8$.  For the Gough or Stewart Platforms \cite{gallardo-alvarado}, we have $n = 6$.
+
+Let us also denote the force exerted by the actuators by 
+\begin{equation}
+\bm f = (f_j)_{1 \le j \le n} ,
+\end{equation}
+defined so that the rate of change of work performed through the actuators is given by
+\begin{equation}
+\label{dot h f ell}
+\frac{d}{dt} \text{(work done)} = \bm f \cdot \dot{\bm\ell} .
+\end{equation}
+
+Suppose we have a function $\mathsf L : \setunitdualquat \to \mathbb R^n$, which calculates the required actuator values, $\bm \ell$, from the pose $\eta$ of the end effector frame.  This is the \emph{inverse kinematics} function.  If it is a simple cable-driven parallel robot, this can be computed using Pythagoras's Theorem, from the positions of the actuators on the fixed frame, and the positions of where the cables are attached to end effector.  But this formula could be more complicated in other situations.
+
+We also define the $(n \times 6)$ matrix $\mathsf \Lambda$ by
+\begin{equation}
+\label{Lambda}
+\mathsf \Lambda \theta = \liederiv_\theta \mathsf L = \liederiv_\theta \bm \ell ,
+\end{equation}
+or more explicitly, by
+\begin{equation}
+\mathsf \Lambda_{i,j} = \liederiv_j \mathsf \ell_i .
+\end{equation}
+From equation~\eqref{dot f Lie phi} we obtain
+\begin{equation}
+\label{dot l Lambda phi}
+\dot{\bm \ell} = \mathsf \Lambda \varphi .
+\end{equation}
+
+There is also a ($6 \times n$) matrix $\mathsf T$ that maps the actuator forces to the wrench dual quaternion:
+\begin{equation}
+\label{T}
+\tau = \mathsf T \bm f .
+\end{equation}
+This can be computed by balancing the force and torque exerted upon the end-effector.  But it can also be computed with the following important identity:
+\begin{equation}
+\label{T=L^T}
+\mathsf T = \mathsf \Lambda^T.
+\end{equation}
+This is because the rate of change of work done on the parallel robot can be computed in two different ways, either using equation~\eqref{dot h tau varphi}, or~\eqref{dot h f ell}.  Substituting in equations~\eqref{dot l Lambda phi} and~\eqref{T}, we obtain
+\begin{equation}
+\mathsf T \bm f \cdot \varphi = \bm f \cdot \mathsf \Lambda \varphi.
+\end{equation}
+Since this is true for arbitrary actuator forces $\bm f$ and end effector twists $\varphi$, the result follows.
+
+\section{Second lie derivatives}
+
+If $g$ is a function of dual quaternions with codomain any vector space over the real numbers, we define its Hessian to be the $(8 \times 8)$ matrix
+\begin{equation}
+\left[\frac{\partial^2 g}{\partial \eta^2}\right] = \left[\frac{\partial^2 g}{\partial \eta_i\partial \eta_j}\right] _{ 1 \le i,j \le 8 }.
+\end{equation}
+Thus the expression $\left[\frac{\partial^2 g}{\partial \eta^2}\right] \gamma$ should be interpreted as a matrix product with $\gamma$ treated as an eight dimensional column vector.
+
+Second Lie derivatives will be used in Newton's Method, as well as in our statements of the equations of motion, both described below.
+
+We will show in Section~\ref{sec proofs} that
+\begin{equation}
+\label{second lie deriv}
+\begin{aligned}
+\liederiv_\theta \liederiv_\psi g &= (\eta \psi) \cdot \left[\frac{\partial^2 g}{\partial \eta^2}\right](\eta \theta) + \frac{\partial g}{\partial \eta} \cdot (\eta \theta \psi) \\
+&:= \sum_{i=1}^8 \sum_{j=1}^8 (\eta \psi)_i \left(\frac{\partial^2 g}{\partial \eta_i \partial \eta_j}\right)(\eta \theta)_j + \sum_{i=1}^8 \left(\frac{\partial g}{\partial \eta_i}\right) (\eta \theta \psi)_i .
+\end{aligned}
+\end{equation}
+As a corollary, we obtain the well known identity:
+\begin{equation}
+\label{lie bracket diff = diff lie bracket}
+\liederiv_\theta \liederiv_\psi g - \liederiv_\psi \liederiv_\theta g = \liederiv_{(\theta\psi - \psi\theta)} g,
+\end{equation}
+which implies that Lie derivatives do not necessary commute.
+
+Another way one might try to define the second derivative is to use the formula $\left.\frac {\partial^2}{\partial\theta^2} g(\eta(1+\theta)) \right | _{\theta=0}$.  Unfortunately, this definition doesn't work, as it depends upon the choice of how to extend the domain of $g$ to all dual quaternions.  The obvious choice of extension is to use the normalization:
+\begin{equation}
+\tilde g(\eta) = g(\hat\eta) .
+\end{equation}
+We have the following formula for the Hessian of $\tilde g$:
+\begin{equation}
+\label{hessian}
+\left.\frac{\partial^2}{\partial\theta^2} \tilde g(\eta(1+\theta)) \right|_{\theta = 0} = \left[\tfrac12 (\liederiv_i \liederiv_j g(\eta) + \liederiv_j \liederiv_i g(\eta)) \right]_{1\le i,j\le 6}.
+\end{equation}
+This equation is proved in Section~\ref{sec proofs}.
+
+\section{An example of a cable-driven parallel robot}
+
+\begin{figure}
+
+\begin{tikzpicture}[scale=0.75]
+\node[draw, circle, minimum size=3cm] at (0,0) {};
+\draw[-] (0,0) -- (12,-5);
+\draw[-] (0,0) -- (0,2) node[above] {$\boldsymbol a$};
+\draw[-] (0,0) -- ($(2*5/13,2*12/13)$);
+%\node[above] at ($(2*5/13+0.1,2*12/13)$) {$\tilde{\boldsymbol p}^\perp$};
+\draw[-] (0,0) -- (1.0441,1.70583);
+%\node[above] at (1.3,1.6) {$\boldsymbol b$};
+\draw[-] (1.0441,1.70583) -- (12, -5);
+%\node[below] at (0,0) {$\boldsymbol o$};
+\node[below] at (12,-5) {$\tilde{\boldsymbol r}$};
+\node[left] at (0,1) {$r$};
+\draw[rotate=-22.6199] (0,0) rectangle (.3,.3);
+\draw[rotate=-31.4699] (0,2) rectangle (0.3,1.7);
+\node at (6.25,-0.8) {Cable};
+\draw[-] (12,-5) -- node[above] {$h$} (-3,-5);
+%\draw[-] (0,0) -- (-2,-4) node[left] {Origin};
+\draw[->] (-3,4.2) -- (-3,5.2) node[above] {$\boldsymbol n$};
+\draw[-] (-3,1) -- (-3,2) node[above] {\minibox[c]{Axis of\\rotation\\of assembly}};
+\draw[-] (-3,0) -- node[right] {$v$} (-3,-5);
+\draw[-] (-3,0) node[left]{$\bm s$} -- node[above]{$h_0$} (0,0) ;
+%\draw[->] (-2,-4) -- (-1,-4) node[right] {$\boldsymbol m$};
+\end{tikzpicture}
+
+\caption{The pulley and attached cable}
+\label{pulley}
+\end{figure}
+
+In this section, we derive the equations for a cable-driven parallel robot.  Since the output of $\mathsf L$ consists of $n$ separate quantities, the whole can be split into its parts, and we only need to derive the formulas for a single cable.
+
+Suppose the cable is attached to a point $\tilde{\bm r}$ on the end effector.  Let us suppose that the cable attaches via an assembly, which is free to rotate about an axis parallel to the unit vector $\bm n$, and passing through the point $\bm s$.  Attached to the assembly, at a fixed distance $h_0$ from the fixed point $\bm s$, by a rod perpendicular to $\bm n$, is the center of a pulley of radius $r$, which rotates in the plane containing the axis of rotation and the point on the end effector $\tilde{\bm r}$.  A cable passes over the pulley in the $\bm n$ direction from the center of the pulley at the point $\bm a$.  See Figure~\ref{pulley}.
+
+Then in this case, the length of cable required is
+\begin{equation}
+\label{example ell}
+\begin{aligned}
+\ell(\tilde{\bm r}) &= \ell_0 + c(\tilde{\bm r})
++ r \sin^{-1} \left(\frac{r}{d(\tilde{\bm r})} \right)
++ r \sin^{-1} \left(\frac{v(\tilde{\bm r})}{d(\tilde{\bm r})} \right) 
+%\\
+%&= \ell_0 + c(\tilde{\bm r}) + r \sin^{-1}\left(\frac{r h(\tilde{\bm r}) - r h_0 + %v(\tilde{\bm r})c(\tilde{\bm r})}{d(\tilde{\bm r})^2}\right)
+,
+\end{aligned}
+\end{equation}
+where $\ell_0$ is the length of cable from the actuator to the point $\bm a$, and
+\begin{align}
+v(\tilde{\bm r}) &= (\tilde{\bm r} - \bm s) \cdot \bm n ,\\
+h(\tilde{\bm r}) &= \sqrt{|\tilde{\bm r} - \bm s|^2 - v(\tilde{\bm r})^2}, \\
+d(\tilde{\bm r}) &= \sqrt{(h(\tilde{\bm r}) - h_0)^2 + v(\tilde{\bm r})^2} = \sqrt{|\tilde{\bm r} - \bm s|^2 - 2 h_0 h(\tilde{\bm r}) + h_0^2} ,
+\\
+c(\tilde{\bm r}) &= \sqrt{d(\tilde{\bm r})^2 - r^2} ,
+\end{align}
+that is,
+$v(\tilde{\bm r})$ and $h(\tilde{\bm r})$ are the vertical and horizontal distances (that is, measured parallel and perpendicular to $\bm n$) between $\bm s$ and $\tilde{\bm r}$,
+$d(\tilde{\bm r})$ is the distance from $\tilde{\bm r}$ to the center of the pulley, and $c(\tilde{\bm r})$ is the distance from $\tilde{\bm r}$ to where the cable meets the pulley.
+
+If the attachment point to the end effector is at $\bm r$ in the moving frame of reference, and if the pose of the end effector is $\eta = Q + \epsilon B$, then
+\begin{equation}
+\tilde{\bm r} = Q \bm r Q^* + 2 B Q^* = (Q \bm r + 2 B) Q^* .
+\end{equation}
+Now, if $\theta = \tfrac12 \bm a + \tfrac12 \epsilon \bm b$ is a vector dual quaternion, then
+\begin{equation}
+\liederiv_\theta(\eta) = \eta\theta = \tfrac12 Q \bm a + \tfrac12 \epsilon (Q \bm b + B \bm a),
+\end{equation}
+that is
+\begin{gather}
+\liederiv_\theta(Q) = \tfrac12 Q \bm a, \\
+\liederiv_\theta(B) = \tfrac12 (Q \bm b + B \bm a) .
+\end{gather}
+Remembering $\bm a^* = -\bm a$, and that $\bm a \bm r - \bm r \bm a = 2 \,\bm a \times \bm r$, we obtain
+\begin{equation}
+\label{lie deriv point}
+\liederiv_\theta(\tilde{\bm r}) = Q (\bm a \times \bm r + \bm b) Q^*.
+\end{equation}
+And if $\psi_2 = \tfrac12 \bm c + \tfrac12 \epsilon \bm d$ is another vector dual quaternion, then
+\begin{equation}
+\liederiv\psi \liederiv_\theta(\tilde{\bm r}) = Q(\bm c \times (\bm a \times \bm r + \bm b)) Q^* .
+\end{equation}
+Then the first and second derivatives of $\ell(\tilde{\bm r})$ are
+\begin{gather}
+\liederiv_\theta(\ell(\tilde{\bm r})) = \frac{\partial \ell(\tilde{\bm r})}{\partial \tilde{\bm r}} \cdot \liederiv_\theta(\tilde{\bm r}) , \\
+\liederiv_\psi \liederiv_\theta(\ell(\tilde{\bm r})) = \liederiv_\psi(\tilde{\bm r}) \cdot \left[\frac{\partial^2 \ell(\tilde{\bm r})}{\partial \tilde{\bm r}^2} \right] \liederiv_\theta(\tilde{\bm r}) + \frac{\partial \ell(\tilde{\bm r})}{\partial \tilde{\bm r}} \cdot \liederiv_\psi \liederiv_\theta(\tilde{\bm r}) .
+\end{gather}
+Computation of $\frac{\partial \ell(\tilde{\bm r})}{\partial \tilde{\bm r}}$ and $\left[\frac{\partial^2 \ell(\tilde{\bm r})}{\partial \tilde{\bm r}^2} \right]$ is elementary, albeit intricate.  Thus one can compute $\mathsf\Lambda$ and its Lie derivative, which will be required in the following sections.
+
+\section{Forward kinematics for parallel robots}
+\label{forward kinematics}
+
+In robotics, there are several ways to find the pose of the end effector.  One method is to use an optical system, but this is not very accurate.  Another is to use a proprioceptive sensor, where the pose is found by integrating the acceleration and angular velocity of the end effector, but this is subject to drift.  It would be extremely helpful if the end effector could be computed from the cable lengths.  Cable lengths can be found easily and with high sampling frequency using, for example, encoders in the pulleys.
+
+Let the \emph{set of admissible actuator values}, $\mathbb L \subset \mathbb R^n$, be the range of the function $\mathsf L$.  Then the \emph{forward kinematics} function is
+\begin{equation}
+\mathsf Y : \mathbb L \to \setunitdualquat,
+\end{equation}
+ which is a left inverse to $\mathsf L$.  Because of possible measurement errors, $\mathsf Y$ should produce decent answers even if the actuator values are merely close to $\mathcal L$.  
+
+We focus on the over-constrained problem, that is, when the number of actuators $n$ is greater than $6$.  If $n = 6$, a much simpler approach is possible by simply applying the Newton-Raphson method directly to $\mathsf L$.  In that case, only first derivatives of $\mathsf L$ are required.
+
+This problem has been solved by many others, for example, \cite{pott-schmidt,yang-et-al}.  But we feel that this is more easily solved using dual quaternions.  For example, using the programming language C++, one can quickly build classes representing dual quaternions, and then these formulas can be applied without any real thought, at least after the formulas for the appropriate Lie derivatives have been obtained.
+
+The function $\mathsf Y$ takes actuator values $\bm\ell = (\ell_1,\dots,\ell_n)$, and seeks to find the pose $\eta$ so that $\mathsf L(\eta)$ is close as possible to $\bm\ell$.  We do this by seeking to minimize the \emph{loss function}
+\begin{equation}
+b(\eta) = \tfrac12 {|\mathsf L(\eta) - \bm\ell|}^2
+\end{equation}
+We use the Newton-Raphson Method, which given $\eta_k$ close to a minimum of the loss function, finds $\eta_{k+1}$ which is much closer to the same minimum of the loss function.  Because this method as usually stated works only on linear vector spaces, we first have to define a map $\theta\mapsto\tilde b_k(\theta)$, with $\tilde b_k(0) = \eta_k$, from the linear vector space of vector dual quaternions to the manifold of unit dual quaternions \cite{huper-trumpf}.
+
+Most papers on the Newton-Raphson Method on manifolds construct this map using the so called exp function \cite{dedieu-et-al,fernandes-et-al,ferreira-svaiter}.  So the map is
+\begin{equation}
+\tilde b_k(\theta) = b(\eta_k \exp(\theta)).
+\end{equation}
+The exp map in these papers is following the path of a geodesic on the manifold, and this is equivalent to using the equations of motion of the end effector as described in Section~\ref{dynamics}.  Another exp map is to follow a one-parameter subgroup, or equivalently, equation~\eqref{exponential}.  We do not take these approaches.  Our approach is to normalize:
+\begin{equation}
+\tilde b_k(\theta) = b(\eta_k  \widehat{(1 + \theta)}).
+\end{equation}
+(However, this is numerically close to the second approach, as is shown by equation~\eqref{exp-normal}.  Using normalization instead of the exp map slightly reduces the complexity of the calculations as transcendental trigonometric functions are not required.  But if one wants to use the exp map, simply replace $\widehat{(1+\theta)}$ by $\exp(\theta)$ throughout.)
+
+In order to apply the Newton-Raphson Method, we need to compute the Jacobian
+\begin{equation}
+\label{jacobian}
+\delta_k = \left.\frac{\partial\tilde b_k}{\partial\theta} \right|_{\theta = 0} = (\liederiv_i b(\eta_k))_{1 \le i \le 6},
+\end{equation}
+and its Hessian $\mathsf H_k$, which by equation~\eqref{hessian} is
+\begin{equation}
+\mathsf H_k
+= \left[\tfrac12 (\liederiv_i \liederiv_j b(\eta_k) + \liederiv_j \liederiv_i b(\eta_k)) \right]_{1\le i,j\le 6}.
+\end{equation}
+
+The standard Newton-Raphson Method for optimizing the real valued quantity $F(\bm x)$, where $\bm x$ is an element of a vector space, is to iterate
+\begin{equation}
+\bm x - \left[\frac{\partial^2 F}{\partial \bm x^2}\right]^{-1} \frac{\partial F}{\partial \bm x} .
+\end{equation}
+In our case, $\bm x$ is $\theta$, and our previous iterate is $\theta = 0$.  Thus our next iterate for $\theta$ is
+\begin{equation}
+ - \mathsf H_k^{-1} \delta_k .
+\end{equation}
+And since our map from the vector space to the manifold is $\theta \mapsto \eta_k \widehat{(1+\theta)}$, it follows that our Newton-Raphson Method is to iterate:
+\begin{equation}
+\eta_{k+1} = \eta_k \widehat{(1 - \mathsf H_k^{-1} \delta_k)} .
+\end{equation}
+The only substantive difference between our method and the standard method is that the map from the linear space of vector dual quaternions to the manifold of unit dual quaternions changes with each iteration, since the map depends upon $\eta_k$.  But the theory that the Newton-Raphson Method converges with quadratic order is based upon examination of each iteration separately, so this shouldn't pose a great issue.
+
+For the criterion of when to terminate the Newton-Raphson Method, we measure $\size_l(\eta_{k+1} - \eta_k)$.
+
+This method works well in practice, because typically we measure the pose frequently, and thus the current pose won't be much different than the previously measured pose.  Thus the previously measured pose is a good starting value for using the Newton-Raphson method for finding the current pose.  We found that only about two or three iterations of the Newton-Raphson method were generally required, and that it easily ran at a thousand times per second on a modern computer.
+
+\section{Dynamics of the end effector}
+\label{dynamics}
+
+We define the \emph{no-load forces} to be the actuator forces if there is no end effector present:
+\begin{equation}
+\bm f_0 = \mathsf M_0 \ddot{\bm \ell},
+\end{equation}
+where $\mathsf M_0$ is a positive definite $(n\times n)$ matrix denoting what we shall call the \emph{effective no-load mass of the actuators}.
+
+Let us suppose that the kinetic energy of the parallel robot is given by
+\begin{equation}
+\label{ke}
+e = \tfrac12 \varphi \cdot \mathsf M \varphi,
+\end{equation}
+where $\mathsf M$ is a $(6 \times 6)$ positive definite matrix, which depends only upon $\eta$, and which we call the \emph{effective mass of the parallel robot}.  If $m_e$ is the mass of the end effector, $\mathsf M_e$ is the moment of inertia tensor of the end effector about its center of mass, and $\bm r_0$ is the center of mass of the end effectors, all measured with respect to the moving frame, then
+\begin{equation}
+e = \tfrac12 m_e |\bm v + \bm w \times \bm r_0|^2 + \tfrac12 \bm w \cdot \mathsf M_e \bm w + \tfrac12 \dot{\bm\ell} \cdot \mathsf M_0 \dot{\bm\ell} , 
+\end{equation}
+that is
+\begin{equation}
+\label{M example}
+\mathsf M = 4 \begin{bmatrix} \mathsf M_e - m_e \starop{\bm r_0}^2 & m_e \starop{\bm r_0} \\ - m_e \starop{\bm r_0} & m_e \mathsf I \end{bmatrix} + \mathsf\Lambda^T \mathsf M_0 \mathsf\Lambda,
+\end{equation}
+where $\mathsf I$ is the $(3 \times 3)$ identity matrix, and $\starop{\bm r}$ is the \emph{Hodge star operator} of $\bm r$:
+\begin{equation}
+\starop{\bm r} = \begin{bmatrix}  0   & -r_3 &  r_2 \\
+                               r_3 &  0   & -r_1 \\
+                              -r_2 &  r_1 &  0 \end{bmatrix} .
+\end{equation}
+Note that
+\begin{equation}
+\label{r star to r cross}
+\starop{\bm r} \bm s = \bm r \times \bm s .
+\end{equation}
+
+The next result is proved in Section~\ref{sec proofs}.
+
+\begin{theorem}
+\label{equation of motion}
+If the kinetic energy satisfies equation~\eqref{ke} with equation~\eqref{M example} holding, and the potential energy $v$ is calculated in the usual manner from the mass of the end effector in a constant gravitational field $\bm g$, then the equation of motion is
+\begin{equation}
+\tau = \mu + \mathsf M \alpha,
+\end{equation}
+where
+\begin{multline}
+\label{tau example}
+\mu = 2\bm w \times (\mathsf M_e \bm w) + 2\epsilon m_e \bm w \times \bm v \\
++ 2 m_e ((\bm w \cdot \bm r_0) (\bm w \times \bm r_0) + \bm r_0 \times (\bm w \times \bm v) + \epsilon \bm w \times (\bm w \times \bm r_0)) \\
++ \mathsf \Lambda^T \mathsf M_0 (\liederiv_\varphi \mathsf \Lambda) \varphi 
+- 2 m_e (\bm r_0 \times \tilde{\bm g} + \epsilon \tilde{\bm g}) ,
+\end{multline}
+with
+\begin{equation}
+\tilde{\bm g} = Q^* \bm g Q ,
+\end{equation}
+and
+\begin{equation}
+\mathsf M \alpha = 2 \mathsf M_e \dot{\bm w} + 2 m_e (\bm r_0 \times \dot{\bm v}) + 2 \epsilon m_e \dot{\bm v} + \mathsf\Lambda^T \mathsf M_0 \mathsf \Lambda \alpha.
+\end{equation}
+\end{theorem}
+
+The various terms in equation~\eqref{tau example} can be interpreted as follows.
+\begin{itemize}
+\item $\mathsf M_e \dot{\bm w}$ and $m_e \dot{\bm v}$ are inertial resistance to change of angular and translational velocities.
+\item $m_e \bm w \times \bm v$ is the centripetal force required to rotate and move at the same time.
+\item $\bm w \times (\mathsf M_e \bm w)$ is the precession torque (so that if the moment of inertia is not isotropic, then the body spins in a counter-intuitive manner, see, for example, \cite{kawano-et-al}).
+\item
+\begin{equation}
+\mathsf \Lambda^T \mathsf M_0 (\liederiv_\varphi \mathsf \Lambda) \varphi + \mathsf\Lambda^T \mathsf M_0 \mathsf \Lambda \alpha = \mathsf T \bm f_0
+\end{equation}
+is the wrench required to move the actuators, where the no-load forces may be computed using
+\begin{equation}
+\bm f_0 = \mathsf M_0 \liederiv_\varphi(\mathsf\Lambda \varphi) + \mathsf M_0 \mathsf\Lambda \alpha .
+\end{equation}
+\item $m_e \tilde{\bm g}$ is the force due to gravity, translated into the moving frame of reference.
+\item All terms containing $\bm r_0$ are corrections required since the center of gravity isn't necessarily the same as the origin of the moving frame of reference.  They could be derived by first finding the equations of motion when $\bm r_0 = 0$, and then applying equations~\eqref{twist correction} and~\eqref{torque correction}.
+\end{itemize}
+
+\section{Proofs}
+\label{sec proofs}
+
+We first discuss the `big-Oh' notation in more detail.  In \cite{montgomery-smith-functional-calculus}, we show how to define the `functional calculus' of dual quaternions.  That is, given a continuously differentiable function $f:\mathbb C \to \mathbb C$, satisfying $f(\bar z) = \overline{f(z)}$, we can make sense of $f(\eta)$ for any dual quaternion $\eta = A + \epsilon B$.  First we can define $f$ on quaternions by realizing that any unit vector $\bm n$ satisfies $\bm n^2 = -1$.  Next, if $B$ is decomposed as $B_1 + \bm b_2$, where $B_1$ commutes with $A$, and $\bm b_2$ is a vector quaternion that anti-commutes with $\imagpart(A)$, and setting
+\begin{gather}
+f_x(z) = \lim_{h \to 0, h \in \mathbb R} \frac{f(z+h)} h , \\
+f_{iy}(z) = \lim_{h \to 0, h \in \mathbb R} \frac{f(z+ih)} {ih} , \\
+h_f(z) = \begin{cases}\dfrac{f(z) - f(\bar z)}{z - \bar z} & \text{if $\realpart(z) \ne 0$} \\
+f_{iy}(z) & \text{if $\realpart(z) = 0$,} \end{cases}
+\end{gather}
+then we have
+\begin{equation}
+f(A + \epsilon B) = f(A) + \epsilon f_x(A) \realpart(B_1) + \epsilon f_{iy}(A) \imagpart(B_1) + \epsilon h_f(A) \bm b_2.
+\end{equation}
+This means that for any functions $f$ and $g$, that $\size_l(f(A + \epsilon B)) \le \size_l(g(A + \epsilon B))$ for all quaternions $B$ if and only if $|f(A)| \le |g(A)|$, $|f_x(A)| \le |g_x(A)|$, $|f_{iy}(A)| \le |g_{iy}(A)|$, and $|h_f(A)| \le |h_g(A)|$.  In particular, the comparison of size does depend upon which characteristic length $l$ is used.
+
+\begin{proof}[Proof of Equation~\eqref{approx normalize}]  Since $\theta^* = -\theta$, we have
+\begin{equation}
+|1+\theta|^2 = 1 - \theta^2.
+\end{equation}
+Hence using Taylor's series
+\begin{equation}
+|1+\theta|^{-1} = 1 + \tfrac12 \theta^2 + O(\theta^3)
+\end{equation}
+from which it follows that
+\begin{equation}
+\widehat{(1+\theta)} = (1+\theta)(1+\theta)^{-1} = 1 + \theta + \tfrac12 \theta^2 + O(\theta^3)  .
+\end{equation}
+\end{proof}
+
+\begin{lemma}
+\label{not depend}
+The definition of $\liederiv_\theta g$ in equation~\eqref{lie diff defn} does not depend upon the extension of $g$ from $\setunitdualquat$ to a neighborhood of $\setunitdualquat$ in $\setinvertibledualquat$.
+\end{lemma}
+
+\begin{proof}  First note that from equation~\eqref{approx normalize} we have
+\begin{equation}
+\label{diff normalize}
+\left.\frac d{dr} \widehat{(1 + r \theta)} \right|_{r=0} = \theta.
+\end{equation}
+Let $g_1$ and $g_2$ be two extensions of $g$ from $\setunitdualquat$ to a neighborhood of $\setunitdualquat$ in $\setinvertibledualquat$.  Define
+\begin{equation}
+\tilde g(\eta) = g_1(\widehat\eta) = g_2(\widehat\eta).
+\end{equation}
+Then
+\begin{equation}
+\begin{aligned}
+\left.\frac{d}{d r} \tilde g(\eta(1+r\theta)) \right |_{r = 0}
+&=
+\left.\frac{d}{d r} g_1(\eta\widehat{(1+r\theta)}) \right |_{r = 0} \\
+&=\left.\frac{d}{d r} g_1(\eta(1+r\theta)) \right |_{r = 0},
+\end{aligned}
+\end{equation}
+where the second equality follows from the chain rule and equation~\eqref{diff normalize}.  Similarly for $g_2$.
+\end{proof}
+
+\begin{proof}[Proof that Definition~\eqref{lie diff defn} implies Equation~\eqref{lie diff defn 2}]
+
+Using the chain rule for partial derivatives, we obtain
+\begin{equation}
+\begin{aligned}
+\frac{d}{d r} g(\eta(1+r\theta))
+&= \sum_{i=1}^8 \left(\frac{\partial g}{\partial \eta_i}(\eta(1+r\theta))\right) \frac{d}{d r} (\eta(1+r\theta))_i 
+\\
+&= \sum_{i=1}^8 \left(\frac{\partial g}{\partial \eta_i}(\eta(1+r\theta))\right) (\eta\theta)_i .
+\end{aligned}
+\end{equation}
+Now set $r = 0$.
+\end{proof}
+
+\begin{proof}[Proof that Equation\eqref{decomp theta} implies Equation~\eqref{decomp partial theta}]
+Equation~\eqref{decomp theta} can be written as
+\begin{equation}
+\bm a = 2(\theta_1 \bm i + \theta_2 \bm j + \theta_3 \bm k), \quad
+\bm b = 2(\theta_4 \bm i + \theta_5 \bm j + \theta_6 \bm k),
+\end{equation}
+where $\theta_i$ is the $\beta_i$ component of $\theta$ as described in \eqref{dual quaternion basis}.  If $f$ is any function of the vector dual quaternions, we have
+\begin{equation}
+\begin{aligned}
+\frac{\partial}{\partial \theta_i} f(\theta)
+&= \sum_{j=1}^3 \frac{\partial \bm a_j}{\partial \theta_i} \frac{\partial}{\partial \bm a_j} f(\theta)
++ \sum_{j=1}^3 \frac{\partial \bm b_j}{\partial \theta_i} \frac{\partial}{\partial \bm b_j} f(\theta)
+\\&
+= \begin{cases}
+2 \dfrac{\partial}{\partial \bm a_i} & \text{if $1 \le i \le 3$} \\ \\
+2 \dfrac{\partial}{\partial \bm b_{i-3}} & \text{if $4 \le i \le 6$.}
+\end{cases}
+\end{aligned}
+\end{equation}
+\end{proof}
+
+\begin{proof}[Proof of Equation~\eqref{second lie deriv}]
+Applying the rules given in Section~\ref{sec lie derivatives}, we obtain
+\begin{align}
+\liederiv_\theta \liederiv_\psi g
+&= 
+\liederiv_\theta \left( \frac{\partial g}{\partial \eta} \cdot (\eta \psi) \right) \\
+&= 
+\sum_{i=1}^8 \liederiv_\theta\left(\frac{\partial g}{\partial \eta_i}\right) (\eta \psi)_i +
+\frac{\partial g}{\partial \eta} \cdot \liederiv_\theta (\eta \psi) \\
+&= 
+\sum_{i=1}^8 \left( \sum_{j=1}^8\left(\frac{\partial^2 g}{\partial \eta_j \eta_i}\right)(\eta\theta)_j\right) (\eta \psi)_i +
+ \frac{\partial g}{\partial \eta} \cdot (\eta \psi \theta) \\
+&= (\eta \psi) \cdot \left[\frac{\partial^2 g}{\partial \eta^2}\right](\eta \theta) + \frac{\partial g}{\partial \eta} \cdot (\eta \theta \psi) .
+\end{align}
+\end{proof}
+
+\begin{proof}[Proof of Equation~\eqref{hessian}]
+We wish to find the Jacobian $\delta$ and the Hessian $\mathsf H$ of $\tilde b$ at the origin, where
+\begin{equation}
+\tilde b(\theta) = b(\eta  \widehat{(1 + \theta)}).
+\end{equation}
+We can find this by considering its Taylor series expansion
+\begin{equation}
+\tilde b(\theta) = \tilde b(0) + \sum_{i=1}^6 \delta_{i} \theta_i + \tfrac12 \sum_{i,j=1}^6 \mathsf H_{i,j} \theta_i \theta_j + O(\theta^3),
+\end{equation}
+where
+\begin{equation}
+\theta = \sum_{i=1}^6 \theta_i \beta_i.
+\end{equation}
+Using the Taylor series, and using equation~\eqref{approx normalize}, one obtains
+\begin{equation}
+\begin{aligned}
+&\tilde b(\theta) = b(\eta  \widehat{(1 + \theta)})
+= b(\eta(1 + \theta + \tfrac12 \theta^2 + O(\theta^3))) \\
+&= b(\eta) + \frac{\partial b}{\partial \eta} \cdot(\eta(\theta + \tfrac12 \theta^2)) \\
+&\phantom{{}={}} + \tfrac12 (\eta \theta) \cdot \left[\frac{\partial^2 b}{\partial \eta^2}\right] (\eta\theta)
++ O(\theta^2) \\
+&= b(\eta) + \frac{\partial b}{\partial \eta} \cdot(\eta(\theta)) \\
+&\phantom{{}={}} + \tfrac12 (\eta \theta) \cdot \left[\frac{\partial^2 b}{\partial \eta^2}\right] (\eta\theta) + \frac{\partial b}{\partial \eta} \cdot(\tfrac12 \eta \theta^2) + O(\theta^3) .
+\end{aligned}
+\end{equation}
+Now by comparing coefficients, and considering equations~\eqref{lie diff defn 2} and~\eqref{second lie deriv}, we obtain
+\begin{equation}
+\delta_i = \liederiv_i b(\eta), \quad (1 \le i \le 6),
+\end{equation}
+and
+\begin{equation}
+\begin{aligned}
+\mathsf H_{i,j} &=
+(\eta \beta_i) \cdot \left[\frac{\partial^2 b}{\partial \eta^2}\right] (\eta\beta_j) + \frac{\partial b}{\partial \eta} \cdot(\tfrac12 \eta(\beta_i\beta_j+\beta_j\beta_i)) \\
+&= \tfrac12 (\liederiv_i \liederiv_j b(\eta) + \liederiv_j \liederiv_i b(\eta)),
+\quad (1\le i,j\le 6).
+\end{aligned}
+\end{equation}
+\end{proof}
+
+\bigskip
+
+Now we work on proving Theorem~\ref{equation of motion}.  We use the Euler-Lagrange equations.  However, some may consider it easier to use standard formulas for rotating bodies, and Newtonian physics, to obtain the same result.
+
+Define the \emph{cross product} of two vector dual quaternions $\alpha = \bm a + \epsilon \bm b$ and $\beta = \bm c + \epsilon \bm d$ by
+\begin{equation}
+\alpha \times \beta = \tfrac12(\alpha \beta - \beta \alpha) = \bm a \times \bm c + \epsilon (\bm a \times \bm d + \bm b \times \bm c) .
+\end{equation}
+Define the \emph{adjoint products} of vector dual quaternions by
+\begin{align}
+\label{ltimes}
+\alpha \ltimes \beta &= \bm c \times \bm a + \bm d \times \bm b + \epsilon (\bm c \times \bm b) ,\\
+\alpha \rtimes \beta &= - \beta \ltimes \alpha ,
+\end{align}
+which can also be defined by the property that for all vector dual quaternions $\alpha$, $\beta$, and $\gamma$ we have
+\begin{equation}
+(\alpha \times \beta) \cdot \gamma = \alpha \cdot (\gamma \ltimes \beta) = \beta \cdot (\alpha \rtimes \gamma ).
+\end{equation}
+
+%Note that if $f$ is a linear function from the vector dual quaternions to the scalars, then there is a unique vector dual quaternion $\mu$ such that for every vector dual quaternion $\psi$ we have
+%\begin{equation}
+%\label{duality defn}
+%\psi \cdot \mu = f(\psi) .
+%\end{equation}
+%To see this, apply this formula to $\psi = \beta_k$ for $1 \le k \le 6$, and obtain
+%\begin{equation}
+%\mu_k = f(\beta_k) .
+%\end{equation}
+
+\begin{theorem}
+\label{euler-lagrange}
+If the kinetic energy $e$ satisfies equation~\eqref{ke}, and $v = v(\eta)$ denotes the potential energy, then the equation of motion is
+\begin{equation}
+\label{tau M gamma}
+\tau = \mu_1 + \mu_2 + \mathsf M \alpha,
+\end{equation}
+where
+\begin{equation}
+\mu_1 = \liederiv_\varphi \mathsf M \varphi - \tfrac12 \liederiv(\varphi \cdot \mathsf M \varphi) + \liederiv v, 
+\end{equation}
+and for any constant vector dual quaternion $\psi$ we have
+\begin{equation}
+\psi \cdot \mu_2 = 2 \varphi \cdot \mathsf M (\psi \times \varphi) = 2 \mathsf M \varphi \cdot (\psi \times \varphi),
+\end{equation}
+that is,
+\begin{equation}
+\label{formula mu_2}
+\mu_2 = 2 (\mathsf M \varphi) \ltimes \varphi .
+\end{equation}
+\end{theorem}
+
+\begin{proof}  In preparation to apply the Euler-Lagrange Equation, given $\eta_0 \in \setunitdualquat$, we define a map from an open neighborhood of the origin in $\mathbb R^6$ to an open neighborhood of $\eta_0$ in $\setunitdualquat$
+\begin{equation}
+\label{eta(theta)}
+\begin{aligned}
+\theta &\mapsto \eta(\theta) \\
+&= \eta_0 \widehat{(1+\theta)} \\
+&= \eta_0 (1 + \theta + \tfrac12 \theta^2) + O(\theta^3),
+\end{aligned}
+\end{equation}
+where in the last inequality we used equation~\eqref{approx normalize}.  Then we have
+\begin{equation}
+\label{dot theta}
+\begin{aligned}
+\varphi &= \eta^{-1} \dot\eta \\
+&= \widehat{(1+\theta)}^{-1} (\dot \theta + \tfrac12(\dot\theta\theta + \theta\dot\theta)) + O(\theta^2) \\
+&= \dot\theta + \tfrac12(\dot\theta\theta - \theta\dot\theta) + O(\theta^2) ,
+\end{aligned}
+\end{equation}
+and
+\begin{equation}
+\label{ddot theta}
+\alpha = \ddot\theta + O(\theta) .
+\end{equation}
+The Lagrangian of the parallel robot is
+\begin{equation}
+l = e - v = \tfrac12 \varphi \cdot \mathsf M \varphi - v.
+\end{equation}
+We use the local coordinate system $\theta$ given by equation~\eqref{eta(theta)}.  The Euler-Lagrange Equation \cite{arnold,goldstein-et-al} tells us
+\begin{equation}
+\label{e-l}
+\frac d{dt}\left(\frac{\partial l}{\partial \dot\theta}\right) - \frac{\partial l}{\partial \theta} = \tau.
+\end{equation}
+We suppose that $\eta_0 = \eta(t_0)$, and $\theta(t_0) = 0$, and from now on in this proof, all equations are stated assuming the condition $t = t_0$.  Thus we only prove our results when $t = t_0$.  But since $t_0$ is arbitrary, this is not a limitation.  However, it is important that derivatives are calculated before setting $t = t_0$.  In particular, this means that for any function $f$ of $\eta$ that
+\begin{equation}
+\frac{\partial f}{\partial \theta} = \liederiv f.
+\end{equation}
+
+We have
+\begin{equation}
+\begin{aligned}
+\frac d{dt}\left(\frac{\partial e}{\partial \dot\theta}\right)
+&= \mathsf M\alpha + \dot{\mathsf M} \varphi \\
+&= \mathsf M\alpha + \left(\dot\theta \cdot \frac{\partial \mathsf M}{\partial\theta}\right) \dot\theta \\
+& = \mathsf M\alpha + \left(\varphi \cdot \frac{\partial \mathsf M}{\partial\theta}\right) \varphi,
+\end{aligned}
+\end{equation}
+and
+\begin{equation}
+\label{de/dtheta}
+\begin{aligned}
+\frac{\partial e}{\partial \theta}
+&= \dot \theta \cdot \mathsf M \frac{\partial}{\partial\theta}(\dot\theta \theta - \theta \dot\theta) + \tfrac12 \dot\theta \cdot \left(\frac{\partial \mathsf M}{\partial\theta}\right) \dot\theta \\
+&= \varphi \cdot \mathsf M \frac{\partial}{\partial\theta}(\varphi \theta - \theta \varphi) + \tfrac12 \varphi \cdot \left(\frac{\partial \mathsf M}{\partial\theta}\right) \varphi .
+\end{aligned}
+\end{equation}
+Note that if $f$ is any linear function whose domain is the vector dual quaternions, then
+\begin{equation}
+\psi \cdot \left(\frac{\partial}{\partial \theta} f(\theta)\right) = f(\psi) .
+\end{equation}
+Thus taking the dot product of equation~\eqref{de/dtheta} with any constant vector dual quaternion $\psi$, we obtain the result.
+%To obtain equation~\eqref{formula mu_2}, see that
+%\begin{equation}
+%\begin{aligned}
+%\psi \cdot \mu_2
+%&= \varphi \cdot \mathsf M (\psi\varphi - \varphi\psi) \\
+%&= (\mathsf M\varphi) \cdot (\psi\varphi - \varphi\psi) \\
+%&= \psi \cdot ((\mathsf M\varphi) \ltimes \varphi - \varphi \rtimes (\mathsf M\varphi)) \\
+%&= 2 \psi \cdot ((\mathsf M\varphi) \ltimes \varphi)) .
+%\end{aligned}
+%\end{equation}
+\end{proof}
+
+%From equation~\eqref{ltimes} we immediately obtain the following.
+
+%\begin{lemma}
+%\label{post euler-lagrange}
+%Under the hypotheses of Theorem~\ref{euler-lagrange}, if we have
+%\begin{equation}
+%\label{M general}
+%\mathsf M = 4 \begin{bmatrix} \mathsf M_{11} & \mathsf M_{12} \\ \mathsf M_{12}^T & \mathsf M_{22} \end{bmatrix},
+%\end{equation}
+%then
+%\begin{equation}
+%\begin{aligned}
+%\mu_2 &=
+%2\bm w \times (\mathsf M_{11} \bm w + \mathsf M_{12} \bm v) \\
+%&\phantom{{}={}} + 2 (\bm v + \epsilon \bm w) \times (\mathsf M_{12}^T \bm w + \mathsf M_{22} \bm v) .
+%\end{aligned}
+%\end{equation}
+%\end{lemma}
+
+\begin{lemma}
+\label{lambda pot energy}
+If $v$ is the potential energy of the end effector in a constant gravity field $\bm g$, then
+\begin{equation}
+\liederiv v = - 2 m_0 (\bm r_0 \times \tilde{\bm g} + \epsilon \tilde{\bm g}) ,
+\end{equation}
+where
+\begin{equation}
+\tilde{\bm g} = Q^* \bm g Q .
+\end{equation}
+\end{lemma}
+
+\begin{proof}  By equation~\eqref{rigid motion on 3-vector}, the position of the end effector's center of mass in the stationary frame of reference is
+\begin{equation}
+\bm h = Q \bm r_0 Q^* + 2 B Q^*,
+\end{equation}
+where the pose is $\eta = Q + \epsilon B$.  Hence the potential energy is
+\begin{equation}
+v (\eta) = - m_0 \bm g \cdot \bm h .
+\end{equation}
+Thus the result follows if for any constant vector dual quaternion $\psi = \tfrac12\bm a + \tfrac12 \epsilon \bm b$, we have
+\begin{equation}
+\liederiv_\psi (\bm g \cdot \bm h)
+= 2 \psi \cdot (\bm r_0 \times \tilde{\bm g} + \epsilon \tilde{\bm g}) .
+\end{equation}
+By equation~\eqref{lie deriv point}, we have
+\begin{equation}
+\liederiv_\psi \bm h = Q(\bm a \times \bm r_0 + \bm b) Q^* .
+\end{equation}
+Noting that for any three quaternions $A$, $B$, and $C$, we have
+\begin{equation}
+(AB)\cdot C = \realpart(C (AB)^*= A \cdot (C B^*) = B \cdot (A^* C),
+\end{equation}
+we obtain that
+\begin{equation}
+\liederiv_\psi (\bm g \cdot \bm h) = \tilde{\bm g} \cdot (\bm a \times \bm r_0 + \bm b) = 2 \psi \cdot (\bm r_0 \times \tilde{\bm g} + \epsilon \tilde{\bm g}) .
+\end{equation}
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{equation of motion}] The potential energy part is covered by Lemma~\ref{lambda pot energy}.  For the parts coming from the kinetic energy, using linearity, it is sufficient to prove it for the additive parts of $\mathsf M$.  The part not involving $m_0$ is proved using Theorem~\ref{euler-lagrange}, various vector identities, and remembering equation~\eqref{r star to r cross}.
+
+So we only need to prove the kinetic energy portion in the case $\mathsf M = \mathsf \Lambda^T \mathsf M_0 \mathsf \Lambda$.  The easiest way to show this is to simply differentiate $\mathsf M_0 \dot \ell = \mathsf M_0 \mathsf\Lambda\varphi$ with respect to time.  To do it directly from the formulas is more complicated, as we now show.  For any constant vector dual quaternion $\psi$, we have
+\begin{equation}
+\begin{aligned}
+\psi &\cdot (\liederiv_\varphi(\mathsf M \varphi) - \tfrac12 \liederiv(\varphi \cdot \mathsf M \varphi)) \\
+&= (\liederiv_\varphi(\psi \cdot \mathsf M \varphi) - \tfrac12 \liederiv(\varphi \cdot \mathsf M \varphi)) \\
+&= \liederiv_\varphi ((\mathsf \Lambda \psi) \cdot \mathsf M_0 (\mathsf \Lambda \varphi))
+- \tfrac12 \liederiv_\psi  ((\mathsf \Lambda \varphi) \cdot \mathsf M_0(\mathsf \Lambda \varphi)) \\
+&= \liederiv_\varphi \liederiv_\varphi \mathsf L \cdot \mathsf M_0 \liederiv_\psi \mathsf L
++ \liederiv_\varphi \liederiv_\psi \mathsf L \cdot \mathsf M_0\liederiv_\varphi \mathsf L - \liederiv_\psi \liederiv_\varphi \mathsf L \cdot \mathsf M_0\liederiv_\varphi \mathsf L \\
+&= \liederiv_\varphi (\mathsf\Lambda \varphi) \cdot \mathsf M_0\mathsf\Lambda \psi
++ \liederiv_{(\varphi \psi - \psi \varphi)} \mathsf L \cdot \mathsf M_0\mathsf\Lambda \varphi \\
+&= \psi \cdot \mathsf\Lambda^T \mathsf M_0 \liederiv_\varphi (\mathsf \Lambda \varphi)
++ \mathsf \Lambda (\varphi\psi - \psi\varphi) \cdot \mathsf M_0 \mathsf \Lambda \varphi
+\\
+&= \psi \cdot \mathsf\Lambda^T \mathsf M_0\liederiv_\varphi (\mathsf \Lambda \varphi)
++ (\varphi\psi - \psi\varphi) \cdot \mathsf M_0 \varphi,
+\end{aligned}
+\end{equation}
+where we used equation~\eqref{lie bracket diff = diff lie bracket}.  Then it is simply a matter of collecting terms.
+\end{proof}
+
+\section{Conclusion}
+
+There are many papers advocating for the use of dual quaternions in robotics \cite{adorno,han-et-al,wang-et-al}.  But this paper contains formulas we have not seen elsewhere, namely equation~\eqref{approx normalize} which gives a second order expansion of the normalization of dual quaternions close to $1$, and Theorem~\ref{euler-lagrange} which gives dynamics of the end effector in the language of dual quaternions as well as including the effects of driving the actuators.  We also haven't seen Lie derivatives discussed in the context of dual quaternions and robotics, nor the Newton-Raphson Method to solve for unit dual quaternions.
+
+\begin{thebibliography}{99}
+
+\bibitem{adorno} Bruno Vilhena Adorno, Robot Kinematic Modeling and Control Based on Dual Quaternion Algebra -- Part I: Fundamentals, 2017, hal-01478225.
+
+\bibitem{agrawal} Om Prakash Agrawal. Hamilton operators and dual-number-quaternions in spatial kinematics. Mechanism and Machine Theory, 22(6):569-575, Jan 1987.
+
+\bibitem{quaternions1} S.L. Altmann, Hamilton, Rodrigues, and the Quaternion Scandal, Mathematics Magazine, Vol. 62, No. 5. (Dec., 1989), pp. 291-308.
+
+\bibitem{arnold} V.I. Arnold, Mathematical Methods of Classical Mechanics, 2nd Ed, Springer-Verlag, 1989.
+
+\bibitem{ball} R.S. Ball, The theory of screws: A study in the dynamics of a rigid body. Hodges, Foster and Co., Dublin, 1876.
+
+\bibitem{bottema-et-al} O. Bottema, B. Roth, Theoretical Kinematics, North-Holland, Amsterdam, 1979.
+
+\bibitem{chirikjian-et-al} Gregory S Chirikjian, Robert Mahony, Sipu Ruan, and Jochen Trumpf. Pose Changes From a Different Point of View. Journal of Mechanisms and Robotics, 10(2):021008-021008-12, Feb 2018.
+
+\bibitem{clifford} M.A. Clifford, Preliminary Sketch of Biquaternions, Proceedings of the London Mathematical Society, Volume s1-4, Issue 1, November 1871, Pages 381-395, \url{https://doi.org/10.1112/plms/s1-4.1.381}.
+
+\bibitem{dedieu-et-al} Jean-Pierre Dedieu, Pierre Priouret, Gregorio Malajovich, Newton’s Method on Riemannian Manifolds: Covariant Alpha-Theory, 395-419, IMA Journal of Numerical Analysis Volume: 23, Issue: 3, July 2003 DOI: 10.1093/imanum/23.3.395.
+
+\bibitem{dooley-et-al} J. R. Dooley and J. M. McCarthy, Spatial rigid body dynamics using dual quaternion components, Proceedings. 1991 IEEE International Conference on Robotics and Automation, Sacramento, CA, USA, 1991, pp. 90-95 vol.1, doi: 10.1109/ROBOT.1991.131559.
+
+\bibitem{fernandes-et-al} Teles A. Fernandes, Orizon P. Ferreira and Jinyun Yuan, On the Superlinear Convergence of Newton’s Method on Riemannian Manifolds, Journal of Optimization Theory and Applications, 173, 828-843 (2017).
+
+\bibitem{ferreira-svaiter} O.P. Ferreira and B.F. Svaiter, Kantorovich's Theorem on Newton's Method in Riemannian Manifolds, Journal of complexity 18, 304-329 (2002), doi:10.1006-jcom.2001.0582.
+
+\bibitem{gallardo-alvarado} Jaime Gallardo-Alvarado, Kinematic Analysis of Parallel Manipulators by Algebraic Screw Theory, Springer, Switzerland, 2016.
+
+\bibitem{goldstein-et-al} Herbert Goldstein, C.P. Poole, J.L. Safko, (2001), Classical Mechanics (3rd ed.). Addison-Wesley.
+
+\bibitem{han-et-al} Da-Peng Han, Qing Wei, and Ze-Xiang Li, Kinematic Control of Free Rigid Bodies Using Dual Quaternions, International Journal of Automation and Computing
+05(3), July 2008, 319-324, DOI: 10.1007/s11633-008-0319-1.
+
+\bibitem{helgason} Sigurdur Helgason, Differential Geometry, Lie Groups and Symmetric Spaces, 656 pp. Academic Press, New York, 1978.
+
+\bibitem{huper-trumpf} K. Huper and J. Trumpf, Newton-like methods for numerical optimization on manifolds, Conference Record of the Thirty-Eighth Asilomar Conference on Signals, Systems and Computers, 2004., Pacific Grove, CA, USA, 2004, 136-139 Vol 1, doi: 10.1109/ACSSC.2004.1399106.
+
+\bibitem{kavan-et-al} L. Kavan, S. Collins, J. \u Z\'ara, C. O'Sullivan, Skinning with Dual Quaternions, \url{https://dl.acm.org/doi/pdf/10.1145/1230100.1230107}.
+
+\bibitem{kavan-et-al-2} L. Kavan, S. Collins, J. \u Z\'ara, C. O'Sullivan, Geometric Skinning with Approximate Dual Quaternion Blending, ACM Transactions on Graphics, Vol. 27, No. 4, Article 105, Publication date: October 2008.
+
+\bibitem{kawano-et-al} Daniel T. Kawano, Alyssa Novelia and Oliver M. O'Reilly, A tumbling T-handle in space: the Dzhanibekov effect, \url{https://rotations.berkeley.edu/a-tumbling-t-handle-in-space}.
+
+\bibitem{kenwright} Ben Kenwright, A Beginners Guide to Dual-Quaternions, What They Are, How They Work, and How to Use Them for 3D Character Hierarchies, \url{https://cs.gmu.edu/~jmlien/teaching/cs451/uploads/Main/dual-quaternion.pdf}.
+
+\bibitem{kussaba-et-al} Hugo T.M. Kussaba, Luis F.C. Figueredo, Jo\~ao Y. Ishihara, and Bruno V. Adorno, Hybrid kinematic control for rigid body pose stabilization using dual quaternions, Journal of the Franklin Institute, 354(7):2769-2787, May 2017.
+
+\bibitem{lee} John Lee, Introduction to Smooth Manifolds, Graduate Texts in Mathematics, 218 (Second ed.), New York London: Springer-Verlag, ISBN 978-1-4419-9981-8, OCLC 808682771, 2012.
+
+\bibitem{montgomery-smith-functional-calculus} Stephen Montgomery-Smith, Functional calculus for dual quaternions. Adv. Appl. Clifford Algebras 33, 36 (2023). https://doi.org/10.1007/s00006-023-01282-y.
+
+\bibitem{montgomery-smith-et-al} Stephen Montgomery-Smith and Cecil Shy, An introduction to using dual quaternions to study kinematics, arXiv:2203.13653, \url{https://arxiv.org/abs/2203.13653}.
+
+\bibitem{perez-et-al} A. Perez and J.M. McCarthy, Dual Quaternion Synthesis of Constrained Robotic Systems, ASME. J. Mech. Des. May 2004 126(3) 425-435.
+
+\bibitem{pott-schmidt} Andreas Pott and Valentin Schmidt, On the Forward Kinematics of Cable-Driven Parallel Robots, 2015 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Hamburg, Germany, 2015.
+
+\bibitem{quaternions2} J. Pujol, Hamilton, Rodrigues, Gauss, Quaternions, and Rotations: a Historical Reassessment, Commun. Math. Anal., Volume 13, Number 2 (2012), 1-14.
+
+\bibitem{schilling1}  M. Schilling, Universally manipulable body models---dual quaternion representations in layered and dynamic MMCs, Auton Robot 30, 399 (2011), \url{https://doi.org/10.1007/s10514-011-9226-3 https://link.springer.com/article/10.1007/s10514-011-9226-3}.
+
+\bibitem{schilling2} M. Schilling, Hierarchical Dual Quaternion-Based Recurrent Neural Network as a Flexible Internal Body Model, 2019 International Joint Conference on Neural Networks (IJCNN), 2019, pp. 1-8, doi: 10.1109/IJCNN.2019.8852328, \url{https://ieeexplore.ieee.org/abstract/document/8852328}.
+
+\bibitem{selig-book} J M Selig, Geometric fundamentals of robotics, Springer-Verlag New York Inc., 2nd edition, 2005.
+
+\bibitem{silva-et-al} Frederico F. A. Silva, Juan Jos\'e Quiroz-Oma\~na, and Bruno V. Adorno, Dynamics of Mobile Manipulators using Dual Quaternion Algebra, Journal of Mechanisms and Robotics, pages 1-24, Apr 2022.
+
+\bibitem{spong-et-al} Mark W. Spong, Seth Hutchinson, and M. Vidyasagar, Robot Modeling and Control, Wiley, 2006.
+
+\bibitem{wang-et-al} Xiangke Wang, Dapeng Han, Changbin Yu, and Zhiqiang Zheng, The geometric structure of unit dual quaternions with application in kinematic control, Journal of Mathematical Analysis and Applications 389(2), 2012, 1352-1364.
+
+\bibitem{yano} K. Yano, The Theory of Lie Derivatives and its Applications, North-Holland ISBN 978-0-7204-2104-0, 1957.
+
+\bibitem{yang-et-al} XiaoLong Yang, HongTao Wu, Yao Li, Bai Chen, A dual quaternion solution to the forward kinematics of a class of six-DOF parallel robots with full or reductant actuation, Mechanism and Machine Theory 107 (2017) 27-36, \url{http://dx.doi.org/10.1016/j.mechmachtheory.2016.08.003}.
+
+\end{thebibliography}
+
+\end{document}
+
+\bibitem{selig} J.M. Selig, Exponential and Cayley Maps for Dual Quaternions, Advances in Applied Clifford Algebras, 20(3-4):923-936, May 2010. {\tt this reference is added only for the response at the end.}
+
+\bibitem{wu-et-al} Yuanqing Wu, J.M. Selig and Marco Carricato,  (2019) Parallel
+Robots with Homokinetic Joints: The Zero-Torsion Case, In: Uhl T. (eds) ``Advances in Mechanism and Machine Science.'' IFToMM WC 2019. Mechanisms and Machine Science, vol 73. Springer, Cham, pp. 269-278. {\tt this reference is added only for the response at the end.}
+
+
+\section{Response to reviewers}
+
+The authors thank the reviewers for their thorough reading of the manuscript, and their suggestions and references, although the authors don't agree on each point.
+
+\begin{itemize}
+\item I have switched the $\eta^*$ and $\overline\eta$ notations as requested by one reviewer.
+\item I have used the term ``vector'' instead of ``pure'' as requested by one reviewer, although I think another reviewer would prefer the term ``pure.''  I personally prefer the term ``vector,'' but the literature I had found on dual quaternions used the term ``pure'', for example, \cite{adorno}.
+\item We made small changes viz-a-viz pose versus rigid motion, and included a reference that disagreed with our ambiguous use of the terms.
+\item We changed the notation so that $\mathbb D$ is not used for dual quaternions.
+\item We corrected out statements about use of units.
+\item We used size instead of $\|$.
+\item We corrected the typo in equation~\eqref{ode twist}.
+\item We used parentheses to show that the bases are ordered.
+\item The second inequality in equation~(22) follows by the vector identity for equivalent representations of the triple product.
+\item Concerning the exp operator: there are many equivalent definitions.  So $\exp(t \theta)$ can be defined as the solution to the ODE $\dot\eta = \theta \eta$, $\eta(0) = 1$, or by the power series, or as a one-parameter subgroup whose derivative at zero is $\theta$.  The exp map always maps the Lie algebra to the Lie group, which means that in our case that exp maps the vector dual quaternions to the unit dual quaternions.  For example, in \cite{adorno}, the exp function is defined on a vector quaternion, as it also is in \cite{yang-et-al}, where in Lemma~1 the exponent is clearly a vector quaternion.  Note also that we didn't create a new definition of exp, but used one of the many standard definitions.
+\item We brought forward an explanation of the big-Oh notation that was previously in the proofs section.
+\item It is not true that $\exp(\theta) = \widehat{(1+\theta)}$, because the $\theta^3$ terms differ.
+\item We made more explicit some of the formulas in the sections on Lie derivatives and their application to parallel robots, and used $*$ as our generic multiplication, and explained why we would need second Lie derivatives.
+\item In the picture, we made it clear that $\bm n$ was the axis of rotation of the assembly, not the pulley.
+\item The exp operator defined as following a geodesic depends upon the metric used.  Since the equations of motion are governed by Hamilton's least action principle, the geodesic will always follow the equations of motion if the metric is the left invariant metric defined by the mass and moment of inertia of the object.
+\item The authors believe that the formula for exp given in \cite{han-et-al} and \cite{adorno} are incorrect.  They only work if $\mathcal P(\bm a)$ and $\mathcal D(a)$ commute.  We believe that a correct formulas may be found \cite{montgomery-smith-functional-calculus,montgomery-smith-et-al,selig,wu-et-al,yang-et-al} are correct, with the formulas in \cite{montgomery-smith-functional-calculus,montgomery-smith-et-al} being easiest to use.
+\item One of the reviewers thought that the only examples used were planar.  But the cable-driven parallel robot is not planar, and quite a bit more complicated than the Gough-Stewart platform.
+\item One reviewer mentioned that we quoted Chasles' Theorem, but we didn't see where this was in our paper.
+\item We changed our notation for the Hodge star operator to $\mathsf S$.
+\end{itemize}
+
+\end{document}
+
