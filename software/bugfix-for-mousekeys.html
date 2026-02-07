@@ -1,0 +1,145 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (X11; I; FreeBSD 3.1-STABLE i386) [Netscape]">
+   <META NAME="Author" CONTENT="Stephen Montgomery-Smith">
+   <TITLE>Software</TITLE>
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#66FFFF" LINK="#0000EF" VLINK="#55188A" ALINK="#FF0000">
+
+<CENTER>
+<H1>
+Bugfix for Mousekeys</H1></CENTER>
+
+Here is a bug I found.  I spent a long time tracking
+this one down.  I am rather pleased about finding it.
+This info has been donated to The XFree86 Project, Inc. for a post 4.0.x
+release, and I have also tried to submit it to the Open Group.
+The fix is at the end of the document, but first let me describe
+the bug and its cause.
+
+<p>
+
+There is a feature called MouseKeys built into X Window.  Usually
+it can be activated or deactivated by pressing the key combinations 
+SHIFT-ALT-NUMLOCK.
+This will enable you to move the mouse using the keypad.  The numbers
+1,2,3,4,6,7,8,9 move the mouse.
+<p>
+There is also another feature called MouseKeysAccel.  This means that
+if you press one of the numeric keypads, the mouse will not only move,
+but start at a slow speed, and work up to a high speed.  This feature
+seems to usually be switched on.
+<p>
+The MouseKeysAccel has a bug in it.  You will notice that the mouse 
+begins to accelerate, and then it stops accelerating.  What is causing this is the following.  When you press one
+of the numeric keypad buttons, if you keep it down for a while, the
+repeat key feature will start - that is, the keyboard will begin
+transmitting the key again and again.
+<p>
+There is a similar bug, where if you press the keypad '5' key to get
+a mouseclick, it autorepeats, and there is no way to control this
+behavior.
+<p>
+When the MouseKeys part of the Xserver receives these key repeats,
+it is as if you momentarily released the button, and then repressed
+it.  The acceleration starts all over again.
+What should happen is that these repeats should be caught.  For example,
+in XFree86 this would be done by the function <code>xf86eqEnqueue</code> in 
+<code>xc/programs/Xserver/hw/xfree86/common/xf86Xinput.c</code>.
+But this does not happen.  Why?
+<p>
+The answer lies in the function <code>XkbHandleActions</code> in
+<code>xc/programs/Xserver/xkb/xkbActions.c</code>.
+The job of this function is to take in a key, and then process it
+to see if it needs any special action.  For example, if MouseKeys
+is activated, then it will divert the key from doing its normal
+stuff, and instead push the mouse about.
+If the key is not diverted, it gets sent to the function
+<code>CoreProcessKeyEvent</code> in
+<code>xc/programs/Xserver/dix/events.c</code>.
+<p>
+Now this is where the problem comes from.  Amongst all its other
+duties, it sets a bit that tells X that this key is now down.
+This bit is set in an array
+<code>dev->key->down</code>.
+The bit set is actually <code>1<<(key&7)</code> of <code>dev->key->down[key>>3]</code>.
+This information is used by <code>xf86eqEnqueue</code> so that if it gets a
+key, and that bit corresponding to the key in <code>dev->key->down</code> is
+set, then <code>xf86eqEnqueue</code> knows that this is a repeated key generated
+by the keyboard.  Then <code>xf86eqEnqueue</code> can act appropriately, passing
+or not passing it on as required.
+Now, if MouseKeys is set, and a numeric keypad is pressed, the
+function <code>CoreProcessKeyEvent</code> is never called, and the appropriate
+bit in <code>dev->key->down</code> is not set.  Thus <code>xf86eqEnqueue</code> cannot catch
+the repeated keys.
+
+<H2>A fix</H2>
+Thanks to Ivan Pascal for helping me get this right.
+Also in addition to this fix is one at http://www.rehab.uiuc.edu/accessx/
+<p>
+<pre>
+--- xc/programs/Xserver/xkb/xkbActions.c-orig	Wed Jan 10 19:16:53 2001
++++ xc/programs/Xserver/xkb/xkbActions.c	Fri Jan 19 20:05:55 2001
+@@ -1318,6 +1318,9 @@
+ 	}
+ 	else CoreProcessPointerEvent(xE,dev,count);
+     }
++    else if (keyEvent)
++	FixKeyState(xE,dev);
++
+     xkbi->prev_state= oldState;
+     XkbComputeDerivedState(xkbi);
+     keyc->prev_state= keyc->state;
+--- xc/programs/Xserver/dix/events.c-orig	Thu Jan 11 16:02:02 2001
++++ xc/programs/Xserver/dix/events.c	Wed Jan 24 19:14:27 2001
+@@ -2784,6 +2784,44 @@
+         (*keybd->DeactivateGrab)(keybd);
+ }
+ 
++#ifdef XKB
++/* This function is used to set the key pressed or key released state -
++   this is only used when the pressing of keys does not cause 
++   CoreProcessKeyEvent to be called, as in for example Mouse Keys.
++*/
++void
++FixKeyState (xE, keybd)
++    register xEvent *xE;
++    register DeviceIntPtr keybd;
++{
++    int             key, bit;
++    register BYTE   *kptr;
++    register KeyClassPtr keyc = keybd->key;
++
++    key = xE->u.u.detail;
++    kptr = &keyc->down[key >> 3];
++    bit = 1 << (key & 7);
++#ifdef DEBUG
++    if ((xkbDebugFlags&0x4)&&
++	((xE->u.u.type==KeyPress)||(xE->u.u.type==KeyRelease))) {
++	ErrorF("FixKeyState: Key %d %s\n",key,
++			(xE->u.u.type==KeyPress?"down":"up"));
++    }
++#endif
++    switch (xE->u.u.type)
++    {
++	case KeyPress: 
++	    *kptr |= bit;
++	    break;
++	case KeyRelease: 
++	    *kptr &= ~bit;
++	    break;
++	default: 
++	    FatalError("Impossible keyboard event");
++    }
++}
++#endif
++
+ void
+ #ifdef XKB
+ CoreProcessPointerEvent (xE, mouse, count)
+</pre>
+
+</BODY>
+</HTML>
+
